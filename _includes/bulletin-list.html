@@ -50,8 +50,8 @@
     window.addEventListener("load", function() {
         const date = new Date()
         let year = date.getFullYear()
-        let month = date.getMonth() + 1
-        let day = date.getDate()
+        let month = (date.getMonth() + 1).toString().padStart(2, "0")
+        let day = date.getDate().toString().padStart(2, "0")
 
         document.querySelectorAll("#today").forEach(e => {
             e.textContent = e.textContent.replace("today", `${year}.${month}.${day}`)

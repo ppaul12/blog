@@ -1,0 +1,57 @@
+- name: Days in Japan (0)
+  start: "2018.10"
+  end: "2019.03"
+  type: life
+
+- name: Days in Japan (1)
+  start: "2019.04"
+  end: "2020.03"
+  type: life
+
+- name: Days in Japan (2)
+  start: "2020.04"
+  end: "2021.03"
+  type: life
+
+- name: GameBoy simulator
+  start: "2021.02"
+  end: "2021.03"
+  link: https://github.com/PENG-AO/pyGB
+  type: git
+
+- name: Days in Japan (3)
+  start: "2021.04"
+  end: "2022.03"
+  type: life
+
+- name: RISC-V simulator
+  start: "2021.10"
+  end: "2022.02"
+  type: git
+
+- name: 诗经小记
+  start: "2021.12"
+  end: "2022.11"
+  type: book
+
+- name: 数据结构的汇编实现
+  start: "2022.03"
+  end: "2022.03"
+  type: code
+
+- name: Days in Japan (4)
+  start: "2022.04"
+  end: "202X.XX"
+  type: life
+
+- name: EJU PHY
+  start: "2022.04"
+  end: "2022.10"
+  link: https://github.com/PENG-AO/EJU-PHY
+  type: git
+
+- name: Urban Brush demo
+  start: "2022.05"
+  end: "2022.06"
+  link: https://github.com/PENG-AO/urban-brush-demo
+  type: git

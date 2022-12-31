@@ -1,0 +1,59 @@
+<div id="china-map" style="width: 100%; height: 480px;"></div>
+
+<script>
+    $(() => {
+        let markers = [
+            { latLng: [41.80, 123.43], name: "沈阳市" },
+            { latLng: [41.36, 119.84], name: "公营子镇塔子下村"},
+            { latLng: [41.57, 120.45], name: "朝阳市" },
+            { latLng: [38.91, 121.61], name: "大连市" },
+            { latLng: [41.09, 121.13], name: "锦州市" },
+            { latLng: [41.26, 123.23], name: "辽阳市" },
+            { latLng: [41.94, 126.41], name: "白山市(长白山)" },
+            { latLng: [39.90, 116.41], name: "北京市" },
+            { latLng: [39.94, 119.60], name: "秦皇岛市" },
+            { latLng: [36.65, 117.12], name: "济南市" },
+            { latLng: [36.20, 117.08], name: "泰安市" },
+            { latLng: [32.46, 119.93], name: "泰州市" },
+            { latLng: [32.39, 119.41], name: "扬州市" },
+            { latLng: [29.57, 106.55], name: "重庆市" },
+            { latLng: [30.57, 104.07], name: "成都市" },
+            { latLng: [22.32, 114.17], name: "香港" },
+            { latLng: [34.27, 108.95], name: "西安市" },
+            { latLng: [40.08, 113.30], name: "大同市" },
+            { latLng: [34.62, 112.45], name: "洛阳市" },
+            { latLng: [30.27, 120.16], name: "杭州市" },
+            { latLng: [30.00, 120.59], name: "绍兴市" },
+            { latLng: [29.72, 118.34], name: "黄山市" },
+            { latLng: [27.76, 118.04], name: "武夷山市" },
+            { latLng: [26.65, 106.63], name: "贵阳市" },
+            { latLng: [26.58, 107.98], name: "黔东南州(西江苗寨)" },
+            { latLng: [25.41, 107.89], name: "荔波县" },
+            { latLng: [27.13, 108.76], name: "镇远县" },
+            { latLng: [28.23, 112.94], name: "长沙市" },
+            { latLng: [29.24, 117.86], name: "上饶市(婺源)" },
+            { latLng: [26.89, 120.00], name: "宁德市(霞浦)" },
+            { latLng: [37.19, 112.18], name: "晋中市(平遥)" },
+            { latLng: [37.87, 112.55], name: "太原市" },
+            { latLng: [36.09, 111.52], name: "临汾市" },
+            { latLng: [36.06, 103.83], name: "兰州市" },
+            { latLng: [40.14, 94.66], name: "敦煌市" },
+            { latLng: [38.93, 100.45], name: "张掖市" },
+            { latLng: [36.61, 101.78], name: "西宁市" },
+            { latLng: [37.36, 97.36], name: "德令哈市" },
+            { latLng: [36.93, 98.48], name: "海西州乌兰县" },
+        ];
+        let map = new jvm.Map({
+            container: $("#china-map"),
+            map: "cn_merc",
+            backgroundColor: "#81A1C1",
+            zoomMin: 0.8,
+            zoomMax: 4.8,
+            showTooltip: false,
+            hoverOpacity: 0.7,
+            markerStyle: { initial: { fill: "#EBCB8B", stroke: "#383f47", r: 3 } },
+            markers: markers
+        })
+    })
+</script>
+

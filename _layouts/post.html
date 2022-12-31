@@ -1,0 +1,65 @@
+---
+layout: page
+---
+
+<div id="page-top"></div>
+
+<!-- tag cloud -->
+{% if page.tags.size > 0 %}
+<div class="tag-cloud-post">
+    <ul>
+        {% for tag in page.tags %}
+        <li><a href="/archive.html#{{ tag }}">{{ tag }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+<!-- post title -->
+<div class="post-title">
+    <div class="post-date">{{ page.date | date:"%Y.%m.%d"  }}</div>
+    <div class="main-title">{{ page.title }}</div>
+    {% if page.sub-title %}
+    <div class="sub-title">{{ page.sub-title }}</div>
+    {% endif %}
+</div>
+
+<!-- table of contents -->
+{% include post-toc.html %}
+
+<!-- main content -->
+<div class="post">{{ content }}</div>
+
+<!-- button bar -->
+<div class="post-button-bar">
+    {% if page.previous %}
+    <a href="{{ page.previous.url | relative_url }}" class="btn-left">
+        <i class="fa-solid fa-arrow-circle-left"></i><br>
+        <!-- {{ page.previous.title }} -->
+    </a>
+    {% endif %}
+    <a href="#page-top" class="btn-center">
+        <i class="fa-solid fa-arrow-circle-up"></i><br>
+        <!-- Back2top -->
+    </a>
+    {% if page.next %}
+    <a href="{{ page.next.url | relative_url }}" class="btn-right">
+        <i class="fa-solid fa-arrow-circle-right"></i><br>
+        <!-- {{ page.next.title }} -->
+    </a>
+    {% endif %}
+</div>
+
+<!-- comment block -->
+{% include comment-block.html %}
+
+<!-- auxiliary scripts -->
+<script>
+    window.addEventListener("load", () => {
+        // scrollable table
+        document.querySelectorAll("table").forEach(table => {
+            table.outerHTML = `<div class="scrollable">${table.outerHTML}</div>`
+        })
+    })
+</script>
+

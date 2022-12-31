@@ -1,0 +1,50 @@
+{%- capture div_class -%}
+    {%- case page.title -%}
+        {%- when "archive" -%} tree-list
+        {%- when "home" -%} item-list
+    {%- endcase -%}
+{%- endcapture -%}
+
+<div class="{{ div_class }}" id="posts">
+    {% if page.title == "home" %}
+    <h1 class="faa-parent animated-hover">
+        <i class="fa-solid fa-folder-open fa-fw faa-tada"></i>
+        <a href="/archive.html#posts">Posts</a>
+    </h1>
+    {% else %}
+    <p>{{ site.posts.size }} post{% if site.posts.size > 1 %}s{% endif %} in total</p>
+    {% endif %}
+
+    {% if site.posts.size > 0 %}
+        {% if page.title == "archive" %}
+            {% assign list_limit = site.posts.size %}
+        {% else %}
+            {% assign list_limit = 10 %}
+        {% endif %}
+    <ul>
+        {% for post in site.posts limit:list_limit %}
+        <li>
+            {% assign date = post.date | date:"%Y.%m.%d" %}
+            {%- capture info -%}
+            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+            {%- endcapture -%}
+            {% if page.title == "archive" %}
+            <i class="fa-solid fa-file-alt"></i> {{ info }} <span>({{ date }})</span>
+            {% else %}
+            <span>[ {{ date }} ]</span>{{ info }}
+            {% endif %}
+        </li>
+        {% endfor %}
+
+        {% assign list_rest = site.posts.size | minus:list_limit %}
+        {% if list_rest > 0 %}
+            {%- capture more_info -%}
+            show {{ list_rest }} more post{% if list_rest > 1 %}s{% endif %}...
+            {%- endcapture -%}
+        <a href="/archive.html#posts">{{ more_info }}</a>
+        {% endif %}
+    </ul>
+    {% else %}
+    <p>nothing available</p>
+    {% endif %}
+</div>

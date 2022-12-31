@@ -1,0 +1,24 @@
+title: PENG AO's blog
+email: pengao@is.s.u-tokyo.ac.jp
+github: https://github.com/PENG-AO
+leetcode: https://leetcode.cn/u/peng_ao/
+description: >
+  Hi there, this is PENG AO, welcome to my site!<br>
+  I'm a/an student/coder/reader/bodybuilder/traveler.
+
+header_pages:
+  - home.html
+  - archive.html
+  - profile.html
+  - search.html
+
+style: auto # auto, light, dark
+
+plugins:
+  - jekyll-seo-tag
+
+highlighter: none
+markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    disable: true

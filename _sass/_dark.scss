@@ -1,0 +1,12 @@
+/**
+ * Dark theme variables
+ */
+
+@import "nord";
+
+:root {
+    --fg-color: #{$nord6};
+    --subtle-fg-color: #{$nord4};
+    --bg-color: #{$nord0};
+    --subtle-bg-color: #{$nord2};
+}

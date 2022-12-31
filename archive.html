@@ -1,0 +1,34 @@
+---
+layout: page
+title: archive
+icon: "fa-solid fa-sitemap fa-fw faa-tada animated-hover"
+---
+
+<h1 class="section-title"><i class="{{ page.icon }}"></i> Archive</h1>
+
+{% include bulletin-list.html %}
+
+{% include post-list.html %}
+
+{% include project-list.html %}
+
+{% include book-list.html %}
+
+{% include tag-list.html %}
+
+<script>
+    window.addEventListener("load", () => {
+        // open details
+        var tag_list = ["bulletins", "posts", "projects", "books", "tags"]
+        var hash_tag = decodeURI(location.hash).substring(1) || "tags"
+        if (!tag_list.includes(hash_tag)) {
+            document.getElementById(hash_tag).open = true
+            hash_tag = "tags"
+        }
+        for (const tag in tag_list) {
+            if (tag_list[tag] == hash_tag) continue
+            document.getElementById(tag_list[tag]).hidden = true
+        }
+    })
+</script>
+

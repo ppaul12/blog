@@ -1,0 +1,66 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site.title }}-{{ page.title }}</title>
+    {% seo title=false %}
+
+    {% case site.style %}
+        {% when "auto" %}
+        <link rel="stylesheet" type="text/css" href="{{ "/assets/main.css" | relative_url }}">
+        {% when "light" %}
+        <link rel="stylesheet" type="text/css" href="{{ "/assets/main-light.css" | relative_url }}">
+        {% when "dark" %}
+        <link rel="stylesheet" type="text/css" href="{{ "/assets/main-dark.css" | relative_url }}">
+    {% endcase %}
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    {% if jekyll.environment == "production" %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DJSSTNL817"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-DJSSTNL817');
+    </script>
+    {% endif %}
+    <!-- font awesome icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"/>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome-animation@latest/css/font-awesome-animation.min.css"/> -->
+    <!-- lxgw wenkai font -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@latest/lxgwwenkailite-regular.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@latest/lxgwwenkailite-bold.css"/>
+    {% if page.required contains "code" %}
+    <!-- highlight js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@latest/styles/nord.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@latest/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    {% endif %}
+    {% if page.required contains "math" %}
+    <!-- mathjax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@latest/es5/tex-mml-chtml.js"></script>
+    <script> 
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+            }
+        };
+    </script>
+    {% endif %}
+    {% if page.required contains "python" %}
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" /> -->
+    {% endif %}
+    {% if page.required contains "search" %}
+    <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+    {% endif %}
+    {% if page.required contains "map" %}
+    <!-- jVectorMap -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+    <script src="/assets/js/jquery-jvectormap-min.js"></script>
+    <script src="/assets/js/jquery-jvectormap-cn-merc.js"></script>
+    <script src="/assets/js/jquery-jvectormap-jp-merc.js"></script>
+    <link rel="stylesheet" href="/assets/css/jquery-jvectormap.css" type="text/css" media="screen"/>
+    {% endif %}
+</head>

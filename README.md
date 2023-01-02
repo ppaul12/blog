@@ -25,3 +25,11 @@ Just a record of daily life.
 - footprint map: [jVectorMap](https://jvectormap.com)
 - ...
 
+## Start-up
+
+```shell
+$ gem install bundler
+$ bundle intall
+$ bundle exec jekyll server
+```
+

@@ -22,7 +22,7 @@
             {% assign list_limit = 5 %}
         {% endif %}
     <ul>
-        {% assign booksets = site.data.book-list | sort:"year" | reverse %}
+        {% assign booksets = site.data.book-list %}
         {% for bookset in booksets limit:list_limit %}
         <li>
             <details {% if page.title == "archive" %}open{% endif %}>

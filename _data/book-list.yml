@@ -202,9 +202,6 @@
     - title: Animal Farm
       author: George Orwell
 
-    - title: Frankenstein
-      author: Mary Shelley
-
     - title: 地图上的日本史
       link: https://book.douban.com/subject/26591669/
 
@@ -249,9 +246,6 @@
     - title: 孙子兵法
       author: 孙武
 
-    - title: 悲惨世界
-      author: 维克多雨果
-
     - title: 袁腾飞讲日本史
       author: 袁腾飞
       link: https://book.douban.com/subject/25985791/
@@ -264,9 +258,6 @@
 
 - year: 2014
   books:
-    - title: 呼啸山庄
-      author: 艾米莉勃朗特
-
     - title: The Little Prince
       author: Saint Exupéry
 

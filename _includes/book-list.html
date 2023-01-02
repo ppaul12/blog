@@ -22,7 +22,7 @@
             {% assign list_limit = 5 %}
         {% endif %}
     <ul>
-        {% assign booksets = site.data.book-list | reverse %}
+        {% assign booksets = site.data.book-list | sort:"year" | reverse %}
         {% for bookset in booksets limit:list_limit %}
         <li>
             <details {% if page.title == "archive" %}open{% endif %}>
@@ -37,8 +37,8 @@
                     {%- endcapture -%}
                 <span>{{ info }}</span>
                 {% else %}
-                    {% unless bookset.books %}no books yet...{% endunless %}
-                    {% for book in bookset.books %}
+                    {% assign books = bookset.books | sort:"date" %}
+                    {% for book in books %}
                     <div class="tooltip">
                         <i class="fa-solid fa-book"></i>
                         <span class="info">
@@ -51,17 +51,16 @@
                     {% unless year > 2017 or forloop.first %}...{% endunless %}
                 {% endif %}
                 </summary>
-                {% if bookset.books %}
                 <ul>
-                    {% for book in bookset.books %}
+                    {% assign books = bookset.books | sort:"date" %}
+                    {% for book in books %}
                     <li><a {% if book.link %}href="{{ book.link }}"{% endif %}>
                         {{ book.title }}
                         {% if book.subtitle %} / {{ book.subtitle }}{% endif %}
                         {% if book.author %} / {{ book.author }}{% endif %}
-                    </a></li>
+                    </a>{%if page.title == "archive" and book.date %} <span>({{ book.date }})</span>{% endif %}</li>
                     {% endfor %}
                 </ul>
-                {% endif %}
             </details>
         </li>
         {% endfor %}

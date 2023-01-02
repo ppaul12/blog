@@ -1,64 +1,177 @@
-- year: 2014
+- year: Reading
   books:
-    - title: 呼啸山庄
-      author: 艾米莉勃朗特
+    - title: 人间词话精读
+      author: 苏缨
+      link: https://book.douban.com/subject/26309078/
 
-    - title: The Little Prince
-      author: Saint Exupéry
+    - title: 飞鸟集
+      author: 泰戈尔,郑振铎
+      link: https://book.douban.com/subject/4243288/
 
-    - title: A Young People’s History of the United States
-      link: https://www.zinnedproject.org/materials/young-peoples-history-of-the-united-states
-
-- year: 2015
+- year: 2023
   books:
-    - title: 孙子兵法
-      author: 孙武
+    - title: 繁星·春水
+      author: 冰心
+      link: https://book.douban.com/subject/26835043/
+      date: "01.01"
 
-    - title: 悲惨世界
-      author: 维克多雨果
-
-    - title: 袁腾飞讲日本史
-      author: 袁腾飞
-      link: https://book.douban.com/subject/25985791/
-
-    - title: 任天堂快乐创意方程式
-      link: https://book.douban.com/subject/6785918/
-
-    - title: 汤川秀树传
-      link: https://book.douban.com/subject/20406677/
-
-- year: 2016
+- year: 2022
   books:
-    - title: 道德经
-      author: 李耳
-      link: https://book.douban.com/subject/11026496/
-    
-    - title: 宮本武蔵
-      author: 吉川英治
-      link: https://book.douban.com/subject/11498371/
+    - title: 笑傲江湖
+      author: 金庸
+      link: https://book.douban.com/subject/1002299/
+      date: "07.27"
 
-    - title: 最懂!日本战国
-      link: https://book.douban.com/subject/10570870/
+    - title: 三看金庸小说
+      author: 倪匡
+      link: https://book.douban.com/subject/3348129/
+      date: "08.30"
 
-    - title: 谁说日本没有战国
-      link: https://book.douban.com/subject/5388877/
+    - title: 中庸
+      author: 孔伋
+      date: "04.14"
 
-    - title: 風立ちぬ
-      author: 堀辰雄
-      link: https://book.douban.com/subject/26292259/
+    - title: 三十六计
+      date: "09.16"
 
-    - title: 人间失格
-      subtitle: 太宰治文学精选集
-      author: 太宰治
-      link: https://book.douban.com/subject/24226728/
+    - title: 诗经
+      link: https://book.douban.com/subject/30136325/
+      date: "11.08"
 
-    - title: 伊豆舞女
-      subtitle: 川端康成文选
-      author: 川端康成
-      link: https://book.douban.com/subject/10472051/
+    - title: 诗经讲义稿
+      author: 傅斯年
+      link: https://book.douban.com/subject/26874293/
+      date: "11.08"
 
-    - title: 读懂日本战后60年
-      link: https://book.douban.com/subject/25863710/
+    - title: 雪山飞狐
+      author: 金庸
+      link: https://book.douban.com/subject/1483923/
+      date: "11.29"
+
+    - title: 人生学校:微小的幸福
+      link: https://book.douban.com/subject/30358016/
+      date: "12.24"
+
+    - title: 三四郎
+      author: 夏目漱石
+      link: https://book.douban.com/subject/26877749/
+      date: "12.29"
+
+- year: 2021
+  books:
+    - title: 大学
+      author: 曾参
+      date: "10.16"
+
+    - title: 孟子
+      author: 孟轲
+      link: https://book.douban.com/subject/27043896/
+      date: "10.09"
+
+    - title: 金刚经
+      author: 鸠摩罗什
+      link: https://book.douban.com/subject/4843456/
+      date: "08.03"
+
+    - title: 天龙八部
+      author: 金庸
+      link: https://book.douban.com/subject/1255625/
+      date: "04.12"
+
+    - title: 越女剑
+      author: 金庸
+      date: "10.09"
+
+    - title: 我看金庸小说
+      author: 倪匡
+      link: https://book.douban.com/subject/3348115/
+      date: "05.03"
+
+    - title: 再看金庸小说
+      author: 倪匡
+      link: https://book.douban.com/subject/3348124/
+      date: "05.15"
+
+    - title: 四看金庸小说
+      author: 倪匡
+      link: https://book.douban.com/subject/3348134/
+      date: "06.05"
+
+    - title: 五看金庸小说
+      author: 倪匡
+      link: https://book.douban.com/subject/3522681/
+      date: "06.12"
+
+    - title: 金庸小说的情爱世界
+      author: 陈墨
+      link: https://book.douban.com/subject/2243344/
+      date: "02.10"
+
+    - title: 最美不过诗经
+      author: 吴玲
+      link: https://book.douban.com/subject/27008938/
+      date: "11.29"
+
+    - title: 人生学校:爱情的真相
+      link: https://book.douban.com/subject/30355379/
+      date: "03.01"
+
+    - title: 人生学校:平静的力量
+      link: https://book.douban.com/subject/30358013/
+      date: "04.30"
+
+- year: 2020
+  books:
+    - title: 渔樵问对
+      author: 邵雍
+      date: "09.05"
+
+    - title: 射雕英雄传
+      author: 金庸
+      link: https://book.douban.com/subject/1789837/
+      date: "07.12"
+
+    - title: 神雕侠侣
+      author: 金庸
+      link: https://book.douban.com/subject/1255624/
+      date: "08.24"
+
+    - title: 倚天屠龙记
+      author: 金庸
+      link: https://book.douban.com/subject/1789841/
+      date: "12.20"
+
+- year: 2019
+  books:
+    - title: 源氏物語
+      author: 紫式部
+      link: https://www.kadokawa.co.jp/product/200105000075/
+      date: "03.05"
+
+    - title: 论语(再读)
+      link: https://book.douban.com/subject/25933468/
+      date: "11.17"
+
+- year: 2018
+  books:
+    - title: 边城
+      author: 沈从文
+
+    - title: 受戒
+      author: 汪曾祺
+
+    - title: そして生活がつづく
+      author: 星野源
+      link: https://books.bunshun.jp/ud/book/num/9784167838386
+
+    - title: 心经
+      author: 玄奘法师
+      link: https://book.douban.com/subject/4843456/
+
+    - title: 你是人间四月天
+      subtitle: 林徽因诗文全收录
+      author: 林徽因
+      link: https://book.douban.com/subject/26427298/
 
 - year: 2017
   books:
@@ -98,149 +211,65 @@
     - title: いっきに読める日本の歴史
       link: https://www.kadokawa.co.jp/product/301311001539/
 
-- year: 2018
+- year: 2016
   books:
-    - title: 边城
-      author: 沈从文
+    - title: 道德经
+      author: 李耳
+      link: https://book.douban.com/subject/11026496/
+    
+    - title: 宮本武蔵
+      author: 吉川英治
+      link: https://book.douban.com/subject/11498371/
 
-    - title: 受戒
-      author: 汪曾祺
+    - title: 最懂!日本战国
+      link: https://book.douban.com/subject/10570870/
 
-    - title: そして生活がつづく
-      author: 星野源
-      link: https://books.bunshun.jp/ud/book/num/9784167838386
+    - title: 谁说日本没有战国
+      link: https://book.douban.com/subject/5388877/
 
-    - title: 心经
-      author: 玄奘法师
-      link: https://book.douban.com/subject/4843456/
+    - title: 風立ちぬ
+      author: 堀辰雄
+      link: https://book.douban.com/subject/26292259/
 
-    - title: 你是人间四月天
-      subtitle: 林徽因诗文全收录
-      author: 林徽因
-      link: https://book.douban.com/subject/26427298/
+    - title: 人间失格
+      subtitle: 太宰治文学精选集
+      author: 太宰治
+      link: https://book.douban.com/subject/24226728/
 
-- year: 2019
+    - title: 伊豆舞女
+      subtitle: 川端康成文选
+      author: 川端康成
+      link: https://book.douban.com/subject/10472051/
+
+    - title: 读懂日本战后60年
+      link: https://book.douban.com/subject/25863710/
+
+- year: 2015
   books:
-    - title: 源氏物語
-      author: 紫式部
-      link: https://www.kadokawa.co.jp/product/200105000075/
+    - title: 孙子兵法
+      author: 孙武
 
-    - title: 论语(再读)
-      link: https://book.douban.com/subject/25933468/
+    - title: 悲惨世界
+      author: 维克多雨果
 
-- year: 2020
+    - title: 袁腾飞讲日本史
+      author: 袁腾飞
+      link: https://book.douban.com/subject/25985791/
+
+    - title: 任天堂快乐创意方程式
+      link: https://book.douban.com/subject/6785918/
+
+    - title: 汤川秀树传
+      link: https://book.douban.com/subject/20406677/
+
+- year: 2014
   books:
-    - title: 渔樵问对
-      author: 邵雍
+    - title: 呼啸山庄
+      author: 艾米莉勃朗特
 
-    - title: 射雕英雄传
-      author: 金庸
-      link: https://book.douban.com/subject/1789837/
+    - title: The Little Prince
+      author: Saint Exupéry
 
-    - title: 神雕侠侣
-      author: 金庸
-      link: https://book.douban.com/subject/1255624/
-
-    - title: 倚天屠龙记
-      author: 金庸
-      link: https://book.douban.com/subject/1789841/
-
-    - title: 金刚经
-      author: 鸠摩罗什
-      link: https://book.douban.com/subject/4843456/
-
-- year: 2021
-  books:
-    - title: 大学
-      author: 曾参
-
-    - title: 孟子
-      author: 孟轲
-      link: https://book.douban.com/subject/27043896/
-
-    - title: 天龙八部
-      author: 金庸
-      link: https://book.douban.com/subject/1255625/
-
-    - title: 越女剑
-      author: 金庸
-
-    - title: 我看金庸小说
-      author: 倪匡
-      link: https://book.douban.com/subject/3348115/
-
-    - title: 再看金庸小说
-      author: 倪匡
-      link: https://book.douban.com/subject/3348124/
-
-    - title: 四看金庸小说
-      author: 倪匡
-      link: https://book.douban.com/subject/3348134/
-
-    - title: 五看金庸小说
-      author: 倪匡
-      link: https://book.douban.com/subject/3522681/
-
-    - title: 金庸小说的情爱世界
-      author: 陈墨
-      link: https://book.douban.com/subject/2243344/
-
-    - title: 最美不过诗经
-      author: 吴玲
-      link: https://book.douban.com/subject/27008938/
-
-    - title: 人生学校:爱情的真相
-      link: https://book.douban.com/subject/30355379/
-
-    - title: 人生学校:平静的力量
-      link: https://book.douban.com/subject/30358013/
-
-- year: 2022
-  books:
-    - title: 笑傲江湖
-      author: 金庸
-      link: https://book.douban.com/subject/1002299/
-
-    - title: 三看金庸小说
-      author: 倪匡
-      link: https://book.douban.com/subject/3348129/
-
-    - title: 中庸
-      author: 孔伋
-
-    - title: 三十六计
-
-    - title: 诗经
-      link: https://book.douban.com/subject/30136325/
-
-    - title: 诗经讲义稿
-      author: 傅斯年
-      link: https://book.douban.com/subject/26874293/
-
-    - title: 雪山飞狐
-      author: 金庸
-      link: https://book.douban.com/subject/1483923/
-
-    - title: 人生学校:微小的幸福
-      link: https://book.douban.com/subject/30358016/
-
-    - title: 三四郎
-      author: 夏目漱石
-      link: https://book.douban.com/subject/26877749/
-
-- year: 2023
-
-- year: Reading
-  books:
-    - title: 人间词话精读
-      author: 苏缨
-      link: https://book.douban.com/subject/26309078/
-
-    - title: 飞鸟集
-      author: 泰戈尔,郑振铎
-      link: https://book.douban.com/subject/4243288/
-
-    - title: 繁星·春水
-      author: 冰心
-      link: https://book.douban.com/subject/26835043/
+    - title: A Young People’s History of the United States
+      link: https://www.zinnedproject.org/materials/young-peoples-history-of-the-united-states
 

@@ -33,18 +33,18 @@ layout: page
 <!-- button bar -->
 <div class="post-button-bar">
     {% if page.previous %}
-    <a href="{{ page.previous.url | relative_url }}" class="btn-left">
-        <i class="fa-solid fa-arrow-circle-left"></i><br>
+    <a href="{{ page.previous.url | relative_url }}" class="btn-left faa-parent animated-hover">
+        <i class="fa-solid fa-arrow-circle-left faa-horizontal faa-reverse"></i><br>
         <!-- {{ page.previous.title }} -->
     </a>
     {% endif %}
-    <a href="#page-top" class="btn-center">
-        <i class="fa-solid fa-arrow-circle-up"></i><br>
+    <a href="#page-top" class="btn-center faa-parent animated-hover"">
+        <i class="fa-solid fa-arrow-circle-up faa-vertical"></i><br>
         <!-- Back2top -->
     </a>
     {% if page.next %}
-    <a href="{{ page.next.url | relative_url }}" class="btn-right">
-        <i class="fa-solid fa-arrow-circle-right"></i><br>
+    <a href="{{ page.next.url | relative_url }}" class="btn-right faa-parent animated-hover"">
+        <i class="fa-solid fa-arrow-circle-right faa-horizontal"></i><br>
         <!-- {{ page.next.title }} -->
     </a>
     {% endif %}

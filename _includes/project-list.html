@@ -7,10 +7,7 @@
 
 <div class="{{ div_class }}" id="projects">
     {% if page.title == "home" %}
-    <h1 class="faa-parent animated-hover">
-        <i class="fa-solid fa-cubes fa-fw faa-tada"></i>
-        <a href="/archive.html#projects">Projects</a>
-    </h1>
+    <h1><i class="fa-solid fa-cubes fa-fw"></i><a href="/archive.html#projects">Projects</a></h1>
     <div class="img-frame"><img src="https://ghchart.rshah.org/PENG-AO" alt="My GitHub Contributions"/></div>
     {% else %}
     <p>{{ site.data.project-list.size }} project{% if site.data.project-list.size > 1 %}s{% endif %} in total</p>

@@ -309,35 +309,16 @@ math {
         }
     }
 
-    @mixin btn($name, $direction, $max-value) {
-        &:hover {
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
-            animation-timing-function: ease;
-            animation-name: bounce-#{$name};
-        }
-
-        @keyframes bounce-#{$name} {
-            0% { transform: unquote("translate#{$direction}(0)"); }
-            30% { transform: unquote("translate#{$direction}(#{$max-value})"); }
-            50% { transform: unquote("translate#{$direction}(0)"); }
-            100% { transform: unquote("translate#{$direction}(0)"); }
-        }
-    }
-
     .btn-left {
         grid-column: 1 / 2;
-        @include btn(left, X, -5%)
     }
 
     .btn-center {
         grid-column: 2 / 3;
-        @include btn(up, Y, -30%)
     }
 
     .btn-right {
         grid-column: 3 / 4;
-        @include btn(right, X, 5%)
     }
 }
 

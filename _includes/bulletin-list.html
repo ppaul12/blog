@@ -7,10 +7,7 @@
 
 <div class="{{ div_class }}" id="bulletins">
     {% if page.title == "home" %}
-    <h1 class="faa-parent animated-hover">
-        <i class="fa-solid fa-bell fa-fw faa-tada"></i>
-        <a href="/archive.html#bulletins">Bulletins</a>
-    </h1>
+    <h1><i class="fa-solid fa-bell fa-fw"></i><a href="/archive.html#bulletins">Bulletins</a></h1>
     {% else %}
     <p>{{ site.data.bulletin-list.size }} bulletin{% if site.data.bulletin-list.size > 1 %}s{% endif %} in total</p>
     {% endif %}

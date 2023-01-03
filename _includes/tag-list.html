@@ -7,10 +7,7 @@
 
 <div class="{{ div_class }}" id="tags">
     {% if page.title == "home" %}
-    <h1 class="faa-parent animated-hover">
-        <i class="fa-solid fa-tags fa-fw faa-tada"></i>
-        <a href="/archive.html#tags">Tags</a>
-    </h1>
+    <h1><i class="fa-solid fa-tags fa-fw"></i><a href="/archive.html#tags">Tags</a></h1>
     {% else %}
     <p>{{ site.tags.size }} tag{% if site.tags.size > 1 %}s{% endif %} in total</p>
     {% endif %}

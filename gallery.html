@@ -1,0 +1,35 @@
+---
+layout: page
+title: gallery
+icon: "fa-solid fa-image fa-fw faa-tada animated-hover"
+---
+
+<h1><i class="{{ page.icon }}"></i> Gallery</h1>
+
+randomly selected photos
+
+<div class="gallery" id="gallery"></div>
+
+<script>
+    // choose photos randomly
+    const sample = (array, size=1) => {
+        size = Math.max(0, Math.min(size, array.length))
+        if (size == 0) return []
+        const idx = Math.floor(Math.random() * array.length)
+        const rest = [].concat(array.slice(0, idx), array.slice(idx + 1, array.length))
+        return [array[idx]].concat(sample(rest, size - 1))
+    }
+    let pics = fetch("/gallery.json")
+    const gallery = document.getElementById("gallery")
+    fetch("/gallery.json").then(r => r.json()).then(pics => {
+        sample(pics, 10).forEach(pic => {
+            const item = document.createElement("div")
+            item.classList.add("item")
+            item.innerHTML = `<img src="${pic.path}"><p><a href="${pic.url}">${pic.info}</a></p>`
+            gallery.appendChild(item)
+        })
+    })
+</script>
+
+{% include comment-block.html %}
+

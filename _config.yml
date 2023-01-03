@@ -9,6 +9,7 @@ description: >
 header_pages:
   - home.html
   - archive.html
+  - gallery.html
   - profile.html
   - search.html
 

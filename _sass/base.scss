@@ -537,6 +537,11 @@ math {
         p {
             margin: 0.2em 0;
         }
+
+        a:hover {
+            color: $nord11;
+            background-color: var(--bg-color);
+        }
     }
 }
 

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: gallery
-icon: "fa-solid fa-image fa-fw faa-tada animated-hover"
+icon: "fa-solid fa-image fa-fw"
 ---
 
 <h1><i class="{{ page.icon }}"></i> Gallery</h1>
@@ -9,6 +9,10 @@ icon: "fa-solid fa-image fa-fw faa-tada animated-hover"
 <p>randomly selected photos</p>
 
 <div class="gallery" id="gallery"></div>
+
+<div style="text-align: center;">
+    <a href="#gallery" onclick="shufflePics(pics)"><i class="fa-solid fa-shuffle"></i></a>
+</div>
 
 <script>
     // choose photos randomly
@@ -19,14 +23,21 @@ icon: "fa-solid fa-image fa-fw faa-tada animated-hover"
         const rest = [].concat(array.slice(0, idx), array.slice(idx + 1, array.length))
         return [array[idx]].concat(sample(rest, size - 1))
     }
-    let pics = fetch("/gallery.json")
-    const gallery = document.getElementById("gallery")
-    fetch("/gallery.json").then(r => r.json()).then(pics => {
+    const shufflePics = (pics) => {
+        const gallery = document.getElementById("gallery")
+        gallery.innerHTML = ""
         sample(pics, 10).forEach(pic => {
             const item = document.createElement("div")
             item.classList.add("item")
             item.innerHTML = `<img src="${pic.path}"><p><a href="${pic.url}">${pic.info}</a></p>`
             gallery.appendChild(item)
+        })
+    }
+    let pics = undefined
+    window.addEventListener("load", () => {
+        fetch("/gallery.json").then(response => response.json()).then(data => {
+            pics = data
+            shufflePics(pics)
         })
     })
 </script>

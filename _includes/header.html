@@ -1,8 +1,8 @@
 <header>
     <div class="blog-header">
         <div class="menu two-sided">
-            <span class="item-left">{{ site.title }}</span>
-            <span class="item-right">
+            <span class="item-left" style="width: 40%;">{{ site.title }}</span>
+            <span class="item-right" style="width: 60%;">
                 {% for path in site.header_pages %}
                     {% assign my_page = site.pages | where: "path", path | first %}
                 <a href="{{ my_page.url | relative_url }}"><i class="{{ my_page.icon }}"></i></a>

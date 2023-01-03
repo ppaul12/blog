@@ -3,105 +3,128 @@ layout: page
 title: profile
 icon: "fa-solid fa-user fa-fw faa-tada animated-hover"
 lang: en
-required: map
 ---
 
 <h1><i class="{{ page.icon }}"></i> About me</h1>
 
-<div>
-    This is PENG AO from
-    <ul>
-        <li><i class="fa-solid fa-university fa-fw"></i> The University of Tokyo</li>
-        <li><i class="fa-solid fa-school fa-fw"></i> School of Science</li>
-        <li><i class="fa-solid fa-building fa-fw"></i> Department of Information Science</li>
-    </ul>
-    who is currently living in Tokyo, Japan.
+<div class="lang-selector">
+    <label><input type="radio" name="lang" value="zh">🇨🇳中文</label>
+    <label><input type="radio" name="lang" value="en">🇺🇸English</label>
+    <label><input type="radio" name="lang" value="jp">🇯🇵日本語</label>
+</div>
+<script>
+    // set profile by default language
+    window.addEventListener("load", () => {
+        const lang = document.documentElement.getAttribute("lang")
+        for (const id of ["zh", "en", "jp"]) {
+            document.getElementById(id).hidden = lang != id
+        }
+    })
+    document.getElementsByName("lang").forEach(elem => {
+        elem.addEventListener("change", e => {
+            for (const id of ["zh", "en", "jp"]) {
+                document.getElementById(id).hidden = e.currentTarget.value != id
+            }
+            document.documentElement.setAttribute("lang", e.currentTarget.value)
+        })
+    })
+</script>
+
+<div class="timeline" id="zh">
+    chinese profile is under construction...
 </div>
 
-<hr>
-<div>
-    And, I'm a/an
-    <ul>
-        <li><i class="fa-solid fa-user-graduate fa-fw"></i> professional student</li>
-        <li><i class="fa-solid fa-coffee fa-fw"></i> perfectionist coder</li>
-        <li><i class="fa-solid fa-book-reader fa-fw"></i> optimistic reader</li>
-        <li><i class="fa-solid fa-dumbbell fa-fw"></i> lite bodybuilder</li>
-        <li><i class="fa-solid fa-compass fa-fw"></i> inquisitive traveler</li>
-        <li><i class="fa-solid fa-camera fa-fw"></i> amateur photographer</li>
-        <li>...</li>
-    </ul>
-    who'd like to explore more and need love.
+<div class="timeline" id="en">
+    <div class="card"><div class="info">
+        This is PENG AO from
+        <ul>
+            <li><i class="fa-solid fa-university fa-fw"></i> The University of Tokyo</li>
+            <li><i class="fa-solid fa-school fa-fw"></i> School of Science</li>
+            <li><i class="fa-solid fa-building fa-fw"></i> Department of Information Science</li>
+        </ul>
+        who is currently living in Tokyo, Japan.
+    </div></div>
+
+    <div class="card"><div class="info">
+        And, I'm a/an
+        <ul>
+            <li><i class="fa-solid fa-user-graduate fa-fw"></i> professional student</li>
+            <li><i class="fa-solid fa-coffee fa-fw"></i> perfectionist coder</li>
+            <li><i class="fa-solid fa-book-reader fa-fw"></i> optimistic reader</li>
+            <li><i class="fa-solid fa-dumbbell fa-fw"></i> lite bodybuilder</li>
+            <li><i class="fa-solid fa-compass fa-fw"></i> inquisitive traveler</li>
+            <li><i class="fa-solid fa-camera fa-fw"></i> amateur photographer</li>
+            <li>...</li>
+        </ul>
+        who'd like to explore more and need love.
+    </div></div>
+
+    <div class="card"><div class="info">
+        Specifically, I'm majoring in
+        <ul>
+            <li><i class="fa-solid fa-laptop-code fa-fw"></i> computer science</li>
+        </ul>
+        and especially interested in
+        <ul>
+            <li><i class="fa-solid fa-users fa-fw"></i> user interface</li>
+            <li><i class="fa-solid fa-microchip fa-fw"></i> low layer things</li>
+            <li>...</li>
+        </ul>
+        who probably will specialize in localizing algorithm.
+    </div></div>
+
+    <div class="card"><div class="info">
+        As a coder, I enjoy perfecting the
+        <ul>
+            <li><i class="fa-solid fa-project-diagram fa-fw"></i> code logic</li>
+            <li><i class="fa-solid fa-stream fa-fw"></i> code style</li>
+        </ul>
+        and am able to write with
+        <ul>
+            <li><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> Python, C</li>
+            <li><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="far fa-star"></i> OCaml, Assembly</li>
+            <li><i class="fa-solid fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> C++</li>
+            <li><i class="fa-solid fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i> Rust, JavaScript</li>
+        </ul>
+        who also interested in Swift and Lua.
+    </div></div>
+
+    <div class="card"><div class="info">
+        Usually, I read with intense purposiveness and
+        <ul>
+            <li><i class="fa-solid fa-book fa-fw"></i> chinese classical poetry</li>
+            <li><i class="fa-solid fa-book fa-fw"></i> chinese classical philosophy</li>
+            <li><i class="fa-solid fa-book fa-fw"></i> martial arts (wu xia) novel</li>
+            <li>...</li>
+        </ul>
+        are my favorites.
+    </div></div>
+
+    <div class="card"><div class="info">
+        Every night I spare time for working out at home<br>
+        and love push-up and pull-up in particular.
+    </div></div>
+
+    <div class="card"><div class="info">
+        I also have a restless heart for traveling by
+        <ul>
+            <li><i class="fa-solid fa-hiking fa-fw"></i> walking</li>
+            <li><i class="fa-solid fa-train fa-fw"></i> trains</li>
+            <li><i class="fa-solid fa-car fa-fw"></i> cars</li>
+            <li>...</li>
+        </ul>
+        and enjoy taking photos of both nature view and modern city.<br>
+            Here's my footprints in <a href="/footprint.html#china">China</a> and <a href="/footprint.html#japan">,Japan</a> so far.
+    </div></div>
+
+    <div class="card"><div class="info">
+        Thank you for reaching here!<br>
+        You may contact me by "{{ site.email }}".
+    </div></div>
 </div>
 
-<hr>
-<div>
-    Specifically, I'm majoring in
-    <ul>
-        <li><i class="fa-solid fa-laptop-code fa-fw"></i> computer science</li>
-    </ul>
-    and especially interested in
-    <ul>
-        <li><i class="fa-solid fa-users fa-fw"></i> user interface</li>
-        <li><i class="fa-solid fa-microchip fa-fw"></i> low layer things</li>
-        <li>...</li>
-    </ul>
-    who probably will specialize in localizing algorithm.
-</div>
-
-<hr>
-<div>
-    As a coder, I enjoy perfecting the
-    <ul>
-        <li><i class="fa-solid fa-project-diagram fa-fw"></i> code logic</li>
-        <li><i class="fa-solid fa-stream fa-fw"></i> code style</li>
-    </ul>
-    and am able to write with
-    <ul>
-        <li><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> Python, C</li>
-        <li><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="far fa-star"></i> OCaml, Assembly</li>
-        <li><i class="fa-solid fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> C++</li>
-        <li><i class="fa-solid fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i> Rust, JavaScript</li>
-    </ul>
-    who also interested in Swift and Lua.
-</div>
-
-<hr>
-<div>
-    Usually, I read with intense purposiveness and
-    <ul>
-        <li><i class="fa-solid fa-book fa-fw"></i> chinese classical poetry</li>
-        <li><i class="fa-solid fa-book fa-fw"></i> chinese classical philosophy</li>
-        <li><i class="fa-solid fa-book fa-fw"></i> martial arts (wu xia) novel</li>
-        <li>...</li>
-    </ul>
-    are my favorites.
-</div>
-
-<hr>
-<div>
-    Every night I spare time for working out at home<br>
-    and love push-up and pull-up in particular.
-</div>
-
-<hr>
-<div>
-    I also have a restless heart for traveling by
-    <ul>
-        <li><i class="fa-solid fa-hiking fa-fw"></i> walking</li>
-        <li><i class="fa-solid fa-train fa-fw"></i> trains</li>
-        <li><i class="fa-solid fa-car fa-fw"></i> cars</li>
-        <li>...</li>
-    </ul>
-    and enjoy taking photos of both nature view and modern city.<br>
-    Here's my footprints in China
-    {% include footprint-ch.html %}
-    and Japan so far.
-    {% include footprint-jp.html %}
-</div>
-
-<hr>
-<div>
-    Thank you for reaching here! You may contact me by "{{ site.email }}".
+<div class="timeline" id="jp">
+    japanese profile is under construction...
 </div>
 
 {% include comment-block.html %}

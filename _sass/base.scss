@@ -527,7 +527,6 @@ math {
         border-radius: 0.5em;
         box-shadow: 1px 1px 5px 0 var(--subtle-fg-color);
         margin: 1.2em;
-        transition: transform .2s;
 
         img {
             border-bottom-left-radius: 0;
@@ -630,6 +629,24 @@ math {
                 border-radius: 0.5em;
             }
         }
+    }
+}
+
+// language selector
+.lang-selector {
+    text-align: center;
+
+    label {
+        padding: 0.5em;
+
+        &:hover {
+            background-color: var(--subtle-bg-color);
+            border-radius: 0.5em;
+        }
+    }
+
+    input {
+        display: none;
     }
 }
 

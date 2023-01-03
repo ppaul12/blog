@@ -10,6 +10,7 @@ header_pages:
   - home.html
   - archive.html
   - gallery.html
+  - footprint.html
   - profile.html
   - search.html
 

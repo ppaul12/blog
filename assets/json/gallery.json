@@ -8,7 +8,7 @@
 %}
 
 [
-    {% for pic in pic_list %}
+    {%- for pic in pic_list -%}
         {% assign name = pic.path | split:"/" | slice:3 | first %}
         {% assign post = site.posts | where_exp:"post", "post.url contains name" | first %}
     {
@@ -16,6 +16,6 @@
         "url": "{{ post.url }}",
         "info": "{{ post.title }}<br>{{ post.date | date:"%Y.%m.%d" }}"
     }{% unless forloop.last %},{% endunless %}
-    {% endfor %}
+    {%- endfor -%}
 ]
 

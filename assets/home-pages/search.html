@@ -3,6 +3,7 @@ layout: page
 title: search
 icon: "fa-solid fa-magnifying-glass fa-fw"
 required: search
+permalink: /search.html
 ---
 
 <h1><i class="{{ page.icon }}"></i> Search</h1>
@@ -15,7 +16,7 @@ required: search
 <script>
     // setup simple jekyll search
     let sjs = SimpleJekyllSearch({
-        json: "/search.json",
+        json: "/assets/json/search.json",
         searchInput: document.getElementById("search-input"),
         resultsContainer: document.getElementById("search-results"),
         searchResultTemplate: "<a id='search-result' href='{url}'>{title}</a>",

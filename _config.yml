@@ -7,12 +7,12 @@ description: >
   I'm a/an student/coder/reader/bodybuilder/traveler.
 
 header_pages:
-  - home.html
-  - archive.html
-  - gallery.html
-  - footprint.html
-  - profile.html
-  - search.html
+  - home
+  - archive
+  - gallery
+  - footprint
+  - profile
+  - search
 
 style: auto # auto, light, dark
 

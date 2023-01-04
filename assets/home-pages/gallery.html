@@ -2,6 +2,7 @@
 layout: page
 title: gallery
 icon: "fa-solid fa-image fa-fw"
+permalink: /gallery.html
 ---
 
 <h1><i class="{{ page.icon }}"></i> Gallery</h1>
@@ -35,7 +36,7 @@ icon: "fa-solid fa-image fa-fw"
     }
     let pics = undefined
     window.addEventListener("load", () => {
-        fetch("/gallery.json").then(response => response.json()).then(data => {
+        fetch("/assets/json/gallery.json").then(response => response.json()).then(data => {
             pics = data
             shufflePics(pics)
         })

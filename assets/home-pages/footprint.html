@@ -1,0 +1,41 @@
+---
+layout: page
+title: footprint
+icon: "fa-solid fa-map-location-dot fa-fw"
+required: map
+permalink: /footprint.html
+---
+
+<h1><i class="{{ page.icon }}"></i> Footprints</h1>
+
+<h2 id="china">🇨🇳 中国</h2>
+<div id="china-map" style="width: 100%; height: 480px;"></div>
+
+<h2 id="japan">🇯🇵 日本</h2>
+<div id="japan-map" style="width: 100%; height: 480px;"></div>
+
+<script>
+    // init map on load
+    window.addEventListener("load", () => {
+        for (const info of [
+            { id: "#china-map", map: "cn_merc", path: "/assets/json/footprint-ch.json" },
+            { id: "#japan-map", map: "jp_merc", path: "/assets/json/footprint-jp.json" }  
+        ]) {
+            fetch(info.path).then(response => response.json()).then(data => {
+                new jvm.Map({
+                    container: $(info.id),
+                    map: info.map,
+                    backgroundColor: "#81A1C1",
+                    zoomMin: 0.8,
+                    zoomMax: 4.8,
+                    showTooltip: false,
+                    hoverOpacity: 0.7,
+                    markerStyle: { initial: { fill: "#EBCB8B", stroke: "#383f47", r: 3 } },
+                    markers: data
+                })
+            })
+        }
+    })
+</script>
+
+{% include comment-block.html %}

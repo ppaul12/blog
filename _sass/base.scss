@@ -440,6 +440,7 @@ math {
 
 // tag cloud at the home page
 .tag-cloud-home {
+    @extend .tag-cloud-post;
     text-align: left;
 
     ul li a {
@@ -450,8 +451,6 @@ math {
             border-style: inset;
         }
     }
-
-    @extend .tag-cloud-post;
 }
 
 // tooltip
@@ -522,6 +521,46 @@ math {
             color: $nord11;
             background-color: var(--bg-color);
         }
+    }
+}
+
+// album for images
+.album {
+    @extend .gallery;
+    width: 100%;
+
+    .wrapper {
+        position: relative;
+        height: 100vh;
+
+        & > img {
+            opacity: 0.2;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            object-fit: cover;
+        }
+
+        &:first-child > img {
+            border-top-left-radius: 0.5em;
+            border-top-right-radius: 0.5em;
+        }
+
+        &:last-child > img {
+            border-bottom-left-radius: 0.5em;
+            border-bottom-right-radius: 0.5em;
+        }
+    }
+
+    .item {
+        width: 60%;
+        @media (max-width: 420px) {
+            width: 90%;
+        }
+        position: sticky;
+        top: 10%;
+        margin: 0 auto;
     }
 }
 

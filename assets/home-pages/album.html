@@ -1,18 +1,20 @@
 ---
 layout: page
-title: gallery
+title: album
 icon: "fa-solid fa-image fa-fw"
-permalink: /gallery.html
+permalink: /album.html
 ---
 
-<h1><i class="{{ page.icon }}"></i> Gallery</h1>
+<h1><i class="{{ page.icon }}"></i> {{ page.title | capitalize }}</h1>
 
 <p>randomly selected photos</p>
 
-<div class="gallery" id="gallery"></div>
+<div class="album" id="album"></div>
 
-<div style="text-align: center;">
-    <a href="#gallery" onclick="shufflePics(pics)"><i class="fa-solid fa-shuffle"></i></a>
+<div class="post-button-bar">
+    <a href="#album" class="btn-center faa-parent animated-hover" onclick="shufflePics(pics)">
+        <i class="fa-solid fa-shuffle faa-tada"></i>
+    </a>
 </div>
 
 <script>
@@ -25,18 +27,22 @@ permalink: /gallery.html
         return [array[idx]].concat(sample(rest, size - 1))
     }
     const shufflePics = (pics) => {
-        const gallery = document.getElementById("gallery")
-        gallery.innerHTML = ""
+        const album = document.getElementById("album")
+        album.innerHTML = ""
         sample(pics, 10).forEach(pic => {
+            const wrapper = document.createElement("div")
+            wrapper.classList.add("wrapper")
+            wrapper.innerHTML = `<img src="${pic.path}">`
             const item = document.createElement("div")
             item.classList.add("item")
             item.innerHTML = `<img src="${pic.path}"><p><a href="${pic.url}">${pic.info}</a></p>`
-            gallery.appendChild(item)
+            wrapper.appendChild(item)
+            album.appendChild(wrapper)
         })
     }
     let pics = undefined
     window.addEventListener("load", () => {
-        fetch("/assets/json/gallery.json").then(response => response.json()).then(data => {
+        fetch("/assets/json/album.json").then(response => response.json()).then(data => {
             pics = data
             shufflePics(pics)
         })
@@ -44,4 +50,3 @@ permalink: /gallery.html
 </script>
 
 {% include comment-block.html %}
-

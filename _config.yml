@@ -2,14 +2,12 @@ title: PENG AO's blog
 email: pengao@is.s.u-tokyo.ac.jp
 github: https://github.com/PENG-AO
 leetcode: https://leetcode.cn/u/peng_ao/
-description: >
-  Hi there, this is PENG AO, welcome to my site!<br>
-  I'm a/an student/coder/reader/bodybuilder/traveler.
+description: Hi there, this is PENG AO, welcome to my site! I'm a student/coder/reader/bodybuilder/traveler.
 
 header_pages:
   - home
   - archive
-  - gallery
+  - album
   - footprint
   - profile
   - search

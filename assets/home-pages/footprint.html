@@ -14,12 +14,19 @@ permalink: /footprint.html
 <h2 id="japan">🇯🇵 日本</h2>
 <div id="japan-map" style="width: 100%; height: 480px;"></div>
 
+<h2 id="world">🇺🇳 世界</h2>
+<div id="world-map" style="width: 100%; height: 480px;"></div>
+
+<script src="/assets/js/jquery-jvectormap-cn-merc.js"></script>
+<script src="/assets/js/jquery-jvectormap-jp-merc.js"></script>
+<script src="/assets/js/jquery-jvectormap-world-merc.js"></script>
 <script>
     // init map on load
     window.addEventListener("load", () => {
+        // maps of countries
         for (const info of [
             { id: "#china-map", map: "cn_merc", path: "/assets/json/footprint-ch.json" },
-            { id: "#japan-map", map: "jp_merc", path: "/assets/json/footprint-jp.json" }  
+            { id: "#japan-map", map: "jp_merc", path: "/assets/json/footprint-jp.json" }
         ]) {
             fetch(info.path).then(response => response.json()).then(data => {
                 new jvm.Map({
@@ -35,6 +42,31 @@ permalink: /footprint.html
                 })
             })
         }
+        // map of the world
+        new jvm.Map({
+            container: $("#world-map"),
+            map: "world_merc",
+            backgroundColor: "#81A1C1",
+            zoomMin: 0.8,
+            zoomMax: 4.8,
+            showTooltip: false,
+            hoverOpacity: 0.7,
+            series: {
+                regions: [{
+                    values: { // in years
+                        "CN": 18, // China
+                        "JP": 4, // Japan
+                        "KH": 1, // Cambodia
+                        "IT": 1, // Italy
+                        "DE": 1, // Germany
+                        "FR": 1, // France
+                        "CH": 1  // Switzerland
+                    },
+                    scale: ["#EBCB8B", "#D08770"],
+                    normalizeFunction: 'polynomial'
+                }]
+            },
+        })
     })
 </script>
 

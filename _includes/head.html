@@ -17,8 +17,8 @@
         <link rel="stylesheet" type="text/css" href="{{ "/assets/main-dark.css" | relative_url }}">
     {% endcase %}
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     {% if jekyll.environment == "production" %}
+    <!-- google analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DJSSTNL817"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -52,10 +52,12 @@
     </script>
     {% endif %}
     {% if page.required contains "python" %}
+    <!-- pyscript -->
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
     <!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" /> -->
     {% endif %}
     {% if page.required contains "search" %}
+    <!-- simple jekyll search -->
     <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
     {% endif %}
     {% if page.required contains "map" %}
@@ -63,5 +65,10 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
     <script src="/assets/js/jquery-jvectormap-min.js"></script>
     <link rel="stylesheet" href="/assets/css/jquery-jvectormap.css" type="text/css" media="screen"/>
+    {% endif %}
+    {% if page.required contains "contribution" %}
+    <!-- github calendar -->
+    <script src="https://cdn.jsdelivr.net/npm/github-calendar@latest/dist/github-calendar.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-calendar@2.3.1/dist/github-calendar-responsive.css">
     {% endif %}
 </head>

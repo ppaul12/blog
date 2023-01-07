@@ -23,6 +23,7 @@ Just a record of daily life.
 - math formulas: [MathJax](https://www.mathjax.org)
 - search: [Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search)
 - footprint map: [jVectorMap](https://jvectormap.com)
+- github calendar: [github-calendar](https://github.com/Bloggify/github-calendar)
 - ...
 
 ## Start-up

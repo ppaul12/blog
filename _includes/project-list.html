@@ -8,7 +8,7 @@
 <div class="{{ div_class }}" id="projects">
     {% if page.title == "home" %}
     <h1><i class="fa-solid fa-cubes fa-fw"></i><a href="/archive.html#projects">Projects</a></h1>
-    <div class="img-frame"><img src="https://ghchart.rshah.org/PENG-AO" alt="My GitHub Contributions"/></div>
+    <div class="calendar" id="git-grass"></div>
     {% else %}
     <p>{{ site.data.project-list.size }} project{% if site.data.project-list.size > 1 %}s{% endif %} in total</p>
     {% endif %}
@@ -64,3 +64,13 @@
     <p>nothing available</p>
     {% endif %}
 </div>
+
+<script>
+    window.addEventListener("load", () => {
+        let grass = document.getElementById("git-grass")
+        GitHubCalendar(grass, "PENG-AO", { global_stats: false, responsive: true })
+        grass.style.minHeight = 0
+        grass.style.border = "none"
+        grass.style.fontSize = "0.8em"
+    })
+</script>

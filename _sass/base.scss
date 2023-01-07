@@ -457,6 +457,7 @@ math {
 .tooltip {
     position: relative;
     display: inline-block;
+    white-space: nowrap;
 
     .info {
         visibility: hidden;
@@ -464,7 +465,6 @@ math {
         background-color: var(--bg-color);
         min-width: 100px;
         text-align: center;
-        white-space: nowrap;
         border-radius: 0.5em;
         box-shadow: 0 0 10px 0 var(--subtle-fg-color);
         padding: 5px 5px;

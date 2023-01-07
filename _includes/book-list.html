@@ -37,12 +37,13 @@
                     {% assign books = bookset.books | sort:"date" %}
                     {% for book in books %}
                     <div class="tooltip">
-                        <i class="fa-solid fa-book"></i>
-                        <span class="info">
+                        {%- capture info -%}
                             {{ book.title }}
-                            {% if book.subtitle %}<br>{{ book.subtitle }}{% endif %}
-                            {% if book.author %}<br>{{ book.author }}{% endif %}
-                        </span>
+                            {%- if book.subtitle -%}<br>{{ book.subtitle }}{%- endif -%}
+                            {%- if book.author -%}<br>{{ book.author }}{%- endif -%}
+                        {%- endcapture -%}
+                        <i class="fa-solid fa-book"></i>
+                        <span class="info">{{ info }}</span>
                     </div>
                     {% endfor %}
                     {% unless year > 2017 or forloop.first %}...{% endunless %}

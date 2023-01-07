@@ -6,18 +6,19 @@ layout: default
 
 <!-- auxiliary scripts -->
 <script>
-    // page fade-in effect
     window.addEventListener("load", () => {
+        // page fade-in effect
         document.body.style.opacity = 1
-    })
-    // reproducible details open animation
-    document.querySelectorAll("details").forEach(detail => {
-        detail.addEventListener("toggle", toggleDetails)
+        // reproducible details open animation
+        document.querySelectorAll("details").forEach(detail => {
+            detail.addEventListener("toggle", toggleDetails)
+        })
     })
 
     function toggleDetails(e) {
         if (e.target.open) return
         const copy = document.createElement("details")
+        copy.className = e.target.className
         copy.innerHTML = e.target.innerHTML
         copy.addEventListener("toggle", toggleDetails)
         e.target.parentNode.replaceChild(copy, e.target)

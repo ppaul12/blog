@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 // hyper links
 a {
     text-decoration: underline;
-    padding: 0.3em 0.2em 0.1em;
+    padding: 0.2em;
     color: var(--fg-color);
 
     &:hover {
@@ -184,6 +184,42 @@ math {
 
 // blog header
 .blog-header {
+    .menu {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+
+        .links-desktop {
+            @media (max-width: 420px) {
+                display: none;
+            }
+            white-space: nowrap;
+        }
+
+        .links-mobile {
+            text-align: right;
+            @media (min-width: 420px) {
+                display: none;
+            }
+
+            div {
+                position: absolute;
+                right: 0;
+                background-color: var(--subtle-bg-color);
+                border-radius: 0.5em;
+                box-shadow: 1px 1px 5px 0 var(--subtle-fg-color);
+                margin: 0 1em;
+                padding: 0 0.5em;
+            }
+
+            a {
+                display: block;
+                text-align: left;
+                text-decoration: none;
+            }
+        }
+    }
+
     .title {
         padding: 10px 0;
         text-align: center;
@@ -206,10 +242,6 @@ math {
                 background-color: inherit;
             }
         }
-    }
-
-    .menu {
-        padding-bottom: 1em;
     }
 }
 
@@ -260,7 +292,7 @@ math {
 
 // post container
 .post {
-    h1, h2, h3, h4, h5, h6 {
+    & > h1, h2, h3, h4, h5, h6 {
         position: sticky;
         top: 0;
         background-color: var(--bg-color);
@@ -291,10 +323,8 @@ math {
 
 // button bar at the bottom of posts
 .post-button-bar {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 1em;
-    margin-top: 2em;
+    display: flex;
+    justify-content: space-between;
     position: sticky;
     bottom: 0;
     background-color: var(--bg-color);
@@ -307,18 +337,6 @@ math {
             color: inherit;
             background-color: transparent;
         }
-    }
-
-    .btn-left {
-        grid-column: 1 / 2;
-    }
-
-    .btn-center {
-        grid-column: 2 / 3;
-    }
-
-    .btn-right {
-        grid-column: 3 / 4;
     }
 }
 

@@ -1,20 +1,30 @@
-<header>
-    <div class="blog-header">
-        <div class="menu two-sided">
-            <span class="item-left" style="width: 40%;">{{ site.title }}</span>
-            <span class="item-right" style="width: 60%;">
-                {% for page in site.header_pages %}
-                    {% assign my_page = site.pages | where: "title", page | first %}
-                <a href="{{ my_page.url | relative_url }}"><i class="{{ my_page.icon }}"></i></a>
-                <!-- <a href="{{ my_page.url | relative_url }}">/{{ my_page.title | escape }}</a> -->
+<header class="blog-header">
+    <div class="menu">
+        <span>{{ site.title }}</span>
+        {% assign header_pages = "" | split:"," %}
+        {% for page_name in site.header_pages %}
+            {% assign page = site.pages | where: "title", page_name | first %}
+            {% assign header_pages = header_pages | push: page %}
+        {% endfor %}
+        <span class="links-desktop">
+            {% for page in header_pages %}
+            <a href="{{ page.url | relative_url }}"><i class="{{ page.icon }}"></i></a>
+            {% endfor %}
+        </span>
+        <details class="links-mobile">
+            <summary><i class="fa-solid fa-bars"></i></summary>
+            <div>
+                {% for page in header_pages %}
+                <a href="{{ page.url | relative_url }}"><i class="{{ page.icon }}"></i> {{ page.title | capitalize }}</a>
                 {% endfor %}
-            </span>
-        </div>
-        <div class="title">
-            <a href="/" id="title">
-                <p class="main-title">Life Goes On</p>
-                <p class="sub-title">そして生活が続く...来日方长</p>
-            </a>
-        </div>
+            </div>
+        </details>
+    </div>
+
+    <div class="title">
+        <a href="/">
+            <p class="main-title">Life Goes On</p>
+            <p class="sub-title">そして生活が続く...来日方长</p>
+        </a>
     </div>
 </header>

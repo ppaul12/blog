@@ -1,4 +1,4 @@
-<header class="blog-header">
+<header>
     <div class="menu">
         <span>{{ site.title }}</span>
         {% assign header_pages = "" | split:"," %}
@@ -12,7 +12,7 @@
             {% endfor %}
         </span>
         <details class="links-mobile">
-            <summary><i class="fa-solid fa-bars"></i></summary>
+            <summary></summary>
             <div>
                 {% for page in header_pages %}
                 <a href="{{ page.url | relative_url }}"><i class="{{ page.icon }}"></i> {{ page.title | capitalize }}</a>

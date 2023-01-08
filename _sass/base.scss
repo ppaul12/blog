@@ -74,19 +74,19 @@ table {
     border-collapse: collapse;
     box-shadow: 1px 1px 5px 0 var(--subtle-fg-color);
     margin: 1em auto;
-}
 
-thead {
-    color: var(--bg-color);
-    background-color: var(--fg-color);
-}
+    thead {
+        color: var(--bg-color);
+        background-color: var(--fg-color);
+    }
 
-tbody > tr:nth-child(odd) {
-    background-color: var(--subtle-bg-color);
-}
+    tbody > tr:nth-child(odd) {
+        background-color: var(--subtle-bg-color);
+    }
 
-th, td {
-    padding: 0.3em 1em;
+    th, td {
+        padding: 0.3em 1em;
+    }
 }
 
 // blockquotes
@@ -183,7 +183,7 @@ math {
 }
 
 // blog header
-.blog-header {
+header {
     .menu {
         display: flex;
         flex-wrap: nowrap;
@@ -197,9 +197,21 @@ math {
         }
 
         .links-mobile {
-            text-align: right;
             @media (min-width: 420px) {
                 display: none;
+            }
+            text-align: right;
+
+            summary::before {
+                font-family: "Font Awesome 6 Free";
+                font-weight: 900;
+                content: "\f0c9";
+            }
+            
+            &[open] summary::before {
+                font-family: "Font Awesome 6 Free";
+                font-weight: 900;
+                content: "\f00d";
             }
 
             div {
@@ -208,6 +220,7 @@ math {
                 background-color: var(--subtle-bg-color);
                 border-radius: 0.5em;
                 box-shadow: 1px 1px 5px 0 var(--subtle-fg-color);
+                width: 30%;
                 margin: 0 1em;
                 padding: 0 0.5em;
             }
@@ -225,7 +238,8 @@ math {
         text-align: center;
 
         .main-title {
-            font-size: 2em;
+            font-family: "Allura";
+            font-size: 3em;
         }
 
         .sub-title {

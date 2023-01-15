@@ -32,6 +32,7 @@ layout: page
 
 <!-- button bar -->
 <div class="post-button-bar">
+    <!-- previous post button -->
     {% if page.previous %}
     <a href="{{ page.previous.url | relative_url }}" class="faa-parent animated-hover">
         <i class="fa-solid fa-arrow-circle-left faa-horizontal faa-reverse"></i>
@@ -39,9 +40,11 @@ layout: page
     {% else %}
     <span><!-- dummy --></span>
     {% endif %}
+    <!-- page top button -->
     <a href="#page-top" class="faa-parent animated-hover"">
         <i class="fa-solid fa-arrow-circle-up faa-vertical"></i>
     </a>
+    <!-- next post button -->
     {% if page.next %}
     <a href="{{ page.next.url | relative_url }}" class="faa-parent animated-hover"">
         <i class="fa-solid fa-arrow-circle-right faa-horizontal"></i>
@@ -49,6 +52,8 @@ layout: page
     {% else %}
     <span><!-- dummy --></span>
     {% endif %}
+    <!-- scroll indicator -->
+    <progress id="scroll-indicator" value="0"></progress>
 </div>
 
 <!-- comment block -->
@@ -56,11 +61,16 @@ layout: page
 
 <!-- auxiliary scripts -->
 <script>
+    // scrollable table
     window.addEventListener("load", () => {
-        // scrollable table
         document.querySelectorAll("table").forEach(table => {
             table.outerHTML = `<div class="scrollable">${table.outerHTML}</div>`
         })
     })
+    // scroll indicator
+    window.addEventListener("scroll", () => {
+        let scroll = document.body.scrollTop || document.documentElement.scrollTop
+        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight
+        document.getElementById("scroll-indicator").value = scroll / height
+    })
 </script>
-

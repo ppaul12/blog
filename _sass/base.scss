@@ -306,12 +306,6 @@ header {
 
 // post container
 .post {
-    & > h1, h2, h3, h4, h5, h6 {
-        position: sticky;
-        top: 0;
-        background-color: var(--bg-color);
-    }
-
     a:hover {
         color: $nord11;
         background-color: var(--bg-color);
@@ -351,6 +345,24 @@ header {
             color: inherit;
             background-color: transparent;
         }
+    }
+
+    progress {
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        appearance: none;
+    }
+
+    ::-webkit-progress-bar {
+        background-color: transparent;
+    }
+
+    ::-webkit-progress-value {
+        background: linear-gradient(to right, var(--bg-color), var(--subtle-bg-color));
+        border-radius: 0.5em;
     }
 }
 

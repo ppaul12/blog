@@ -1,6 +1,6 @@
 # My Blog
 
-This is a repo of my personal [blog](https://peng-ao.github.io).
+This is a repo of my [blog](https://peng-ao.github.io).
 
 ## Purposes
 

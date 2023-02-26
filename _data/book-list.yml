@@ -4,13 +4,13 @@
       author: 苏缨
       link: https://book.douban.com/subject/26309078/
 
-    - title: 飞鸟集
-      author: 泰戈尔,郑振铎
-      link: https://book.douban.com/subject/4243288/
-
     - title: 三四郎(日)
       author: 夏目漱石
       link: https://www.shinchosha.co.jp/book/101004/
+
+    - title: 汪国真诗精编
+      author: 汪国真
+      link: https://book.douban.com/subject/26320374/
 
 - year: 2023
   books:
@@ -18,6 +18,11 @@
       author: 冰心
       link: https://book.douban.com/subject/26835043/
       date: "01.01"
+
+    - title: 飞鸟集
+      author: 泰戈尔,郑振铎
+      link: https://book.douban.com/subject/4243288/
+      date: "01.19"
 
 - year: 2022
   books:

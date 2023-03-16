@@ -1,0 +1,27 @@
+<div class="search-box">
+    <input type="search" id="search" name="search" placeholder='press "/" to search...'>
+    <div id="results"></div>
+</div>
+
+<script>
+    // setup simple jekyll search
+    let sjs = SimpleJekyllSearch({
+        json: "/assets/json/search.json",
+        searchInput: document.getElementById("search"),
+        resultsContainer: document.getElementById("results"),
+        searchResultTemplate: `
+            <article onclick="location.href='{url}'"><hgroup>
+                <h3>{icon} {title}</h3>
+                <h4><em>{info}</em></h4>
+            </hgroup></article>
+        `,
+        noResultsText: "<article>No results found</article>",
+        limit: 10
+    })
+    // auto focus when "/" pressed
+    document.addEventListener("keyup", e => {
+        if (e.key == "/") {
+            document.getElementById("search").focus()
+        }
+    })
+</script>

@@ -4,7 +4,7 @@
     window.addEventListener("load", () => {
         // load table of content
         let prevTag = "", currTag = "", tagStack = new Array()
-        let TOC = Array.from(document.querySelectorAll(".post > h1, h2, h3")).reduce((toc, header) => {
+        let TOC = Array.from(document.querySelectorAll(".post > h1, .post > h2, .post > h3")).reduce((toc, header) => {
             currTag = header.tagName
             if (currTag > prevTag) { // h1 -> h2, h2 -> h3
                 toc += `<ul><li><a href=#${header.id}>${header.textContent}</a>`

@@ -2,21 +2,91 @@
 layout: page
 title: home
 icon: "fa-solid fa-house fa-fw"
-required: contribution
 permalink: /
 ---
 
-<!-- bulletin list -->
-{% include bulletin-list.html %}
+<div class="cards">
+    {% assign limit = 5 %}
 
-<!-- post lits -->
-{% include post-list.html %}
+    <!-- posts -->
+    <article class="card">
+        <header onclick="location.href='/posts.html'">
+            <i class="fa-solid fa-folder-open fa-fw"></i>
+            <strong>Posts</strong>
+        </header>
 
-<!-- project list -->
-{% include project-list.html %}
+        <ul>
+            {% for post in site.posts limit:limit %}
+            <li>
+                <span>[ {{ post.date | date:"%Y.%m.%d" }} ]</span>
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="/posts.html">read {{ site.posts.size | minus:limit }} more...</a>
+    </article>
+    
+    <!-- projects -->
+    <article class="card">
+        <header onclick="location.href='/projects.html'">
+            <i class="fa-solid fa-cubes fa-fw"></i>
+            <strong>Projects</strong>
+        </header>
 
-<!-- book list -->
-{% include book-list.html %}
+        <ul>
+            {% assign projects = site.data.project-list | sort:"end" | reverse %}
+            {% for project in projects limit:limit %}
+            <li>
+                {% case project.type %}
+                    {% when "git" %}
+                    <i class="fa-brands fa-github-alt fa-fw"></i>
+                    {% when "code" %}
+                    <i class="fa-solid fa-code-branch fa-fw"></i>
+                    {% when "life" %}
+                    <i class="fa-solid fa-map-location fa-fw"></i>
+                    {% when "book" %}
+                    <i class="fa-solid fa-book-reader fa-fw"></i>
+                    {% else %}
+                    <i class="fa-solid fa-file-archive fa-fw"></i>
+                {% endcase%}
+                <a href="{{ project.link }}">{{ project.name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="/projects.html">read {{ projects.size | minus:limit }} more...</a>
+    </article>
+    
+    <!-- books -->
+    <article class="card">
+        <header onclick="location.href='/bookshelf.html'">
+            <i class="fa-solid fa-book fa-fw"></i>
+            <strong>Books</strong>
+        </header>
 
-<!-- tag list -->
-{% include tag-list.html %}
+        {% assign booksets = site.data.book-list %}
+        <div class="bookshelf">
+            {% for bookset in booksets limit:2 %}
+                {% assign books = bookset.books | sort:"date" %}
+                {% for book in books %}
+                <img class="thumbnail"
+                    src="/assets/book-covers/{{ book.title }}.jpg"
+                    alt="{{ book.title }}"
+                    data-target="{{ book.title }}" onclick="toggleModal(event)">
+                <dialog id="{{ book.title }}"><article class="bookshelf">
+                    <img class="thumbnail"
+                        src="/assets/book-covers/{{ book.title }}.jpg"
+                        alt="{{ book.title }}"
+                        onclick="location.href='{{ book.link }}'">
+                    <hgroup class="info">
+                        <h3>{{ book.title }}</h3>
+                        <h4>{{ book.subtitle }}</h4>
+                        <h4>{{ book.author }}</h4>
+                        <h4><em>{{ bookset.year }} {{ book.date }}</em></h4>
+                    </hgroup>
+                </article></dialog>
+                {% endfor %}
+            {% endfor %}
+            <a href="/bookshelf.html">and more...</a>
+        </div>
+    </article>
+</div>

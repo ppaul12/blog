@@ -8,69 +8,44 @@
     <link rel="shortcut icon" type="image/png" href="{{ site.github }}.png?size=16">
     <link rel="apple-touch-icon" type="image/png" href="{{ site.github }}.png?size=57">
 
-    {% case site.style %}
-        {% when "auto" %}
-        <link rel="stylesheet" type="text/css" href="{{ "/assets/main.css" | relative_url }}">
-        {% when "light" %}
-        <link rel="stylesheet" type="text/css" href="{{ "/assets/main-light.css" | relative_url }}">
-        {% when "dark" %}
-        <link rel="stylesheet" type="text/css" href="{{ "/assets/main-dark.css" | relative_url }}">
-    {% endcase %}
-
-    {% if jekyll.environment == "production" %}
     <!-- google analytics -->
+    {% if jekyll.environment == "production" %}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DJSSTNL817"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag("js", new Date());
-        gtag("config", "G-DJSSTNL817");
+        window.dataLayer = window.dataLayer || []
+        function gtag() { dataLayer.push(arguments) }
+        gtag("js", new Date())
+        gtag("config", "G-DJSSTNL817")
     </script>
     {% endif %}
+    <!-- pico css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css"/>
+    <script src="/assets/js/theme-switcher.js"></script>
+    <script src="/assets/js/modal.js"></script>
+    <link rel="stylesheet" href="/assets/main.css"/>
     <!-- font awesome icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome-animation@latest/css/font-awesome-animation.min.css"/>
     <!-- lxgw wenkai font -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@latest/lxgwwenkailite-regular.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@latest/lxgwwenkailite-bold.css"/>
-    <!-- Allura font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura">
-    {% if page.required contains "code" %}
+    <!-- allura font -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/allura@latest/index.css">
     <!-- highlight js -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@latest/styles/nord.min.css"/>
+    {% if page.required contains "code" %}
     <script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@latest/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
+    <script>hljs.highlightAll()</script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@latest/styles/nord.min.css"/>
     {% endif %}
-    {% if page.required contains "math" %}
     <!-- mathjax -->
+    {% if page.required contains "math" %}
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@latest/es5/tex-mml-chtml.js"></script>
-    <script> 
-        MathJax = {
-            tex: {
-                inlineMath: [["$", "$"]],
-                processEscapes: true
-            }
-        };
-    </script>
+    <script>MathJax = { tex: { inlineMath: [["$", "$"]], processEscapes: true } }</script>
     {% endif %}
-    {% if page.required contains "python" %}
     <!-- pyscript -->
+    {% if page.required contains "python" %}
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
-    <!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" /> -->
     {% endif %}
-    {% if page.required contains "search" %}
     <!-- simple jekyll search -->
     <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
-    {% endif %}
-    {% if page.required contains "map" %}
-    <!-- jVectorMap -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
-    <script src="/assets/js/jquery-jvectormap-min.js"></script>
-    <link rel="stylesheet" href="/assets/css/jquery-jvectormap.css" type="text/css" media="screen"/>
-    {% endif %}
-    {% if page.required contains "contribution" %}
-    <!-- github calendar -->
-    <script src="https://cdn.jsdelivr.net/npm/github-calendar@latest/dist/github-calendar.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-calendar@2.3.1/dist/github-calendar-responsive.css">
-    {% endif %}
 </head>

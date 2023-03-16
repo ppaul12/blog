@@ -4,15 +4,11 @@ github: https://github.com/PENG-AO
 leetcode: https://leetcode.cn/u/peng_ao/
 description: Hi there, this is PENG AO, welcome to my site! I'm a student/coder/reader/bodybuilder/traveler.
 
-header_pages:
+nav_pages:
   - home
-  - archive
   - album
   - footprint
   - profile
-  - search
-
-style: auto # auto, light, dark
 
 plugins:
   - jekyll-seo-tag
@@ -20,5 +16,6 @@ plugins:
 highlighter: none
 markdown: kramdown
 kramdown:
+  header_offset: 1
   syntax_highlighter_opts:
     disable: true

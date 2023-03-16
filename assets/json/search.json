@@ -2,13 +2,37 @@
 ---
 
 [
+    {% assign books = "" | split:"," %}
+    {%- for bookset in site.data.book-list -%}
+        {%- for book in bookset.books -%}
+            {% assign books = books | push:book %}
+        {%- endfor -%}
+    {%- endfor -%}
+    {%- for book in books -%}
+    {
+        "icon": "<i class='fa-solid fa-book'></i>",
+        "title": "{{ book.title }}",
+        "url": "{{ book.link }}",
+        "info": "{{ book.author }}"
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+    ,
+    {% assign projects = site.data.project-list | sort:"end" | reverse %}
+    {%- for project in projects -%}
+    {
+        "icon": "<i class='fa-solid fa-cubes'></i>",
+        "title": "{{ project.name }}",
+        "url": "{{ project.link }}",
+        "info": "{{ project.end }}"
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+    ,
     {%- for post in site.posts -%}
     {
+        "icon": "<i class='fa-solid fa-file-lines'></i>",
         "title": "{{ post.title | escape }}",
         "url": "{{ post.url }}",
-        "tags": "{{ post.tags | join: ', ' }}",
-        "date": "{{ post.date | date:"%Y.%m.%d" }}"
+        "info": "{{ post.date | date:'%Y.%m.%d' }}"
     }{% unless forloop.last %},{% endunless %}
     {%- endfor -%}
 ]
-

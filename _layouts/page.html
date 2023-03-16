@@ -2,26 +2,21 @@
 layout: default
 ---
 
+<div id="page-top"></div>
+
 {{ content }}
 
 <!-- auxiliary scripts -->
 <script>
     window.addEventListener("load", () => {
         // page fade-in effect
-        document.body.style.opacity = 1
-        // reproducible details open animation
-        document.querySelectorAll("details").forEach(detail => {
-            detail.addEventListener("toggle", toggleDetails)
+        // document.body.style.opacity = 1
+        // theme-switcher
+        themeSwitcher.addButton({
+            tag: "button",
+            class: "theme-switcher contrast",
+            target: "body"
         })
+        themeSwitcher.init()
     })
-
-    function toggleDetails(e) {
-        if (e.target.open) return
-        const copy = document.createElement("details")
-        copy.className = e.target.className
-        copy.innerHTML = e.target.innerHTML
-        copy.addEventListener("toggle", toggleDetails)
-        e.target.parentNode.replaceChild(copy, e.target)
-    }
 </script>
-

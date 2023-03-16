@@ -1,0 +1,43 @@
+---
+layout: page
+title: bookshelf
+icon: "fa-solid fa-book fa-fw"
+permalink: /bookshelf.html
+---
+
+<article>
+    <header><hgroup>
+        <h1>
+            <i class="{{ page.icon }}"></i>
+            {{ page.title | capitalize }}
+        </h1>
+        <h2>Deposit the mind and nourish ...</h2>
+    </hgroup></header>
+
+    {% assign booksets = site.data.book-list %}
+    {% for bookset in booksets %}
+    <details {% if forloop.index <= 2 %}open{% endif %}>
+        <summary class="sticky-top">
+            {{ bookset.year }}
+            ({{ bookset.books.size }})
+        </summary>
+        {% assign books = bookset.books | sort:"date" %}
+        {% for book in books %}
+        <article class="bookshelf">
+            <img class="thumbnail"
+                src="/assets/book-covers/{{ book.title }}.jpg"
+                alt="{{ book.title }}"
+                onclick="location.href='{{ book.link }}'">
+            <hgroup class="info">
+                <h3>{{ book.title }}</h3>
+                <h4>{{ book.subtitle }}</h4>
+                <h4>{{ book.author }}</h4>
+                <h4><em>{{ bookset.year }} {{ book.date }}</em></h4>
+            </hgroup>
+        </article>
+        {% endfor %}
+    </details>
+    {% endfor %}
+
+    <footer>{% include comment.html %}</footer>
+</article>

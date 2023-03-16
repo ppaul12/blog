@@ -5,19 +5,24 @@ icon: "fa-solid fa-image fa-fw"
 permalink: /album.html
 ---
 
-<h1><i class="{{ page.icon }}"></i> {{ page.title | capitalize }}</h1>
+<article>
+    <header><hgroup>
+        <h1>
+            <i class="{{ page.icon }}"></i>
+            {{ page.title | capitalize }}
+        </h1>
+        <h2>Recall the old memories and enjoy ...</h2>
+    </hgroup></header>
 
-<p>randomly selected photos</p>
+    <div class="gallery" id="album"></div>
 
-<div class="album" id="album"></div>
+    <button onclick="shufflePics(pics); location.href='#page-top'">
+        Click to shuffle
+        <i class="fa-solid fa-shuffle"></i>
+    </button>
 
-<div class="post-button-bar">
-    <span><!-- dummy --></span>
-    <a href="#album" class="faa-parent animated-hover" onclick="shufflePics(pics)">
-        <i class="fa-solid fa-shuffle faa-tada"></i>
-    </a>
-    <span><!-- dummy --></span>
-</div>
+    <footer>{% include comment.html %}</footer>
+</article>
 
 <script>
     // choose photos randomly
@@ -31,15 +36,11 @@ permalink: /album.html
     const shufflePics = (pics) => {
         const album = document.getElementById("album")
         album.innerHTML = ""
-        sample(pics, 10).forEach(pic => {
-            const wrapper = document.createElement("div")
-            wrapper.classList.add("wrapper")
-            wrapper.innerHTML = `<img src="${pic.path}">`
+        sample(pics, 6).forEach(pic => {
             const item = document.createElement("div")
             item.classList.add("item")
             item.innerHTML = `<img src="${pic.path}"><p><a href="${pic.url}">${pic.info}</a></p>`
-            wrapper.appendChild(item)
-            album.appendChild(wrapper)
+            album.appendChild(item)
         })
     }
     let pics = undefined
@@ -50,5 +51,3 @@ permalink: /album.html
         })
     })
 </script>
-
-{% include comment-block.html %}

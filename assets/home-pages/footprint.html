@@ -6,17 +6,27 @@ required: map
 permalink: /footprint.html
 ---
 
-<h1><i class="{{ page.icon }}"></i> {{ page.title | capitalize }}</h1>
+<article>
+    <header><hgroup>
+        <h1>
+            <i class="{{ page.icon }}"></i>
+            {{ page.title | capitalize }}
+        </h1>
+        <h2>Step forward and experience the world ...</h2>
+    </hgroup></header>
 
-<h2 id="china">🇨🇳 中国</h2>
-<div id="china-map" style="width: 100%; height: 480px;"></div>
+    <div id="china-map" style="width: 100%; height: 480px;"></div>
+    <hr>
+    <div id="japan-map" style="width: 100%; height: 480px;"></div>
+    <hr>
+    <div id="world-map" style="width: 100%; height: 480px;"></div>
 
-<h2 id="japan">🇯🇵 日本</h2>
-<div id="japan-map" style="width: 100%; height: 480px;"></div>
+    <footer>{% include comment.html %}</footer>
+</article>
 
-<h2 id="world">🇺🇳 世界</h2>
-<div id="world-map" style="width: 100%; height: 480px;"></div>
-
+<script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="/assets/js/jquery-jvectormap-min.js"></script>
+<link rel="stylesheet" href="/assets/css/jquery-jvectormap.css" type="text/css" media="screen"/>
 <script src="/assets/js/jquery-jvectormap-cn-merc.js"></script>
 <script src="/assets/js/jquery-jvectormap-jp-merc.js"></script>
 <script src="/assets/js/jquery-jvectormap-world-merc.js"></script>
@@ -69,5 +79,3 @@ permalink: /footprint.html
         })
     })
 </script>
-
-{% include comment-block.html %}

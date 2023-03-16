@@ -1,28 +1,38 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "zh" }}">
-    <meta http-equiv="Content-Security-Policy"
-        content="
-            default-src 'none';
-            script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://utteranc.es/ https://pyscript.net/;
-            style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net/ https://pyscript.net/ https://fonts.googleapis.com/;
-            img-src 'self' https://www.googletagmanager.com/ https://www.google-analytics.com/ https://github.com/ https://avatars.githubusercontent.com/;
-            font-src 'self' https://cdn.jsdelivr.net/ https://fonts.gstatic.com/;
-            connect-src 'self' https://cdn.jsdelivr.net/ https://www.googletagmanager.com/ https://www.google-analytics.com https://www.analytics.google.com/ https://pyscript.net/ https://api.bloggify.net/gh-calendar/;
-            media-src 'self';
-            object-src 'self';
-            child-src 'self' 'unsafe-inline' https://www.google.com/ https://www.youtube.com/ https://utteranc.es/;
-            form-action 'none';
-            base-uri 'self'
-        "
-    />
-    <meta http-equiv="X-XSS-Protection"  content="1;mode=block" always>
-    <meta http-equiv="Referrer-Policy" content="no-referrer, strict-origin-when-cross-origin">
+<html lang="{{ page.lang | default: 'zh' }}">
+    {% include csp.html %}
 
     {% include head.html %}
 
     <body class="container">
-        {% include header.html %}
+        <nav>
+            <ul><li>{{ site.title }}</li></ul>
+            {% assign pages = "" | split:"," %}
+            {% for page_name in site.nav_pages %}
+                {% assign page = site.pages | where: "title", page_name | first %}
+                {% assign pages = pages | push: page %}
+            {% endfor %}
+            <ul>
+                {% for page in pages %}
+                <li><i class="{{ page.icon }}" onclick="location.href='{{ page.url | relative_url }}'"></i></li>
+                {% endfor %}
+            </ul>
+        </nav>
+        
+        <header>
+            <div class="main-title">Life Goes On</div>
+            <div class="sub-title">そして生活が続く...来日方长</div>
+        </header>
+        
+        {% include search.html %}
+
         <main>{{ content }}</main>
-        {% include footer.html %}
+        
+        <footer>
+            <small>
+                by PENG AO made with <i class="fa-solid fa-heart faa-pulse animated faa-slow"></i><br>
+                <a href="{{ site.github }}">GitHub</a> · <a href="{{ site.leetcode }}">LeetCode</a>
+            </small>
+          </footer>
     </body>
 </html>

@@ -2,75 +2,69 @@
 layout: page
 ---
 
-<div id="page-top"></div>
+<article>
+    <!-- header -->
+    <header><hgroup>
+        <!-- tag cloud -->
+        <nav class="tag-cloud" aria-label="breadcrumb">
+            <ul>
+                {% for tag in page.tags %}
+                <li><a href="/tags.html#{{ tag }}">{{ tag }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
 
-<!-- tag cloud -->
-{% if page.tags.size > 0 %}
-<div class="tag-cloud-post">
-    <ul>
-        {% for tag in page.tags %}
-        <li><a href="/archive.html#{{ tag }}">{{ tag }}</a></li>
-        {% endfor %}
-    </ul>
-</div>
-{% endif %}
+        <!-- post title -->
+        <small><em>{{ page.date | date:"%Y.%m.%d" }}</em></small>
+        <h1>{{ page.title }}</h1>
+        <small>{{ page.sub-title }}</small>
+        
+        <!-- table of contents -->
+        {% include toc.html %}
+    </hgroup></header>
 
-<!-- post title -->
-<div class="post-title">
-    <div class="post-date">{{ page.date | date:"%Y.%m.%d"  }}</div>
-    <div class="main-title">{{ page.title }}</div>
-    {% if page.sub-title %}
-    <div class="sub-title">{{ page.sub-title }}</div>
-    {% endif %}
-</div>
+    <!-- main content -->
+    <div class="post">{{ content }}</div>
 
-<!-- table of contents -->
-{% include post-toc.html %}
+    <!-- footer -->
+    <footer>
+        <!-- button bar -->
+        <nav>
+            <!-- previous post button -->
+            {% if page.previous %}
+            <a href="{{ page.previous.url | relative_url }}" class="faa-parent animated-hover">
+                <i class="fa-solid fa-arrow-circle-left faa-horizontal faa-reverse"></i>
+            </a>
+            {% else %}
+            <span><!-- dummy --></span>
+            {% endif %}
 
-<!-- main content -->
-<div class="post">{{ content }}</div>
+            <!-- page top button -->
+            <a href="#page-top" class="faa-parent animated-hover"">
+                <i class="fa-solid fa-arrow-circle-up faa-vertical"></i>
+            </a>
 
-<!-- button bar -->
-<div class="post-button-bar">
-    <!-- previous post button -->
-    {% if page.previous %}
-    <a href="{{ page.previous.url | relative_url }}" class="faa-parent animated-hover">
-        <i class="fa-solid fa-arrow-circle-left faa-horizontal faa-reverse"></i>
-    </a>
-    {% else %}
-    <span><!-- dummy --></span>
-    {% endif %}
-    <!-- page top button -->
-    <a href="#page-top" class="faa-parent animated-hover"">
-        <i class="fa-solid fa-arrow-circle-up faa-vertical"></i>
-    </a>
-    <!-- next post button -->
-    {% if page.next %}
-    <a href="{{ page.next.url | relative_url }}" class="faa-parent animated-hover"">
-        <i class="fa-solid fa-arrow-circle-right faa-horizontal"></i>
-    </a>
-    {% else %}
-    <span><!-- dummy --></span>
-    {% endif %}
-    <!-- scroll indicator -->
-    <progress id="scroll-indicator" value="0"></progress>
-</div>
+            <!-- next post button -->
+            {% if page.next %}
+            <a href="{{ page.next.url | relative_url }}" class="faa-parent animated-hover"">
+                <i class="fa-solid fa-arrow-circle-right faa-horizontal"></i>
+            </a>
+            {% else %}
+            <span><!-- dummy --></span>
+            {% endif %}
+        </nav>
 
-<!-- comment block -->
-{% include comment-block.html %}
+        <!-- comment block -->
+        {% include comment.html %}
+    </footer>
+</article>
 
 <!-- auxiliary scripts -->
 <script>
     // scrollable table
     window.addEventListener("load", () => {
         document.querySelectorAll("table").forEach(table => {
-            table.outerHTML = `<div class="scrollable">${table.outerHTML}</div>`
+            table.outerHTML = `<figure>${table.outerHTML}</figure>`
         })
-    })
-    // scroll indicator
-    window.addEventListener("scroll", () => {
-        let scroll = document.body.scrollTop || document.documentElement.scrollTop
-        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight
-        document.getElementById("scroll-indicator").value = scroll / height
     })
 </script>

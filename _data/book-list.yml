@@ -3,14 +3,14 @@
     - title: 人间词话精读
       author: 苏缨
       link: https://book.douban.com/subject/26309078/
+    
+    - title: 新月集
+      author: 泰戈尔,郑振铎
+      link: https://book.douban.com/subject/4243304/
 
     - title: 三四郎(日)
       author: 夏目漱石
       link: https://www.shinchosha.co.jp/book/101004/
-
-    - title: 汪国真诗精编
-      author: 汪国真
-      link: https://book.douban.com/subject/26320374/
 
 - year: 2023
   books:
@@ -23,6 +23,11 @@
       author: 泰戈尔,郑振铎
       link: https://book.douban.com/subject/4243288/
       date: "01.19"
+    
+    - title: 汪国真诗精编
+      author: 汪国真
+      link: https://book.douban.com/subject/26320374/
+      date: "03.04"
 
 - year: 2022
   books:
@@ -57,7 +62,7 @@
       link: https://book.douban.com/subject/1483923/
       date: "11.29"
 
-    - title: 人生学校:微小的幸福
+    - title: 人生学校-微小的幸福
       link: https://book.douban.com/subject/30358016/
       date: "12.24"
 
@@ -121,11 +126,11 @@
       link: https://book.douban.com/subject/27008938/
       date: "11.29"
 
-    - title: 人生学校:爱情的真相
+    - title: 人生学校-爱情的真相
       link: https://book.douban.com/subject/30355379/
       date: "03.01"
 
-    - title: 人生学校:平静的力量
+    - title: 人生学校-平静的力量
       link: https://book.douban.com/subject/30358013/
       date: "04.30"
 
@@ -157,7 +162,7 @@
       link: https://www.kadokawa.co.jp/product/200105000075/
       date: "03.05"
 
-    - title: 论语(再读)
+    - title: 论语
       link: https://book.douban.com/subject/25933468/
       date: "11.17"
 
@@ -174,7 +179,7 @@
       link: https://books.bunshun.jp/ud/book/num/9784167838386
 
     - title: 心经
-      author: 玄奘法师
+      author: 玄奘
       link: https://book.douban.com/subject/4843456/
 
     - title: 你是人间四月天
@@ -267,9 +272,13 @@
 
 - year: 2014
   books:
+    - title: The Giver
+      author: Lois Lowry
+      link: https://en.wikipedia.org/wiki/The_Giver
+
     - title: The Little Prince
       author: Saint Exupéry
 
-    - title: A Young People’s History of the United States
+    - title: A Young People's History of the United States
       link: https://www.zinnedproject.org/materials/young-peoples-history-of-the-united-states
 

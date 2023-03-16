@@ -63,9 +63,9 @@ def buttonClick(event):
     pyscript.write('gen-res', execute(mainInfo, subInfo, passLen, digitCheck, symbolCheck, alphaCheck))
 </py-script>
 <div>
-    <div>主信息：<span><input class="py-input" id="main-info"></span></div>
-    <div>副信息：<span><input class="py-input" id="sub-info"></span></div>
-    <div>密码长度：<span><input class="py-input" id="pass-len"></span> (4~32可选)</div>
+    <div>主信息：<input class="py-input" id="main-info"></div>
+    <div>副信息：<input class="py-input" id="sub-info"></div>
+    <div>密码长度：(4~32可选)<input class="py-input" id="pass-len"></div>
     <div>密码构成：
         <span>数字<input type="checkbox" id="digit" checked></span>
         <span>符号<input type="checkbox" id="symbol" checked></span>

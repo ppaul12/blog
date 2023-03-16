@@ -19,7 +19,7 @@ required: code
 
 出于开发目的，工具的界面上应该展示出到目前为止的所有款项以及能够新增条目的区域。尽管对于一个有数据管理需求的工具来讲，增删改查应当尽可能的面面俱到，但为了开发的便利这次就只设计了完备的 “增” 和 “查” 的部分，“删” 计划由即时执行用户输入的代码实现，“改” 则由 “删” + “增” 替代。实际效果如下。
 
-<div class="img-frame"><img src="/assets/src/split-the-bill/GUI.jpeg" height=200></div>
+<div class="img-frame"><img src="/assets/src/split-the-bill/GUI.jpeg" style="height: 200px;"></div>
 
 ## 1.1 基本框架
 
@@ -278,7 +278,10 @@ class EditSection(object):
 
 实际执行由 `submitAction` 函数负责，调用 `exec` 函数，外加捕获异常以避免运行途中崩溃。而且大多情况下执行的代码会修改数据，所以执行完毕后需要刷新主界面。
 
-<div class="img-frame"><img src="/assets/src/split-the-bill/snippets.jpeg" height=200> <img src="/assets/src/split-the-bill/snippets_input.jpeg" height=200></div>
+<div class="img-frame">
+    <img src="/assets/src/split-the-bill/snippets.jpeg" style="height: 200px;">
+    <img src="/assets/src/split-the-bill/snippets_input.jpeg" style="height: 200px;">
+</div>
 
 执行按钮左侧为代码片段按钮，主要是为了方便部分代码的输入。实现得比较简单，就在此略过了。效果大致如上图。
 
@@ -321,7 +324,10 @@ def splitBill(date):
 
 # 4. 简单测试
 
-<div class="img-frame"><img src="/assets/src/split-the-bill/GUI.jpeg" height=200> <img src="/assets/src/split-the-bill/test.jpeg" height=200></div>
+<div class="img-frame">
+    <img src="/assets/src/split-the-bill/GUI.jpeg" style="height: 200px;">
+    <img src="/assets/src/split-the-bill/test.jpeg" style="height: 200px;">
+</div>
 
 希望这个小工具能够切实地解决即将到来的旅途中的一些需求。
 

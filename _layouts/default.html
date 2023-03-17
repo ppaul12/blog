@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: 'zh' }}">
     {% include csp.html %}
-
     {% include head.html %}
 
     <body class="container">
         <nav>
             <ul><li>{{ site.title }}</li></ul>
-            {% assign pages = "" | split:"," %}
-            {% for page_name in site.nav_pages %}
-                {% assign page = site.pages | where: "title", page_name | first %}
-                {% assign pages = pages | push: page %}
-            {% endfor %}
             <ul>
-                {% for page in pages %}
-                <li><i class="{{ page.icon }}" onclick="location.href='{{ page.url | relative_url }}'"></i></li>
-                {% endfor %}
+                <li><i class="fa-solid fa-house fa-fw" onclick="location.href='/'"></i></li>
+                <li><i class="fa-solid fa-image fa-fw" onclick="location.href='/album.html'"></i></li>
+                <li><i class="fa-solid fa-map-location-dot fa-fw" onclick="location.href='/footprint.html'"></i></li>
+                <li><i class="fa-solid fa-user fa-fw" onclick="location.href='/profile.html'"></i></li>
             </ul>
         </nav>
         

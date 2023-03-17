@@ -4,12 +4,6 @@ github: https://github.com/PENG-AO
 leetcode: https://leetcode.cn/u/peng_ao/
 description: Hi there, this is PENG AO, welcome to my site! I'm a student/coder/reader/bodybuilder/traveler.
 
-nav_pages:
-  - home
-  - album
-  - footprint
-  - profile
-
 plugins:
   - jekyll-seo-tag
 

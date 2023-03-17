@@ -1,7 +1,6 @@
 ---
 layout: page
 title: home
-icon: "fa-solid fa-house fa-fw"
 permalink: /
 ---
 
@@ -23,7 +22,7 @@ permalink: /
             </li>
             {% endfor %}
         </ul>
-        <a href="/posts.html">read {{ site.posts.size | minus:limit }} more...</a>
+        <a href="/posts.html">show {{ site.posts.size | minus:limit }} more...</a>
     </article>
     
     <!-- projects -->
@@ -53,31 +52,32 @@ permalink: /
             </li>
             {% endfor %}
         </ul>
-        <a href="/projects.html">read {{ projects.size | minus:limit }} more...</a>
+        <a href="/projects.html">show {{ projects.size | minus:limit }} more...</a>
     </article>
     
     <!-- books -->
     <article class="card">
-        <header onclick="location.href='/bookshelf.html'">
+        <header onclick="location.href='/books.html'">
             <i class="fa-solid fa-book fa-fw"></i>
             <strong>Books</strong>
         </header>
 
         {% assign booksets = site.data.book-list %}
-        <div class="bookshelf">
+        <div class="book-shelf">
             {% for bookset in booksets limit:2 %}
                 {% assign books = bookset.books | sort:"date" %}
                 {% for book in books %}
-                <img class="thumbnail"
+                <img class="book-cover"
                     src="/assets/book-covers/{{ book.title }}.jpg"
                     alt="{{ book.title }}"
                     data-target="{{ book.title }}" onclick="toggleModal(event)">
-                <dialog id="{{ book.title }}"><article class="bookshelf">
-                    <img class="thumbnail"
+                <dialog id="{{ book.title }}"><article class="book-tag">
+                    <img class="book-cover"
                         src="/assets/book-covers/{{ book.title }}.jpg"
                         alt="{{ book.title }}"
-                        onclick="location.href='{{ book.link }}'">
-                    <hgroup class="info">
+                        onclick="location.href='{{ book.link }}'"
+                        onerror="this.src='/assets/book-covers/placeholder.png'">
+                    <hgroup class="book-info">
                         <h3>{{ book.title }}</h3>
                         <h4>{{ book.subtitle }}</h4>
                         <h4>{{ book.author }}</h4>
@@ -86,7 +86,7 @@ permalink: /
                 </article></dialog>
                 {% endfor %}
             {% endfor %}
-            <a href="/bookshelf.html">and more...</a>
+            <a href="/books.html">show more...</a>
         </div>
     </article>
 </div>

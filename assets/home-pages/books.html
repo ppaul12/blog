@@ -2,7 +2,7 @@
 layout: page
 title: bookshelf
 icon: "fa-solid fa-book fa-fw"
-permalink: /bookshelf.html
+permalink: /books.html
 ---
 
 <article>
@@ -11,7 +11,7 @@ permalink: /bookshelf.html
             <i class="{{ page.icon }}"></i>
             {{ page.title | capitalize }}
         </h1>
-        <h2>Deposit the mind and nourish ...</h2>
+        <h2>Nourish the mind and ...</h2>
     </hgroup></header>
 
     {% assign booksets = site.data.book-list %}
@@ -23,12 +23,13 @@ permalink: /bookshelf.html
         </summary>
         {% assign books = bookset.books | sort:"date" %}
         {% for book in books %}
-        <article class="bookshelf">
-            <img class="thumbnail"
+        <article class="book-tag">
+            <img class="book-cover"
                 src="/assets/book-covers/{{ book.title }}.jpg"
                 alt="{{ book.title }}"
-                onclick="location.href='{{ book.link }}'">
-            <hgroup class="info">
+                onclick="location.href='{{ book.link }}'"
+                onerror="this.src='/assets/book-covers/placeholder.png'">
+            <hgroup class="book-info">
                 <h3>{{ book.title }}</h3>
                 <h4>{{ book.subtitle }}</h4>
                 <h4>{{ book.author }}</h4>

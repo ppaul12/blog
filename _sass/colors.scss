@@ -1,0 +1,44 @@
+// Light scheme (Default)
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
+    --fg-color: #{$nord0};
+    --subtle-fg-color: #{$nord3};
+    --bg-color: #{$nord6};
+    --subtle-bg-color: #{$nord5};
+
+    --color: var(--fg-color);
+    --background-color: var(--bg-color);
+    --card-background-color: var(--bg-color);
+    --card-sectionning-background-color: var(--subtle-bg-color);
+    --table-border-color: var(--subtle-fg-color);
+}
+
+// Dark scheme (Auto)
+@media only screen and (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --fg-color: #{$nord6};
+        --subtle-fg-color: #{$nord4};
+        --bg-color: #{$nord0};
+        --subtle-bg-color: #{$nord1};
+
+        --color: var(--fg-color);
+        --background-color: var(--bg-color);
+        --card-background-color: var(--bg-color);
+        --card-sectionning-background-color: var(--subtle-bg-color);
+        --table-border-color: var(--subtle-fg-color);
+    }
+}
+
+// Dark scheme (Forced)
+[data-theme="dark"] {
+    --fg-color: #{$nord6};
+    --subtle-fg-color: #{$nord4};
+    --bg-color: #{$nord0};
+    --subtle-bg-color: #{$nord1};
+
+    --color: var(--fg-color);
+    --background-color: var(--bg-color);
+    --card-background-color: var(--bg-color);
+    --card-sectionning-background-color: var(--subtle-bg-color);
+    --table-border-color: var(--subtle-fg-color);
+}

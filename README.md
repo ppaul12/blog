@@ -14,16 +14,15 @@ Just a record of daily life.
 ## Tec Details
 
 - main: [Jekyll](https://jekyllrb.com) + [github pages](https://pages.github.com)
-- theme: [dash](https://github.com/bitbrain/jekyll-dash)(ideas) + [console](https://github.com/b2a3e8/jekyll-theme-console)(codes) + customization
-- color palettes: [Nord Theme](https://www.nordtheme.com)
-- font: [LXGW WenKai](https://github.com/lxgw/LxgwWenKai)
-- icon: [Font Awesome](https://fontawesome.com) + [font-awesome-animation](https://l-lin.github.io/font-awesome-animation/)
+- colors: [Nord Theme](https://www.nordtheme.com)
+- fonts: [LXGW WenKai](https://github.com/lxgw/LxgwWenKai) + [Allura](https://www.jsdelivr.com/package/npm/@fontsource/allura)
+- icon: [Font Awesome](https://fontawesome.com)
+- animation: [animate.css](https://github.com/animate-css/animate.css) + [font-awesome-animation](https://l-lin.github.io/font-awesome-animation/)
 - comment: [utterances](https://utteranc.es)
 - code highlight: [highlight.js](https://highlightjs.org) + [Nord Theme](https://www.nordtheme.com/ports/highlightjs)
 - math formulas: [MathJax](https://www.mathjax.org)
 - search: [Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search)
 - footprint map: [jVectorMap](https://jvectormap.com)
-- github calendar: [github-calendar](https://github.com/Bloggify/github-calendar)
 - ...
 
 ## Start-up

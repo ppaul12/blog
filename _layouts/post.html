@@ -15,16 +15,18 @@ layout: page
         </nav>
 
         <!-- post title -->
-        <small><em>{{ page.date | date:"%Y.%m.%d" }}</em></small>
-        <h1>{{ page.title }}</h1>
-        <small>{{ page.sub-title }}</small>
+        <div class="post-title">
+            <small><em>{{ page.date | date:"%Y.%m.%d" }}</em></small>
+            <h1>{{ page.title }}</h1>
+            <small>{{ page.sub-title }}</small>
+        </div>
         
         <!-- table of contents -->
         {% include toc.html %}
     </hgroup></header>
 
     <!-- main content -->
-    <div class="post">{{ content }}</div>
+    {{ content }}
 
     <!-- footer -->
     <footer>

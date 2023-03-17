@@ -8,17 +8,37 @@
         flex-grow: 1;
         width: 46%;
         margin: 0.5em;
+
+        animation: zoomIn;
+        animation-duration: 1s;
     }
+}
+
+// post title
+.post-title {
+    animation: fadeInLeft;
+    animation-duration: 1s;
 }
 
 // tag cloud
 .tag-cloud {
     justify-content: end !important;
+
+    animation: fadeInRight;
+    animation-duration: 1s;
 }
 
 // search box
 .search-box {
     margin: 0 0.5em;
+
+    animation: zoomIn;
+    animation-duration: 1s;
+
+    article {
+        animation: fadeInDown;
+        animation-duration: 1s;
+    }
 }
 
 // tree list
@@ -130,11 +150,17 @@
     height: 200px;
     margin: 0 0.5em;
     object-fit: fill;
+
+    animation: slideInLeft;
+    animation-duration: 1.5s;
 }
 
 .book-info {
     display: inline-block;
     text-align: right;
+
+    animation: slideInRight;
+    animation-duration: 1s;
 }
 
 // timeline

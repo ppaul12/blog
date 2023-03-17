@@ -3,14 +3,14 @@
 }
 
 body {
-    opacity: 0;
-    transition: opacity 1s;
-
     & > header, footer {
         text-align: center;
     }
 
     & > header {
+        animation: zoomIn;
+        animation-duration: 1s;
+
         .main-title {
             font-family: 'Allura';
             font-size: 3em;
@@ -19,6 +19,14 @@ body {
         .sub-title {
             font-size: 1em;
         }
+    }
+}
+
+// main
+main {
+    & > article {
+        animation: fadeIn;
+        animation-duration: 1s;
     }
 }
 

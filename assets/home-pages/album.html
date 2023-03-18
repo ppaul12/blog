@@ -14,16 +14,12 @@ permalink: /album.html
         <h2>Recall the old memories ...</h2>
     </hgroup></header>
 
-    <div class="gallery" id="album"></div>
-
-    <button onclick="shufflePics(pics); location.href='#page-top'">
-        Click to shuffle
-        <i class="fa-solid fa-shuffle"></i>
-    </button>
+    <div class="album" id="album"></div>
 
     <footer>{% include comment.html %}</footer>
 </article>
 
+<!-- auxiliary scripts -->
 <script>
     // choose photos randomly
     const sample = (array, size=1) => {
@@ -36,18 +32,26 @@ permalink: /album.html
     const shufflePics = (pics) => {
         const album = document.getElementById("album")
         album.innerHTML = ""
-        sample(pics, 6).forEach(pic => {
+        sample(pics, 4).forEach(pic => {
             const item = document.createElement("div")
-            item.classList.add("item")
-            item.innerHTML = `<img src="${pic.path}"><p><a href="${pic.url}">${pic.info}</a></p>`
+            item.className = "item"
+            item.onclick = event => { location.href = pic.url }
+            item.innerHTML = `<img src="${pic.path}"><p>${pic.info}</p>`
             album.appendChild(item)
         })
     }
     let pics = undefined
     window.addEventListener("load", () => {
+        // prepare random photos
         fetch("/assets/json/album.json").then(response => response.json()).then(data => {
             pics = data
             shufflePics(pics)
         })
+        // add shuffle button
+        let button = document.createElement("button")
+        button.className = "contrast faa-parent animated-hover"
+        button.onclick = event => shufflePics(pics)
+        button.innerHTML = `<i class="fa-solid fa-shuffle faa-shake faa-slow"></i>`
+        document.querySelector(".button-box").appendChild(button)
     })
 </script>

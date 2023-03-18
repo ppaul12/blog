@@ -14,5 +14,23 @@ layout: default
             target: ".button-box"
         })
         themeSwitcher.init()
+        // make table scrollable
+        document.querySelectorAll("table").forEach(tbl => {
+            tbl.outerHTML = `<figure>${tbl.outerHTML}</figure>`
+        })
+        // add modal for gallery photos
+        document.querySelectorAll(".gallery img").forEach((img, idx) => {
+            // create modal dialog
+            let modal = document.createElement("dialog")
+            modal.id = `pic${idx + 1}`
+            let article = document.createElement("article")
+            article.innerHTML = `<a class="close" href="#close" aria-label="Close" data-target="pic${idx + 1}" onclick="toggleModal(event)"></a>`
+            article.appendChild(img.cloneNode())
+            modal.appendChild(article)
+            post.querySelector(".gallery").appendChild(modal)
+            // set target info
+            img.setAttribute("data-target", `pic${idx + 1}`)
+            img.onclick = toggleModal
+        })
     })
 </script>

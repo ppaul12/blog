@@ -68,11 +68,6 @@ layout: page
 <!-- auxiliary scripts -->
 <script>
     window.addEventListener("load", () => {
-        const post = document.getElementById("post")
-        // make table scrollable
-        post.querySelectorAll("table").forEach(tbl => {
-            tbl.outerHTML = `<figure>${tbl.outerHTML}</figure>`
-        })
         // add a sidebar button for toc
         let button = document.createElement("button")
         button.className = "contrast faa-parent animated-hover"
@@ -81,6 +76,7 @@ layout: page
         button.innerHTML = `<i class="fa-solid fa-bars-staggered faa-shake faa-slow"></i>`
         document.querySelector(".button-box").appendChild(button)
         // generate toc
+        const post = document.getElementById("post")
         let prevTag = "", currTag = "", tagStack = new Array()
         let toc = document.createElement("div")
         toc.className = "tree-list"

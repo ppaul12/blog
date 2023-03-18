@@ -127,6 +127,19 @@
     }
 }
 
+// album for images
+.album {
+    @extend .gallery;
+
+    .item img {
+        height: 300px;
+
+        &:hover {
+            object-fit: scale-down;
+        }
+    }
+}
+
 // books
 .book-shelf {
     overflow-x: scroll;

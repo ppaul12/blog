@@ -2,18 +2,16 @@
 layout: default
 ---
 
-<div id="page-top"></div>
-
 {{ content }}
 
 <!-- auxiliary scripts -->
 <script>
     window.addEventListener("load", () => {
-        // theme-switcher
+        // init theme switcher
         themeSwitcher.addButton({
             tag: "button",
-            class: "theme-switcher contrast",
-            target: "body"
+            class: "theme-switcher contrast faa-parent animated-hover",
+            target: ".button-box"
         })
         themeSwitcher.init()
     })

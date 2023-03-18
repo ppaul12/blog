@@ -4,8 +4,8 @@ const themeSwitcher = {
     // Config
     _scheme: 'auto',
     change: {
-        light: '<i class="fa-regular fa-lightbulb"></i>',
-        dark: '<i class="fa-solid fa-lightbulb"></i>',
+        light: '<i class="fa-regular fa-lightbulb faa-flash faa-slow"></i>',
+        dark: '<i class="fa-solid fa-lightbulb faa-flash faa-slow"></i>',
     },
     buttonsTarget: '.theme-switcher',
     localStorageKey: 'picoPreferredColorScheme',

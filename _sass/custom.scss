@@ -47,13 +47,6 @@
     font-weight: 400;
     line-height: 1.5;
     
-    span {
-        // font-size: $base-font-size * 0.8;
-        font-style: italic;
-        letter-spacing: 0.4px;
-        color: var(--subtle-fg-color);
-    }
-    
     ul {
         li {
             position: relative;
@@ -90,21 +83,23 @@
                 height: 15px;
             }
         }
-        
-        a {
-            text-decoration: none;
-        }
     }
 }
 
-// theme switcher
-.theme-switcher {
+// button box
+.button-box {
+    display: flex;
+    flex-direction: column;
     position: fixed;
     right: calc(var(--spacing) / 2 + var(--scrollbar-width, 0px));
     bottom: var(--spacing);
-    width: auto;
-    border-radius: 4em;
-    line-height: 1;
+
+    button {
+        border-radius: 4em;
+
+        animation: fadeInUp;
+        animation-duration: 1s;
+    }
 }
 
 // gallery for images

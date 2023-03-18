@@ -29,14 +29,14 @@
 }
 
 // search box
-.search-box {
-    margin: 0 0.5em;
+#search-box {
+    #search-input {
+        animation: zoomIn;
+        animation-duration: 1s;
+    }
 
-    animation: zoomIn;
-    animation-duration: 1s;
-
-    article {
-        animation: fadeInDown;
+    #search-results article {
+        animation: fadeInLeft;
         animation-duration: 1s;
     }
 }
@@ -119,10 +119,16 @@
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             object-fit: cover;
+
+            animation: zoomIn;
+            animation-duration: 1s;
         }
 
         p {
             margin: 0.2em 0;
+
+            animation: fadeInDown;
+            animation-duration: 1s;
         }
     }
 }
@@ -266,7 +272,8 @@
 .sticky-top {
     position: sticky;
     top: 0;
-    background-color: var(--background-color);
+    background-color: var(--bg-color);
+    padding: 0.5em 0;
 }
 
 // image frame

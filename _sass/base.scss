@@ -5,11 +5,13 @@
 body {
     & > header, footer {
         text-align: center;
+
+        animation: zoomIn;
+        animation-duration: 1s;
     }
 
     & > header {
-        animation: zoomIn;
-        animation-duration: 1s;
+        padding-bottom: 0;
 
         .main-title {
             font-family: 'Allura';
@@ -20,13 +22,17 @@ body {
             font-size: 1em;
         }
     }
+
+    & > footer {
+        padding-top: 0;
+    }
 }
 
 // main
 main {
     & > article {
         animation: fadeIn;
-        animation-duration: 1s;
+        animation-duration: 2s;
     }
 }
 

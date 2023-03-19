@@ -4,7 +4,7 @@
         <li><i class="fa-solid fa-house fa-fw" onclick="location.href='/'"></i></li>
         <li><i class="fa-solid fa-image fa-fw" onclick="location.href='/album.html'"></i></li>
         <li><i class="fa-solid fa-map-location-dot fa-fw" onclick="location.href='/footprint.html'"></i></li>
-        <li><i class="fa-solid fa-user fa-fw" onclick="location.href='/profile.html'"></i></li>
+        <li><i class="fa-solid fa-user fa-fw" onclick="toggleModal(event)" data-target="profile-box"></i></li>
     </ul>
 </nav>
 
@@ -12,3 +12,67 @@
     <div class="main-title">Life Goes On</div>
     <div class="sub-title">そして生活が続く...来日方长</div>
 </header>
+
+<dialog id="profile-box"><article>
+    <header><div class="close-btn" data-target="profile-box" onclick="toggleModal(event)"></div></header>
+    <div class="profile-avatar"><img src="{{ site.github }}.png"></div>
+    <div class="profile-name">Peng Ao</div>
+    <div class="profile-icons">
+        <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/PENG-AO/PENG-AO.github.io">
+        <img alt="GitHub issues" src="https://img.shields.io/github/issues/PENG-AO/PENG-AO.github.io">
+        <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/PENG-AO/PENG-AO.github.io">
+        <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/PENG-AO/PENG-AO.github.io">
+        <img alt="GitHub deployments" src="https://img.shields.io/github/deployments/PENG-AO/PENG-AO.github.io/github-pages">
+    </div>
+    <hr><!-- skills -->
+    <div class="profile-icons">
+        <img src="/assets/skill-icons/c.svg">
+        <img src="/assets/skill-icons/cpp.svg">
+        <img src="/assets/skill-icons/git.svg">
+        <img src="/assets/skill-icons/github.svg">
+        <img src="/assets/skill-icons/jekyll.svg">
+        <img src="/assets/skill-icons/latex.svg">
+        <img src="/assets/skill-icons/leetcode.svg">
+        <img src="/assets/skill-icons/markdown.svg">
+        <img src="/assets/skill-icons/n3ds.svg">
+        <img src="/assets/skill-icons/neovim.svg">
+        <img src="/assets/skill-icons/ns.svg">
+        <img src="/assets/skill-icons/python.svg">
+    </div>
+    <hr><!-- info -->
+    <ul class="profile-info">
+        <li><i class="fa-solid fa-house-chimney fa-fw"></i> China, Shenyang</li>
+        <li><i class="fa-solid fa-map-pin fa-fw"></i> Japan, Tokyo</li>
+        <li>
+            <i class="fa-solid fa-building fa-fw"></i>
+            <a href="https://www.u-tokyo.ac.jp/ja/index.html">U-tokyo</a>,
+            <a href="https://www.i.u-tokyo.ac.jp/index.shtml">IST</a>,
+            <a href="https://www.is.s.u-tokyo.ac.jp">CS</a>
+        </li>
+        <li>
+            <i class="fa-solid fa-envelope fa-fw"></i>
+            <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        </li>
+        <li>
+            <i class="fa-solid fa-handshake fa-fw"></i>
+            <a href="{{ site.github }}">Github</a>, <a href="{{ site.leetcode }}">Leetcode</a>
+        </li>
+    </ul>
+    <hr><!-- identity -->
+    <ul class="profile-info">
+        <li><i class="fa-solid fa-user-graduate fa-fw"></i> Professional student</li>
+        <li><i class="fa-solid fa-coffee fa-fw"></i> Perfectionist coder</li>
+        <li><i class="fa-solid fa-book-reader fa-fw"></i> Optimistic reader</li>
+        <li><i class="fa-solid fa-dumbbell fa-fw"></i> Lite bodybuilder</li>
+        <li><i class="fa-solid fa-compass fa-fw"></i> Inquisitive traveler</li>
+        <li><i class="fa-solid fa-camera fa-fw"></i> Amateur photographer</li>
+        <li>...</li>
+    </ul>
+    <hr><!-- hobby -->
+    <ul class="profile-info">
+        <li><i class="fa-solid fa-laptop-code fa-fw"></i> <a href="{{ site.github }}">Coding</a></li>
+        <li><i class="fa-solid fa-book fa-fw"></i> <a href="/books.html">Reading</a></li>
+        <li><i class="fa-solid fa-person-hiking fa-fw"></i> <a href="/footprint.html">Traveling</a></li>
+        <li>...</li>
+    </ul>
+</article></dialog>

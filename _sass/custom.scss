@@ -45,17 +45,81 @@
 }
 
 // search box
-#search-box {
-    #search-input {
+#search {
+    &-input {
         margin-top: 1em;
 
         animation: zoomIn;
         animation-duration: 1s;
     }
 
-    #search-results article {
+    &-results article {
         animation: fadeInLeft;
         animation-duration: 1s;
+    }
+}
+
+// profile
+.profile {
+    &-avatar {
+        position: relative;
+        top: -80px;
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        z-index: 2;
+
+        animation: backInDown;
+        animation-duration: 1s;
+
+        img {
+            width: 120px;
+            height: 120px;
+            border-radius: 60px;
+        }
+    }
+
+    &-name {
+        position: sticky;
+        top: -1em;
+        width: 80%;
+        margin: -60px auto 0;
+        text-align: center;
+        font-family: "Allura";
+        font-size: 2em;
+        z-index: 2;
+
+        animation: fadeInDown;
+        animation-duration: 1s;
+    }
+
+    &-icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-width: 400px;
+
+        img {
+            margin: 0.5em;
+            border-radius: 0;
+
+            animation: rotateIn;
+            animation-duration: 1s;
+        }
+    }
+
+    &-info {
+        margin-bottom: 0;
+
+        &:nth-of-type(even) {
+            animation: fadeInLeft;
+            animation-duration: 1s;
+        }
+
+        &:nth-of-type(odd) {
+            animation: fadeInRight;
+            animation-duration: 1s;
+        }
     }
 }
 
@@ -115,34 +179,38 @@
 }
 
 // books
-.book-shelf {
-    overflow-x: scroll;
-    white-space: nowrap;
-}
-
-.book-tag {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.book-cover {
-    display: inline-block;
-    width: 150px;
-    height: 200px;
-    margin: 0 0.5em;
-    object-fit: fill;
-
-    animation: slideInLeft;
-    animation-duration: 1.5s;
-}
-
-.book-info {
-    display: inline-block;
-    text-align: right;
-
-    animation: slideInRight;
-    animation-duration: 1s;
+.book {
+    &-shelf {
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+    
+    &-tag {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        overflow-x: scroll;
+    }
+    
+    &-cover {
+        display: inline-block;
+        width: 150px;
+        height: 200px;
+        margin: 0 0.5em;
+        object-fit: fill;
+    
+        animation: slideInLeft;
+        animation-duration: 1.5s;
+    }
+    
+    &-info {
+        display: inline-block;
+        text-align: right;
+        white-space: nowrap;
+    
+        animation: slideInRight;
+        animation-duration: 1s;
+    }
 }
 
 // tree list

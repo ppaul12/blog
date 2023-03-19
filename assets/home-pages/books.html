@@ -16,8 +16,8 @@ permalink: /books.html
 
     {% assign booksets = site.data.book-list %}
     {% for bookset in booksets %}
-    <details {% if forloop.index <= 2 %}open{% endif %}>
-        <summary class="sticky-top">
+    <details id="{{ bookset.year }}" {% if forloop.index <= 2 %}open{% endif %}>
+        <summary>
             {{ bookset.year }}
             ({{ bookset.books.size }})
         </summary>
@@ -42,3 +42,8 @@ permalink: /books.html
 
     <footer>{% include comment.html %}</footer>
 </article>
+
+<script>
+    initToc(document, "details")
+    initRespondingDetails()
+</script>

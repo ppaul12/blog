@@ -6,7 +6,7 @@ layout: page
 
 <article>
     <!-- header -->
-    <header><hgroup>
+    <header>
         <!-- tag cloud -->
         <nav class="tag-cloud" aria-label="breadcrumb">
             <ul>
@@ -17,12 +17,12 @@ layout: page
         </nav>
 
         <!-- post title -->
-        <div class="post-title">
+        <hgroup class="post-title">
             <small><em>{{ page.date | date:"%Y.%m.%d" }}</em></small>
-            <h1>{{ page.title }}</h1>
-            <small>{{ page.sub-title }}</small>
-        </div>
-    </hgroup></header>
+            <h3>{{ page.title}}</h3>
+            <h4><em>{{ page.sub-title }}</em></h4>
+        </hgroup>
+    </header>
 
     <!-- main content -->
     <div id="post">{{ content }}</div>
@@ -60,48 +60,7 @@ layout: page
     </footer>
 </article>
 
-<!-- table of contents -->
-<dialog id="toc"><article>
-    <div class="close" data-target="toc" onclick="toggleModal(event)"></div>
-</article></dialog>
-
 <!-- auxiliary scripts -->
 <script>
-    window.addEventListener("load", () => {
-        // add a sidebar button for toc
-        let button = document.createElement("button")
-        button.className = "contrast faa-parent animated-hover"
-        button.setAttribute("data-target", "toc")
-        button.onclick = toggleModal
-        button.innerHTML = `<i class="fa-solid fa-bars-staggered faa-shake faa-slow"></i>`
-        document.querySelector(".button-box").appendChild(button)
-        // generate toc
-        const post = document.getElementById("post")
-        let prevTag = "", currTag = "", tagStack = new Array()
-        let toc = document.createElement("div")
-        toc.className = "tree-list"
-        toc.innerHTML = "TOC" + Array.from(post.querySelectorAll("h1, h2, h3, h4")).reduce((toc, header) => {
-            currTag = header.tagName
-            if (currTag > prevTag) { // h1 -> h2, h2 -> h3
-                toc += `<ul><li><a href="#${header.id}">${header.textContent}</a>`
-                tagStack.push("</ul>")
-                tagStack.push("</li>")
-            } else if (currTag == prevTag) { // h1 -> h1, h2 -> h2, h3 -> h3
-                toc += tagStack.pop() // </li>
-                toc += `<li><a href="#${header.id}">${header.textContent}</a>`
-                tagStack.push("</li>")
-            } else { // h3 -> h2, h3 -> h1, h2 -> h1
-                toc += tagStack.pop() // </li>
-                for (let i = 0; i < (prevTag[1] - currTag[1]); i++) {
-                    toc += tagStack.pop() // </ul>
-                    toc += tagStack.pop() // </li>
-                }
-                toc += `<li><a href="#${header.id}">${header.textContent}</a>`
-                tagStack.push("</li>")
-            }
-            prevTag = currTag
-            return toc
-        }, "") + tagStack.reduce((a, b) => a + b, "")
-        document.querySelector("#toc > article").appendChild(toc)
-    })
+    initToc(document.getElementById("post"), "h2, h3, h4")
 </script>

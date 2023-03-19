@@ -16,20 +16,27 @@ permalink: /projects.html
 
     {% assign projectsets = site.data.project-list | sort:"end" | reverse | group_by_exp:"project", "project.end | truncate:4, ''" %}
     {% for projectset in projectsets %}
-    <details open>
-        <summary class="sticky-top">
+    <details id="{{ projectset.name }}" open>
+        <summary>
             {{ projectset.name }}
             ({{ projectset.items.size }})
         </summary>
         {% for project in projectset.items %}
-        <article onclick="location.href='{{ project.link }}'"><hgroup>
-            <small><em>{{ project.start }} ~ {{ project.end }}</em></small>
-            <h3>{{ project.name }}</h3>
-            <h4><em>{{ project.type }}</em></h4>
-        </hgroup></article>
+        <article onclick="location.href='{{ project.link }}'">
+            <hgroup class="post-title">
+                <small><em>{{ project.start }} ~ {{ project.end }}</em></small>
+                <h3>{{ project.name }}</h3>
+                <h4><em>{{ project.type }}</em></h4>
+            </hgroup>
+        </article>
         {% endfor %}
     </details>
     {% endfor %}
 
     <footer>{% include comment.html %}</footer>
 </article>
+
+<script>
+    initToc(document, "details")
+    initRespondingDetails()
+</script>

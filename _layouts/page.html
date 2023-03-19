@@ -4,64 +4,27 @@ layout: default
 
 {{ content }}
 
+<!-- side buttons -->
+<div class="button-box"></div>
+
+<!-- search box -->
 <dialog id="search-box"><article>
-    <div class="close" data-target="search-box" onclick="toggleModal(event)"></div>
-    <input id="search-input" type="search" placeholder='press "/" to search ...'>
+    <header>
+        <div class="close-btn" data-target="search-box" onclick="toggleModal(event)"></div>
+        <input id="search-input" type="search" placeholder='press "/" to search ...'>
+    </header>
     <div id="search-results"></div>
+</article></dialog>
+
+<!-- table of contents -->
+<dialog id="toc-box"><article>
+    <header><div class="close-btn" data-target="toc-box" onclick="toggleModal(event)"></div></header>
 </article></dialog>
 
 <!-- auxiliary scripts -->
 <script>
-    window.addEventListener("load", () => {
-        // init insite search
-        let button = document.createElement("button")
-        button.className = "contrast faa-parent animated-hover"
-        button.setAttribute("data-target", "search-box")
-        button.onclick = toggleModal
-        button.innerHTML = `<i class="fa-solid fa-magnifying-glass faa-wrench faa-slow"></i>`
-        document.querySelector(".button-box").appendChild(button)
-        const sjs = SimpleJekyllSearch({
-            json: "/assets/json/search.json",
-            searchInput: document.getElementById("search-input"),
-            resultsContainer: document.getElementById("search-results"),
-            searchResultTemplate: `
-                <article onclick="location.href='{url}'"><hgroup>
-                    <h3>{icon} {title}</h3>
-                    <h4><em>{info}</em></h4>
-                </hgroup></article>
-            `,
-            noResultsText: "<article>No results found</article>",
-            limit: 10
-        })
-        document.addEventListener("keyup", e => {
-            if (e.key == "/") {
-                document.getElementById("search-input").focus()
-            }
-        })
-        // init theme switcher
-        themeSwitcher.addButton({
-            tag: "button",
-            class: "theme-switcher contrast faa-parent animated-hover",
-            target: ".button-box"
-        })
-        themeSwitcher.init()
-        // make table scrollable
-        document.querySelectorAll("table").forEach(tbl => {
-            tbl.outerHTML = `<figure>${tbl.outerHTML}</figure>`
-        })
-        // add modal for gallery photos
-        document.querySelectorAll(".gallery img").forEach((img, idx) => {
-            // create modal dialog
-            let modal = document.createElement("dialog")
-            modal.id = `pic${idx + 1}`
-            let article = document.createElement("article")
-            article.innerHTML = `<div class="close" data-target="pic${idx + 1}" onclick="toggleModal(event)"></div>`
-            article.appendChild(img.cloneNode())
-            modal.appendChild(article)
-            post.querySelector(".gallery").appendChild(modal)
-            // set target info
-            img.setAttribute("data-target", `pic${idx + 1}`)
-            img.onclick = toggleModal
-        })
-    })
+    initSearch()
+    initThemeSwitcher()
+    initTableScroll()
+    initGalleryModal()
 </script>

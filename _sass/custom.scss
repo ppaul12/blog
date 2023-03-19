@@ -167,6 +167,9 @@
 
     .item {
         width: 40%;
+        @media (max-width: 420px) {
+            width: 100%;
+        }
 
         img {
             height: 300px;

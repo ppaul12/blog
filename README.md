@@ -17,6 +17,7 @@ Just a record of daily life.
 - colors: [Nord Theme](https://www.nordtheme.com)
 - fonts: [LXGW WenKai](https://github.com/lxgw/LxgwWenKai) + [Allura](https://www.jsdelivr.com/package/npm/@fontsource/allura)
 - icon: [Font Awesome](https://fontawesome.com) + [simple-icons](https://simpleicons.org)
+- repo card: [github-readme-stats](https://github.com/anuraghazra/github-readme-stats)
 - badge: [shields](https://github.com/badges/shields)
 - animation: [animate.css](https://github.com/animate-css/animate.css) + [font-awesome-animation](https://l-lin.github.io/font-awesome-animation/)
 - comment: [utterances](https://utteranc.es)

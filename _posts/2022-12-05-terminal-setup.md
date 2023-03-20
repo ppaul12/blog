@@ -2,7 +2,6 @@
 layout: post
 title: 终端配置memo
 tags: Terminal 
-required: code
 ---
 
 # 1. 终端

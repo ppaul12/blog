@@ -2,7 +2,7 @@
 layout: post
 title: 可复用强密码生成器
 tags: Python3
-required: code python
+required: python
 ---
 
 # 0. 动机

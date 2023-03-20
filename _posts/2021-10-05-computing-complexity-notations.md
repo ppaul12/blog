@@ -1,8 +1,7 @@
 ---
 layout: post
-title: 渐近记号(计算量，复杂度)
+title: 渐近记号
 tags: ComputerScience
-required: math
 ---
 
 # 1. 定义

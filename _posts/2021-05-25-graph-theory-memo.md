@@ -2,7 +2,6 @@
 layout: post
 title: 图论memo
 tags: ComputerScience
-required: math
 ---
 
 # 1. 图

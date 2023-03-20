@@ -3,7 +3,6 @@ layout: post
 title: 动态内存分配
 sub-title: 多维数组
 tags: C/C++
-required: code math
 ---
 
 # 1. 数组的内存分布

@@ -1,7 +1,5 @@
 ---
 layout: post
-title: Days in Japan (4)
-sub-title: 世事洞明皆学问
 permalink: /projects/Days in Japan (4).html
 ---
 

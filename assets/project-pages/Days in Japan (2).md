@@ -1,7 +1,5 @@
 ---
 layout: post
-title: Days in Japan (2)
-sub-title: 博观而约取
 permalink: /projects/Days in Japan (2).html
 ---
 

@@ -24,9 +24,10 @@ permalink: /projects.html
         {% for project in projectset.items %}
         <article onclick="location.href='{{ project.link }}'">
             <hgroup class="post-title">
+                {% assign page = site.pages | where_exp:"page", "page.url contains project.link" | first %}
                 <small><em>{{ project.start }} ~ {{ project.end }}</em></small>
-                <h3>{{ project.name }}</h3>
-                <h4><em>{{ project.type }}</em></h4>
+                <h3>{{ project.title }}</h3>
+                <h4><em>{{ project.sub-title }}</em></h4>
             </hgroup>
         </article>
         {% endfor %}

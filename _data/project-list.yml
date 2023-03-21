@@ -1,64 +1,70 @@
-- name: Days in Japan (0)
+- title: Days in Japan (0)
+  sub-title: 秋到春的故事
   start: "2018.10"
   end: "2019.03"
   link: /projects/Days in Japan (0).html
   type: life
 
-- name: Days in Japan (1)
+- title: Days in Japan (1)
+  sub-title: 东风夜放花千树
   start: "2019.04"
   end: "2020.03"
   link: /projects/Days in Japan (1).html
   type: life
 
-- name: Days in Japan (2)
+- title: Days in Japan (2)
+  sub-title: 博观而约取
   start: "2020.04"
   end: "2021.03"
   link: /projects/Days in Japan (2).html
   type: life
 
-- name: GameBoy simulator
+- title: GameBoy simulator
   start: "2021.02"
   end: "2021.03"
   link: https://github.com/PENG-AO/pyGB
   type: git
 
-- name: Days in Japan (3)
+- title: Days in Japan (3)
+  sub-title: 纸上得来终觉浅
   start: "2021.04"
   end: "2022.03"
   link: /projects/Days in Japan (3).html
   type: life
 
-- name: RISC-V simulator
+- title: RISC-V simulator
   start: "2021.10"
   end: "2022.02"
   link: /projects/RISC-V simulator.html
   type: git
 
-- name: 诗经小记
+- title: 诗经小记
+  sub-title: 用一年的时间读一本诗经
   start: "2021.12"
   end: "2022.11"
   link: /projects/诗经小记.html
   type: book
 
-- name: 数据结构的汇编实现
+- title: 数据结构的汇编实现
   start: "2022.03"
   end: "2022.03"
   link: /projects/数据结构的汇编实现.html
   type: code
 
-- name: Days in Japan (4)
+- title: Days in Japan (4)
+  sub-title: 世事洞明皆学问
   start: "2022.04"
   end: "202X.XX"
   link: /projects/Days in Japan (4).html
   type: life
 
-- name: EJU PHY
+- title: EJU PHY
   start: "2022.04"
   end: "2022.10"
   link: https://github.com/PENG-AO/EJU-PHY
   type: git
 
-- name: Urban Brush demo
+- title: Urban Brush demo
   start: "2022.05"
   end: "2022.06"
   link: https://github.com/PENG-AO/urban-brush-demo

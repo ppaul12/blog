@@ -1,7 +1,5 @@
 ---
 layout: post
-title: Days in Japan (3)
-sub-title: 纸上得来终觉浅
 permalink: /projects/Days in Japan (3).html
 ---
 

@@ -1,7 +1,5 @@
 ---
 layout: post
-title: Days in Japan (0)
-sub-title: 秋到春的故事
 permalink: /projects/Days in Japan (0).html
 ---
 

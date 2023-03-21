@@ -1,7 +1,5 @@
 ---
 layout: post
-title: Days in Japan (1)
-sub-title: 东风夜放花千树
 permalink: /projects/Days in Japan (1).html
 ---
 

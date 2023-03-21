@@ -10,10 +10,10 @@ module Jekyll
             cjk_length = input.scan(cjk_regex).length
             word_length = input.scan(word_regex).length
 
-            cjk_time = cjk_length / 300
-            word_time = word_length / 200
+            cjk_time = cjk_length / 200
+            word_time = word_length / 100
             
-            [cjk_length + word_length, [cjk_time + word_time, 1].max]
+            cjk_length + word_length, cjk_time + word_time + 1
         end
     end
 end

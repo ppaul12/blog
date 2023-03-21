@@ -14,10 +14,25 @@
     }
 }
 
-// post title
-.post-title {
-    animation: fadeInLeft;
-    animation-duration: 1s;
+// post
+.post {
+    &-title {
+        animation: fadeInLeft;
+        animation-duration: 1s;
+    }
+
+    &-info {
+        text-align: right;
+        margin-bottom: 1em;
+    
+        animation: fadeInRight;
+        animation-duration: 1s;
+    }
+
+    &-content {
+        animation: fadeInUp;
+        animation-duration: 1s;
+    }
 }
 
 // tag cloud

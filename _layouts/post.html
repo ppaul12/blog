@@ -17,13 +17,20 @@ layout: page
         <!-- post title -->
         <hgroup class="post-title">
             <small><em>{{ page.date | date:"%Y.%m.%d" }}</em></small>
-            <h3>{{ page.title}}</h3>
-            <h4><em>{{ page.sub-title }}</em></h4>
+            <h1>{{ page.title}}</h1>
+            <h2><em>{{ page.sub-title }}</em></h2>
         </hgroup>
     </header>
 
+    <!-- word count -->
+    <div class="post-info"><small>
+        {% assign info = page.content | strip_html | word_info %}
+        <i class="fa-solid fa-spell-check fa-fw"></i> {{ info[0] }}
+        <i class="fa-solid fa-stopwatch fa-fw"></i> {{ info[1] }}
+    </small></div>
+
     <!-- main content -->
-    <div id="post">{{ content }}</div>
+    <div class="post-content" id="post">{{ content }}</div>
 
     <!-- footer -->
     <footer>

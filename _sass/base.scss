@@ -28,14 +28,6 @@ body {
     }
 }
 
-// main
-main {
-    & > article {
-        animation: fadeIn;
-        animation-duration: 2s;
-    }
-}
-
 // text
 large {
     font-size: 2em;

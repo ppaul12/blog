@@ -1,52 +1,35 @@
 ---
-layout: page
+layout: archive
 title: tags
+sub-title: categorize by tags ...
 icon: "fa-solid fa-tags fa-fw"
 permalink: /tags.html
 ---
 
-<article>
-    <header><hgroup>
-        <h1>
-            <i class="{{ page.icon }}"></i>
-            {{ page.title | capitalize }}
-        </h1>
-        <h2>Categorize by tags ...</h2>
-    </hgroup></header>
+{% for tag in site.tags %}
+<details id="{{ tag[0] }}">
+    <summary>
+        {{tag[0]}}
+        ({{ tag[1].size }})
+    </summary>
+    {% for post in tag[1] %}
+    <article>
+        <!-- tag cloud -->
+        <nav class="tag-cloud" aria-label="breadcrumb">
+            <ul>
+                {% for tag in post.tags %}
+                <li><a href="/tags.html#{{ tag }}">{{ tag }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
 
-    {% for tag in site.tags %}
-    <details id="{{ tag[0] }}">
-        <summary>
-            {{tag[0]}}
-            ({{ tag[1].size }})
-        </summary>
-        {% for post in tag[1] %}
-        <article>
-            <!-- tag cloud -->
-            <nav class="tag-cloud" aria-label="breadcrumb">
-                <ul>
-                    {% for tag in post.tags %}
-                    <li><a href="/tags.html#{{ tag }}">{{ tag }}</a></li>
-                    {% endfor %}
-                </ul>
-            </nav>
-
-            <!-- post title -->
-            <hgroup class="post-title" onclick="location.href='{{ post.url }}'">
-                <small><em>{{ post.date | date:"%Y.%m.%d" }}</em></small>
-                <h3>{{ post.title}}</h3>
-                <h4><em>{{ post.sub-title }}</em></h4>
-            </hgroup>
-        </article>
-        {% endfor %}
-    </details>
+        <!-- post title -->
+        <hgroup class="post-title" onclick="location.href='{{ post.url }}'">
+            <small><em>{{ post.date | date:"%Y.%m.%d" }}</em></small>
+            <h3>{{ post.title}}</h3>
+            <h4><em>{{ post.sub-title }}</em></h4>
+        </hgroup>
+    </article>
     {% endfor %}
-
-    <footer>{% include comment.html %}</footer>
-</article>
-
-<!-- auxiliary scripts -->
-<script>
-    initToc(document, "details")
-    initRespondingDetails()
-</script>
+</details>
+{% endfor %}

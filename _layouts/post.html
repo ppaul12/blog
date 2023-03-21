@@ -1,9 +1,8 @@
 ---
-layout: page
+layout: default
 ---
 
 <article>
-    <!-- header -->
     <header>
         <!-- tag cloud -->
         <nav class="tag-cloud" aria-label="breadcrumb">
@@ -39,10 +38,8 @@ layout: page
         <i class="fa-solid fa-stopwatch fa-fw"></i> {{ info[1] }}
     </small></div>
 
-    <!-- main content -->
     <div class="post-content" id="post">{{ content }}</div>
 
-    <!-- footer -->
     <footer>
         <!-- button bar -->
         <nav>
@@ -78,4 +75,6 @@ layout: page
 <!-- auxiliary scripts -->
 <script>
     initToc(document.getElementById("post"), "h2, h3, h4")
+    initTableScroll()
+    initGalleryModal()
 </script>

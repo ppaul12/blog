@@ -5,7 +5,34 @@
 
     <body class="container">
         {% include header.html %}
-        <main>{{ content }}</main>
+
+        <main>
+            {{ content }}
+
+            <!-- side buttons -->
+            <div class="button-box"></div>
+
+            <!-- search box -->
+            <dialog id="search-box"><article>
+                <header>
+                    <div class="close-btn" data-target="search-box" onclick="toggleModal(event)"></div>
+                    <input id="search-input" type="search" placeholder='press "/" to search ...'>
+                </header>
+                <div id="search-results"></div>
+            </article></dialog>
+
+            <!-- table of contents -->
+            <dialog id="toc-box"><article>
+                <header><div class="close-btn" data-target="toc-box" onclick="toggleModal(event)"></div></header>
+            </article></dialog>
+
+            <!-- auxiliary scripts -->
+            <script>
+                initSearch()
+                initThemeSwitcher()
+            </script>
+        </main>
+
         {% include footer.html %}
     </body>
 </html>

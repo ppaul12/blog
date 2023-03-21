@@ -1,48 +1,32 @@
 ---
-layout: page
+layout: archive
 title: bookshelf
+sub-title: nourish the mind ...
 icon: "fa-solid fa-book fa-fw"
 permalink: /books.html
 ---
 
-<article>
-    <header><hgroup>
-        <h1>
-            <i class="{{ page.icon }}"></i>
-            {{ page.title | capitalize }}
-        </h1>
-        <h2>Nourish the mind and ...</h2>
-    </hgroup></header>
-
-    {% assign booksets = site.data.book-list %}
-    {% for bookset in booksets %}
-    <details id="{{ bookset.year }}" {% if forloop.index <= 2 %}open{% endif %}>
-        <summary>
-            {{ bookset.year }}
-            ({{ bookset.books.size }})
-        </summary>
-        {% assign books = bookset.books | sort:"date" %}
-        {% for book in books %}
-        <article class="book-tag">
-            <img class="book-cover"
-                src="/assets/book-covers/{{ book.title }}.jpg"
-                alt="{{ book.title }}"
-                onclick="location.href='{{ book.link }}'">
-            <hgroup class="book-info">
-                <h3>{{ book.title }}</h3>
-                <h4>{{ book.subtitle }}</h4>
-                <h4>{{ book.author }}</h4>
-                <h4><em>{{ bookset.year }} {{ book.date }}</em></h4>
-            </hgroup>
-        </article>
-        {% endfor %}
-    </details>
+{% assign booksets = site.data.book-list %}
+{% for bookset in booksets %}
+<details id="{{ bookset.year }}" {% if forloop.index <= 2 %}open{% endif %}>
+    <summary>
+        {{ bookset.year }}
+        ({{ bookset.books.size }})
+    </summary>
+    {% assign books = bookset.books | sort:"date" %}
+    {% for book in books %}
+    <article class="book-tag">
+        <img class="book-cover"
+            src="/assets/book-covers/{{ book.title }}.jpg"
+            alt="{{ book.title }}"
+            onclick="location.href='{{ book.link }}'">
+        <hgroup class="book-info">
+            <h3>{{ book.title }}</h3>
+            <h4>{{ book.subtitle }}</h4>
+            <h4>{{ book.author }}</h4>
+            <h4><em>{{ bookset.year }} {{ book.date }}</em></h4>
+        </hgroup>
+    </article>
     {% endfor %}
-
-    <footer>{% include comment.html %}</footer>
-</article>
-
-<script>
-    initToc(document, "details")
-    initRespondingDetails()
-</script>
+</details>
+{% endfor %}

@@ -79,3 +79,24 @@ permalink: /projects/Days in Japan (4).html
 
 - [三浦半岛旅行](/2022/12/20/a-travel-at-miura.html)
 - [京都散心旅行](/2022/12/29/a-travel-at-kyoto-relax.html)
+
+# 2023.03
+
+<div class="gallery">
+    <div class="item">
+        <img src="/assets/src/days-in-japan/2023-03-1.jpeg">
+        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 隅田川公園</p>
+    </div>
+    <div class="item">
+        <img src="/assets/src/days-in-japan/2023-03-2.jpeg">
+        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 隅田川公園</p>
+    </div>
+    <div class="item">
+        <img src="/assets/src/days-in-japan/2023-03-3.jpeg">
+        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 隅田川公園</p>
+    </div>
+    <div class="item">
+        <img src="/assets/src/days-in-japan/2023-03-4.jpeg">
+        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 隅田川公園</p>
+    </div>
+</div>

@@ -1,9 +1,9 @@
 - year: Reading
   books:
-    - title: 人间词话精读
-      author: 苏缨
-      link: https://book.douban.com/subject/26309078/
-    
+    - title: 寂寞人间五百年
+      sub-title: 秦观词
+      link: https://book.douban.com/subject/35888698/
+
     - title: 新月集
       author: 泰戈尔,郑振铎
       link: https://book.douban.com/subject/4243304/
@@ -28,6 +28,11 @@
       author: 汪国真
       link: https://book.douban.com/subject/26320374/
       date: "03.04"
+    
+    - title: 人间词话精读
+      author: 苏缨
+      link: https://book.douban.com/subject/26309078/
+      date: "03.22"
 
 - year: 2022
   books:

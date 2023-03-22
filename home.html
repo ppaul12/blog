@@ -80,7 +80,7 @@ permalink: /
                         <h3>{{ book.title }}</h3>
                         <h4>{{ book.subtitle }}</h4>
                         <h4>{{ book.author }}</h4>
-                        <h4><em>{{ bookset.year }} {{ book.date }}</em></h4>
+                        <h4><em>{{ bookset.year }}{% if book.date %}.{{ book.date }}{% endif %}</em></h4>
                     </hgroup>
                 </article></dialog>
                 {% endfor %}

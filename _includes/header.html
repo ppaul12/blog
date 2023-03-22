@@ -1,11 +1,21 @@
 <nav>
     <ul><li>{{ site.title }}</li></ul>
     <ul>
-        <li><i class="fa-solid fa-house fa-fw" onclick="location.href='/'"></i></li>
-        <li><i class="fa-solid fa-image fa-fw" onclick="location.href='/album.html'"></i></li>
-        <li><i class="fa-solid fa-map-location-dot fa-fw" onclick="location.href='/footprint.html'"></i></li>
-        <li><i class="fa-solid fa-tags fa-fw" onclick="location.href='/tags.html'"></i></li>
-        <li><i class="fa-solid fa-user-graduate fa-fw" onclick="toggleModal(event)" data-target="profile-box"></i></li>
+        <li><a class="contrast" href="/" data-tooltip="home" data-placement="bottom">
+            <i class="fa-solid fa-house fa-fw"></i>
+        </a></li>
+        <li><a class="contrast" href="/album.html" data-tooltip="album" data-placement="bottom">
+            <i class="fa-solid fa-image fa-fw"></i>
+        </a></li>
+        <li><a class="contrast" href="/footprint.html" data-tooltip="footprint" data-placement="bottom">
+            <i class="fa-solid fa-map-location-dot fa-fw"></i>
+        </a></li>
+        <li><a class="contrast" href="/tags.html" data-tooltip="tags" data-placement="bottom">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </a></li>
+        <li><a class="contrast" href="" onclick="toggleModal(event)" data-target="profile-box" data-tooltip="profile" data-placement="bottom">
+            <i class="fa-solid fa-user-graduate fa-fw"></i>
+        </a></li>
     </ul>
 </nav>
 

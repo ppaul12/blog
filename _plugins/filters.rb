@@ -13,7 +13,7 @@ module Jekyll
             cjk_time = cjk_length / 200
             word_time = word_length / 100
             
-            cjk_length + word_length, cjk_time + word_time + 1
+            [cjk_length + word_length, cjk_time + word_time + 1]
         end
     end
 end

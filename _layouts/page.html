@@ -3,7 +3,7 @@ layout: default
 ---
 
 <article>
-    <header><hgroup>
+    <header><hgroup class="post-title">
         <h1>
             <i class="{{ page.icon }}"></i>
             {{ page.title | capitalize }}
@@ -11,7 +11,7 @@ layout: default
         <h2>{{ page.sub-title | capitalize }}</h2>
     </hgroup></header>
 
-    {{ content }}
+    <div class="post-content">{{ content }}</div>
 
     <footer>{% include comment.html %}</footer>
 </article>

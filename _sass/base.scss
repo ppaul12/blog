@@ -3,7 +3,7 @@
 }
 
 body {
-    & > header, footer {
+    & > header, & > footer {
         text-align: center;
 
         animation: zoomIn;

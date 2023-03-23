@@ -1,7 +1,12 @@
 - year: Reading
   books:
+    - title: 苏东坡传
+      author: 林语堂
+      link: https://book.douban.com/subject/26847644/
+
     - title: 寂寞人间五百年
-      sub-title: 秦观词
+      subtitle: 秦观词
+      author: 叶嘉莹
       link: https://book.douban.com/subject/35888698/
 
     - title: 新月集
@@ -30,6 +35,7 @@
       date: "03.04"
     
     - title: 人间词话精读
+      subtitle: 大师笔下最美诗词品鉴
       author: 苏缨
       link: https://book.douban.com/subject/26309078/
       date: "03.22"

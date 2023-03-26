@@ -151,7 +151,6 @@
         @media (max-width: 420px) {
             width: 100%;
         }
-        background-color: var(--bg-color);
         text-align: center;
         border-radius: 0.5em;
         box-shadow: 1px 1px 5px 0 var(--color);
@@ -228,6 +227,44 @@
     
         animation: slideInRight;
         animation-duration: 1s;
+    }
+}
+
+// poem
+.poem {
+    margin: 0.5em auto;
+    padding: 0.5em;
+    overflow-x: scroll;
+    width: fit-content;
+    @media (max-width: 420px) {
+        width: 100%;
+    }
+    border: double var(--muted-border-color);
+
+    &.vertical {
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+
+        p:first-child {
+            text-align: center;
+        }
+
+        p:not(:last-child) {
+            border-left: dashed 1px var(--muted-border-color);
+        }
+    }
+
+    &.horizontal {
+        text-align: center;
+        white-space: nowrap;
+
+        p:not(:last-child) {
+            border-bottom: dashed 1px var(--muted-border-color);
+        }
+    }
+
+    p {
+        margin-bottom: 0;
     }
 }
 

@@ -41,13 +41,6 @@ const themeSwitcher = {
         });
     },
 
-    // Add new button
-    addButton(config) {
-        let button = document.createElement(config.tag);
-        button.className = config.class;
-        document.querySelector(config.target).appendChild(button);
-    },
-
     // Set scheme
     set scheme(scheme) {
         if (scheme == 'auto') {

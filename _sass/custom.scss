@@ -154,7 +154,7 @@
         background-color: var(--bg-color);
         text-align: center;
         border-radius: 0.5em;
-        box-shadow: 1px 1px 5px 0 var(--subtle-fg-color);
+        box-shadow: 1px 1px 5px 0 var(--color);
         margin: 1.2em;
 
         img {
@@ -253,7 +253,7 @@
                 height: 1px;
                 margin: auto;
                 content: "";
-                background-color: var(--subtle-fg-color);
+                background-color: var(--color);
             }
             
             &::after {
@@ -264,7 +264,7 @@
                 width: 1px;
                 height: 100%;
                 content: "";
-                background-color: var(--subtle-fg-color);
+                background-color: var(--color);
             }
             
             &:last-child::after {

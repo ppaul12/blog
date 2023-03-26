@@ -28,11 +28,6 @@ body {
     }
 }
 
-// text
-large {
-    font-size: 2em;
-}
-
 // math blocks
 math {
     padding-bottom: 0.5em;
@@ -59,18 +54,8 @@ hr {
     border-top: none;
 
     &::after {
-        color: var(--subtle-fg-color);
         content: ". . .";
     }
-}
-
-// blockquote
-blockquote {
-    padding: 1em 2em 0;
-    border-top: solid 0.1em var(--fg-color);
-    border-bottom: solid 0.1em var(--fg-color);
-    border-left: solid 0.5em var(--fg-color);
-    border-right: solid 0.1em var(--fg-color);
 }
 
 // dialog
@@ -96,5 +81,5 @@ pre {
     padding: 0.2em;
     margin: 0.5em auto;
     border-radius: 0.5em;
-    box-shadow: 1px 1px 5px 0 var(--subtle-fg-color);
+    box-shadow: 1px 1px 5px 0 var(--color);
 }

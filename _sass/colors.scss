@@ -1,44 +1,131 @@
 // Light scheme (Default)
 [data-theme="light"],
 :root:not([data-theme="dark"]) {
-    --fg-color: #{$nord0};
-    --subtle-fg-color: #{$nord3};
-    --bg-color: #{$nord6};
-    --subtle-bg-color: #{$nord5};
+    --background-color: #{$nord6};
+    --color: #{$nord0};
 
-    --color: var(--fg-color);
-    --background-color: var(--bg-color);
-    --card-background-color: var(--bg-color);
-    --card-sectionning-background-color: var(--subtle-bg-color);
-    --table-border-color: var(--subtle-fg-color);
+    --h1-color: var(--color);
+    --h2-color: var(--color);
+    --h3-color: var(--color);
+    --h4-color: var(--color);
+    --h5-color: var(--color);
+    --h6-color: var(--color);
+
+    --muted-color: #{$nord3};
+    --muted-border-color: #{$nord4};
+
+    --primary: #{$nord10};
+    --primary-hover: #{$nord9};
+    --primary-focus: #{$nord9};
+    --primary-inverse: var(--background-color);
+
+    --contrast: #{$nord2};
+    --contrast-hover: #{$nord1};
+    --contrast-focus: #{$nord1};
+    --contrast-inverse: var(--background-color);
+
+    --mark-background-color: #{$nord13};
+    --mark-color: var(--color);
+    --ins-color: #{$nord14};
+    --del-color: #{$nord11};
+
+    --code-background-color: #{$nord5};
+    --code-color: var(--muted-color);
+    --code-kbd-background-color: var(--contrast);
+    --code-kbd-color: var(--contrast-inverse);
+
+    --card-background-color: var(--background-color);
+    --card-border-color: var(--muted-border-color);
+    --card-sectionning-background-color: #{$nord5};
+
+    --tooltip-background-color: var(--contrast);
+    --tooltip-color: var(--contrast-inverse);
 }
 
 // Dark scheme (Auto)
 @media only screen and (prefers-color-scheme: dark) {
     :root:not([data-theme]) {
-        --fg-color: #{$nord6};
-        --subtle-fg-color: #{$nord4};
-        --bg-color: #{$nord0};
-        --subtle-bg-color: #{$nord1};
+        --background-color: #{$nord0};
+        --color: #{$nord6};
 
-        --color: var(--fg-color);
-        --background-color: var(--bg-color);
-        --card-background-color: var(--bg-color);
-        --card-sectionning-background-color: var(--subtle-bg-color);
-        --table-border-color: var(--subtle-fg-color);
+        --h1-color: var(--color);
+        --h2-color: var(--color);
+        --h3-color: var(--color);
+        --h4-color: var(--color);
+        --h5-color: var(--color);
+        --h6-color: var(--color);
+
+        --muted-color: #{$nord4};
+        --muted-border-color: #{$nord3};
+
+        --primary: #{$nord9};
+        --primary-hover: #{$nord10};
+        --primary-focus: #{$nord10};
+        --primary-inverse: var(--background-color);
+
+        --contrast: #{$nord4};
+        --contrast-hover: #{$nord5};
+        --contrast-focus: #{$nord5};
+        --contrast-inverse: var(--background-color);
+
+        --mark-background-color: #{$nord13};
+        --mark-color: var(--color);
+        --ins-color: #{$nord14};
+        --del-color: #{$nord11};
+
+        --code-background-color: #{$nord1};
+        --code-color: var(--muted-color);
+        --code-kbd-background-color: var(--contrast);
+        --code-kbd-color: var(--contrast-inverse);
+
+        --card-background-color: var(--background-color);
+        --card-border-color: var(--muted-border-color);
+        --card-sectionning-background-color: #{$nord1};
+
+        --tooltip-background-color: var(--contrast);
+        --tooltip-color: var(--contrast-inverse);
     }
 }
 
 // Dark scheme (Forced)
 [data-theme="dark"] {
-    --fg-color: #{$nord6};
-    --subtle-fg-color: #{$nord4};
-    --bg-color: #{$nord0};
-    --subtle-bg-color: #{$nord1};
+    --background-color: #{$nord0};
+    --color: #{$nord6};
 
-    --color: var(--fg-color);
-    --background-color: var(--bg-color);
-    --card-background-color: var(--bg-color);
-    --card-sectionning-background-color: var(--subtle-bg-color);
-    --table-border-color: var(--subtle-fg-color);
+    --h1-color: var(--color);
+    --h2-color: var(--color);
+    --h3-color: var(--color);
+    --h4-color: var(--color);
+    --h5-color: var(--color);
+    --h6-color: var(--color);
+
+    --muted-color: #{$nord4};
+    --muted-border-color: #{$nord3};
+
+    --primary: #{$nord9};
+    --primary-hover: #{$nord10};
+    --primary-focus: #{$nord10};
+    --primary-inverse: var(--background-color);
+
+    --contrast: #{$nord5};
+    --contrast-hover: #{$nord4};
+    --contrast-focus: #{$nord4};
+    --contrast-inverse: var(--background-color);
+
+    --mark-background-color: #{$nord13};
+    --mark-color: var(--color);
+    --ins-color: #{$nord14};
+    --del-color: #{$nord11};
+
+    --code-background-color: #{$nord1};
+    --code-color: var(--muted-color);
+    --code-kbd-background-color: var(--contrast);
+    --code-kbd-color: var(--contrast-inverse);
+
+    --card-background-color: var(--background-color);
+    --card-border-color: var(--muted-border-color);
+    --card-sectionning-background-color: #{$nord1};
+
+    --tooltip-background-color: var(--contrast);
+    --tooltip-color: var(--contrast-inverse);
 }

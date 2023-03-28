@@ -18,7 +18,7 @@ layout: default
             {% if page.date %}
                 {% assign date = page.date | date:"%Y.%m.%d" %}
                 {% assign title = page.title %}
-                {% assign subtitle = page.sub-title %}
+                {% assign sub-title = page.sub-title %}
             {% else %}
                 {% assign project = site.data.project-list | where_exp:"project", "page.url contains project.link" | first %}
                 {% assign date = project.start | append:" ~ " | append:project.end %}

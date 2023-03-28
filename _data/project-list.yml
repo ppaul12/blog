@@ -69,3 +69,10 @@
   end: "2022.06"
   link: https://github.com/PENG-AO/urban-brush-demo
   type: git
+
+- title: 飞鸟集摘抄
+  sub-title: Excerpts of Stray Birds
+  start: "2022.11"
+  end: "2023.01"
+  link: /projects/飞鸟集摘抄.html
+  type: book

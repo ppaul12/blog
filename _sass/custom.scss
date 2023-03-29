@@ -213,6 +213,7 @@
     &-shelf {
         overflow-x: scroll;
         white-space: nowrap;
+        padding-bottom: 1em;
     }
     
     &-tag {
@@ -228,6 +229,8 @@
         height: 200px;
         margin: 0 0.5em;
         object-fit: fill;
+        border: 1px solid var(--muted-border-color);
+        box-shadow: 5px 5px 5px var(--muted-border-color);
     
         animation: slideInLeft backwards;
         animation-duration: 1s;

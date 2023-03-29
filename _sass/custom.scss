@@ -1,3 +1,17 @@
+// nav bar
+.nav {
+    &-title {
+        animation: fadeInDown backwards;
+        animation-duration: 1s;
+    }
+
+    &-icon {
+        animation: fadeInDown backwards;
+        animation-duration: 1s;
+        animation-delay: calc(var(--ith) * 200ms);
+    }
+}
+
 // flexible cards
 .cards {
     display: flex;
@@ -11,7 +25,7 @@
         overflow-x: hidden;
         white-space: nowrap;
 
-        animation: zoomIn;
+        animation: zoomIn backwards;
         animation-duration: 1s;
     }
 }
@@ -19,7 +33,7 @@
 // post
 .post {
     &-title {
-        animation: fadeInLeft;
+        animation: fadeInLeft backwards;
         animation-duration: 1s;
     }
 
@@ -27,13 +41,13 @@
         text-align: right;
         margin-bottom: 1em;
     
-        animation: fadeInRight;
+        animation: fadeInRight backwards;
         animation-duration: 1s;
     }
 
     &-content {
-        animation: fadeInUp;
-        animation-duration: 1s;
+        animation: fadeIn backwards;
+        animation-duration: 2s;
     }
 }
 
@@ -41,7 +55,7 @@
 .tag-cloud {
     justify-content: end !important;
 
-    animation: fadeInRight;
+    animation: fadeInRight backwards;
     animation-duration: 1s;
 }
 
@@ -56,7 +70,7 @@
     button {
         border-radius: 4em;
 
-        animation: fadeInUp;
+        animation: fadeInUp backwards;
         animation-duration: 1s;
     }
 }
@@ -66,12 +80,12 @@
     &-input {
         margin-top: 1em;
 
-        animation: zoomIn;
+        animation: zoomIn backwards;
         animation-duration: 1s;
     }
 
     &-results article {
-        animation: fadeInLeft;
+        animation: fadeInLeft backwards;
         animation-duration: 1s;
     }
 }
@@ -86,7 +100,7 @@
         text-align: center;
         z-index: 2;
 
-        animation: backInDown;
+        animation: backInDown backwards;
         animation-duration: 1s;
 
         img {
@@ -106,7 +120,7 @@
         font-size: 2em;
         z-index: 2;
 
-        animation: fadeInDown;
+        animation: fadeInDown backwards;
         animation-duration: 1s;
     }
 
@@ -120,22 +134,19 @@
             margin: 0.5em;
             border-radius: 0;
 
-            animation: rotateIn;
+            animation: rotateIn backwards;
             animation-duration: 1s;
+            animation-delay: calc(var(--ith) * 200ms);
         }
     }
 
     &-info {
         margin-bottom: 0;
 
-        &:nth-of-type(even) {
-            animation: fadeInLeft;
+        &-item {
+            animation: fadeInLeft backwards;
             animation-duration: 1s;
-        }
-
-        &:nth-of-type(odd) {
-            animation: fadeInRight;
-            animation-duration: 1s;
+            animation-delay: calc(var(--ith) * 200ms);
         }
     }
 }
@@ -164,14 +175,14 @@
             border-bottom-right-radius: 0;
             object-fit: cover;
 
-            animation: zoomIn;
+            animation: zoomIn backwards;
             animation-duration: 1s;
         }
 
         p {
             margin: 0.2em 0;
 
-            animation: fadeInDown;
+            animation: fadeInDown backwards;
             animation-duration: 1s;
         }
     }
@@ -218,8 +229,8 @@
         margin: 0 0.5em;
         object-fit: fill;
     
-        animation: slideInLeft;
-        animation-duration: 1.5s;
+        animation: slideInLeft backwards;
+        animation-duration: 1s;
     }
     
     &-info {
@@ -227,7 +238,7 @@
         text-align: right;
         white-space: nowrap;
     
-        animation: slideInRight;
+        animation: slideInRight backwards;
         animation-duration: 1s;
     }
 }

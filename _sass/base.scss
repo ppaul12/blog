@@ -6,7 +6,7 @@ body {
     & > header, & > footer {
         text-align: center;
 
-        animation: zoomIn;
+        animation: zoomIn backwards;
         animation-duration: 1s;
     }
 

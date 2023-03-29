@@ -1,21 +1,31 @@
 <nav>
-    <ul><li>{{ site.title }}</li></ul>
+    <ul class="nav-title"><li>{{ site.title }}</li></ul>
     <ul>
-        <li><a class="contrast" href="/" data-tooltip="home" data-placement="bottom">
-            <i class="fa-solid fa-house fa-fw"></i>
-        </a></li>
-        <li><a class="contrast" href="/album.html" data-tooltip="album" data-placement="bottom">
-            <i class="fa-solid fa-image fa-fw"></i>
-        </a></li>
-        <li><a class="contrast" href="/footprint.html" data-tooltip="footprint" data-placement="bottom">
-            <i class="fa-solid fa-map-location-dot fa-fw"></i>
-        </a></li>
-        <li><a class="contrast" href="/tags.html" data-tooltip="tags" data-placement="bottom">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </a></li>
-        <li><a class="contrast" href="" onclick="toggleModal(event)" data-target="profile-box" data-tooltip="profile" data-placement="bottom">
-            <i class="fa-solid fa-user-graduate fa-fw"></i>
-        </a></li>
+        <li class="nav-icon" style="--ith: 0">
+            <a class="contrast" href="/" data-tooltip="home" data-placement="bottom">
+                <i class="fa-solid fa-house fa-fw"></i>
+            </a>
+        </li>
+        <li class="nav-icon" style="--ith: 1">
+            <a class="contrast" href="/album.html" data-tooltip="album" data-placement="bottom">
+                <i class="fa-solid fa-image fa-fw"></i>
+            </a>
+        </li>
+        <li class="nav-icon" style="--ith: 2">
+            <a class="contrast" href="/footprint.html" data-tooltip="footprint" data-placement="bottom">
+                <i class="fa-solid fa-map-location-dot fa-fw"></i>
+            </a>
+        </li>
+        <li class="nav-icon" style="--ith: 3">
+            <a class="contrast" href="/tags.html" data-tooltip="tags" data-placement="bottom">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </a>
+        </li>
+        <li class="nav-icon" style="--ith: 4">
+            <a class="contrast" href="" onclick="toggleModal(event)" data-target="profile-box" data-tooltip="profile" data-placement="bottom">
+                <i class="fa-solid fa-user-graduate fa-fw"></i>
+            </a>
+        </li>
     </ul>
 </nav>
 
@@ -37,55 +47,91 @@
     </div>
     <hr><!-- skills -->
     <div class="profile-icons">
-        <img src="/assets/img/skills/c.svg">
-        <img src="/assets/img/skills/cpp.svg">
-        <img src="/assets/img/skills/git.svg">
-        <img src="/assets/img/skills/github.svg">
-        <img src="/assets/img/skills/jekyll.svg">
-        <img src="/assets/img/skills/latex.svg">
+        <img style="--ith: 0" src="/assets/img/skills/c.svg">
+        <img style="--ith: 1" src="/assets/img/skills/cpp.svg">
+        <img style="--ith: 2" src="/assets/img/skills/git.svg">
+        <img style="--ith: 3" src="/assets/img/skills/github.svg">
+        <img style="--ith: 4" src="/assets/img/skills/jekyll.svg">
+        <img style="--ith: 5" src="/assets/img/skills/latex.svg">
     </div>
     <div class="profile-icons">
-        <img src="/assets/img/skills/leetcode.svg">
-        <img src="/assets/img/skills/markdown.svg">
-        <img src="/assets/img/skills/n3ds.svg">
-        <img src="/assets/img/skills/neovim.svg">
-        <img src="/assets/img/skills/ns.svg">
-        <img src="/assets/img/skills/python.svg">
+        <img style="--ith: 0" src="/assets/img/skills/leetcode.svg">
+        <img style="--ith: 1" src="/assets/img/skills/markdown.svg">
+        <img style="--ith: 2" src="/assets/img/skills/n3ds.svg">
+        <img style="--ith: 3" src="/assets/img/skills/neovim.svg">
+        <img style="--ith: 4" src="/assets/img/skills/ns.svg">
+        <img style="--ith: 5" src="/assets/img/skills/python.svg">
     </div>
     <hr><!-- info -->
     <ul class="profile-info">
-        <li><i class="fa-solid fa-house-chimney fa-fw"></i> China, Shenyang</li>
-        <li><i class="fa-solid fa-map-pin fa-fw"></i> Japan, Tokyo</li>
-        <li>
+        <li class="profile-info-item" style="--ith: 0">
+            <i class="fa-solid fa-house-chimney fa-fw"></i> China, Shenyang
+        </li>
+        <li class="profile-info-item" style="--ith: 1">
+            <i class="fa-solid fa-map-pin fa-fw"></i> Japan, Tokyo
+        </li>
+        <li class="profile-info-item" style="--ith: 2">
             <i class="fa-solid fa-building fa-fw"></i>
             <a href="https://www.u-tokyo.ac.jp/ja/index.html">U-tokyo</a>,
             <a href="https://www.i.u-tokyo.ac.jp/index.shtml">IST</a>,
             <a href="https://www.is.s.u-tokyo.ac.jp">CS</a>
         </li>
-        <li>
+        <li class="profile-info-item" style="--ith: 3">
             <i class="fa-solid fa-envelope fa-fw"></i>
             <a href="mailto:{{ site.email }}">{{ site.email }}</a>
         </li>
-        <li>
+        <li class="profile-info-item" style="--ith: 4">
             <i class="fa-solid fa-handshake fa-fw"></i>
-            <a href="{{ site.github }}">Github</a>, <a href="{{ site.leetcode }}">Leetcode</a>
+            <a href="{{ site.github }}">Github</a>,
+            <a href="{{ site.leetcode }}">Leetcode</a>
         </li>
     </ul>
     <hr><!-- identity -->
     <ul class="profile-info">
-        <li><i class="fa-solid fa-graduation-cap fa-fw"></i> Professional student</li>
-        <li><i class="fa-solid fa-coffee fa-fw"></i> Perfectionist coder</li>
-        <li><i class="fa-solid fa-book-reader fa-fw"></i> Optimistic reader</li>
-        <li><i class="fa-solid fa-dumbbell fa-fw"></i> Lite bodybuilder</li>
-        <li><i class="fa-solid fa-compass fa-fw"></i> Inquisitive traveler</li>
-        <li><i class="fa-solid fa-camera fa-fw"></i> Amateur photographer</li>
-        <li>...</li>
+        <li class="profile-info-item" style="--ith: 5">
+            <i class="fa-solid fa-graduation-cap fa-fw"></i>
+            Professional student
+        </li>
+        <li class="profile-info-item" style="--ith: 6">
+            <i class="fa-solid fa-coffee fa-fw"></i>
+            Perfectionist coder
+        </li>
+        <li class="profile-info-item" style="--ith: 7">
+            <i class="fa-solid fa-book-reader fa-fw"></i>
+            Optimistic reader
+        </li>
+        <li class="profile-info-item" style="--ith: 8">
+            <i class="fa-solid fa-dumbbell fa-fw"></i>
+            Lite bodybuilder
+        </li>
+        <li class="profile-info-item" style="--ith: 9">
+            <i class="fa-solid fa-compass fa-fw"></i>
+            Inquisitive traveler
+        </li>
+        <li class="profile-info-item" style="--ith: 10">
+            <i class="fa-solid fa-camera fa-fw"></i>
+            Amateur photographer
+        </li>
+        <li class="profile-info-item" style="--ith: 11">
+            ...
+        </li>
     </ul>
     <hr><!-- hobby -->
     <ul class="profile-info">
-        <li><i class="fa-solid fa-laptop-code fa-fw"></i> <a href="{{ site.github }}">Coding</a></li>
-        <li><i class="fa-solid fa-book fa-fw"></i> <a href="/books.html">Reading</a></li>
-        <li><i class="fa-solid fa-person-hiking fa-fw"></i> <a href="/footprint.html">Traveling</a></li>
-        <li>...</li>
+        <li class="profile-info-item" style="--ith: 12">
+            <i class="fa-solid fa-laptop-code fa-fw"></i>
+            <a href="{{ site.github }}">Coding</a>
+        </li>
+        <li class="profile-info-item" style="--ith: 13">
+            <i class="fa-solid fa-book fa-fw"></i>
+            <a href="/books.html">Reading</a>
+        </li>
+        <li class="profile-info-item" style="--ith: 14">
+            <i class="fa-solid fa-person-hiking fa-fw"></i>
+            <a href="/footprint.html">Traveling</a>
+        </li>
+        <li class="profile-info-item" style="--ith: 15">
+            ...
+        </li>
     </ul>
 </article></dialog>

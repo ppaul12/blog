@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 鹿岛·佐原·铫子旅行
+title: 鹿岛·佐原·铫子之旅
 tags: 旅行
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 草津温泉·羽越本线·酒田旅行
+title: 草津温泉·羽越本线·酒田之旅
 tags: 旅行
 ---
 

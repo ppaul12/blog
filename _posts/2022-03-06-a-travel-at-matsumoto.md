@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 松本·长野旅行
+title: 松本·长野之旅
 tags: 旅行
 ---
 

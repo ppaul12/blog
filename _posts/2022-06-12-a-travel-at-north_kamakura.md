@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 北镰仓赏绣球旅行
+title: 北镰仓赏绣球之旅
 tags: 旅行
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 千叶环岛旅行
+title: 千叶环岛之旅
 tags: 旅行
 ---
 

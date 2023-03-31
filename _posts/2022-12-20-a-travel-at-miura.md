@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 三浦半岛旅行
+title: 三浦半岛之旅
 tags: 旅行
 ---
 

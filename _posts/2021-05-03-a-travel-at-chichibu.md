@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 秩父旅行
+title: 秩父赏芝樱之旅
 tags: 旅行
 ---
 

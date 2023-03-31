@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 河津赏樱旅行
+title: 河津赏樱之旅
 tags: 旅行
 ---
 

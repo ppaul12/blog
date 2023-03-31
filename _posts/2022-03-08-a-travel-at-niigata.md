@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 新潟旅行
+title: 新潟之旅
 tags: 旅行
 ---
 

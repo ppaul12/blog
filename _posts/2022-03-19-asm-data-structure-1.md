@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 数据结构的汇编实现 (1)
-sub-title: 列表操作
+subtitle: 列表操作
 tags: ComputerScience Assembly C/C++
 ---
 

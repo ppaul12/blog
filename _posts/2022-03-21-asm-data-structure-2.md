@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 数据结构的汇编实现 (2)
-sub-title: 顺序表
+subtitle: 顺序表
 tags: ComputerScience Assembly C/C++
 ---
 

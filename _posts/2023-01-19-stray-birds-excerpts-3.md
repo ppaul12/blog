@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 飞鸟集摘抄 (3)
-sub-title: 201 ~ 325
+subtitle: 201 ~ 325
 tags: 现代诗 随想
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 一种汇编器的构建思路
-sub-title: 基于RISC-V实现
+subtitle: 基于RISC-V实现
 tags: ComputerScience Assembly Python3
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 再访三浦之旅
-sub-title: 逗子·葉山
+subtitle: 逗子·葉山
 tags: 旅行
 ---
 

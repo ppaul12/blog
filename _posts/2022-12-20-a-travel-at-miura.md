@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 三浦半岛之旅
-sub-title: 横須賀·城ヶ島
+subtitle: 横須賀·城ヶ島
 tags: 旅行
 ---
 

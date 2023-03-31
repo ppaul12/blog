@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: projects
-sub-title: explore the unknowns ...
+subtitle: explore the unknowns ...
 icon: "fa-solid fa-cubes fa-fw"
 permalink: /projects.html
 ---
@@ -19,7 +19,7 @@ permalink: /projects.html
             {% assign page = site.pages | where_exp:"page", "page.url contains project.link" | first %}
             <small><em>{{ project.start }} ~ {{ project.end }}</em></small>
             <h3>{{ project.title }}</h3>
-            <h4><em>{{ project.sub-title }}</em></h4>
+            <h4><em>{{ project.subtitle }}</em></h4>
         </hgroup>
     </article>
     {% endfor %}

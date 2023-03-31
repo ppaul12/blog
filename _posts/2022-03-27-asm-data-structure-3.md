@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 数据结构的汇编实现 (3)
-sub-title: 单链表
+subtitle: 单链表
 tags: ComputerScience Assembly C/C++
 ---
 

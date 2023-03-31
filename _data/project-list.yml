@@ -1,19 +1,19 @@
 - title: Days in Japan (0)
-  sub-title: 秋到春的故事
+  subtitle: 秋到春的故事
   start: "2018.10"
   end: "2019.03"
   link: /projects/Days in Japan (0).html
   type: life
 
 - title: Days in Japan (1)
-  sub-title: 东风夜放花千树
+  subtitle: 东风夜放花千树
   start: "2019.04"
   end: "2020.03"
   link: /projects/Days in Japan (1).html
   type: life
 
 - title: Days in Japan (2)
-  sub-title: 博观而约取
+  subtitle: 博观而约取
   start: "2020.04"
   end: "2021.03"
   link: /projects/Days in Japan (2).html
@@ -26,7 +26,7 @@
   type: git
 
 - title: Days in Japan (3)
-  sub-title: 纸上得来终觉浅
+  subtitle: 纸上得来终觉浅
   start: "2021.04"
   end: "2022.03"
   link: /projects/Days in Japan (3).html
@@ -39,7 +39,7 @@
   type: git
 
 - title: 诗经小记
-  sub-title: 用一年的时间读一本诗经
+  subtitle: 用一年的时间读一本诗经
   start: "2021.12"
   end: "2022.11"
   link: /projects/诗经小记.html
@@ -52,7 +52,7 @@
   type: code
 
 - title: Days in Japan (4)
-  sub-title: 世事洞明皆学问
+  subtitle: 世事洞明皆学问
   start: "2022.04"
   end: "2023.03"
   link: /projects/Days in Japan (4).html
@@ -71,7 +71,7 @@
   type: git
 
 - title: 飞鸟集摘抄
-  sub-title: Excerpts of Stray Birds
+  subtitle: Excerpts of Stray Birds
   start: "2022.11"
   end: "2023.01"
   link: /projects/飞鸟集摘抄.html

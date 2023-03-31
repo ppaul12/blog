@@ -5,7 +5,7 @@ permalink: /projects/Days in Japan (3).html
 
 # 2021.05
 
-- [秩父旅行](/2021/05/03/a-travel-at-chichibu.html)
+- [秩父赏芝樱之旅](/2021/05/03/a-travel-at-chichibu.html)
 
 ---
 
@@ -72,10 +72,12 @@ permalink: /projects/Days in Japan (3).html
 
 # 2022.03
 
-- [河津赏樱旅行](/2022/03/05/a-travel-at-kawazu.html)
-- [松本·长野旅行](/2022/03/06/a-travel-at-matsumoto.html)
-- [新潟旅行](/2022/03/08/a-travel-at-niigata.html)
-- [草津温泉·羽越本线·酒田旅行](/2022/03/09/a-travel-at-uetsu.html)
+- [河津赏樱之旅](/2022/03/05/a-travel-at-kawazu.html)
+- [松本·诹访之旅](/2022/03/06/a-travel-at-matsumoto.html)
+- [长野之旅](/2022/03/07/a-travel-at-nagano.html)
+- [新潟之旅](/2022/03/08/a-travel-at-niigata.html)
+- [草津温泉之旅](/2022/03/09/a-travel-at-kusatsu.html)
+- [羽越本线之旅](/2022/03/10/a-travel-at-uetsu.html)
 
 ---
 

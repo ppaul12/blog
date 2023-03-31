@@ -26,7 +26,7 @@ permalink: /projects/Days in Japan (4).html
 
 # 2022.06
 
-- [北镰仓赏绣球旅行](/2022/06/12/a-travel-at-north_kamakura.html)
+- [北镰仓赏绣球之旅](/2022/06/12/a-travel-at-north_kamakura.html)
 
 ---
 
@@ -77,7 +77,7 @@ permalink: /projects/Days in Japan (4).html
 
 # 2022.12
 
-- [三浦半岛旅行](/2022/12/20/a-travel-at-miura.html)
+- [三浦半岛之旅](/2022/12/20/a-travel-at-miura.html)
 - [京都散心旅行](/2022/12/29/a-travel-at-kyoto-relax.html)
 
 # 2023.03

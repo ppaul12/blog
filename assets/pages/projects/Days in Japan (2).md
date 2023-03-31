@@ -113,8 +113,8 @@ permalink: /projects/Days in Japan (2).html
 # 2021.03
 
 - [茨城·福岛旅行](/2021/03/08/a-travel-at-ibaraki.html)
-- [千叶环岛旅行](/2021/03/23/a-travel-at-chiba.html)
-- [鹿岛·佐原·铫子旅行](/2021/03/26/a-travel-at-choshi.html)
+- [千叶环岛之旅](/2021/03/23/a-travel-at-chiba.html)
+- [鹿岛·佐原·铫子之旅](/2021/03/26/a-travel-at-choshi.html)
 
 ---
 

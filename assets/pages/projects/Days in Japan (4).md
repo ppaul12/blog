@@ -82,6 +82,10 @@ permalink: /projects/Days in Japan (4).html
 
 # 2023.03
 
+- [再访三浦之旅](/2023/03/30/a-travel-at-miura-again.html)
+
+---
+
 <div class="gallery">
     <div class="item">
         <img src="/assets/src/days-in-japan/2023-03-1.jpeg">

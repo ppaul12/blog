@@ -37,14 +37,6 @@
         animation-duration: 1s;
     }
 
-    &-info {
-        text-align: right;
-        margin-bottom: 1em;
-    
-        animation: fadeInRight backwards;
-        animation-duration: 1s;
-    }
-
     &-content {
         animation: fadeIn backwards;
         animation-duration: 2s;

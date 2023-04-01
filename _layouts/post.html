@@ -31,13 +31,6 @@ layout: default
         </hgroup>
     </header>
 
-    <!-- word count -->
-    <div class="post-info"><small>
-        {% assign info = page.content | strip_html | word_info %}
-        <i class="fa-solid fa-spell-check fa-fw"></i> {{ info[0] }}
-        <i class="fa-solid fa-stopwatch fa-fw"></i> {{ info[1] }}
-    </small></div>
-
     <div class="post-content" id="post">{{ content }}</div>
 
     <footer>

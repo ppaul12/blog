@@ -3,8 +3,13 @@ function initGalleryModal() {
     window.addEventListener("load", () => {
         document.querySelectorAll(".gallery img").forEach((img, idx) => {
             // create modal dialog
+            let button = document.createElement("div")
+            button.className = "close-btn"
+            button.setAttribute("data-target", `pic${idx + 1}`)
+            button.onclick = toggleModal
             let header = document.createElement("header")
-            header.innerHTML = `<div class="close-btn" data-target="pic${idx + 1}" onclick="toggleModal(event)"></div>`
+            header.appendChild(button)
+            header.appendChild(img.nextElementSibling.cloneNode(true))
             let article = document.createElement("article")
             article.appendChild(header)
             article.appendChild(img.cloneNode())

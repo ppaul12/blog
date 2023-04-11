@@ -35,4 +35,3 @@ $ gem install bundler
 $ bundle intall
 $ bundle exec jekyll server
 ```
-

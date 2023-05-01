@@ -378,6 +378,10 @@
     }
 }
 
+// tooltip
+[data-tooltip]:not(a, button, input) {
+    border: none;
+}
 
 // image frame
 .img-frame {

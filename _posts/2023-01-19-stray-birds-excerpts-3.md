@@ -11,7 +11,6 @@ tags: 现代诗 随想
 > become untroubled in its depth of peace, like the evening in the seashore when the water is silent.
 {: .literature .quote .en}
 
-
 ## 212. 陌生的夜
 
 > My evening came among the alien trees and spoke in a language which my morning stars did not know.
@@ -26,7 +25,6 @@ tags: 现代诗 随想
 
 > My heart has spread its sails to the idle winds for the shadowy island of Anywhere.
 {: .literature .quote .en}
-
 
 ## 223. 失恋
 

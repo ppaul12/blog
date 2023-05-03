@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 京都散心旅行
+subtitle: 大阪·京都·宇治·蒲郡
 tags: 旅行
 ---
 

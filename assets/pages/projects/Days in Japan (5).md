@@ -39,3 +39,20 @@ permalink: /projects/Days in Japan (5).html
         <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 恵比寿</p>
     </div>
 </div>
+
+# 2023.05
+
+<div class="gallery">
+    <div class="item">
+        <img src="/assets/src/days-in-japan/2023-05-1.jpeg">
+        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 羽田空港</p>
+    </div>
+    <div class="item">
+        <img src="/assets/src/days-in-japan/2023-05-2.jpeg">
+        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 羽田空港</p>
+    </div>
+    <div class="item">
+        <img src="/assets/src/days-in-japan/2023-05-3.jpeg">
+        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 羽田空港</p>
+    </div>
+</div>

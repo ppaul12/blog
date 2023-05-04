@@ -214,18 +214,30 @@
         justify-content: space-between;
         overflow-x: scroll;
     }
-    
-    &-cover {
+
+    &-img {
         display: inline-block;
-        width: 150px;
-        height: 200px;
+        position: relative;
         margin: 0 0.5em;
-        object-fit: fill;
-        border: 1px solid var(--muted-border-color);
-        box-shadow: 5px 5px 5px var(--muted-border-color);
-    
+
         animation: slideInLeft backwards;
         animation-duration: 1s;
+
+        .cover {
+            width: 150px;
+            height: 200px;
+            object-fit: fill;
+            box-shadow: 5px 5px 5px var(--muted-border-color);
+        }
+
+        .mark {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            width: 10px;
+            height: 10px;
+            color: #{$nord13};
+        }
     }
     
     &-info {

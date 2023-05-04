@@ -64,18 +64,24 @@ permalink: /
 
         {% assign booksets = site.data.book-list %}
         <div class="book-shelf">
-            {% for bookset in booksets limit:2 %}
+            {% for bookset in booksets limit:3 %}
                 {% assign books = bookset.books | sort:"date" %}
                 {% for book in books %}
-                <img class="book-cover"
-                    src="/assets/img/covers/{{ book.title }}.jpg"
-                    alt="{{ book.title }}"
-                    data-target="{{ book.title }}" onclick="toggleModal(event)">
-                <dialog id="{{ book.title }}"><article class="book-tag">
-                    <img class="book-cover"
+                <div class="book-img">
+                    <img class="cover"
                         src="/assets/img/covers/{{ book.title }}.jpg"
                         alt="{{ book.title }}"
-                        onclick="location.href='{{ book.link }}'">
+                        data-target="{{ book.title }}" onclick="toggleModal(event)">
+                    {% if bookset.year == "Reading" %}<span class="mark fa-solid fa-bookmark"></span>{% endif %}
+                </div>
+                <dialog id="{{ book.title }}"><article class="book-tag">
+                    <div class="book-img">
+                        <img class="cover"
+                            src="/assets/img/covers/{{ book.title }}.jpg"
+                            alt="{{ book.title }}"
+                            onclick="location.href='{{ book.link }}'">
+                        {% if bookset.year == "Reading" %}<span class="mark fa-solid fa-bookmark"></span>{% endif %}
+                    </div>
                     <hgroup class="book-info">
                         <h3>{{ book.title }}</h3>
                         <h4>{{ book.subtitle }}</h4>

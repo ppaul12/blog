@@ -12,10 +12,15 @@ function initAlbum() {
         const album = document.getElementById("album")
         album.innerHTML = ""
         sample(pics, 4).forEach(pic => {
+            const img = document.createElement("img")
+            img.src = pic.path
+            const info = document.createElement("p")
+            info.innerHTML = pic.info
+            info.onclick = () => { location.href = pic.url }
             const item = document.createElement("div")
             item.className = "item"
-            item.onclick = event => { location.href = pic.url }
-            item.innerHTML = `<img src="${pic.path}"><p>${pic.info}</p>`
+            item.appendChild(img)
+            item.appendChild(info)
             album.appendChild(item)
         })
     }

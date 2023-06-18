@@ -37,6 +37,11 @@
     <!-- mathjax -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@latest/es5/tex-mml-chtml.js"></script>
     <script>MathJax = { tex: { inlineMath: [["$", "$"]], processEscapes: true } }</script>
+    <!-- mermaid -->
+    {% if page.required contains "mermaid" %}
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true, theme:"forest", flowchart:{useMaxWidth:false, htmlLabels:true}})</script>
+    {% endif %}
     <!-- pyscript -->
     {% if page.required contains "python" %}
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>

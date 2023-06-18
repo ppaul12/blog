@@ -65,7 +65,7 @@ permalink: /
         {% assign booksets = site.data.book-list %}
         <div class="book-shelf">
             {% for bookset in booksets limit:3 %}
-                {% assign books = bookset.books | sort:"date" %}
+                {% assign books = bookset.books | sort:"date" | reverse %}
                 {% for book in books %}
                 <div class="book-img">
                     <img class="cover"

@@ -2,7 +2,7 @@
 layout: post
 title: 飞鸟集摘抄 (3)
 subtitle: 201 ~ 325
-tags: 现代诗 随想
+tags: 现代诗 随想 摘抄
 ---
 
 ## 208. 静置

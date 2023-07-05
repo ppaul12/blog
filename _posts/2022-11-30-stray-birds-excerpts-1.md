@@ -2,7 +2,7 @@
 layout: post
 title: 飞鸟集摘抄 (1)
 subtitle: 001 ~ 100
-tags: 现代诗 随想
+tags: 现代诗 随想 摘抄
 ---
 
 ## 001. 韶华

@@ -2,7 +2,7 @@
 layout: post
 title: 飞鸟集摘抄 (2)
 subtitle: 101 ~ 200
-tags: 现代诗 随想
+tags: 现代诗 随想 摘抄
 ---
 
 ## 102. 贪恋

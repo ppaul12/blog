@@ -35,7 +35,7 @@
 - title: RISC-V simulator
   start: "2021.10"
   end: "2022.02"
-  link: /projects/RISC-V simulator.html
+  link: https://github.com/PENG-AO/RV32I-simulator
   type: git
 
 - title: 诗经小记

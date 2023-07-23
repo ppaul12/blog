@@ -1,16 +1,13 @@
 - year: Reading
   books:
-    - title: 新月集
-      author: 泰戈尔,郑振铎
-      link: https://book.douban.com/subject/4243304/
-
     - title: 三四郎(日)
       author: 夏目漱石
       link: https://www.shinchosha.co.jp/book/101004/
-
-    - title: 人生学校-理想的工作
-      link: https://book.douban.com/subject/30355382/
     
+    - title: 旅行的艺术
+      author: Alain de Botton
+      link: https://book.douban.com/subject/4313080/
+
 - year: 2023
   books:
     - title: 繁星·春水
@@ -44,6 +41,15 @@
       author: 叶嘉莹
       link: https://book.douban.com/subject/35888698/
       date: "05.14"
+    
+    - title: 新月集
+      author: 泰戈尔,郑振铎
+      link: https://book.douban.com/subject/4243304/
+      date: "07.21"
+    
+    - title: 人生学校-理想的工作
+      link: https://book.douban.com/subject/30355382/
+      date: "07.23"
 
 - year: 2022
   books:

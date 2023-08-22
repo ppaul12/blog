@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 渐近记号
+title: 渐近记号memo
 tags: ComputerScience
 ---
 

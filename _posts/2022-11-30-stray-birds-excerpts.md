@@ -8,8 +8,6 @@ tags: 现代诗 随想 摘抄
 
 其时常在视频网站中浏览到英文书法相关的视频，每每看到流畅的笔触和秀丽的字迹总感到意犹未尽、跃跃欲试。正值《诗经》的阅读告一段落，心中仍有对诗词的留恋，因而着眼于《飞鸟集》，并将其用作英文书法的练习材料。后从2022.11.11起，历经三个月左右的时间，于2023.01.19将全325首小诗以抄写的形式读罢。摘录了一些颇有感触的篇目，并尝试自拟了题目。
 
-# 001 ~ 100
-
 #### 001. 韶华
 
 > Stray birds of summer come to my window to sing and fly away.
@@ -147,8 +145,6 @@ tags: 现代诗 随想 摘抄
 > The morning crowned it with splendor.
 {: .literature .quote .en}
 
-# 101 ~ 200
-
 #### 102. 贪恋
 
 > Do not linger to gather flowers to keep them,
@@ -232,8 +228,6 @@ tags: 现代诗 随想 摘抄
 
 > "I have lost my dewdrop," cries the flower of the morning sky that has lost all its stars.
 {: .literature .quote .en}
-
-# 201 ~ 325
 
 #### 208. 静置
 
@@ -332,4 +326,3 @@ tags: 现代诗 随想 摘抄
 > There are tracts in my life that are bare and silent.
 > They are the open spaces where my busy days had their light and air.
 {: .literature .quote .en}
-

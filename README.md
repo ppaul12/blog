@@ -32,6 +32,6 @@ Just a record of daily life.
 
 ```shell
 $ gem install bundler
-$ bundle intall
+$ bundle install
 $ bundle exec jekyll server
 ```

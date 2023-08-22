@@ -3,10 +3,6 @@
     - title: 三四郎(日)
       author: 夏目漱石
       link: https://www.shinchosha.co.jp/book/101004/
-    
-    - title: 旅行的艺术
-      author: Alain de Botton
-      link: https://book.douban.com/subject/4313080/
 
 - year: 2023
   books:
@@ -50,6 +46,11 @@
     - title: 人生学校-理想的工作
       link: https://book.douban.com/subject/30355382/
       date: "07.23"
+    
+    - title: 旅行的艺术
+      author: Alain de Botton
+      link: https://book.douban.com/subject/4313080/
+      date: "08.01"
 
 - year: 2022
   books:

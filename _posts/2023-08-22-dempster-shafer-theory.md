@@ -43,7 +43,7 @@ $$
 
 # 2. 代码实现
 
-```c++
+```cpp
 #include <initializer_list>
 
 #include <Eigen/Core>
@@ -122,7 +122,7 @@ private:
 
 在此设想比较两个时刻的空间变化的场景：基本事件为$consistent$和$conflicting$，则所有可能事件为$\emptyset$、$\lbrace consistent\rbrace$、$\lbrace conflicting\rbrace$、$\lbrace consistent, conflicting\rbrace$。其中可将$consistent$和$conflicting$的并集改写为$unknown$。后可在测试文件中作如下验证。
 
-```c++
+```cpp
 int main(int argc, char* argv[]) {
     enum class TemporalState { null, consistent, conflicting, unknown };
 

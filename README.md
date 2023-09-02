@@ -1,17 +1,11 @@
-# My Blog
-
-This is a repo of my [blog](https://peng-ao.github.io).
-
-## Purposes
-
-Just a record of daily life.
+This is the repo of my [blog](https://peng-ao.github.io) for recording daily life
 
 - travels
 - thoughts
 - works
 - ...
 
-## Tec Details
+with the help of the following works.
 
 - main: [Jekyll](https://jekyllrb.com) + [github pages](https://pages.github.com)
 - styles: [pico.css](https://picocss.com)
@@ -28,10 +22,10 @@ Just a record of daily life.
 - footprint map: [jVectorMap](https://jvectormap.com)
 - ...
 
-## Start-up
+Just execute these commands to run it locally.
 
 ```shell
-$ gem install bundler
-$ bundle install
-$ bundle exec jekyll server
+gem install bundler
+bundle install
+bundle exec jekyll server
 ```

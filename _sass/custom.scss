@@ -210,10 +210,13 @@
     
     &-tag {
         display: flex;
+        @media (max-width: 420px) {
+            flex-direction: column;
+        }
         width: 100%;
         align-items: center;
+        align-content: space-between;
         justify-content: space-between;
-        overflow-x: scroll;
     }
 
     &-img {
@@ -244,6 +247,9 @@
     &-info {
         display: inline-block;
         text-align: right;
+        @media (max-width: 420px) {
+            text-align: center;
+        }
         white-space: nowrap;
     
         animation: slideInRight backwards;
@@ -322,7 +328,9 @@
     }
 
     p {
-        margin-bottom: 0;
+        max-width: 20em;
+        word-break: keep-all;
+        margin: 0 auto;
         line-height: 1.8em;
         text-decoration-line: underline;
         text-decoration-style: dotted;

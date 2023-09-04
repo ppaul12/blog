@@ -85,3 +85,9 @@ permalink: /projects/Days in Japan (5).html
         <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 東京都足立区花火大会</p>
     </div>
 </div>
+
+# 2023.08
+
+- [山形之旅](/2023/08/24/a-travel-at-yamagata.html)
+- [再访会津旅行](/2023/08/26/a-travel-at-aizu-again.html)
+- [再访青森·秋田旅行](/2023/08/28/a-travel-at-aomori.html)

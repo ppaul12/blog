@@ -20,7 +20,6 @@
 
     .card {
         flex-grow: 1;
-        width: 46%;
         margin: 0.5em;
         overflow-x: hidden;
         white-space: nowrap;
@@ -190,6 +189,7 @@
         height: 100%;
         width: 100%;
         object-fit: cover;
+        border-radius: 0;
 
         &.move-in {
             animation: fadeInRight 1s backwards;

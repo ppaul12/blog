@@ -11,10 +11,10 @@ function initAlbum() {
     }
     const next = (pics, idx = 0) => {
         const album = document.getElementById("album")
-        album.scrollIntoView({ behavior: "smooth" })
         if (document.getElementById("album-button").hasAttribute("state-pause")) {
             window.setTimeout(next, 1000, pics, idx)
         } else {
+            album.scrollIntoView({ behavior: "smooth" })
             // move out the existing elements
             album.childNodes.forEach(elem => {
                 elem.className = "move-out"

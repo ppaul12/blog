@@ -47,20 +47,10 @@
     </div>
     <hr><!-- skills -->
     <div class="profile-icons">
-        <img style="--ith: 0" width="32px" height="32px" src="/assets/img/skills/c.svg">
-        <img style="--ith: 1" width="32px" height="32px" src="/assets/img/skills/cpp.svg">
-        <img style="--ith: 2" width="32px" height="32px" src="/assets/img/skills/git.svg">
-        <img style="--ith: 3" width="32px" height="32px" src="/assets/img/skills/github.svg">
-        <img style="--ith: 4" width="32px" height="32px" src="/assets/img/skills/jekyll.svg">
-        <img style="--ith: 5" width="32px" height="32px" src="/assets/img/skills/latex.svg">
-    </div>
-    <div class="profile-icons">
-        <img style="--ith: 0" width="32px" height="32px" src="/assets/img/skills/leetcode.svg">
-        <img style="--ith: 1" width="32px" height="32px" src="/assets/img/skills/markdown.svg">
-        <img style="--ith: 2" width="32px" height="32px" src="/assets/img/skills/n3ds.svg">
-        <img style="--ith: 3" width="32px" height="32px" src="/assets/img/skills/neovim.svg">
-        <img style="--ith: 4" width="32px" height="32px" src="/assets/img/skills/ns.svg">
-        <img style="--ith: 5" width="32px" height="32px" src="/assets/img/skills/python.svg">
+        {% assign skills = site.data.skill-list | sort:"name" %}
+        {% for skill in skills %}
+        <img style="--ith: {{ forloop.index0 }}" width="32px" height="32px"src="https://cdn.simpleicons.org/{{ skill.name }}/{{ skill.color }}">
+        {% endfor %}
     </div>
     <hr><!-- info -->
     <ul class="profile-info">

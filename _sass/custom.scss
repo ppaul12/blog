@@ -135,6 +135,8 @@
         margin-bottom: 0;
 
         &-item {
+            list-style: none;
+
             animation: fadeInLeft backwards;
             animation-duration: 1s;
             animation-delay: calc(var(--ith) * 200ms);

@@ -269,6 +269,7 @@
         display: inline-block;
         text-align: right;
         @media (max-width: 420px) {
+            margin-top: 1em;
             text-align: center;
         }
         white-space: nowrap;

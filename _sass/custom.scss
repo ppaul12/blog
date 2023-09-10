@@ -1,14 +1,15 @@
 // nav bar
 .nav {
     &-title {
-        animation: fadeInDown backwards;
-        animation-duration: 1s;
+        animation: 1s fadeInDown backwards;
+
+        &:hover {
+            animation: 3s hinge forwards;
+        }
     }
 
     &-icon {
-        animation: fadeInDown backwards;
-        animation-duration: 1s;
-        animation-delay: calc(var(--ith) * 200ms);
+        animation: 1s fadeInDown calc(var(--ith) * 200ms) backwards;
     }
 }
 
@@ -24,21 +25,23 @@
         overflow-x: hidden;
         white-space: nowrap;
 
-        animation: zoomIn backwards;
-        animation-duration: 1s;
+        animation: 1s zoomIn backwards;
+        transition: border-radius 0.5s ease;
+
+        &:hover {
+            border-radius: 2em;
+        }
     }
 }
 
 // post
 .post {
     &-title {
-        animation: fadeInLeft backwards;
-        animation-duration: 1s;
+        animation: 1s fadeInLeft backwards;
     }
 
     &-content {
-        animation: fadeIn backwards;
-        animation-duration: 2s;
+        animation: 2s fadeIn backwards;
     }
 }
 
@@ -46,8 +49,7 @@
 .tag-cloud {
     justify-content: end !important;
 
-    animation: fadeInRight backwards;
-    animation-duration: 1s;
+    animation: 1s fadeInRight backwards;
 }
 
 // button box
@@ -61,8 +63,7 @@
     button {
         border-radius: 4em;
 
-        animation: fadeInUp backwards;
-        animation-duration: 1s;
+        animation: 1s fadeInUp backwards;
     }
 }
 
@@ -71,13 +72,11 @@
     &-input {
         margin-top: 1em;
 
-        animation: zoomIn backwards;
-        animation-duration: 1s;
+        animation: 1s zoomIn backwards;
     }
 
     &-results article {
-        animation: fadeInLeft backwards;
-        animation-duration: 1s;
+        animation: 1s fadeInLeft backwards;
     }
 }
 
@@ -91,8 +90,7 @@
         text-align: center;
         z-index: 2;
 
-        animation: backInDown backwards;
-        animation-duration: 1s;
+        animation: 1s backInDown backwards;
 
         img {
             width: 120px;
@@ -107,12 +105,10 @@
         width: 80%;
         margin: -60px auto 0;
         text-align: center;
-        font-family: "Allura";
-        font-size: 2em;
+        font: 2em "Allura";
         z-index: 2;
 
-        animation: fadeInDown backwards;
-        animation-duration: 1s;
+        animation: 1s fadeInDown backwards;
     }
 
     &-icons {
@@ -125,9 +121,7 @@
             margin: 0.5em;
             border-radius: 0;
 
-            animation: rotateIn backwards;
-            animation-duration: 1s;
-            animation-delay: calc(var(--ith) * 200ms);
+            animation: 1s rotateIn calc(var(--ith) * 200ms) backwards;
         }
     }
 
@@ -137,9 +131,7 @@
         &-item {
             list-style: none;
 
-            animation: fadeInLeft backwards;
-            animation-duration: 1s;
-            animation-delay: calc(var(--ith) * 200ms);
+            animation: 1s fadeInLeft calc(var(--ith) * 200ms) backwards;
         }
     }
 }
@@ -168,15 +160,13 @@
             border-bottom-right-radius: 0;
             object-fit: cover;
 
-            animation: zoomIn backwards;
-            animation-duration: 1s;
+            animation: 1s zoomIn backwards;
         }
 
         p {
             margin: 0.2em 0;
 
-            animation: fadeInDown backwards;
-            animation-duration: 1s;
+            animation: 1s fadeInDown backwards;
         }
     }
 }
@@ -194,11 +184,11 @@
         border-radius: 0;
 
         &.move-in {
-            animation: fadeInRight 1s backwards;
+            animation: 1s fadeInRight backwards;
         }
 
         &.move-out {
-            animation: fadeOutLeftBig 1s forwards;
+            animation: 1s fadeOutLeftBig forwards;
         }
     }
 
@@ -212,11 +202,11 @@
         margin: 0.2em 0;
 
         &.move-in {
-            animation: fadeInLeft 1s backwards;
+            animation: 1s fadeInLeft backwards;
         }
 
         &.move-out {
-            animation: fadeOutRightBig 1s forwards;
+            animation: 1s fadeOutRightBig forwards;
         }
     }
 }
@@ -226,9 +216,9 @@
     &-shelf {
         overflow-x: scroll;
         white-space: nowrap;
-        padding-bottom: 1em;
+        padding: 1em 0.5em;
     }
-    
+
     &-tag {
         display: flex;
         @media (max-width: 420px) {
@@ -245,8 +235,12 @@
         position: relative;
         margin: 0 0.5em;
 
-        animation: slideInLeft backwards;
-        animation-duration: 1s;
+        animation: 1s slideInLeft backwards;
+        transition: all 0.2s ease;
+ 
+        &:hover {
+            transform: scale(1.1);
+        }
 
         .cover {
             min-width: 150px;
@@ -261,7 +255,7 @@
             right: 10px;
             width: 10px;
             height: 10px;
-            color: #{$nord13};
+            color: $nord13;
         }
     }
     
@@ -274,8 +268,7 @@
         }
         white-space: nowrap;
     
-        animation: slideInRight backwards;
-        animation-duration: 1s;
+        animation: 1s slideInRight backwards;
     }
 }
 
@@ -318,8 +311,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            font-family: "Font Awesome 6 Free";
-            font-size: 2em;
+            font: 2em "Font Awesome 6 Free";
             color: var(--muted-border-color);
             content: "\f10d";
         }
@@ -328,16 +320,14 @@
             position: absolute;
             bottom: 0;
             right: 0;
-            font-family: "Font Awesome 6 Free";
-            font-size: 2em;
+            font: 2em "Font Awesome 6 Free";
             color: var(--muted-border-color);
             content: "\f10e";
         }
     }
 
     &.en p {
-        font-family: "Allura";
-        font-size: 1.4em;
+        font: 1.4em "Allura";
     }
 
     header {
@@ -365,17 +355,15 @@
 // tree list
 .tree-list {
     min-width: 300px;
-    
+ 
     ul {
         li {
             position: relative;
             list-style: none;
             margin: 0;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            padding-left: 15px;
+            padding: 5px 15px;
             box-sizing: border-box;
-            
+ 
             &::before {
                 position: absolute;
                 top: 15px;
@@ -386,7 +374,7 @@
                 content: "";
                 background-color: var(--color);
             }
-            
+ 
             &::after {
                 position: absolute;
                 top: 0;
@@ -397,7 +385,7 @@
                 content: "";
                 background-color: var(--color);
             }
-            
+ 
             &:last-child::after {
                 height: 15px;
             }
@@ -408,11 +396,10 @@
 // close button
 .close-btn {
     text-align: right;
-    transition: opacity 0.5s;
+    transition: opacity 0.5s ease;
 
     &::before {
-        font-family: "Font Awesome 6 Free";
-        font-weight: 900;
+        font: 900 1em "Font Awesome 6 Free";
         content: "\f00d";
     }
 

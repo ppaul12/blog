@@ -2,22 +2,25 @@
     --font-family: "LXGW WenKai Lite", sans-serif;
 }
 
+html {
+    transition: background 0.5s ease;
+    scroll-behavior: smooth !important;
+}
+
 body {
     & > header, & > footer {
         text-align: center;
 
-        animation: zoomIn backwards;
-        animation-duration: 1s;
+        animation: 1s zoomIn backwards;
     }
 
     & > header {
         padding-bottom: 0;
 
         .main-title {
-            font-family: 'Allura';
-            font-size: 3em;
+            font: 3em "Allura";
         }
-    
+ 
         .sub-title {
             font-size: 1em;
         }
@@ -25,6 +28,13 @@ body {
 
     & > footer {
         padding-top: 0;
+    }
+}
+
+// article
+article {
+    & > header {
+        background: linear-gradient(to right, var(--card-sectionning-background-color), var(--card-background-color));
     }
 }
 
@@ -65,11 +75,6 @@ dialog {
         top: calc(var(--block-spacing-vertical) * -1);
         z-index: 1;
     }
-}
-
-// tables
-table {
-    white-space: nowrap;
 }
 
 // code blocks

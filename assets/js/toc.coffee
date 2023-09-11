@@ -9,7 +9,7 @@ window.addEventListener("load", () ->
         article = document.createElement("article")
         article.innerHTML =
             "<header><nav>
-                <ul>目录</ul>
+                <ul>TOC</ul>
                 <ul class=\"close-btn\" data-target=\"toc-box\" onclick=\"toggleModal(event)\"></ul>
             </nav></header>"
         modal = document.createElement("dialog")

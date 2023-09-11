@@ -33,3 +33,20 @@ permalink: /tags.html
     {% endfor %}
 </details>
 {% endfor %}
+
+<script>
+    window.addEventListener("load", () => {
+        tag = window.decodeURI(window.location.hash).substring(1)
+        if (tag.length > 0) {
+            document.getElementById(tag).open = true
+        }
+    })
+
+    window.addEventListener("hashchange", () => {
+        tag = window.decodeURI(window.location.hash).substring(1)
+        document.querySelectorAll("details").forEach((details) => {
+            details.open = details.id === tag
+        })
+        document.getElementById(tag).scrollIntoView()
+    })
+</script>

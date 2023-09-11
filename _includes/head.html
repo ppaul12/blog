@@ -38,21 +38,25 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@latest/es5/tex-mml-chtml.js"></script>
     <script>MathJax = { tex: { inlineMath: [["$", "$"]], processEscapes: true } }</script>
     <!-- mermaid -->
-    {% if page.required contains "mermaid" %}
     <script src="https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true, theme:"forest", flowchart:{useMaxWidth:false, htmlLabels:true}})</script>
-    {% endif %}
+    <!-- simple jekyll search -->
+    <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+    <!-- lightgallery -->
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@latest/lightgallery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@latest/css/lightgallery-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@latest/plugins/hash/lg-hash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@latest/plugins/zoom/lg-zoom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@latest/plugins/fullscreen/lg-fullscreen.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@latest/plugins/autoplay/lg-autoplay.min.js"></script>
     <!-- pyscript -->
     {% if page.required contains "python" %}
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
     {% endif %}
-    <!-- simple jekyll search -->
-    <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
     <!-- custom style & js -->
     <link rel="stylesheet" href="/assets/main.css"/>
     <script src="/assets/js/theme.js"></script>
     <script src="/assets/js/modal.js"></script>
     <script src="/assets/js/search.js"></script>
     <script src="/assets/js/album.js"></script>
-    <script src="/assets/js/gallery.js"></script>
 </head>

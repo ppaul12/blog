@@ -9,6 +9,8 @@
     }
 
     &-icon {
+        cursor: pointer;
+
         animation: 1s fadeInDown calc(var(--ith) * 200ms) backwards;
     }
 }
@@ -156,8 +158,8 @@
 
         img {
             width: 100%;
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
+            border-top-left-radius: 0.5em;
+            border-top-right-radius: 0.5em;
             object-fit: cover;
 
             animation: 1s zoomIn backwards;
@@ -243,8 +245,10 @@
         }
 
         .cover {
+            width: 12vw;
+            height: 16vw;
             min-width: 150px;
-            height: 200px;
+            min-height: 200px;
             object-fit: fill;
             box-shadow: 5px 5px 5px var(--muted-border-color);
         }

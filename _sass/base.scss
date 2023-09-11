@@ -54,7 +54,6 @@ math {
 img {
     max-width: 100%;
     vertical-align: middle;
-    border-radius: 0.5em;
 }
 
 // thematic break
@@ -75,6 +74,11 @@ dialog {
         top: calc(var(--block-spacing-vertical) * -1);
         z-index: 1;
     }
+}
+
+// button
+button {
+    width: auto;
 }
 
 // code blocks

@@ -20,6 +20,7 @@ with the help of the following works.
 - math formulas: [MathJax](https://www.mathjax.org)
 - search: [Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search)
 - footprint map: [jVectorMap](https://jvectormap.com)
+- album: [lightGallery](https://github.com/sachinchoolur/lightGallery)
 - ...
 
 Just execute these commands to run it locally.

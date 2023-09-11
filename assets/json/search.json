@@ -21,7 +21,7 @@
     {%- for project in projects -%}
     {
         "icon": "<i class='fa-solid fa-cubes'></i>",
-        "title": "{{ project.name }}",
+        "title": "{{ project.title | escape }}",
         "url": "{{ project.link }}",
         "info": "{{ project.end }}"
     }{% unless forloop.last %},{% endunless %}

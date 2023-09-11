@@ -7,24 +7,4 @@
     async
 ></script>
 
-<script>
-    const setTheme = (theme) => {
-        document.querySelector('iframe.utterances-frame').contentWindow.postMessage({
-            type: 'set-theme',
-            theme: `github-${theme}`
-        }, 'https://utteranc.es')
-    }
-    window.addEventListener('message', (event) => {
-        if (event.origin !== 'https://utteranc.es') return
-        // set theme dynamically
-        setTheme(document.querySelector('html').getAttribute('data-theme'))
-        // change theme dynamically
-        const observer = new MutationObserver((mutations) => {
-            mutations.forEach(mutation => {
-                if (mutation.attributeName != 'data-theme') return
-                setTheme(mutation.target.getAttribute(mutation.attributeName))
-            })
-        })
-        observer.observe(document.querySelector('html'), {attributes: true})
-    })
-</script>
+<script src="/assets/js/comment.js"></script>

@@ -6,10 +6,12 @@ description: Hi there, this is PENG AO, welcome to my site! I'm a student/coder/
 
 plugins:
   - jekyll-seo-tag
+  - jekyll-coffeescript
 
 highlighter: none
 markdown: kramdown
 kramdown:
   header_offset: 1
+  toc_levels: 1..3
   syntax_highlighter_opts:
     disable: true

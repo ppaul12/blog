@@ -1,31 +1,12 @@
 <nav>
     <ul class="nav-title"><li>{{ site.title }}</li></ul>
     <ul>
-        <li class="nav-icon" style="--ith: 0">
-            <a class="contrast" href="/" data-tooltip="home" data-placement="bottom">
-                <i class="fa-solid fa-house fa-fw"></i>
-            </a>
-        </li>
-        <li class="nav-icon" style="--ith: 1">
-            <a class="contrast" onclick="openAlbum(event)" data-tooltip="album" data-placement="bottom">
-                <i class="fa-solid fa-image fa-fw"></i>
-            </a>
-        </li>
-        <li class="nav-icon" style="--ith: 2">
-            <a class="contrast" href="/footprint.html" data-tooltip="footprint" data-placement="bottom">
-                <i class="fa-solid fa-map-location-dot fa-fw"></i>
-            </a>
-        </li>
-        <li class="nav-icon" style="--ith: 3">
-            <a class="contrast" href="/tags.html" data-tooltip="tags" data-placement="bottom">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </a>
-        </li>
-        <li class="nav-icon" style="--ith: 4">
-            <a class="contrast" onclick="toggleModal(event)" data-target="profile-box" data-tooltip="profile" data-placement="bottom">
-                <i class="fa-solid fa-user-graduate fa-fw"></i>
-            </a>
-        </li>
+        {% for entry in site.data.nav-list %}
+        <li class="nav-icon contrast" onclick="{{ entry.event }}"
+            data-tooltip="{{ entry.name }}" data-placement="bottom"
+            style="--ith: {{ forloop.index0 }}" {{ entry.other }}
+        ><i class="{{ entry.icon }}"></i></li>
+        {% endfor %}
     </ul>
 </nav>
 
@@ -36,7 +17,7 @@
 
 <dialog id="profile-box"><article>
     <header><div class="close-btn" data-target="profile-box" onclick="toggleModal(event)"></div></header>
-    <div class="profile-avatar"><img src="{{ site.github }}.png"></div>
+    <div class="profile-avatar"><img src="https://github.com/PENG-AO.png"></div>
     <div class="profile-name">Peng Ao</div>
     <div class="profile-icons">
         <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/PENG-AO/PENG-AO.github.io?label=activity">
@@ -47,80 +28,34 @@
     </div>
     <hr><!-- skills -->
     <div class="profile-icons">
-        {% assign skills = site.data.skill-list | sort:"name" %}
+        {% assign skills = site.data.cv-list.skills | sort:"name" %}
         {% for skill in skills %}
-        <img style="--ith: {{ forloop.index0 }}" width="32px" height="32px"src="https://cdn.simpleicons.org/{{ skill.name }}/{{ skill.color }}">
+        <img src="https://cdn.simpleicons.org/{{ skill.info }}/{{ skill.color }}"
+            width="32px" height="32px" style="--ith: {{ forloop.index0 }}">
         {% endfor %}
     </div>
-    <hr><!-- info -->
+    <hr><!-- information -->
     <ul class="profile-info">
-        <li class="profile-info-item" style="--ith: 0">
-            <i class="fa-solid fa-house-chimney fa-fw"></i> China, Shenyang
+        {% for information in site.data.cv-list.information %}
+        <li class="profile-info-item" style="--ith: {{ forloop.index0 }}">
+            <i class="{{ information.icon }}"></i> {{ information.info }}
         </li>
-        <li class="profile-info-item" style="--ith: 1">
-            <i class="fa-solid fa-map-pin fa-fw"></i> Japan, Tokyo
-        </li>
-        <li class="profile-info-item" style="--ith: 2">
-            <i class="fa-solid fa-building fa-fw"></i>
-            <a href="https://www.u-tokyo.ac.jp/ja/index.html">U-tokyo</a>,
-            <a href="https://www.i.u-tokyo.ac.jp/index.shtml">IST</a>,
-            <a href="https://www.is.s.u-tokyo.ac.jp">CS</a>
-        </li>
-        <li class="profile-info-item" style="--ith: 3">
-            <i class="fa-solid fa-envelope fa-fw"></i> {{ site.email }}
-        </li>
-        <li class="profile-info-item" style="--ith: 4">
-            <i class="fa-solid fa-handshake fa-fw"></i>
-            <a href="{{ site.github }}">Github</a>,
-            <a href="{{ site.leetcode }}">Leetcode</a>
-        </li>
+        {% endfor %}
     </ul>
     <hr><!-- identity -->
     <ul class="profile-info">
-        <li class="profile-info-item" style="--ith: 5">
-            <i class="fa-solid fa-graduation-cap fa-fw"></i>
-            Professional student
+        {% for identity in site.data.cv-list.identities %}
+        <li class="profile-info-item" style="--ith: {{ forloop.index0 }}">
+            <i class="{{ identity.icon }}"></i> {{ identity.info }}
         </li>
-        <li class="profile-info-item" style="--ith: 6">
-            <i class="fa-solid fa-coffee fa-fw"></i>
-            Perfectionist coder
-        </li>
-        <li class="profile-info-item" style="--ith: 7">
-            <i class="fa-solid fa-book-reader fa-fw"></i>
-            Optimistic reader
-        </li>
-        <li class="profile-info-item" style="--ith: 8">
-            <i class="fa-solid fa-dumbbell fa-fw"></i>
-            Lite bodybuilder
-        </li>
-        <li class="profile-info-item" style="--ith: 9">
-            <i class="fa-solid fa-compass fa-fw"></i>
-            Inquisitive traveler
-        </li>
-        <li class="profile-info-item" style="--ith: 10">
-            <i class="fa-solid fa-camera fa-fw"></i>
-            Amateur photographer
-        </li>
-        <li class="profile-info-item" style="--ith: 11">
-            ...
-        </li>
+        {% endfor %}
     </ul>
     <hr><!-- hobby -->
     <ul class="profile-info">
-        <li class="profile-info-item" style="--ith: 12">
-            <i class="fa-solid fa-laptop-code fa-fw"></i>
-            <a href="{{ site.github }}">Coding</a>
+        {% for hobby in site.data.cv-list.hobbies %}
+        <li class="profile-info-item" style="--ith: {{ forloop.index0 }}">
+            <i class="{{ hobby.icon }}"></i> {{ hobby.info }}
         </li>
-        <li class="profile-info-item" style="--ith: 13">
-            <i class="fa-solid fa-book fa-fw"></i>
-            <a href="/books.html">Reading</a>
-        </li>
-        <li class="profile-info-item" style="--ith: 14">
-            <i class="fa-solid fa-person-hiking fa-fw"></i>
-            <a href="/footprint.html">Traveling</a>
-        </li>
-        <li class="profile-info-item" style="--ith: 15">
-            ...
-        </li>
+        {% endfor %}
     </ul>
 </article></dialog>

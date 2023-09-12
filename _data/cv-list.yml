@@ -1,0 +1,90 @@
+information:
+  - info: China, Shenyang
+    icon: "fa-solid fa-house-chimney fa-fw"
+  - info: Japan, Tokyo
+    icon: "fa-solid fa-map-pin fa-fw"
+  - info: >
+      <a href="https://www.u-tokyo.ac.jp/ja/index.html">U-tokyo</a>,
+      <a href="https://www.i.u-tokyo.ac.jp/index.shtml">IST</a>,
+      <a href="https://www.is.s.u-tokyo.ac.jp">CS</a>
+    icon: "fa-solid fa-building fa-fw"
+  - info: pengao[at]is.s.u-tokyo.ac.jp
+    icon: "fa-solid fa-envelope fa-fw"
+  - info: >
+      <a href="https://github.com/PENG-AO">Github</a>,
+      <a href="https://leetcode.cn/u/peng_ao">LeetCode</a>
+    icon: "fa-solid fa-handshake fa-fw"
+
+identities:
+  - info: Professional student
+    icon: "fa-solid fa-graduation-cap fa-fw"
+  - info: Perfectionist coder
+    icon: "fa-solid fa-coffee fa-fw"
+  - info: Optimistic reader
+    icon: "fa-solid fa-book-reader fa-fw"
+  - info: Lite bodybuilder
+    icon: "fa-solid fa-dumbbell fa-fw"
+  - info: Inquisitive traveler
+    icon: "fa-solid fa-compass fa-fw"
+  - info: Amateur photographer
+    icon: "fa-solid fa-camera fa-fw"
+
+hobbies:
+  - info: Coding
+    icon: "fa-solid fa-laptop-code fa-fw"
+  - info: Reading
+    icon: "fa-solid fa-book fa-fw"
+  - info: Traveling
+    icon: "fa-solid fa-person-hiking fa-fw"
+
+skills:
+  # programming language
+  - info: c
+    color: "A8B9CC"
+  - info: cplusplus
+    color: "00599C"
+  - info: python
+    color: "3776AB"
+  - info: gnubash
+    color: "4EAA25"
+  - info: ocaml
+    color: "EC6813"
+  - info: html5
+    color: "E34F26"
+  - info: sass
+    color: "CC6699"
+  # configuration language
+  - info: toml
+    color: "9C4121"
+  - info: yaml
+    color: "CB171E"
+  # version control tool
+  - info: git
+    color: "F05032"
+  - info: github
+    color: "181717"
+  # typing tool
+  - info: jekyll
+    color: "CC0000"
+  - info: latex
+    color: "008080"
+  - info: markdown
+    color: "000000"
+  # editor
+  - info: neovim
+    color: "57A143"
+  - info: visualstudiocode
+    color: "007ACC"
+  # operating system
+  - info: macos
+    color: "000000"
+  - info: ubuntu
+    color: "E95420"
+  # game console
+  - info: nintendo3ds
+    color: "D12228"
+  - info: nintendoswitch
+    color: "E60012"
+  # others
+  - info: leetcode
+    color: "FFA116"

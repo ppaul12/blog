@@ -1,0 +1,16 @@
+- name: home
+  icon: "fa-solid fa-house fa-fw"
+  event: "location.href='/'"
+- name: album
+  icon: "fa-solid fa-image fa-fw"
+  event: "openAlbum(event)"
+- name: footprint
+  icon: "fa-solid fa-map-location-dot fa-fw"
+  event: "location.href='footprint.html'"
+- name: tags
+  icon: "fa-solid fa-tags fa-fw"
+  event: "location.href='tags.html'"
+- name: profile
+  icon: "fa-solid fa-user-graduate fa-fw"
+  event: "toggleModal(event)"
+  other: "data-target='profile-box'"

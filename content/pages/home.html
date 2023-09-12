@@ -9,7 +9,7 @@ permalink: /
 
     <!-- posts -->
     <article class="card">
-        <header onclick="location.href='/posts.html'">
+        <header onclick="location.href='/content/posts/'">
             <i class="fa-solid fa-folder-open fa-fw"></i>
             <strong>Posts</strong>
         </header>
@@ -27,7 +27,7 @@ permalink: /
     
     <!-- projects -->
     <article class="card">
-        <header onclick="location.href='/projects.html'">
+        <header onclick="location.href='/content/projects/'">
             <i class="fa-solid fa-cubes fa-fw"></i>
             <strong>Projects</strong>
         </header>
@@ -48,7 +48,11 @@ permalink: /
                     {% else %}
                     <i class="fa-solid fa-file-archive fa-fw"></i>
                 {% endcase%}
-                <a href="{{ project.link }}">{{ project.title }}</a>
+                {% assign link = project.link %}
+                {% unless link %}
+                    {% assign link = "content/projects/" | append:project.title | append:".html" %}
+                {% endunless %}
+                <a href="{{ link }}">{{ project.title }}</a>
             </li>
             {% endfor %}
         </ul>

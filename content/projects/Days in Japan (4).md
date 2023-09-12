@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: /projects/Days in Japan (4).html
+required: as-project
 ---
 
 # 2022.04

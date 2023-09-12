@@ -2,21 +2,18 @@
   subtitle: 秋到春的故事
   start: "2018.10"
   end: "2019.03"
-  link: /projects/Days in Japan (0).html
   type: life
 
 - title: Days in Japan (1)
   subtitle: 东风夜放花千树
   start: "2019.04"
   end: "2020.03"
-  link: /projects/Days in Japan (1).html
   type: life
 
 - title: Days in Japan (2)
   subtitle: 博观而约取
   start: "2020.04"
   end: "2021.03"
-  link: /projects/Days in Japan (2).html
   type: life
 
 - title: GameBoy simulator
@@ -29,7 +26,6 @@
   subtitle: 纸上得来终觉浅
   start: "2021.04"
   end: "2022.03"
-  link: /projects/Days in Japan (3).html
   type: life
 
 - title: RISC-V simulator
@@ -42,20 +38,17 @@
   subtitle: 用一年的时间读一本诗经
   start: "2021.12"
   end: "2022.11"
-  link: /projects/诗经小记.html
   type: book
 
 - title: 数据结构的汇编实现
   start: "2022.03"
   end: "2022.03"
-  link: /projects/数据结构的汇编实现.html
   type: code
 
 - title: Days in Japan (4)
   subtitle: 世事洞明皆学问
   start: "2022.04"
   end: "2023.03"
-  link: /projects/Days in Japan (4).html
   type: life
 
 - title: EJU PHY
@@ -73,11 +66,9 @@
 - title: Days in Japan (5)
   start: "2023.04"
   end: "2024.XX"
-  link: /projects/Days in Japan (5).html
   type: life
 
 - title: 楚辞天问校读
   start: "2023.09"
   end: "2023.XX"
-  link: /projects/楚辞天问校读.html
   type: book

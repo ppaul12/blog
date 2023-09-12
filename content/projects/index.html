@@ -3,7 +3,6 @@ layout: page
 title: projects
 subtitle: explore the unknowns ...
 icon: "fa-solid fa-cubes fa-fw"
-permalink: /projects.html
 ---
 
 {% assign projectsets = site.data.project-list | sort:"end" | reverse | group_by_exp:"project", "project.end | truncate:4, ''" %}
@@ -14,9 +13,12 @@ permalink: /projects.html
         ({{ projectset.items.size }})
     </summary>
     {% for project in projectset.items %}
-    <article onclick="location.href='{{ project.link }}'">
+        {% assign link = project.link %}
+        {% unless link %}
+            {% assign link = "/content/projects/" | append:project.title | append:".html" %}
+        {% endunless %}
+    <article onclick="location.href='{{ link }}'">
         <hgroup class="post-title">
-            {% assign page = site.pages | where_exp:"page", "page.url contains project.link" | first %}
             <small><em>{{ project.start }} ~ {{ project.end }}</em></small>
             <h3>{{ project.title }}</h3>
             <h4><em>{{ project.subtitle }}</em></h4>

@@ -15,15 +15,15 @@ layout: default
 
         <!-- post title -->
         <hgroup class="post-title">
-            {% if page.date %}
-                {% assign date = page.date | date:"%Y.%m.%d" %}
-                {% assign title = page.title %}
-                {% assign subtitle = page.subtitle %}
-            {% else %}
-                {% assign project = site.data.project-list | where_exp:"project", "page.url contains project.link" | first %}
+            {% if page.required contains "as-project" %}
+                {% assign project = site.data.project-list | where_exp:"project", "page.name contains project.title" | first %}
                 {% assign date = project.start | append:" ~ " | append:project.end %}
                 {% assign title = project.title %}
                 {% assign subtitle = project.subtitle %}
+            {% else %}
+                {% assign date = page.date | date:"%Y.%m.%d" %}
+                {% assign title = page.title %}
+                {% assign subtitle = page.subtitle %}
             {% endif %}
             <small><em>{{ date }}</em></small>
             <h1>{{ title}}</h1>

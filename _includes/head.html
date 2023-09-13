@@ -2,11 +2,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ site.title }}-{{ page.title }}</title>
+    <title>{{ site.title }}-{{ page.name | split:"." | first }}</title>
     {% seo title=false %}
-    <link rel="icon" type="image/png" href="{{ site.github }}.png?size=16">
-    <link rel="shortcut icon" type="image/png" href="{{ site.github }}.png?size=16">
-    <link rel="apple-touch-icon" type="image/png" href="{{ site.github }}.png?size=57">
+    <link rel="icon" type="image/png" href="https://github.com/PENG-AO.png?size=16">
+    <link rel="shortcut icon" type="image/png" href="https://github.com/PENG-AO.png?size=16">
+    <link rel="apple-touch-icon" type="image/png" href="https://github.com/PENG-AO.png?size=57">
 
     <!-- google analytics -->
     {% if jekyll.environment == "production" %}
@@ -44,13 +44,17 @@
     {% endif %}
     <!-- simple jekyll search -->
     <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
-    <!-- lightgallery -->
+    <!-- light gallery -->
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@latest/lightgallery.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@latest/css/lightgallery-bundle.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@latest/plugins/hash/lg-hash.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@latest/plugins/zoom/lg-zoom.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@latest/plugins/fullscreen/lg-fullscreen.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@latest/plugins/autoplay/lg-autoplay.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@latest/plugins/mediumZoom/lg-medium-zoom.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@latest/css/lightgallery-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@latest/css/lg-transitions.css">
+    <!-- exif -->
+    <script src="https://cdn.jsdelivr.net/npm/exif-js@latest/exif.min.js"></script>
+    <!-- color thief -->
+    <script src="https://cdn.jsdelivr.net/npm/colorthief@latest/dist/color-thief.min.js"></script>
     <!-- pyscript -->
     {% if page.required contains "python" %}
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
@@ -60,5 +64,4 @@
     <script src="/assets/js/theme.js"></script>
     <script src="/assets/js/modal.js"></script>
     <script src="/assets/js/search.js"></script>
-    <script src="/assets/js/album.js"></script>
 </head>

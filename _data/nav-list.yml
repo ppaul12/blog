@@ -3,13 +3,13 @@
   event: "location.href='/'"
 - name: album
   icon: "fa-solid fa-image fa-fw"
-  event: "openAlbum(event)"
+  event: "location.href='/album.html'"
 - name: footprint
   icon: "fa-solid fa-map-location-dot fa-fw"
-  event: "location.href='footprint.html'"
+  event: "location.href='/footprint.html'"
 - name: tags
   icon: "fa-solid fa-tags fa-fw"
-  event: "location.href='tags.html'"
+  event: "location.href='/tags.html'"
 - name: profile
   icon: "fa-solid fa-user-graduate fa-fw"
   event: "toggleModal(event)"

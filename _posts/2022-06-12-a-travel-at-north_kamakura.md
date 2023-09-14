@@ -2,6 +2,7 @@
 layout: post
 title: 北镰仓赏绣球之旅
 tags: 旅行
+required: gallery
 ---
 
 # 1. 路程规划
@@ -10,32 +11,7 @@ tags: 旅行
 
 # 2. 沿途风光
 
-<div class="gallery">
-    <div class="item">
-        <img src="/assets/src/a-travel-at-north_kamakura/pic1.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-north_kamakura/pic2.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-north_kamakura/pic3.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-north_kamakura/pic4.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-north_kamakura/pic5.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-north_kamakura/pic6.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3</p>
-    </div>
-</div>
+{% include gallery.html path="a-travel-at-north_kamakura" %}
 
 # 3. 小计
 

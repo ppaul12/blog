@@ -3,6 +3,7 @@ layout: post
 title: 再访青森·秋田旅行
 subtitle: 八户·弘前·秋田·田泽湖
 tags: 旅行
+required: gallery
 ---
 
 # 1. 路程规划
@@ -11,40 +12,7 @@ tags: 旅行
 
 # 2. 沿途风光
 
-<div class="gallery">
-    <div class="item">
-        <img src="/assets/src/a-travel-at-aomori/pic1.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 蕪嶋神社</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-aomori/pic2.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 蕪嶋神社</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-aomori/pic3.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 葦毛崎展望台</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-aomori/pic4.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 種差海岸</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-aomori/pic5.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 八戸駅</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-aomori/pic6.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 弘前城</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-aomori/pic7.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 五能線途中</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-aomori/pic8.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 田沢湖御座石神社</p>
-    </div>
-</div>
+{% include gallery.html path="a-travel-at-aomori" %}
 
 # 3. 小计
 

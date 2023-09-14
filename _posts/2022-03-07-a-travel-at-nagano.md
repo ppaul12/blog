@@ -1,7 +1,9 @@
 ---
 layout: post
 title: 长野之旅
+subtitle: 上田·長野·上越妙高·高田
 tags: 旅行
+required: gallery
 ---
 
 # 1. 路程规划
@@ -10,28 +12,7 @@ tags: 旅行
 
 ## 2. 沿途风光
 
-<div class="gallery">
-    <div class="item">
-        <img src="/assets/src/a-travel-at-nagano/pic1.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 善光寺</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-nagano/pic2.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 善光寺</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-nagano/pic3.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 善光寺</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-nagano/pic4.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 善光寺</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-nagano/pic5.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 上越妙高駅</p>
-    </div>
-</div>
+{% include gallery.html path="a-travel-at-nagano" %}
 
 # 3. 小计
 

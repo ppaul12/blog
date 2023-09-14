@@ -18,10 +18,19 @@
         gtag("config", "G-DJSSTNL817")
     </script>
     {% endif %}
+
     <!-- pico css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css">
+    <!-- custom style -->
+    <link rel="stylesheet" href="/assets/main.css"/>
+    <!-- pico official modal switcher -->
+    <script src="/assets/js/modal.js"></script>
+    <!-- custom theme switcher -->
+    <script src="/assets/js/theme.js"></script>
+    
     <!-- animation -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css/animate.min.css">
+
     <!-- font awesome icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome-animation@latest/css/font-awesome-animation.min.css">
@@ -30,6 +39,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@latest/lxgwwenkailite-bold.css">
     <!-- allura font -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/allura@latest/index.css">
+
     <!-- highlight js -->
     <script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@latest/highlight.min.js"></script>
     <script>hljs.highlightAll()</script>
@@ -38,30 +48,32 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@latest/es5/tex-mml-chtml.js"></script>
     <script>MathJax = { tex: { inlineMath: [["$", "$"]], processEscapes: true } }</script>
     <!-- mermaid -->
-    {% if page.required contains "mermaid" %}
     <script src="https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true, theme:"forest", flowchart:{useMaxWidth:false, htmlLabels:true}})</script>
+    
+    {% if page.required contains "python" %}
+    <!-- pyscript -->
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
     {% endif %}
-    <!-- simple jekyll search -->
-    <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+
+    {% if page.required contains "gallery" %}
     <!-- light gallery -->
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@latest/lightgallery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@latest/plugins/zoom/lg-zoom.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@latest/plugins/autoplay/lg-autoplay.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@latest/plugins/mediumZoom/lg-medium-zoom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@latest/plugins/thumbnail/lg-thumbnail.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@latest/css/lightgallery-bundle.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@latest/css/lg-transitions.css">
-    <!-- exif -->
-    <script src="https://cdn.jsdelivr.net/npm/exif-js@latest/exif.min.js"></script>
+    <!-- exifr -->
+    <script src="https://cdn.jsdelivr.net/npm/exifr@latest/dist/full.umd.min.js"></script>
     <!-- color thief -->
     <script src="https://cdn.jsdelivr.net/npm/colorthief@latest/dist/color-thief.min.js"></script>
-    <!-- pyscript -->
-    {% if page.required contains "python" %}
-    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <!-- custom gallery initializer -->
+    <script src="/assets/js/gallery.js"></script>
     {% endif %}
-    <!-- custom style & js -->
-    <link rel="stylesheet" href="/assets/main.css"/>
-    <script src="/assets/js/theme.js"></script>
-    <script src="/assets/js/modal.js"></script>
+
+    <!-- simple jekyll search -->
+    <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+    <!-- custom search initializer -->
     <script src="/assets/js/search.js"></script>
 </head>

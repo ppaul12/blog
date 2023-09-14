@@ -1,7 +1,9 @@
 ---
 layout: post
 title: 伊豆环岛旅行
+subtitle: 伊東·河津·南伊豆·西伊豆
 tags: 旅行
+required: gallery
 ---
 
 # 1. 路程规划
@@ -10,48 +12,7 @@ tags: 旅行
 
 # 2. 沿途风光
 
-<div class="gallery">
-    <div class="item">
-        <img src="/assets/src/a-travel-at-izu/pic1.jpeg">
-        <p>by Apple iPhone 11<br>at 一碧湖</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-izu/pic2.jpeg">
-        <p>by Apple iPhone 11<br>at 城ヶ崎海岸</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-izu/pic3.jpeg">
-        <p>by Apple iPhone 11<br>at 城ヶ崎海岸</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-izu/pic4.jpeg">
-        <p>by Apple iPhone 11<br>at 河津町</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-izu/pic5.jpeg">
-        <p>by Apple iPhone 11<br>at 石廊崎</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-izu/pic6.jpeg">
-        <p>by Apple iPhone 11<br>at 南伊豆</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-izu/pic7.jpeg">
-        <p>by Apple iPhone 11<br>at 雲見海岸</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-izu/pic8.jpeg">
-        <p>by Apple iPhone 11<br>at 黄金岬</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-izu/pic9.jpeg">
-        <p>by Apple iPhone 11<br>at 黄金岬</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-izu/pic10.jpeg">
-        <p>by Apple iPhone 11<br>at 西伊豆スカイライン</p>
-    </div>
-</div>
+{% include gallery.html path="a-travel-at-izu" %}
 
 # 3. 小计
 

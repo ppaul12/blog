@@ -2,6 +2,7 @@
 layout: post
 title: 日光·会津旅行
 tags: 旅行
+required: gallery
 ---
 
 # 1. 路程规划
@@ -10,24 +11,7 @@ tags: 旅行
 
 # 2. 沿途风光
 
-<div class="gallery">
-    <div class="item">
-        <img src="/assets/src/a-travel-at-aizu/pic1.jpeg">
-        <p>by Apple iPhone 6s<br>at 日光市</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-aizu/pic2.jpeg">
-        <p>by Apple iPhone 6s<br>at 会津若松駅</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-aizu/pic3.jpeg">
-        <p>by Apple iPhone 6s<br>at 会津若松城</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-aizu/pic4.jpeg">
-        <p>by Apple iPhone 6s<br>at 広田駅</p>
-    </div>
-</div>
+{% include gallery.html path="a-travel-at-aizu" %}
 
 # 3. 小计
 

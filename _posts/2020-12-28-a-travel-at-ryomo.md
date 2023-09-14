@@ -1,7 +1,9 @@
 ---
 layout: post
 title: 两毛地区旅行
+subtitle: 館林·足利·高崎·前橋
 tags: 旅行
+required: gallery
 ---
 
 # 1. 路程规划
@@ -10,40 +12,7 @@ tags: 旅行
 
 # 2. 沿途风光
 
-<div class="gallery">
-    <div class="item">
-        <img src="/assets/src/a-travel-at-ryomo/pic1.jpeg">
-        <p>by Apple iPhone 11<br>at 館林城沼</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-ryomo/pic2.jpeg">
-        <p>by Apple iPhone 11<br>at 館林多々良沼</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-ryomo/pic3.jpeg">
-        <p>by Apple iPhone 11<br>at 館林多々良沼</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-ryomo/pic4.jpeg">
-        <p>by Apple iPhone 11<br>at 足利学校</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-ryomo/pic5.jpeg">
-        <p>by Apple iPhone 11<br>at 足利学校</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-ryomo/pic6.jpeg">
-        <p>by Apple iPhone 11<br>at 高崎市役所</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-ryomo/pic7.jpeg">
-        <p>by Apple iPhone 11<br>at 前橋公園</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-ryomo/pic8.jpeg">
-        <p>by Apple iPhone 11<br>at 前橋公園</p>
-    </div>
-</div>
+{% include gallery.html path="a-travel-at-ryomo" %}
 
 # 3. 小计
 

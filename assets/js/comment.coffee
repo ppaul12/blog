@@ -16,11 +16,11 @@ window.addEventListener("message", (e) ->
         setCommentTheme(document.querySelector("html").getAttribute("data-theme"))
         # change theme dynamically
         observer = new MutationObserver((mutations) ->
-            mutations.forEach((mutation) ->
-                if mutation.attributeName == "data-theme"
-                    setCommentTheme(mutation.target.getAttribute(mutation.attributeName))
-                return
-            )
+            for mutation in mutations
+                do (mutation) ->
+                    if mutation.attributeName == "data-theme"
+                        setCommentTheme(mutation.target.getAttribute(mutation.attributeName))
+                    return
             return
         )
         observer.observe(document.querySelector("html"), {attributes: true})

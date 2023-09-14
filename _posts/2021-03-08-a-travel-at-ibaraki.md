@@ -1,7 +1,9 @@
 ---
 layout: post
 title: 茨城·福岛旅行
+subtitle: 水戸·大洗·日立·いわき·郡山·福島·白河
 tags: 旅行
+required: gallery
 ---
 
 # 1. 路程规划
@@ -10,40 +12,7 @@ tags: 旅行
 
 # 2. 沿途风光
 
-<div class="gallery">
-    <div class="item">
-        <img src="/assets/src/a-travel-at-ibaraki/pic1.jpeg">
-        <p>by Apple iPhone 11<br>at 偕楽園</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-ibaraki/pic2.jpeg">
-        <p>by Apple iPhone 11<br>at 偕楽園</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-ibaraki/pic3.jpeg">
-        <p>by Apple iPhone 11<br>at 大洗磯前神社</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-ibaraki/pic4.jpeg">
-        <p>by Apple iPhone 11<br>at 大洗磯前神社</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-ibaraki/pic5.jpeg">
-        <p>by Apple iPhone 11<br>at 大洗磯前神社</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-ibaraki/pic6.jpeg">
-        <p>by Apple iPhone 11<br>at 日立駅</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-ibaraki/pic7.jpeg">
-        <p>by Apple iPhone 11<br>at いわき駅</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-ibaraki/pic8.jpeg">
-        <p>by Apple iPhone 11<br>at 白川小峰城跡</p>
-    </div>
-</div>
+{% include gallery.html path="a-travel-at-ibaraki" %}
 
 # 3. 小计
 

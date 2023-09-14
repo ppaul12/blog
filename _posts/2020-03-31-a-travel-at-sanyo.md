@@ -1,7 +1,9 @@
 ---
 layout: post
 title: 北九州·山阳旅行
+subtitle: 佐世保·北九州·広島·尾道·倉敷·岡山·姫路·明石
 tags: 旅行
+required: gallery
 ---
 
 # 1. 路程规划
@@ -10,44 +12,7 @@ tags: 旅行
 
 # 2. 沿途风光
 
-<div class="gallery">
-    <div class="item">
-        <img src="/assets/src/a-travel-at-sanyo/pic1.jpeg">
-        <p>by Apple iPhone 11<br>at 門司港</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-sanyo/pic2.jpeg">
-        <p>by Apple iPhone 11<br>at 門司港</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-sanyo/pic3.jpeg">
-        <p>by Apple iPhone 11<br>at 小倉城</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-sanyo/pic4.jpeg">
-        <p>by Apple iPhone 11<br>at 宮島</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-sanyo/pic5.jpeg">
-        <p>by Apple iPhone 11<br>at 広島市</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-sanyo/pic6.jpeg">
-        <p>by Apple iPhone 11<br>at 広島城</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-sanyo/pic7.jpeg">
-        <p>by Apple iPhone 11<br>at 岡山城</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-sanyo/pic8.jpeg">
-        <p>by Apple iPhone 11<br>at 姫路城</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-sanyo/pic9.jpeg">
-        <p>by Apple iPhone 11<br>at 明石海峡大橋</p>
-    </div>
-</div>
+{% include gallery.html path="a-travel-at-sanyo" %}
 
 # 3. 小计
 

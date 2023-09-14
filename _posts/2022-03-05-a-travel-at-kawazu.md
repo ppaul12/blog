@@ -2,6 +2,7 @@
 layout: post
 title: 河津赏樱之旅
 tags: 旅行
+required: gallery
 ---
 
 # 1. 路程规划
@@ -10,44 +11,7 @@ tags: 旅行
 
 # 2. 沿途风光
 
-<div class="gallery">
-    <div class="item">
-        <img src="/assets/src/a-travel-at-kawazu/pic1.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 河津町</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-kawazu/pic2.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 河津町</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-kawazu/pic3.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 河津町</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-kawazu/pic4.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 河津町</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-kawazu/pic5.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 河津町</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-kawazu/pic6.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 河津町</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-kawazu/pic7.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 河津町</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-kawazu/pic8.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 河津町</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-kawazu/pic9.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 上野公園</p>
-    </div>
-</div>
+{% include gallery.html path="a-travel-at-kawazu" %}
 
 # 3. 小计
 

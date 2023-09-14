@@ -3,6 +3,7 @@ layout: post
 title: 再访会津旅行
 subtitle: 会津若松·喜多方·郡山·高萩
 tags: 旅行
+required: gallery
 ---
 
 # 1. 路程规划
@@ -11,44 +12,7 @@ tags: 旅行
 
 # 2. 沿途风光
 
-<div class="gallery">
-    <div class="item">
-        <img src="/assets/src/a-travel-at-aizu-again/pic1.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 第一只見川橋梁ビューポイント</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-aizu-again/pic2.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 会津坂下町</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-aizu-again/pic3.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 三ノ倉高原</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-aizu-again/pic4.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 三ノ倉高原</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-aizu-again/pic5.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 三ノ倉高原</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-aizu-again/pic6.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 会津若松城</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-aizu-again/pic7.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 会津若松城</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-aizu-again/pic8.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 会津若松市</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-aizu-again/pic9.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 高戸小浜</p>
-    </div>
-</div>
+{% include gallery.html path="a-travel-at-aizu-again" %}
 
 # 3. 小计
 

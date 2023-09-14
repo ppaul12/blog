@@ -3,6 +3,7 @@ layout: post
 title: 三浦半岛之旅
 subtitle: 横須賀·城ヶ島
 tags: 旅行
+required: gallery
 ---
 
 # 1. 路程规划
@@ -11,32 +12,7 @@ tags: 旅行
 
 # 2. 沿途风光
 
-<div class="gallery">
-    <div class="item">
-        <img src="/assets/src/a-travel-at-miura/pic1.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 城ヶ島公園</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-miura/pic2.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 城ヶ島公園</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-miura/pic3.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 城ヶ島公園</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-miura/pic4.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 城ヶ島公園</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-miura/pic5.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 城ヶ島公園</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-miura/pic6.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 城ヶ島公園</p>
-    </div>
-</div>
+{% include gallery.html path="a-travel-at-miura" %}
 
 # 3. 小计
 
@@ -44,4 +20,3 @@ tags: 旅行
 - 人数：2人
 - 形式：自驾
 - 费用：不计，意义非凡故
-

@@ -1,7 +1,9 @@
 ---
 layout: post
 title: 东海道旅行
+subtitle: 小田原·静岡·掛川·浜松·岐阜·長浜·京都·奈良·神戸
 tags: 旅行
+required: gallery
 ---
 
 # 1. 路程规划
@@ -10,64 +12,7 @@ tags: 旅行
 
 # 2. 沿途风光
 
-<div class="gallery">
-    <div class="item">
-        <img src="/assets/src/a-travel-at-toukaido/pic1.jpeg">
-        <p>by Apple iPhone 11<br>at 小田原城</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-toukaido/pic2.jpeg">
-        <p>by Apple iPhone 11<br>at 静岡浅間神社</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-toukaido/pic3.jpeg">
-        <p>by Apple iPhone 11<br>at 静岡県庁</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-toukaido/pic4.jpeg">
-        <p>by Apple iPhone 11<br>at 掛川城</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-toukaido/pic5.jpeg">
-        <p>by Apple iPhone 11<br>at 弁天島駅</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-toukaido/pic6.jpeg">
-        <p>by Apple iPhone 11<br>at 岐阜城</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-toukaido/pic7.jpeg">
-        <p>by Apple iPhone 11<br>at 長浜市</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-toukaido/pic8.jpeg">
-        <p>by Apple iPhone 11<br>at 長浜城</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-toukaido/pic9.jpeg">
-        <p>by Apple iPhone 11<br>at 奈良公園</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-toukaido/pic10.jpeg">
-        <p>by Apple iPhone 11<br>at 平安神宮</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-toukaido/pic11.jpeg">
-        <p>by Apple iPhone 11<br>at 平安神宮</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-toukaido/pic12.jpeg">
-        <p>by Apple iPhone 11<br>at 岡崎神社</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-toukaido/pic13.jpeg">
-        <p>by Apple iPhone 11<br>at 七条鴨川</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-toukaido/pic14.jpeg">
-        <p>by Apple iPhone 11<br>at 東福寺</p>
-    </div>
-</div>
+{% include gallery.html path="a-travel-at-toukaido" %}
 
 # 3. 小计
 

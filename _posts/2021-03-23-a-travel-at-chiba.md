@@ -1,7 +1,9 @@
 ---
 layout: post
 title: 千叶环岛之旅
+subtitle: 千葉·木更津·鋸南町·館山·鵜原
 tags: 旅行
+required: gallery
 ---
 
 # 1. 路程规划
@@ -10,44 +12,7 @@ tags: 旅行
 
 # 2. 沿途风光
 
-<div class="gallery">
-    <div class="item">
-        <img src="/assets/src/a-travel-at-chiba/pic1.jpeg">
-        <p>by Apple iPhone 11<br>at 千葉市</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-chiba/pic2.jpeg">
-        <p>by Apple iPhone 11<br>at 木更津駅</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-chiba/pic3.jpeg">
-        <p>by Apple iPhone 11<br>at 鋸山</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-chiba/pic4.jpeg">
-        <p>by Apple iPhone 11<br>at 鋸山</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-chiba/pic5.jpeg">
-        <p>by Apple iPhone 11<br>at 鋸山</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-chiba/pic6.jpeg">
-        <p>by Apple iPhone 11<br>at 館山市</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-chiba/pic7.jpeg">
-        <p>by Apple iPhone 11<br>at 鵜原</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-chiba/pic8.jpeg">
-        <p>by Apple iPhone 11<br>at 鵜原</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-chiba/pic9.jpeg">
-        <p>by Apple iPhone 11<br>at 鵜原</p>
-    </div>
-</div>
+{% include gallery.html path="a-travel-at-chiba" %}
 
 # 3. 小计
 

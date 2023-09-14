@@ -3,6 +3,7 @@ layout: post
 title: 山形之旅
 subtitle: 米泽·山形·仙台
 tags: 旅行
+required: gallery
 ---
 
 # 1. 路程规划
@@ -11,24 +12,7 @@ tags: 旅行
 
 # 2. 沿途风光
 
-<div class="gallery">
-    <div class="item">
-        <img src="/assets/src/a-travel-at-yamagata/pic1.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 霞城セントラル</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-yamagata/pic2.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 霞城セントラル</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-yamagata/pic3.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 霞城セントラル</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-yamagata/pic4.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at AER展望テラス</p>
-    </div>
-</div>
+{% include gallery.html path="a-travel-at-yamagata" %}
 
 # 3. 小计
 
@@ -40,3 +24,4 @@ tags: 旅行
 # 4. 相关链接
 
 - [JR东日本铁路周游券(东北地区)](https://www.jreast.co.jp/multi/zh-CHS/pass/eastpass_t.html)
+- [列车延误受访视频](https://www.youtube.com/watch?v=tZtk7-OW2K4)

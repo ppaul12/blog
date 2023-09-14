@@ -2,6 +2,7 @@
 layout: post
 title: 新潟之旅
 tags: 旅行
+required: gallery
 ---
 
 # 1. 路程规划
@@ -10,36 +11,7 @@ tags: 旅行
 
 # 2. 沿途风光
 
-<div class="gallery">
-    <div class="item">
-        <img src="/assets/src/a-travel-at-niigata/pic1.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 萬代橋</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-niigata/pic2.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 白山公園</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-niigata/pic3.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 白山公園</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-niigata/pic4.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 新潟海浜風致地区</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-niigata/pic5.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 新潟日報</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-niigata/pic6.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 新潟日報</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-niigata/pic7.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 新潟日報</p>
-    </div>
-</div>
+{% include gallery.html path="a-travel-at-niigata" %}
 
 # 3. 小计
 

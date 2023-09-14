@@ -2,6 +2,7 @@
 layout: post
 title: 秩父赏芝樱之旅
 tags: 旅行
+required: gallery
 ---
 
 # 1. 路程规划
@@ -10,44 +11,7 @@ tags: 旅行
 
 # 2. 沿途风光
 
-<div class="gallery">
-    <div class="item">
-        <img src="/assets/src/a-travel-at-chichibu/pic1.jpeg">
-        <p>by Apple iPhone 11<br>at 長瀞町</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-chichibu/pic2.jpeg">
-        <p>by Apple iPhone 11<br>at 長瀞町</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-chichibu/pic3.jpeg">
-        <p>by Apple iPhone 11<br>at 秩父神社</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-chichibu/pic4.jpeg">
-        <p>by Apple iPhone 11<br>at 羊山公園</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-chichibu/pic5.jpeg">
-        <p>by Apple iPhone 11<br>at 羊山公園</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-chichibu/pic6.jpeg">
-        <p>by Apple iPhone 11<br>at 美の山公園</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-chichibu/pic7.jpeg">
-        <p>by Apple iPhone 11<br>at 美の山公園</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-chichibu/pic8.jpeg">
-        <p>by Apple iPhone 11<br>at 美の山公園</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-chichibu/pic9.jpeg">
-        <p>by Apple iPhone 11<br>at 美の山公園</p>
-    </div>
-</div>
+{% include gallery.html path="a-travel-at-chichibu" %}
 
 # 3. 小计
 

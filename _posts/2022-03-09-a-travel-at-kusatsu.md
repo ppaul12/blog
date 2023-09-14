@@ -1,7 +1,9 @@
 ---
 layout: post
 title: 草津温泉之旅
+subtitle: 草津温泉·高崎
 tags: 旅行
+required: gallery
 ---
 
 # 1. 路程规划
@@ -10,28 +12,11 @@ tags: 旅行
 
 # 2. 沿途风光
 
-<div class="gallery">
-    <div class="item">
-        <img src="/assets/src/a-travel-at-kusatsu/pic1.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 草津温泉</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-kusatsu/pic2.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 草津温泉</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-kusatsu/pic3.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 高崎市役所</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-kusatsu/pic4.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 東京駅</p>
-    </div>
-</div>
+{% include gallery.html path="a-travel-at-kusatsu" %}
 
 # 3. 小计
 
-- 时间：当日往返，2022/03/09 ~ 2022/03/10
+- 时间：当日往返，2022/03/09
 - 人数：2人
 - 形式：电车
 - 费用：每日约3600日元(JR east pass)(不含餐饮)

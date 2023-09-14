@@ -3,6 +3,7 @@ layout: post
 title: 再访三浦之旅
 subtitle: 逗子·葉山
 tags: 旅行
+required: gallery
 ---
 
 # 1. 路程规划
@@ -11,40 +12,7 @@ tags: 旅行
 
 # 2. 沿途风光
 
-<div class="gallery">
-    <div class="item">
-        <img src="/assets/src/a-travel-at-miura-again/pic1.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 披露山公園</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-miura-again/pic2.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 桜山中央公園</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-miura-again/pic3.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 荒崎公園</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-miura-again/pic4.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 荒崎公園</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-miura-again/pic5.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 立石公園</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-miura-again/pic6.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 立石公園</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-miura-again/pic7.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 立石公園</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-miura-again/pic8.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 立石公園</p>
-    </div>
-</div>
+{% include gallery.html path="a-travel-at-miura-again" %}
 
 # 3. 小计
 

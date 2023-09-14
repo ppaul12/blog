@@ -1,7 +1,9 @@
 ---
 layout: post
-title: 松本·诹访之旅
+title: 松本之旅
+subtitle: 松本·诹访
 tags: 旅行
+required: gallery
 ---
 
 # 1. 路程规划
@@ -10,32 +12,7 @@ tags: 旅行
 
 # 2. 沿途风光
 
-<div class="gallery">
-    <div class="item">
-        <img src="/assets/src/a-travel-at-matsumoto/pic1.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 松本城</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-matsumoto/pic2.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 松本城</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-matsumoto/pic3.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 松本市</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-matsumoto/pic4.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 諏訪湖</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-matsumoto/pic5.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 諏訪湖</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-matsumoto/pic6.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 諏訪湖</p>
-    </div>
-</div>
+{% include gallery.html path="a-travel-at-matsumoto" %}
 
 # 3. 小计
 

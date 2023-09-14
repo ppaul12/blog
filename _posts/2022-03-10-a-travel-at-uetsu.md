@@ -1,7 +1,9 @@
 ---
 layout: post
 title: 羽越本线之旅
+subtitle: 羽越本線·酒田
 tags: 旅行
+required: gallery
 ---
 
 # 1. 路程规划
@@ -10,28 +12,7 @@ tags: 旅行
 
 ## 2. 沿途风光
 
-<div class="gallery">
-    <div class="item">
-        <img src="/assets/src/a-travel-at-uetsu/pic1.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 羽越本線</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-uetsu/pic2.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 羽越本線</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-uetsu/pic3.jpeg">
-        <p>by Canon EOS M200<br>EF-M55-200mm f/4.5-6.3<br>at 日和川公園</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-uetsu/pic4.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 羽越本線</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-uetsu/pic5.jpeg">
-        <p>by Canon EOS M200<br>EF-M15-45mm f/3.5-6.3<br>at 羽越本線</p>
-    </div>
-</div>
+{% include gallery.html path="a-travel-at-uetsu" %}
 
 # 3. 小计
 

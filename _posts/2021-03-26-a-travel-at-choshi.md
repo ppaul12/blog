@@ -1,7 +1,9 @@
 ---
 layout: post
-title: 鹿岛·佐原·铫子之旅
+title: 铫子之旅
+subtitle: 鹿岛·佐原·铫子
 tags: 旅行
+required: gallery
 ---
 
 # 1. 路程规划
@@ -10,44 +12,7 @@ tags: 旅行
 
 # 2. 沿途风光
 
-<div class="gallery">
-    <div class="item">
-        <img src="/assets/src/a-travel-at-choshi/pic1.jpeg">
-        <p>by Apple iPhone 11</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-choshi/pic2.jpeg">
-        <p>by Apple iPhone 11<br>at 香取市</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-choshi/pic3.jpeg">
-        <p>by Apple iPhone 11<br>at 銚子市</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-choshi/pic4.jpeg">
-        <p>by Apple iPhone 11<br>at 銚子市</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-choshi/pic5.jpeg">
-        <p>by Apple iPhone 11<br>at 銚子市</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-choshi/pic6.jpeg">
-        <p>by Apple iPhone 11<br>at 銚子市</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-choshi/pic7.jpeg">
-        <p>by Apple iPhone 11<br>at 銚子市</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-choshi/pic8.jpeg">
-        <p>by Apple iPhone 11<br>at 銚子市</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-choshi/pic9.jpeg">
-        <p>by Apple iPhone 11<br>at 銚子市</p>
-    </div>
-</div>
+{% include gallery.html path="a-travel-at-choshi" %}
 
 # 3. 小计
 

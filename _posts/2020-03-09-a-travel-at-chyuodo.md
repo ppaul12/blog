@@ -1,7 +1,9 @@
 ---
 layout: post
 title: 中央道旅行
+subtitle: 諏訪·松本·奈良井·犬山·彦根·草津·京都
 tags: 旅行
+required: gallery
 ---
 
 # 1. 路程规划
@@ -10,36 +12,7 @@ tags: 旅行
 
 # 2. 沿途风光
 
-<div class="gallery">
-    <div class="item">
-        <img src="/assets/src/a-travel-at-chyuodo/pic1.jpeg">
-        <p>by Apple iPhone 11<br>at 松本城</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-chyuodo/pic2.jpeg">
-        <p>by Apple iPhone 11<br>at 松本市</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-chyuodo/pic3.jpeg">
-        <p>by Apple iPhone 11<br>at 奈良井駅</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-chyuodo/pic4.jpeg">
-        <p>by Apple iPhone 11<br>at 犬山城</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-chyuodo/pic5.jpeg">
-        <p>by Apple iPhone 11<br>at 犬山城</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-chyuodo/pic6.jpeg">
-        <p>by Apple iPhone 11<br>at 彦根城</p>
-    </div>
-    <div class="item">
-        <img src="/assets/src/a-travel-at-chyuodo/pic7.jpeg">
-        <p>by Apple iPhone 11<br>at 四条鴨川</p>
-    </div>
-</div>
+{% include gallery.html path="a-travel-at-chyuodo" %}
 
 # 3. 小计
 

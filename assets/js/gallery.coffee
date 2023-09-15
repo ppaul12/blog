@@ -41,30 +41,29 @@ updateCaption = (img) ->
             exif?.Model,
             exif?.LensModel,
             formatOpticalInfo(exif),
+            exif?.DateTimeOriginal?.toLocaleString(),
             formatLocation(cap.innerText.trim()),
-            exif?.DateTimeOriginal?.toLocaleString()
         ] when item?).join("<br>")
         return
     )
 
-initGallery = (gallery, json) ->
+initGallery = (gallery, data) ->
     # load photos to gallery
-    fetch(json).then((r) -> r.json()).then((items) ->
-        window.lightGallery(gallery, {
-            plugins: [lgThumbnail, lgZoom, lgAutoplay]
-            container: gallery
-            dynamic: true
-            dynamicEl: ({
-                src: item.src
-                thumb: item.src
-                subHtml: ("<br>" for i in [0...4]).join("") + item.loc
-            } for item in items)
-            mode: "lg-zoom-in-out"
-            closable: false
-            slideShowAutoPlay: false
-        }).openGallery()
-        return
-    )
+    plugin = [lgZoom, lgAutoplay]
+    unless data.length > 20 then plugin.push(lgThumbnail)
+    window.lightGallery(gallery, {
+        plugins: plugin
+        container: gallery
+        dynamic: true
+        dynamicEl: ({
+            src: item.src
+            thumb: item.src
+            subHtml: ("<br>" for i in [0...4]).join("") + item.loc
+        } for item in data)
+        mode: "lg-zoom-in-out"
+        closable: false
+        slideShowAutoPlay: false
+    }).openGallery()
     # insert exif info
     gallery.addEventListener("lgAfterSlide", () ->
         updateCaption(document.querySelector(".lg-container.lg-show .lg-current img"))

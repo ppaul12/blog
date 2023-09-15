@@ -1,5 +1,7 @@
 ---
 layout: post
+title: Days in Japan (5)
+date: "2023.04 ~ 2024.XX"
 required: gallery
 ---
 

@@ -7,6 +7,27 @@ permalink: /album.html
 required: gallery
 ---
 
-<div id="album" class="album"></div>
+<div id="gallery"></div>
 
-<script src="/assets/js/album.js"></script>
+<script>
+    (async () => {
+        // load all images
+        const imageSets = await asyncLoadJSON("/assets/json/gallery.json")
+        const images = await imageSets.reduce(async (output, imageSet) => {
+            const entries = await asyncLoadJSON(imageSet.json)
+            return (await output).concat(entries.map((entry) => {
+                return { src: entry.src, loc: imageSet.post }
+            }))
+        }, Promise.resolve([]))
+        // shuffle image array
+        let currentIdx = images.length
+        while (currentIdx > 0) {
+            const targetIdx = Math.floor(Math.random() * currentIdx)
+            currentIdx--
+            const temp = images[currentIdx]
+            images[currentIdx] = images[targetIdx]
+            images[targetIdx] = temp
+        }
+        initGallery(document.getElementById("gallery"), images)
+    })()
+</script>

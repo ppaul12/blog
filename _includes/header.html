@@ -28,7 +28,7 @@
     </div>
     <hr><!-- skills -->
     <div class="profile-icons">
-        {% assign skills = site.data.cv-list.skills | sort:"name" %}
+        {% assign skills = site.data.cv-list.skills | sort:"info" %}
         {% for skill in skills %}
         <img src="https://cdn.simpleicons.org/{{ skill.info }}/{{ skill.color }}"
             width="32px" height="32px" style="--ith: {{ forloop.index0 }}">

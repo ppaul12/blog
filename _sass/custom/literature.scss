@@ -1,0 +1,78 @@
+.literature {
+    margin: 0.5em auto;
+    padding: 1em;
+    width: fit-content;
+    max-width: 100%;
+    border: none;
+
+    &.vertical {
+        white-space: nowrap;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+    }
+
+    &.classic {
+        border: double var(--muted-border-color);
+        border-radius: 0.5em;
+
+        &:not(.vertical) {
+            text-align: center;
+            min-width: 60%;
+            @media (max-width: 420px) {
+                min-width: 100%;
+            }
+        }
+    }
+
+    &.quote {
+        position: relative;
+        padding: 1em 2em;
+        max-width: 80%;
+        @media (max-width: 420px) {
+            max-width: 100%;
+        }
+
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font: 2em "Font Awesome 6 Free";
+            color: var(--muted-border-color);
+            content: "\f10d";
+        }
+
+        &::after {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font: 2em "Font Awesome 6 Free";
+            color: var(--muted-border-color);
+            content: "\f10e";
+        }
+    }
+
+    &.en p {
+        font: 1.4em "Allura";
+    }
+
+    header {
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    footer {
+        text-align: right;
+    }
+
+    p {
+        max-width: 20em;
+        word-break: keep-all;
+        margin: 0 auto;
+        line-height: 1.8em;
+        text-decoration-line: underline;
+        text-decoration-style: dotted;
+        text-decoration-thickness: 2px;
+        text-decoration-color: var(--muted-border-color);
+        text-underline-offset: 0.2em;
+    }
+}

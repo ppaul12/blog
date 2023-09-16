@@ -1,0 +1,116 @@
+.menu {
+    transition: all 0.3s ease-in;
+
+    &-box {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 3em;
+        height: 3em;
+        border-bottom-right-radius: 100%;
+        box-shadow: 0 0 0 0 var(--color);
+        background-color: var(--color);
+        z-index: 9;
+        cursor: pointer;
+
+        transition:
+            0.3s top ease-in,
+            0.3s left ease-in,
+            0.3s box-shadow ease-in,
+            0.3s border-radius ease 0.2s,
+            0.3s width ease 0.3s;
+        animation: 1s zoomIn backwards;
+    }
+
+    &-icon {
+        display: block;
+        position: absolute;
+        top: 1.2em;
+        left: 0.6em;
+        width: 1.2em;
+        height: 2px;
+        background-color: var(--background-color);
+        
+        transition: all 0.3s ease-in;
+        transform-origin: center;
+
+        &::before, &::after {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: inherit;
+            content: "";
+
+            transition: inherit;
+        }
+
+        &::before {
+            top: -0.4em;
+        }
+
+        &::after {
+            bottom: -0.4em;
+        }
+    }
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        bottom: 100%;
+        left: 0;
+        right: 100%;
+        z-index: 10;
+
+        transition: inherit;
+    }
+
+    &-item {
+        padding: 0 0.5em;
+        margin-bottom: 1em;
+        opacity: 0;
+        font: 2em "Allura";
+        transform: translateX(calc(pow(-1, var(--ith)) * 200%));
+
+        transition: all 0.3s ease calc(var(--ith) * 0.1s + 0.3s);
+    }
+
+    &[open] > &-box {
+        width: 100%;
+        border-radius: 0;
+        box-shadow: 0 0 0 calc(100vmax * 2) var(--background-color);
+    }
+
+    &[open] > &-box > &-icon {
+        transform: rotate(45deg);
+
+        &::before {
+            top: 0;
+            transform: rotate(90deg);
+        }
+
+        &::after {
+            bottom: 0;
+            transform: rotate(90deg);
+        }
+    }
+
+    &[open] > &-content {
+        bottom: 0;
+        right: 0;
+    }
+
+    &[open] > &-content > &-item {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    html[fullscreen] &-box {
+        top: -3em;
+        left: -3em;
+    }
+}

@@ -1,0 +1,30 @@
+.post {
+    &-title {
+        animation: 1s fadeInLeft backwards;
+    }
+
+    &-content {
+        animation: 2s fadeIn backwards;
+    }
+
+    &-tags {
+        justify-content: end !important;
+
+        animation: 1s fadeInRight backwards;
+    }
+
+    &-paginator {
+        justify-content: center !important;
+    
+        summary {
+            box-shadow: none !important;
+    
+            &+ul {
+                bottom: 100%;
+                max-height: 10em;
+                overflow-y: scroll;
+                margin-bottom: var(--outline-width) !important;
+            }
+        }
+    }
+}

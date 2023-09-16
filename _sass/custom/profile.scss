@@ -1,0 +1,54 @@
+.profile {
+    &-avatar {
+        position: relative;
+        top: -80px;
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        z-index: 2;
+
+        animation: 1s backInDown backwards;
+
+        img {
+            width: 120px;
+            height: 120px;
+            border-radius: 60px;
+        }
+    }
+
+    &-name {
+        position: sticky;
+        top: -1em;
+        width: 80%;
+        margin: -60px auto 0;
+        text-align: center;
+        font: 2em "Allura";
+        z-index: 2;
+
+        animation: 1s fadeInDown backwards;
+    }
+
+    &-icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-width: 400px;
+
+        img {
+            margin: 0.5em;
+            border-radius: 0;
+
+            animation: 1s rotateIn calc(var(--ith) * 200ms) backwards;
+        }
+    }
+
+    &-info {
+        margin-bottom: 0;
+
+        &-item {
+            list-style: none;
+
+            animation: 1s fadeInLeft calc(var(--ith) * 200ms) backwards;
+        }
+    }
+}

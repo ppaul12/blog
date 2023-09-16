@@ -1,10 +1,8 @@
 <div id="gallery"></div>
 
 <script>
-    (async () => {
-        initGallery(
-            document.getElementById("gallery"),
-            await asyncLoadJSON("/assets/src/{{ include.path }}/info.json")
-        )
-    })()
+    (async () => { initGallery(
+        document.getElementById("gallery"),
+        await asyncLoadJSON("/assets/src/{{ include.path }}/info.json")
+    ) })()
 </script>

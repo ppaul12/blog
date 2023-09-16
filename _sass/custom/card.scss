@@ -1,0 +1,12 @@
+.card {
+    transition: all 0.5s ease;
+    animation: 3s fadeIn backwards;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    &.gradient {
+        background: linear-gradient(to right, var(--card-background-color), var(--card-sectionning-background-color));
+    }
+}

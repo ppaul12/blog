@@ -7,7 +7,7 @@ title: home
     {% for post in paginator.posts %}
     <article class="card gradient" onclick="location.href='{{ post.url }}'">
         <!-- tag cloud -->
-        <nav class="tag-cloud" aria-label="breadcrumb">
+        <nav class="post-tags" aria-label="breadcrumb">
             <ul>
                 {% for tag in post.tags %}
                 <li><a href="/tags.html#{{ tag }}">{{ tag }}</a></li>
@@ -26,7 +26,7 @@ title: home
 </div>
 
 <!-- <footer> -->
-<nav class="paginator"><ul>
+<nav class="post-paginator"><ul>
     <!-- previous page button -->
     <li><a role="button" class="faa-parent animated-hover" href="{{ paginator.previous_page_path | relative_url }}">
         <i class="fa-solid fa-arrow-left faa-horizontal faa-reverse"></i>

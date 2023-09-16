@@ -1,0 +1,11 @@
+#search {
+    &-input {
+        margin-top: 1em;
+
+        animation: 1s zoomIn backwards;
+    }
+
+    &-results article {
+        animation: 1s fadeInLeft backwards;
+    }
+}

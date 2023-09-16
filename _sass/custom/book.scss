@@ -1,0 +1,61 @@
+.book {
+    &-shelf {
+        overflow-x: scroll;
+        white-space: nowrap;
+        padding: 1em 0.5em;
+    }
+
+    &-tag {
+        display: flex;
+        @media (max-width: 420px) {
+            flex-direction: column;
+        }
+        width: 100%;
+        align-items: center;
+        align-content: space-between;
+        justify-content: space-between;
+    }
+
+    &-img {
+        display: inline-block;
+        position: relative;
+        margin: 0 0.5em;
+
+        animation: 1s slideInLeft backwards;
+        transition: all 0.2s ease;
+ 
+        &:hover {
+            transform: scale(1.1) rotate(-3deg);
+        }
+
+        .cover {
+            width: 12vw;
+            height: 16vw;
+            min-width: 150px;
+            min-height: 200px;
+            object-fit: fill;
+            box-shadow: 5px 5px 5px var(--muted-border-color);
+        }
+
+        .mark {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            width: 10px;
+            height: 10px;
+            color: $nord13;
+        }
+    }
+    
+    &-info {
+        display: inline-block;
+        text-align: right;
+        @media (max-width: 420px) {
+            margin-top: 1em;
+            text-align: center;
+        }
+        white-space: nowrap;
+    
+        animation: 1s slideInRight backwards;
+    }
+}

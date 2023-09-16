@@ -15,7 +15,7 @@ permalink: /books.html
     </summary>
     {% assign books = bookset.books | sort:"date" %}
     {% for book in books %}
-    <article class="book-tag">
+    <article class="book-tag card gradient">
         <div class="book-img">
             <img class="cover"
                 src="/assets/img/covers/{{ book.title }}.jpg"

@@ -1,61 +1,31 @@
-<nav>
-    <ul class="nav-title"><li>{{ site.title }}</li></ul>
-    <ul>
-        {% for entry in site.data.nav-list %}
-        <li class="nav-icon contrast" onclick="{{ entry.event }}"
-            data-tooltip="{{ entry.name }}" data-placement="bottom"
-            style="--ith: {{ forloop.index0 }}" {{ entry.other }}
-        ><i class="{{ entry.icon }}"></i></li>
-        {% endfor %}
-    </ul>
-</nav>
+<div class="menu" onclick="toggleMenu(event)">
+    <span class="menu-box">
+        <span class="menu-icon"></span>
+    </span>
+    <div class="menu-content">
+        <div class="menu-item" style="--ith: 0;"><a href="/">Home</a></div>
+        <div class="menu-item" style="--ith: 1;"><a href="/album.html">Album</a></div>
+        <div class="menu-item" style="--ith: 2;"><a href="/footprint.html">Footprint</a></div>
+        <div class="menu-item" style="--ith: 3;"><a href="/books.html">Bookshelf</a></div>
+        <div class="menu-item" style="--ith: 4;"><a href="/archive.html">Archive</a></div>
+    </div>
+</div>
 
-<header onclick="location.href='/'">
+<script>
+    const toggleMenu = () => {
+        const menu = document.querySelector(".menu")
+        const html = document.documentElement
+        if (menu.hasAttribute("open")) {
+            menu.removeAttribute("open")
+            html.removeAttribute("overlay")
+        } else {
+            menu.setAttribute("open", "")
+            html.setAttribute("overlay", "")
+        }
+    }
+</script>
+
+<header>
     <div class="main-title">Life Goes On</div>
     <div class="sub-title">そして生活が続く...来日方长</div>
 </header>
-
-<dialog id="profile-box"><article>
-    <header><div class="close-btn" data-target="profile-box" onclick="toggleModal(event)"></div></header>
-    <div class="profile-avatar"><img src="https://github.com/PENG-AO.png"></div>
-    <div class="profile-name">Peng Ao</div>
-    <div class="profile-icons">
-        <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/PENG-AO/PENG-AO.github.io?label=activity">
-        <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/PENG-AO/PENG-AO.github.io?label=last">
-        <img alt="GitHub issues" src="https://img.shields.io/github/issues/PENG-AO/PENG-AO.github.io">
-        <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/PENG-AO/PENG-AO.github.io">
-        <img alt="GitHub deployments" src="https://img.shields.io/github/deployments/PENG-AO/PENG-AO.github.io/github-pages?label=deploy%20state">
-    </div>
-    <hr><!-- skills -->
-    <div class="profile-icons">
-        {% assign skills = site.data.cv-list.skills | sort:"info" %}
-        {% for skill in skills %}
-        <img src="https://cdn.simpleicons.org/{{ skill.info }}/{{ skill.color }}"
-            width="32px" height="32px" style="--ith: {{ forloop.index0 }}">
-        {% endfor %}
-    </div>
-    <hr><!-- information -->
-    <ul class="profile-info">
-        {% for information in site.data.cv-list.information %}
-        <li class="profile-info-item" style="--ith: {{ forloop.index0 }}">
-            <i class="{{ information.icon }}"></i> {{ information.info }}
-        </li>
-        {% endfor %}
-    </ul>
-    <hr><!-- identity -->
-    <ul class="profile-info">
-        {% for identity in site.data.cv-list.identities %}
-        <li class="profile-info-item" style="--ith: {{ forloop.index0 }}">
-            <i class="{{ identity.icon }}"></i> {{ identity.info }}
-        </li>
-        {% endfor %}
-    </ul>
-    <hr><!-- hobby -->
-    <ul class="profile-info">
-        {% for hobby in site.data.cv-list.hobbies %}
-        <li class="profile-info-item" style="--ith: {{ forloop.index0 }}">
-            <i class="{{ hobby.icon }}"></i> {{ hobby.info }}
-        </li>
-        {% endfor %}
-    </ul>
-</article></dialog>

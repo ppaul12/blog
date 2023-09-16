@@ -47,7 +47,8 @@
       link: https://book.douban.com/subject/4243304/
       date: "07.21"
     
-    - title: 人生学校-理想的工作
+    - title: 理想的工作
+      subtitle: 人生学校
       link: https://book.douban.com/subject/30355382/
       date: "07.23"
     
@@ -89,7 +90,8 @@
       link: https://book.douban.com/subject/1483923/
       date: "11.29"
 
-    - title: 人生学校-微小的幸福
+    - title: 微小的幸福
+      subtitle: 人生学校
       link: https://book.douban.com/subject/30358016/
       date: "12.24"
 
@@ -153,11 +155,13 @@
       link: https://book.douban.com/subject/27008938/
       date: "11.29"
 
-    - title: 人生学校-爱情的真相
+    - title: 爱情的真相
+      subtitle: 人生学校
       link: https://book.douban.com/subject/30355379/
       date: "03.01"
 
-    - title: 人生学校-平静的力量
+    - title: 平静的力量
+      subtitle: 人生学校
       link: https://book.douban.com/subject/30358013/
       date: "04.30"
 

@@ -6,6 +6,4 @@ date: "2018.10 ~ 2019.03"
 required: gallery
 ---
 
-# <i class="fa-solid fa-camera fa-fw"></i> 随拍
-
-{% include gallery.html path="days-in-japan-(0)" %}
+{% include summary.html path="days-in-japan-(0)" start="2018.10" end="2019.03" %}

@@ -53,6 +53,10 @@ skills:
     color: "E34F26"
   - info: sass
     color: "CC6699"
+  - info: javascript
+    color: "F7DF1E"
+  - info: coffeescript
+    color: "2F2625"
   # configuration language
   - info: toml
     color: "9C4121"

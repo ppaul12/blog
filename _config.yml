@@ -5,8 +5,8 @@ plugins:
   - jekyll-coffeescript
   - jekyll-paginate
 
-paginate: 10
-paginate_path: content/posts/page:num/
+paginate: 8
+paginate_path: /page:num/
 
 highlighter: none
 markdown: kramdown

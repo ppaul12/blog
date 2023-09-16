@@ -1,0 +1,36 @@
+annual-summary:
+  - title: Days in Japan (0)
+    span: "2018.10 ~ 2019.03"
+  - title: Days in Japan (1)
+    span: "2019.04 ~ 2020.03"
+  - title: Days in Japan (2)
+    span: "2020.04 ~ 2021.03"
+  - title: Days in Japan (3)
+    span: "2021.04 ~ 2022.03"
+  - title: Days in Japan (4)
+    span: "2022.04 ~ 2023.03"
+  - title: Days in Japan (5)
+    span: "2023.04 ~ 2024.03"
+
+post-collection:
+  - title: 诗经小记
+    subtitle: 用一年的时间读一本诗经
+    span: "2021.12 ~ 2022.11"
+  - title: 数据结构的汇编实现
+    span: "2022.03 ~ 2022.03"
+  - title: 楚辞天问校读
+    span: "2023.09 ~ 202X.XX"
+
+github-project:
+  - title: GameBoy emulator
+    span: "2021.02 ~ 2021.03"
+    url: https://github.com/PENG-AO/pyGB
+  - title: RISC-V simulator
+    span: "2021.10 ~ 2022.02"
+    url: https://github.com/PENG-AO/RV32I-simulator
+  - title: EJU PHY
+    span: "2022.04 ~ 2022.10"
+    url: https://github.com/PENG-AO/EJU-PHY
+  - title: Urban Brush demo
+    span: "2022.05 ~ 2022.06"
+    url: https://github.com/PENG-AO/urban-brush-demo

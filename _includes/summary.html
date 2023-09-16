@@ -1,0 +1,61 @@
+{% assign traveling = "" | split:"" %}
+{% assign reading = "" | split:"" %}
+{% assign coding = "" | split:"" %}
+
+{% assign posts = site.posts | reverse %}
+{% assign start = page.date | split:"~" | first %}
+{% assign end = page.date | split:"~" | last %}
+{% for post in posts %}
+    {% assign date = post.date | date:"%Y.%m" %}
+    {% unless include.start <= date and date <= include.end %}
+        {% continue %}
+    {% endunless %}
+    {% if post.path contains "traveling" %}
+        {% assign traveling = traveling | push:post %}
+    {% elsif post.path contains "reading" %}
+        {% assign reading = reading | push:post %}
+    {% elsif post.path contains "coding" %}
+        {% assign coding = coding | push:post %}
+    {% endif %}
+{% endfor %}
+
+{% unless include.path == "" %}
+<h2><i class="fa-solid fa-camera-retro fa-fw"></i> Photoing</h2>
+{% include gallery.html path=include.path %}
+{% endunless %}
+
+{% unless traveling.size == 0 %}
+<h2><i class="fa-solid fa-signs-post fa-fw"></i> Traveling</h2>
+<ul class="item-list">
+    {% for post in traveling %}
+    <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <em>({{ post.date | date:"%Y.%m.%d" }})</em>
+    </li>
+    {% endfor %}
+</ul>
+{% endunless %}
+
+{% unless reading.size == 0 %}
+<h2><i class="fa-solid fa-book-open-reader fa-fw"></i> Reading</h2>
+<ul class="item-list">
+    {% for post in reading %}
+    <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <em>({{ post.date | date:"%Y.%m.%d" }})</em>
+    </li>
+    {% endfor %}
+</ul>
+{% endunless %}
+
+{% unless coding.size == 0 %}
+<h2><i class="fa-solid fa-laptop-code fa-fw"></i> Coding</h2>
+<ul class="item-list">
+    {% for post in coding %}
+    <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <em>({{ post.date | date:"%Y.%m.%d" }})</em>
+    </li>
+    {% endfor %}
+</ul>
+{% endunless %}

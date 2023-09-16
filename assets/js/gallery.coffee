@@ -75,12 +75,12 @@ initGallery = (gallery, data) ->
         if gallery.hasAttribute("maximized")
             gallery.removeAttribute("maximized")
             gallery.style.setProperty("position", "relative")
-            document.documentElement.style.removeProperty("overflow")
+            document.documentElement.removeAttribute("fullscreen")
             window.scrollTo({top: gallery.offsetTop - (window.innerHeight - gallery.offsetHeight) / 2})
         else
             gallery.setAttribute("maximized", '')
             gallery.style.removeProperty("position")
-            document.documentElement.style.setProperty("overflow", "hidden")
+            document.documentElement.setAttribute("fullscreen", "")
             window.scrollTo({top: 0})
         return
     button.innerHTML = "<i class=\"fa-solid fa-maximize faa-pulse faa-fast\"></i>"

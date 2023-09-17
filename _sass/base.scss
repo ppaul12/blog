@@ -76,6 +76,14 @@ hr {
 
 // dialog
 dialog {
+    &[open] {
+        animation: fadeIn 0.3s backwards;
+    }
+
+    &[close] {
+        animation: fadeOut 0.3s backwards;
+    }
+
     article {
         max-height: 85vh;
 

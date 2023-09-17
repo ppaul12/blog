@@ -29,7 +29,7 @@
     }
 }
 
-#post {
+#post:not([plain-header]) {
     counter-reset: h1;
 
     h2 {

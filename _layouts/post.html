@@ -25,7 +25,9 @@ layout: default
         </hgroup>
     </header>
 
-    <div class="post-content" id="post">{{ content }}</div>
+    <div class="post-content" id="post"
+        {% if page.required contains "plain-header" %}plain-header{% endif %}
+    >{{ content }}</div>
 
     <footer>
         <!-- button bar -->

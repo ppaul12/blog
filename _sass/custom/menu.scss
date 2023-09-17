@@ -70,6 +70,7 @@
     }
 
     &-item {
+        position: relative;
         padding: 0 0.5em;
         margin-bottom: 1em;
         opacity: 0;
@@ -77,6 +78,74 @@
         transform: translateX(calc(pow(-1, var(--ith)) * 200%));
 
         transition: all 0.3s ease calc(var(--ith) * 0.1s + 0.3s);
+
+        &::before, &::after {
+            position: absolute;
+            width: 2px;
+            height: 0;
+            background-color: var(--muted-color);
+            content: "";
+
+            transition: height 0.3s ease;
+        }
+
+        &::before {
+            bottom: -0.2em;
+            left: 0;
+        }
+
+        &::after {
+            top: -0.2em;
+            right: 0;
+        }
+
+        &:has(a:hover) {
+            &::before, &::after {
+                height: 100%;
+
+                transition: height 0.3s ease 0.3s;
+            }
+        }
+
+        a {
+            position: relative;
+            text-decoration: none;
+
+            &::before, &::after {
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background-color: var(--muted-color);
+                content: "";
+
+                transition:
+                    transform 0.3s ease 0.3s,
+                    width 0.3s ease 0.3s;
+            }
+
+            &::before {
+                top: -0.2em;
+                right: -0.5em;
+                transform: translateX(-100vw);
+            }
+
+            &::after {
+                bottom: -0.2em;
+                left: -0.5em;
+                transform: translateX(100vw);
+            }
+
+            &:hover {
+                &::before, &::after {
+                    width: 50%;
+                    transform: translateX(0);
+
+                    transition:
+                        transform 0.3s ease,
+                        width 0.3s ease 0.3s;
+                }
+            }
+        }
     }
 
     &[open] > &-box {

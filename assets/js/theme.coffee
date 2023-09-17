@@ -10,17 +10,19 @@ getPreferredTheme = () ->
         "light"
 
 getGlobalTheme = () ->
-    window.localStorage.getItem("theme") ? "auto"
+    window.localStorage.getItem("data-theme") ? getPreferredTheme()
 
 setGlobalTheme = (theme) ->
     theme = theme ? getGlobalTheme()
-    theme = getPreferredTheme() if theme == "auto"
-    document.querySelector("html").setAttribute("data-theme", theme)
-    window.localStorage.setItem("theme", theme)
+    document.documentElement.setAttribute("data-theme", theme)
+    window.localStorage.setItem("data-theme", theme)
     return
 
 toggleGlobalTheme = () ->
-    setGlobalTheme(if getGlobalTheme() == "dark" then "light" else "dark")
+    setGlobalTheme({
+        "light": "dark"
+        "dark": "light"
+    }[getGlobalTheme()])
     return
 
 window.addEventListener("load", () ->

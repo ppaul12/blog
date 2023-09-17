@@ -4,6 +4,9 @@ title: λ计算memo
 tags: ComputerScience
 ---
 
+- toc
+{:toc}
+
 TL;DR
 
 # 构文

@@ -3,7 +3,11 @@ layout: post
 title: 数据结构的汇编实现 (2)
 subtitle: 顺序表
 tags: ComputerScience Assembly C/C++
+required: mermaid
 ---
+
+- toc
+{:toc}
 
 > 本文汇编代码可参见：
 > - [/asm/lib/slist.s](https://github.com/PENG-AO/RV32I-simulator/blob/master/asm/lib/slist.s)
@@ -456,20 +460,19 @@ slist_filter_loop_end:
 
 为了涵盖所有的操作，在开发的过程中我以如下流程进行了测试。
 
-$$
-\begin{gather*}
-\text{make list}(5)\\\downarrow\\
-\text{append}(slist, 1..5)\\\downarrow\\
-\text{is empty}(slist)+\text{print out}\quad\ast\\\downarrow\\
-\text{filter}(\text{isOdd}, slist)\\\downarrow\\
-\text{insert}(filtered\_slist, 0, 2)\\\downarrow\\
-\text{insert}(filtered\_slist, 4, 4)\\\downarrow\\
-\text{map}(\text{print item}, filtered\_slist)\quad\ast\\\downarrow\\
-\text{find}(slist, 3)+\text{remove}(slist, \text{idx of }3)\\\downarrow\\
-\text{find}(slist, 6)+\text{remove}(slist, \text{idx of }6)\\\downarrow\\
-\text{pop and print until empty}\quad\ast
-\end{gather*}
-$$
+<div class="mermaid img-frame">
+flowchart TD
+    a("make_list(5)") -->
+    b("append(slist, 1..5)") -->
+    c("is_empty(slist) + print out *") -->
+    d("filter(isOdd, slist)") -->
+    e("insert(filtered_slist, 0, 2)") -->
+    f("insert(filtered_slist, 4, 4)") -->
+    g("map(print_item, filtered_slist) *") -->
+    h("find(slist, 3) + remove(slist, idx of 3)") -->
+    i("find(slist, 3) + remove(slist, idx of 6)") -->
+    j("pop and print until empty *")
+</div>
 
 因此运行代码后我们将在数出框内看到，三次标星号位置的输出。第一次为非空(False)，第二次应为`2, 1, 3, 5, 4`，第三次将会是`5, 4, 2, 1`。在第三次输出前，由于6不在表中，所以我们会看到一次删除不存在下标内容导致的容量警告(capacity warning)。最终效果如下图。
 

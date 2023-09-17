@@ -5,6 +5,9 @@ subtitle: 列表操作
 tags: ComputerScience Assembly C/C++
 ---
 
+- toc
+{:toc}
+
 > 本文汇编代码可参见：
 > - [/asm/lib/mlib.s](https://github.com/PENG-AO/RV32I-simulator/blob/master/asm/lib/mlib.s)
 > - [/asm/test-codes/1d-array-test.s](https://github.com/PENG-AO/RV32I-simulator/blob/master/asm/test-codes/1d-array-test.s)

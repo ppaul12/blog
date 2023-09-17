@@ -5,11 +5,9 @@
 
 window.addEventListener("load", () ->
     unless (toc = document.getElementById("markdown-toc"))? then return
-    # move toc to modal
-    tree = document.createElement("div")
-    tree.classList = "tree-list"
-    tree.appendChild(toc)
-    document.querySelector("#toc-box article").appendChild(tree)
+    # copy toc to modal
+    toc.className = "tree-list"
+    document.querySelector("#toc-box article").appendChild(toc)
     # generate toc button
     button = document.createElement("button")
     button.className = "contrast faa-parent animated-hover"

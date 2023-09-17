@@ -5,6 +5,9 @@ tags: ComputerScience PointClouds
 required: mermaid
 ---
 
+- toc
+{:toc}
+
 This is a personal memo of this [survey paper](https://www.sciencedirect.com/science/article/pii/S0924271623000163).
 
 # Introduction
@@ -118,7 +121,7 @@ $$
 
 Reference frame registration is an *optimization problem* for estimating *transformation parameters* for point clouds without markers.
 
-<div style="text-align:center;"><div class="mermaid">
+<div class="mermaid img-frame">
 flowchart TD
     PC1("Point cloud 1")
     PC2("Point cloud 2")
@@ -129,7 +132,7 @@ flowchart TD
     PC1 & PC2--> STEP1
     STEP1 --> STEP2 --> STEP1
     STEP2 --> OUT
-</div></div>
+</div>
 
 Approaches can be divided into three primary classes:
 - *Geometric-constraint*-based methods
@@ -173,6 +176,6 @@ Two properties should be derived at this stage:
 
 <h5 style="text-align:center;"><u>Some directions are possible to fill up the gaps</u></h5>
 
-- Multisource point clouds
+- Multi-source point clouds
 - Object-level semantics
 - Collaboration with Computer Vision

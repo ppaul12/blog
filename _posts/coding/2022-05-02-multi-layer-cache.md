@@ -4,6 +4,9 @@ title: Multi-layer cache system
 tags: ComputerScience C/C++
 ---
 
+- toc
+{:toc}
+
 # Intro
 
 The cache system is an elegant and essential part of computers, and it is so imperceptible that people seldom pay attention to it. I will implement a universal structure for a sound cache system in this post.

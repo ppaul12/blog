@@ -5,6 +5,9 @@ subtitle: 基于RISC-V实现
 tags: ComputerScience Assembly Python3
 ---
 
+- toc
+{:toc}
+
 # 前情提要
 
 ## 什么是汇编语言？

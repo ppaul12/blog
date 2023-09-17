@@ -3,7 +3,11 @@ layout: post
 title: 数据结构的汇编实现 (3)
 subtitle: 单链表
 tags: ComputerScience Assembly C/C++
+required: mermaid
 ---
+
+- toc
+{:toc}
 
 > 本文汇编代码可参见：
 > - [/asm/lib/llist.s](https://github.com/PENG-AO/RV32I-simulator/blob/master/asm/lib/llist.s)
@@ -404,20 +408,19 @@ llist_filter_len_loop_end:
 
 具体测试流程和上一篇一样，只是改变了一下函数名。
 
-$$
-\begin{gather*}
-\text{make list}(5)\\\downarrow\\
-\text{prepend}(llist, 1..5)\\\downarrow\\
-\text{is empty}(llist)+\text{print out}\\\downarrow\\
-\text{filter}(\text{isOdd}, llist)\\\downarrow\\
-\text{insert}(filtered\_slist, 0, 2)\\\downarrow\\
-\text{insert}(filtered\_slist, 4, 4)\\\downarrow\\
-\text{map}(\text{print item}, filtered\_slist)\\\downarrow\\
-\text{find}(llist, 3)+\text{remove}(llist, \text{idx of }3)\\\downarrow\\
-\text{find}(llist, 6)+\text{remove}(llist, \text{idx of }6)\\\downarrow\\
-\text{pop and print until empty}
-\end{gather*}
-$$
+<div class="mermaid img-frame">
+flowchart TD
+    a("make_list(5)") -->
+    b("prepend(llist, 1..5)") -->
+    c("is_empty(llist) + print out") -->
+    d("filter(isOdd, llist)") -->
+    e("insert(filtered_llist, 0, 2)") -->
+    f("insert(filtered_llist, 4, 4)") -->
+    g("map(print_item, filtered_llist)") -->
+    h("find(llist, 3) + remove(llist, idx of 3)") -->
+    i("find(llist, 3) + remove(llist, idx of 6)") -->
+    j("pop and print until empty")
+</div>
 
 由于存储顺序不同，我们将会看到如下的输出(途中会出现一次在删除不存在的6时发生的容量警告)。
 

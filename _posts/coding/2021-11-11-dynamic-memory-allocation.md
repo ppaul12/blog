@@ -5,6 +5,9 @@ subtitle: 多维数组
 tags: C/C++
 ---
 
+- toc
+{:toc}
+
 # 数组的内存分布
 
 ```c

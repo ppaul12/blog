@@ -6,29 +6,29 @@ tags: ComputerScience
 
 TL;DR
 
-# 1. 构文
+# 构文
 
-## 1.1 定义
+## 定义
 
 $$
 M::=x|\underbrace{\lambda x.M}_{\lambda-abstraction}|\underbrace{M_1M_2}_{application}
 $$
 
-## 1.2 $\alpha$等价
+## $\alpha$等价
 
-### 1.2.1 绑定变量
+### 绑定变量
 
 - $BV(x)=\emptyset$
 - $BV(\lambda x.M)=BV(M)\cup\{x\}$
 - $BV(M_1M_2)=BV(M_1)\cup BV(M_2)$
 
-### 1.2.2 自由变量
+### 自由变量
 
 - $FV(x)=\{x\}$
 - $FV(\lambda x.M)=FV(M)-\{x\}$
 - $FV(M_1M_2)=FV(M_1)\cup FV(M_2)$
 
-### 1.2.3 $\alpha-equivalence$
+### $\alpha-equivalence$
 
 - $\cfrac{y\not\in FV(M)}{\lambda x.M\equiv_\alpha\lambda y.\{y/x\}M}$
 - $\cfrac{M\equiv_\alpha N}{C[M]\equiv_\alpha C[N]}$
@@ -36,9 +36,9 @@ $$
 - $\cfrac{M^\prime\equiv_\alpha M}{M\equiv_\alpha M^\prime}$
 - $\cfrac{M\equiv_\alpha M^{\prime\prime}\quad M^{\prime\prime}\equiv_\alpha M^\prime}{M\equiv_\alpha M^\prime}$
 
-## 1.3 $\beta$代入
+## $\beta$代入
 
-## 1.4 $\eta$化简
+## $\eta$化简
 
 $$
 (\lambda x.Mx)N\to_\beta MN
@@ -46,31 +46,31 @@ $$
 C[\lambda x.Mx]\equiv_\eta C[M]\quad(x\not\in FV(M))
 $$
 
-# 2. 基本数据类型
+# 基本数据类型
 
-## 2.1 布尔值
+## 布尔值
 
 - $\lceil\text{true}\rceil\triangleq\lambda a.\lambda b. a$
 - $\lceil\text{false}\rceil\triangleq\lambda a.\lambda b.b$
 
-### 2.1.1 if语句
+### if语句
 
 - $\text{if }\lceil\text{true}\rceil\text{ then }e_1\text{ else }e_2=(\lambda a.\lambda b. a)e_1e_2\to^\ast e_1$
 - $\text{if }\lceil\text{false}\rceil\text{ then }e_1\text{ else }e_2=(\lambda a.\lambda b. b)e_1e_2\to^\ast e_2$
 
-### 2.1.2 逻辑算子
+### 逻辑算子
 
 - $\lceil\text{and}\rceil\triangleq\lambda b_1.\lambda b_2.b_1b_2\lceil\text{false}\rceil$
 - $\lceil\text{or}\rceil\triangleq\lambda b_1.\lambda b_2.b_1\lceil\text{true}\rceil b_2$
 - $\lceil\text{not}\rceil\triangleq\lambda b.b\lceil\text{false}\rceil\lceil\text{true}\rceil$
 
-## 2.2 组 (tuple)
+## 组 (tuple)
 
 - $\lceil\text{pair}\rceil\triangleq\lambda a.\lambda b.\lambda f.fab$：以$\lceil\text{pair}\rceil\lceil a\rceil\lceil b\rceil$的方式构建一个组，通过返回$\lambda f.fab$的方式，让a与b处于可操作状态
 - $\lceil\text{fst}\rceil\triangleq\lambda p.p(\lambda a.\lambda b.a)$
 - $\lceil\text{snd}\rceil\triangleq\lambda p.p(\lambda a.\lambda b.b)$
 
-## 2.3 自然数
+## 自然数
 
 $$
 \lceil n\rceil\triangleq\lambda s.\lambda z.\underbrace{s(s(\cdots s}_{n}(z)))
@@ -80,7 +80,7 @@ $$
 - $\lceil0\rceil=\lambda s.\lambda z.z$
 - $\lceil1\rceil=\lambda s.\lambda z.sz$
 
-### 2.3.1 常用运算
+### 常用运算
 
 - $\lceil\text{isZero}\rceil\triangleq\lambda n.n(\lambda b.\lceil\text{false}\rceil)\lceil\text{true}\rceil$：s为$\lambda b.\lceil\text{false}\rceil$,z为$\lceil\text{true}\rceil$。尝试对z做n次s的操作，若为0则无法重复直接返回$\lceil\text{true}\rceil$。
 - $\lceil\text{lessEqual}\rceil\triangleq\lambda m.\lambda n.\lceil\text{isZero}\rceil(\lceil\text{minus}\rceil mn)$
@@ -91,7 +91,7 @@ $$
 - $\lceil\text{mult}\rceil\triangleq\lambda m.\lambda n.n(\lceil\text{plus}\rceil m)\lceil0\rceil$：将$\lceil\text{plus}\rceil m$的部分理解为加法运算的部分代入，做$+m$的操作。整体即为对0做n次加m的运算。此外乘法也可做如下定义$\lceil\text{mult}\rceil\triangleq\lambda m.\lambda n.\lambda s.n(ms)$，脱离实际代数运算的思考方式，单纯着重于形式的构造。
 - $\lceil\text{exp}\rceil\triangleq\lambda m.\lambda n.n(\lceil\text{mult}\rceil m)\lceil1\rceil$：理解方式同上。此外幂运算同样也可做如下定义$\lceil\text{exp}\rceil\triangleq\lambda m.\lambda n.nm$。
 
-### 2.3.2 predecessor
+### predecessor
 
 $$
 \text{pred}(n)=\begin{cases}
@@ -116,7 +116,7 @@ $$
 \ (\lceil\text{pair}\rceil\lceil0\rceil\lceil0\rceil)\}
 $$
 
-### 2.3.3 减法
+### 减法
 
 $$
 \text{minus}=\begin{cases}
@@ -131,9 +131,9 @@ $$
 \lceil\text{minus}\rceil\triangleq\lambda m.\lambda n.n\lceil\text{pred}\rceil m
 $$
 
-# 3. 递归以及不动点
+# 递归以及不动点
 
-## 3.1 不动点
+## 不动点
 
 $$
 \text{fix}_F=(\lambda x.(F x x))(\lambda x.(F x x))
@@ -147,7 +147,7 @@ $$
 
 无论对不动点做多少次F这个操作都不会发生变化，因而称$\text{fix}_F$为F的不动点。
 
-## 3.2 不动点算子
+## 不动点算子
 
 $$
 Y\triangleq\lambda F.\text{fix}_F=\lambda F.(\lambda x.(F x x))(\lambda x.(F x x))
@@ -165,9 +165,9 @@ $$
 \text{Function}\triangleq Y(\lambda\text{ iterFunc}.\{\text{iterFunc body}\})
 $$
 
-# 4. 列表
+# 列表
 
-## 4.1 基本内容
+## 基本内容
 
 $$
 [1,2,3]\to\text{cons}(1,\text{cons}(2,\text{cons}(3,\text{nil})))
@@ -179,13 +179,13 @@ $$
 - $\lceil\text{nil}\rceil\triangleq\lambda f.\lceil\text{true}\rceil$：与构造完毕的pair保持同样的结构，区别在于Nil无论得到什么操作都只会返回true。
 - $\lceil\text{isNil}\rceil\triangleq\lambda p.p(\lambda a.\lambda b.\lceil\text{false}\rceil)$：对一个构造完毕的pair结构传入能够读取两个元素的函数。如果该pair为Nil则不会有任何效果直接返回true，相反如果该pair有元素即非Nil则会返回false。
 
-## 4.2 复杂操作
+## 复杂操作
 
 附OCaml参考代码
 
 <script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/languages/ocaml.min.js"></script>
 
-### 4.2.1 concat
+### concat
 
 $$
 \lceil\text{CAT}\rceil\triangleq Y(
@@ -200,7 +200,7 @@ let rec concat a b =
     | head :: tail -> head :: (concat tail b)
 ```
 
-### 4.2.2 length
+### length
 
 $$
 \lceil\text{LEN}\rceil\triangleq Y(
@@ -216,7 +216,7 @@ let rec len counter lst =
 in len 0
 ```
 
-### 4.2.3 reverse
+### reverse
 
 $$
 \lceil\text{REV}\rceil\triangleq Y(
@@ -232,7 +232,7 @@ let rec rev aux lst =
 in rev []
 ```
 
-### 4.2.4 map
+### map
 
 $$
 \lceil\text{MAP}\rceil\triangleq Y(
@@ -249,7 +249,7 @@ let rec map f lst =
     | head :: tail -> (f head) :: (map f tail)
 ```
 
-### 4.2.5 filter
+### filter
 
 $$
 \lceil\text{FILTER}\rceil\triangleq Y(
@@ -269,14 +269,14 @@ let rec filter b lst =
             (filter b tail)
 ```
 
-### 4.2.6 ...
+### ...
 
-# 5. 在线工具
+# 在线工具
 
 - [λ Calculus Interpreter](https://jacksongl.github.io/files/demo/lambda/index.htm)
 - [Lambda Calculus Calculator](https://lambdacalc.io)
 
-# 6. 参考资料
+# 参考资料
 
 - [Collected Lambda Calculus Functions](https://jwodder.freeshell.org/lambda.html)
 - [プログラム意味論の基礎](https://www.amazon.co.jp/プログラム意味論の基礎-ライブラリ情報学コア・テキスト-11-小林-直樹/dp/4781914837)

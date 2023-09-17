@@ -7,7 +7,7 @@ tags: ComputerScience
 
 Dempster Shafer Theory (DST)也称证据理论，是概率模型的一种。由Dempster提出，Shafer发展泛化。优势在于能考虑且保留事件的“不确定性”，可以应用于信息融合。本文将简述DST的基本概念并附上C++的简单代码实现。
 
-# 1. 基本概念
+# 基本概念
 
 首先考虑两个互斥事件$a$与$b$构成的全集$X$，则其幂集$\mathcal{P}(X)=\lbrace\emptyset, \lbrace a\rbrace, \lbrace b\rbrace, \lbrace a, b\rbrace\rbrace$代表所有可能发生的情况。在此定义$mass:\mathcal{P}(X)\to[0,1]$函数。当其满足如下条件时，称为基本概率分配(basic probability assignment)。
 
@@ -41,7 +41,7 @@ $$
 m_1\oplus m_2\oplus m_3=(m_1\oplus m_2)\oplus m_3
 $$
 
-# 2. 代码实现
+# 代码实现
 
 ```cpp
 #include <initializer_list>

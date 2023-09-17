@@ -6,15 +6,15 @@ tags: 旅行
 required: gallery
 ---
 
-# 1. 路程规划
+# 路程规划
 
 <iframe src="https://www.google.com/maps/d/embed?mid=19sdbWbBazi_OwawTevDZ85ELOa55hzk&ehbc=2E312F" width="100%" height="480"></iframe>
 
-# 2. 沿途风光
+# 沿途风光
 
 {% include gallery.html path="a-travel-at-hokuriku" %}
 
-# 3. 小计
+# 小计
 
 - 时间：为期4天，2022/09/21 ~ 2022/09/24
 - 形式：电车

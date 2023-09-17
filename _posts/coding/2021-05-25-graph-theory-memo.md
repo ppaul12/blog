@@ -4,20 +4,20 @@ title: 图论memo
 tags: ComputerScience
 ---
 
-# 1. 图
+# 图
 
-## 1.1 无序积
+## 无序积
 
 $$
 A\&B=\{(a,b)\vert a\in A\land b\in B\}\quad\text{where }(a,b)=(b,a)
 $$
 
-## 1.2 图
+## 图
 
 - 无向图：$G=<V,E>\quad(E\subseteq V\&V)$
 - 有向图：$G=<V,E>\quad(E\subseteq V\times V)$，也常用字母$D$
 
-## 1.3 相关概念
+## 相关概念
 
 - 顶点集：$V(G)$，顶点数：$\vert V(G)\vert$，阶：顶点数（n顶点图为n阶图）
 - 边集：$E(G)$，边数：$\vert E(G)\vert$
@@ -28,7 +28,7 @@ $$
 - 关联：顶点与边的关系，关联次数：边连接顶点的次数
 - 孤立点：图中无边关联的顶点
 
-## 1.4 邻域
+## 邻域
 
 - 无向图
    - 邻域：$N_G(v)=\\{u\in V\vert(u,v)\in E\land u\neq v\\}$
@@ -41,13 +41,13 @@ $$
    - 邻域：$N_D(v)=\Gamma_D^+(v)\cup\Gamma_D^-(v)$
    - 闭邻域：$\overline{N_D}(v)=N_D(v)\cup\\{v\\}$
 
-## 1.5 简单图
+## 简单图
 
 - 平行边：无向图中多条关联同一组顶点的边，有向图中多条首尾相通的边
 - 重数：平行边的条数，多重图
 - **简单图**：不含平行边和环的图（simple graph）
 
-## 1.6 度
+## 度
 
 - 无向图
    - $d_G(v)$：顶点作为边的端点的次数
@@ -56,83 +56,83 @@ $$
    
 - 有向图：$d_D(v)=d_D^+(v)+d_D^-(v)$
 
-## 1.7 握手定理
+## 握手定理
 
 - 任何无环图中，顶点度数之和等于边数的二倍
 - $\sum_{v\in V}d(v)=2\cdot\vert E\vert$
 - 推论：任何图中，奇度顶点的个数为偶数
 
-## 1.8 可图化
+## 可图化
 
 - 充要条件：对于非负整数列$d=(d_1,d_2,\cdots,d_n)$，$\sum d_i$为偶数（定理14.3）
 - 可简单图化过程：$(5,4,3,2,2)\to(3,2,1,1)\to(1,0,0)\implies不可简单图化$
 
-## 1.9 同构：图上二元等价关系
+## 同构：图上二元等价关系
 
-## 1.10 (n阶)完全图 $K_n$
+## (n阶)完全图 $K_n$
 
 - 图中每个顶点均与其他$n-1$个顶点相连接
 - 竞赛图：基图为n阶无向完全图的n阶有向简单图
 
-## 1.11 (k-)正则图
+## (k-)正则图
 
-## 1.12 二部图，二分图，偶图
+## 二部图，二分图，偶图
 
 - $G=<V_1,V_2.E>,V_1\cup V_2=V,V_1\cap V_2=\emptyset$
 - $K_{r,s}=<V_1,V_2,E>,r=\vert V_1\vert,s=\vert V_2\vert$
 - 完全二部图：$\vert V_1\vert=\vert V_2\vert$
 - 判定(充要)：图中无奇圈
 
-## 1.13 图的操作
+## 图的操作
 
-# 2. 通路与回路
+# 通路与回路
 
 - **简单的**：只经过一次同一条**边**
 - **初等的**：只经过一次用一个**点**
 - 初级的：简单且初等
 
-# 3. 连通性
+# 连通性
 
-## 3.1 (无向图)连通
+## (无向图)连通
 
 - 两点间有通路（顶点间二元等价关系）
 - 连通图：任意两点连通
 - 连通分枝：由连通关系构建的等价类，用$p(G)$表示连通分支数
 
-## 3.2 **点割集**
+## **点割集**
 
 若存在$V^\prime\subset V$使得$p(G-V^\prime)>p(G)$，且对于任意的$V^{\prime\prime}\subset V^\prime$，均有$p(G-V^{\prime\prime})=p(G)$，则称$V^\prime$是G的点割集，割集元素唯一时称为割点
 
-## 3.3 点连通度
+## 点连通度
 
 $\kappa(G)=\min\\{\vert V^\prime\vert\ \vert V^\prime为G的点割集\\}$，若$\kappa(G)\ge k$则称$G$为k-连通图
 
-## 3.4 **边割集**
+## **边割集**
 
 若存在$E^\prime\subset E$使得$p(G-E^\prime)>p(G)$，且对于任意的$E^{\prime\prime}\subset E^\prime$，均有$p(G-E^{\prime\prime})=p(G)$，则称$E^\prime$是G的边割集，割集元素唯一时称为割边或桥
 
-## 3.5 边连通度
+## 边连通度
 
 - $\lambda(G)=\min\\{\vert E^\prime\vert\ \vert E^\prime为G的边割集\\}$，若$\lambda(G)\ge r$则称$G$为r边-连通图 
 - k-(点)连通图去掉任意k-1个顶点后仍连通
 - r-边连通图去掉任意r-1条边后仍连通
 - $\kappa(G)\le\lambda(G)\le\delta(G)$，点连通度≤边连通度≤最小度
 
-## 3.6 **门格尔定理**（有限无向图）
+## **门格尔定理**（有限无向图）
 
 - 点连通描述：k-点连通$\iff$任意两点间均有k条不共点的通路
 - 边连通描述：k-边连通$\iff$任意两点间均有k条不共边的通路
 
-## 3.7 有向图连通
+## 有向图连通
 
 - 弱连通：基图连通
 - 单向连通：对于任意两点，至少单方向可达
 - 强连通：对于任意两点，双向可达
 - 强连通判定(充要)：$D$中存在经过每个顶点至少一次的回路
 
-# 4. 欧拉图与哈密顿图
+# 欧拉图与哈密顿图
 
-## 4.1 欧拉**通路**
+## 欧拉**通路**
 
 - 经过所有边一次+所有点的通路，半欧拉图
 - 无向半欧拉图判定(充要)：连通图+**恰有2个奇度顶点**
@@ -141,26 +141,26 @@ $\kappa(G)=\min\\{\vert V^\prime\vert\ \vert V^\prime为G的点割集\\}$，若$
    - 恰有2个奇度顶点：一个入度比出度大1，另一个出度比入度大1
    - 其余顶点入度=出度
 
-## 4.2 欧拉**回路**
+## 欧拉**回路**
 
 - 经过所有边一次+所有点的回路，欧拉图
 - 无向欧拉图判定(充要)：连通图+**不存在奇度顶点**
 - 有向欧拉图判定(充要)：强连通+所有顶点入度=出度
 
-## 4.3 Fleury算法
+## Fleury算法
 
-## 4.4 哈密顿通路
+## 哈密顿通路
 
 - 经过所有顶点一次的通路，半哈密顿图
 - 判定(充分)：对于任意不相邻的顶点，$d(u)+d(v)\ge n-1$
 - $n(n\ge2)$阶竞赛图中含有哈密顿通路
 
-## 4.5 哈密顿回路
+## 哈密顿回路
 
 - 经过所有顶点一次的回路，哈密顿图（平凡图为哈密顿图）
 - 判定(充分)：对于任意不相邻的顶点，$d(u)+d(v)\ge n$
 
-# 5. 树
+# 树
 
 - 无向树：连通无回路的无向图   
    - 森林：每个连通分量都是树的无向图
@@ -171,21 +171,21 @@ $\kappa(G)=\min\\{\vert V^\prime\vert\ \vert V^\prime为G的点割集\\}$，若$
    - 弦：不在生成树中的边
    - 余树：由所有弦导出的子图（不一定连通，不一定含回路）
 
-# 6. 平面图
+# 平面图
 
-## 6.1 (可)平面图
+## (可)平面图
 
 - 将图画在平面上且除顶点外边不相交，画出的平面图为原图的平面嵌入
 - 极大平面图：在当前图中的任意不相邻的两点间加入边后即为非平面图的图
 - $K_5$和$K_{3,3}$为**非平面图**（极小非平面图），且任意平面图不含其作为缩约
 - 简单平面图的最小度≤5（由握手定理可证）
 
-## 6.2 外平面图(outer planar graph)
+## 外平面图(outer planar graph)
 
 - 所有顶点均在同一面内（是平面图的子集）
 - $K_4$和$K_{2,3}$为非外平面图，且任意外平面图不含其作为缩约
 
-## 6.3 面
+## 面
 
 - 由图的平面嵌入划分出的区域
 - 无限面，外部面：面积无限的面
@@ -193,11 +193,11 @@ $\kappa(G)=\min\\{\vert V^\prime\vert\ \vert V^\prime为G的点割集\\}$，若$
 - 边界：包围面的回路，回路长为该面的次数
 - 面次数之和 = 边数的二倍
 
-## 6.4 **约当定理**
+## **约当定理**
 
 自身不相交的闭曲线会将平面分为内外两部分（连接内外的连续曲线必与给定闭曲线相交）
 
-## 6.5 **欧拉公式**
+## **欧拉公式**
 
 $$
 \vert V\vert-\vert E\vert+\vert F\vert=2
@@ -216,7 +216,7 @@ $$
 2\vert E\vert\ge l\cdot(2+\vert E\vert-\vert V\vert)
 $$
 
-## 6.6 对偶图
+## 对偶图
 
 <div class="img-frame"><img src="/assets/src/graph-theory-memo/duals graphs.svg"></div>
    
@@ -230,9 +230,9 @@ $$
    - $\vert F^*\vert=\vert V\vert$
    - $d_{G^\ast}(v^\ast_i)=\text{deg}(R_i)\quad\text{where }v^\ast_i\text{ inside }R_i$
 
-# 7. 匹配与着色
+# 匹配与着色
 
-## 7.1 支配集
+## 支配集
 
 <div class="img-frame"><img src="/assets/src/graph-theory-memo/dominating set.svg"></div>
    
@@ -240,7 +240,7 @@ $$
 - 极小支配集：该支配集的任意真子集均不是支配集
 - 最小支配集：顶点数最小的支配集，记顶点数为该图的支配数$\gamma_0(G)$
 
-## 7.2 独立集
+## 独立集
    
 - 点独立集
    - 任意两顶点均不相邻的顶点集的子集
@@ -251,7 +251,7 @@ $$
    - 任意两边均不相邻(不共有端点)的边集的子集
    - 极大边独立集，最大边独立集：$\beta_1(G)$
 
-## 7.3 覆盖集
+## 覆盖集
    
 - 点覆盖集
    - 图中所有边均与点覆盖集相关联（有端点在覆盖集内）
@@ -264,7 +264,7 @@ $$
 - 无向简单图的最大点独立集是最小支配集（反之不成立）（定理18.1）
 - $V^\ast$ 为G的点覆盖集 $\iff\overline\{V^\ast\}=V-V^\ast$ 为G的点独立集（定理18.2）
 
-## 7.4 **匹配**
+## **匹配**
    
 - 匹配边/非匹配边：是否在匹配中
 - 饱和点/非饱和点：是否与匹配边相关联
@@ -278,20 +278,20 @@ $$
    - 取等时为最大点独立集、最小边覆盖集
 - 最大匹配$\iff$原图中不存在关于该匹配的可增广交错路径
 
-## 7.5 二部图中的匹配
+## 二部图中的匹配
    
 - 完备匹配：$\vert M\vert=\vert V_1\vert,\vert V_1\vert\le\vert V_2\vert$
 - Hall定理(充要)：$V_1$中任意$k$个顶点至少与$V_2$中的$k$个顶点相邻
 
-# 8. 网络流
+# 网络流
 
-## 8.1 网络(network)
+## 网络(network)
 
 $$
 N=(V,E,c,s,t)\quad\text{c: capacity, s: source, t: sink}
 $$
 
-## 8.2 流量(flow)
+## 流量(flow)
    
 - 容量制约：$\forall e\in E,0\le f(e)\le c(e)$
 - 流量保存
@@ -307,13 +307,13 @@ $$
    
 - 最大流量：$F=F(f)$
 
-## 8.3 网络的点割集
+## 网络的点割集
    
 - $s\in S\subseteq V-\\{t\\}$，含入不含出的点集
 - 点割集的容量：$c(S)=\sum c(e)\quad(e=(u,v)\in E,u\in S,v\not\in S)$，能从S流出的总量
 - $\forall f:\text{flow},\forall S:\text{cut},F(f)\le c(S)$
 
-## 8.4 最大流最小割定理
+## 最大流最小割定理
 
 $$
 \max\{F(f)\vert f:\text{flow}\}=\min\{c(S)\vert S:\text{cut}\}
@@ -339,16 +339,16 @@ $$
      
         <div class="img-frame"><img src="/assets/src/graph-theory-memo/max flow chart.png"></div>
 
-# 9. 线性规划问题
+# 线性规划问题
 
-# 10. 拟阵
+# 拟阵
 
-## 10.1 拟阵：线性独立+图论
+## 拟阵：线性独立+图论
    
 - 基(Basis)：极大独立集(可类比于线性空间的基底)
 - 环(Circuit)：极小非独立集
 
-## 10.2 拟阵公理(Independence Axiom)
+## 拟阵公理(Independence Axiom)
 
 对于全集$E$，有拟阵$(E,\mathcal{I}),\mathcal{I}\subseteq\mathcal{P}(E)$
    
@@ -357,13 +357,13 @@ $$
 - (I3,交换性质) $X,Y\subseteq\mathcal{I},\vert X\vert+1=\vert Y\vert\Rightarrow\exists y\in Y\setminus X,X\cup\\{y\\}\subseteq\mathcal{I}$
 - (I3') $\forall S\subseteq E,\forall\text{maximal set in }\mathcal{P}(S)\cap\mathcal{I}\text{ is of the same size}$ (所有基大小相等)
 
-## 10.3 基交换定理(Base Axiom)
+## 基交换定理(Base Axiom)
 
 对于全集$E$，有拟阵$(E,\mathcal{Base}),\mathcal{B}\subseteq\mathcal{P}(E)$
    
 - (B1) $A,B\in\mathcal{B},\forall x\in A\setminus B,\exists y\in B\setminus A,A\setminus\\{x\\}\cup\\{y\\}\in\mathcal{B}$
 
-## 10.4 秩函数性质(Rank Axiom)
+## 秩函数性质(Rank Axiom)
 
 $r:\mathcal{P}(E)\to\mathbb{Z}_{\ge0}$
    
@@ -372,14 +372,14 @@ $r:\mathcal{P}(E)\to\mathbb{Z}_{\ge0}$
 - (R2,单调性) $\forall A\subseteq B\subseteq E,r(A)\le r(B)$
 - (R3,次模性) $\forall A,B\subseteq E,r(A\cup B)+r(A\cap B)\le r(A)+r(B)$
 
-## 10.5 环(Circuit Axiom)
+## 环(Circuit Axiom)
 
 对于全集$E$，有拟阵$(E,\mathcal{C}),\mathcal{C}\subseteq\mathcal{P}(E)$
    
 - (C1) $A\neq B\in\mathcal{C}\Rightarrow A\not\subseteq B$
 - (C2) $A\neq B\in\mathcal{C},x\in A\cap B\Rightarrow\exists X\in\mathcal{C},X\subseteq(A\cup B)\setminus\\{x\\}$ (复杂环可以用简单环代替)
 
-# 11. 参考资料
+# 参考资料
 
 - [离散数学](https://baike.baidu.com/item/离散数学/4210720)
 - [拟阵及应用1](https://zhuanlan.zhihu.com/p/53976000)

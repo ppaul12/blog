@@ -7,7 +7,7 @@ required: mermaid
 
 This is a personal memo of this [survey paper](https://www.sciencedirect.com/science/article/pii/S0924271623000163).
 
-# 1. Introduction
+# Introduction
 
 <h5 style="text-align:center;"><u>Automatic change detection is an essential research subject.</u></h5>
 
@@ -57,7 +57,7 @@ Originated from *Photogrammetry* and *Remote sensing*.
 - Spatial and spectral comparison
 - Change representation and analysis
 
-# 2. Theoretical primer
+# Theoretical primer
 
 <h5 style="text-align:center;"><u>Define and distinguish the term "change".</u></h5>
 
@@ -106,7 +106,7 @@ $$
 - $E(\cdot)$: evaluation function
 - $L$: change types
 
-# 3. General workflow
+# General workflow
 
 <h5 style="text-align:center;"><u>Change detection generally follows threes stages.</u></h5>
 
@@ -155,7 +155,7 @@ Two properties should be derived at this stage:
 - Geometric property: change type, uncertainties, ...
 - Attribute property: semantics, ...
 
-# 4. Discussion
+# Discussion
 
 <h5 style="text-align:center;"><u>Gaps remain between techniques and demands</u></h5>
 

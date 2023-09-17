@@ -6,15 +6,15 @@ tags: 旅行
 required: gallery
 ---
 
-# 1. 路程规划
+# 路程规划
 
 <iframe src="https://www.google.com/maps/d/embed?mid=1cE_WHMBqxhVGOH9tTfXxSrTNf_UCNScq" width="100%" height="480"></iframe>
 
-# 2. 沿途风光
+# 沿途风光
 
 {% include gallery.html path="a-travel-at-ibaraki" %}
 
-# 3. 小计
+# 小计
 
 - 时间：为期两天，2021/03/07 ~ 2021/03/08
 - 人数：1人

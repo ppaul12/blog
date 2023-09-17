@@ -28,3 +28,33 @@
         }
     }
 }
+
+#post {
+    counter-reset: h1;
+
+    h2 {
+        counter-reset: h2;
+
+        &::before {
+            margin-right: 0.5em;
+            counter-increment: h1;
+            content: counter(h1);
+        }
+    }
+
+    h3 {
+        counter-reset: h3;
+
+        &::before {
+            margin-right: 0.5em;
+            counter-increment: h2;
+            content: counter(h1)"."counter(h2);
+        }
+    }
+
+    h4::before {
+        margin-right: 0.5em;
+        counter-increment: h3;
+        content: counter(h1)"."counter(h2)"."counter(h3);
+    }
+}

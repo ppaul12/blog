@@ -5,7 +5,7 @@ tags: Python3
 required: python
 ---
 
-# 0. 动机
+# 动机
 
 密码安全不言而喻，然而出于记忆方便的目的个人常常采用固定格式设定密码。尽管一般网络服务都会判断为强密码，但当破译者掌握了用户的部分个人信息以及大致设定规则后，此类设定模式便危如累卵，不堪一击。为此，为了完成2021年秋季学期学校信息安全课的课题，本人设计了一款简单的可复用的强密码生成器。在保证密码强度的前提下主要解决如下问题
 
@@ -13,7 +13,7 @@ required: python
 - 确保密码的可再现性
 - 提高生成方式的可记忆性
 
-# 1. 原理
+# 原理
 
 大致思路为根据需求构建一张符号表，按照一定的规则从中挑选符号，从而构成密码。
 
@@ -23,7 +23,7 @@ required: python
 
 最后，人为设定256bit的长整数仍然不是一件现实的事情。因此，在此采用了hash算法sha256：从简短的字符串自动生成足够长的整数。也正是在这个阶段引入一些现实世界中的实际信息用来助记。比如可以根据不同的网络服务设定与其对应的副信息，在每次定期更新时更改当前的主信息。由于hash算法的低关联性，即使使用了较为相近的信息也会生成截然不同的长整数。我们便可以设定一些记忆量极低的主/副信息，以提高整体的可记忆性。
 
-# 2. 源码
+# 源码
 
 ```python
 LOWERCASE_LETTER = 'abcdefghijklmnopqrstuvwxyz'
@@ -49,7 +49,7 @@ def passwordGen(mainInfo: str, subInfo: str, length: int, src: str) -> str:
     return password
 ```
 
-# 3. 执行
+# 执行
 
 <py-script src="/assets/src/strong-password-generator/password-gen.py"></py-script>
 <py-script>
@@ -75,7 +75,7 @@ def buttonClick(event):
     <p id="gen-res"></p>
 </div>
 
-# 4. 检验
+# 检验
 
 - [PasswordMonster](https://www.passwordmonster.com)
 - [Password strength test](https://www.uic.edu/apps/strong-password/)

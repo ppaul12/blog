@@ -4,11 +4,11 @@ title: 多项式谱系memo
 tags: ComputerScience
 ---
 
-# 1. N & NP
+# N & NP
 
 <div class="img-frame"><img src="/assets/src/polynomial-hierarchy-memo/dtm.png"></div>
 
-## 1.1 P问题
+## P问题
 
 对于该问题的所有输入，都可以在多项式时间内得到结果。从语言(language)的角度，使用确定性图灵机(deterministic turing machine)可做如下定义
 
@@ -22,7 +22,7 @@ $$
 x\in A\iff M(x)=1
 $$
 
-## 1.2 NP问题
+## NP问题
 
 对于该问题的所有输入，无法保证在多项式时间内一定能得到结果，但可以在多项式时间内完成对某一结果的验证。从语言的的角度，使用非确定性图灵机(NTM)(即每一次状态的迁移由输入以及一比特随机数决定)可做如下定义
 
@@ -48,7 +48,7 @@ $$
 x\in A\iff\exists r\in\{0,1\}^{p(\vert x\vert)}.(x,r)\in B
 $$
 
-## 1.3 coNP问题
+## coNP问题
 
 从语言的角度来讲，coNP问题属于NP问题的补集，即
 
@@ -81,7 +81,7 @@ $$
 x\in A\iff\forall r\in\{0,1\}^{p(\vert x\vert)}.(x,r){\color{red}\in}B
 $$
 
-# 2. Polynomial Hierarchy
+# Polynomial Hierarchy
 
 在以上的定义过程中，借由P的定义，使得NP以及coNP的定义不在依存于某一特定多项式时间机器，仅由命题的量化子$\exists$和$\forall$加以区别。将此种定义方式泛化后则可做如下定义
 
@@ -129,7 +129,7 @@ $$
 
 <div class="img-frame"><img src="/assets/src/polynomial-hierarchy-memo/PH.png"></div>
 
-# 3. Collapse
+# Collapse
 
 当给出适当的假定，那么多项式谱系就会出现坍缩的现象，即某一层级以上的问题均等价。常见的假定有
 

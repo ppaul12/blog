@@ -6,15 +6,15 @@ tags: 旅行
 required: gallery
 ---
 
-# 1. 路程规划
+# 路程规划
 
 <iframe src="https://www.google.com/maps/d/embed?mid=1Jm0HZ2GMADI3SvlnAJB7RMm08M1VZ343" width="100%" height="480"></iframe>
 
-# 2. 沿途风光
+# 沿途风光
 
 {% include gallery.html path="a-travel-at-hokkaido" %}
 
-# 3. 小计
+# 小计
 
 - 时间：为期六天，2021/09/20 ~ 2021/09/25，实质游玩时间为前五天
 - 里程：1300km+

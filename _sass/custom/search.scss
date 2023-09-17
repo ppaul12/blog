@@ -2,10 +2,10 @@
     &-input {
         margin-top: 1em;
 
-        animation: 1s zoomIn backwards;
+        animation: zoomIn 1s backwards;
     }
 
     &-results article {
-        animation: 1s fadeInLeft backwards;
+        animation: fadeInLeft 1s backwards;
     }
 }

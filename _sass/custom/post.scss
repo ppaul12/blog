@@ -1,16 +1,16 @@
 .post {
     &-title {
-        animation: 1s fadeInLeft backwards;
+        animation: fadeInLeft 1s backwards;
     }
 
     &-content {
-        animation: 2s fadeIn backwards;
+        animation: fadeIn 2s backwards;
     }
 
     &-tags {
         justify-content: end !important;
 
-        animation: 1s fadeInRight backwards;
+        animation: fadeInRight 1s backwards;
     }
 
     &-paginator {

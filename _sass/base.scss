@@ -17,7 +17,7 @@ body {
     & > header, & > footer {
         text-align: center;
 
-        animation: 1s zoomIn backwards;
+        animation: zoomIn 1s backwards;
     }
 
     & > header {

@@ -7,7 +7,7 @@
         text-align: center;
         z-index: 2;
 
-        animation: 1s backInDown backwards;
+        animation: backInDown 1s backwards;
 
         img {
             width: 120px;
@@ -25,7 +25,7 @@
         font-size: 2em;
         z-index: 2;
 
-        animation: 1s fadeInDown backwards;
+        animation: fadeInDown 1s backwards;
     }
 
     &-icons {
@@ -38,7 +38,7 @@
             margin: 0.5em;
             border-radius: 0;
 
-            animation: 1s rotateIn calc(var(--ith) * 200ms) backwards;
+            animation: rotateIn 1s calc(var(--ith) * 100ms) backwards;
         }
     }
 
@@ -48,7 +48,7 @@
         &-item {
             list-style: none;
 
-            animation: 1s fadeInLeft calc(var(--ith) * 200ms) backwards;
+            animation: fadeInLeft 1s calc(var(--ith) * 200ms) backwards;
         }
     }
 }

@@ -13,12 +13,12 @@
         cursor: pointer;
 
         transition:
-            0.3s top ease-in,
-            0.3s left ease-in,
-            0.3s box-shadow ease-in,
-            0.3s border-radius ease 0.2s,
-            0.3s width ease 0.3s;
-        animation: 1s zoomIn backwards;
+            top 0.3s ease-in,
+            left 0.3s ease-in,
+            box-shadow 0.3s ease-in,
+            border-radius 0.3s ease 0.2s,
+            width 0.3s ease 0.3s;
+        animation: zoomIn 1s backwards;
     }
 
     &-icon {

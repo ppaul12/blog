@@ -21,7 +21,7 @@
         position: relative;
         margin: 0 0.5em;
 
-        animation: 1s slideInLeft backwards;
+        animation: slideInLeft 1s backwards;
         transition: all 0.2s ease;
  
         &:hover {
@@ -55,6 +55,6 @@
         }
         white-space: nowrap;
     
-        animation: 1s slideInRight backwards;
+        animation: slideInRight 1s backwards;
     }
 }

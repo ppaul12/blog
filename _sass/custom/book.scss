@@ -37,13 +37,12 @@
             box-shadow: 5px 5px 5px var(--muted-border-color);
         }
 
-        .mark {
+        &[mark]::after {
             position: absolute;
-            top: 5px;
-            right: 10px;
-            width: 10px;
-            height: 10px;
+            inset: 5px 10px auto auto;
             color: $nord13;
+            font: 900 1em "Font Awesome 6 Free";
+            content: "\f02e";
         }
     }
     

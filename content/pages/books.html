@@ -15,13 +15,12 @@ permalink: /books.html
     </summary>
     {% assign books = bookset.books | sort:"date" %}
     {% for book in books %}
-    <article class="book-tag card gradient">
-        <div class="book-img">
+    <article class="book-tag card-gradient">
+        <div class="book-img" {% if bookset.year == "Reading" %}mark{% endif %}>
             <img class="cover"
                 src="/assets/img/covers/{{ book.title }}.jpg"
                 alt="{{ book.title }}"
                 onclick="location.href='{{ book.link }}'">
-            {% if bookset.year == "Reading" %}<span class="mark fa-solid fa-bookmark"></span>{% endif %}
         </div>
         <hgroup class="book-info">
             <h3>{{ book.title }}</h3>

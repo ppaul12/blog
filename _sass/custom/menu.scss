@@ -3,8 +3,7 @@
 
     &-box {
         position: fixed;
-        left: 0;
-        top: 0;
+        inset: 0 auto auto 0;
         width: 3em;
         height: 3em;
         border-bottom-right-radius: 100%;
@@ -25,8 +24,7 @@
     &-icon {
         display: block;
         position: absolute;
-        top: 1.2em;
-        left: 0.6em;
+        inset: 1.2em auto auto 0.6em;
         width: 1.2em;
         height: 2px;
         background-color: var(--background-color);
@@ -60,10 +58,7 @@
         justify-content: end;
         align-items: center;
         position: fixed;
-        top: 0;
-        bottom: 100%;
-        left: 0;
-        right: 100%;
+        inset: 0 100% 100% 0;
         z-index: 10;
 
         transition: inherit;
@@ -90,13 +85,11 @@
         }
 
         &::before {
-            bottom: -0.2em;
-            left: 0;
+            inset: auto auto -0.2em 0;
         }
 
         &::after {
-            top: -0.2em;
-            right: 0;
+            inset: -0.2em 0 auto auto;
         }
 
         &:has(a:hover) {
@@ -113,7 +106,7 @@
 
             &::before, &::after {
                 position: absolute;
-                width: 100%;
+                width: 20vmin;
                 height: 2px;
                 background-color: var(--muted-color);
                 content: "";
@@ -124,14 +117,12 @@
             }
 
             &::before {
-                top: -0.2em;
-                right: -0.5em;
+                inset: -0.2em -0.5em auto auto;
                 transform: translateX(-100vw);
             }
 
             &::after {
-                bottom: -0.2em;
-                left: -0.5em;
+                inset: auto auto -0.2em -0.5em;
                 transform: translateX(100vw);
             }
 
@@ -169,8 +160,7 @@
     }
 
     &[open] > &-content {
-        bottom: 0;
-        right: 0;
+        inset: 0 0 0 0;
     }
 
     &[open] > &-content > &-item {
@@ -179,7 +169,6 @@
     }
 
     html[fullscreen] &-box {
-        top: -3em;
-        left: -3em;
+        inset: -3em auto auto -3em;
     }
 }

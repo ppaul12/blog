@@ -25,7 +25,7 @@ body {
         padding-bottom: 0;
 
         .main-title {
-            font: 3em "Allura";
+            font-size: 3em;
         }
  
         .sub-title {
@@ -106,4 +106,9 @@ pre {
 // ruby
 ruby rt {
     color: var(--color);
+}
+
+// language
+*:lang("en") {
+    font-family: "Allura";
 }

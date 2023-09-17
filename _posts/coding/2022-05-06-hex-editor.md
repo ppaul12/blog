@@ -2,7 +2,6 @@
 layout: post
 title: How to build a hex-editor
 tags: Ncurses C/C++
-lang: en
 ---
 
 > click [here](https://github.com/PENG-AO/Hex-editor) for the GitHub repo of this project.

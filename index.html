@@ -5,7 +5,7 @@ title: home
 
 <div class="post-content">
     {% for post in paginator.posts %}
-    <article class="card gradient" onclick="location.href='{{ post.url }}'">
+    <article class="card-gradient-hover">
         <!-- tag cloud -->
         <nav class="post-tags" aria-label="breadcrumb">
             <ul>
@@ -16,7 +16,7 @@ title: home
         </nav>
 
         <!-- post title -->
-        <hgroup class="post-title">
+        <hgroup class="post-title" onclick="location.href='{{ post.url }}'">
             <small><em>{{ post.date | date:"%Y.%m.%d" }}</em></small>
             <h3>{{ post.title}}</h3>
             <h4><em>{{ post.subtitle }}</em></h4>

@@ -18,7 +18,7 @@ window.addEventListener("load", () ->
         searchInput: document.getElementById("search-input")
         resultsContainer: document.getElementById("search-results")
         searchResultTemplate:
-            "<article class=\"card gradient\" onclick=\"location.href='{url}'\"><hgroup>
+            "<article class=\"card-gradient-hover\" onclick=\"location.href='{url}'\"><hgroup>
                 <h3>{title}</h3>
                 <h4><em>{info}</em></h4>
             </hgroup></article>"

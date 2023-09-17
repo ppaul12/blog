@@ -2,7 +2,6 @@
 layout: post
 title: 点群变化检测memo
 tags: ComputerScience PointClouds
-lang: en
 required: mermaid
 ---
 

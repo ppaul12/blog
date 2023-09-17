@@ -1,7 +1,7 @@
 ---
 layout: page
 title: footprint
-subtitle: experience the world ...
+subtitle: explore the world ...
 icon: "fa-solid fa-map-location-dot fa-fw"
 permalink: /footprint.html
 ---
@@ -23,55 +23,37 @@ permalink: /footprint.html
 <div id="world-map" class="travel-map"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
-<script src="/assets/js/jquery-jvectormap-min.js"></script>
-<link rel="stylesheet" href="/assets/css/jquery-jvectormap.css">
-<script src="/assets/js/jquery-jvectormap-cn-merc.js"></script>
-<script src="/assets/js/jquery-jvectormap-jp-merc.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jvectormap@latest/jquery-jvectormap.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jvectormap@latest/jquery-jvectormap.css">
+<script src="/assets/js/jquery-jvectormap-china-merc.js"></script>
+<script src="/assets/js/jquery-jvectormap-japan-merc.js"></script>
 <script src="/assets/js/jquery-jvectormap-world-merc.js"></script>
 <script>
     // init map on load
     window.addEventListener("load", async () => {
-        // maps of countries
         for (const info of [
-            { id: "#china-map", map: "cn_merc", path: "/assets/json/footprint-ch.json" },
-            { id: "#japan-map", map: "jp_merc", path: "/assets/json/footprint-jp.json" }
+            { id: "#china-map", map: "cn_merc", prefix: "/assets/json/footprint-china" },
+            { id: "#japan-map", map: "jp_merc", prefix: "/assets/json/footprint-japan" },
+            { id: "#world-map", map: "world_merc", prefix: "/assets/json/footprint-world"},
         ]) {
             new jvm.Map({
                 container: $(info.id),
                 map: info.map,
                 backgroundColor: "#81A1C1",
                 zoomMin: 0.8,
-                zoomMax: 4.8,
+                zoomMax: 6.0,
                 showTooltip: false,
                 hoverOpacity: 0.7,
-                markerStyle: { initial: { fill: "#EBCB8B", stroke: "#383f47", r: 3 } },
-                markers: await asyncLoadJSON(info.path)
+                markerStyle: { initial: { fill: "#B48EAD99", r: 3 } },
+                markers: await asyncLoadJSON(`${info.prefix}-marker.json`),
+                series: {
+                    regions: [{
+                        values: await asyncLoadJSON(`${info.prefix}-region.json`),
+                        scale: ["#EBCB8B", "#D08770"],
+                        normalizeFunction: 'polynomial'
+                    }]
+                },
             })
         }
-        // map of the world
-        new jvm.Map({
-            container: $("#world-map"),
-            map: "world_merc",
-            backgroundColor: "#81A1C1",
-            zoomMin: 0.8,
-            zoomMax: 4.8,
-            showTooltip: false,
-            hoverOpacity: 0.7,
-            series: {
-                regions: [{
-                    values: { // in years
-                        "CN": 18, // China
-                        "JP": 4, // Japan
-                        "KH": 1, // Cambodia
-                        "IT": 1, // Italy
-                        "DE": 1, // Germany
-                        "FR": 1, // France
-                        "CH": 1  // Switzerland
-                    },
-                    scale: ["#EBCB8B", "#D08770"],
-                    normalizeFunction: 'polynomial'
-                }]
-            },
-        })
     })
 </script>

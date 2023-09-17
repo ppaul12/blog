@@ -3,6 +3,7 @@ layout: post
 title: 一种汇编器的构建思路
 subtitle: 基于RISC-V实现
 tags: ComputerScience Assembly Python3
+required: math code
 ---
 
 - toc

@@ -2,6 +2,7 @@
 layout: post
 title: λ计算memo
 tags: ComputerScience
+required: math code
 ---
 
 - toc

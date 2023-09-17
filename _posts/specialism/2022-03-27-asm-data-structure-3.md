@@ -3,7 +3,7 @@ layout: post
 title: 数据结构的汇编实现 (3)
 subtitle: 单链表
 tags: ComputerScience Assembly C/C++
-required: mermaid
+required: code math mermaid
 ---
 
 - toc

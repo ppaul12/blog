@@ -2,6 +2,7 @@
 layout: post
 title: 渐近记号memo
 tags: ComputerScience
+required: math
 ---
 
 # 定义

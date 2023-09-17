@@ -3,6 +3,7 @@ layout: post
 title: DS理论memo
 subtitle: Dempster Shafer Theory
 tags: ComputerScience
+required: math code
 ---
 
 Dempster Shafer Theory (DST)也称证据理论，是概率模型的一种。由Dempster提出，Shafer发展泛化。优势在于能考虑且保留事件的“不确定性”，可以应用于信息融合。本文将简述DST的基本概念并附上C++的简单代码实现。

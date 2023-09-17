@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css">
     <!-- custom style -->
     <link rel="stylesheet" href="/assets/main.css"/>
-    <!-- pico official modal switcher -->
+    <!-- custom modal switcher -->
     <script src="/assets/js/modal.js"></script>
     <!-- custom theme switcher -->
     <script src="/assets/js/theme.js"></script>
@@ -40,16 +40,22 @@
     <!-- allura font -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/allura@latest/index.css">
 
+    {% if page.required contains "code" %}
     <!-- highlight js -->
     <script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@latest/highlight.min.js"></script>
     <script>hljs.highlightAll()</script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@latest/styles/nord.min.css">
+    {% endif %}
+    {% if page.required contains "math" %}
     <!-- mathjax -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@latest/es5/tex-mml-chtml.js"></script>
     <script>MathJax = { tex: { inlineMath: [["$", "$"]], processEscapes: true } }</script>
+    {% endif %}
+    {% if page.required contains "mermaid" %}
     <!-- mermaid -->
     <script src="https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true, theme:"forest", flowchart:{useMaxWidth:false, htmlLabels:true}})</script>
+    {% endif %}
     
     {% if page.required contains "python" %}
     <!-- pyscript -->

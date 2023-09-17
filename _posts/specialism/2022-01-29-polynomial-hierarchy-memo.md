@@ -2,6 +2,7 @@
 layout: post
 title: 多项式谱系memo
 tags: ComputerScience
+required: math
 ---
 
 # N & NP

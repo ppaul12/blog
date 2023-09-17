@@ -2,6 +2,7 @@
 layout: post
 title: 图论memo
 tags: ComputerScience
+required: math mermaid
 ---
 
 # 图

@@ -2,6 +2,7 @@
 layout: post
 title: 摄影memo
 tags: 旅行
+required: math
 ---
 
 TL;DR

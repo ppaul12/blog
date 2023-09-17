@@ -28,7 +28,7 @@ title: home
 <!-- <footer> -->
 <nav class="post-paginator"><ul>
     <!-- previous page button -->
-    <li><a role="button" class="faa-parent animated-hover" href="{{ paginator.previous_page_path | relative_url }}">
+    <li><a role="button" class="faa-parent animated-hover" href="{{ paginator.previous_page_path | default:'/' }}">
         <i class="fa-solid fa-arrow-left faa-horizontal faa-reverse"></i>
     </a></li>
 
@@ -51,7 +51,7 @@ title: home
     </details></li>
 
     <!-- next page button -->
-    <li><a role="button" class="faa-parent animated-hover" href="{{ paginator.next_page_path | relative_url }}">
+    <li><a role="button" class="faa-parent animated-hover" href="{{ paginator.next_page_path | default:'/' }}">
         <i class="fa-solid fa-arrow-right faa-horizontal"></i>
     </a></li>
 </ul></nav>

@@ -1,4 +1,5 @@
 title: PENG AO's blog
+description: This is my blog for daily life records...
 
 plugins:
   - jekyll-seo-tag

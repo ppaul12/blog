@@ -8,7 +8,7 @@ required: code
 - toc
 {:toc}
 
-> click [here](https://github.com/PENG-AO/Hex-editor) for the GitHub repo of this project.
+[![](https://github-readme-stats.vercel.app/api/pin/?username=PENG-AO&repo=Hex-editor&show_owner=true)](https://github.com/PENG-AO/Hex-editor)
 
 # Introduction
 

@@ -16,7 +16,7 @@ with the help of the following works.
 - badges: [shields](https://github.com/badges/shields)
 - animations: [animate.css](https://github.com/animate-css/animate.css) + [font-awesome-animation](https://l-lin.github.io/font-awesome-animation/)
 - comments: [utterances](https://utteranc.es)
-- code highlight: [highlight.js](https://highlightjs.org) + [Nord Theme](https://www.nordtheme.com/ports/highlightjs)
+- code highlight: [prism.js](https://prismjs.com/index.html)
 - math formulas: [MathJax](https://www.mathjax.org)
 - search: [Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search)
 - footprint map: [jVectorMap](https://jvectormap.com)

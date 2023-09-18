@@ -102,13 +102,9 @@ button {
 
 // code blocks
 pre {
-    background-color: $nord0;
     overflow: auto;
     max-height: 500px;
-    padding: 0.2em;
-    margin: 0.5em auto;
-    border-radius: 0.5em;
-    box-shadow: 1px 1px 5px 0 var(--color);
+    font: 0.8em "Roboto Mono" !important;
 }
 
 // ruby

@@ -216,7 +216,7 @@ llist_insert_capacity_check_end:
 
 `remove`函数里不需要额外创建新节点，所以代码会更加简短。
 
-```
+```plaintext
 # remove the nth item
 # parameters
 #   a0 = address of llist

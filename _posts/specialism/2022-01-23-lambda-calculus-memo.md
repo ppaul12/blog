@@ -187,8 +187,6 @@ $$
 
 附OCaml参考代码
 
-<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/languages/ocaml.min.js"></script>
-
 ### concat
 
 $$

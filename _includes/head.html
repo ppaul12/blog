@@ -38,13 +38,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@latest/lxgwwenkailite-regular.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@latest/lxgwwenkailite-bold.css">
     <!-- allura font -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/allura@latest/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/allura@latest/index.min.css">
 
     {% if page.required contains "code" %}
-    <!-- highlight js -->
-    <script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@latest/highlight.min.js"></script>
-    <script>hljs.highlightAll()</script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@latest/styles/nord.min.css">
+    <!-- prism js -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/components/prism-core.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism-coy.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/line-numbers/prism-line-numbers.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/file-highlight/prism-file-highlight.min.js"></script>
+    <!-- roboto mono font -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/roboto-mono@latest/index.min.css">
     {% endif %}
 
     {% if page.required contains "math" %}

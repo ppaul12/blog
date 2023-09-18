@@ -6,21 +6,20 @@ icon: "fa-solid fa-map-location-dot fa-fw"
 permalink: /footprint.html
 ---
 
-<style>
-    .travel-map {
-        width: 100%;
-        height: 80vh;
-        @media (min-width: 420px) {
-            height: 50vh;
-        }
-    }
-</style>
-
-<div id="china-map" class="travel-map"></div>
-<hr>
-<div id="japan-map" class="travel-map"></div>
-<hr>
-<div id="world-map" class="travel-map"></div>
+<div class="travel-map-container tab-container">
+    <div class="travel-map-nav">
+        <button data-target="#china-map">
+            CHINA
+        </button><button data-target="#japan-map">
+            JAPAN
+        </button><button data-target="#world-map">
+            WORLD
+        </button>
+    </div>
+    <div id="china-map" class="travel-map tab"></div>
+    <div id="japan-map" class="travel-map tab"></div>
+    <div id="world-map" class="travel-map tab"></div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jvectormap@latest/jquery-jvectormap.min.js"></script>
@@ -29,12 +28,12 @@ permalink: /footprint.html
 <script src="/assets/js/jquery-jvectormap-japan-merc.js"></script>
 <script src="/assets/js/jquery-jvectormap-world-merc.js"></script>
 <script>
-    // init map on load
     window.addEventListener("load", async () => {
+        // load maps
         for (const info of [
-            { id: "#china-map", map: "cn_merc", prefix: "/assets/json/footprint-china" },
-            { id: "#japan-map", map: "jp_merc", prefix: "/assets/json/footprint-japan" },
-            { id: "#world-map", map: "world_merc", prefix: "/assets/json/footprint-world"},
+            { id: "#china-map", map: "china_merc", prefix: "/assets/json/footprint-china" },
+            { id: "#japan-map", map: "japan_merc", prefix: "/assets/json/footprint-japan" },
+            { id: "#world-map", map: "world_merc", prefix: "/assets/json/footprint-world" },
         ]) {
             new jvm.Map({
                 container: $(info.id),
@@ -46,14 +45,18 @@ permalink: /footprint.html
                 hoverOpacity: 0.7,
                 markerStyle: { initial: { fill: "#B48EAD99", r: 3 } },
                 markers: await asyncLoadJSON(`${info.prefix}-marker.json`),
-                series: {
-                    regions: [{
-                        values: await asyncLoadJSON(`${info.prefix}-region.json`),
-                        scale: ["#EBCB8B", "#D08770"],
-                        normalizeFunction: 'polynomial'
-                    }]
-                },
+                series: { regions: [{
+                    values: await asyncLoadJSON(`${info.prefix}-region.json`),
+                    scale: ["#EBCB8B", "#D08770"],
+                    normalizeFunction: "polynomial",
+                }] },
             })
         }
+        // init tab view
+        initTabView(
+            document.querySelector(".travel-map-container"),
+            document.querySelector(".travel-map-nav")
+        )
+        document.querySelector(".travel-map-nav > button").click()
     })
 </script>

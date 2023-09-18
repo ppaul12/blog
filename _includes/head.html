@@ -46,17 +46,19 @@
     <script>hljs.highlightAll()</script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@latest/styles/nord.min.css">
     {% endif %}
+
     {% if page.required contains "math" %}
     <!-- mathjax -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@latest/es5/tex-mml-chtml.js"></script>
     <script>MathJax = { tex: { inlineMath: [["$", "$"]], processEscapes: true } }</script>
     {% endif %}
+
     {% if page.required contains "mermaid" %}
     <!-- mermaid -->
     <script src="https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true, theme:"forest", flowchart:{useMaxWidth:false, htmlLabels:true}})</script>
     {% endif %}
-    
+
     {% if page.required contains "python" %}
     <!-- pyscript -->
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
@@ -79,6 +81,9 @@
     <!-- simple jekyll search -->
     <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
 
+    <!-- custom tab switcher -->
+    <script src="/assets/js/tab.js"></script>
+
     <!-- custom json loader -->
-    <script src="/assets/js/load-json.js"></script>
+    <script src="/assets/js/json.js"></script>
 </head>

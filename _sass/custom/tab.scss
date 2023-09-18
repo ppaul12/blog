@@ -1,0 +1,16 @@
+.tab {
+    visibility: hidden;
+    position: absolute;
+
+    &[active] {
+        visibility: visible;
+
+        animation: fadeIn 1s backwards;
+    }
+
+    &-container {
+        @extend .tab;
+        visibility: visible;
+        position: relative;
+    }
+}

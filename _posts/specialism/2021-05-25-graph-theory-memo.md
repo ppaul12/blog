@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 图论memo
-tags: ComputerScience
+tags: 离散数学
 required: math mermaid
 ---
 

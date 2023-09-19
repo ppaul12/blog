@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Multi-layer cache system
-tags: ComputerScience C/C++
+title: Multi-layer Cache System
+tags: 计算机组成 C/C++
 lang: en
 required: code
 ---

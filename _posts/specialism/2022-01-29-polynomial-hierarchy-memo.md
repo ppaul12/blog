@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 多项式谱系memo
-tags: ComputerScience
+tags: 计算理论
 required: math
 ---
 

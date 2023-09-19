@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 渐近记号memo
-tags: ComputerScience
+tags: 计算理论
 required: math
 ---
 

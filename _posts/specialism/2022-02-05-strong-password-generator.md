@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 可复用强密码生成器
-tags: Python3
+tags: APP Python3
 required: python code
 ---
 

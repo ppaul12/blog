@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 多人出行记账工具
-tags: Python3
+tags: APP Python3
 required: code
 ---
 

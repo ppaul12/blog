@@ -1,7 +1,7 @@
 ---
 layout: post
 title: λ计算memo
-tags: ComputerScience
+tags: 计算理论
 required: math code
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 点群变化检测memo
-tags: ComputerScience PointClouds
+title: 点云变化检测memo
+tags: 点云
 required: math mermaid
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: How to build a hex-editor
-tags: Ncurses C/C++
+title: How to Build a Hex-editor
+tags: APP Ncurses C/C++
 lang: en
 required: code
 ---

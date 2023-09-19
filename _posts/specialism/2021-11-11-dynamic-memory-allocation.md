@@ -2,7 +2,7 @@
 layout: post
 title: 动态内存分配
 subtitle: 多维数组
-tags: C/C++
+tags: 数据结构 C/C++
 required: code math
 ---
 

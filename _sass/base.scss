@@ -16,16 +16,16 @@ html {
 body {
     & > header, & > footer {
         text-align: center;
-
-        animation: zoomIn 1s backwards;
     }
 
     & > header {
         margin-top: 3em;
         padding-bottom: 0;
 
+        animation: zoomIn 1s backwards;
+
         .main-title {
-            font-size: 3em;
+            font: 3em "Allura";
         }
  
         .sub-title {
@@ -110,9 +110,4 @@ pre {
 // ruby
 ruby rt {
     color: var(--color);
-}
-
-// language
-*:lang("en") {
-    font-family: "Allura";
 }

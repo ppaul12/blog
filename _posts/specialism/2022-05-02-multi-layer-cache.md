@@ -2,6 +2,7 @@
 layout: post
 title: Multi-layer cache system
 tags: ComputerScience C/C++
+lang: en
 required: code
 ---
 

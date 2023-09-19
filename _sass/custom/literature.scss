@@ -69,8 +69,8 @@
         text-underline-offset: 0.2em;
     }
 
-    &:lang("en") p {
-        font-size: 1.4em;
+    &[font="Allura"] p {
+        font: 1.4em "Allura";
     }
 
     &[fix] p {

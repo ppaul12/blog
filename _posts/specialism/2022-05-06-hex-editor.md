@@ -2,6 +2,7 @@
 layout: post
 title: How to build a hex-editor
 tags: Ncurses C/C++
+lang: en
 required: code
 ---
 

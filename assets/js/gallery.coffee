@@ -47,7 +47,7 @@ updateCaption = (img) ->
         return
     )
 
-initGallery = (gallery, data) ->
+window.initGallery = (gallery, data) ->
     # load photos to gallery
     plugin = [lgZoom, lgAutoplay]
     unless data.length > 20 then plugin.push(lgThumbnail)
@@ -68,23 +68,19 @@ initGallery = (gallery, data) ->
     gallery.addEventListener("lgAfterSlide", () ->
         updateCaption(document.querySelector(".lg-container.lg-show .lg-current img"))
     )
-     # generate maximize button
-    button = document.createElement("button")
-    button.className = "contrast faa-parent animated-hover"
-    button.onclick = () ->
-        if gallery.hasAttribute("maximized")
-            gallery.removeAttribute("maximized")
-            gallery.style.setProperty("position", "relative")
-            document.documentElement.removeAttribute("fullscreen")
-            window.scrollTo({top: gallery.offsetTop - (window.innerHeight - gallery.offsetHeight) / 2})
-        else
-            gallery.setAttribute("maximized", '')
-            gallery.style.removeProperty("position")
-            document.documentElement.setAttribute("fullscreen", "")
-            window.scrollTo({top: 0})
-        return
-    button.innerHTML = "<i class=\"fa-solid fa-maximize faa-pulse faa-fast\"></i>"
-    document.querySelector(".button-box").appendChild(button)
+    # activate maximize button
+    document.getElementById("gallery-btn").setAttribute("active", "")
     return
 
-window.initGallery = initGallery
+window.maximizeGallery = () ->
+    if gallery.hasAttribute("maximized")
+        gallery.removeAttribute("maximized")
+        gallery.style.setProperty("position", "relative")
+        document.documentElement.removeAttribute("fullscreen")
+        window.scrollTo({top: gallery.offsetTop - (window.innerHeight - gallery.offsetHeight) / 2})
+    else
+        gallery.setAttribute("maximized", '')
+        gallery.style.removeProperty("position")
+        document.documentElement.setAttribute("fullscreen", "")
+        window.scrollTo({top: 0})
+    return

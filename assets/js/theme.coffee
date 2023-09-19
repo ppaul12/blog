@@ -9,31 +9,23 @@ getPreferredTheme = () ->
     else
         "light"
 
-getGlobalTheme = () ->
+getTheme = () ->
     window.localStorage.getItem("data-theme") ? getPreferredTheme()
 
-setGlobalTheme = (theme) ->
-    theme = theme ? getGlobalTheme()
+setTheme = (theme) ->
+    theme = theme ? getTheme()
     document.documentElement.setAttribute("data-theme", theme)
     window.localStorage.setItem("data-theme", theme)
     return
 
-toggleGlobalTheme = () ->
-    setGlobalTheme({
+window.toggleTheme = () ->
+    setTheme({
         "light": "dark"
         "dark": "light"
-    }[getGlobalTheme()])
+    }[getTheme()])
     return
 
 window.addEventListener("load", () ->
-    # generate theme button
-    button = document.createElement("button")
-    button.className = "contrast faa-parent animated-hover"
-    button.onclick = toggleGlobalTheme
-    button.innerHTML = "<i class=\"fa-solid fa-lightbulb faa-flash faa-slow\"></i>"
-    button.style.order = -2
-    document.querySelector(".button-box").appendChild(button)
-    # init theme switcher
-    setGlobalTheme()
+    setTheme()
     return
 )

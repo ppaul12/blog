@@ -1,0 +1,29 @@
+<div class="controller">
+    <button
+        id="profile-btn" class="contrast faa-parent animated-hover"
+        onclick="toggleModal(event)" data-target="profile-box" active
+    ><i class="fa-solid fa-user-graduate faa-horizontal faa-slow"></i></button>
+    {% include profile.html %}
+
+    <button
+        id="theme-btn" class="contrast faa-parent animated-hover"
+        onclick="toggleTheme(event)" active
+    ><i class="fa-solid fa-lightbulb faa-flash faa-slow"></i></button>
+
+    <button
+        id="search-btn" class="contrast faa-parent animated-hover"
+        onclick="toggleModal(event)" data-target="search-box" active
+    ><i class="fa-solid fa-magnifying-glass faa-wrench faa-slow"></i></button>
+    {% include search.html %}
+
+    <button
+        id="toc-btn" class="contrast faa-parent animated-hover"
+        onclick="toggleModal(event)" data-target="toc-box"
+    ><i class="fa-solid fa-bars-staggered faa-shake faa-slow"></i></button>
+    {% include toc.html %}
+
+    <button
+        id="gallery-btn" class="contrast faa-parent animated-hover"
+        onclick="maximizeGallery(event)"
+    ><i class="fa-solid fa-maximize faa-pulse faa-fast"></i></button>
+</div>

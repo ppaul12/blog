@@ -4,14 +4,6 @@
 # init in-site search
 
 window.addEventListener("load", () ->
-    # generate search button
-    button = document.createElement("button")
-    button.className = "contrast faa-parent animated-hover"
-    button.setAttribute("data-target", "search-box")
-    button.onclick = toggleModal
-    button.style.order = -1
-    button.innerHTML = "<i class=\"fa-solid fa-magnifying-glass faa-wrench faa-slow\"></i>"
-    document.querySelector(".button-box").appendChild(button)
     # init search engine
     sjs = SimpleJekyllSearch({
         json: "/assets/json/search.json"

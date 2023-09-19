@@ -93,6 +93,21 @@ dialog {
             z-index: 1;
         }
     }
+
+    .close-btn {
+        text-align: right;
+
+        transition: opacity 0.5s ease;
+    
+        &::before {
+            font: 900 1em "Font Awesome 6 Free";
+            content: "\f00d";
+        }
+    
+        &:hover {
+            opacity: 0.6;
+        }
+    }
 }
 
 // button

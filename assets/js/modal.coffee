@@ -21,14 +21,13 @@ closeModal = (modal) ->
     document.documentElement.removeAttribute("overlay")
     return
 
-toggleModal = (e) ->
+window.toggleModal = (e) ->
     modal = document.getElementById(e.currentTarget.getAttribute("data-target"))
     if modal?.hasAttribute("open")
         closeModal(modal)
     else
         openModal(modal)
     return
-window.toggleModal = toggleModal
 
 # close with a click outside
 document.addEventListener("click", (e) ->

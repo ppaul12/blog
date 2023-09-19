@@ -3,7 +3,7 @@
 
 # init tab view
 
-initTabView = (container, controller) ->
+window.initTabView = (container, controller) ->
     switchTab = (e) ->
         toClose =
             map: container.querySelector(".tab[active]")
@@ -22,5 +22,3 @@ initTabView = (container, controller) ->
             button.onclick = switchTab
             return
     return
-
-window.initTabView = initTabView

@@ -4,18 +4,11 @@
     {% include head.html %}
 
     <body class="container">
+        {% include controller.html %}
         {% include header.html %}
-
         <main>
-            <!-- side buttons -->
-            <div class="button-box"></div>
-            {% include search.html %}
-            {% include profile.html %}
-
-            <!-- main contents -->
             {{ content }}
         </main>
-
         {% include footer.html %}
     </body>
 </html>

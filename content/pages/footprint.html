@@ -6,7 +6,7 @@ icon: "fa-solid fa-map-location-dot fa-fw"
 permalink: /footprint.html
 ---
 
-<div class="travel-map-container tab-container">
+<div class="travel-map-container">
     <div class="travel-map-nav">
         <button data-target="#china-map">
             CHINA
@@ -16,9 +16,9 @@ permalink: /footprint.html
             WORLD
         </button>
     </div>
-    <div id="china-map" class="travel-map tab"></div>
-    <div id="japan-map" class="travel-map tab"></div>
-    <div id="world-map" class="travel-map tab"></div>
+    <div id="china-map" class="travel-map"></div>
+    <div id="japan-map" class="travel-map"></div>
+    <div id="world-map" class="travel-map"></div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
@@ -27,6 +27,7 @@ permalink: /footprint.html
 <script src="/assets/js/jquery-jvectormap-china-merc.js"></script>
 <script src="/assets/js/jquery-jvectormap-japan-merc.js"></script>
 <script src="/assets/js/jquery-jvectormap-world-merc.js"></script>
+<script src="/assets/js/footprint.js"></script>
 <script>
     window.addEventListener("load", async () => {
         // load maps

@@ -6,7 +6,7 @@
 window.initTabView = (container, controller) ->
     switchTab = (e) ->
         toClose =
-            map: container.querySelector(".tab[active]")
+            map: container.querySelector(".travel-map[active]")
             btn: controller.querySelector("button[active]")
         toClose.map?.removeAttribute("active")
         toClose.btn?.removeAttribute("active")

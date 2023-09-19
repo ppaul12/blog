@@ -13,7 +13,7 @@ setCommentTheme = (theme) ->
 window.addEventListener("message", (e) ->
     if e.origin == "https://utteranc.es"
         # set theme dynamically
-        setCommentTheme(document.querySelector("html").getAttribute("data-theme"))
+        setCommentTheme(document.documentElement.getAttribute("data-theme"))
         # change theme dynamically
         observer = new MutationObserver((mutations) ->
             for mutation in mutations
@@ -23,6 +23,6 @@ window.addEventListener("message", (e) ->
                     return
             return
         )
-        observer.observe(document.querySelector("html"), {attributes: true})
+        observer.observe(document.documentElement, {attributes: true})
     return
 )

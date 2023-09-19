@@ -6,7 +6,7 @@ icon: "fa-solid fa-book fa-fw"
 permalink: /books.html
 ---
 
-{% assign booksets = site.data.book-list %}
+{% assign booksets = site.data.books %}
 {% for bookset in booksets %}
 <details id="{{ bookset.year }}" {% if forloop.index <= 2 %}open{% endif %}>
     <summary>
@@ -16,12 +16,13 @@ permalink: /books.html
     {% assign books = bookset.books | sort:"date" %}
     {% for book in books %}
     <article class="book-tag card-gradient">
-        <div class="book-img" {% if bookset.year == "Reading" %}mark{% endif %}>
-            <img class="cover"
-                src="/assets/img/covers/{{ book.title }}.jpg"
-                alt="{{ book.title }}"
-                onclick="location.href='{{ book.link }}'">
-        </div>
+        <div class="book-img"
+            {% if bookset.year == "Reading" %}mark{% endif %}
+        ><img class="cover"
+            src="/assets/img/covers/{{ book.title }}.jpg"
+            alt="{{ book.title }}"
+            onclick="location.href='{{ book.link }}'"
+        ></div>
         <hgroup class="book-info">
             <h3>{{ book.title }}</h3>
             <h4>{{ book.subtitle }}</h4>

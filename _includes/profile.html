@@ -14,7 +14,7 @@
     </div>
     <hr><!-- skills -->
     <div class="profile-icons">
-        {% assign skills = site.data.cv-list.skills | sort:"info" %}
+        {% assign skills = site.data.profiles.skills | sort:"info" %}
         {% for skill in skills %}
         <img src="https://cdn.simpleicons.org/{{ skill.info }}/{{ skill.color }}"
             width="32px" height="32px" style="--ith: {{ forloop.index0 }}">
@@ -22,7 +22,7 @@
     </div>
     <hr><!-- information -->
     <ul class="profile-info">
-        {% for information in site.data.cv-list.information %}
+        {% for information in site.data.profiles.information %}
         <li class="profile-info-item" style="--ith: {{ forloop.index0 }}">
             <i class="{{ information.icon }}"></i> {{ information.info }}
         </li>
@@ -30,7 +30,7 @@
     </ul>
     <hr><!-- identity -->
     <ul class="profile-info">
-        {% for identity in site.data.cv-list.identities %}
+        {% for identity in site.data.profiles.identities %}
         <li class="profile-info-item" style="--ith: {{ forloop.index0 }}">
             <i class="{{ identity.icon }}"></i> {{ identity.info }}
         </li>
@@ -38,7 +38,7 @@
     </ul>
     <hr><!-- hobby -->
     <ul class="profile-info">
-        {% for hobby in site.data.cv-list.hobbies %}
+        {% for hobby in site.data.profiles.hobbies %}
         <li class="profile-info-item" style="--ith: {{ forloop.index0 }}">
             <i class="{{ hobby.icon }}"></i> {{ hobby.info }}
         </li>

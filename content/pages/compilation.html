@@ -1,0 +1,83 @@
+---
+layout: default
+title: compilation
+permalink: /compilation.html
+---
+
+<article id="annual-summary">
+    <header><i class="fa-solid fa-file-pen fa-fw"></i> Annual Summaries</header>
+    <ul class="item-list">
+        {% assign items = site.data.compilations.annual-summary | reverse %}
+        {% for item in items %}
+            {% assign post = site.pages | where_exp:"post", "post.title contains item.title" | first %}
+        <li>
+            <a href="{{ post.url }}">{{ item.title }}</a>
+            <em>({{ item.span }})</em>
+        </li>
+        {% endfor %}
+    </ul>
+</article>
+
+<article id="post-collection">
+    <header><i class="fa-solid fa-box-open fa-fw"></i> Post Collections</header>
+    <ul class="item-list">
+        {% assign items = site.data.compilations.post-collection | reverse %}
+        {% for item in items %}
+            {% assign post = site.pages | where_exp:"post", "post.title contains item.title" | first %}
+        <li>
+            <a href="{{ post.url }}">{{ item.title }}</a>
+            <em>({{ item.span }})</em>
+        </li>
+        {% endfor %}
+    </ul>
+</article>
+
+<article id="github-project">
+    <header><i class="fa-brands fa-github-alt fa-fw"></i> GitHub Projects</header>
+    <ul class="item-list">
+        {% assign items = site.data.compilations.github-project | reverse %}
+        {% for item in items %}
+        <li>
+            <a href="{{ post.url }}">{{ item.title }}</a>
+            <em>({{ item.span }})</em>
+        </li>
+        {% endfor %}
+    </ul>
+</article>
+
+<article id="book-shelf">
+    <header onclick="location.href='/books.html'">
+        <i class="fa-solid fa-book fa-fw"></i>
+        <strong>Book Shelf</strong>
+    </header>
+
+    {% assign booksets = site.data.books %}
+    <div class="book-shelf">
+        {% for bookset in booksets limit:2 %}
+            {% assign books = bookset.books | sort:"date" | reverse %}
+            {% for book in books %}
+            <div class="book-img" {% if bookset.year == "Reading" %}mark{% endif %}>
+                <img class="cover"
+                    src="/assets/img/covers/{{ book.title }}.jpg"
+                    alt="{{ book.title }}"
+                    data-target="{{ book.title }}" onclick="toggleModal(event)">
+            </div>
+            <dialog id="{{ book.title }}" close><article class="book-tag">
+                <div class="book-img" {% if bookset.year == "Reading" %}mark{% endif %}>
+                    <img class="cover"
+                        src="/assets/img/covers/{{ book.title }}.jpg"
+                        alt="{{ book.title }}"
+                        onclick="location.href='{{ book.link }}'">
+                </div>
+                <hgroup class="book-info">
+                    <h3>{{ book.title }}</h3>
+                    <h4>{{ book.subtitle }}</h4>
+                    <h4>{{ book.author }}</h4>
+                    <h4><em>{{ bookset.year }}{% if book.date %}.{{ book.date }}{% endif %}</em></h4>
+                </hgroup>
+            </article></dialog>
+            {% endfor %}
+        {% endfor %}
+        <a href="/books.html">show more...</a>
+    </div>
+</article>

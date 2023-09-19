@@ -67,7 +67,7 @@
     &-item {
         position: relative;
         padding: 0 0.5em;
-        margin-bottom: 1em;
+        margin-bottom: 0.6em;
         opacity: 0;
         font: 2em "Allura";
         transform: translateX(calc(pow(-1, var(--ith)) * 200%));

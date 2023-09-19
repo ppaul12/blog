@@ -1,83 +1,38 @@
 ---
-layout: default
+layout: page
 title: archive
+subtitle: record flashing thoughts ...
+icon: "fa-solid fa-box-open fa-fw"
 permalink: /archive.html
 ---
 
-<article id="annual-summary">
-    <header><i class="fa-solid fa-file-pen fa-fw"></i> Annual Summaries</header>
-    <ul class="item-list">
-        {% assign items = site.data.archive-list.annual-summary | reverse %}
-        {% for item in items %}
-            {% assign post = site.pages | where_exp:"post", "post.title contains item.title" | first %}
-        <li>
-            <a href="{{ post.url }}">{{ item.title }}</a>
-            <em>({{ item.span }})</em>
-        </li>
-        {% endfor %}
-    </ul>
-</article>
+{% assign word_count = 0 %}
+{% for post in site.posts %}
+    {% assign words = post.content | strip_html | strip_newlines | remove: " " | size  %}
+    {% assign word_count = word_count | plus:words %}
+{% endfor %}
 
-<article id="post-collection">
-    <header><i class="fa-solid fa-box-open fa-fw"></i> Post Collections</header>
-    <ul class="item-list">
-        {% assign items = site.data.archive-list.post-collection | reverse %}
-        {% for item in items %}
-            {% assign post = site.pages | where_exp:"post", "post.title contains item.title" | first %}
-        <li>
-            <a href="{{ post.url }}">{{ item.title }}</a>
-            <em>({{ item.span }})</em>
-        </li>
-        {% endfor %}
-    </ul>
-</article>
+{% assign max_count = 0 %}
+{% for tag in site.tags %}
+    {% assign max_count = tag[1].size | at_least:max_count %}
+{% endfor %}
+<div class="tag-cloud" data-sum="{{ site.posts.size }} posts, {{ word_count }} words">
+    {% for tag in site.tags %}
+    <button id="{{ tag[0] }}" class="tag-{{
+        tag[1].size | times:10 | divided_by:max_count | ceil
+    }}" data-count="{{ tag[1].size }}" onclick="toggleTag(event)">{{ tag[0] }}</button>
+    {% endfor %}
+</div>
 
-<article id="github-project">
-    <header><i class="fa-brands fa-github-alt fa-fw"></i> GitHub Projects</header>
-    <ul class="item-list">
-        {% assign items = site.data.archive-list.github-project | reverse %}
-        {% for item in items %}
-        <li>
-            <a href="{{ post.url }}">{{ item.title }}</a>
-            <em>({{ item.span }})</em>
-        </li>
-        {% endfor %}
-    </ul>
-</article>
+{% assign post_sets = site.posts | group_by_exp:"post", "post.date | date:'%Y'" %}
+{% for post_set in post_sets %}
+<ul class="tag-posts" data-title="{{ post_set.name }}">
+    {% for post in post_set.items %}
+    <li data-tags="{{ post.tags | join:' ' }}"
+        data-date="{{ post.date | date:'%m.%d' }}"
+    ><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endfor %}
 
-<article id="book-shelf">
-    <header onclick="location.href='/books.html'">
-        <i class="fa-solid fa-book fa-fw"></i>
-        <strong>Book Shelf</strong>
-    </header>
-
-    {% assign booksets = site.data.book-list %}
-    <div class="book-shelf">
-        {% for bookset in booksets limit:2 %}
-            {% assign books = bookset.books | sort:"date" | reverse %}
-            {% for book in books %}
-            <div class="book-img" {% if bookset.year == "Reading" %}mark{% endif %}>
-                <img class="cover"
-                    src="/assets/img/covers/{{ book.title }}.jpg"
-                    alt="{{ book.title }}"
-                    data-target="{{ book.title }}" onclick="toggleModal(event)">
-            </div>
-            <dialog id="{{ book.title }}" close><article class="book-tag">
-                <div class="book-img" {% if bookset.year == "Reading" %}mark{% endif %}>
-                    <img class="cover"
-                        src="/assets/img/covers/{{ book.title }}.jpg"
-                        alt="{{ book.title }}"
-                        onclick="location.href='{{ book.link }}'">
-                </div>
-                <hgroup class="book-info">
-                    <h3>{{ book.title }}</h3>
-                    <h4>{{ book.subtitle }}</h4>
-                    <h4>{{ book.author }}</h4>
-                    <h4><em>{{ bookset.year }}{% if book.date %}.{{ book.date }}{% endif %}</em></h4>
-                </hgroup>
-            </article></dialog>
-            {% endfor %}
-        {% endfor %}
-        <a href="/books.html">show more...</a>
-    </div>
-</article>
+<script src="/assets/js/archive.js"></script>

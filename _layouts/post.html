@@ -8,7 +8,7 @@ layout: default
         <nav class="post-tags" aria-label="breadcrumb">
             <ul>
                 {% for tag in page.tags %}
-                <li><a href="/tags.html#{{ tag }}">{{ tag }}</a></li>
+                <li><a href="/archive.html?tag={{ tag }}">{{ tag }}</a></li>
                 {% endfor %}
             </ul>
         </nav>

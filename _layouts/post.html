@@ -5,13 +5,11 @@ layout: default
 <article>
     <header>
         <!-- tag cloud -->
-        <nav class="post-tags" aria-label="breadcrumb">
-            <ul>
-                {% for tag in page.tags %}
-                <li><a href="/archive.html?tag={{ tag }}">{{ tag }}</a></li>
-                {% endfor %}
-            </ul>
-        </nav>
+        <nav class="post-tags" aria-label="breadcrumb"><ul>
+            {% for tag in page.tags %}
+            <li><a href="/archive.html?tag={{ tag }}">{{ tag }}</a></li>
+            {% endfor %}
+        </ul></nav>
 
         <!-- post title -->
         <hgroup class="post-title">
@@ -25,9 +23,19 @@ layout: default
         </hgroup>
     </header>
 
-    <div class="post-content" id="post"
-        {% if page.required contains "plain-header" %}plain-header{% endif %}
-    >{{ content }}</div>
+    <main>
+        {% assign post_word = page.content | strip_html | strip_newlines | remove: " " | size  %}
+        {% assign post_time = post_word | divided_by:200.0 | round:1 | at_least:1.0 %}
+        <section class="post-counter">
+            <span class="post-counter-word">{{ post_word }}</span>
+            <span class="post-counter-time">{{ post_time }}</span>
+        </section>
+        {% assign post_class = "post-content" %}
+        {% if page.required contains "plain-header" %}
+            {% assign post_class = post_class | append:"-plain" %}
+        {% endif %}
+        <section class="{{ post_class }}">{{ content }}</section>
+    </main>
 
     <footer>
         <!-- button bar -->

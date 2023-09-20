@@ -8,7 +8,7 @@ permalink: /archive.html
 
 {% assign word_count = 0 %}
 {% for post in site.posts %}
-    {% assign words = post.content | strip_html | strip_newlines | remove: " " | size  %}
+    {% assign words = post.content | strip_html | strip_newlines | remove: " " | size %}
     {% assign word_count = word_count | plus:words %}
 {% endfor %}
 

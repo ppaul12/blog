@@ -3,10 +3,6 @@
         animation: fadeInLeft 1s backwards;
     }
 
-    &-content {
-        animation: fadeIn 2s backwards;
-    }
-
     &-tags {
         justify-content: end !important;
 
@@ -27,34 +23,57 @@
             }
         }
     }
-}
 
-#post:not([plain-header]) {
-    counter-reset: h1;
+    &-content {
+        @extend .post-content-plain;
+        counter-reset: h1;
 
-    h2 {
-        counter-reset: h2;
-
-        &::before {
+        h2 {
+            counter-reset: h2;
+    
+            &::before {
+                margin-right: 0.5em;
+                counter-increment: h1;
+                content: counter(h1);
+            }
+        }
+    
+        h3 {
+            counter-reset: h3;
+    
+            &::before {
+                margin-right: 0.5em;
+                counter-increment: h2;
+                content: counter(h1)"."counter(h2);
+            }
+        }
+    
+        h4::before {
             margin-right: 0.5em;
-            counter-increment: h1;
-            content: counter(h1);
+            counter-increment: h3;
+            content: counter(h1)"."counter(h2)"."counter(h3);
+        }
+
+        &-plain {
+            animation: fadeIn 2s backwards;
         }
     }
 
-    h3 {
-        counter-reset: h3;
+    &-counter {
+        text-align: right;
+        color: grey;
+        font-size: 0.8em;
 
-        &::before {
-            margin-right: 0.5em;
-            counter-increment: h2;
-            content: counter(h1)"."counter(h2);
+        &-word::before {
+            margin-right: 0.3em;
+            font-family: "Font Awesome 6 Free";
+            content: "\f891";
         }
-    }
 
-    h4::before {
-        margin-right: 0.5em;
-        counter-increment: h3;
-        content: counter(h1)"."counter(h2)"."counter(h3);
+        &-time::before {
+            margin-right: 0.3em;
+            font-family: "Font Awesome 6 Free";
+            content: "\f2f2";
+        }
     }
 }

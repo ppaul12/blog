@@ -2,7 +2,7 @@
 layout: post
 title: 楚辞天问校读 (1)
 subtitle: 遂古之初 ~ 惠气安在
-tags: 楚辞 随想
+tags: 古诗词 楚辞 随想
 ---
 
 > 曰遂古之初，谁传<ruby>道<rt>dào</rt></ruby>之？\\

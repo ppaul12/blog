@@ -2,7 +2,7 @@
 layout: post
 title: 抒情诗一首
 subtitle: 你说
-tags: 随想 现代诗 
+tags: 随想 现代诗
 ---
 
 > <header>你说</header>

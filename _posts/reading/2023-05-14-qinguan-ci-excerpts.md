@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 初读秦观词
-tags: 诗词 摘抄
+tags: 古诗词 摘抄
 ---
 
 - toc

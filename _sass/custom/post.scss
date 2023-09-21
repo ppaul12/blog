@@ -76,4 +76,54 @@
             content: "\f2f2";
         }
     }
+
+    &-buttons {
+        justify-content: space-between !important;
+        flex-wrap: wrap;
+        padding-bottom: 1em;
+        border-bottom: 1px solid lightgrey;
+        
+        &-prev, &-next {
+            display: block;
+            flex-grow: 1;
+            margin: 0.5em 1em;
+            min-width: 16em;
+            border: 1px solid var(--muted-border-color);
+            border-radius: 0.2em;
+            background: var(--card-background-color);
+
+            transition: transform 0.5s ease;
+
+            &::before {
+                display: block;
+                padding-bottom: 0.5em;
+                margin-bottom: 0.5em;
+                color: grey;
+                border-bottom: 1px solid lightgrey;
+                font-style: italic;
+                font-weight: bold;
+                font-size: 0.8em;
+            }
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+
+        &-prev {
+            text-align: left;
+
+            &::before {
+                content: "PREV";
+            }
+        }
+
+        &-next {
+            text-align: right;
+
+            &::before {
+                content: "NEXT";
+            }
+        }
+    }
 }

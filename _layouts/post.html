@@ -32,31 +32,17 @@ layout: default
     <section class="post-content">{{ content }}</section>
 
     <footer>
-        <!-- button bar -->
-        <nav>
-            <!-- previous post button -->
-            {% if page.previous %}
-            <a class="faa-parent animated-hover" href="{{ page.previous.url | relative_url }}" data-tooltip="{{ page.previous.title }}">
-                <i class="fa-solid fa-arrow-circle-left faa-horizontal faa-reverse"></i>
-            </a>
-            {% else %}
-            <span><!-- dummy --></span>
-            {% endif %}
-
-            <!-- page top button -->
-            <a class="faa-parent animated-hover" onclick="window.scrollTo({ top:0, behavior: 'smooth' })" data-tooltip="back2top">
-                <i class="fa-solid fa-arrow-circle-up faa-vertical"></i>
-            </a>
-
-            <!-- next post button -->
-            {% if page.next %}
-            <a class="faa-parent animated-hover" href="{{ page.next.url | relative_url }}" data-tooltip="{{ page.next.title }}">
-                <i class="fa-solid fa-arrow-circle-right faa-horizontal"></i>
-            </a>
-            {% else %}
-            <span><!-- dummy --></span>
-            {% endif %}
+        {% assign prev = page.previous %}
+        {% assign next = page.next %}
+        {% if prev or next %}
+        <!-- post buttons -->
+        <nav class="post-buttons">
+            {% unless prev %}{% assign prev = site.posts | first %}{% endunless %}
+            <a class="post-buttons-prev" href="{{ prev.url }}">{{ prev.title }}</a>
+            {% unless next %}{% assign next = site.posts | last %}{% endunless %}
+            <a class="post-buttons-next" href="{{ next.url }}">{{ next.title }}</a>
         </nav>
+        {% endif %}
 
         <!-- comment block -->
         {% include comment.html %}

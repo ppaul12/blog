@@ -55,26 +55,17 @@
         }
 
         &-plain {
-            animation: fadeIn 2s backwards;
+            animation: fadeInUp 1s backwards;
         }
     }
 
-    &-counter {
+    &-info {
+        margin-top: -2em;
         text-align: right;
         color: grey;
         font-size: 0.8em;
 
-        &-word::before {
-            margin-right: 0.3em;
-            font-family: "Font Awesome 6 Free";
-            content: "\f891";
-        }
-
-        &-time::before {
-            margin-right: 0.3em;
-            font-family: "Font Awesome 6 Free";
-            content: "\f2f2";
-        }
+        animation: fadeInRight 1s backwards;
     }
 
     &-buttons {
@@ -87,7 +78,8 @@
             display: block;
             flex-grow: 1;
             margin: 0.5em 1em;
-            min-width: 16em;
+            padding: 0.5em 1em;
+            min-width: 12em;
             border: 1px solid var(--muted-border-color);
             border-radius: 0.2em;
             background: var(--card-background-color);

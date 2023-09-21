@@ -38,7 +38,7 @@ document.addEventListener("click", (e) ->
 )
 
 # close with esc key
-document.addEventListener("keydown", (e) ->
+document.addEventListener("keyup", (e) ->
     unless (modal=document.querySelector("dialog[open]:not([close])"))? then return
     if e.key == "Escape" then closeModal(modal)
     return

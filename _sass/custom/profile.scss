@@ -38,7 +38,7 @@
             margin: 0.5em;
             border-radius: 0;
 
-            animation: rotateIn 1s calc(var(--ith) * 100ms) backwards;
+            animation: rotateIn 1s calc(var(--ith) * 50ms) backwards;
         }
     }
 

@@ -2,6 +2,7 @@
 
 :root {
     --font-family: "LXGW WenKai Lite", sans-serif;
+    --card-sectionning-background-color: var(--card-sectioning-background-color);
 }
 
 html {
@@ -26,7 +27,7 @@ body {
         max-width: 60%;
     }
 
-    & > header, & > footer {
+    & > :is(header, footer) {
         text-align: center;
     }
 
@@ -52,8 +53,8 @@ body {
 
 // article
 article {
-    & > header {
-        background: linear-gradient(to right, var(--card-sectionning-background-color), var(--card-background-color));
+    & > :is(header, footer) {
+        background: linear-gradient(to right, var(--card-sectioning-background-color), var(--card-background-color));
     }
 }
 
@@ -147,7 +148,50 @@ iframe {
 // blockquote
 blockquote {
     border-radius: 0.2em;
-    background: var(--card-sectionning-background-color);
+    background: var(--card-sectioning-background-color);
+
+    p {
+        margin: 0;
+    }
+
+    @mixin with-prompt($color, $icon) {
+        position: relative;
+        padding: 1em 1em 1em 3em;
+        border-left-color: $color;
+        background: lighten($color, 20%);
+
+        &::before {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 2em;
+            inset: 0;
+            color: $color;
+            font: 900 1.2em "Font Awesome 6 Free";
+            content: $icon;
+        }
+
+        p {
+            color: $nord3;
+        }
+    }
+
+    &.tip {
+        @include with-prompt($nord14, "\f058");
+    }
+
+    &.info {
+        @include with-prompt($nord9, "\f05a");
+    }
+
+    &.warn {
+        @include with-prompt($nord13, "\f06a");
+    }
+
+    &.error {
+        @include with-prompt($nord11, "\f057");
+    }
 }
 
 // table

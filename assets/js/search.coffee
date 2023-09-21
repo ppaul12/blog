@@ -10,8 +10,8 @@ window.addEventListener("load", () ->
         searchInput: document.getElementById("search-input")
         resultsContainer: document.getElementById("search-results")
         searchResultTemplate:
-            "<article class=\"card-gradient-hover\" onclick=\"location.href='{url}'\"><hgroup>
-                <h3>{title}</h3>
+            "<article class=\"card-gradient-hover\"><hgroup>
+                <h3><a href=\"{url}\">{title}</a></h3>
                 <h4><em>{info}</em></h4>
             </hgroup></article>"
         noResultsText: "<article>No results found</article>"

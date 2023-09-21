@@ -13,7 +13,7 @@
 
     &-gradient {
         @extend .card;
-        background: linear-gradient(to right, var(--card-background-color), var(--card-sectionning-background-color));
+        background: linear-gradient(to right, var(--card-background-color), var(--card-sectioning-background-color));
     }
 
     &-gradient-hover {

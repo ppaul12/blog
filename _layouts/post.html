@@ -25,9 +25,15 @@ layout: default
 
     {% assign post_word = page.content | strip_html | strip_newlines | remove: " " | size  %}
     {% assign post_time = post_word | divided_by:200.0 | round:1 | at_least:1.0 %}
-    <section class="post-counter">
-        <span class="post-counter-word">{{ post_word }}</span>
-        <span class="post-counter-time">{{ post_time }}</span>
+    <section class="post-info">
+        <div>
+            <i class="fa-brands fa-creative-commons"></i>
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA</a>
+        </div>
+        <div>
+            <i class="fa-solid fa-spell-check fa-fw"></i> {{ post_word }}
+            <i class="fa-solid fa-stopwatch fa-fw"></i> {{ post_time }}
+        </div>
     </section>
     <section class="post-content">{{ content }}</section>
 

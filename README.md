@@ -1,3 +1,10 @@
+![](https://img.shields.io/github/commit-activity/m/PENG-AO/PENG-AO.github.io)
+![](https://img.shields.io/github/last-commit/PENG-AO/PENG-AO.github.io)
+![](https://img.shields.io/github/repo-size/PENG-AO/PENG-AO.github.io)
+![](https://img.shields.io/github/deployments/PENG-AO/PENG-AO.github.io/github-pages)
+
+---
+
 This is the repo of my [blog](https://peng-ao.github.io) for recording daily life
 
 - travels

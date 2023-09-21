@@ -41,7 +41,6 @@
         align-items: center;
         position: relative;
         padding-bottom: 2em;
-        border-bottom: 2px solid var(--muted-border-color);
 
         &::after {
             display: block;
@@ -58,6 +57,8 @@
 
     &-posts {
         margin-top: 1em;
+        padding-top: 0.5em;
+        border-top: 2px solid var(--muted-border-color);
         
         &:not(&:has(*[active])) {
             display: none;

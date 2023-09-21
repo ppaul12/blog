@@ -14,6 +14,18 @@ html {
 }
 
 body {
+    margin: auto;
+    padding: 0 var(--spacing);
+    @media (max-width: 420px) {
+        max-width: 100%;
+    }
+    @media (min-width: 700px) {
+        max-width: 80%;
+    }
+    @media (min-width: 1200px) {
+        max-width: 60%;
+    }
+
     & > header, & > footer {
         text-align: center;
     }
@@ -130,4 +142,15 @@ ruby rt {
 // iframe
 iframe {
     margin-bottom: 1em;
+}
+
+// blockquote
+blockquote {
+    border-radius: 0.2em;
+    background: var(--card-sectionning-background-color);
+}
+
+// table
+table {
+    white-space: nowrap;
 }

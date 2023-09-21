@@ -18,11 +18,10 @@ permalink: /books.html
     <article class="book-tag card-gradient">
         <div class="book-img"
             {% if bookset.year == "Reading" %}mark{% endif %}
-        ><img class="cover"
+        ><a href="{{ book.link }}"><img class="cover"
             src="/assets/img/covers/{{ book.title }}.jpg"
             alt="{{ book.title }}"
-            onclick="location.href='{{ book.link }}'"
-        ></div>
+        ></a></div>
         <hgroup class="book-info">
             <h3>{{ book.title }}</h3>
             <h4>{{ book.subtitle }}</h4>

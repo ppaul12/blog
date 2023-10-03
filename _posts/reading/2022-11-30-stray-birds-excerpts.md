@@ -39,7 +39,7 @@ tags: 现代诗 随想 摘抄
 > Theses little thoughts are the rustle of leaves, they have their whisper of joy in my mind.
 {: .literature .quote font="Allura"}
 
-#### 019. 审视
+#### 018. 审视
 
 > What you are you do not see, what you see is your shadow.
 {: .literature .quote font="Allura"}
@@ -56,9 +56,9 @@ tags: 现代诗 随想 摘抄
 > The cloud wishes it were a bird.
 {: .literature .quote font="Allura"}
 
-#### 049. 会心一笑
+#### 042. 会心一笑
 
-> You smiled and talked to me of nothing and I left that for this I had been waiting long.
+> You smiled and talked to me of nothing and I felt that for this I had been waiting long.
 {: .literature .quote font="Allura"}
 
 #### 054. 淡然来去
@@ -167,7 +167,7 @@ tags: 现代诗 随想 摘抄
 > The road is lonely in its crowd for it is not loved.
 {: .literature .quote font="Allura"}
 
-#### 129. 心有所想
+#### 133. 心有所想
 
 > The leaf becomes flower when it loves.
 > The flower becomes fruit when it worships.

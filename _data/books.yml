@@ -4,9 +4,9 @@
       author: 夏目漱石
       link: https://www.shinchosha.co.jp/book/101004/
     
-    - title: 飞狐外传
-      author: 金庸
-      link: https://book.douban.com/subject/1667254/
+    - title: 拜伦雪莱济慈抒情诗精选集
+      author: 拜伦,雪莱,济慈,穆旦
+      link: https://book.douban.com/subject/2073345/
 
 - year: 2023
   books:
@@ -56,6 +56,11 @@
       author: Alain de Botton
       link: https://book.douban.com/subject/4313080/
       date: "08.01"
+    
+    - title: 飞狐外传
+      author: 金庸
+      link: https://book.douban.com/subject/1667254/
+      date: "10.06"
 
 - year: 2022
   books:

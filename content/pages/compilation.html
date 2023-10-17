@@ -62,7 +62,7 @@ permalink: /compilation.html
                     alt="{{ book.title }}"
                     data-target="{{ book.title }}" onclick="toggleModal(event)">
             </div>
-            <dialog id="{{ book.title }}" close><article class="book-tag card-gradient">
+            <dialog id="{{ book.title }}" close><article class="book-tag">
                 <div class="book-img"
                     {% if bookset.year == "Reading" %}mark{% endif %}
                 ><a href="{{ book.link }}"><img class="cover"

@@ -50,7 +50,7 @@ updateCaption = (img) ->
 window.initGallery = (gallery, data) ->
     # load photos to gallery
     plugin = [lgZoom, lgAutoplay]
-    unless data.length > 20 then plugin.push(lgThumbnail)
+    unless data.length > 50 then plugin.push(lgThumbnail)
     window.lightGallery(gallery, {
         plugins: plugin
         container: gallery

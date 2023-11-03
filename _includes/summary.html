@@ -1,6 +1,6 @@
 {% assign travel = "" | split:"" %}
-{% assign reading = "" | split:"" %}
-{% assign specialism = "" | split:"" %}
+{% assign think = "" | split:"" %}
+{% assign study = "" | split:"" %}
 
 {% assign posts = site.posts | reverse %}
 {% assign start = page.date | split:"~" | first %}
@@ -10,12 +10,12 @@
     {% unless include.start <= date and date <= include.end %}
         {% continue %}
     {% endunless %}
-    {% if post.path contains "travel" %}
+    {% if post.path contains "travel/" %}
         {% assign travel = travel | push:post %}
-    {% elsif post.path contains "reading" %}
-        {% assign reading = reading | push:post %}
-    {% elsif post.path contains "specialism" %}
-        {% assign specialism = specialism | push:post %}
+    {% elsif post.path contains "think/" %}
+        {% assign think = think | push:post %}
+    {% elsif post.path contains "study/" %}
+        {% assign study = study | push:post %}
     {% endif %}
 {% endfor %}
 
@@ -25,7 +25,7 @@
 {% endunless %}
 
 {% unless travel.size == 0 %}
-<h2><i class="fa-solid fa-signs-post fa-fw"></i> Travel</h2>
+<h2><i class="fa-solid fa-signs-post fa-fw"></i> Traveling</h2>
 <ul class="item-list">
     {% for post in travel %}
     <li>
@@ -36,10 +36,10 @@
 </ul>
 {% endunless %}
 
-{% unless reading.size == 0 %}
-<h2><i class="fa-solid fa-book-open-reader fa-fw"></i> Reading</h2>
+{% unless think.size == 0 %}
+<h2><i class="fa-solid fa-book-open-reader fa-fw"></i> Thinking</h2>
 <ul class="item-list">
-    {% for post in reading %}
+    {% for post in think %}
     <li>
         <a href="{{ post.url }}">{{ post.title }}</a>
         <em>({{ post.date | date:"%Y.%m.%d" }})</em>
@@ -48,10 +48,10 @@
 </ul>
 {% endunless %}
 
-{% unless specialism.size == 0 %}
-<h2><i class="fa-solid fa-laptop-code fa-fw"></i> Specialism</h2>
+{% unless study.size == 0 %}
+<h2><i class="fa-solid fa-laptop-code fa-fw"></i> Studying</h2>
 <ul class="item-list">
-    {% for post in specialism %}
+    {% for post in study %}
     <li>
         <a href="{{ post.url }}">{{ post.title }}</a>
         <em>({{ post.date | date:"%Y.%m.%d" }})</em>

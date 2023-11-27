@@ -4,13 +4,13 @@
     #   author: 夏目漱石
     #   link: https://www.shinchosha.co.jp/book/101004/
     
-    - title: 拜伦雪莱济慈抒情诗精选集
-      author: 拜伦,雪莱,济慈,穆旦
-      link: https://book.douban.com/subject/2073345/
-    
     - title: Harry Potter 2
       subtitle: the Chamber of Secrets
       author: J.K. Rowling
+    
+    - title: 小山词
+      author: 晏几道
+      link: https://book.douban.com/subject/30206758/
 
 - year: 2023
   books:
@@ -70,6 +70,11 @@
       subtitle: the Sorcerer's Stone
       author: J.K. Rowling
       date: "11.07"
+    
+    - title: 拜伦雪莱济慈抒情诗精选集
+      author: 拜伦,雪莱,济慈,穆旦
+      link: https://book.douban.com/subject/2073345/
+      date: "11.25"
 
 - year: 2022
   books:

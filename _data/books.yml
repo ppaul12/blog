@@ -4,13 +4,13 @@
     #   author: 夏目漱石
     #   link: https://www.shinchosha.co.jp/book/101004/
     
-    - title: Harry Potter 2
-      subtitle: the Chamber of Secrets
-      author: J.K. Rowling
-    
     - title: 小山词
       author: 晏几道
       link: https://book.douban.com/subject/30206758/
+    
+    - title: 纳兰容若词传
+      author: 苏缨
+      link: https://book.douban.com/subject/30426295/
 
 - year: 2023
   books:
@@ -75,6 +75,11 @@
       author: 拜伦,雪莱,济慈,穆旦
       link: https://book.douban.com/subject/2073345/
       date: "11.25"
+    
+    - title: Harry Potter 2
+      subtitle: the Chamber of Secrets
+      author: J.K. Rowling
+      date: "12.15"
 
 - year: 2022
   books:

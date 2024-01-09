@@ -63,11 +63,9 @@ math {
     padding-bottom: 0.5em;
 }
 
-:not(h1, h2, h3, h4, h5, h6) > mjx-container {
-    display: inline-block;
-    max-width: 100%;
-    overflow-x: scroll;
+mjx-container {
     overflow-y: hidden;
+    min-width: auto !important;
 }
 
 // images

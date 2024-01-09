@@ -1,5 +1,5 @@
 {% assign travel = "" | split:"" %}
-{% assign think = "" | split:"" %}
+{% assign thought = "" | split:"" %}
 {% assign study = "" | split:"" %}
 
 {% assign posts = site.posts | reverse %}
@@ -12,8 +12,8 @@
     {% endunless %}
     {% if post.path contains "travel/" %}
         {% assign travel = travel | push:post %}
-    {% elsif post.path contains "think/" %}
-        {% assign think = think | push:post %}
+    {% elsif post.path contains "thought/" %}
+        {% assign thought = thought | push:post %}
     {% elsif post.path contains "study/" %}
         {% assign study = study | push:post %}
     {% endif %}
@@ -36,10 +36,10 @@
 </ul>
 {% endunless %}
 
-{% unless think.size == 0 %}
+{% unless thought.size == 0 %}
 <h2><i class="fa-solid fa-book-open-reader fa-fw"></i> Thinking</h2>
 <ul class="item-list">
-    {% for post in think %}
+    {% for post in thought %}
     <li>
         <a href="{{ post.url }}">{{ post.title }}</a>
         <em>({{ post.date | date:"%Y.%m.%d" }})</em>

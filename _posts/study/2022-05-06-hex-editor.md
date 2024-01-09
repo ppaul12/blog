@@ -1,15 +1,13 @@
 ---
 layout: post
 title: How to Build a Hex-editor
-tags: APP Ncurses C/C++
+tags: APP C/C++
 lang: en
 required: code
 ---
 
 - toc
 {:toc}
-
-[![](https://github-readme-stats.vercel.app/api/pin/?username=PENG-AO&repo=Hex-editor&show_owner=true)](https://github.com/PENG-AO/Hex-editor)
 
 # Introduction
 
@@ -73,3 +71,5 @@ and it looks like this in my terminal.
 <div class="img-frame"><img src="/assets/src/hex-editor/main-window.png"></div>
 
 Please check my repo for more detailed usages.
+
+[![](https://github-readme-stats.vercel.app/api/pin/?username=PENG-AO&repo=Hex-editor&show_owner=true)](https://github.com/PENG-AO/Hex-editor)

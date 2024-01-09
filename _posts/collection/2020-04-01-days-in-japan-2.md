@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Days in Japan (2)
-subtitle: 博观而约取
-date: "2020.04 ~ 2021.03"
+subtitle: 2020.04 ~ 2021.03<br>博观而约取
+tags: 合集
 required: gallery plain-header
 ---
 

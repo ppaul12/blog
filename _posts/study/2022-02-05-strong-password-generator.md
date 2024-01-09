@@ -2,7 +2,7 @@
 layout: post
 title: 可复用强密码生成器
 tags: APP Python3
-required: python code
+required: code
 ---
 
 # 动机
@@ -25,55 +25,7 @@ required: python code
 
 # 源码
 
-```python
-LOWERCASE_LETTER = 'abcdefghijklmnopqrstuvwxyz'
-UPPERCASE_LETTER = LOWERCASE_LETTER.upper()
-DIGITS = '0123456789'
-SYMBOLS = '`~!@#$%^&*()_+-={}[]\|:;"\'<>,.?/'
-
-def passwordGen(mainInfo: str, subInfo: str, length: int, src: str) -> str:
-    hashMain = hashlib.sha256(mainInfo.encode()).digest()
-    hashSub = hashlib.sha256(subInfo.encode()).digest()
-    # set random seed with subInfo and  shuffle the provided source
-    random.seed(hashSub)
-    src = list(src)
-    random.shuffle(src)
-    # build source table
-    table = list()
-    for idx in range(length):
-        table.append(deque(src))
-        # rotate each row basing on subInfo
-        table[idx].rotate(hashSub[idx])
-    # select certain table elements basing on mainInfo
-    password = ''.join(table[idx][hashMain[idx] % len(src)] for idx in range(length))
-    return password
-```
-
-# 执行
-
-<py-script src="/assets/src/strong-password-generator/password-gen.py"></py-script>
-<py-script>
-def buttonClick(event):
-    mainInfo = Element('main-info').element.value
-    subInfo = Element('sub-info').element.value
-    passLen = int(Element('pass-len').element.value)
-    digitCheck = Element('digit').element.checked
-    symbolCheck = Element('symbol').element.checked
-    alphaCheck = Element('alpha').element.checked
-    pyscript.write('gen-res', execute(mainInfo, subInfo, passLen, digitCheck, symbolCheck, alphaCheck))
-</py-script>
-<div>
-    <div>主信息：<input class="py-input" id="main-info"></div>
-    <div>副信息：<input class="py-input" id="sub-info"></div>
-    <div>密码长度：(4~32可选)<input class="py-input" id="pass-len"></div>
-    <div>密码构成：
-        <span>数字<input type="checkbox" id="digit" checked></span>
-        <span>符号<input type="checkbox" id="symbol" checked></span>
-        <span>字母<input type="checkbox" id="alpha" checked></span>
-    </div>
-    <button id="gen-btn" py-onClick="buttonClick">execute</button>
-    <p id="gen-res"></p>
-</div>
+<pre class="line-numbers" data-src="/assets/src/strong-password-generator/password-gen.py"></pre>
 
 # 检验
 

@@ -2,6 +2,7 @@
 layout: post
 title: 初读秦观词
 tags: 古诗词 摘抄
+marked: true
 ---
 
 - toc

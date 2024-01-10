@@ -3,7 +3,7 @@ layout: default
 ---
 
 <article>
-    <header>
+    <header class="card-gradient" {% if page.marked %}ribbon="tl"{% endif %}>
         <!-- post tags -->
         <nav class="post-tags" aria-label="breadcrumb"><ul>
             {% for tag in page.tags %}
@@ -37,11 +37,11 @@ layout: default
     </section>
     <section class="post-content">{{ content }}</section>
 
-    <footer>
+    <footer class="card-gradient">
+        <!-- post buttons -->
         {% assign prev = page.previous %}
         {% assign next = page.next %}
         {% if prev or next %}
-        <!-- post buttons -->
         <nav class="post-buttons">
             {% unless prev %}{% assign prev = site.posts | first %}{% endunless %}
             <a class="post-buttons-prev" href="{{ prev.url }}">{{ prev.title }}</a>

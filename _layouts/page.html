@@ -3,15 +3,15 @@ layout: default
 ---
 
 <article>
-    <header><hgroup class="post-title">
+    <header class="card-gradient"><hgroup class="post-title">
         <h1>
             <i class="{{ page.icon }}"></i>
             {{ page.title | capitalize }}
         </h1>
-        <h2>{{ page.subtitle | capitalize }}</h2>
+        <h2><em>{{ page.subtitle | capitalize }}</em></h2>
     </hgroup></header>
 
     {{ content }}
 
-    <footer>{% include comment.html %}</footer>
+    <footer class="card-gradient">{% include comment.html %}</footer>
 </article>

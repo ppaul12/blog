@@ -36,14 +36,6 @@
             object-fit: fill;
             box-shadow: 5px 5px 5px var(--muted-border-color);
         }
-
-        &[mark]::after {
-            position: absolute;
-            inset: 5px 10px auto auto;
-            color: $nord13;
-            font: 900 1em "Font Awesome 6 Free";
-            content: "\f02e";
-        }
     }
     
     &-info {

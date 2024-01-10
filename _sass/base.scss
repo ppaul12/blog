@@ -51,13 +51,6 @@ body {
     }
 }
 
-// article
-article {
-    & > :is(header, footer) {
-        background: linear-gradient(to right, var(--card-sectioning-background-color), var(--card-background-color));
-    }
-}
-
 // math blocks
 math {
     padding-bottom: 0.5em;

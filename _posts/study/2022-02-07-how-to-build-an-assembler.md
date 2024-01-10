@@ -4,6 +4,7 @@ title: 一种汇编器的构建思路
 subtitle: 基于RISC-V实现
 tags: Assembly Python3
 required: math code
+marked: true
 ---
 
 - toc

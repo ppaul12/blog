@@ -60,6 +60,7 @@
     }
 
     p {
+        max-width: var(--fix, auto);
         word-break: keep-all;
         margin: 0 auto;
         line-height: 1.8em;
@@ -72,9 +73,5 @@
 
     &[font="Allura"] p {
         font: 1.4em "Allura";
-    }
-
-    &[fix] p {
-        max-width: var(--fix);
     }
 }

@@ -15,18 +15,22 @@ required: gallery
         const images = await imageSets.reduce(async (output, imageSet) => {
             const entries = await asyncLoadJSON(imageSet.json)
             return (await output).concat(entries.map((entry) => {
-                return { src: entry.src, loc: imageSet.post }
+                return {
+                    src: entry.src,
+                    loc: imageSet.post,
+                    date: imageSet.date
+                }
             }))
         }, Promise.resolve([]))
-        // shuffle image array
-        let currentIdx = images.length
-        while (currentIdx > 0) {
-            const targetIdx = Math.floor(Math.random() * currentIdx)
-            currentIdx--
-            const temp = images[currentIdx]
-            images[currentIdx] = images[targetIdx]
-            images[targetIdx] = temp
-        }
+        // reorder images on demand
+        const url = new URL(document.location)
+        const order = url.searchParams.get("order") || "shuffle"
+        images.sort({
+            "ascend": (a, b) => a.date - b.date,
+            "descend": (a, b) => b.date - a.date,
+            "shuffle": (a, b) => Math.random() - 0.5,
+        }[order])
+        // init gallery with images
         initGallery(document.getElementById("gallery"), images)
     })()
 </script>

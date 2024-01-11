@@ -65,6 +65,7 @@
         }
         
         li {
+            position: relative;
             list-style: none;
 
             animation: fadeInLeft 1s backwards;
@@ -79,6 +80,15 @@
                 font-style: italic;
                 font-size: 0.8em;
                 content: attr(data-date);
+            }
+
+            &[marked]::after {
+                position: absolute;
+                top: 0;
+                margin-left: 0.2em;
+                color: $nord13;
+                font: 900 0.5em "Font Awesome 6 Free";
+                content: "\f02e";
             }
         }
 

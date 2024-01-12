@@ -29,3 +29,18 @@
     <div class="main-title">Life Goes On</div>
     <div class="sub-title">そして生活が続く...来日方长</div>
 </header>
+
+{% if content contains "<table>" %}
+    {% assign content = content | replace:"<table>","<figure><table>" | replace:"</table>","</table></figure>" %}
+{% endif %}
+{% if page.required contains "plain-header" %}
+    {% assign content = content | replace:"post-content","post-content-plain" %}
+{% endif %}
+<main>{{ content }}</main>
+
+<footer>
+    <small>by PENG AO made with <i class="fa-solid fa-heart faa-pulse animated faa-slow"></i></small><br>
+    <small><i class="fa-regular fa-copyright"></i> 2021 - 2023</small><br>
+    <small>Some rights reserved.</small><br>
+    <img src="/assets/img/Produced-By-Human.svg" alt="Produce By Human Not AI" width="100px">
+</footer>

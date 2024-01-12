@@ -9,12 +9,12 @@ This is the repo of my [blog](https://peng-ao.github.io) for recording daily lif
 
 - travels
 - thoughts
-- works
+- studies
 - ...
 
 with the help of the following works.
 
-- main: [Jekyll](https://jekyllrb.com) + [github pages](https://pages.github.com)
+- main: [Jekyll](https://jekyllrb.com) + [GitHub pages](https://pages.github.com)
 - styles: [pico.css](https://picocss.com)
 - colors: [Nord Theme](https://www.nordtheme.com)
 - fonts: [LXGW WenKai](https://github.com/lxgw/LxgwWenKai) + [Allura](https://www.jsdelivr.com/package/npm/@fontsource/allura)

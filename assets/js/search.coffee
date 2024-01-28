@@ -4,7 +4,6 @@
 # init in-site search
 
 window.addEventListener("load", () ->
-    # init search engine
     sjs = SimpleJekyllSearch({
         json: "/assets/json/search.json"
         searchInput: document.getElementById("search-input")

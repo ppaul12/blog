@@ -8,9 +8,16 @@
       author: 晏几道
       link: https://book.douban.com/subject/30206758/
     
+    - title: 一个人的草木诗经
+      author: 子梵梅
+      link: https://book.douban.com/subject/25885420/
+
+- year: 2024
+  books:
     - title: 纳兰容若词传
       author: 苏缨
       link: https://book.douban.com/subject/30426295/
+      date: "01.28"
 
 - year: 2023
   books:

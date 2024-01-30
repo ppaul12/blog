@@ -1,11 +1,17 @@
-<dialog id="profile-box" close><article>
-    <header><nav>
-        <ul>Profile</ul>
-        <ul class="close-btn" data-target="profile-box" onclick="toggleModal(event)"></ul>
-    </nav></header>
-    <div class="profile-avatar"><img src="https://github.com/PENG-AO.png"></div>
-    <div class="profile-name">Peng Ao</div>
-    <hr><!-- skills -->
+---
+layout: default
+title: profile
+permalink: /profile.html
+required: no-header
+---
+
+<article class="profile">
+    <header class="card-gradient">
+        <div class="profile-avatar"><img src="https://github.com/PENG-AO.png"></div>
+        <div class="profile-name">Peng Ao</div>
+    </header>
+
+    <!-- skills -->
     <div class="profile-icons">
         {% assign skills = site.data.profiles.skills | sort:"info" %}
         {% for skill in skills %}
@@ -13,7 +19,10 @@
             width="32px" height="32px" style="--ith: {{ forloop.index0 }}">
         {% endfor %}
     </div>
-    <hr><!-- information -->
+
+    <hr>
+    
+    <!-- information -->
     <ul class="profile-info">
         {% for information in site.data.profiles.information %}
         <li class="profile-info-item" style="--ith: {{ forloop.index0 }}">
@@ -21,7 +30,10 @@
         </li>
         {% endfor %}
     </ul>
-    <hr><!-- identity -->
+
+    <hr>
+    
+    <!-- identity -->
     <ul class="profile-info">
         {% for identity in site.data.profiles.identities %}
         <li class="profile-info-item" style="--ith: {{ forloop.index0 }}">
@@ -29,7 +41,10 @@
         </li>
         {% endfor %}
     </ul>
-    <hr><!-- hobby -->
+
+    <hr>
+    
+    <!-- hobby -->
     <ul class="profile-info">
         {% for hobby in site.data.profiles.hobbies %}
         <li class="profile-info-item" style="--ith: {{ forloop.index0 }}">
@@ -37,4 +52,15 @@
         </li>
         {% endfor %}
     </ul>
-</article></dialog>
+    
+    <footer class="card-gradient">
+        <ul class="profile-info">
+            {% for friend in site.data.profiles.friends %}
+            <li class="profile-info-item" style="--ith: {{ forloop.index0 }}"><small>
+                <i class="fa-solid fa-user-group fa-fw"></i>
+                <a href="{{ friend.link }}" data-tooltip="{{ friend.info }}">{{ friend.name }}</a>
+            </small></li>
+            {% endfor %}
+        </ul>
+    </footer>
+</article>

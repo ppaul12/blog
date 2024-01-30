@@ -25,15 +25,17 @@
     }
 </script>
 
+{% unless page.required contains "no-header" %}
 <header>
     <div class="main-title">Life Goes On</div>
     <div class="sub-title">そして生活が続く...来日方长</div>
 </header>
+{% endunless %}
 
 {% if content contains "<table>" %}
     {% assign content = content | replace:"<table>","<figure><table>" | replace:"</table>","</table></figure>" %}
 {% endif %}
-{% if page.required contains "plain-header" %}
+{% if page.required contains "plain-heading" %}
     {% assign content = content | replace:"post-content","post-content-plain" %}
 {% endif %}
 <main>{{ content }}</main>

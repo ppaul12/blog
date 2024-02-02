@@ -55,7 +55,7 @@
         }
 
         &-plain {
-            animation: fadeInUp 1s backwards;
+            animation: 1s fadeIn 1s backwards;
         }
     }
 
@@ -65,7 +65,7 @@
         color: grey;
         font-size: 0.8em;
 
-        animation: fadeInRight 1s backwards;
+        animation: 1s fadeIn 1s backwards;
     }
 
     &-buttons {

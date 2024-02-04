@@ -4,9 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ site.title }}-{{ page.title }}</title>
     {% seo title=false %}
-    <link rel="icon" type="image/png" href="https://github.com/PENG-AO.png?size=16">
-    <link rel="shortcut icon" type="image/png" href="https://github.com/PENG-AO.png?size=16">
-    <link rel="apple-touch-icon" type="image/png" href="https://github.com/PENG-AO.png?size=57">
+    <link rel="icon" type="image/png" href="/assets/img/avatar.jpeg">
 
     {% if jekyll.environment == "production" %}
     <!-- google analytics -->
@@ -20,7 +18,7 @@
     {% endif %}
 
     <!-- pico css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css">
+    <link rel="stylesheet" href="{{ site.packages }}/@picocss/pico@latest/css/pico.min.css">
     <!-- custom style -->
     <link rel="stylesheet" href="/assets/main.css"/>
     <!-- custom modal switcher -->
@@ -29,66 +27,58 @@
     <script src="/assets/js/theme.js"></script>
     
     <!-- animation -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css/animate.min.css">
+    <link rel="stylesheet" href="{{ site.packages }}/animate.css/animate.min.css">
 
     <!-- font awesome icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome-animation@latest/css/font-awesome-animation.min.css">
+    <link rel="stylesheet" href="{{ site.packages }}/@fortawesome/fontawesome-free@latest/css/all.min.css">
+    <link rel="stylesheet" href="{{ site.packages }}/font-awesome-animation@latest/css/font-awesome-animation.min.css">
     <!-- lxgw wenkai font -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@latest/lxgwwenkailite-regular.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@latest/lxgwwenkailite-bold.css">
+    <link rel="stylesheet" href="{{ site.packages }}/lxgw-wenkai-lite-webfont@latest/lxgwwenkailite-regular.css">
+    <link rel="stylesheet" href="{{ site.packages }}/lxgw-wenkai-lite-webfont@latest/lxgwwenkailite-bold.css">
     <!-- allura font -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/allura@latest/index.min.css">
+    <link rel="stylesheet" href="{{ site.packages }}/@fontsource/allura@latest/index.min.css">
 
     {% if page.required contains "code" %}
     <!-- prism js -->
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/components/prism-core.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism-coy.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/autoloader/prism-autoloader.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/line-numbers/prism-line-numbers.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/line-numbers/prism-line-numbers.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/file-highlight/prism-file-highlight.min.js"></script>
+    <script src="{{ site.packages }}/prismjs@latest/components/prism-core.min.js"></script>
+    <link rel="stylesheet" href="{{ site.packages }}/prismjs@latest/themes/prism-coy.min.css">
+    <script src="{{ site.packages }}/prismjs@latest/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="{{ site.packages }}/prismjs@latest/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <link rel="stylesheet" href="{{ site.packages }}/prismjs@latest/plugins/line-numbers/prism-line-numbers.min.css">
+    <script src="{{ site.packages }}/prismjs@latest/plugins/file-highlight/prism-file-highlight.min.js"></script>
     <!-- roboto mono font -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/roboto-mono@latest/index.min.css">
+    <link rel="stylesheet" href="{{ site.packages }}/@fontsource/roboto-mono@latest/index.min.css">
     {% endif %}
 
     {% if page.required contains "math" %}
     <!-- mathjax -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@latest/es5/tex-mml-chtml.js"></script>
-    <script>
-        MathJax = {
-            loader: {load: ['ui/lazy']},
-            tex: {
-                inlineMath: [['$', '$']],
-                processEscapes: true
-            }
-        }
+    <script id="MathJax-script" async src="{{ site.packages }}/mathjax@latest/es5/tex-mml-chtml.js"></script>
+    <script>MathJax={loader: {load: ['ui/lazy']},tex: {inlineMath: [['$', '$']],processEscapes: true}}
     </script>
     {% endif %}
 
     {% if page.required contains "mermaid" %}
     <!-- mermaid -->
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"></script>
+    <script src="{{ site.packages }}/mermaid@latest/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true, theme:"forest", flowchart:{useMaxWidth:false, htmlLabels:true}})</script>
     {% endif %}
 
     {% if page.required contains "gallery" %}
     <!-- light gallery -->
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@latest/lightgallery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@latest/plugins/zoom/lg-zoom.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@latest/plugins/autoplay/lg-autoplay.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@latest/plugins/thumbnail/lg-thumbnail.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@latest/css/lightgallery-bundle.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@latest/css/lg-transitions.css">
+    <script src="{{ site.packages }}/lightgallery@latest/lightgallery.min.js"></script>
+    <script src="{{ site.packages }}/lightgallery@latest/plugins/zoom/lg-zoom.min.js"></script>
+    <script src="{{ site.packages }}/lightgallery@latest/plugins/autoplay/lg-autoplay.min.js"></script>
+    <script src="{{ site.packages }}/lightgallery@latest/plugins/thumbnail/lg-thumbnail.min.js"></script>
+    <link rel="stylesheet" href="{{ site.packages }}/lightgallery@latest/css/lightgallery-bundle.min.css">
+    <link rel="stylesheet" href="{{ site.packages }}/lightgallery@latest/css/lg-transitions.css">
     <!-- exifr -->
-    <script src="https://cdn.jsdelivr.net/npm/exifr@latest/dist/full.umd.min.js"></script>
+    <script src="{{ site.packages }}/exifr@latest/dist/full.umd.min.js"></script>
     <!-- custom gallery initializer -->
     <script src="/assets/js/gallery.js"></script>
     {% endif %}
 
     <!-- simple jekyll search -->
-    <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+    <script src="{{ site.packages }}/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
     <script src="/assets/js/search.js"></script>
 
     <!-- custom json loader -->

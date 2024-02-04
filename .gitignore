@@ -1,8 +1,9 @@
 _site
 _draft
+
 .sass-cache
-.jekyll-metadata
 .jekyll-cache
+
 Gemfile.lock
-*.gem
-*.idea
+
+/assets/packages

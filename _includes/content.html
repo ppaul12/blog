@@ -1,30 +1,3 @@
-<div class="menu" onclick="toggleMenu(event)">
-    <span class="menu-box">
-        <span class="menu-icon"></span>
-    </span>
-    <div class="menu-content">
-        <div class="menu-item" style="--ith: 0;"><a href="/">Home</a></div>
-        <div class="menu-item" style="--ith: 1;"><a href="/album.html">Album</a></div>
-        <div class="menu-item" style="--ith: 2;"><a href="/footprint.html">Footprint</a></div>
-        <div class="menu-item" style="--ith: 3;"><a href="/books.html">Bookshelf</a></div>
-        <div class="menu-item" style="--ith: 4;"><a href="/archive.html">Archive</a></div>
-    </div>
-</div>
-
-<script>
-    const toggleMenu = () => {
-        const menu = document.querySelector(".menu")
-        const html = document.documentElement
-        if (menu.hasAttribute("open")) {
-            menu.removeAttribute("open")
-            html.removeAttribute("overlay")
-        } else {
-            menu.setAttribute("open", "")
-            html.setAttribute("overlay", "")
-        }
-    }
-</script>
-
 {% unless page.required contains "no-header" %}
 <header>
     <div class="main-title">Life Goes On</div>
@@ -33,16 +6,23 @@
 {% endunless %}
 
 {% if content contains "<table>" %}
-    {% assign content = content | replace:"<table>","<figure><table>" | replace:"</table>","</table></figure>" %}
+    {% assign content = content
+        | replace:"<table>","<figure><table>"
+        | replace:"</table>","</table></figure>"
+    %}
 {% endif %}
 {% if page.required contains "plain-heading" %}
-    {% assign content = content | replace:"post-content","post-content-plain" %}
+    {% assign content = content
+        | replace:"post-content","post-content-plain"
+    %}
 {% endif %}
 <main>{{ content }}</main>
 
+{% unless page.required contains "no-footer" %}
 <footer>
     <small>by PENG AO made with <i class="fa-solid fa-heart faa-pulse animated faa-slow"></i></small><br>
     <small><i class="fa-regular fa-copyright"></i> 2021 - 2023</small><br>
     <small>Some rights reserved.</small><br>
     <img src="/assets/img/Produced-By-Human.svg" alt="Produce By Human Not AI" width="100px">
 </footer>
+{% endunless %}

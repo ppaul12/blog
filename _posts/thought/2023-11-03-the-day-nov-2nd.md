@@ -30,6 +30,4 @@ tags: 随想
 
 接下来定会是美好的，同时也一定是伴随挑战的。然而我确信目前的我有足够的勇气和安定的内心，去面对不可预知的不确定性。Trust me.
 
-<div class="img-frame">
-    <img src="/assets/src/the-day-nov-2nd/she.jpeg">
-</div>
+<div class="img-frame"><img src="/assets/src/the-day-nov-2nd/she.jpeg"></div>

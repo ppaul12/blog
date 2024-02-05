@@ -4,6 +4,7 @@ title: 三浦半岛之旅
 subtitle: 横須賀·城ヶ島
 tags: 旅行
 required: gallery
+cover: /assets/src/a-travel-at-miura/pic3.jpeg
 ---
 
 # 路程规划

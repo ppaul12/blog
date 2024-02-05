@@ -1,12 +1,40 @@
 .post {
-    &-title {
-        animation: fadeInLeft 1s backwards;
+    &-card {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: start;
+        align-content: space-between;
+        padding: 0;
+        height: 12em;
+
+        animation: 2s fadeInDown calc(var(--ith, 0) * 200ms) backwards;
     }
 
-    &-tags {
-        justify-content: end !important;
+    &-title {
+        flex-grow: 1;
+        padding: 0 var(--block-spacing-horizontal);
 
-        animation: fadeInRight 1s backwards;
+        & > nav {
+            justify-content: end !important;
+        }
+    }
+
+    &-cover {
+        width: 30%;
+        @media (max-width: 420px) {
+            width: 100%;
+        }
+        height: 12em;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.6;
+        border-top-left-radius: var(--border-radius);
+        @media (max-width: 420px) {
+            border-top-right-radius: var(--border-radius);
+        }
+        @media (min-width: 420px) {
+            border-bottom-left-radius: var(--border-radius);
+        }
     }
 
     &-paginator {

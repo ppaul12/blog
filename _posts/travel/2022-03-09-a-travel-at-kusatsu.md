@@ -4,6 +4,7 @@ title: 草津温泉之旅
 subtitle: 草津温泉·高崎
 tags: 旅行
 required: gallery
+cover: /assets/src/a-travel-at-kusatsu/pic1.jpeg
 ---
 
 # 路程规划

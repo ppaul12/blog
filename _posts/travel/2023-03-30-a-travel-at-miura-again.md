@@ -4,6 +4,7 @@ title: 再访三浦之旅
 subtitle: 逗子·葉山
 tags: 旅行
 required: gallery
+cover: /assets/src/a-travel-at-miura-again/pic7.jpeg
 ---
 
 # 路程规划

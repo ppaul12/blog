@@ -4,6 +4,7 @@ title: 江岛之旅
 subtitle: 鎌倉·長谷·七里ヶ浜·江ノ島
 tags: 旅行
 required: gallery
+cover: /assets/src/a-travel-at-enoshima/pic1.jpeg
 ---
 
 # 路程规划

@@ -4,6 +4,7 @@ title: 松本之旅
 subtitle: 松本·诹访
 tags: 旅行
 required: gallery
+cover: /assets/src/a-travel-at-matsumoto/pic1.jpeg
 ---
 
 # 路程规划

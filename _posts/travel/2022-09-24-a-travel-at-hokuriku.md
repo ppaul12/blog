@@ -4,6 +4,7 @@ title: 金泽·富山旅行
 subtitle: 富山·高岡·射水·金沢·高山·名古屋
 tags: 旅行
 required: gallery
+cover: /assets/src/a-travel-at-hokuriku/pic3.jpeg
 ---
 
 # 路程规划

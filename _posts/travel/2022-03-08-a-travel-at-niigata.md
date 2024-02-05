@@ -3,6 +3,7 @@ layout: post
 title: 新潟之旅
 tags: 旅行
 required: gallery
+cover: /assets/src/a-travel-at-niigata/pic4.jpeg
 ---
 
 # 路程规划

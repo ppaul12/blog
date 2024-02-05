@@ -4,6 +4,7 @@ title: 京都散心旅行
 subtitle: 大阪·京都·宇治·蒲郡
 tags: 旅行
 required: gallery
+cover: /assets/src/a-travel-at-kyoto-relax/pic3.jpeg
 ---
 
 # 路程规划

@@ -4,6 +4,7 @@ title: 长野之旅
 subtitle: 上田·長野·上越妙高·高田
 tags: 旅行
 required: gallery
+cover: /assets/src/a-travel-at-nagano/pic4.jpeg
 ---
 
 # 路程规划

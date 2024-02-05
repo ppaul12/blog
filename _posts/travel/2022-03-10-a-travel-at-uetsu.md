@@ -4,6 +4,7 @@ title: 羽越本线之旅
 subtitle: 羽越本線·酒田
 tags: 旅行
 required: gallery
+cover: /assets/src/a-travel-at-uetsu/pic4.jpeg
 ---
 
 # 路程规划

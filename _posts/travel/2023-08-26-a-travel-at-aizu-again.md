@@ -4,6 +4,7 @@ title: 再访会津旅行
 subtitle: 会津若松·喜多方·郡山·高萩
 tags: 旅行
 required: gallery
+cover: /assets/src/a-travel-at-aizu-again/pic5.jpeg
 ---
 
 # 路程规划

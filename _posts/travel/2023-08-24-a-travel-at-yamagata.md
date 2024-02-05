@@ -4,6 +4,7 @@ title: 山形之旅
 subtitle: 米泽·山形·仙台
 tags: 旅行
 required: gallery
+cover: /assets/src/a-travel-at-yamagata/pic1.jpeg
 ---
 
 # 路程规划

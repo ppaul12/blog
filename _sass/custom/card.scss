@@ -10,7 +10,7 @@
         transition: transform 0.5s ease;
 
         &:hover {
-            transform: scale(1.02);
+            transform: scale(1.02) translateY(-0.5em);
         }
     }
 

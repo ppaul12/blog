@@ -25,7 +25,4 @@ window.toggleTheme = () ->
     }[getTheme()])
     return
 
-window.addEventListener("load", () ->
-    setTheme()
-    return
-)
+setTheme()

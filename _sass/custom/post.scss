@@ -2,17 +2,21 @@
     &-card {
         display: flex;
         flex-wrap: wrap;
-        align-items: start;
         align-content: space-between;
         padding: 0;
-        height: 12em;
-
+        min-height: 10em;
+        
         animation: 2s fadeInDown calc(var(--ith, 0) * 200ms) backwards;
+
+        &:has(.post-cover) {
+            align-items: center;
+        }
     }
 
     &-title {
         flex-grow: 1;
-        padding: 0 var(--block-spacing-horizontal);
+        padding: calc(0.3 * var(--block-spacing-vertical)) var(--block-spacing-horizontal);
+        max-height: 12.5em;
 
         & > nav {
             justify-content: end !important;
@@ -24,7 +28,7 @@
         @media (max-width: 420px) {
             width: 100%;
         }
-        height: 12em;
+        height: 12.5em;
         background-size: cover;
         background-position: center;
         opacity: 0.6;

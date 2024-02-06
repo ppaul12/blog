@@ -1,5 +1,5 @@
 title: PENG AO's blog
-description: This is my blog for daily life records...
+description: My tranquil place ...
 
 plugins:
   - jekyll-seo-tag
@@ -17,4 +17,5 @@ kramdown:
   syntax_highlighter_opts:
     disable: true
 
-packages: https://cdn.jsdelivr.net/npm
+sass:
+  style: compressed

@@ -95,6 +95,10 @@ dialog {
             position: sticky;
             top: calc(var(--block-spacing-vertical) * -1);
             z-index: 1;
+
+            nav {
+                margin-bottom: 1em;
+            }
         }
     }
 

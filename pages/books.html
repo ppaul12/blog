@@ -8,11 +8,8 @@ permalink: /books.html
 
 {% assign booksets = site.data.books %}
 {% for bookset in booksets %}
-<details id="{{ bookset.year }}" {% if forloop.index <= 2 %}open{% endif %}>
-    <summary>
-        {{ bookset.year }}
-        ({{ bookset.books.size }})
-    </summary>
+<details {% if forloop.index <= 2 %}open{% endif %}>
+    <summary>{{ bookset.year }} ({{ bookset.books.size }})</summary>
     {% assign books = bookset.books | sort:"date" %}
     {% for book in books %}
     <article class="book-card card-gradient" {% if bookset.year == "Reading" %}ribbon="tr"{% endif %}>

@@ -1,10 +1,4 @@
 .book {
-    &-shelf {
-        overflow-x: scroll;
-        white-space: nowrap;
-        padding: 1em 0.5em;
-    }
-
     &-card {
         display: flex;
         @media (max-width: 420px) {

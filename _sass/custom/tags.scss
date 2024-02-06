@@ -1,29 +1,21 @@
 .tag {
-    & {
-        margin: 0.2em 0.2em;
-        padding: 0.2em 0.5em;
-        border-radius: 2em;
-        font-size: 0.8em;
-        text-decoration: none;
-        color: darken($nord4, 60%);
+    margin: 0.2em 0.2em;
+    padding: 0.2em 0.5em;
+    border-radius: 2em;
+    font-size: 0.8em;
+    text-decoration: none;
+    color: darken($nord4, 60%);
 
-        transition: all 0.5s ease;
+    transition: all 0.5s ease;
 
-        &:hover, &[active] {
-            border-radius: 0.2em;
-        }
-
-        &::after {
-            margin-left: 0.3em;
-            font-size: 0.5em;
-            content: "("attr(data-count)")";
-        }
+    &:hover, &[active] {
+        border-radius: 0.2em;
     }
 
-    &-all {
-        @extend .tag;
-        color: var(--background-color);
-        background: var(--color);
+    &::after {
+        margin-left: 0.3em;
+        font-size: 0.5em;
+        content: "("attr(data-count)")";
     }
 
     @for $i from 0 through 10 {
@@ -38,7 +30,6 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
         position: relative;
         padding-bottom: 2em;
 
@@ -62,6 +53,14 @@
         
         &:not(&:has(*[active])) {
             display: none;
+        }
+
+        &::before {
+            display: block;
+            font: 2em "Allura";
+            content: attr(data-title);
+
+            animation: fadeInRight 1s backwards;
         }
         
         li {
@@ -90,14 +89,6 @@
                 font: 900 0.5em "Font Awesome 6 Free";
                 content: "\f02e";
             }
-        }
-
-        &::before {
-            display: block;
-            font: 2em "Allura";
-            content: attr(data-title);
-
-            animation: fadeInRight 1s backwards;
         }
     }
 }

@@ -1,6 +1,5 @@
 .card {
     position: relative;
-    padding: calc(0.5 * var(--block-spacing-vertical)) var(--block-spacing-horizontal);
 
     animation: fadeIn 3s backwards;
 
@@ -16,7 +15,7 @@
 
     &-gradient {
         @extend .card;
-        background: linear-gradient(to right, var(--card-background-color), var(--card-sectioning-background-color));
+        background: linear-gradient(to right, var(--pico-card-background-color), var(--pico-card-sectioning-background-color));
     }
 
     &-gradient-hover {

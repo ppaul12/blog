@@ -17,88 +17,81 @@ $nord14: #a3be8c;
 $nord15: #b48ead;
 
 // Light scheme
-[data-theme="light"],
-:root:not([data-theme="dark"]) {
-    --background-color: #{$nord6};
-    --color: #{$nord0};
+[data-theme=light],
+:root:not([data-theme=dark]) {
+    --pico-background-color: #{$nord6};
+    --pico-color: #{$nord0};
 
-    --h1-color: var(--color);
-    --h2-color: var(--color);
-    --h3-color: var(--color);
-    --h4-color: var(--color);
-    --h5-color: var(--color);
-    --h6-color: var(--color);
+    --pico-h1-color: var(--pico-color);
+    --pico-h2-color: var(--pico-color);
+    --pico-h3-color: var(--pico-color);
+    --pico-h4-color: var(--pico-color);
+    --pico-h5-color: var(--pico-color);
+    --pico-h6-color: var(--pico-color);
 
-    --muted-color: #{$nord3};
-    --muted-border-color: #{$nord4};
+    --pico-muted-color: #{$nord3};
+    --pico-muted-border-color: #{$nord4};
 
-    --primary: #{$nord10};
-    --primary-hover: #{$nord9};
-    --primary-focus: #{$nord9};
-    --primary-inverse: var(--background-color);
+    --pico-primary: #{$nord10};
+    --pico-primary-hover: #{$nord9};
+    --pico-primary-focus: #{$nord9};
+    --pico-primary-inverse: var(--pico-background-color);
 
-    --contrast: #{$nord2};
-    --contrast-hover: #{$nord1};
-    --contrast-focus: #{$nord1};
-    --contrast-inverse: var(--background-color);
+    --pico-contrast-background: #{$nord2};
+    --pico-contrast-hover-background: #{$nord1};
+    --pico-contrast-inverse: var(--pico-background-color);
 
-    --mark-background-color: #{$nord13};
-    --mark-color: var(--color);
-    --ins-color: #{$nord14};
-    --del-color: #{$nord11};
+    --pico-mark-background-color: #{$nord13};
+    --pico-mark-color: var(--pico-color);
+    --pico-ins-color: #{$nord14};
+    --pico-del-color: #{$nord11};
 
-    --code-background-color: #{$nord5};
-    --code-color: var(--muted-color);
-    --code-kbd-background-color: var(--contrast);
-    --code-kbd-color: var(--contrast-inverse);
+    --pico-card-background-color: var(--pico-background-color);
+    --pico-card-border-color: var(--pico-muted-border-color);
+    --pico-card-sectioning-background-color: #{$nord5};
 
-    --card-background-color: var(--background-color);
-    --card-border-color: var(--muted-border-color);
-    --card-sectioning-background-color: #{$nord5};
-
-    --tooltip-background-color: var(--contrast);
-    --tooltip-color: var(--contrast-inverse);
+    --pico-tooltip-background-color: var(--pico-contrast);
+    --pico-tooltip-color: var(--pico-contrast-inverse);
 }
 
 // Dark scheme
-[data-theme="dark"] {
-    --background-color: #{$nord0};
-    --color: #{$nord6};
+[data-theme=dark] {
+    --pico-background-color: #{$nord0};
+    --pico-color: #{$nord6};
 
-    --h1-color: var(--color);
-    --h2-color: var(--color);
-    --h3-color: var(--color);
-    --h4-color: var(--color);
-    --h5-color: var(--color);
-    --h6-color: var(--color);
+    --pico-h1-color: var(--pico-color);
+    --pico-h2-color: var(--pico-color);
+    --pico-h3-color: var(--pico-color);
+    --pico-h4-color: var(--pico-color);
+    --pico-h5-color: var(--pico-color);
+    --pico-h6-color: var(--pico-color);
 
-    --muted-color: #{$nord4};
-    --muted-border-color: #{$nord3};
+    --pico-muted-color: #{$nord4};
+    --pico-muted-border-color: #{$nord3};
 
-    --primary: #{$nord9};
-    --primary-hover: #{$nord10};
-    --primary-focus: #{$nord10};
-    --primary-inverse: var(--background-color);
+    --pico-primary: #{$nord9};
+    --pico-primary-hover: #{$nord10};
+    --pico-primary-focus: #{$nord10};
+    --pico-primary-inverse: var(--pico-background-color);
 
-    --contrast: #{$nord5};
-    --contrast-hover: #{$nord4};
-    --contrast-focus: #{$nord4};
-    --contrast-inverse: var(--background-color);
+    --pico-contrast-background: #{$nord5};
+    --pico-contrast-hover-background: #{$nord4};
+    --pico-contrast-inverse: var(--pico-background-color);
 
-    --mark-background-color: #{$nord13};
-    --mark-color: var(--color);
-    --ins-color: #{$nord14};
-    --del-color: #{$nord11};
+    --pico-mark-background-color: #{$nord13};
+    --pico-mark-color: var(--pico-color);
+    --pico-ins-color: #{$nord14};
+    --pico-del-color: #{$nord11};
 
-    --code-background-color: #{$nord1};
-    --code-color: var(--muted-color);
-    --code-kbd-background-color: var(--contrast);
-    --code-kbd-color: var(--contrast-inverse);
+    --pico-code-background-color: #{$nord1};
+    --pico-code-color: var(--pico-muted-color);
+    --pico-code-kbd-background-color: var(--pico-contrast);
+    --pico-code-kbd-color: var(--pico-contrast-inverse);
 
-    --card-background-color: var(--background-color);
-    --card-border-color: var(--muted-border-color);
-    --card-sectioning-background-color: #{$nord1};
+    --pico-card-background-color: var(--pico-background-color);
+    --pico-card-border-color: var(--pico-muted-border-color);
+    --pico-card-sectioning-background-color: #{$nord1};
 
-    --tooltip-background-color: var(--contrast);
-    --tooltip-color: var(--contrast-inverse);
+    --pico-tooltip-background-color: var(--pico-contrast);
+    --pico-tooltip-color: var(--pico-contrast-inverse);
 }

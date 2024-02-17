@@ -7,8 +7,8 @@
 
 {% if content contains "<table>" %}
     {% assign content = content
-        | replace:"<table>","<figure><table>"
-        | replace:"</table>","</table></figure>"
+        | replace:"<table>","<div class='overflow-auto'><table class='striped'>"
+        | replace:"</table>","</table></div>"
     %}
 {% endif %}
 {% if page.required contains "plain-heading" %}

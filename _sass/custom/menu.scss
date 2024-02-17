@@ -7,8 +7,8 @@
         width: 3em;
         height: 3em;
         border-bottom-right-radius: 100%;
-        box-shadow: 0 0 0 0 var(--color);
-        background-color: var(--color);
+        box-shadow: 0 0 0 0 var(--pico-color);
+        background-color: var(--pico-color);
         z-index: 9;
         cursor: pointer;
 
@@ -27,7 +27,7 @@
         inset: 1.2em auto auto 0.6em;
         width: 1.2em;
         height: 2px;
-        background-color: var(--background-color);
+        background-color: var(--pico-background-color);
         
         transition: all 0.3s ease-in;
         transform-origin: center;
@@ -78,7 +78,7 @@
             position: absolute;
             width: 2px;
             height: 0;
-            background-color: var(--muted-color);
+            background-color: var(--pico-muted-color);
             content: "";
 
             transition: height 0.3s ease;
@@ -108,7 +108,7 @@
                 position: absolute;
                 width: 20vmin;
                 height: 2px;
-                background-color: var(--muted-color);
+                background-color: var(--pico-muted-color);
                 content: "";
 
                 transition:
@@ -142,7 +142,7 @@
     &[open] > &-box {
         width: 100%;
         border-radius: 0;
-        box-shadow: 0 0 0 calc(100vmax * 2) var(--background-color);
+        box-shadow: 0 0 0 calc(100vmax * 2) var(--pico-background-color);
     }
 
     &[open] > &-box > &-icon {

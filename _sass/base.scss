@@ -1,8 +1,7 @@
 // styles of basic elements
 
 :root {
-    --font-family: "LXGW WenKai Lite", sans-serif;
-    --card-sectionning-background-color: var(--card-sectioning-background-color);
+    --pico-font-family: "LXGW WenKai Lite", sans-serif;
 }
 
 html {
@@ -16,9 +15,9 @@ html {
 
 body {
     margin: auto;
-    padding: 0 var(--spacing);
     @media (max-width: 420px) {
         max-width: 100%;
+        padding: 0 var(--pico-spacing);
     }
     @media (min-width: 800px) {
         max-width: 80%;
@@ -32,8 +31,7 @@ body {
     }
 
     & > header {
-        margin-top: 2em;
-        padding-bottom: 0;
+        margin-top: 3em;
 
         animation: zoomIn 1s backwards;
 
@@ -45,13 +43,12 @@ body {
             font-size: 1em;
         }
     }
-
-    & > footer {
-        padding-top: 0;
-    }
 }
 
-// math blocks
+a {
+    --pico-text-decoration: none;
+}
+
 math {
     padding-bottom: 0.5em;
 }
@@ -61,24 +58,11 @@ mjx-container {
     min-width: auto !important;
 }
 
-// images
 img {
     max-width: 100%;
     vertical-align: middle;
 }
 
-// thematic break
-hr {
-    text-align: center;
-    height: auto;
-    border-top: none;
-
-    &::after {
-        content: ". . .";
-    }
-}
-
-// dialog
 dialog {
     &[open] {
         animation: fadeIn 0.5s backwards;
@@ -93,7 +77,7 @@ dialog {
 
         header {
             position: sticky;
-            top: calc(var(--block-spacing-vertical) * -1);
+            top: calc(var(--pico-block-spacing-vertical) * -1);
             z-index: 1;
 
             nav {
@@ -118,32 +102,23 @@ dialog {
     }
 }
 
-// button
-button {
-    width: auto;
-}
-
-// code blocks
 pre {
     overflow: auto;
     max-height: 500px;
     font: 0.8em "Roboto Mono" !important;
 }
 
-// ruby
 ruby rt {
-    color: var(--color);
+    color: var(--pico-color);
 }
 
-// iframe
 iframe {
     margin-bottom: 1em;
 }
 
-// blockquote
 blockquote {
     border-radius: 0.2em;
-    background: var(--card-sectioning-background-color);
+    background: var(--pico-card-sectioning-background-color);
 
     p {
         margin: 0;
@@ -189,7 +164,11 @@ blockquote {
     }
 }
 
-// table
 table {
     white-space: nowrap;
+}
+
+nav[aria-label=breadcrumb] {
+    --pico-nav-breadcrumb-divider: '/';
+    justify-content: end;
 }

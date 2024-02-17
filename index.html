@@ -27,14 +27,14 @@ title: home
 
 <nav class="post-paginator"><ul>
     <!-- previous page button -->
-    <li><a role="button" class="faa-parent animated-hover"
+    <li><a class="faa-parent animated-hover"
         href="{{ paginator.previous_page_path | default:'/' }}"
     ><i class="fa-solid fa-arrow-left faa-horizontal faa-reverse"></i></a></li>
 
     <!-- page selector -->
-    <li><details role="list">
-        <summary aria-haspopup="listbox" role="button">{{ paginator.page }} / {{ paginator.total_pages }}</summary>
-        <ul role="listbox">
+    <li><details class="dropdown">
+        <summary>{{ paginator.page }} / {{ paginator.total_pages }}</summary>
+        <ul>
             {% for i in (1..paginator.total_pages) %}
                 {% if forloop.first %}
                 <li><a href="{{ site.paginate_path | replace:'page:num/', '' }}">
@@ -50,7 +50,7 @@ title: home
     </details></li>
 
     <!-- next page button -->
-    <li><a role="button" class="faa-parent animated-hover"
+    <li><a class="faa-parent animated-hover"
         href="{{ paginator.next_page_path | default:'/' }}"
     ><i class="fa-solid fa-arrow-right faa-horizontal"></i></a></li>
 </ul></nav>

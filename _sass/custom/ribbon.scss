@@ -13,12 +13,12 @@
     animation: 1s fadeInDown 0.5s backwards;
 }
 
-[ribbon="tl"]::after {
+[ribbon=tl]::after {
     @include ribbon;
     left: 1em;
 }
 
-[ribbon="tr"]::after {
+[ribbon=tr]::after {
     @include ribbon;
     right: 1em;
 }

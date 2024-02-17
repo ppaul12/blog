@@ -5,14 +5,14 @@
         padding-bottom: 100%;
     }
     height: 85vh;
-    box-shadow: 0 0 20px var(--muted-border-color);
+    box-shadow: 0 0 20px var(--pico-muted-border-color);
     margin-bottom: 2em;
 
     animation: fadeIn 3s backwards;
 }
 
 .lg-container {
-    font-family: var(--font-family) !important;
+    font-family: var(--pico-font-family) !important;
     
     .lg-sub-html {
         color: #999;

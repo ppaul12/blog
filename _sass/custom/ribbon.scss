@@ -1,6 +1,7 @@
-@mixin ribbon {
+[ribbon]::after {
     position: absolute;
     top: -0.3em;
+    right: 1em;
     width: 1.2em;
     height: 1.6em;
     background: $nord13;
@@ -11,14 +12,4 @@
     z-index: 2;
 
     animation: 1s fadeInDown 0.5s backwards;
-}
-
-[ribbon=tl]::after {
-    @include ribbon;
-    left: 1em;
-}
-
-[ribbon=tr]::after {
-    @include ribbon;
-    right: 1em;
 }

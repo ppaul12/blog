@@ -1,5 +1,6 @@
 .post {
     &-card {
+        @extend .card-hover;
         display: flex;
         flex-wrap: wrap;
         align-content: space-between;
@@ -8,10 +9,6 @@
         min-height: 10em;
         
         animation: 2s fadeIn calc(var(--ith, 0) * 200ms) backwards;
-
-        &:has(.post-cover) {
-            align-items: center;
-        }
     }
 
     &-title {
@@ -28,18 +25,19 @@
         height: 12em;
         background-size: cover;
         background-position: center;
-        [data-theme=light] & {
-            opacity: 0.8;
-        }
-        [data-theme=dark] & {
-            opacity: 0.6;
-        }
+        opacity: 0.6;
         border-top-left-radius: var(--pico-border-radius);
         @media (max-width: 420px) {
             border-top-right-radius: var(--pico-border-radius);
         }
         @media (min-width: 420px) {
             border-bottom-left-radius: var(--pico-border-radius);
+        }
+
+        transition: opacity 0.5s ease;
+
+        &:hover {
+            opacity: 1.0;
         }
     }
 

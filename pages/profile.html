@@ -2,11 +2,11 @@
 layout: default
 title: profile
 permalink: /profile.html
-required: no-header no-footer
+required: no-footer
 ---
 
 <article class="profile">
-    <header class="card-gradient">
+    <header class="card">
         <div class="profile-avatar"><img src="/assets/img/avatar.jpeg"></div>
         <div class="profile-name">Peng Ao</div>
     </header>
@@ -53,7 +53,7 @@ required: no-header no-footer
         {% endfor %}
     </ul>
     
-    <footer class="card-gradient">
+    <footer class="card">
         <ul class="profile-info">
             {% for friend in site.data.profiles.friends %}
             <li class="profile-info-item" style="--ith: {{ forloop.index0 }}"><small>

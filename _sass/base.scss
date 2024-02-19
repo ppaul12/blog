@@ -73,7 +73,8 @@ dialog {
     }
 
     article {
-        max-height: 85vh;
+        width: auto;
+        max-height: 80vh;
 
         header {
             position: sticky;

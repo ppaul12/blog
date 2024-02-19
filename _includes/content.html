@@ -1,9 +1,9 @@
-{% unless page.required contains "no-header" %}
+{% if page.required contains "with-header" %}
 <header>
     <div class="main-title">Life Goes On</div>
     <div class="sub-title">そして生活が続く...来日方长</div>
 </header>
-{% endunless %}
+{% endif %}
 
 {% if content contains "<table>" %}
     {% assign content = content
@@ -21,7 +21,7 @@
 {% unless page.required contains "no-footer" %}
 <footer>
     <small>by PENG AO made with <i class="fa-solid fa-heart faa-pulse animated faa-slow"></i></small><br>
-    <small><i class="fa-regular fa-copyright"></i> 2021 - 2023</small><br>
+    <small><i class="fa-regular fa-copyright"></i> 2021 - 2024</small><br>
     <small>Some rights reserved.</small><br>
     <img src="/assets/img/Produced-By-Human.svg" alt="Produce By Human Not AI" width="100px">
 </footer>

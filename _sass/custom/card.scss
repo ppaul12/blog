@@ -1,25 +1,18 @@
 .card {
     position: relative;
+    background: linear-gradient(to right, var(--pico-card-background-color), var(--pico-card-sectioning-background-color));
 
     animation: fadeIn 3s backwards;
 
     &-hover {
         @extend .card;
+        border: 1px solid var(--pico-background-color);
 
-        transition: transform 0.5s ease;
+        transition: all 0.5s ease;
 
         &:hover {
+            border-color: var(--pico-color);
             transform: scale(1.02) translateY(-0.5em);
         }
-    }
-
-    &-gradient {
-        @extend .card;
-        background: linear-gradient(to right, var(--pico-card-background-color), var(--pico-card-sectioning-background-color));
-    }
-
-    &-gradient-hover {
-        @extend .card-hover;
-        @extend .card-gradient;
     }
 }

@@ -1,5 +1,6 @@
 .book {
     &-card {
+        @extend .card;
         display: flex;
         @media (max-width: 420px) {
             flex-direction: column;
@@ -23,8 +24,8 @@
         }
 
         .cover {
-            width: 12vw;
-            height: 16vw;
+            width: 9vw;
+            height: 12vw;
             min-width: 150px;
             min-height: 200px;
             object-fit: fill;

@@ -2,7 +2,6 @@
 layout: page
 title: bookshelf
 subtitle: nourish the mind ...
-icon: "fa-solid fa-book fa-fw"
 permalink: /books.html
 ---
 
@@ -12,7 +11,7 @@ permalink: /books.html
     <summary>{{ bookset.year }} ({{ bookset.books.size }})</summary>
     {% assign books = bookset.books | sort:"date" %}
     {% for book in books %}
-    <article class="book-card card-gradient" {% if bookset.year == "Reading" %}ribbon="tr"{% endif %}>
+    <article class="book-card" {% if bookset.year == "Reading" %}ribbon{% endif %}>
         <div class="book-img"><a href="{{ book.link }}">
             <img class="cover" src="/assets/img/covers/{{ book.title }}.jpg" alt="{{ book.title }}">
         </a></div>

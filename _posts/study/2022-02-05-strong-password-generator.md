@@ -25,7 +25,32 @@ required: code
 
 # 源码
 
-<pre class="line-numbers" data-src="/assets/src/strong-password-generator/password-gen.py"></pre>
+```python
+import random, hashlib
+from collections import deque
+ 
+LOWERCASE_LETTER = 'abcdefghijklmnopqrstuvwxyz'
+UPPERCASE_LETTER = LOWERCASE_LETTER.upper()
+DIGITS = '0123456789'
+SYMBOLS = '`~!@#$%^&*()_+-={}[]\|:;"\'<>,.?/'
+ 
+def generate(mainInfo: str, subInfo: str, length: int, src: str) -> str:
+    hashMain = hashlib.sha256(mainInfo.encode()).digest()
+    hashSub = hashlib.sha256(subInfo.encode()).digest()
+    # set random seed with subInfo and  shuffle the provided source
+    random.seed(hashSub)
+    src = list(src)
+    random.shuffle(src)
+    # build source table
+    table = list()
+    for idx in range(length):
+        table.append(deque(src))
+        # rotate each row basing on subInfo
+        table[idx].rotate(hashSub[idx])
+    # select certain table elements basing on mainInfo
+    password = ''.join(table[idx][hashMain[idx] % len(src)] for idx in range(length))
+    return password
+```
 
 # 检验
 

@@ -43,39 +43,3 @@ Besides these two, one optional strategy is write-through for the 1st modificati
 The actual designs are divided into two parts, one for the overall cache system and another for the cache block that stores data. Convincing the upper layer that its next layer has the wanted data, we may universalize the structure with the design pattern of CoR. Once a cache miss happened at the upper layer, just calling data from the lower layer would be fine. Therefore, the upper layer shall never consider how the lower layer provides those data. 
 
 <div class="img-frame"><img src="/assets/src/multi-layer-cache/cache-class.png"></div>
-
-# Usage
-
-Based on the previous sections, it is naive for us to translate those concepts into code. Just initialize different kinds of caches and link them together. Then a multi-layer cache system is constructed.
-
-```cpp
-Cache mem(32, "mem"); // main mem
-Cache l3(4, 4, 1, &mem, "l3 cache"); // DM cache
-Cache l2(2, 1, 4, &l3, "l2 cache"); // FA cache
-Cache l1(1, 2, 2, &l2, "l1 cache"); // SA cache
-```
-
-Initializing the main memory with some data, and after conducting some reading and writing on l1-cache,  there will be the expected results.
-
-```cpp
-for (u32 i = 0; i < 32; i++)
-    mem.writeWord(i << 2, i);
-
-l1.readWord(1 << 2);
-l1.readWord(2 << 2);
-l1.readWord(3 << 2);
-l1.readWord(4 << 2);
-l1.writeWord(1 << 2, 0xFF);
-l1.readWord(6 << 2);
-l1.details(true);
-
-l1.flush(true);
-l1.details(true);
-```
-
-# Source codes
-
-Source codes are available here.
-
-- [cache.h](/assets/src/multi-layer-cache/cache.h)
-- [cache.cpp](/assets/src/multi-layer-cache/cache.cpp)

@@ -28,10 +28,6 @@
     &.quote {
         position: relative;
         padding: 1em 2em;
-        max-width: 80%;
-        @media (max-width: 420px) {
-            max-width: 100%;
-        }
 
         &::before, &::after {
             position: absolute;

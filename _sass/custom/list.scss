@@ -1,5 +1,5 @@
 // item list
-ul.item-list {
+.item-list {
     li {
         list-style-position: inside;
         white-space: nowrap;
@@ -15,7 +15,7 @@ ul.item-list {
 }
 
 // tree list
-ul.tree-list {
+.tree-list {
     min-width: 300px;
 
     animation: fadeInDown 1s backwards;

@@ -26,36 +26,36 @@
 
 {% unless travel.size == 0 %}
 <h2><i class="fa-solid fa-signs-post fa-fw"></i> Traveling</h2>
-<ul class="item-list">
+<ol class="item-list">
     {% for post in travel %}
     <li>
         <a href="{{ post.url }}">{{ post.title }}</a>
         <em>({{ post.date | date:"%Y.%m.%d" }})</em>
     </li>
     {% endfor %}
-</ul>
+</ol>
 {% endunless %}
 
 {% unless thought.size == 0 %}
 <h2><i class="fa-solid fa-book-open-reader fa-fw"></i> Thinking</h2>
-<ul class="item-list">
+<ol class="item-list">
     {% for post in thought %}
     <li>
         <a href="{{ post.url }}">{{ post.title }}</a>
         <em>({{ post.date | date:"%Y.%m.%d" }})</em>
     </li>
     {% endfor %}
-</ul>
+</ol>
 {% endunless %}
 
 {% unless study.size == 0 %}
 <h2><i class="fa-solid fa-laptop-code fa-fw"></i> Studying</h2>
-<ul class="item-list">
+<ol class="item-list">
     {% for post in study %}
     <li>
         <a href="{{ post.url }}">{{ post.title }}</a>
         <em>({{ post.date | date:"%Y.%m.%d" }})</em>
     </li>
     {% endfor %}
-</ul>
+</ol>
 {% endunless %}

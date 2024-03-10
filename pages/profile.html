@@ -56,7 +56,10 @@ required: no-footer
     <footer class="card">
         <ul class="profile-info">
             {% for friend in site.data.profiles.friends %}
-            <li class="profile-info-item" style="--ith: {{ forloop.index0 }}"><small>
+            <li class="profile-info-item"
+                style="--ith: {{ forloop.index0 }}"
+                {% if friend.marked %}heart{% endif %}
+            ><small>
                 <i class="fa-solid fa-user-group fa-fw"></i>
                 <a href="{{ friend.link }}" data-tooltip="{{ friend.info }}">{{ friend.name }}</a>
             </small></li>

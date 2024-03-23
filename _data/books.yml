@@ -1,16 +1,12 @@
 - year: Reading
   books:
-    # - title: 三四郎(日)
-    #   author: 夏目漱石
-    #   link: https://www.shinchosha.co.jp/book/101004/
-    
-    - title: 小山词
-      author: 晏几道
-      link: https://book.douban.com/subject/30206758/
-    
-    - title: 一个人的草木诗经
-      author: 子梵梅
-      link: https://book.douban.com/subject/25885420/
+    # - title: 小山词
+    #   author: 晏几道
+    #   link: https://book.douban.com/subject/30206758/
+
+    - title: 我们
+      author: 扎米亚京
+      link: https://book.douban.com/subject/26879595/
 
 - year: 2024
   books:
@@ -18,6 +14,11 @@
       author: 苏缨
       link: https://book.douban.com/subject/30426295/
       date: "01.28"
+    
+    - title: 一个人的草木诗经
+      author: 子梵梅
+      link: https://book.douban.com/subject/25885420/
+      date: "03.17"
 
 - year: 2023
   books:
@@ -126,7 +127,7 @@
       link: https://book.douban.com/subject/30358016/
       date: "12.24"
 
-    - title: 三四郎(汉)
+    - title: 三四郎
       author: 夏目漱石
       link: https://book.douban.com/subject/26877749/
       date: "12.29"

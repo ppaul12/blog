@@ -19,6 +19,9 @@ body {
         max-width: 100%;
         padding: 0 var(--pico-spacing);
     }
+    @media (min-width: 660px) {
+        max-width: 90%;
+    }
     @media (min-width: 800px) {
         max-width: 80%;
     }

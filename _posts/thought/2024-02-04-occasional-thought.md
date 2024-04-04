@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 一生能在几座城市生活
-subtitle: 甲辰立春偶感
+subtitle: 甲辰立春期间有感
 tags: 随想
 cover: /assets/src/occasional-thought/20240204.jpeg
 ---

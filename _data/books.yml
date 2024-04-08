@@ -4,9 +4,13 @@
     #   author: 晏几道
     #   link: https://book.douban.com/subject/30206758/
 
-    - title: 我们
-      author: 扎米亚京
-      link: https://book.douban.com/subject/26879595/
+    - title: 1984
+      author: 乔治·奥威尔
+      link: https://book.douban.com/subject/25798623/
+    
+    - title: 流萤集
+      author: 泰戈尔
+      link: https://book.douban.com/subject/4703525/
 
 - year: 2024
   books:
@@ -19,6 +23,11 @@
       author: 子梵梅
       link: https://book.douban.com/subject/25885420/
       date: "03.17"
+    
+    - title: 我们
+      author: 扎米亚京
+      link: https://book.douban.com/subject/26879595/
+      date: "04.07"
 
 - year: 2023
   books:
@@ -65,7 +74,7 @@
       date: "07.23"
     
     - title: 旅行的艺术
-      author: Alain de Botton
+      author: 阿兰·德波顿
       link: https://book.douban.com/subject/4313080/
       date: "08.01"
     

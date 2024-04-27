@@ -2,7 +2,7 @@
 layout: post
 title: 图论memo
 tags: 离散数学
-required: math mermaid
+required: math graph
 ---
 
 # 图

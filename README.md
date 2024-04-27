@@ -29,6 +29,7 @@ with the help of the following works.
 - search: [Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search)
 - footprint map: [jVectorMap](https://jvectormap.com)
 - album: [lightGallery](https://github.com/sachinchoolur/lightGallery) + [exifr](https://github.com/MikeKovarik/exifr)
+- analytics: [GoatCounter](https://www.goatcounter.com)
 - ...
 
 Just execute these commands to run it locally.

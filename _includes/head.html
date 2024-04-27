@@ -3,26 +3,21 @@
         default-src 'none';
         script-src 'self' 'unsafe-inline' 'unsafe-eval'
             https://cdn.jsdelivr.net/
-            https://www.googletagmanager.com/
-            https://utteranc.es/;
+            https://utteranc.es/
+            https://gc.zgo.at/;
         style-src 'self' 'unsafe-inline'
             https://cdn.jsdelivr.net/;
         img-src 'self' data:
             https://cdn.jsdelivr.net/
-            https://www.googletagmanager.com/
-            https://www.google-analytics.com/
             https://github.com/
-            https://avatars.githubusercontent.com/
             https://github-readme-stats.vercel.app/
             https://cdn.simpleicons.org/;
         font-src 'self' data:
             https://cdn.jsdelivr.net/;
         connect-src 'self'
             https://cdn.jsdelivr.net/
-            https://www.googletagmanager.com/
-            https://www.google-analytics.com
-            https://www.analytics.google.com/
-            https://api.bloggify.net/gh-calendar/;
+            https://peng-ao.goatcounter.com/count
+            https://peng-ao.goatcounter.com/counter/;
         media-src 'self';
         object-src 'self';
         child-src 'self' 'unsafe-inline'
@@ -41,16 +36,9 @@
     {% seo title=false %}
     <link rel="icon" type="image/png" href="/assets/img/avatar.jpeg">
 
-    {% if jekyll.environment == "production" %}
-    <!-- google analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DJSSTNL817"></script>
-    <script>
-        window.dataLayer = window.dataLayer || []
-        function gtag() { dataLayer.push(arguments) }
-        gtag('js', new Date())
-        gtag('config', 'G-DJSSTNL817')
-    </script>
-    {% endif %}
+    <!-- goat counter -->
+    <script src="/assets/js/views.js"></script>
+    <script data-goatcounter="https://peng-ao.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 
     <!-- pico css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css">
@@ -92,7 +80,7 @@
     </script>
     {% endif %}
 
-    {% if page.required contains "mermaid" %}
+    {% if page.required contains "graph" %}
     <!-- mermaid -->
     <script src="https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true, theme:"forest", flowchart:{useMaxWidth:false, htmlLabels:true}})</script>

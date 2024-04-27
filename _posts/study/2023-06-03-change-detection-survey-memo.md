@@ -2,7 +2,7 @@
 layout: post
 title: 点云变化检测memo
 tags: 点云
-required: math mermaid
+required: math graph
 ---
 
 - toc

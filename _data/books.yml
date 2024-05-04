@@ -1,16 +1,16 @@
 - year: Reading
   books:
-    # - title: 小山词
-    #   author: 晏几道
-    #   link: https://book.douban.com/subject/30206758/
-
-    - title: 1984
-      author: 乔治·奥威尔
-      link: https://book.douban.com/subject/25798623/
+    - title: 小山词
+      author: 晏几道
+      link: https://book.douban.com/subject/30206758/
     
     - title: 流萤集
       author: 泰戈尔
       link: https://book.douban.com/subject/4703525/
+
+    - title: 美丽新世界
+      author: 阿道司·赫胥黎
+      link: https://book.douban.com/subject/27002046/
 
 - year: 2024
   books:
@@ -28,6 +28,11 @@
       author: 扎米亚京
       link: https://book.douban.com/subject/26879595/
       date: "04.07"
+    
+    - title: 1984
+      author: 乔治·奥威尔
+      link: https://book.douban.com/subject/25798623/
+      date: "05.01"
 
 - year: 2023
   books:

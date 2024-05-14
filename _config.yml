@@ -3,7 +3,6 @@ description: My tranquil place ...
 
 plugins:
   - jekyll-seo-tag
-  - jekyll-coffeescript
   - jekyll-paginate
 
 paginate: 10

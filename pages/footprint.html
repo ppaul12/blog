@@ -8,7 +8,7 @@ required: map
 
 <div class="travel-map-container">
     <div class="travel-map-nav">
-        <button data-target="#china-map">
+        <button data-target="#china-map" active>
             CHINA
         </button><button data-target="#japan-map">
             JAPAN
@@ -16,7 +16,7 @@ required: map
             WORLD
         </button>
     </div>
-    <div id="china-map" class="travel-map"></div>
+    <div id="china-map" class="travel-map" active></div>
     <div id="japan-map" class="travel-map"></div>
     <div id="world-map" class="travel-map"></div>
 </div>
@@ -29,9 +29,9 @@ required: map
     window.addEventListener("load", async () => {
         // load maps
         for (const info of [
-            { id: "#china-map", map: "china_merc", prefix: "/assets/json/footprint-china" },
-            { id: "#japan-map", map: "japan_merc", prefix: "/assets/json/footprint-japan" },
-            { id: "#world-map", map: "world_merc", prefix: "/assets/json/footprint-world" },
+            {id: "#china-map", map: "china_merc", prefix: "/assets/json/footprint-china"},
+            {id: "#japan-map", map: "japan_merc", prefix: "/assets/json/footprint-japan"},
+            {id: "#world-map", map: "world_merc", prefix: "/assets/json/footprint-world"},
         ]) {
             new jvm.Map({
                 container: $(info.id),
@@ -41,13 +41,15 @@ required: map
                 zoomMax: 6.0,
                 showTooltip: false,
                 hoverOpacity: 0.7,
-                markerStyle: { initial: { fill: "#B48EAD99", r: 3 } },
+                markerStyle: {initial: {fill: "#B48EAD99", r: 3}},
                 markers: await asyncLoadJSON(`${info.prefix}-marker.json`),
-                series: { regions: [{
-                    values: await asyncLoadJSON(`${info.prefix}-region.json`),
-                    scale: ["#EBCB8B", "#D08770"],
-                    normalizeFunction: "polynomial",
-                }] },
+                series: {
+                    regions: [{
+                        values: await asyncLoadJSON(`${info.prefix}-region.json`),
+                        scale: ["#EBCB8B", "#D08770"],
+                        normalizeFunction: "polynomial",
+                    }]
+                },
             })
         }
         // init tab view
@@ -55,6 +57,5 @@ required: map
             document.querySelector(".travel-map-container"),
             document.querySelector(".travel-map-nav")
         )
-        document.querySelector(".travel-map-nav > button").click()
     })
 </script>

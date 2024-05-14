@@ -7,7 +7,7 @@
         margin-top: 2em;
         padding: 0;
         min-height: 10em;
-        
+
         animation: 2s fadeIn calc(var(--ith, 0) * 200ms) backwards;
     }
 
@@ -19,17 +19,21 @@
 
     &-cover {
         width: 12em;
+
         @media (max-width: 420px) {
             width: 100%;
         }
+
         height: 12em;
         background-size: cover;
         background-position: center;
-        opacity: 0.6;
+        opacity: 0.8;
         border-top-left-radius: var(--pico-border-radius);
+
         @media (max-width: 420px) {
             border-top-right-radius: var(--pico-border-radius);
         }
+
         @media (min-width: 420px) {
             border-bottom-left-radius: var(--pico-border-radius);
         }
@@ -43,10 +47,10 @@
 
     &-paginator {
         justify-content: center !important;
-    
+
         summary {
             box-shadow: none !important;
-    
+
             &+ul {
                 bottom: 100%;
                 max-height: 10em;
@@ -62,28 +66,28 @@
 
         h2 {
             counter-reset: h2;
-    
+
             &::before {
                 margin-right: 0.5em;
                 counter-increment: h1;
                 content: counter(h1);
             }
         }
-    
+
         h3 {
             counter-reset: h3;
-    
+
             &::before {
                 margin-right: 0.5em;
                 counter-increment: h2;
-                content: counter(h1)"."counter(h2);
+                content: counter(h1)"." counter(h2);
             }
         }
-    
+
         h4::before {
             margin-right: 0.5em;
             counter-increment: h3;
-            content: counter(h1)"."counter(h2)"."counter(h3);
+            content: counter(h1)"." counter(h2)"." counter(h3);
         }
 
         &-plain {
@@ -103,8 +107,9 @@
         justify-content: space-between !important;
         flex-wrap: wrap;
         padding-bottom: 1em;
-        
-        &-prev, &-next {
+
+        &-prev,
+        &-next {
             display: block;
             flex-grow: 1;
             margin: 0.5em 1em;
@@ -115,7 +120,7 @@
             background: var(--pico-card-background-color);
             text-decoration: none;
 
-            transition: transform 0.5s ease;
+            transition: all 0.5s ease;
 
             &::before {
                 display: block;
@@ -129,7 +134,8 @@
             }
 
             &:hover {
-                transform: scale(1.05);
+                border-color: var(--pico-color);
+                transform: scale(1.02);
             }
         }
 

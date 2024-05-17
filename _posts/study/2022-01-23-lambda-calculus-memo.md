@@ -1,7 +1,7 @@
 ---
 layout: post
-title: λ计算memo
-tags: 计算理论
+title: λ计算
+tags: 计算理论 备忘录
 required: math code
 ---
 

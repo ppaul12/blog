@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 图论memo
-tags: 离散数学
+title: 图论
+tags: 离散数学 备忘录
 required: math graph
 ---
 

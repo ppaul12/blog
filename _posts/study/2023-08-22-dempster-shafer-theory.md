@@ -1,8 +1,8 @@
 ---
 layout: post
-title: DS理论memo
+title: DS理论
 subtitle: Dempster Shafer Theory
-tags: 统计 C/C++
+tags: 统计 C/C++ 备忘录
 required: math code
 ---
 

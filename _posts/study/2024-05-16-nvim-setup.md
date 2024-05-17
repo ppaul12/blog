@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Nvim配置memo
-tags: 操作系统
+title: NVIM配置
+tags: 操作系统 备忘录
 required: code
 ---
 

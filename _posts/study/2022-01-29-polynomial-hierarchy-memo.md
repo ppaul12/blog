@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 多项式谱系memo
-tags: 计算理论
+title: 多项式谱系
+tags: 计算理论 备忘录
 required: math
 ---
 

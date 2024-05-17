@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 点云变化检测memo
-tags: 点云
+title: 点云变化检测
+tags: 点云 备忘录
 required: math graph
 ---
 

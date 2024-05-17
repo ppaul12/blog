@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 四元数与旋转memo
-tags: 计算机图形
+title: 四元数与旋转
+tags: 计算机图形 备忘录
 required: math
 ---
 

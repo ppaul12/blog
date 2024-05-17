@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 摄影memo
-tags: 旅行
+title: 摄影笔记
+tags: 旅行 备忘录
 required: math
 ---
 

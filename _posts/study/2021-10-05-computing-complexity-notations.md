@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 渐近记号memo
-tags: 计算理论
+title: 渐近记号
+tags: 计算理论 备忘录
 required: math
 ---
 

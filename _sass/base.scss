@@ -8,32 +8,37 @@ html {
     transition: background 0.5s ease;
     scroll-behavior: smooth !important;
 
-    &[overlay], &[fullscreen] {
+    &[overlay],
+    &[fullscreen] {
         overflow: hidden;
     }
 }
 
 body {
     margin: auto;
+
     @media (max-width: 420px) {
         max-width: 100%;
         padding: 0 var(--pico-spacing);
     }
+
     @media (min-width: 660px) {
         max-width: 90%;
     }
+
     @media (min-width: 800px) {
         max-width: 80%;
     }
+
     @media (min-width: 1200px) {
         max-width: 50%;
     }
 
-    & > :is(header, footer) {
+    &> :is(header, footer) {
         text-align: center;
     }
 
-    & > header {
+    &>header {
         margin-top: 3em;
 
         animation: zoomIn 1s backwards;
@@ -41,7 +46,7 @@ body {
         .main-title {
             font: 3em "Allura";
         }
- 
+
         .sub-title {
             font-size: 1em;
         }
@@ -94,12 +99,12 @@ dialog {
         text-align: right;
 
         transition: opacity 0.5s ease;
-    
+
         &::before {
             font: 900 1em "Font Awesome 6 Free";
             content: "\f00d";
         }
-    
+
         &:hover {
             opacity: 0.6;
         }
@@ -107,7 +112,6 @@ dialog {
 }
 
 pre {
-    overflow: auto;
     max-height: 500px;
     font: 0.8em "Roboto Mono" !important;
 }

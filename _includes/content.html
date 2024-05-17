@@ -12,9 +12,7 @@
     %}
 {% endif %}
 {% if page.required contains "plain-heading" %}
-    {% assign content = content
-        | replace:"post-content","post-content-plain"
-    %}
+    {% assign content = content | replace:"post-content","post-content-plain" %}
 {% endif %}
 <main>{{ content }}</main>
 

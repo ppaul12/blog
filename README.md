@@ -23,7 +23,7 @@ with the help of the following works.
 - badges: [shields](https://github.com/badges/shields)
 - animations: [animate.css](https://github.com/animate-css/animate.css) + [font-awesome-animation](https://l-lin.github.io/font-awesome-animation/)
 - comments: [utterances](https://utteranc.es)
-- code highlight: [prism.js](https://prismjs.com/index.html)
+- code highlight: [highlight.js](https://highlightjs.org)
 - math formulas: [MathJax](https://www.mathjax.org)
 - flow charts: [Mermaid](https://mermaid.js.org)
 - search: [Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search)
@@ -34,7 +34,7 @@ with the help of the following works.
 
 Just execute these commands to run it locally.
 
-```shell
+```bash
 gem install bundler
 bundle install
 bundle exec jekyll server

@@ -113,7 +113,11 @@ dialog {
 
 pre {
     max-height: 500px;
-    font: 0.8em "Roboto Mono" !important;
+    font: 0.6em "Roboto Mono" !important;
+
+    &>code {
+        padding: 0;
+    }
 }
 
 ruby rt {

@@ -17,6 +17,7 @@ git checkout stable
 make CMAKE_BUILD_TYPE=RelWithDebInfo
 cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
 ```
+{: .line-numbers}
 
 ---
 
@@ -26,6 +27,7 @@ Config
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/{.git,LICENSE,.gitignore,README.md,lua/plugins/example.lua}
 ```
+{: .line-numbers}
 
 ```lua
 -- 编辑 ~/.config/nvim/lua/config/options.lua 文件
@@ -42,6 +44,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
 })
 ```
+{: .line-numbers}
 
 ```lua
 -- 创建并编辑 ~/.config/nvim/lua/plugins/init.lua 文件
@@ -93,6 +96,7 @@ return {
     },
 }
 ```
+{: .line-numbers}
 
 ```lua
 --- 编辑 ~/.config/nvim/lua/config/lazy.lua 文件
@@ -105,5 +109,6 @@ require("lazy").setup({
     },
 })
 ```
+{: .line-numbers}
 
 有关LazyVim详细的Keymaps可参照其[主页](http://www.lazyvim.org/)，或[此链接](http://www.lazyvim.org/keymaps)。

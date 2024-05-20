@@ -11,6 +11,7 @@ Terminal Installation
 brew install --cask iterm2
 # Ubuntu: 默认终端
 ```
+{: .line-numbers}
 
 ---
 
@@ -31,6 +32,7 @@ cd nord-gnome-terminal/src
 ./nord.sh
 # 回到终端选择颜色主题
 ```
+{: .line-numbers}
 
 ---
 
@@ -48,6 +50,7 @@ logout
 # 确认新shell为zsh
 echo $SHELL
 ```
+{: .line-numbers}
 
 ---
 
@@ -62,6 +65,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # 回到终端反映最新配置
 source ~/.zshrc
 ```
+{: .line-numbers}
 
 ---
 
@@ -74,6 +78,7 @@ plugins=(... zsh-syntax-highlighting)
 # 回到终端反映最新配置
 source ~/.zshrc
 ```
+{: .line-numbers}
 
 ```bash
 # 在 ~/.zshrc 中添加配置信息
@@ -84,3 +89,4 @@ source /etc/zsh_command_not_found
 # 回到终端反映最新配置
 source ~/.zshrc
 ```
+{: .line-numbers}

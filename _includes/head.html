@@ -64,11 +64,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/allura@latest/index.min.css">
 
     {% if page.required contains "code" %}
-    <!-- highlight js -->
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/highlight.min.js"></script>
+    <!-- prism js -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/components/prism-core.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes@latest/themes/prism-one-dark.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/atom-one-dark.min.css">
-    <script>hljs.highlightAll()</script>
+        href="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/line-numbers/prism-line-numbers.min.css">
     <!-- roboto mono font -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/roboto-mono@latest/index.min.css">
     {% endif %}

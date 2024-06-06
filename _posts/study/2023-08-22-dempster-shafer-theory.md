@@ -2,7 +2,7 @@
 layout: post
 title: DS理论
 subtitle: Dempster Shafer Theory
-tags: 统计 C/C++ 备忘录
+tags: 统计 C/C++
 required: math code
 ---
 

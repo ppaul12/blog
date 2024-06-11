@@ -24,9 +24,13 @@
 }
 
 [mark]::after {
-    @include icon($nord13, "\f02e")
+    @include icon($nord13, "\f02e");
+}
+
+[edit]::after {
+    @include icon($nord12, "\f111");
 }
 
 [heart]::after {
-    @include icon($nord11, "\f004")
+    @include icon($nord11, "\f004");
 }

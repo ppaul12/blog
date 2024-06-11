@@ -30,6 +30,7 @@ permalink: /archive.html
     <li data-tags="{{ post.tags | join:' ' }}"
         data-date="{{ post.date | date:'%m.%d' }}"
         {% if post.marked %}mark{% endif %}
+        {% if post.edited %}edit{% endif %}
     ><a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
 </ul>

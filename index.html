@@ -4,7 +4,28 @@ title: home
 required: with-header
 ---
 
-{% for post in paginator.posts %}
+{% assign edited = site.posts | where_exp:"post", "post.edited == true" %}
+{% assign normal = site.posts | where_exp:"post", "post.edited != true" %}
+{% assign posts = "" | split: "" %}
+
+{% assign start_num = paginator.page | minus:1 | times:paginator.per_page %}
+{% assign edited_num = edited.size | minus:start_num | at_least:0 %}
+{% if edited_num > 0 %}
+    {% for idx in (start_num..edited.size) limit:edited_num %}
+        {% assign posts = posts | push:edited[idx] %}
+    {% endfor %}
+{% endif %}
+
+{% assign start_num = start_num | minus:edited.size | at_least:0 %}
+{% assign normal_num = paginator.posts.size | minus:edited_num %}
+{% assign end_num = start_num | plus:normal_num | minus:1 %}
+{% if normal_num > 0 %}
+    {% for idx in (start_num..end_num) %}
+        {% assign posts = posts | push:normal[idx] %}
+    {% endfor %}
+{% endif %}
+
+{% for post in posts %}
 <article class="post-card" style="--ith: {{ forloop.index0 }}" {% if post.marked %}ribbon{% endif %}>
     {% if post.cover %}
     <div class="post-cover" style="background-image: url('{{ post.cover }}')"></div>
@@ -23,7 +44,7 @@ required: with-header
             <h4><em>{{ post.subtitle }}</em></h4>
         </hgroup>
     </div>
-</article>
+</article>{% if forloop.index == edited_num %}<hr>{% endif %}
 {% endfor %}
 
 <nav class="post-paginator"><ul>

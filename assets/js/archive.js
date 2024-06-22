@@ -18,6 +18,8 @@ const updateAll = () => {
             item.removeAttribute("active")
         }
     })
+    // refresh aos calculation
+    AOS.refresh()
 }
 
 const toggleTag = (event) => {

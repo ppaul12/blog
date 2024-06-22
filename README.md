@@ -5,14 +5,7 @@
 
 ---
 
-This is the repo of my [blog](https://peng-ao.github.io) for recording daily life
-
-- travels
-- thoughts
-- studies
-- ...
-
-with the help of the following works.
+My blog for personal records of travels, thoughts, studies, and so on, with the help of the following works.
 
 - main: [Jekyll](https://jekyllrb.com) + [GitHub pages](https://pages.github.com)
 - styles: [pico.css](https://picocss.com)
@@ -21,7 +14,7 @@ with the help of the following works.
 - icons: [Font Awesome](https://fontawesome.com) + [simple-icons](https://simpleicons.org)
 - repo cards: [github-readme-stats](https://github.com/anuraghazra/github-readme-stats)
 - badges: [shields](https://github.com/badges/shields)
-- animations: [animate.css](https://github.com/animate-css/animate.css) + [font-awesome-animation](https://l-lin.github.io/font-awesome-animation/)
+- animations: [animate.css](https://github.com/animate-css/animate.css) + [aos](https://michalsnik.github.io/aos/) + [font-awesome-animation](https://l-lin.github.io/font-awesome-animation/)
 - comments: [utterances](https://utteranc.es)
 - code highlight: [prism.js](https://prismjs.com/index.html)
 - math formulas: [MathJax](https://www.mathjax.org)

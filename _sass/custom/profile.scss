@@ -56,8 +56,6 @@
 
         &-item {
             list-style: none;
-
-            animation: fadeInLeft 1s calc(var(--ith) * 200ms) backwards;
         }
     }
 }

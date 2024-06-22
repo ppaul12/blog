@@ -8,14 +8,15 @@
 
     transition: all 0.5s ease;
 
-    &:hover, &[active] {
+    &:hover,
+    &[active] {
         border-radius: 0.2em;
     }
 
     &::after {
         margin-left: 0.3em;
         font-size: 0.5em;
-        content: "("attr(data-count)")";
+        content: attr(data-count);
     }
 
     @for $i from 0 through 10 {
@@ -50,7 +51,7 @@
         margin-top: 1em;
         padding: 0.5em 1em 0;
         border-top: 2px solid var(--pico-muted-border-color);
-        
+
         &:not(&:has(*[active])) {
             display: none;
         }
@@ -59,15 +60,11 @@
             display: block;
             font: 2em "Allura";
             content: attr(data-title);
-
-            animation: fadeInRight 1s backwards;
         }
-        
+
         li {
             position: relative;
             list-style: none;
-
-            animation: fadeInLeft 1s backwards;
 
             &:not([active]) {
                 display: none;

@@ -7,15 +7,15 @@ permalink: /books.html
 
 {% assign booksets = site.data.books %}
 {% for bookset in booksets %}
-<details {% if forloop.index <= 2 %}open{% endif %}>
+<details ontoggle="AOS.refresh()" {% if forloop.index <= 2 %}open{% endif %}>
     <summary>{{ bookset.year }} ({{ bookset.books.size }})</summary>
     {% assign books = bookset.books | sort:"date" %}
     {% for book in books %}
-    <article class="book-card" {% if bookset.year == "Reading" %}ribbon{% endif %}>
-        <div class="book-img"><a href="{{ book.link }}">
+    <article class="book-card" data-aos="fade" {% if bookset.year == "Reading" %}ribbon{% endif %}>
+        <div class="book-img" data-aos="zoom-in"><a href="{{ book.link }}">
             <img class="cover" src="/assets/img/covers/{{ book.title }}.jpg" alt="{{ book.title }}">
         </a></div>
-        <hgroup class="book-info">
+        <hgroup class="book-info" data-aos="fade">
             <h3>{{ book.title }}</h3>
             <h4>{{ book.subtitle }}</h4>
             <h4>{{ book.author }}</h4>

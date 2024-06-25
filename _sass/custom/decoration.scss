@@ -11,7 +11,12 @@
     clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 8px), 0 100%);
     z-index: 2;
 
-    animation: 1s fadeInDown 0.5s backwards;
+    animation: 1s fadeInDown 0.3s backwards;
+    transition: transform 1s ease;
+}
+
+[ribbon]:hover::after {
+    transform: translateY(-0.5em);
 }
 
 @mixin icon($color, $content) {

@@ -26,9 +26,9 @@ required: with-header
 {% endif %}
 
 {% for post in posts %}
-<article class="post-card" data-aos="fade" {% if post.marked %}ribbon{% endif %}>
+<article class="post-card" {% if post.marked %}ribbon{% endif %}>
     {% if post.cover %}
-    <div class="post-cover" style="background-image: url('{{ post.cover }}')"></div>
+    <div class="post-cover" data-aos="fade" style="background-image: url('{{ post.cover }}')"></div>
     {% endif %}
     <div class="post-title" data-aos="fade">
         <!-- tag cloud -->

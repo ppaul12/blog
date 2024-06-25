@@ -11,9 +11,9 @@ permalink: /books.html
     <summary>{{ bookset.year }} ({{ bookset.books.size }})</summary>
     {% assign books = bookset.books | sort:"date" %}
     {% for book in books %}
-    <article class="book-card" data-aos="fade" {% if bookset.year == "Reading" %}ribbon{% endif %}>
-        <div class="book-img" data-aos="zoom-in"><a href="{{ book.link }}">
-            <img class="cover" src="/assets/img/covers/{{ book.title }}.jpg" alt="{{ book.title }}">
+    <article class="book-card" {% if bookset.year == "Reading" %}ribbon{% endif %}>
+        <div class="book-img"><a href="{{ book.link }}">
+            <img class="cover" data-aos="zoom-in" src="/assets/img/covers/{{ book.title }}.jpg" alt="{{ book.title }}">
         </a></div>
         <hgroup class="book-info" data-aos="fade">
             <h3>{{ book.title }}</h3>

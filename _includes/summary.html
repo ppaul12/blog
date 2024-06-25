@@ -25,10 +25,10 @@
 {% endunless %}
 
 {% unless travel.size == 0 %}
-<h2><i class="fa-solid fa-signs-post fa-fw"></i> Traveling</h2>
+<h2 data-aos="fade-up"><i class="fa-solid fa-signs-post fa-fw"></i> Traveling</h2>
 <ol class="item-list">
     {% for post in travel %}
-    <li data-aos="fade-left">
+    <li data-aos="fade-up">
         <a href="{{ post.url }}">{{ post.title }}</a>
         <em>({{ post.date | date:"%Y.%m.%d" }})</em>
     </li>
@@ -37,10 +37,10 @@
 {% endunless %}
 
 {% unless thought.size == 0 %}
-<h2><i class="fa-solid fa-book-open-reader fa-fw"></i> Thinking</h2>
+<h2 data-aos="fade-up"><i class="fa-solid fa-book-open-reader fa-fw"></i> Thinking</h2>
 <ol class="item-list">
     {% for post in thought %}
-    <li data-aos="fade-left">
+    <li data-aos="fade-up">
         <a href="{{ post.url }}">{{ post.title }}</a>
         <em>({{ post.date | date:"%Y.%m.%d" }})</em>
     </li>
@@ -49,10 +49,10 @@
 {% endunless %}
 
 {% unless study.size == 0 %}
-<h2><i class="fa-solid fa-laptop-code fa-fw"></i> Studying</h2>
+<h2 data-aos="fade-up"><i class="fa-solid fa-laptop-code fa-fw"></i> Studying</h2>
 <ol class="item-list">
     {% for post in study %}
-    <li data-aos="fade-left">
+    <li data-aos="fade-up">
         <a href="{{ post.url }}">{{ post.title }}</a>
         <em>({{ post.date | date:"%Y.%m.%d" }})</em>
     </li>

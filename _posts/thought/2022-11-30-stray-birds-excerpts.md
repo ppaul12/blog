@@ -12,317 +12,317 @@ tags: 现代诗 随想 摘抄
 
 > Stray birds of summer come to my window to sing and fly away.
 > And yellow leaves of autumn, which have no songs, flutter and fall there with a sigh.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 006. 留恋
 
 > If you shed tears when you miss the sun, you also miss the starts.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 010. 萧瑟与暖意
 
 > Sorrow is hushed into peace in my heart like the evening among the silent trees.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 015. 炫耀与风险
 
 > Do not seat your love upon a precipice because it is high.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 016. 观察
 
 > I sit at my window this morning where the world like a passer-by stops for a moment, nods to me and goes.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 017. 视角
 
 > Theses little thoughts are the rustle of leaves, they have their whisper of joy in my mind.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 018. 审视
 
 > What you are you do not see, what you see is your shadow.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 023. 价值与彰显
 
 > "We, the rustling leaves, have a voice that answers the storms, but who are you so silent?"
 > "I am a mere flower."
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 035. 自由与释然
 
 > The bird wishes it were a cloud.
 > The cloud wishes it were a bird.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 042. 会心一笑
 
 > You smiled and talked to me of nothing and I felt that for this I had been waiting long.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 054. 淡然来去
 
 > Like the meeting of the seagulls and the waves we meet and come near.
 > The seagulls fly off, the waves roll away and we depart.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 055. 平静与陶然
 
 > My day is done, and I am like a boat drawn on the beach, listening to the dance-music of the tide in the evening.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 057. 低调
 
 > We come nearest to the great when we are great in humility.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 062. 造就完美
 
 > The Perfect decks itself in beauty for the love of the Imperfect.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 072. 体会
 
 > In my solitude of heart I feel the sigh of this widowed evening veiled with mist and rain.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 074. 雾里看花
 
 > The mist, like love, plays upon the heart of the hills and brings out surprises of beauty.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 075. 偏颇的借口
 
 > We read the world wrong and say that it deceives us.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 076. 诗话
 
 > The poet wind is out over the sea and the forest to seek his own voice.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 078. 高度与视野
 
 > The grass seeks her crowd in the earth.
 > The tree seeks his solitude of the sky.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 082. 生如夏花
 
 > Let life be beautiful like summer flowers and death like autumn leaves.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 083. 发心
 
 > He who wants to do good knocks at the gate.
 > He who loves find the gate open.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 085. 驾驭
 
 > The artist is the lover of Nature, therefore he is her slave and her master.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 089. 锋芒
 
 > The scabbard is content to be dull when it protects the keenness of the sword.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 092. 洞察
 
 > The birth and death of the leaves are the rapid whirls of the eddy whose wider circles move slowly among stars.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 099. 生死
 
 > Death's stamp gives value to the coin of life, making it possible to buy with life what is truly precious.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 100. 朝霞
 
 > The cloud stood humbly in a corner of the sky.
 > The morning crowned it with splendor.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 102. 贪恋
 
 > Do not linger to gather flowers to keep them,
 > but walk on, for flowers will keep themselves blooming all your way.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 110. 选择
 
 > Man goes into the noisy crowd to drown his own clamor of silence
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 112. 奉献
 
 > The sun has his simple robe of light.
 > The clouds are decked with gorgeousness.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 114. 熙攘与孤独
 
 > The road is lonely in its crowd for it is not loved.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 133. 心有所想
 
 > The leaf becomes flower when it loves.
 > The flower becomes fruit when it worships.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 135. 敬畏
 
 > This rainy evening the wind is restless.
 > I look at the swaying branches and ponder over the greatness of all things.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 144. 过往
 
 > One sad voice has its nest among the ruins of the years.
 > It sings to me in the night, "I loved you"
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 154. 占有
 
 > By plucking her petals you do not gather the beauty of the flower.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 168. 窘境
 
 > That which oppresses me, is it my soul trying to come out in the open,
 > or the soul of the world knocking at heart fot its entrance?
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 176. 无言
 
 > The water in a vessel is sparkling, the water in the sea is dark.
 > The small truth has words that are clear, the great truth has great silence.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 183. 黄昏
 
 > The evening sky to me is like a window, and a lighted lamp, and a waiting behind it.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 190. 不争
 
 > Sit still, my heart, do not raise your dust.
 > Let the world find its way to you.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 193. 理智
 
 > A mind all logic is like a knife all blade.
 > It makes the hand bleed that uses it.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 195. 喧噪与静美
 
 > The world is the world of wild storms kept tame with the music of beauty.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 199. 所失
 
 > "I have lost my dewdrop," cries the flower of the morning sky that has lost all its stars.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 208. 静置
 
 > Let my doing nothing when I have nothing to do, 
 > become untroubled in its depth of peace, like the evening in the seashore when the water is silent.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 212. 陌生的夜
 
 > My evening came among the alien trees and spoke in a language which my morning stars did not know.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 214. 欲望
 
 > Our desire lends lends the colors of the rainbow to the mere mists and vapors of life.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 218. 不羁
 
 > My heart has spread its sails to the idle winds for the shadowy island of Anywhere.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 223. 失恋
 
 > Life has become richer by the love that has been lost.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 232. 本色
 
 > The same lotus of our clime blooms here in the alien water with the same sweetness, under another name.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 237. 消逝
 
 > The raindrop whispered to the jasmine, "Keep me in your heart forever."
 > The jasmine sighed, "Alas," and dropped to the ground.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 241. 孤寂的夜
 
 > Thou hast led me through my crowded travels of the day to my evening's loneliness.
 > I wait for its meaning through the stillness of the night.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 253. 金山
 
 > Is not the mountain like a flower, with its petals of hills, drinking the sunlight?
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 255. 飘摇
 
 > Find your beauty, my heart, from world's movement,
 > like the boat that has the grace of the wind and the water.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 266. 知心
 
 > I do not ask thee into the house.
 > Come into my infinite loneliness, my lover.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 277. 无悔
 
 > One word keep for me in thy silence, O World, when I am dead, "I have loved."
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 278. 热忱
 
 > We live in this world when we love it.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 282. 所爱
 
 > While I was passing with the crowd in the road I saw thy smile from the balcony and I sang and forgot all noise.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 284. 孤僻与敞怀
 
 > They light their own lamps and sing their own words in their temples.
 > But the birds sing thy name in thine own morning light, for thy name is joy.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 291. 无雨无晴
 
 > Clouds come floating into my life from other days no longer to shed rain or usher storm,
 > but to give color to my sunset sky.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 293. 风雨
 
 > The storm of the last night has crowned this morning with golden peace.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 #### 323. 喘息
 
 > There are tracts in my life that are bare and silent.
 > They are the open spaces where my busy days had their light and air.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}

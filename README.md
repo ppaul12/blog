@@ -10,7 +10,7 @@ My blog for personal records of travels, thoughts, studies, and so on, with the 
 - main: [Jekyll](https://jekyllrb.com) + [GitHub pages](https://pages.github.com)
 - styles: [pico.css](https://picocss.com)
 - colors: [Nord Theme](https://www.nordtheme.com)
-- fonts: [LXGW WenKai](https://github.com/lxgw/LxgwWenKai) + [Allura](https://www.jsdelivr.com/package/npm/@fontsource/allura) + [Roboto Mono](https://www.jsdelivr.com/package/npm/@fontsource/roboto-mono)
+- fonts: [LXGW WenKai](https://github.com/lxgw/LxgwWenKai) + [Roboto Mono](https://www.jsdelivr.com/package/npm/@fontsource/roboto-mono)
 - icons: [Font Awesome](https://fontawesome.com) + [simple-icons](https://simpleicons.org)
 - repo cards: [github-readme-stats](https://github.com/anuraghazra/github-readme-stats)
 - badges: [shields](https://github.com/badges/shields)

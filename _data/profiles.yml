@@ -5,8 +5,13 @@ information:
     icon: "fa-solid fa-map-pin fa-fw"
   - info: >
       <a href="https://www.u-tokyo.ac.jp/ja/index.html">U-tokyo</a>,
-      <a href="https://www.i.u-tokyo.ac.jp/index.shtml">IST</a>,
+      <a href="https://www.is.s.u-tokyo.ac.jp">IS</a>
+      (BSc 2019-2023)
+    icon: "fa-solid fa-building fa-fw"
+  - info: >
+      <a href="https://www.u-tokyo.ac.jp/ja/index.html">U-tokyo</a>,
       <a href="https://www.is.s.u-tokyo.ac.jp">CS</a>
+      (MSc 2023-2025)
     icon: "fa-solid fa-building fa-fw"
   - info: pengao[at]is.s.u-tokyo.ac.jp
     icon: "fa-solid fa-envelope fa-fw"

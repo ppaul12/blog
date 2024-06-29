@@ -13,7 +13,7 @@ tags: 现代诗 随想 摘抄
 > My words that are slight\\
 > may lightly dance upon time's waves\\
 > when my works heavy with import have gone down.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -21,7 +21,7 @@ tags: 现代诗 随想 摘抄
 
 > Let my love, like sunlight, surround you\\
 > and yet give you illumined freedom.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -29,7 +29,7 @@ tags: 现代诗 随想 摘抄
 
 > Memory, the priestess, kills the present\\
 > and offers its heart to the shrine of the dead past.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -39,7 +39,7 @@ tags: 现代诗 随想 摘抄
 > on the flow of its thoughts\\
 > like a brook at a sudden liquid note of its own\\
 > that is never repeated.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -49,7 +49,7 @@ tags: 现代诗 随想 摘抄
 > to explore its own height;\\
 > in the lake, movement stands still\\
 > to contemplate its own depth.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -58,7 +58,7 @@ tags: 现代诗 随想 摘抄
 > The departing night's one kiss\\
 > on the closed eyes of morning\\
 > glows in the star of dawn.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -66,7 +66,7 @@ tags: 现代诗 随想 摘抄
 
 > One who was distant came near to me in the morning,\\
 > and still nearer when taken away by night.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -75,7 +75,7 @@ tags: 现代诗 随想 摘抄
 > The lake lies low by the hill,\\
 > a tearful entreaty of love\\
 > at the foot of the inflexible.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -85,14 +85,14 @@ tags: 现代诗 随想 摘抄
 > "What is thy secret?"\\
 > "It is myself," says the lotus,\\
 > "Steal it and I disappear!”
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
 037 纯粹
 
 > The jasmine's lisping of love to the sun is her flowers.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -101,7 +101,7 @@ tags: 现代诗 随想 摘抄
 > Clouds are hills in vapour,\\
 > hills are clouds in stone,\\
 > a phantasy in time's dream.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -110,7 +110,7 @@ tags: 现代诗 随想 摘抄
 > My heart to-day smiles at its past night of tears\\
 > like a wet tree glistening in the sun\\
 > after the rain is over.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -118,14 +118,14 @@ tags: 现代诗 随想 摘抄
 
 > The one without second is emptiness,\\
 > the other one makes it true.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
 049 因为是你
 
 > In love I pay my endless debt to thee for what thou art.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -133,7 +133,7 @@ tags: 现代诗 随想 摘抄
 
 > Thou hast risen late, my crescent moon,\\
 > but my night bird is still awake to greet thee.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -141,7 +141,7 @@ tags: 现代诗 随想 摘抄
 
 > The lamp waits through the long day of neglect\\
 > for the flame's kiss in the night.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -149,7 +149,7 @@ tags: 现代诗 随想 摘抄
 
 > Feathers in the dust lying lazily content\\
 > have forgotten their sky.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -158,7 +158,7 @@ tags: 现代诗 随想 摘抄
 > Your careless gifts of a moment,\\
 > like the meteors of an autumn night,\\
 > catch fire in the depth of my being.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -166,7 +166,7 @@ tags: 现代诗 随想 摘抄
 
 > I lingered on my way till thy cherry tree lost its blossom,\\
 > but the azalea brings to me, my love, thy forgiveness.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -176,7 +176,7 @@ tags: 现代诗 随想 摘抄
 > blushing to-day behind her veil,\\
 > will burst into a passionate flower\\
 > to-morrow when I am away.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -185,7 +185,7 @@ tags: 现代诗 随想 摘抄
 > These paper boats of mine are meant to dance\\
 > on the ripples of hours,\\
 > and not to reach any destination.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -193,7 +193,7 @@ tags: 现代诗 随想 摘抄
 
 > You live alone and unrecompensed\\
 > because they are afraid of your great worth.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -201,7 +201,7 @@ tags: 现代诗 随想 摘抄
 
 > My love of to-day finds no home\\
 > in the nest deserted by yesterday's love.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -210,7 +210,7 @@ tags: 现代诗 随想 摘抄
 > Thou hast vanished from my reach,\\
 > leaving an impalpable touch in the blue of the sky,\\
 > an invisible image in the wind moving among the shadows.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -218,7 +218,7 @@ tags: 现代诗 随想 摘抄
 
 > I leave no trace of wings in the air,\\
 > but I am glad I have had my flight.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -227,7 +227,7 @@ tags: 现代诗 随想 摘抄
 > While the rose said to the sun,\\
 > "I shall ever remember thee,"\\
 > her petals fell to the dust.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -235,7 +235,7 @@ tags: 现代诗 随想 摘抄
 
 > Though the thorn in thy flower pricked me,\\
 > O Beauty, I am grateful.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -243,7 +243,7 @@ tags: 现代诗 随想 摘抄
 
 > Let not my love be a burden on you, my friend,\\
 > know that it pays itself.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -251,7 +251,7 @@ tags: 现代诗 随想 摘抄
 
 > The dew-drop knows the sun\\
 > only within its own tiny orb.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -259,7 +259,7 @@ tags: 现代诗 随想 摘抄
 
 > The world speaks to me in pictures,\\
 > my soul answers in music.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -267,7 +267,7 @@ tags: 现代诗 随想 摘抄
 
 > The darkness of night, like pain, is dumb,\\
 > the darkness of dawn, like peace, is silent.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -276,7 +276,7 @@ tags: 现代诗 随想 摘抄
 > In its swelling pride\\
 > the bubble doubts the truth of the sea,\\
 > and laughs and bursts into emptiness.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -284,7 +284,7 @@ tags: 现代诗 随想 摘抄
 
 > Love is an endless mystery,\\
 > for it has nothing else to explain it.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -292,7 +292,7 @@ tags: 现代诗 随想 摘抄
 
 > Love remains a secret when spoken,\\
 > for only a lover truly knows that he is loved.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -301,7 +301,7 @@ tags: 现代诗 随想 摘抄
 > In the bounteous time of roses love is wine,\\
 > it is food in the famished hour\\
 > when their petals are shed.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -309,7 +309,7 @@ tags: 现代诗 随想 摘抄
 
 > Your flitting love lightly brushed with its wings my sun-flower\\
 > and never asked if it was ready to surrender its honey.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -319,7 +319,7 @@ tags: 现代诗 随想 摘抄
 > at the end of the road,\\
 > but for the wayside shrines\\
 > that surprise me at every bend.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -328,7 +328,7 @@ tags: 现代诗 随想 摘抄
 > Your smile, my love,\\
 > like the smell of a strange flower,\\
 > is simple and inexplicable.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -337,7 +337,7 @@ tags: 现代诗 随想 摘抄
 > Between the shores of Me and Thee\\
 > there is the loud ocean, my own surging self,\\
 > which I long to cross.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -345,7 +345,7 @@ tags: 现代诗 随想 摘抄
 
 > The rose is a great deal more\\
 > than a blushing apology for the thorn.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -353,7 +353,7 @@ tags: 现代诗 随想 摘抄
 
 > Let your love see me\\
 > even through the barrier of nearness.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -362,7 +362,7 @@ tags: 现代诗 随想 摘抄
 > In the shady depth of life\\
 > are the lonely nests of memories\\
 > that shrink from words.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -372,7 +372,7 @@ tags: 现代诗 随想 摘抄
 > "Write to me what thy waves struggle to say."\\
 > The sea writes in foam again and again\\
 > and wipes off the lines in a boisterous despair.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -380,7 +380,7 @@ tags: 现代诗 随想 摘抄
 
 > Let the touch of thy finger thrill my life's strings\\
 > and make the music thine and mine.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -388,7 +388,7 @@ tags: 现代诗 随想 摘抄
 
 > Form is in Matter, rhythm in Force,\\
 > meaning in the Person.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -399,7 +399,7 @@ tags: 现代诗 随想 摘抄
 > and they are great.\\
 > I have listened to catch the music of thy play,\\
 > and I am glad.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -409,7 +409,7 @@ tags: 现代诗 随想 摘抄
 > at the window which is mine own,\\
 > and not in the open\\
 > where thou hast thy sole kingdom.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -417,7 +417,7 @@ tags: 现代诗 随想 摘抄
 
 > Those thoughts of mine that are never captured by words\\
 > perch upon my song and dance.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -425,7 +425,7 @@ tags: 现代诗 随想 摘抄
 
 > The sunlight opens for me the world's gate,\\
 > love's light its treasure.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -435,7 +435,7 @@ tags: 现代诗 随想 摘抄
 > in the play of life\\
 > because I know not of the parts\\
 > that others play.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -443,14 +443,14 @@ tags: 现代诗 随想 摘抄
 
 > My last salutations are to them\\
 > who knew me imperfect and loved me.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
 254 爱的礼物
 
 > Love's gift cannot be given, it waits to be accepted.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}
 
 ---
 
@@ -462,4 +462,4 @@ tags: 现代诗 随想 摘抄
 > leaving the outer shell\\
 > to float away with the drifting multitude\\
 > upon the current of chance and change.
-{: .literature .quote font="Allura"}
+{: .literature .quote lang="en"}

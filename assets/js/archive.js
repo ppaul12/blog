@@ -18,6 +18,11 @@ const updateAll = () => {
             item.removeAttribute("active")
         }
     })
+    // update post counts
+    document.querySelectorAll(".tag-posts:has(*[active]").forEach((item) => {
+        const count = item.querySelectorAll("*[active]").length
+        item.setAttribute("data-count", `${count} post${count > 1 ? 's' : ''}`)
+    })
     // refresh aos calculation
     AOS.refresh()
 }

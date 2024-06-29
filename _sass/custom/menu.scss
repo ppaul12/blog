@@ -28,11 +28,12 @@
         width: 1.2em;
         height: 2px;
         background-color: var(--pico-background-color);
-        
+
         transition: all 0.3s ease-in;
         transform-origin: center;
 
-        &::before, &::after {
+        &::before,
+        &::after {
             display: block;
             position: absolute;
             width: 100%;
@@ -69,12 +70,13 @@
         padding: 0 0.5em;
         margin-bottom: 0.6em;
         opacity: 0;
-        font: 2em "Allura";
+        font-size: 1.5em;
         transform: translateX(calc(pow(-1, var(--ith)) * 200%));
 
         transition: all 0.3s ease calc(var(--ith) * 0.1s + 0.3s);
 
-        &::before, &::after {
+        &::before,
+        &::after {
             position: absolute;
             width: 2px;
             height: 0;
@@ -85,15 +87,17 @@
         }
 
         &::before {
-            inset: auto auto -0.2em 0;
+            inset: auto auto 0 0;
         }
 
         &::after {
-            inset: -0.2em 0 auto auto;
+            inset: 0 0 auto auto;
         }
 
         &:has(a:hover) {
-            &::before, &::after {
+
+            &::before,
+            &::after {
                 height: 100%;
 
                 transition: height 0.3s ease 0.3s;
@@ -104,7 +108,8 @@
             position: relative;
             text-decoration: none;
 
-            &::before, &::after {
+            &::before,
+            &::after {
                 position: absolute;
                 width: 20vmin;
                 height: 2px;
@@ -127,7 +132,9 @@
             }
 
             &:hover {
-                &::before, &::after {
+
+                &::before,
+                &::after {
                     width: 50%;
                     transform: translateX(0);
 
@@ -139,13 +146,13 @@
         }
     }
 
-    &[open] > &-box {
+    &[open]>&-box {
         width: 100%;
         border-radius: 0;
         box-shadow: 0 0 0 calc(100vmax * 2) var(--pico-background-color);
     }
 
-    &[open] > &-box > &-icon {
+    &[open]>&-box>&-icon {
         transform: rotate(45deg);
 
         &::before {
@@ -159,11 +166,11 @@
         }
     }
 
-    &[open] > &-content {
+    &[open]>&-content {
         inset: 0 0 0 0;
     }
 
-    &[open] > &-content > &-item {
+    &[open]>&-content>&-item {
         opacity: 1;
         transform: translateX(0);
     }

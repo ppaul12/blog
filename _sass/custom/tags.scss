@@ -58,8 +58,17 @@
 
         &::before {
             display: block;
-            font: 2em "Allura";
+            font-size: 1.5em;
             content: attr(data-title);
+        }
+
+        &::after {
+            display: block;
+            text-align: right;
+            color: grey;
+            font-style: italic;
+            font-size: 0.8em;
+            content: attr(data-count);
         }
 
         li {

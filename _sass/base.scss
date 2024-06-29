@@ -2,6 +2,7 @@
 
 :root {
     --pico-font-family: "LXGW WenKai Lite", sans-serif;
+    --pico-border-radius: 0.8em;
 }
 
 html {
@@ -15,7 +16,22 @@ html {
 }
 
 body {
-    margin: auto;
+    &>header {
+        margin: 2em auto 1em;
+        text-align: center;
+        font-size: 2.8em;
+        font-family: "Courier New", monospace;
+
+        animation: zoomIn 1s backwards;
+    }
+
+    &>footer {
+        text-align: center;
+    }
+}
+
+main {
+    margin: 0.5em auto;
 
     @media (max-width: 420px) {
         max-width: 100%;
@@ -31,29 +47,11 @@ body {
     }
 
     @media (min-width: 1200px) {
+        max-width: 60%;
+    }
+
+    @media (min-width: 1600px) {
         max-width: 50%;
-    }
-
-    &>main {
-        margin-top: 0.5em;
-    }
-
-    &> :is(header, footer) {
-        text-align: center;
-    }
-
-    &>header {
-        margin-top: 3em;
-
-        animation: zoomIn 1s backwards;
-
-        .main-title {
-            font: 3em "Allura";
-        }
-
-        .sub-title {
-            font-size: 1em;
-        }
     }
 }
 
@@ -130,10 +128,11 @@ ruby rt {
 
 iframe {
     margin-bottom: 1em;
+    border-radius: var(--pico-border-radius);
 }
 
 blockquote {
-    border-radius: 0.2em;
+    border-radius: var(--pico-border-radius);
     background: var(--pico-card-sectioning-background-color);
 
     p {

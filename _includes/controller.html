@@ -41,22 +41,22 @@
     ><i class="fa-solid fa-maximize faa-pulse faa-fast"></i></button>
 </div>
 
-<div class="menu" onclick="toggleMenu(event)">
+<div id="menu-btn" class="menu" onclick="toggleMenu(event)">
     <span class="menu-box">
         <span class="menu-icon"></span>
     </span>
     <div class="menu-content">
-        <div class="menu-item" style="--ith: 0;"><a href="/">Home</a></div>
-        <div class="menu-item" style="--ith: 1;"><a href="/album.html">Album</a></div>
-        <div class="menu-item" style="--ith: 2;"><a href="/footprint.html">Footprint</a></div>
-        <div class="menu-item" style="--ith: 3;"><a href="/books.html">Bookshelf</a></div>
-        <div class="menu-item" style="--ith: 4;"><a href="/archive.html">Archive</a></div>
+        <div class="menu-item" style="--ith: 0;"><a href="/">主页</a></div>
+        <div class="menu-item" style="--ith: 1;"><a href="/album.html">相册</a></div>
+        <div class="menu-item" style="--ith: 2;"><a href="/footprint.html">足迹</a></div>
+        <div class="menu-item" style="--ith: 3;"><a href="/books.html">书架</a></div>
+        <div class="menu-item" style="--ith: 4;"><a href="/archive.html">归档</a></div>
     </div>
 </div>
 
 <script>
     const toggleMenu = () => {
-        const menu = document.querySelector(".menu")
+        const menu = document.getElementById("menu-btn")
         const html = document.documentElement
         if (menu.hasAttribute("open")) {
             menu.removeAttribute("open")

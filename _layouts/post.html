@@ -31,16 +31,14 @@ layout: default
 
     <footer class="card">
         <!-- post buttons -->
-        {% assign prev = page.previous %}
-        {% assign next = page.next %}
-        {% if prev or next %}
         <nav class="post-buttons">
-            {% unless prev %}{% assign prev = site.posts | first %}{% endunless %}
-            <a class="post-buttons-prev" href="{{ prev.url }}">{{ prev.title }}</a>
-            {% unless next %}{% assign next = site.posts | last %}{% endunless %}
-            <a class="post-buttons-next" href="{{ next.url }}">{{ next.title }}</a>
+            <a id="prev-btn" class="post-buttons-prev"
+                {% if page.previous %}href="{{ page.previous.url }}"{% else %}disabled{% endif %}
+            >{% if page.previous %}{{ page.previous.title }}{% else %}-{% endif %}</a>
+            <a id="next-btn" class="post-buttons-next"
+                {% if page.next %}href="{{ page.next.url }}"{% else %}disabled{% endif %}
+            >{% if page.next %}{{ page.next.title }}{% else %}-{% endif %}</a>
         </nav>
-        {% endif %}
         <!-- comment block -->
         {% include comment.html %}
     </footer>

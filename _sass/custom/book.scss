@@ -19,12 +19,14 @@
         display: inline-block;
         position: relative;
         margin: 0 0.5em;
+        border-radius: var(--pico-border-radius);
+        overflow: hidden;
 
-        transition: all 0.3s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease 0.1s;
 
         &:hover {
-            box-shadow: 5px 5px 5px var(--pico-muted-border-color);
-            transform: scale(1.1);
+            box-shadow: 0 1em 0.5em -0.5em var(--pico-muted-border-color);
+            transform: translateY(-0.5em);
         }
 
         .cover {

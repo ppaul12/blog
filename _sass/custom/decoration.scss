@@ -15,10 +15,6 @@
     transition: transform 1s ease;
 }
 
-[ribbon]:hover::after {
-    transform: translateY(-0.5em);
-}
-
 @mixin icon($color, $content) {
     position: absolute;
     top: 0;
@@ -38,4 +34,10 @@
 
 [heart]::after {
     @include icon($nord11, "\f004");
+}
+
+[drop-cap]::first-letter {
+    font-size: 1.8em;
+    float: left;
+    margin-right: 0.2em;
 }

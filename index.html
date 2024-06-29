@@ -49,8 +49,10 @@ required: with-header
 
 <nav class="post-paginator"><ul>
     <!-- previous page button -->
-    <li><a id="prev-page-btn" class="faa-parent animated-hover" data-aos="slide-left"
-        href="{{ paginator.previous_page_path | default:'/' }}"
+    <li><a id="prev-btn" data-aos="slide-left"
+        {% if paginator.previous_page_path %}
+        class="faa-parent animated-hover" href="{{ paginator.previous_page_path }}"
+        {% else %}disabled{% endif %}
     ><i class="fa-solid fa-arrow-left faa-horizontal faa-reverse"></i></a></li>
 
     <!-- page selector -->
@@ -72,18 +74,9 @@ required: with-header
     </details></li>
 
     <!-- next page button -->
-    <li><a id="next-page-btn" class="faa-parent animated-hover" data-aos="slide-right"
-        href="{{ paginator.next_page_path | default:'/' }}"
+    <li><a id="next-btn" data-aos="slide-right"
+        {% if paginator.next_page_path %}
+        class="faa-parent animated-hover" href="{{ paginator.next_page_path }}"
+        {% else %}disabled{% endif %}
     ><i class="fa-solid fa-arrow-right faa-horizontal"></i></a></li>
 </ul></nav>
-
-<script>
-    document.addEventListener("keyup", (event) => {
-        switch (event.key) {
-            case "ArrowLeft":
-                document.getElementById("prev-page-btn").click(); break
-            case "ArrowRight":
-                document.getElementById("next-page-btn").click(); break
-        }
-    })
-</script>

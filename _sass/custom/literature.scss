@@ -8,7 +8,7 @@
 
     &.classic {
         border: double var(--pico-muted-border-color);
-        border-radius: 0.5em;
+        border-radius: var(--pico-border-radius);
         text-align: center;
         min-width: 60%;
 
@@ -60,7 +60,8 @@
         text-underline-offset: 0.2em;
     }
 
-    &[font=Allura] p {
-        font: 1.4em "Allura";
+    &:lang(en) p {
+        font-family: "Times New Roman", serif;
+        font-style: italic;
     }
 }

@@ -6,12 +6,14 @@
 <url>
     <loc>{{ site.url }}{{ page.url | xml_escape }}</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>daily</changefreq>
 </url>
 {%- endfor -%}
 {%- for post in site.posts -%}
 <url>
     <loc>{{ site.url }}{{ post.url | xml_escape }}</loc>
     <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+    <changefreq>daily</changefreq>
 </url>
 {%- endfor -%}
 </urlset>

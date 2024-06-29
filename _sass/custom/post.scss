@@ -4,7 +4,6 @@
         display: flex;
         flex-wrap: wrap;
         align-content: space-between;
-        margin: 2em auto;
         padding: 0;
         min-height: 10em;
 
@@ -48,14 +47,16 @@
     &-paginator {
         justify-content: center !important;
 
-        summary {
-            box-shadow: none !important;
+        details {
+            min-width: 6em;
+            text-align: center;
 
-            &+ul {
+            summary+ul {
                 bottom: 100%;
                 max-height: 10em;
                 overflow-y: scroll;
-                margin-bottom: var(--pico-outline-width) !important;
+
+                animation: 1s fadeIn backwards;
             }
         }
     }
@@ -116,7 +117,7 @@
             padding: 0.5em 1em;
             min-width: 12em;
             border: 1px solid var(--pico-muted-border-color);
-            border-radius: 0.2em;
+            border-radius: var(--pico-border-radius);
             background: var(--pico-card-background-color);
             text-decoration: none;
 
@@ -133,7 +134,7 @@
                 font-size: 0.8em;
             }
 
-            &:hover {
+            &:not([disabled]):hover {
                 border-color: var(--pico-color);
                 transform: scale(1.02);
             }

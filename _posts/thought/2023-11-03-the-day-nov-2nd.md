@@ -27,3 +27,17 @@ cover: /assets/src/the-day-nov-2nd/she.jpeg
 我更早的时候就读到了。直到今年九月那个不寐的夜晚，我才逐渐理解。今时，既不是自己的理智也不是自己的感性，而就是这个“我”让我觉得我应该无畏地践行。
 
 接下来定会是美好的，同时也一定是伴随挑战的。然而我确信目前的我有足够的勇气和安定的内心，去面对不可预知的不确定性。
+
+---
+
+2024.07.03追记：晚上洗澡时偶然想到了一种对这个日子的诠释，即11月2日是1 + 1 = 2的日子。自以为是不错的想法，为了避免事后遗忘，就姑且记在这里吧。
+
+---
+
+<div data-aos="zoom-in" style="text-align:center;">In Love ❤️ <span id="love-days"></span></div>
+<script>
+    const then = new Date(2023, 11, 2)
+    const now = new Date()
+    const days = Math.floor((now - then) / (24 * 60 * 60 * 100)) / 10
+    document.getElementById("love-days").innerText = `${days} days`
+</script>

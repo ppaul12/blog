@@ -4,7 +4,6 @@ title: 天使与海豚
 subtitle: 甲辰小满期间有感
 tags: 随想
 marked: true
-edited: true
 ---
 
 > 成文于2024.06.20

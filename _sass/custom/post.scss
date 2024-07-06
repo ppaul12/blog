@@ -134,6 +134,10 @@
                 font-size: 0.8em;
             }
 
+            &[disabled] {
+                border-style: dashed;
+            }
+
             &:not([disabled]):hover {
                 border-color: var(--pico-color);
                 transform: scale(1.02);

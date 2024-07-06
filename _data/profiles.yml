@@ -77,6 +77,8 @@ skills:
     color: "9C4121"
   - info: yaml
     color: "CB171E"
+  - info: json
+    color: "000000"
   # version control tool
   - info: git
     color: "F05032"
@@ -89,11 +91,22 @@ skills:
     color: "008080"
   - info: markdown
     color: "000000"
+  # other tools
+  - info: safari
+    color: "006CFF"
+  - info: iterm2
+    color: "000000"
+  - info: homebrew
+    color: "FBB040"
+  - info: zsh
+    color: "F15A24"
   # editor
   - info: neovim
     color: "57A143"
-  - info: visualstudiocode
-    color: "007ACC"
+  - info: jupyter
+    color: "F37626"
+  # - info: visualstudiocode
+  #   color: "007ACC"
   # operating system
   - info: macos
     color: "000000"

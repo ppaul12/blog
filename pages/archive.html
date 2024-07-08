@@ -10,12 +10,13 @@ permalink: /archive.html
     {% assign words = post.content | strip_html | strip_newlines | remove: " " | size %}
     {% assign word_count = word_count | plus:words %}
 {% endfor %}
+{% assign word_count = word_count | divided_by:1000 %}
 
 {% assign max_count = 0 %}
 {% for tag in site.tags %}
     {% assign max_count = tag[1].size | at_least:max_count %}
 {% endfor %}
-<div class="tag-cloud" data-sum="{{ site.posts.size }} posts, {{ word_count }} words">
+<div class="tag-cloud" data-sum="{{ site.posts.size }} posts, {{ word_count }}k words">
     {% for tag in site.tags %}
     <button id="{{ tag[0] }}" class="tag-{{
         tag[1].size | times:10 | divided_by:max_count | ceil

@@ -37,6 +37,12 @@
             inset: auto 0 0 auto;
             content: "\f10e";
         }
+
+        @media (max-width: 420px) {
+            &:not([keep-br]) p br {
+                display: none;
+            }
+        }
     }
 
     header {
@@ -50,7 +56,6 @@
 
     p {
         max-width: var(--fix, auto);
-        word-break: keep-all;
         margin: 0 auto;
         line-height: 1.8em;
         text-decoration-line: underline;

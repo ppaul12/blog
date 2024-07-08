@@ -10,8 +10,9 @@ tags: 现代诗 随想 摘抄
 
 #### 001. 韶华
 
-> Stray birds of summer come to my window to sing and fly away.
-> And yellow leaves of autumn, which have no songs, flutter and fall there with a sigh.
+> Stray birds of summer come to my window to sing and fly away.\\
+> And yellow leaves of autumn, which have no songs,\\
+> flutter and fall there with a sigh.
 {: .literature .quote lang="en"}
 
 #### 006. 留恋
@@ -31,7 +32,8 @@ tags: 现代诗 随想 摘抄
 
 #### 016. 观察
 
-> I sit at my window this morning where the world like a passer-by stops for a moment, nods to me and goes.
+> I sit at my window this morning where the world like a passer-by\\
+> stops for a moment, nods to me and goes.
 {: .literature .quote lang="en"}
 
 #### 017. 视角
@@ -46,13 +48,13 @@ tags: 现代诗 随想 摘抄
 
 #### 023. 价值与彰显
 
-> "We, the rustling leaves, have a voice that answers the storms, but who are you so silent?"
+> "We, the rustling leaves, have a voice that answers the storms, but who are you so silent?"\\
 > "I am a mere flower."
 {: .literature .quote lang="en"}
 
 #### 035. 自由与释然
 
-> The bird wishes it were a cloud.
+> The bird wishes it were a cloud.\\
 > The cloud wishes it were a bird.
 {: .literature .quote lang="en"}
 
@@ -63,13 +65,14 @@ tags: 现代诗 随想 摘抄
 
 #### 054. 淡然来去
 
-> Like the meeting of the seagulls and the waves we meet and come near.
+> Like the meeting of the seagulls and the waves we meet and come near.\\
 > The seagulls fly off, the waves roll away and we depart.
 {: .literature .quote lang="en"}
 
 #### 055. 平静与陶然
 
-> My day is done, and I am like a boat drawn on the beach, listening to the dance-music of the tide in the evening.
+> My day is done, and I am like a boat drawn on the beach,\\
+> listening to the dance-music of the tide in the evening.
 {: .literature .quote lang="en"}
 
 #### 057. 低调
@@ -104,7 +107,7 @@ tags: 现代诗 随想 摘抄
 
 #### 078. 高度与视野
 
-> The grass seeks her crowd in the earth.
+> The grass seeks her crowd in the earth.\\
 > The tree seeks his solitude of the sky.
 {: .literature .quote lang="en"}
 
@@ -115,7 +118,7 @@ tags: 现代诗 随想 摘抄
 
 #### 083. 发心
 
-> He who wants to do good knocks at the gate.
+> He who wants to do good knocks at the gate.\\
 > He who loves find the gate open.
 {: .literature .quote lang="en"}
 
@@ -131,23 +134,25 @@ tags: 现代诗 随想 摘抄
 
 #### 092. 洞察
 
-> The birth and death of the leaves are the rapid whirls of the eddy whose wider circles move slowly among stars.
+> The birth and death of the leaves are the rapid whirls of the eddy\\
+> whose wider circles move slowly among stars.
 {: .literature .quote lang="en"}
 
 #### 099. 生死
 
-> Death's stamp gives value to the coin of life, making it possible to buy with life what is truly precious.
+> Death's stamp gives value to the coin of life,\\
+> making it possible to buy with life what is truly precious.
 {: .literature .quote lang="en"}
 
 #### 100. 朝霞
 
-> The cloud stood humbly in a corner of the sky.
+> The cloud stood humbly in a corner of the sky.\\
 > The morning crowned it with splendor.
 {: .literature .quote lang="en"}
 
 #### 102. 贪恋
 
-> Do not linger to gather flowers to keep them,
+> Do not linger to gather flowers to keep them,\\
 > but walk on, for flowers will keep themselves blooming all your way.
 {: .literature .quote lang="en"}
 
@@ -158,7 +163,7 @@ tags: 现代诗 随想 摘抄
 
 #### 112. 奉献
 
-> The sun has his simple robe of light.
+> The sun has his simple robe of light.\\
 > The clouds are decked with gorgeousness.
 {: .literature .quote lang="en"}
 
@@ -169,19 +174,19 @@ tags: 现代诗 随想 摘抄
 
 #### 133. 心有所想
 
-> The leaf becomes flower when it loves.
+> The leaf becomes flower when it loves.\\
 > The flower becomes fruit when it worships.
 {: .literature .quote lang="en"}
 
 #### 135. 敬畏
 
-> This rainy evening the wind is restless.
+> This rainy evening the wind is restless.\\
 > I look at the swaying branches and ponder over the greatness of all things.
 {: .literature .quote lang="en"}
 
 #### 144. 过往
 
-> One sad voice has its nest among the ruins of the years.
+> One sad voice has its nest among the ruins of the years.\\
 > It sings to me in the night, "I loved you"
 {: .literature .quote lang="en"}
 
@@ -192,13 +197,13 @@ tags: 现代诗 随想 摘抄
 
 #### 168. 窘境
 
-> That which oppresses me, is it my soul trying to come out in the open,
+> That which oppresses me, is it my soul trying to come out in the open,\\
 > or the soul of the world knocking at heart fot its entrance?
 {: .literature .quote lang="en"}
 
 #### 176. 无言
 
-> The water in a vessel is sparkling, the water in the sea is dark.
+> The water in a vessel is sparkling, the water in the sea is dark.\\
 > The small truth has words that are clear, the great truth has great silence.
 {: .literature .quote lang="en"}
 
@@ -209,13 +214,13 @@ tags: 现代诗 随想 摘抄
 
 #### 190. 不争
 
-> Sit still, my heart, do not raise your dust.
+> Sit still, my heart, do not raise your dust.\\
 > Let the world find its way to you.
 {: .literature .quote lang="en"}
 
 #### 193. 理智
 
-> A mind all logic is like a knife all blade.
+> A mind all logic is like a knife all blade.\\
 > It makes the hand bleed that uses it.
 {: .literature .quote lang="en"}
 
@@ -231,13 +236,15 @@ tags: 现代诗 随想 摘抄
 
 #### 208. 静置
 
-> Let my doing nothing when I have nothing to do, 
-> become untroubled in its depth of peace, like the evening in the seashore when the water is silent.
+> Let my doing nothing when I have nothing to do, \\
+> become untroubled in its depth of peace,\\
+> like the evening in the seashore when the water is silent.
 {: .literature .quote lang="en"}
 
 #### 212. 陌生的夜
 
-> My evening came among the alien trees and spoke in a language which my morning stars did not know.
+> My evening came among the alien trees and spoke in a language\\
+> which my morning stars did not know.
 {: .literature .quote lang="en"}
 
 #### 214. 欲望
@@ -257,18 +264,19 @@ tags: 现代诗 随想 摘抄
 
 #### 232. 本色
 
-> The same lotus of our clime blooms here in the alien water with the same sweetness, under another name.
+> The same lotus of our clime blooms here in the alien water\\
+> with the same sweetness, under another name.
 {: .literature .quote lang="en"}
 
 #### 237. 消逝
 
-> The raindrop whispered to the jasmine, "Keep me in your heart forever."
+> The raindrop whispered to the jasmine, "Keep me in your heart forever."\\
 > The jasmine sighed, "Alas," and dropped to the ground.
 {: .literature .quote lang="en"}
 
 #### 241. 孤寂的夜
 
-> Thou hast led me through my crowded travels of the day to my evening's loneliness.
+> Thou hast led me through my crowded travels of the day to my evening's loneliness.\\
 > I wait for its meaning through the stillness of the night.
 {: .literature .quote lang="en"}
 
@@ -279,13 +287,13 @@ tags: 现代诗 随想 摘抄
 
 #### 255. 飘摇
 
-> Find your beauty, my heart, from world's movement,
+> Find your beauty, my heart, from world's movement,\\
 > like the boat that has the grace of the wind and the water.
 {: .literature .quote lang="en"}
 
 #### 266. 知心
 
-> I do not ask thee into the house.
+> I do not ask thee into the house.\\
 > Come into my infinite loneliness, my lover.
 {: .literature .quote lang="en"}
 
@@ -301,18 +309,19 @@ tags: 现代诗 随想 摘抄
 
 #### 282. 所爱
 
-> While I was passing with the crowd in the road I saw thy smile from the balcony and I sang and forgot all noise.
+> While I was passing with the crowd in the road\\
+> I saw thy smile from the balcony and I sang and forgot all noise.
 {: .literature .quote lang="en"}
 
 #### 284. 孤僻与敞怀
 
-> They light their own lamps and sing their own words in their temples.
+> They light their own lamps and sing their own words in their temples.\\
 > But the birds sing thy name in thine own morning light, for thy name is joy.
 {: .literature .quote lang="en"}
 
 #### 291. 无雨无晴
 
-> Clouds come floating into my life from other days no longer to shed rain or usher storm,
+> Clouds come floating into my life from other days no longer to shed rain or usher storm,\\
 > but to give color to my sunset sky.
 {: .literature .quote lang="en"}
 
@@ -323,6 +332,6 @@ tags: 现代诗 随想 摘抄
 
 #### 323. 喘息
 
-> There are tracts in my life that are bare and silent.
+> There are tracts in my life that are bare and silent.\\
 > They are the open spaces where my busy days had their light and air.
 {: .literature .quote lang="en"}

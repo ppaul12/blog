@@ -136,6 +136,10 @@
 
             &[disabled] {
                 border-style: dashed;
+
+                @media (max-width: 420px) {
+                    display: none;
+                }
             }
 
             &:not([disabled]):hover {

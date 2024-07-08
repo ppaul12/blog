@@ -10,7 +10,7 @@ tags: 现代诗 随想 摘抄
 [《繁星·春水》](https://book.douban.com/subject/26835043/)是现代作家冰心所创作的诗集，由《繁星》(164首)和《春水》(182首)两部分构成。在一次日常聊天中我倏然间想起了一句自小学时便熟知的现代诗，正值《飞鸟集》阅读抄写的途中，因而顿感风格之雷同。
 
 > 墙角的花！你孤芳自赏时，天地便小了。
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 经查实后发现，该诗句便来自于《繁星·春水》。虽然语句结构类似，但多了一份所谓的诗意，因此在元旦假期的闲暇中翻阅了一下。事实上，冰心的小诗并非是对泰戈尔风格的模仿。据说冰心本人有在笔记本的页眉上随记三两感悟的习惯。某日在杂志上读到郑振铎所译的《飞鸟集》时有感于其形式，从而将其日积月累的眉批加以整理、发表。因为是零星所感，便以“繁星”为题。
 
@@ -25,7 +25,7 @@ tags: 现代诗 随想 摘抄
 > 童年呵！\\
 > 是梦中的真，是真中的梦。\\
 > 是回忆时含泪的微笑。
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 008. 须臾
 
@@ -33,7 +33,7 @@ tags: 现代诗 随想 摘抄
 > 鸟儿飞去了，\\
 > 撒得落红满地，\\
 > 生命也是这般的一瞥么？
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 009. 睡梦
 
@@ -42,7 +42,7 @@ tags: 现代诗 随想 摘抄
 > 诚诚实实的，\\
 > 告诉了\\
 > 你自己灵魂里的密意和隐忧。
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 011. 神秘
 
@@ -51,21 +51,21 @@ tags: 现代诗 随想 摘抄
 > 微笑之后，\\
 > 言语之前，\\
 > 便是无限的神秘了。
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 027. 诗人
 
 > 诗人，\\
 > 是世界幻想上最大的快乐，\\
 > 也是事实中最深的失望。
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 048. 平凡
 
 > 弱小的草呵！\\
 > 骄傲些罢，\\
 > 只有你普遍的装点了世界。
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 052. 偶遇
 
@@ -77,21 +77,21 @@ tags: 现代诗 随想 摘抄
 > 再来时，\\
 > 万千同类中，\\
 > 何处更寻你？
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 060. 慎独
 
 > 轻云淡月的影里，\\
 > 风吹树梢，\\
 > 你要在那时创造你的人格。
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 096. 痕迹
 
 > 影儿落在水里，\\
 > 句儿落在心里，\\
 > 都一般无痕迹。
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 104. 桂花
 
@@ -99,7 +99,7 @@ tags: 现代诗 随想 摘抄
 > 总引起清绝的回忆；\\
 > 一年一度，\\
 > 中秋节的前三日。
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 115. 落笔
 
@@ -107,7 +107,7 @@ tags: 现代诗 随想 摘抄
 > 句在心里，\\
 > 只是百无安顿处，\\
 > 远远地却引起钟声！
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 134. 夏夜
 
@@ -118,7 +118,7 @@ tags: 现代诗 随想 摘抄
 > 粉红的莲花，\\
 > 深绿的荷盖，\\
 > 缟白的衣裳。
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 144. 余晖
 
@@ -130,7 +130,7 @@ tags: 现代诗 随想 摘抄
 > 这黄昏，\\
 > 这丝丝诗意，\\
 > 绕住了斜阳和我。
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 # 春水
 
@@ -141,14 +141,14 @@ tags: 现代诗 随想 摘抄
 > 平凡的池水，\\
 > 临照了夕阳，\\
 > 便成金海。
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 028. 圆缺
 
 > 影儿欺哄了众生了，\\
 > 天以外，\\
 > 月儿何曾圆缺？
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 029. 西湖
 
@@ -156,21 +156,21 @@ tags: 现代诗 随想 摘抄
 > 只多些温柔，\\
 > 西湖呵，\\
 > 你是海的小妹妹么？
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 030. 难寐
 
 > 天高了，\\
 > 星辰落了，\\
 > 晓风又与睡人为难了！
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 033. 世界
 
 > 墙角的花！\\
 > 你孤芳自赏时，\\
 > 天地便小了。
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 047. 春近
 
@@ -178,14 +178,14 @@ tags: 现代诗 随想 摘抄
 > 书在膝上，\\
 > 拂面的微风里，\\
 > 知道春来了。
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 050. 诗人
 
 > 何用写呢？\\
 > 诗人自己\\
 > 便是诗了！
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 066. 清绝
 
@@ -195,7 +195,7 @@ tags: 现代诗 随想 摘抄
 > 被雪的杨柳，\\
 > 冷又何妨？\\
 > 白茫茫里走入画图中罢！
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 075. 觳纹
 
@@ -203,7 +203,7 @@ tags: 现代诗 随想 摘抄
 > 今夜听雨，\\
 > 这雨点已落到我心中的湖上，\\
 > 滴出无数的叠纹了！
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 086. 古韵
 
@@ -213,7 +213,7 @@ tags: 现代诗 随想 摘抄
 > 前瞻黄瓦，\\
 > 霎时间我了解什么是旧国了，\\
 > 我的心灵从此凄动了！
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 099. 清幽
 
@@ -223,14 +223,14 @@ tags: 现代诗 随想 摘抄
 > “我正寻求着呢，\\
 > 但没有别的花儿，\\
 > 肯开在空谷里。”
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 133. 春意
 
 > 只两朵昨夜襟上的玉兰，\\
 > 便将晓风和朝阳，\\
 > 都深深地记在心里了。
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 150. 诗意
 
@@ -241,7 +241,7 @@ tags: 现代诗 随想 摘抄
 > 细语着，\\
 > 许多诗意，\\
 > 笼盖在月明中。
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 154. 泛漾
 
@@ -249,7 +249,7 @@ tags: 现代诗 随想 摘抄
 > 莲瓣儿做了扁舟，\\
 > 容宇宙中小小的灵魂，\\
 > 轻柔地泛在春海里。
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 156. 惺忪
 
@@ -259,7 +259,7 @@ tags: 现代诗 随想 摘抄
 > 庭院水般清，\\
 > 心地镜般明；\\
 > 是画意还是诗情？
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 168. 月夜
 
@@ -268,7 +268,7 @@ tags: 现代诗 随想 摘抄
 > 不是清磬破了岑寂，\\
 > 便落花的声音，\\
 > 也听得见了。
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 #### 178. 寂寥
 
@@ -278,7 +278,7 @@ tags: 现代诗 随想 摘抄
 > 玫瑰落尽，\\
 > 诗人和你，\\
 > 一同感出寂寥了。
-{: .literature .quote}
+{: .literature .quote keep-br=""}
 
 # 散文
 

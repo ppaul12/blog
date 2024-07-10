@@ -4,6 +4,7 @@ title: 是日十一月二号
 subtitle: For the first time in forever
 tags: 随想
 cover: /assets/src/the-day-nov-2nd/she.jpeg
+marked: true
 ---
 
 二零二三年十一月二日，于个人而言是历史性的一天。我将与一个热爱生活、享受生活的女孩正式交往。她知性善良、美丽可爱，热络交流的这些日子里，历来鲁钝的我也不禁地为其所感染。于是，我鼓足勇气，生平第一次吐露了心声。虽不免有言辞吞吐的毛病，但她仍然在如此的状态下接受了我。难以言状的感觉。但第一时间毋庸置疑绝对是心花怒放的。一瞬间，在她的柔声下，我想，我可以毫无顾忌地走出心中的防空洞。
@@ -36,8 +37,9 @@ cover: /assets/src/the-day-nov-2nd/she.jpeg
 
 <div data-aos="zoom-in" style="text-align:center;">In Love ❤️ <span id="love-days"></span></div>
 <script>
-    const then = new Date(2023, 11, 2)
-    const now = new Date()
-    const days = Math.floor((now - then) / (24 * 60 * 60 * 100)) / 10
-    document.getElementById("love-days").innerText = `${days} days`
+    const then = new Date("2023-11-02T10:00:00.000Z")
+    window.setInterval(() => {
+        const days = Math.floor((new Date() - then) / (24 * 60 * 60 / 100)) / 100000
+        document.getElementById("love-days").innerText = `${days.toFixed(5)} days`
+    }, 300)
 </script>

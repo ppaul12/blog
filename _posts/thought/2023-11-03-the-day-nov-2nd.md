@@ -35,11 +35,9 @@ marked: true
 
 ---
 
-<div data-aos="zoom-in" style="text-align:center;">In Love ❤️ <span id="love-days"></span></div>
+<div style="text-align:center;">In Love ❤️ <span id="love-days"></span></div>
 <script>
     const then = new Date("2023-11-02T10:00:00.000Z")
-    window.setInterval(() => {
-        const days = Math.floor((new Date() - then) / (24 * 60 * 60 / 100)) / 100000
-        document.getElementById("love-days").innerText = `${days.toFixed(5)} days`
-    }, 300)
+    const days = Math.floor((new Date() - then) / (24 * 60 * 60 * 10)) / 100
+    document.getElementById("love-days").innerText = `${days.toFixed(2)} days`
 </script>

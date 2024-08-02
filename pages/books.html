@@ -13,7 +13,7 @@ permalink: /books.html
     {% for book in books %}
     <article class="book-card" {% if bookset.year == "Reading" %}ribbon{% endif %}>
         <div class="book-img"><a href="{{ book.link }}">
-            <img class="cover" data-aos="zoom-in" src="/assets/img/covers/{{ book.title }}.jpg" alt="{{ book.title }}">
+            <img class="cover" data-aos="zoom-in" data-src="/assets/img/covers/{{ book.title }}.jpg" alt="{{ book.title }}">
         </a></div>
         <hgroup class="book-info" data-aos="fade">
             <h3>{{ book.title }}</h3>
@@ -25,3 +25,5 @@ permalink: /books.html
     {% endfor %}
 </details>
 {% endfor %}
+
+<script src="/assets/js/books.js"></script>

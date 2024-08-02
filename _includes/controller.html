@@ -37,7 +37,7 @@
 
     <button
         id="gallery-btn" class="contrast faa-parent animated-hover"
-        onclick="maximizeGallery(event)"
+        onclick="toggleGallery(event)"
     ><i class="fa-solid fa-maximize faa-pulse faa-fast"></i></button>
 </div>
 
@@ -56,14 +56,7 @@
 
 <script>
     const toggleMenu = () => {
-        const menu = document.getElementById("menu-btn")
-        const html = document.documentElement
-        if (menu.hasAttribute("open")) {
-            menu.removeAttribute("open")
-            html.removeAttribute("overlay")
-        } else {
-            menu.setAttribute("open", "")
-            html.setAttribute("overlay", "")
-        }
+        document.getElementById("menu-btn").toggleAttribute("open")
+        document.documentElement.toggleAttribute("overlay")
     }
 </script>

@@ -2,7 +2,7 @@ const getTheme = () => window.localStorage.getItem("data-theme") // get the stor
     ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") // get the preferred theme
 
 const setTheme = (theme) => {
-    document.documentElement.setAttribute("data-theme", theme)
+    document.documentElement.dataset.theme = theme
     window.localStorage.setItem("data-theme", theme)
 }
 

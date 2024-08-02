@@ -1,13 +1,9 @@
 const initGallery = (data) => {
-    const gallery = document.getElementById("gallery")
+    const element = document.getElementById("gallery")
     // load photos to gallery
-    const plugins = [lgZoom, lgAutoplay]
-    if (data.length < 50) {
-        plugins.push(lgThumbnail)
-    }
-    window.lightGallery(gallery, {
-        plugins: plugins,
-        container: gallery,
+    window.lightGallery(element, {
+        plugins: [lgZoom, lgAutoplay].concat(data.length < 50 ? [lgThumbnail] : []),
+        container: element,
         dynamic: true,
         dynamicEl: data.map((item) => {
             return {
@@ -21,7 +17,7 @@ const initGallery = (data) => {
         slideShowAutoPlay: false
     }).openGallery()
     // insert exif info
-    gallery.addEventListener("lgAfterSlide", () => {
+    element.addEventListener("lgAfterSlide", () => {
         const image = document.querySelector(".lg-container.lg-show .lg-current img")
         const caption = document.querySelector(".lg-container.lg-show .lg-sub-html")
         window.exifr.parse(image).then((exif) => {
@@ -40,20 +36,20 @@ const initGallery = (data) => {
         })
     })
     // activate maximize button
-    document.getElementById("gallery-btn").setAttribute("active", "")
+    document.getElementById("gallery-btn").toggleAttribute("active", true)
 }
 
-const maximizeGallery = () => {
-    const gallery = document.getElementById("gallery")
-    if (gallery.hasAttribute("maximized")) {
-        gallery.removeAttribute("maximized")
-        gallery.style.setProperty("position", "relative")
-        document.documentElement.removeAttribute("fullscreen")
-        window.scrollTo({ top: gallery.offsetTop - (window.innerHeight - gallery.offsetHeight) / 2 })
+const toggleGallery = () => {
+    const element = document.getElementById("gallery")
+    if (element.hasAttribute("maximized")) {
+        element.toggleAttribute("maximized", false)
+        element.style.setProperty("position", "relative")
+        document.documentElement.toggleAttribute("fullscreen", false)
+        window.scrollTo({ top: element.offsetTop - (window.innerHeight - element.offsetHeight) / 2 })
     } else {
-        gallery.setAttribute("maximized", "")
-        gallery.style.removeProperty("position")
-        document.documentElement.setAttribute("fullscreen", "")
+        element.toggleAttribute("maximized", true)
+        element.style.removeProperty("position")
+        document.documentElement.toggleAttribute("fullscreen", true)
         window.scrollTo({ top: 0 })
     }
 }

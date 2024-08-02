@@ -19,7 +19,11 @@
     min-width: 300px;
 
     animation: fadeInDown 1s backwards;
- 
+
+    ul {
+        margin-bottom: 0;
+    }
+
     li {
         position: relative;
         list-style: none;

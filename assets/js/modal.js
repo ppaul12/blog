@@ -1,21 +1,21 @@
 const openModal = (modal) => {
-    modal.setAttribute("open", "")
+    modal.toggleAttribute("open", true)
     window.setTimeout(() => {
-        modal.removeAttribute("close")
+        modal.toggleAttribute("close", false)
     }, 1)
     document.documentElement.setAttribute("overlay", "")
 }
 
 const closeModal = (modal) => {
     window.setTimeout(() => {
-        modal.removeAttribute("open")
+        modal.toggleAttribute("open", false)
     }, 300)
-    modal.setAttribute("close", "")
+    modal.toggleAttribute("close", true)
     document.documentElement.removeAttribute("overlay")
 }
 
 const toggleModal = (event) => {
-    const modal = document.getElementById(event.currentTarget.getAttribute("data-target"))
+    const modal = document.getElementById(event.currentTarget.dataset.target)
     if (modal !== null) {
         modal.hasAttribute("open") ? closeModal(modal) : openModal(modal)
     }
@@ -32,7 +32,7 @@ document.addEventListener("click", (event) => {
 // close with esc key
 document.addEventListener("keyup", (event) => {
     const modal = document.querySelector("dialog[open]:not([close])")
-    if (event.key === "Escape") {
+    if (modal !== null && event.key === "Escape") {
         closeModal(modal)
     }
 })

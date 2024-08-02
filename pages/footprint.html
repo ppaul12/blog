@@ -24,10 +24,9 @@ required: map
 <script src="/assets/js/jquery-jvectormap-china-merc.js"></script>
 <script src="/assets/js/jquery-jvectormap-japan-merc.js"></script>
 <script src="/assets/js/jquery-jvectormap-world-merc.js"></script>
-<script src="/assets/js/footprint.js"></script>
 <script>
-    window.addEventListener("load", async () => {
-        // load maps
+    // load maps
+    (async () => {
         for (const info of [
             {id: "#china-map", map: "china_merc", prefix: "/assets/json/footprint-china"},
             {id: "#japan-map", map: "japan_merc", prefix: "/assets/json/footprint-japan"},
@@ -52,10 +51,26 @@ required: map
                 },
             })
         }
-        // init tab view
-        initTabView(
-            document.querySelector(".travel-map-container"),
-            document.querySelector(".travel-map-nav")
-        )
+    })()
+
+    // init tab view
+    const container = document.querySelector(".travel-map-container")
+    const controller = document.querySelector(".travel-map-nav")
+    controller.querySelectorAll("button").forEach((button) => {
+        button.onclick = (event) => {
+            const toClose = {
+                map: container.querySelector(".travel-map[active]"),
+                btn: controller.querySelector("button[active]"),
+            }
+            toClose.map.toggleAttribute("active", false)
+            toClose.btn.toggleAttribute("active", false)
+
+            const toOpen = {
+                map: container.querySelector(event.target.getAttribute("data-target")),
+                btn: event.target,
+            }
+            toOpen.map.toggleAttribute("active", true)
+            toOpen.btn.toggleAttribute("active", true)
+        }
     })
 </script>

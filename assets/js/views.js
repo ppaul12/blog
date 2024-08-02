@@ -1,4 +1,4 @@
-const getViewMode = () => {
+const isIncognito = () => {
     if (window.localStorage.getItem("is-incognito") !== null) {
         return window.localStorage.getItem("is-incognito")
     }
@@ -9,7 +9,7 @@ const getViewMode = () => {
     return mode
 }
 
-if (getViewMode() === "true") {
+if (isIncognito() === "true") {
     window.goatcounter = { no_onload: true }
 }
 
@@ -19,10 +19,10 @@ window.addEventListener("load", () => {
         fetch(`https://peng-ao.goatcounter.com/counter/${encodeURIComponent(location.pathname)}.json`)
             .then((response) => response.json())
             .then((data) => {
-                pageView.setAttribute("data-tooltip", `${data.count.replace(' ', '')} views`)
+                pageView.dataset.tooltip = `${data.count.replace(' ', '')} views`
             })
             .catch(() => {
-                pageView.setAttribute("data-tooltip", "1 view")
+                pageView.dataset.tooltip = "1 view"
             })
     }
 

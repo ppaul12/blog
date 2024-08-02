@@ -3,25 +3,17 @@ const updateAll = () => {
     const targetTags = url.searchParams.getAll("tag")
     // update post list
     document.querySelectorAll(".tag-posts > *").forEach((item) => {
-        const sourceTags = item.getAttribute("data-tags").split(" ")
-        if (targetTags.every((tag) => sourceTags.includes(tag))) {
-            item.setAttribute("active", "")
-        } else {
-            item.removeAttribute("active")
-        }
+        const sourceTags = item.dataset.tags.split(" ")
+        item.toggleAttribute("active", targetTags.every((tag) => sourceTags.includes(tag)))
     })
     // update button states
     document.querySelectorAll(".tag-cloud > *").forEach((item) => {
-        if (targetTags.includes(item.id)) {
-            item.setAttribute("active", "")
-        } else {
-            item.removeAttribute("active")
-        }
+        item.toggleAttribute("active", targetTags.includes(item.id))
     })
     // update post counts
     document.querySelectorAll(".tag-posts:has(*[active]").forEach((item) => {
         const count = item.querySelectorAll("*[active]").length
-        item.setAttribute("data-count", `${count} post${count > 1 ? 's' : ''}`)
+        item.dataset.count = `${count} post${count > 1 ? 's' : ''}`
     })
     // refresh aos calculation
     AOS.refresh()
@@ -43,4 +35,4 @@ const toggleTag = (event) => {
     updateAll()
 }
 
-window.addEventListener("load", () => updateAll())
+updateAll()

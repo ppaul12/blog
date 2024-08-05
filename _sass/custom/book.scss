@@ -1,4 +1,60 @@
 .book {
+    &-shelf {
+        margin-bottom: 2.2em;
+
+        &[active] {
+            margin-bottom: 0;
+        }
+
+        &>.book-card {
+            &:first-of-type {
+                box-shadow:
+                    var(--pico-card-box-shadow),
+                    0 0.5em rgba(var(--pico-muted-border-color-rgb), 0.9),
+                    0 1.0em rgba(var(--pico-muted-border-color-rgb), 0.6),
+                    0 1.5em rgba(var(--pico-muted-border-color-rgb), 0.3);
+
+                transition: box-shadow 0.3s ease;
+            }
+
+            &:not(:first-of-type) {
+                display: none;
+            }
+        }
+
+        &[active]>.book-card {
+            &:first-of-type {
+                box-shadow: var(--pico-card-box-shadow);
+            }
+
+            &:not(:first-of-type) {
+                display: flex;
+            }
+        }
+
+        &:not([active]):hover {
+            &>.book-card:first-of-type {
+                box-shadow:
+                    var(--pico-card-box-shadow),
+                    0 0.6em rgba(var(--pico-muted-border-color-rgb), 0.9),
+                    0 1.2em rgba(var(--pico-muted-border-color-rgb), 0.6),
+                    0 1.8em rgba(var(--pico-muted-border-color-rgb), 0.3);
+
+            }
+        }
+
+        &-info {
+            margin: 0.5em auto;
+            text-align: center;
+
+            &::after {
+                margin-left: 0.3em;
+                font-size: 0.6em;
+                content: "(" attr(data-count)")";
+            }
+        }
+    }
+
     &-card {
         @extend .card;
         display: flex;

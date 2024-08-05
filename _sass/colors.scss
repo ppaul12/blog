@@ -31,6 +31,7 @@ $nord15: #b48ead;
 
     --pico-muted-color: #{$nord3};
     --pico-muted-border-color: #{$nord4};
+    --pico-muted-border-color-rgb: 216, 222, 233; // nord4
 
     --pico-primary: #{$nord10};
     --pico-primary-hover: #{$nord9};
@@ -68,6 +69,7 @@ $nord15: #b48ead;
 
     --pico-muted-color: #{$nord4};
     --pico-muted-border-color: #{$nord3};
+    --pico-muted-border-color-rgb: 76, 86, 106; // nord3
 
     --pico-primary: #{$nord9};
     --pico-primary-hover: #{$nord10};

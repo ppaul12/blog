@@ -14,3 +14,13 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll(".book-img .cover").forEach((img) => {
     observer.observe(img)
 })
+
+const toggleShelf = (event) => {
+    document.querySelectorAll(".book-shelf").forEach((shelf) => {
+        if (shelf.contains(event.target)) {
+            shelf.toggleAttribute("active")
+            shelf.scrollIntoView()
+        }
+    })
+    AOS.refresh()
+}

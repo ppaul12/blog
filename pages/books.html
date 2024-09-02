@@ -6,8 +6,9 @@ permalink: /books.html
 ---
 
 {% assign booksets = site.data.books %}
-{% for bookset in booksets %}
-<section class="book-shelf" onclick="toggleShelf(event)" {% if forloop.index <= 2 %}active{% endif %}>
+{% for bookset in booksets %}{% unless bookset.books.size > 0 %}{% continue %}{% endunless %}
+<section {% if bookset.books.size > 1 %}class="book-shelf" onclick="toggleShelf(event)"{% endif %}
+    {% if forloop.index <= 2 %}active{% endif %}>
     <h4 class="book-shelf-info" data-count="{{ bookset.books.size }}" data-aos="fade">{{ bookset.year }}</h4>
     {% assign books = bookset.books | sort:"date" %}
     {% for book in books %}

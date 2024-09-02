@@ -24,3 +24,5 @@ const toggleShelf = (event) => {
     })
     AOS.refresh()
 }
+
+AOS.refresh()

@@ -3,7 +3,6 @@ layout: post
 title: 闲读小山词
 tags: 古诗词 摘抄
 required: plain-heading
-edited: true
 ---
 
 - toc

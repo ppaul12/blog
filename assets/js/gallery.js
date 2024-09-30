@@ -2,7 +2,7 @@ const initGallery = (data) => {
     const element = document.getElementById("gallery")
     // load photos to gallery
     window.lightGallery(element, {
-        plugins: [lgZoom, lgAutoplay].concat(data.length < 50 ? [lgThumbnail] : []),
+        plugins: [lgZoom, lgAutoplay, lgThumbnail],
         container: element,
         dynamic: true,
         dynamicEl: data.map((item) => {
@@ -14,7 +14,9 @@ const initGallery = (data) => {
         }),
         mode: "lg-zoom-in-out",
         closable: false,
-        slideShowAutoPlay: false
+        thumbnail: data.length < 50,
+        slideShowAutoPlay: false,
+        showMaximizeIcon: true
     }).openGallery()
     // insert exif info
     element.addEventListener("lgAfterSlide", () => {
@@ -35,21 +37,4 @@ const initGallery = (data) => {
             ]).filter((item) => item !== null).join("<br>")
         })
     })
-    // activate maximize button
-    document.getElementById("gallery-btn").toggleAttribute("active", true)
-}
-
-const toggleGallery = () => {
-    const element = document.getElementById("gallery")
-    if (element.hasAttribute("maximized")) {
-        element.toggleAttribute("maximized", false)
-        element.style.setProperty("position", "relative")
-        document.documentElement.toggleAttribute("fullscreen", false)
-        window.scrollTo({ top: element.offsetTop - (window.innerHeight - element.offsetHeight) / 2 })
-    } else {
-        element.toggleAttribute("maximized", true)
-        element.style.removeProperty("position")
-        document.documentElement.toggleAttribute("fullscreen", true)
-        window.scrollTo({ top: 0 })
-    }
 }

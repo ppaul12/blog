@@ -26,7 +26,7 @@
 
     &-name {
         width: 80%;
-        margin: -80px auto 0;
+        margin: -3em auto 0;
         text-align: center;
         font: 1.5em "Courier New", monospace;
 
@@ -52,6 +52,7 @@
     &-info {
         position: relative;
         margin-bottom: 0;
+        padding-inline-start: 0.5em;
 
         &-item {
             list-style: none;

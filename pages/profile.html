@@ -9,18 +9,15 @@ required: no-footer
     <header class="card">
         <div class="profile-avatar"><img src="/assets/img/avatar.jpeg"></div>
         <div class="profile-name">PENG Ao</div>
+        <!-- skills -->
+        <div class="profile-icons">
+            {% assign skills = site.data.profiles.skills | sort:"info" %}
+            {% for skill in skills %}
+            <img src="https://cdn.simpleicons.org/{{ skill.info }}/{{ skill.color }}"
+                width="15px" height="15px" style="--ith: {{ forloop.index0 }}">
+            {% endfor %}
+        </div>
     </header>
-
-    <!-- skills -->
-    <div class="profile-icons">
-        {% assign skills = site.data.profiles.skills | sort:"info" %}
-        {% for skill in skills %}
-        <img src="https://cdn.simpleicons.org/{{ skill.info }}/{{ skill.color }}"
-            width="32px" height="32px" style="--ith: {{ forloop.index0 }}">
-        {% endfor %}
-    </div>
-
-    <hr data-aos="fade">
 
     <!-- information -->
     <ul class="profile-info">

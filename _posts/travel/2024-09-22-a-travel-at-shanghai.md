@@ -7,9 +7,6 @@ required: gallery
 cover: /assets/src/a-travel-at-shanghai/pic11.jpeg
 ---
 
-> 中秋后返日前，应邀来到女朋友的家乡。一路从卧铺换到高铁，顺便游览了沿途的城市。在南京虽只有小半天的时间，但足以见得其底蕴丰厚。苏州之名早已如雷贯耳，因而难免让人期待过高，但也名副其实。魔都上海，未能遍历，势必需再度造访。
-{: .info}
-
 # 路程规划
 
 <iframe src="https://www.google.com/maps/d/u/1/embed?mid=1SziR4sH6zxL1PNSkfD0yANunOEFCo9A&ehbc=2E312F&noprof=1" width="100%" height="480" loading="lazy"></iframe>
@@ -18,8 +15,10 @@ cover: /assets/src/a-travel-at-shanghai/pic11.jpeg
 
 {% include gallery.html path="a-travel-at-shanghai" %}
 
-# 小计
+# 小记
 
 - 时间：为期五天，2024/09/18 ~ 2024/09/22
 - 人数：2人
 - 形式：铁路+地铁
+
+中秋后返日前，应邀来到女朋友的家乡。一路从卧铺换到高铁，顺便游览了沿途的城市。在南京虽只有小半天的时间，但足以见得其底蕴丰厚。苏州之名早已如雷贯耳，因而难免让人期待过高，但也名副其实。魔都上海，未能遍历，势必需再度造访。

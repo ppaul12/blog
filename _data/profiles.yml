@@ -55,7 +55,6 @@ friends:
     info: GitHub
 
 skills:
-  # programming language
   - info: c
     color: "A8B9CC"
   - info: cplusplus
@@ -72,51 +71,7 @@ skills:
     color: "CC6699"
   - info: javascript
     color: "F7DF1E"
-  # configuration language
-  - info: toml
-    color: "9C4121"
-  - info: yaml
-    color: "CB171E"
-  - info: json
-    color: "000000"
-  # version control tool
-  - info: git
-    color: "F05032"
-  - info: github
-    color: "181717"
-  # typing tool
-  - info: jekyll
-    color: "CC0000"
   - info: latex
     color: "008080"
   - info: markdown
     color: "000000"
-  # other tools
-  - info: safari
-    color: "006CFF"
-  - info: iterm2
-    color: "000000"
-  - info: homebrew
-    color: "FBB040"
-  - info: zsh
-    color: "F15A24"
-  # editor
-  - info: neovim
-    color: "57A143"
-  - info: jupyter
-    color: "F37626"
-  # - info: visualstudiocode
-  #   color: "007ACC"
-  # operating system
-  - info: macos
-    color: "000000"
-  - info: ubuntu
-    color: "E95420"
-  # game console
-  - info: nintendo3ds
-    color: "D12228"
-  - info: nintendoswitch
-    color: "E60012"
-  # others
-  - info: leetcode
-    color: "FFA116"

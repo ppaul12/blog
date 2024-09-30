@@ -7,7 +7,10 @@ required: gallery
 cover: /assets/src/a-travel-at-qixi/pic1.jpeg
 ---
 
-> 立秋已过，东京仍旧酷暑难耐。二人平常心，小游于都内，走走停停，拍拍相片罢。
-{: .info}
+# 沿途风光
 
 {% include gallery.html path="a-travel-at-qixi" %}
+
+# 小记
+
+立秋已过，东京仍旧酷暑难耐。二人平常心，小游于都内，走走停停，拍拍相片罢。

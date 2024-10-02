@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 聪明糊涂心
-subtitle: 甲辰小暑其间有感
+subtitle: 甲辰小暑期间有感
 tags: 随想
 edited: true
 ---

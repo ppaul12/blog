@@ -23,12 +23,18 @@ required: gallery
         }, Promise.resolve([]))
         // reorder images on demand
         const url = new URL(document.location)
-        const order = url.searchParams.get("order") || "shuffle"
-        images.sort({
-            "ascend": (a, b) => a.date - b.date,
-            "descend": (a, b) => b.date - a.date,
-            "shuffle": (a, b) => Math.random() - 0.5,
-        }[order])
+        switch (url.searchParams.get("order") || "shuffle") {
+            case "ascend":
+                images.sort((a, b) => a.date - b.date); break
+            case "descend":
+                images.sort((a, b) => b.date - a.date); break
+            case "shuffle":
+            default:
+                for (let i = images.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [images[i], images[j]] = [images[j], images[i]]
+                }
+        }
         // init gallery with images
         initGallery(images)
     })()

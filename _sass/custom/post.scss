@@ -164,4 +164,52 @@
             }
         }
     }
+
+    &-reaction {
+        text-align: center;
+
+        animation: 1s fadeIn 1s backwards;
+
+        &-good,
+        &-bad {
+            display: inline-block;
+            position: relative;
+            margin: 0 1em;
+            text-align: center;
+            color: grey;
+
+            transition: color 0.3s ease;
+
+            &::before {
+                display: block;
+                font: 900 1.5em "Font Awesome 6 Free";
+            }
+
+            &::after {
+                display: block;
+                font-size: 0.8em;
+                content: attr(data-num);
+            }
+
+            &[active] {
+                color: $nord12;
+            }
+
+            :not(.post-reaction[disabled])>&:hover {
+                color: $nord13;
+
+                &::before {
+                    animation: 1s bounce infinite;
+                }
+            }
+        }
+
+        &-good::before {
+            content: "\f164";
+        }
+
+        &-bad::before {
+            content: "\f165";
+        }
+    }
 }

@@ -193,6 +193,8 @@
 
             &[active] {
                 color: $nord12;
+
+                animation: 1s tada backwards;
             }
 
             :not(.post-reaction[disabled])>&:hover {

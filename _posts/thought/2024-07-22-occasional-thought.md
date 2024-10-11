@@ -3,7 +3,6 @@ layout: post
 title: 畏惧破碎
 subtitle: 甲辰大暑期间有感
 tags: 随想
-edited: true
 ---
 
 > 成文于2024.10.02

@@ -16,9 +16,15 @@ if (isAnonymous() === "true") {
 
 // post reaction
 const clickReaction = (event) => {
-    const reactionBlock = document.querySelector(".post-reaction")
-    if (reactionBlock.getAttribute("disabled") !== null)
+    if (isAnonymous() === "true") {
+        window.alert("Post reactions are not supported when using anonymous mode.")
         return
+    }
+
+    const reactionBlock = document.querySelector(".post-reaction")
+    if (reactionBlock.getAttribute("disabled") !== null) {
+        return
+    }
 
     const reactionButton = event.target
     window.goatcounter.count({

@@ -6,7 +6,6 @@ tags: 随想
 required: gallery
 cover: /assets/src/occasional-thought/20240822/pic6.jpeg
 marked: true
-edited: true
 ---
 
 > 成文于2024.10.11

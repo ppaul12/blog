@@ -6,6 +6,8 @@
             https://utteranc.es/
             https://gc.zgo.at/;
         style-src 'self' 'unsafe-inline'
+            https://chinese-fonts-cdn.deno.dev/
+            https://ik.imagekit.io/
             https://cdn.jsdelivr.net/;
         img-src 'self' data:
             https://cdn.jsdelivr.net/
@@ -13,6 +15,7 @@
             https://github-readme-stats.vercel.app/
             https://cdn.simpleicons.org/;
         font-src 'self' data:
+            https://ik.imagekit.io/
             https://cdn.jsdelivr.net/;
         connect-src 'self'
             https://cdn.jsdelivr.net/
@@ -60,12 +63,13 @@
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/font-awesome-animation@latest/css/font-awesome-animation.min.css">
     <!-- lxgw wenkai font -->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@latest/lxgwwenkailite-regular.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@latest/lxgwwenkailite-bold.css">
-    <!-- lxgw neo zhisong -->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/cn-fontsource-lxgw-neo-zhi-song-chs-regular-lxgw-neo-zhi-song@latest/font.min.css">
+    <link rel='stylesheet'
+        href='https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css'>
+    <link rel='stylesheet'
+        href='https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Bold/result.css'>
+    <!-- zhuque faonsong font -->
+    <link rel='stylesheet'
+        href='https://chinese-fonts-cdn.deno.dev/packages/zqfs/dist/ZhuqueFangsong-Regular/result.css'>
 
     {% if page.required contains "code" %}
     <!-- prism js -->

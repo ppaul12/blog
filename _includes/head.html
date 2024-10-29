@@ -74,7 +74,7 @@
     {% if page.required contains "code" %}
     <!-- prism js -->
     <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/components/prism-core.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes@latest/themes/prism-one-dark.min.css">
+    <link id="prism-theme" rel="stylesheet" data-href="https://cdn.jsdelivr.net/npm/prism-themes@latest/themes/">
     <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/autoloader/prism-autoloader.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <link rel="stylesheet"
@@ -88,6 +88,8 @@
     <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/show-language/prism-show-language.min.js"></script>
     <!-- roboto mono font -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/roboto-mono@latest/index.min.css">
+    <!-- custom code theme switcher -->
+    <script src="/assets/js/code.js"></script>
     {% endif %}
 
     {% if page.required contains "math" %}

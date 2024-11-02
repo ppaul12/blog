@@ -58,10 +58,10 @@ window.addEventListener("load", () => {
         fetch("https://peng-ao.goatcounter.com/counter/TOTAL.json")
             .then((response) => response.json())
             .then((data) => {
-                siteView.innerText = `${data.count.replace(' ', '')} views in total`
+                siteView.innerText = `${data.count.replace(' ', '')} views`
             })
             .catch(() => {
-                siteView.innerText = "1 view in total"
+                siteView.innerText = "1 view"
             })
     }
     // load post reaction number

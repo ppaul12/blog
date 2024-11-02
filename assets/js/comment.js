@@ -7,9 +7,7 @@ const setCommentTheme = (theme) => {
 
 window.addEventListener("message", (event) => {
     if (event.origin === "https://utteranc.es") {
-        // set theme dynamically
         setCommentTheme(document.documentElement.dataset.theme)
-        // change theme dynamically
         const observer = new MutationObserver((mutations) => {
             mutations.forEach((mutation) => {
                 if (mutation.attributeName === "data-theme") {

@@ -8,11 +8,6 @@
 html {
     transition: background 0.5s ease;
     scroll-behavior: smooth !important;
-    background-image: url("/assets/img/background.svg");
-    background-position: bottom;
-    background-size: 100%;
-    background-attachment: fixed;
-    background-blend-mode: overlay;
 
     &[overlay],
     &[fullscreen] {

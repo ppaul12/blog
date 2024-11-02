@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Multi-layer Cache System
-tags: 操作系统 C/C++
+tags: C/C++
 lang: en
 required: code
 ---

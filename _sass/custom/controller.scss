@@ -9,13 +9,22 @@
     transition: all 1s ease;
 
     button {
-        margin-top: 0.5em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 3em;
+        aspect-ratio: 1;
+        margin: 0.5em auto;
         border-radius: 50%;
 
         animation: fadeInRight 2s backwards;
 
         &:not([active]) {
             display: none;
+        }
+
+        &[inactivating] {
+            animation: fadeOutRight 2s backwards;
         }
     }
 }

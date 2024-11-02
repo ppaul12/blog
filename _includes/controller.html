@@ -10,21 +10,6 @@
     ><i class="fa-solid fa-lightbulb faa-flash faa-slow"></i></button>
 
     <button
-        id="search-btn" class="contrast faa-parent animated-hover"
-        onclick="toggleModal(event)" data-target="search-box" active
-    ><i class="fa-solid fa-magnifying-glass faa-wrench faa-slow"></i></button>
-    <dialog id="search-box" close><article>
-        <header>
-            <nav>
-                <ul>Search</ul>
-                <ul class="close-btn" data-target="search-box" onclick="toggleModal(event)"></ul>
-            </nav>
-            <input id="search-input" type="search" placeholder='press "/" to focus ...'>
-        </header>
-        <ul class="item-list" id="search-results"></ul>
-    </article></dialog>
-
-    <button
         id="toc-btn" class="contrast faa-parent animated-hover"
         onclick="toggleModal(event)" data-target="toc-box"
     ><i class="fa-solid fa-bars-staggered faa-shake faa-slow"></i></button>
@@ -34,6 +19,11 @@
             <ul class="close-btn" data-target="toc-box" onclick="toggleModal(event)"></ul>
         </nav></header>
     </article></dialog>
+
+    <button
+        id="top-btn" class="contrast faa-parent animated-hover"
+        onclick="document.documentElement.scrollTop=0"
+    ><i class="fa-solid fa-angle-up faa-vertical"></i></button>
 </div>
 
 <div id="menu-btn" class="menu" onclick="toggleMenu(event)">
@@ -54,6 +44,22 @@
         document.getElementById("menu-btn").toggleAttribute("open")
         document.documentElement.toggleAttribute("overlay")
     }
+    window.addEventListener("scroll", (event) => {
+        const topBtn = document.getElementById("top-btn")
+        if (document.documentElement.scrollTop < 200) {
+            if (topBtn.hasAttribute("active")) {
+                topBtn.toggleAttribute("inactivating", true)
+                window.setTimeout(() => {
+                    topBtn.toggleAttribute("active", false)
+                    topBtn.toggleAttribute("inactivating", false)
+                }, 2000)
+            }
+        } else {
+            if (!topBtn.hasAttribute("active")) {
+                topBtn.toggleAttribute("active", true)
+            }
+        }
+    })
     // setup AOS
     AOS.init({offset: 60, duration: 1200})
 </script>

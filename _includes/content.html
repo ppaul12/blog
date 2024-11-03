@@ -2,12 +2,7 @@
 <header>LA VITA</header>
 {% endif %}
 
-{% if content contains "<table>" %}
-    {% assign content = content
-        | replace:"<table>","<figure class='overflow-auto'><table class='striped'>"
-        | replace:"</table>","</table></figure>"
-    %}
-{% endif %}
+{% assign content = content | replace:"<table","<figure><table" | replace:"table>","table></figure>" %}
 {% if page.required contains "plain-heading" %}
     {% assign content = content | replace:"post-content","post-content-plain" %}
 {% endif %}
@@ -20,3 +15,14 @@
     <small id="site-view"></small>
 </footer>
 {% endunless %}
+
+<script>
+    window.addEventListener("load", () => {
+        document.querySelectorAll("figure > table[caption]").forEach((elem) => {
+            const caption = document.createElement("figcaption")
+            caption.innerText = elem.getAttribute("caption")
+            elem.after(caption)
+            elem.removeAttribute("caption")
+        })
+    })
+</script>

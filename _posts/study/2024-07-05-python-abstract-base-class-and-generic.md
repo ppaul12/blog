@@ -22,23 +22,11 @@ required: code
 
 对于常见语言可做以下分类，但也不得不注意动静、强弱本身均属于相对的概念，并且也不存在100%精确的定义进行区分，所以把握大意即可。
 
-<table>
-    <thead>
-        <th></th>
-        <th>动态类型</th>
-        <th>静态类型</th>
-    </thead>
-    <tr>
-        <th>强类型</th>
-        <td>Python</td>
-        <td>Java</td>
-    </tr>
-    <tr>
-        <th>弱类型</th>
-        <td>JavaScript</td>
-        <td>C/C++</td>
-    </tr>
-</table>
+| |动态类型|静态类型|
+|:-:|:-:|:-:|
+|强类型|Python|Java|
+|弱类型|JavaScript|C/C++|
+{: caption="常见语言的分类"}
 
 # 抽象基类与泛型
 

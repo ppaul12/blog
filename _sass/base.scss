@@ -69,8 +69,7 @@ mjx-container {
 }
 
 img {
-    max-width: 100%;
-    vertical-align: middle;
+    width: 100%;
 }
 
 dialog {
@@ -186,6 +185,30 @@ blockquote {
 
 table {
     white-space: nowrap;
+
+    tbody tr:nth-child(odd) th,
+    tbody tr:nth-child(odd) td {
+        background-color: var(--pico-table-row-stripped-background-color);
+    }
+}
+
+figure {
+    overflow: auto;
+    margin: 0.5em auto;
+    text-align: center;
+
+    @media (max-width: 420px) {
+        min-width: 100%;
+    }
+
+    iframe {
+        width: 100%;
+    }
+
+    figcaption {
+        font-size: 80%;
+        color: grey;
+    }
 }
 
 nav[aria-label=breadcrumb] {

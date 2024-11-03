@@ -14,30 +14,6 @@ if (isAnonymous() === "true") {
     window.goatcounter = { no_onload: true }
 }
 
-// post reaction
-const clickReaction = (event) => {
-    if (isAnonymous() === "true") {
-        window.alert("Post reactions are not supported when using anonymous mode.")
-        return
-    }
-
-    const reactionBlock = document.querySelector(".post-reaction")
-    if (reactionBlock.getAttribute("disabled") !== null) {
-        return
-    }
-
-    const reactionButton = event.target
-    window.goatcounter.count({
-        path: `${reactionButton.dataset.tag}${window.location.pathname}`,
-        title: `${document.title}#${reactionButton.dataset.tag}`,
-        event: true,
-    })
-    reactionButton.dataset.num = Number(reactionButton.dataset.num) + 1
-    reactionButton.toggleAttribute("active", true)
-    reactionBlock.toggleAttribute("disabled", true)
-    window.localStorage.setItem(window.location.pathname, reactionButton.dataset.tag)
-}
-
 // load all kinds of view numbers
 window.addEventListener("load", () => {
     // load page view number
@@ -63,25 +39,5 @@ window.addEventListener("load", () => {
             .catch(() => {
                 siteView.innerText = "1 view"
             })
-    }
-    // load post reaction number
-    const postReaction = document.querySelector(".post-reaction")
-    if (postReaction !== null) {
-        Array.from(postReaction.children).forEach((item) => {
-            // init button state
-            if (window.localStorage.getItem(window.location.pathname) === item.dataset.tag) {
-                item.toggleAttribute("active", true)
-                postReaction.toggleAttribute("disabled", true)
-            }
-            // fetch reaction number
-            fetch(`https://peng-ao.goatcounter.com/counter/${item.dataset.tag}${encodeURIComponent(window.location.pathname)}.json`)
-                .then((response) => response.json())
-                .then((data) => {
-                    item.dataset.num = data.count.replace(' ', '')
-                })
-                .catch(() => {
-                    item.dataset.num = 0
-                })
-        })
     }
 })

@@ -15,7 +15,7 @@ My blog for personal records of travels, thoughts, studies, and so on, with the 
 - repo cards: [github-readme-stats](https://github.com/anuraghazra/github-readme-stats)
 - badges: [shields](https://github.com/badges/shields)
 - animations: [animate.css](https://github.com/animate-css/animate.css) + [aos](https://michalsnik.github.io/aos/) + [font-awesome-animation](https://l-lin.github.io/font-awesome-animation/)
-- comments: [utterances](https://utteranc.es)
+- comments: [Giscus](https://giscus.app)
 - code highlight: [prism.js](https://prismjs.com/index.html)
 - math formulas: [MathJax](https://www.mathjax.org)
 - flow charts: [Mermaid](https://mermaid.js.org)

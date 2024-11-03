@@ -6,6 +6,9 @@ tags: 博客搭建
 required: code
 ---
 
+> 2024.11.03：本站已将评论系统由[utterances](https://utteranc.es)迁移至[giscus](https://giscus.app)。giscus基于GitHub Discussion构建，支持对于整体的reaction。因此本文内容已不在本站使用，仅供读者参考。
+{: .warn}
+
 - toc
 {:toc}
 

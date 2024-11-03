@@ -122,7 +122,7 @@ $$
 
 Reference frame registration is an *optimization problem* for estimating *transformation parameters* for point clouds without markers.
 
-<div class="mermaid img-frame">
+<figure class="mermaid">
 flowchart TD
     PC1("Point cloud 1")
     PC2("Point cloud 2")
@@ -133,7 +133,7 @@ flowchart TD
     PC1 & PC2--> STEP1
     STEP1 --> STEP2 --> STEP1
     STEP2 --> OUT
-</div>
+</figure>
 
 Approaches can be divided into three primary classes:
 - *Geometric-constraint*-based methods

@@ -9,11 +9,11 @@ cover: /assets/src/a-travel-at-yamagata/pic1.jpeg
 
 # 路程规划
 
-<iframe src="https://www.google.com/maps/d/u/3/embed?mid=1AfOMdv4F_UvSCYp1ceSgFvM6EuWcS4c&ehbc=2E312F&noprof=1" width="100%" height="480" style="border:0;" loading="lazy"></iframe>
+{% include embed/map.html param="1AfOMdv4F_UvSCYp1ceSgFvM6EuWcS4c&ehbc=2E312F" self-made=true %}
 
 # 沿途风光
 
-{% include gallery.html path="a-travel-at-yamagata" %}
+{% include embed/gallery.html path="a-travel-at-yamagata" %}
 
 # 小计
 

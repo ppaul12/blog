@@ -9,11 +9,11 @@ cover: /assets/src/a-travel-at-shanghai/pic11.jpeg
 
 # 路程规划
 
-<iframe src="https://www.google.com/maps/d/u/1/embed?mid=1SziR4sH6zxL1PNSkfD0yANunOEFCo9A&ehbc=2E312F&noprof=1" width="100%" height="480" loading="lazy"></iframe>
+{% include embed/map.html param="1SziR4sH6zxL1PNSkfD0yANunOEFCo9A&ehbc=2E312F" self-made=true %}
 
 # 沿途风光
 
-{% include gallery.html path="a-travel-at-shanghai" %}
+{% include embed/gallery.html path="a-travel-at-shanghai" %}
 
 # 小记
 

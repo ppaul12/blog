@@ -9,11 +9,11 @@ cover: /assets/src/a-travel-at-aizu-again/pic5.jpeg
 
 # 路程规划
 
-<iframe src="https://www.google.com/maps/d/u/3/embed?mid=1RrjnlnhFJ4j9sELZ-6asT_K1w36rFbs&ehbc=2E312F&noprof=1" width="100%" height="480" style="border:0;" loading="lazy"></iframe>
+{% include embed/map.html param="1RrjnlnhFJ4j9sELZ-6asT_K1w36rFbs&ehbc=2E312F" self-made=true %}
 
 # 沿途风光
 
-{% include gallery.html path="a-travel-at-aizu-again" %}
+{% include embed/gallery.html path="a-travel-at-aizu-again" %}
 
 # 小计
 

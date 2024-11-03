@@ -33,8 +33,8 @@ const clickReaction = (event) => {
         event: true,
     })
     reactionButton.dataset.num = Number(reactionButton.dataset.num) + 1
-    reactionButton.setAttribute("active", "")
-    reactionBlock.setAttribute("disabled", "")
+    reactionButton.toggleAttribute("active", true)
+    reactionBlock.toggleAttribute("disabled", true)
     window.localStorage.setItem(window.location.pathname, reactionButton.dataset.tag)
 }
 
@@ -70,8 +70,8 @@ window.addEventListener("load", () => {
         Array.from(postReaction.children).forEach((item) => {
             // init button state
             if (window.localStorage.getItem(window.location.pathname) === item.dataset.tag) {
-                item.setAttribute("active", "")
-                postReaction.setAttribute("disabled", "")
+                item.toggleAttribute("active", true)
+                postReaction.toggleAttribute("disabled", true)
             }
             // fetch reaction number
             fetch(`https://peng-ao.goatcounter.com/counter/${item.dataset.tag}${encodeURIComponent(window.location.pathname)}.json`)

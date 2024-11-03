@@ -8,11 +8,11 @@ required: gallery
 
 # 路程规划
 
-<iframe src="https://www.google.com/maps/d/embed?mid=19wwC2ka5pk5j0EQPwzUK2kCRdrX16lcI" width="100%" height="480"></iframe>
+{% include embed/map.html param="19wwC2ka5pk5j0EQPwzUK2kCRdrX16lcI" self-made=true %}
 
 # 沿途风光
 
-{% include gallery.html path="a-travel-at-chyuodo" %}
+{% include embed/gallery.html path="a-travel-at-chyuodo" %}
 
 # 小计
 

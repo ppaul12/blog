@@ -24,9 +24,9 @@ required: code
 clickReactionTest = (event) => {
     const reactionButton = event.target
     reactionButton.dataset.num = Number(reactionButton.dataset.num) + 1
-    reactionButton.setAttribute("active", "")
+    reactionButton.toggleAttribute("active", true)
     window.setTimeout(() => {
-        reactionButton.removeAttribute("active")
+        reactionButton.toggleAttribute("active", false)
     }, 3000)
 }
 </script>
@@ -85,8 +85,8 @@ const clickReaction = (event) => {
         event: true,
     })
     reactionButton.dataset.num = Number(reactionButton.dataset.num) + 1
-    reactionButton.setAttribute("active", "")
-    reactionBlock.setAttribute("disabled", "")
+    reactionButton.toggleAttribute("active", true)
+    reactionBlock.toggleAttribute("disabled", true)
     window.localStorage.setItem(window.location.pathname, reactionButton.dataset.tag)
 }
 ```
@@ -104,8 +104,8 @@ if (postReaction !== null) {
     Array.from(postReaction.children).forEach((item) => {
         // init button state
         if (window.localStorage.getItem(window.location.pathname) === item.dataset.tag) {
-            item.setAttribute("active", "")
-            postReaction.setAttribute("disabled", "")
+            item.toggleAttribute("active", true)
+            postReaction.toggleAttribute("disabled", true)
         }
         // fetch reaction number
         fetch(`https://YourID.goatcounter.com/counter/${item.dataset.tag}${encodeURIComponent(window.location.pathname)}.json`)

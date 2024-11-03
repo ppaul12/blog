@@ -219,7 +219,7 @@ $$
 
 ## 对偶图
 
-<div class="img-frame"><img src="/assets/src/graph-theory-memo/duals graphs.svg"></div>
+{% include embed/image.html src="/assets/src/graph-theory-memo/duals graphs.svg" width="30%" %}
 
 - 性质1
     - 对偶图为平面图，且为平面嵌入
@@ -235,7 +235,7 @@ $$
 
 ## 支配集
 
-<div class="img-frame"><img src="/assets/src/graph-theory-memo/dominating set.svg"></div>
+{% include embed/image.html src="/assets/src/graph-theory-memo/dominating set.svg" width="30%" %}
 
 - 图中所有不属于支配集(红色)的顶点一定会与支配集相邻
 - 极小支配集：该支配集的任意真子集均不是支配集
@@ -338,7 +338,7 @@ $$
 
     - 流程图
 
-        <div class="mermaid img-frame">
+        <figure class="mermaid">
         flowchart TD
             start("flow=0")
             findPath["计算N(f)中s到t的有向通路P"]
@@ -349,7 +349,7 @@ $$
 
             start --> findPath --> check -- yes --> updatePath1 --> updatePath2 --> findPath
             check -- no --> final
-        </div>
+        </figure>
 
 # 线性规划问题
 

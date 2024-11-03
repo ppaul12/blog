@@ -8,11 +8,11 @@ required: gallery
 
 # 路程规划
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d103663.30013521019!2d140.73642602801047!3d35.7144579424535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602318e0ef07140d%3A0xd0402c7332538964!2z5Y2D5Y-25Y6_6ZOr5a2Q5biC!5e0!3m2!1szh-CN!2sjp!4v1635929434143!5m2!1szh-CN!2sjp" width="100%" height="480" style="border:0;" loading="lazy"></iframe>
+{% include embed/map.html param="!1m18!1m12!1m3!1d103663.30013521019!2d140.73642602801047!3d35.7144579424535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x602318e0ef07140d%3A0xd0402c7332538964!2z5Y2D5Y-25Y6_6ZOr5a2Q5biC!5e0!3m2!1szh-CN!2sjp!4v1635929434143!5m2!1szh-CN!2sjp" %}
 
 # 沿途风光
 
-{% include gallery.html path="a-travel-at-choshi" %}
+{% include embed/gallery.html path="a-travel-at-choshi" %}
 
 # 小计
 

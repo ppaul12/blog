@@ -21,7 +21,7 @@
 
 {% unless include.path == "" %}
 <h2><i class="fa-solid fa-camera-retro fa-fw"></i> Photoing</h2>
-{% include gallery.html path=include.path %}
+{% include embed/gallery.html path=include.path %}
 {% endunless %}
 
 {% unless travel.size == 0 %}

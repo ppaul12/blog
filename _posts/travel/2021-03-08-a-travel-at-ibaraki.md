@@ -8,11 +8,11 @@ required: gallery
 
 # 路程规划
 
-<iframe src="https://www.google.com/maps/d/embed?mid=1cE_WHMBqxhVGOH9tTfXxSrTNf_UCNScq" width="100%" height="480"></iframe>
+{% include embed/map.html param="1cE_WHMBqxhVGOH9tTfXxSrTNf_UCNScq" self-made=true %}
 
 # 沿途风光
 
-{% include gallery.html path="a-travel-at-ibaraki" %}
+{% include embed/gallery.html path="a-travel-at-ibaraki" %}
 
 # 小计
 

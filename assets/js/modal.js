@@ -3,7 +3,7 @@ const openModal = (modal) => {
     window.setTimeout(() => {
         modal.toggleAttribute("close", false)
     }, 1)
-    document.documentElement.setAttribute("overlay", "")
+    document.documentElement.toggleAttribute("overlay", true)
 }
 
 const closeModal = (modal) => {
@@ -11,7 +11,7 @@ const closeModal = (modal) => {
         modal.toggleAttribute("open", false)
     }, 300)
     modal.toggleAttribute("close", true)
-    document.documentElement.removeAttribute("overlay")
+    document.documentElement.toggleAttribute("overlay", false)
 }
 
 const toggleModal = (event) => {

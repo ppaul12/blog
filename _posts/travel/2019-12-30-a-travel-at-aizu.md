@@ -7,11 +7,11 @@ required: gallery
 
 # 路程规划
 
-<div class="img-frame"><img src="/assets/src/a-travel-at-aizu/会津区间.png" height=300></div>
+{% include embed/image.html src="/assets/src/a-travel-at-aizu/会津区间.png" width="60%" %}
 
 # 沿途风光
 
-{% include gallery.html path="a-travel-at-aizu" %}
+{% include embed/gallery.html path="a-travel-at-aizu" %}
 
 # 小计
 

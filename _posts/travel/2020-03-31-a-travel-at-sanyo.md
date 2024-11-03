@@ -8,11 +8,11 @@ required: gallery
 
 # 路程规划
 
-<iframe src="https://www.google.com/maps/d/embed?mid=1iPf8TM8csDSVT2bmKMqdD_x5T5bu5jLw" width="100%" height="480"></iframe>
+{% include embed/map.html param="1iPf8TM8csDSVT2bmKMqdD_x5T5bu5jLw" self-made=true %}
 
 # 沿途风光
 
-{% include gallery.html path="a-travel-at-sanyo" %}
+{% include embed/gallery.html path="a-travel-at-sanyo" %}
 
 # 小计
 

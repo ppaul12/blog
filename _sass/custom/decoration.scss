@@ -41,3 +41,11 @@
     float: left;
     margin-right: 0.2em;
 }
+
+[caption]::after {
+    display: block;
+    text-align: center;
+    font-size: 80%;
+    color: grey;
+    content: attr(caption);
+}

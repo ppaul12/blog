@@ -9,11 +9,11 @@ cover: /assets/src/a-travel-at-aomori/pic6.jpeg
 
 # 路程规划
 
-<iframe src="https://www.google.com/maps/d/u/3/embed?mid=1AGdO2ZMHuUFTvg6zJKEYu8x-pTQbolo&ehbc=2E312F&noprof=1" width="100%" height="480" style="border:0;" loading="lazy"></iframe>
+{% include embed/map.html param="1AGdO2ZMHuUFTvg6zJKEYu8x-pTQbolo&ehbc=2E312F" self-made=true %}
 
 # 沿途风光
 
-{% include gallery.html path="a-travel-at-aomori" %}
+{% include embed/gallery.html path="a-travel-at-aomori" %}
 
 # 小计
 

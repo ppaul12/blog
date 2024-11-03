@@ -8,11 +8,11 @@ required: gallery
 
 # 路程规划
 
-<iframe src="https://www.google.com/maps/d/embed?mid=1iEvUGdzePaaW9sGYCGbyQlgV1OoCAu3U" width="100%" height="480"></iframe>
+{% include embed/map.html param="1iEvUGdzePaaW9sGYCGbyQlgV1OoCAu3U" self-made=true %}
 
 # 沿途风光
 
-{% include gallery.html path="a-travel-at-shikoku" %}
+{% include embed/gallery.html path="a-travel-at-shikoku" %}
 
 # 小计
 

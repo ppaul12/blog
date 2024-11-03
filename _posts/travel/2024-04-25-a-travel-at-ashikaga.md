@@ -9,11 +9,11 @@ cover: /assets/src/a-travel-at-ashikaga/pic1.jpeg
 
 # 路程规划
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d28664.70506696264!2d139.4807055668955!3d36.32757377818881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1szh-CN!2sjp!4v1715187549047!5m2!1szh-CN!2sjp" width="100%" height="480" style="border:0;" loading="lazy"></iframe>
+{% include embed/map.html param="!1m14!1m8!1m3!1d42508.33309271029!2d139.4813939301627!3d36.32018072561358!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601f24a910deedd3%3A0x631a0f5f26b9c043!2z6Laz5Yip6Iqx5Y2J5YWs5Zut!5e0!3m2!1szh-CN!2sjp!4v1730624580696!5m2!1szh-CN!2sjp" %}
 
 # 沿途风光
 
-{% include gallery.html path="a-travel-at-ashikaga" %}
+{% include embed/gallery.html path="a-travel-at-ashikaga" %}
 
 # 小计
 

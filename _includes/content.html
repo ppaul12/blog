@@ -4,8 +4,8 @@
 
 {% if content contains "<table>" %}
     {% assign content = content
-        | replace:"<table>","<div class='overflow-auto'><table class='striped'>"
-        | replace:"</table>","</table></div>"
+        | replace:"<table>","<figure class='overflow-auto'><table class='striped'>"
+        | replace:"</table>","</table></figure>"
     %}
 {% endif %}
 {% if page.required contains "plain-heading" %}

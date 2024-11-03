@@ -7,11 +7,11 @@ required: gallery
 
 # 路程规划
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d206659.60671987318!2d138.79890922413708!3d35.9700476540992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601eb0c30e7fa8ab%3A0x3192a5938ec85b4f!2z5Z-8546J5Y6_56ep54i25biC!5e0!3m2!1szh-CN!2sjp!4v1635927973663!5m2!1szh-CN!2sjp" width="100%" height="480" style="border:0;" loading="lazy"></iframe>
+{% include embed/map.html param="!1m18!1m12!1m3!1d206659.60671987318!2d138.79890922413708!3d35.9700476540992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601eb0c30e7fa8ab%3A0x3192a5938ec85b4f!2z5Z-8546J5Y6_56ep54i25biC!5e0!3m2!1szh-CN!2sjp!4v1635927973663!5m2!1szh-CN!2sjp" %}
 
 # 沿途风光
 
-{% include gallery.html path="a-travel-at-chichibu" %}
+{% include embed/gallery.html path="a-travel-at-chichibu" %}
 
 # 小计
 

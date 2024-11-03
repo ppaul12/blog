@@ -44,7 +44,7 @@ layout: default
             </a>
         </nav>
         <!-- comment block -->
-        {% include comment.html %}
+        {% include embed/comment.html %}
     </footer>
 </article>
 
@@ -55,6 +55,6 @@ layout: default
         toc.className = "tree-list"
         document.querySelector("#toc-box article").appendChild(toc)
         // activate toc button
-        document.getElementById("toc-btn").setAttribute("active", "")
+        document.getElementById("toc-btn").toggleAttribute("active", true)
     }
 </script>

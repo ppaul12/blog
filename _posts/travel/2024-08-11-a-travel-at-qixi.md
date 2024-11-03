@@ -9,7 +9,7 @@ cover: /assets/src/a-travel-at-qixi/pic1.jpeg
 
 # 沿途风光
 
-{% include gallery.html path="a-travel-at-qixi" %}
+{% include embed/gallery.html path="a-travel-at-qixi" %}
 
 # 小记
 

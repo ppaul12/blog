@@ -3,7 +3,7 @@
 
 [
     {%- assign files = site.static_files
-        | where_exp:"file", "file.name contains 'info.json'"
+        | where_exp:"file", "file.name contains 'pic.json'"
         | compact
     -%}
     {%- for file in files -%}

@@ -7,6 +7,7 @@ required: search
 ---
 
 <input id="search-input" type="search" placeholder="Search ...">
+<datalist id="search-results"></datalist>
 
 {% assign word_count = 0 %}
 {% for post in site.posts %}
@@ -26,8 +27,6 @@ required: search
     }}" data-count="{{ tag[1].size }}" onclick="toggleTag(event)">{{ tag[0] }}</button>
     {% endfor %}
 </div>
-
-<div id="search-results"></div>
 
 {% assign post_sets = site.posts | group_by_exp:"post", "post.date | date:'%Y'" %}
 {% assign post_count = 0 %}

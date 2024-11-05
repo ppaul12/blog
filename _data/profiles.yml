@@ -13,7 +13,7 @@ information:
       <a href="https://www.is.s.u-tokyo.ac.jp">CS</a>
       (MSc 2023-2025)
     icon: "fa-solid fa-building fa-fw"
-  - info: pengao[at]is.s.u-tokyo.ac.jp
+  - info: <a href="mailto:pengao@is.s.u-tokyo.ac.jp">pengao[at]is.s.u-tokyo.ac.jp</a>
     icon: "fa-solid fa-envelope fa-fw"
   - info: >
       <a href="https://github.com/PENG-AO">Github</a>,

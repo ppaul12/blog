@@ -1,3 +1,6 @@
+---
+---
+
 const updateAll = () => {
     const url = new URL(document.location)
     const targetTags = url.searchParams.getAll("tag")
@@ -41,7 +44,6 @@ const toggleTag = (event) => {
     updateAll()
 }
 
-const searchResults = document.getElementById("search-results")
 const observer = new MutationObserver(() => {
     const url = new URL(document.location)
     url.searchParams.delete("idx")
@@ -54,11 +56,12 @@ const observer = new MutationObserver(() => {
 observer.observe(document.getElementById("search-results"), { childList: true })
 
 window.addEventListener("load", () => {
-    const sjs = SimpleJekyllSearch({
+    SimpleJekyllSearch({
         json: "/assets/json/search.json",
         searchInput: document.getElementById("search-input"),
         resultsContainer: document.getElementById("search-results"),
-        searchResultTemplate: `<data value="{id}"></data>`,
+        searchResultTemplate: `<option value="{id}"></option>`,
+        limit: {{ site.posts.size }},
         fuzzy: true,
     })
 })

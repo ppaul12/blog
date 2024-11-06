@@ -1,2 +1,7 @@
-<div id="gallery"></div>
-<script>(async () => initGallery(await asyncLoadJSON("/assets/src/{{ include.path }}/pic.json")))()</script>
+<div id="{{ include.id | default:'gallery' }}"></div>
+<script>
+    (async () => initGallery(
+        "{{ include.id | default:'gallery' }}",
+        await asyncLoadJSON("/assets/src/{{ include.path }}/pic.json"))
+    )()
+</script>

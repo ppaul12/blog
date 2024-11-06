@@ -3,12 +3,12 @@ layout: post
 title: 信南地区旅行
 subtitle: 甲府·清里·諏訪·駒ヶ根
 tags: 旅行
-required: gallery
+required: gallery map
 ---
 
 # 路程规划
 
-{% include embed/map.html param="1qdeKiIx3McTAf34vOwQGKJAhsuXeBYfL" self-made=true %}
+{% include embed/map.html path="a-travel-at-shinnan" %}
 
 # 沿途风光
 

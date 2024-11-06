@@ -2,12 +2,12 @@
 layout: post
 title: 日光·会津旅行
 tags: 旅行
-required: gallery
+required: gallery map
 ---
 
 # 路程规划
 
-{% include embed/image.html src="/assets/src/a-travel-at-aizu/会津区间.png" width="60%" %}
+{% include embed/map.html path="a-travel-at-aizu" %}
 
 # 沿途风光
 

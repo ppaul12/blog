@@ -3,13 +3,13 @@ layout: post
 title: 松本之旅
 subtitle: 松本·诹访
 tags: 旅行
-required: gallery
+required: gallery map
 cover: /assets/src/a-travel-at-matsumoto/pic1.jpeg
 ---
 
 # 路程规划
 
-{% include embed/map.html param="!1m14!1m12!1m3!1d124167.45271987538!2d137.96751908820275!3d36.15019641893101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1szh-CN!2sjp!4v1646881013591!5m2!1szh-CN!2sjp" %}
+{% include embed/map.html path="a-travel-at-matsumoto" %}
 
 # 沿途风光
 

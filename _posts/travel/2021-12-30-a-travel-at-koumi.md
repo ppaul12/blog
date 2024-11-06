@@ -3,12 +3,12 @@ layout: post
 title: 小海线旅行
 subtile: 相模湖·小淵沢·野辺山·軽井沢
 tags: 旅行
-required: gallery
+required: gallery map
 cover: /assets/src/a-travel-at-koumi/pic2.jpeg
 ---
 # 路程规划
 
-{% include embed/image.html src="/assets/src/a-travel-at-koumi/小海线.png" width="40%" caption="小海线路线图" %}
+{% include embed/map.html path="a-travel-at-koumi" %}
 
 # 沿途风光
 

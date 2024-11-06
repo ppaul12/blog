@@ -3,13 +3,13 @@ layout: post
 title: 山形之旅
 subtitle: 米泽·山形·仙台
 tags: 旅行
-required: gallery
+required: gallery map
 cover: /assets/src/a-travel-at-yamagata/pic1.jpeg
 ---
 
 # 路程规划
 
-{% include embed/map.html param="1AfOMdv4F_UvSCYp1ceSgFvM6EuWcS4c&ehbc=2E312F" self-made=true %}
+{% include embed/map.html path="a-travel-at-yamagata" %}
 
 # 沿途风光
 

@@ -2,13 +2,13 @@
 layout: post
 title: 新潟之旅
 tags: 旅行
-required: gallery
+required: gallery map
 cover: /assets/src/a-travel-at-niigata/pic4.jpeg
 ---
 
 # 路程规划
 
-{% include embed/map.html param="!1m18!1m12!1m3!1d201654.06525638886!2d138.8608255269457!3d37.8405197672946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff4c5c255c7c0f7%3A0xf1509bcbc990230d!2z5paw5r2f5Y6_5paw5r2f5biC!5e0!3m2!1szh-CN!2sjp!4v1730625051886!5m2!1szh-CN!2sjp" %}
+{% include embed/map.html path="a-travel-at-niigata" %}
 
 # 沿途风光
 

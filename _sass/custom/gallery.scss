@@ -1,22 +1,16 @@
-#gallery {
+.lg-container {
     width: 100%;
     max-height: 80vh;
-    aspect-ratio: 2/3;
+    aspect-ratio: 1;
 
-    @media (min-width: 420px) {
-        aspect-ratio: 1;
+    @media(max-width: 420px) {
+        aspect-ratio: 2/3;
     }
 
-    margin: 1em auto;
-    box-shadow: 0 0 20px var(--pico-muted-border-color);
-    overflow: hidden;
-    border-radius: var(--pico-border-radius);
+    margin: var(--pico-block-spacing-vertical) auto;
+    font-family: var(--pico-font-family) !important;
 
     animation: fadeIn 3s backwards;
-}
-
-.lg-container {
-    font-family: var(--pico-font-family) !important;
 
     .lg-sub-html {
         color: #999;
@@ -26,5 +20,4 @@
 
 .lg-thumb-outer {
     background-color: unset !important;
-    padding-left: 0.5em;
 }

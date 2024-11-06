@@ -3,12 +3,12 @@ layout: post
 title: 北九州·山阳旅行
 subtitle: 佐世保·北九州·広島·尾道·倉敷·岡山·姫路·明石
 tags: 旅行
-required: gallery
+required: gallery map
 ---
 
 # 路程规划
 
-{% include embed/map.html param="1iPf8TM8csDSVT2bmKMqdD_x5T5bu5jLw" self-made=true %}
+{% include embed/map.html path="a-travel-at-sanyo" %}
 
 # 沿途风光
 

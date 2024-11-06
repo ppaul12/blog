@@ -1,12 +1,7 @@
-<figure {% if include.width %} style="width: {{ include.width }};" {% endif %}>
-    {% if include.self-made | default:false %}
-        {% assign url = "https://www.google.com/maps/d/embed?mid=" %}
-    {% else %}
-        {% assign url = "https://www.google.com/maps/embed?pb=" %}
-    {% endif %}
-    <iframe loading="lazy" src="{{ url }}{{ include.param }}" allowfullscreen=""
-        style="border:0;aspect-ratio: 3/2;"></iframe>
-    {% if include.caption %}
-    <figcaption>{{ include.caption}}</figcaption>
-    {% endif %}
-</figure>
+<div id="{{ include.id | default:'map' }}"></div>
+<script>
+    (async () => initMap(
+        "{{ include.id | default:'map' }}",
+        await asyncLoadJSON("/assets/src/{{ include.path }}/map.json"))
+    )()
+</script>

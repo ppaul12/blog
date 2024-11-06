@@ -1,0 +1,53 @@
+.leaflet {
+    &-container {
+        width: 100%;
+        max-height: 50vh;
+        aspect-ratio: 3/2;
+
+        @media(max-width: 420px) {
+            aspect-ratio: 1;
+        }
+
+        margin: var(--pico-block-spacing-vertical) auto;
+        font-family: var(--pico-font-family);
+        z-index: 1;
+
+        animation: fadeIn 3s backwards;
+    }
+
+    &-bar a {
+        padding: unset;
+        border: unset;
+        border-radius: unset;
+    }
+
+    &-marker-icon {
+        border: unset;
+        background-color: unset;
+
+        &:focus {
+            box-shadow: unset;
+        }
+    }
+
+    &-popup-content {
+        text-align: center;
+    }
+
+    &-control-layers-list {
+        margin: unset;
+
+        label {
+            color: unset;
+            margin: unset;
+        }
+
+        input {
+            position: unset;
+            width: 0.8em;
+            height: 0.8em;
+            margin: unset;
+            appearance: auto;
+        }
+    }
+}

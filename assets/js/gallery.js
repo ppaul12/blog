@@ -1,5 +1,5 @@
-const initGallery = (data) => {
-    const element = document.getElementById("gallery")
+const initGallery = (id, data) => {
+    const element = document.getElementById(id)
     // load photos to gallery
     window.lightGallery(element, {
         plugins: [lgZoom, lgAutoplay, lgThumbnail],

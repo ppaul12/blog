@@ -20,7 +20,7 @@ My blog for personal records of travels, thoughts, studies, and so on, with the 
 - math formulas: [MathJax](https://www.mathjax.org)
 - flow charts: [Mermaid](https://mermaid.js.org)
 - search: [Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search)
-- footprint map: [jVectorMap](https://jvectormap.com)
+- map: [leaflet](https://leafletjs.com) + [jVectorMap](https://jvectormap.com)
 - album: [lightGallery](https://github.com/sachinchoolur/lightGallery) + [exifr](https://github.com/MikeKovarik/exifr)
 - analytics: [GoatCounter](https://www.goatcounter.com)
 - ...

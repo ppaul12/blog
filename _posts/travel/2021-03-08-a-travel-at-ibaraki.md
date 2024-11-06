@@ -3,12 +3,12 @@ layout: post
 title: 茨城·福岛旅行
 subtitle: 水戸·大洗·日立·いわき·郡山·福島·白河
 tags: 旅行
-required: gallery
+required: gallery map
 ---
 
 # 路程规划
 
-{% include embed/map.html param="1cE_WHMBqxhVGOH9tTfXxSrTNf_UCNScq" self-made=true %}
+{% include embed/map.html path="a-travel-at-ibaraki" %}
 
 # 沿途风光
 

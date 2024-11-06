@@ -3,13 +3,13 @@ layout: post
 title: 哈尔滨长春旅行
 subtitle: 哈尔滨·长春
 tags: 旅行
-required: gallery
+required: gallery map
 cover: /assets/src/a-travel-at-harbin/pic8.jpeg
 ---
 
 # 路程规划
 
-{% include embed/map.html param="!1m14!1m12!1m3!1d1546258.055323506!2d125.84790447165936!3d44.870968147899376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1szh-CN!2sjp!4v1725886898529!5m2!1szh-CN!2sjp" %}
+{% include embed/map.html path="a-travel-at-harbin" %}
 
 # 沿途风光
 

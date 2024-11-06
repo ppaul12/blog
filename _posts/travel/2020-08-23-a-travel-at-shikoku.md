@@ -3,12 +3,12 @@ layout: post
 title: 四国环岛旅行
 subtitle: 高松·鳴門·徳島·高知·足摺岬·大洲·下灘·松山·丸亀
 tags: 旅行
-required: gallery
+required: gallery map
 ---
 
 # 路程规划
 
-{% include embed/map.html param="1iEvUGdzePaaW9sGYCGbyQlgV1OoCAu3U" self-made=true %}
+{% include embed/map.html path="a-travel-at-shikoku" %}
 
 # 沿途风光
 

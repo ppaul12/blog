@@ -3,12 +3,12 @@ layout: post
 title: 北海道 道东·道央 旅行
 subtitle: 網走·知床·阿寒湖·富良野·旭川
 tags: 旅行
-required: gallery
+required: gallery map
 ---
 
 # 路程规划
 
-{% include embed/map.html param="1Jm0HZ2GMADI3SvlnAJB7RMm08M1VZ343" self-made=true %}
+{% include embed/map.html path="a-travel-at-hokkaido" %}
 
 # 沿途风光
 

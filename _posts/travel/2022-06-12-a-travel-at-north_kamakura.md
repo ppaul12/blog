@@ -2,13 +2,13 @@
 layout: post
 title: 北镰仓赏绣球之旅
 tags: 旅行
-required: gallery
+required: gallery map
 cover: /assets/src/a-travel-at-north_kamakura/pic3.jpeg
 ---
 
 # 路程规划
 
-{% include embed/map.html param="!1m14!1m12!1m3!1d18190.658770102586!2d139.5506197163359!3d35.33261107134876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1szh-CN!2sjp!4v1655047398913!5m2!1szh-CN!2sjp" %}
+{% include embed/map.html path="a-travel-at-north_kamakura" %}
 
 # 沿途风光
 

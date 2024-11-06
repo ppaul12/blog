@@ -3,13 +3,13 @@ layout: post
 title: 江岛之旅
 subtitle: 鎌倉·長谷·七里ヶ浜·江ノ島
 tags: 旅行
-required: gallery
+required: gallery map
 cover: /assets/src/a-travel-at-enoshima/pic2.jpeg
 ---
 
 # 路程规划
 
-{% include embed/map.html param="!1m14!1m12!1m3!1d31167.65345247707!2d139.5053160880047!3d35.32224035388123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1szh-CN!2sjp!4v1698996687461!5m2!1szh-CN!2sjp" %}
+{% include embed/map.html path="a-travel-at-enoshima" %}
 
 # 沿途风光
 

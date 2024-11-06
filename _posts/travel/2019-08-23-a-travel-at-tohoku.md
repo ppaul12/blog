@@ -3,12 +3,12 @@ layout: post
 title: 东北地区纵贯旅行
 subtitle: 函館·青森·弘前·秋田·角館·盛岡·仙台
 tags: 旅行
-required: gallery
+required: gallery map
 ---
 
 # 路程规划
 
-{% include embed/map.html param="197ZnrY2OrMzMqvSFVEcvxjFIAYqSHBhz" self-made=true %}
+{% include embed/map.html path="a-travel-at-tohoku" %}
 
 # 沿途风光
 

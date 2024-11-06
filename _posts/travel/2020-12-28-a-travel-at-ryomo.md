@@ -3,12 +3,12 @@ layout: post
 title: 两毛地区旅行
 subtitle: 館林·足利·高崎·前橋
 tags: 旅行
-required: gallery
+required: gallery map
 ---
 
 # 路程规划
 
-{% include embed/image.html src="/assets/src/a-travel-at-ryomo/两毛区间.jpeg" width="60%" %}
+{% include embed/map.html path="a-travel-at-ryomo" %}
 
 # 沿途风光
 

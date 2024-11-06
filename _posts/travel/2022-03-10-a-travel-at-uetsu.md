@@ -3,13 +3,13 @@ layout: post
 title: 羽越本线之旅
 subtitle: 羽越本線·酒田
 tags: 旅行
-required: gallery
+required: gallery map
 cover: /assets/src/a-travel-at-uetsu/pic4.jpeg
 ---
 
 # 路程规划
 
-{% include embed/map.html param="!1m14!1m12!1m3!1d582749.3286632802!2d139.293627263453!3d38.464397051620026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1szh-CN!2sjp!4v1646881536920!5m2!1szh-CN!2sjp" %}
+{% include embed/map.html path="a-travel-at-uetsu" %}
 
 # 沿途风光
 

@@ -3,12 +3,12 @@ layout: post
 title: 中央道旅行
 subtitle: 諏訪·松本·奈良井·犬山·彦根·草津·京都
 tags: 旅行
-required: gallery
+required: gallery map
 ---
 
 # 路程规划
 
-{% include embed/map.html param="19wwC2ka5pk5j0EQPwzUK2kCRdrX16lcI" self-made=true %}
+{% include embed/map.html path="a-travel-at-chyuodo" %}
 
 # 沿途风光
 

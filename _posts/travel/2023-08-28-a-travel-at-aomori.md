@@ -3,13 +3,13 @@ layout: post
 title: 再访青森·秋田旅行
 subtitle: 八户·弘前·秋田·田泽湖
 tags: 旅行
-required: gallery
+required: gallery map
 cover: /assets/src/a-travel-at-aomori/pic6.jpeg
 ---
 
 # 路程规划
 
-{% include embed/map.html param="1AGdO2ZMHuUFTvg6zJKEYu8x-pTQbolo&ehbc=2E312F" self-made=true %}
+{% include embed/map.html path="a-travel-at-aomori" %}
 
 # 沿途风光
 

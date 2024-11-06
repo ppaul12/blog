@@ -14,7 +14,8 @@
             https://cdn.jsdelivr.net/
             https://github.com/
             https://github-readme-stats.vercel.app/
-            https://cdn.simpleicons.org/;
+            https://cdn.simpleicons.org/
+            https://tile.openstreetmap.org/;
         font-src 'self' data:
             https://ik.imagekit.io/
             https://cdn.jsdelivr.net/;
@@ -25,7 +26,6 @@
         media-src 'self';
         object-src 'self';
         child-src 'self' 'unsafe-inline'
-            https://www.google.com/
             https://www.youtube.com/
             https://giscus.app/;
         form-action 'none';
@@ -46,12 +46,6 @@
 
     <!-- pico css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css">
-    <!-- custom style -->
-    <link rel="stylesheet" href="/assets/main.css">
-    <!-- custom modal switcher -->
-    <script src="/assets/js/modal.js"></script>
-    <!-- custom theme switcher -->
-    <script src="/assets/js/theme.js"></script>
 
     <!-- animation -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css/animate.min.css">
@@ -120,11 +114,19 @@
     <script src="/assets/js/gallery.js"></script>
     {% endif %}
 
-    {% if page.required contains "map" %}
+    {% if page.required contains "footprint" %}
     <!-- jvectormap -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jvectormap@latest/jquery-jvectormap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jvectormap@latest/jquery-jvectormap.css">
+    {% endif %}
+
+    {% if page.required contains "map" %}
+    <!-- leaflet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@latest/dist/leaflet.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@latest/dist/leaflet.min.js"></script>
+    <!-- custom map initializer -->
+    <script src="/assets/js/map.js"></script>
     {% endif %}
 
     {% if page.required contains "search" %}
@@ -132,6 +134,12 @@
     <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
     {% endif %}
 
+    <!-- custom style -->
+    <link rel="stylesheet" href="/assets/main.css">
+    <!-- custom modal switcher -->
+    <script src="/assets/js/modal.js"></script>
+    <!-- custom theme switcher -->
+    <script src="/assets/js/theme.js"></script>
     <!-- custom json loader -->
     <script src="/assets/js/json.js"></script>
 </head>

@@ -3,12 +3,12 @@ layout: post
 title: 伊豆环岛旅行
 subtitle: 伊東·河津·南伊豆·西伊豆
 tags: 旅行
-required: gallery
+required: gallery map
 ---
 
 # 路程规划
 
-{% include embed/map.html param="1gFUg28qwxtqSBUv3vUbPvtqRHNOdHfAc" self-made=true %}
+{% include embed/map.html path="a-travel-at-izu" %}
 
 # 沿途风光
 

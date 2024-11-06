@@ -3,12 +3,12 @@ layout: post
 title: 东海道旅行
 subtitle: 小田原·静岡·掛川·浜松·岐阜·長浜·京都·奈良·神戸
 tags: 旅行
-required: gallery
+required: gallery map
 ---
 
 # 路程规划
 
-{% include embed/map.html param="1no83nvAUvRXBy5cxbzDYfjm2V753ZFU3" self-made=true %}
+{% include embed/map.html path="a-travel-at-toukaido" %}
 
 # 沿途风光
 

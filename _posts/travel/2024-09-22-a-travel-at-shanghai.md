@@ -3,13 +3,13 @@ layout: post
 title: 苏州上海旅行
 subtitle: 南京·江阴·苏州·上海
 tags: 旅行
-required: gallery
+required: gallery map
 cover: /assets/src/a-travel-at-shanghai/pic11.jpeg
 ---
 
 # 路程规划
 
-{% include embed/map.html param="1SziR4sH6zxL1PNSkfD0yANunOEFCo9A&ehbc=2E312F" self-made=true %}
+{% include embed/map.html path="a-travel-at-shanghai" %}
 
 # 沿途风光
 

@@ -3,13 +3,13 @@ layout: post
 title: 金泽·富山旅行
 subtitle: 富山·高岡·射水·金沢·高山·名古屋
 tags: 旅行
-required: gallery
+required: gallery map
 cover: /assets/src/a-travel-at-hokuriku/pic3.jpeg
 ---
 
 # 路程规划
 
-{% include embed/map.html param="19sdbWbBazi_OwawTevDZ85ELOa55hzk&ehbc=2E312F" self-made=true %}
+{% include embed/map.html path="a-travel-at-hokuriku" %}
 
 # 沿途风光
 

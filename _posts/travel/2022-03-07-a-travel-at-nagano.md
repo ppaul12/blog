@@ -3,13 +3,13 @@ layout: post
 title: 长野之旅
 subtitle: 上田·長野·上越妙高·高田
 tags: 旅行
-required: gallery
+required: gallery map
 cover: /assets/src/a-travel-at-nagano/pic4.jpeg
 ---
 
 # 路程规划
 
-{% include embed/map.html param="!1m14!1m12!1m3!1d409174.78394659975!2d138.21095532065797!3d36.754299392834106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1szh-CN!2sjp!4v1646647795349!5m2!1szh-CN!2sjp" %}
+{% include embed/map.html path="a-travel-at-nagano" %}
 
 # 沿途风光
 

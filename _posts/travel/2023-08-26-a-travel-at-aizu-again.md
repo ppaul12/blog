@@ -3,13 +3,13 @@ layout: post
 title: 再访会津旅行
 subtitle: 会津若松·喜多方·郡山·高萩
 tags: 旅行
-required: gallery
+required: gallery map
 cover: /assets/src/a-travel-at-aizu-again/pic5.jpeg
 ---
 
 # 路程规划
 
-{% include embed/map.html param="1RrjnlnhFJ4j9sELZ-6asT_K1w36rFbs&ehbc=2E312F" self-made=true %}
+{% include embed/map.html path="a-travel-at-aizu-again" %}
 
 # 沿途风光
 

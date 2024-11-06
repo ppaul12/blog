@@ -3,13 +3,13 @@ layout: post
 title: 再访静冈旅行
 subtitle: 根府川·三島·沼津·静岡·大井川
 tags: 旅行
-required: gallery
+required: gallery map
 cover: /assets/src/a-travel-at-shizuoka/pic5.jpeg
 ---
 
 # 路程规划
 
-{% include embed/map.html param="160zHqhEwafyurpglnlx4eWCTsEFQHjQ&ehbc=2E312F" self-made=true %}
+{% include embed/map.html path="a-travel-at-shizuoka" %}
 
 # 沿途风光
 

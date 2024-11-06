@@ -1,7 +1,7 @@
 const initMap = (id, data) => {
     const map = L.map(id)
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 18, attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>"
     }).addTo(map)
 
     const spot = Object.entries(data.spot).map((info) => {
@@ -23,4 +23,15 @@ const initMap = (id, data) => {
     const bounds = L.polygon(Object.entries(data.spot).map((info) => info[1])).getBounds()
     const maxZoom = map.getBoundsZoom(bounds)
     map.fitBounds(bounds, { maxZoom: maxZoom > 14 ? 14 : maxZoom > 7 ? maxZoom - 1 : maxZoom })
+
+    L.control.resetView({
+        position: "topleft",
+        latlng: map.getCenter(),
+        zoom: map.getZoom(),
+    }).addTo(map)
+
+    new L.Control.MiniMap(L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"), {
+        minimized: false,
+        position: "bottomleft",
+    }).addTo(map)
 }

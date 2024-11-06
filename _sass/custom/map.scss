@@ -34,20 +34,31 @@
         text-align: center;
     }
 
-    &-control-layers-list {
-        margin: unset;
-
-        label {
-            color: unset;
+    &-control {
+        &-layers-list {
             margin: unset;
+
+            label {
+                color: unset;
+                margin: unset;
+            }
+
+            input {
+                position: unset;
+                width: 0.8em;
+                height: 0.8em;
+                margin: unset;
+                appearance: auto;
+            }
         }
 
-        input {
-            position: unset;
-            width: 0.8em;
-            height: 0.8em;
-            margin: unset;
-            appearance: auto;
+        &-minimap {
+            width: 10em !important;
+            height: 12em !important;
+
+            @media (max-width: 420px) {
+                display: none;
+            }
         }
     }
 }

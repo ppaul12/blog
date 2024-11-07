@@ -33,7 +33,7 @@ const initGallery = (id, data) => {
                 ].filter((item) => item !== null).join(" "))(exif) || null,
                 (exif.DateTimeOriginal ?? "").toLocaleString() || null,
             ] : []).concat([
-                caption.innerText.trim() || null
+                caption.innerText.trim() ? caption.children[caption.childElementCount - 1].outerHTML : null
             ]).filter((item) => item !== null).join("<br>")
         })
     })

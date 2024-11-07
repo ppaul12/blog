@@ -10,13 +10,13 @@ required: gallery
 <script>
     (async () => {
         // load all images
-        const imageSets = await asyncLoadJSON("/assets/json/gallery.json")
+        const imageSets = await asyncLoadJSON("/assets/json/album.json")
         const images = await imageSets.reduce(async (output, imageSet) => {
             const entries = await asyncLoadJSON(imageSet.json)
             return (await output).concat(entries.map((entry) => {
                 return {
                     src: entry.src,
-                    loc: imageSet.post,
+                    loc: `<a href="${imageSet.link}">${imageSet.post}</a>`,
                     date: imageSet.date
                 }
             }))

@@ -3,74 +3,79 @@ layout: page
 title: footprint
 subtitle: explore the world ...
 permalink: /footprint.html
-required: footprint
+required: map
 ---
 
-<div class="travel-map-container">
-    <div class="travel-map-nav">
-        <button data-target="#china-map" active>
-            CHINA
-        </button><button data-target="#japan-map">
-            JAPAN
-        </button><button data-target="#world-map">
-            WORLD
-        </button>
-    </div>
-    <div id="china-map" class="travel-map" active></div>
-    <div id="japan-map" class="travel-map"></div>
-    <div id="world-map" class="travel-map"></div>
-</div>
+<div id="footprint"></div>
+<style>
+    #footprint {
+        width: 100%;
+        max-height: 80vh;
+        aspect-ratio: 1;
 
-<script src="/assets/js/jquery-jvectormap-china-merc.js"></script>
-<script src="/assets/js/jquery-jvectormap-japan-merc.js"></script>
-<script src="/assets/js/jquery-jvectormap-world-merc.js"></script>
+        @media(max-width: 420px) {
+            aspect-ratio: 2/3;
+        }
+    }
+</style>
 <script>
-    // load maps
     (async () => {
-        for (const info of [
-            {id: "#china-map", map: "china_merc", prefix: "/assets/json/footprint-china"},
-            {id: "#japan-map", map: "japan_merc", prefix: "/assets/json/footprint-japan"},
-            {id: "#world-map", map: "world_merc", prefix: "/assets/json/footprint-world"},
-        ]) {
-            new jvm.Map({
-                container: $(info.id),
-                map: info.map,
-                backgroundColor: "#81A1C1",
-                zoomMin: 0.8,
-                zoomMax: 6.0,
-                showTooltip: false,
-                hoverOpacity: 0.7,
-                markerStyle: {initial: {fill: "#B48EAD99", r: 3}},
-                markers: await asyncLoadJSON(`${info.prefix}-marker.json`),
-                series: {
-                    regions: [{
-                        values: await asyncLoadJSON(`${info.prefix}-region.json`),
-                        scale: ["#EBCB8B", "#D08770"],
-                        normalizeFunction: "polynomial",
-                    }]
-                },
-            })
-        }
+        const locSets = await asyncLoadJSON("/assets/json/maps.json")
+        const locations = Object.entries(Object.groupBy([].concat(
+            await locSets.reduce(async (output, locSet) => {
+                const spot = (await asyncLoadJSON(locSet.json)).spot
+                return (await output).concat(Object.entries(spot).map((entry) => {
+                    return {
+                        loc: entry[0],
+                        pos: entry[1],
+                        info: [`<a href="${locSet.link}">${locSet.date}</a>`],
+                    }
+                }))
+            }, Promise.resolve([])),
+            await asyncLoadJSON("/assets/json/spots.json"),
+        ), ({loc}) => loc)).map((entry) => {
+            return {
+                loc: entry[0],
+                pos: entry[1][0].pos,
+                info: entry[1].reduce(
+                    (output, item) => output.concat(item.info), []
+                ).toSorted((a, b) => {
+                    const elem = document.createElement("div")
+                    elem.innerHTML = a
+                    a = elem.innerText
+                    elem.innerHTML = b
+                    b = elem.innerText
+                    return a.localeCompare(b)
+                }).join(", ")
+            }
+        })
+
+        const map = L.map("footprint").setView([39.92503939668526, 116.43328011233142], 4) // set Beijing as the center
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            maxZoom: 18, attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>"
+        }).addTo(map)
+
+        const icon = L.icon({
+            iconUrl: "https://cdn.jsdelivr.net/npm/leaflet@latest/dist/images/marker-icon.png",
+            iconSize: [12, 20],
+            iconAnchor: [6, 20],
+            popupAnchor: [0, -10],
+            shadowUrl: "https://cdn.jsdelivr.net/npm/leaflet@latest/dist/images/marker-shadow.png",
+            shadowSize: [20, 20]
+        })
+        L.canvasIconLayer({}).addTo(map).addLayers(locations.map((item) => {
+            return L.marker(item.pos, {icon: icon}).bindPopup(item.loc + (item.info ? `: ${item.info}` : ""), {closeButton: false})
+        }))
+
+        L.control.resetView({
+            position: "topleft",
+            latlng: map.getCenter(),
+            zoom: map.getZoom(),
+        }).addTo(map)
+
+        new L.Control.MiniMap(L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"), {
+            minimized: false,
+            position: "bottomleft",
+        }).addTo(map)
     })()
-
-    // init tab view
-    const container = document.querySelector(".travel-map-container")
-    const controller = document.querySelector(".travel-map-nav")
-    controller.querySelectorAll("button").forEach((button) => {
-        button.onclick = (event) => {
-            const toClose = {
-                map: container.querySelector(".travel-map[active]"),
-                btn: controller.querySelector("button[active]"),
-            }
-            toClose.map.toggleAttribute("active", false)
-            toClose.btn.toggleAttribute("active", false)
-
-            const toOpen = {
-                map: container.querySelector(event.target.getAttribute("data-target")),
-                btn: event.target,
-            }
-            toOpen.map.toggleAttribute("active", true)
-            toOpen.btn.toggleAttribute("active", true)
-        }
-    })
 </script>

@@ -114,13 +114,6 @@
     <script src="/assets/js/gallery.js"></script>
     {% endif %}
 
-    {% if page.required contains "footprint" %}
-    <!-- jvectormap -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jvectormap@latest/jquery-jvectormap.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jvectormap@latest/jquery-jvectormap.css">
-    {% endif %}
-
     {% if page.required contains "map" %}
     <!-- leaflet -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@latest/dist/leaflet.min.css">
@@ -133,6 +126,8 @@
         href="https://cdn.jsdelivr.net/npm/@drustack/leaflet.resetview@latest/dist/L.Control.ResetView.min.css">
     <script
         src="https://cdn.jsdelivr.net/npm/@drustack/leaflet.resetview@latest/dist/L.Control.ResetView.min.js"></script>
+    <!-- leaflet canvas marker -->
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-canvas-marker@latest/dist/leaflet.canvas-markers.min.js"></script>
     <!-- custom map initializer -->
     <script src="/assets/js/map.js"></script>
     {% endif %}

@@ -16,8 +16,9 @@ required: gallery
             return (await output).concat(entries.map((entry) => {
                 return {
                     src: entry.src,
-                    loc: `<a href="${imageSet.link}">${imageSet.post}</a>`,
-                    date: imageSet.date
+                    loc: imageSet.post,
+                    date: imageSet.date,
+                    link: imageSet.link,
                 }
             }))
         }, Promise.resolve([]))

@@ -9,7 +9,8 @@ const initGallery = (id, data) => {
             return {
                 src: item.src,
                 thumb: item.src,
-                subHtml: "<br>".repeat(4) + item.loc,
+                subHtml: "<br>".repeat(4) + ((item.link !== undefined) ?
+                    `<a href="${item.link}">${item.loc}</a>` : `<span>${item.loc}</span>`),
             }
         }),
         mode: "lg-zoom-in-out",

@@ -67,6 +67,8 @@ required: map
             return L.marker(item.pos, {icon: icon}).bindPopup(item.loc + (item.info ? `: ${item.info}` : ""), {closeButton: false})
         }))
 
+        L.control.scale({position: "bottomright", imperial: false}).addTo(map)
+
         L.control.resetView({
             position: "topleft",
             latlng: map.getCenter(),

@@ -4,7 +4,7 @@ title: 秋日午后小游
 subtitle: 水元公園
 tags: 旅行
 required: gallery map
-cover: /assets/src/a-travel-at-katsushika/pic3.jpeg
+cover: /assets/src/a-travel-at-katsushika/pic4.jpeg
 ---
 
 # 路程规划

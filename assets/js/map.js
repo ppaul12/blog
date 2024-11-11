@@ -24,6 +24,11 @@ const initMap = (id, data) => {
     const maxZoom = map.getBoundsZoom(bounds)
     map.fitBounds(bounds, { maxZoom: maxZoom > 14 ? 14 : maxZoom > 7 ? maxZoom - 1 : maxZoom })
 
+    L.control.scale({
+        position: "bottomright",
+        imperial: false
+    }).addTo(map)
+
     L.control.resetView({
         position: "topleft",
         latlng: map.getCenter(),
@@ -31,7 +36,7 @@ const initMap = (id, data) => {
     }).addTo(map)
 
     new L.Control.MiniMap(L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"), {
-        minimized: false,
         position: "bottomleft",
+        minimized: false,
     }).addTo(map)
 }

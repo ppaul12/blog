@@ -1,5 +1,10 @@
 {% if page.required contains "with-header" %}
-<header>LA VITA</header>
+<header>
+    <hgroup>
+        <h1>LA VITA</h1>
+        <h3><em>{{ site.title }}</em></h3>
+    </hgroup>
+</header>
 {% endif %}
 
 {% assign content = content | replace:"<table","<figure><table" | replace:"table>","table></figure>" %}

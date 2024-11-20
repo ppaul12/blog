@@ -23,6 +23,12 @@ body {
         font-size: 3em;
         font-family: "Courier New", monospace;
 
+        & * {
+            font-size: inherit;
+            font-family: inherit;
+            font-weight: unset;
+        }
+
         animation: zoomIn 1s backwards;
     }
 

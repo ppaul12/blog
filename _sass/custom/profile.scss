@@ -31,6 +31,12 @@
         text-align: center;
         font: 1.5em "Courier New", monospace;
 
+        & * {
+            font-size: inherit;
+            font-family: inherit;
+            font-weight: unset;
+        }
+
         animation: fadeInDown 1s backwards;
     }
 

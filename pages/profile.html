@@ -1,7 +1,7 @@
 ---
 layout: default
 title: profile
-permalink: /profile.html
+permalink: /profile
 required: no-footer
 ---
 
@@ -11,7 +11,12 @@ required: no-footer
             <img src="/assets/img/avatar.jpeg">
             <img src="/assets/img/barca.png">
         </div>
-        <div class="profile-name">PENG Ao</div>
+        <div class="profile-name">
+            <hgroup>
+                <h4>PENG Ao</h4>
+                <h5><em>Paul</em></h5>
+            </hgroup>
+        </div>
         <!-- skills -->
         <div class="profile-icons">
             {% assign skills = site.data.profiles.skills | sort:"info" %}

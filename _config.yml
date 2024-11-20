@@ -1,11 +1,13 @@
-title: PENG AO's blog
+title: Paul's Trails
 
 plugins:
   - jekyll-seo-tag
   - jekyll-paginate
 
 paginate: 10
-paginate_path: /page:num/
+paginate_path: /page:num
+
+permalink: /:year/:month/:day/:title
 
 highlighter: none
 markdown: kramdown
@@ -17,3 +19,12 @@ kramdown:
 
 sass:
   style: compressed
+
+thirdparty:
+  giscus:
+    repo: peng-ao/blog
+    repo-id: MDEwOlJlcG9zaXRvcnk0MDQwMzExNDM=
+    category: Comment
+    category-id: DIC_kwDOGBUGp84Cj8AW
+  goatcounter:
+    code: peng-ao

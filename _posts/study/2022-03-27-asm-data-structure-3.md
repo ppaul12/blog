@@ -282,7 +282,7 @@ llist_find_result_check_end:
 
 ## 高阶函数
 
-对于高阶函数的实现和上一篇[顺序表](/2022/03/21/asm-data-structure-2.html#25-高阶函数)的方式都差不多，也算是对以上内容的一个综合演练。以下为实际代码。
+对于高阶函数的实现和上一篇[顺序表]({% post_url study/2022-03-21-asm-data-structure-2 %}#高阶函数)的方式都差不多，也算是对以上内容的一个综合演练。以下为实际代码。
 
 ```plaintext
 # map

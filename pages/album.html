@@ -2,7 +2,7 @@
 layout: page
 title: album
 subtitle: recall the old memories ...
-permalink: /album.html
+permalink: /album
 required: gallery
 ---
 
@@ -23,7 +23,7 @@ required: gallery
             }))
         }, Promise.resolve([]))
         // reorder images on demand
-        const url = new URL(document.location)
+        const url = new URL(window.location)
         switch (url.searchParams.get("order") || "shuffle") {
             case "ascend":
                 images.sort((a, b) => a.date - b.date); break

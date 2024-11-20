@@ -36,13 +36,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ site.title }}-{{ page.title }}</title>
-    {% seo title=false %}
     <link rel="icon" type="image/png" href="/assets/img/avatar.jpeg">
+    {% seo %}
 
     <!-- goat counter -->
     <script src="/assets/js/analytics.js"></script>
-    <script data-goatcounter="https://peng-ao.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+    <script data-goatcounter="https://{{ site.thirdparty.goatcounter.code }}.goatcounter.com/count" async
+        src="https://gc.zgo.at/count.js"></script>
 
     <!-- pico css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css">
@@ -90,8 +90,7 @@
     {% if page.required contains "math" %}
     <!-- mathjax -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@latest/es5/tex-mml-chtml.js"></script>
-    <script>MathJax = {loader: {load: ["ui/lazy"]}, tex: {inlineMath: [["$", "$"]], processEscapes: true}}
-    </script>
+    <script>MathJax = {loader: {load: ["ui/lazy"]}, tex: {inlineMath: [["$", "$"]], processEscapes: true}}</script>
     {% endif %}
 
     {% if page.required contains "graph" %}

@@ -2,13 +2,13 @@
 ---
 
 [
-    {%- assign files = site.static_files | where_exp:"file", "file.name contains 'map.json'" | compact -%}
-    {%- for file in files -%}
-        {%- assign post =  site.posts | where_exp:"post", "post.content contains file.path" | first -%}
-    {
-        "date": "{{ post.date | date:'%y/%m' }}",
-        "link": "{{ post.url }}",
-        "json": "{{ file.path }}"
-    }{%- unless forloop.last %},{% endunless -%}
-    {%- endfor -%}
+{%- assign files = site.static_files | where_exp:"file", "file.name contains 'map.json'" | compact -%}
+{%- for file in files -%}
+    {%- assign post =  site.posts | where_exp:"post", "post.content contains file.path" | first -%}
+{
+    "date": "{{ post.date | date:'%y/%m' }}",
+    "link": "{{ post.url }}",
+    "json": "{{ file.path }}"
+}{%- unless forloop.last %},{% endunless -%}
+{%- endfor -%}
 ]

@@ -1,10 +1,13 @@
+---
+---
+
 // anonymous mode
 const isAnonymous = () => {
     if (window.localStorage.getItem("is-anonymous") !== null) {
         return window.localStorage.getItem("is-anonymous")
     }
 
-    const url = new URL(document.location)
+    const url = new URL(window.location)
     const mode = (url.searchParams.get("anonymous") !== null) ? "true" : "false"
     window.localStorage.setItem("is-anonymous", mode)
     return mode
@@ -19,7 +22,7 @@ window.addEventListener("load", () => {
     // load page view number
     const pageView = document.getElementById("page-view")
     if (pageView !== null) {
-        fetch(`https://peng-ao.goatcounter.com/counter/${encodeURIComponent(window.location.pathname)}.json`)
+        fetch(`https://{{ site.thirdparty.goatcounter.code }}.goatcounter.com/counter/${encodeURIComponent(window.location.pathname)}.json`)
             .then((response) => response.json())
             .then((data) => {
                 pageView.dataset.tooltip = `${data.count.replace(' ', '')} views`
@@ -31,7 +34,7 @@ window.addEventListener("load", () => {
     // load total view number
     const siteView = document.getElementById("site-view")
     if (siteView !== null) {
-        fetch("https://peng-ao.goatcounter.com/counter/TOTAL.json")
+        fetch("https://{{ site.thirdparty.goatcounter.code }}.goatcounter.com/counter/TOTAL.json")
             .then((response) => response.json())
             .then((data) => {
                 siteView.innerText = `${data.count.replace(' ', '')} views`

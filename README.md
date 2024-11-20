@@ -1,13 +1,13 @@
-![](https://img.shields.io/github/commit-activity/m/PENG-AO/PENG-AO.github.io)
-![](https://img.shields.io/github/last-commit/PENG-AO/PENG-AO.github.io)
-![](https://img.shields.io/github/repo-size/PENG-AO/PENG-AO.github.io)
-![](https://img.shields.io/github/deployments/PENG-AO/PENG-AO.github.io/github-pages)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/peng-ao/blog)
+![GitHub last commit](https://img.shields.io/github/last-commit/peng-ao/blog)
+![GitHub repo size](https://img.shields.io/github/repo-size/peng-ao/blog)
+![Website](https://img.shields.io/website?url=https%3A%2F%2Fppaul.pages.dev)
 
 ---
 
 My blog for personal records of travels, thoughts, studies, and so on, with the help of the following works.
 
-- main: [Jekyll](https://jekyllrb.com), [GitHub pages](https://pages.github.com)
+- main: [Jekyll](https://jekyllrb.com), [Cloudflare Pages](https://pages.cloudflare.com)
 - styles: [pico.css](https://picocss.com)
 - colors: [Nord Theme](https://www.nordtheme.com)
 - fonts: [LxgwWenKai](https://github.com/lxgw/LxgwWenKai), [Zhuque](https://github.com/TrionesType/zhuque), [Roboto Mono](https://www.jsdelivr.com/package/npm/@fontsource/roboto-mono)

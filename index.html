@@ -61,7 +61,7 @@ required: with-header
         <ul>
             {% for i in (1..paginator.total_pages) %}
                 {% if forloop.first %}
-                <li><a href="{{ site.paginate_path | replace:'page:num/', '' }}">
+                <li><a href="/">
                     {{ i }} / {{ paginator.total_pages }}
                 </a></li>
                 {% else %}

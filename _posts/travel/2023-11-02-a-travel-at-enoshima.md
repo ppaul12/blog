@@ -9,11 +9,11 @@ cover: /assets/src/a-travel-at-enoshima/pic2.jpeg
 
 # 路程规划
 
-{% include embed/map.html path="a-travel-at-enoshima" %}
+{% map path="a-travel-at-enoshima" %}
 
 # 沿途风光
 
-{% include embed/gallery.html path="a-travel-at-enoshima" %}
+{% gallery path="a-travel-at-enoshima" %}
 
 # 小计
 

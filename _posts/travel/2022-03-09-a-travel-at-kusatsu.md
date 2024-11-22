@@ -9,11 +9,11 @@ cover: /assets/src/a-travel-at-kusatsu/pic1.jpeg
 
 # 路程规划
 
-{% include embed/map.html path="a-travel-at-kusatsu" %}
+{% map path="a-travel-at-kusatsu" %}
 
 # 沿途风光
 
-{% include embed/gallery.html path="a-travel-at-kusatsu" %}
+{% gallery path="a-travel-at-kusatsu" %}
 
 # 小计
 

@@ -9,11 +9,11 @@ cover: /assets/src/a-travel-at-yamagata/pic1.jpeg
 
 # 路程规划
 
-{% include embed/map.html path="a-travel-at-yamagata" %}
+{% map path="a-travel-at-yamagata" %}
 
 # 沿途风光
 
-{% include embed/gallery.html path="a-travel-at-yamagata" %}
+{% gallery path="a-travel-at-yamagata" %}
 
 # 小计
 

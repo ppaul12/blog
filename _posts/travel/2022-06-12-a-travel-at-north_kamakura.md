@@ -8,11 +8,11 @@ cover: /assets/src/a-travel-at-north_kamakura/pic3.jpeg
 
 # 路程规划
 
-{% include embed/map.html path="a-travel-at-north_kamakura" %}
+{% map path="a-travel-at-north_kamakura" %}
 
 # 沿途风光
 
-{% include embed/gallery.html path="a-travel-at-north_kamakura" %}
+{% gallery path="a-travel-at-north_kamakura" %}
 
 # 小计
 

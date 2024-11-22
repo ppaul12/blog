@@ -7,7 +7,7 @@ required: math
 
 # N & NP
 
-{% include embed/image.html src="/assets/src/polynomial-hierarchy-memo/dtm.png" width="80%" %}
+{% image src="/assets/src/polynomial-hierarchy-memo/dtm.png" width="80%" %}
 
 ## P问题
 
@@ -128,7 +128,7 @@ $$
 PH=\bigcup_{k\in N}\Sigma_k^P
 $$
 
-{% include embed/image.html src="/assets/src/polynomial-hierarchy-memo/PH.png" width="30%" %}
+{% image src="/assets/src/polynomial-hierarchy-memo/PH.png" width="30%" %}
 
 # Collapse
 

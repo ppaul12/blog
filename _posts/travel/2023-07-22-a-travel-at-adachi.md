@@ -9,11 +9,11 @@ cover: /assets/src/a-travel-at-adachi/pic1.jpeg
 
 # 路程规划
 
-{% include embed/map.html path="a-travel-at-adachi" %}
+{% map path="a-travel-at-adachi" %}
 
 # 沿途风光
 
-{% include embed/gallery.html path="a-travel-at-adachi" %}
+{% gallery path="a-travel-at-adachi" %}
 
 # 小记
 

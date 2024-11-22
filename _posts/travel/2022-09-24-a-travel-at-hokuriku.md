@@ -9,11 +9,11 @@ cover: /assets/src/a-travel-at-hokuriku/pic3.jpeg
 
 # 路程规划
 
-{% include embed/map.html path="a-travel-at-hokuriku" %}
+{% map path="a-travel-at-hokuriku" %}
 
 # 沿途风光
 
-{% include embed/gallery.html path="a-travel-at-hokuriku" %}
+{% gallery path="a-travel-at-hokuriku" %}
 
 # 小计
 

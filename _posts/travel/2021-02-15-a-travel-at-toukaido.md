@@ -8,11 +8,11 @@ required: gallery map
 
 # 路程规划
 
-{% include embed/map.html path="a-travel-at-toukaido" %}
+{% map path="a-travel-at-toukaido" %}
 
 # 沿途风光
 
-{% include embed/gallery.html path="a-travel-at-toukaido" %}
+{% gallery path="a-travel-at-toukaido" %}
 
 # 小计
 

@@ -8,11 +8,11 @@ cover: /assets/src/a-travel-at-koumi/pic2.jpeg
 ---
 # 路程规划
 
-{% include embed/map.html path="a-travel-at-koumi" %}
+{% map path="a-travel-at-koumi" %}
 
 # 沿途风光
 
-{% include embed/gallery.html path="a-travel-at-koumi" %}
+{% gallery path="a-travel-at-koumi" %}
 
 # 小计
 

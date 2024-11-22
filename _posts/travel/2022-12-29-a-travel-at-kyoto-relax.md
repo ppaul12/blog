@@ -9,11 +9,11 @@ cover: /assets/src/a-travel-at-kyoto-relax/pic3.jpeg
 
 # 路程规划
 
-{% include embed/map.html path="a-travel-at-kyoto-relax" %}
+{% map path="a-travel-at-kyoto-relax" %}
 
 # 沿途风光
 
-{% include embed/gallery.html path="a-travel-at-kyoto-relax" %}
+{% gallery path="a-travel-at-kyoto-relax" %}
 
 # 小计
 

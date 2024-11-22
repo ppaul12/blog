@@ -8,11 +8,11 @@ cover: /assets/src/a-travel-at-niigata/pic4.jpeg
 
 # 路程规划
 
-{% include embed/map.html path="a-travel-at-niigata" %}
+{% map path="a-travel-at-niigata" %}
 
 # 沿途风光
 
-{% include embed/gallery.html path="a-travel-at-niigata" %}
+{% gallery path="a-travel-at-niigata" %}
 
 # 小计
 

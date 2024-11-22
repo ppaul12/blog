@@ -9,11 +9,11 @@ cover: /assets/src/a-travel-at-aizu-again/pic5.jpeg
 
 # 路程规划
 
-{% include embed/map.html path="a-travel-at-aizu-again" %}
+{% map path="a-travel-at-aizu-again" %}
 
 # 沿途风光
 
-{% include embed/gallery.html path="a-travel-at-aizu-again" %}
+{% gallery path="a-travel-at-aizu-again" %}
 
 # 小计
 

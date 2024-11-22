@@ -9,11 +9,11 @@ cover: /assets/src/a-travel-at-qixi/pic1.jpeg
 
 # 路程规划
 
-{% include embed/map.html path="a-travel-at-qixi" %}
+{% map path="a-travel-at-qixi" %}
 
 # 沿途风光
 
-{% include embed/gallery.html path="a-travel-at-qixi" %}
+{% gallery path="a-travel-at-qixi" %}
 
 # 小记
 

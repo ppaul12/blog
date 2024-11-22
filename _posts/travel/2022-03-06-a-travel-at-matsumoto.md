@@ -9,11 +9,11 @@ cover: /assets/src/a-travel-at-matsumoto/pic1.jpeg
 
 # 路程规划
 
-{% include embed/map.html path="a-travel-at-matsumoto" %}
+{% map path="a-travel-at-matsumoto" %}
 
 # 沿途风光
 
-{% include embed/gallery.html path="a-travel-at-matsumoto" %}
+{% gallery path="a-travel-at-matsumoto" %}
 
 # 小计
 

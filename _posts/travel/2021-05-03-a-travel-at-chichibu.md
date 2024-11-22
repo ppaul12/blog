@@ -7,11 +7,11 @@ required: gallery map
 
 # 路程规划
 
-{% include embed/map.html path="a-travel-at-chichibu" %}
+{% map path="a-travel-at-chichibu" %}
 
 # 沿途风光
 
-{% include embed/gallery.html path="a-travel-at-chichibu" %}
+{% gallery path="a-travel-at-chichibu" %}
 
 # 小计
 

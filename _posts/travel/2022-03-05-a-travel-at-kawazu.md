@@ -8,11 +8,11 @@ cover: /assets/src/a-travel-at-kawazu/pic4.jpeg
 
 # 路程规划
 
-{% include embed/map.html path="a-travel-at-kawazu" %}
+{% map path="a-travel-at-kawazu" %}
 
 # 沿途风光
 
-{% include embed/gallery.html path="a-travel-at-kawazu" %}
+{% gallery path="a-travel-at-kawazu" %}
 
 # 小计
 

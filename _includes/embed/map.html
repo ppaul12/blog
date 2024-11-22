@@ -1,2 +1,2 @@
 <div id="{{ include.id | default:'map' }}"></div>
-<script>(async () => initMap( "{{ include.id | default:'map' }}", await asyncLoadJSON("/assets/src/{{ include.path }}/map.json")))()</script>
+<script>(async () => initMap("{{ include.id | default:'map' }}", await asyncLoadJSON("/assets/src/{{ include.path }}/map.json")))()</script>

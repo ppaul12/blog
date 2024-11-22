@@ -9,11 +9,11 @@ cover: /assets/src/a-travel-at-uetsu/pic4.jpeg
 
 # 路程规划
 
-{% include embed/map.html path="a-travel-at-uetsu" %}
+{% map path="a-travel-at-uetsu" %}
 
 # 沿途风光
 
-{% include embed/gallery.html path="a-travel-at-uetsu" %}
+{% gallery path="a-travel-at-uetsu" %}
 
 # 小计
 

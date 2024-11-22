@@ -14,7 +14,7 @@ marked: true
 
 ## 什么是汇编语言？
 
-{% include embed/image.html src="/assets/src/how-to-build-an-assembler/flow_of_compile.png" width="60%" %}
+{% image src="/assets/src/how-to-build-an-assembler/flow_of_compile.png" width="60%" %}
 
 自上而下来看，汇编语言属于高级语言被编译成机器语言代码前的最后一个阶段。在这个阶段中，高级语言的绝大多数抽象特性已被移除，如变量、循环、函数等，只保留了条件跳转以及使用统一命名的寄存器代替变量。也正因如此对于率先接触高级语言的学习者来说，汇编语言无论是从学习、书写还是使用等各个角度都不是十分符合“直觉”。
 
@@ -97,7 +97,7 @@ RISC-V的汇编语言中，以`label:`的方式声明标签，这样的标签可
 
 ## 汇编语言的翻译
 
-{% include embed/image.html src="/assets/src/how-to-build-an-assembler/risc-v_isa.png" width="60%" %}
+{% image src="/assets/src/how-to-build-an-assembler/risc-v_isa.png" width="60%" %}
 
 在RISC-V的ISA中，所有的指令都会被划归为以上的6大类。绝大部分的指令直接就可以被翻译成机器语言，如R/I/S/U-type，比如`addi a0, a1, 1`，其表意为`a0 = a1 + 1`。其中`a0`是第10个通用寄存器，`a1`是第11个通用寄存器，那么上述语句即可直接翻译为`000000000001 01011 000 01010 0010011`。但相反，属于B-type的`branch`系列和属于J-type的`jal`则无法直接翻译。具体原因和解决方案我们将在后文详述。
 
@@ -308,7 +308,7 @@ def pseudo_nop(instr: tuple, addr: int, tags: dict):
 
 经分析可发现，`li`指令的优化早在解码时就可进行操作，毕竟立即数的代入不依存于其他的信息。此外，branch系列和`call`指令的优化则可在第一次遍历解码完毕时尽心操作。我们给各个指令的预设长度全都指定为可想见的最大值，比如`li`、`call`均为2之类的，如此一来预设的长度总和一定会小于实际的长度总和。那么，如果branch系列和`call`指令可以在预设的长度(较长的跨度)下进行优化，则其必可以在实际的长度下进行优化(代码长度整体会缩减)。为此我们可以在现有的两次遍历中增加一些额外的层：优化处理层(optimize)和最终确定层(finalize)，优化处理层利用由预设长度(assumed length)构建的地址表识别可优化命令，并一边最终确定其实际长度(actual length)，一边汇总实际长度信息、构建最终的地址表。大致流程如下图所示。
 
-{% include embed/image.html src="/assets/src/how-to-build-an-assembler/assembler_flow.png" width="80%" %}
+{% image src="/assets/src/how-to-build-an-assembler/assembler_flow.png" width="80%" %}
 
 其中一对一的伪指令的处理时机比较灵活，既可以放在优化处理层，也可以放在最终确定层实现。我个人选择了延迟处理，尽可能地将转化都放在了最终确定层。
 
@@ -344,7 +344,7 @@ Block:
 
 如此一来，最外层的`ASM`类只需要在每一次遍历时访问`Block`类中对应的方法即可。例如下图。
 
-{% include embed/image.html src="/assets/src/how-to-build-an-assembler/assembler_optimize.png" width="80%" %}
+{% image src="/assets/src/how-to-build-an-assembler/assembler_optimize.png" width="80%" %}
 
 同时基于类所能携带的大量信息，我们也能够输出更丰富的debug内容，这一部分可充分自由发挥。完整代码参见[学校课题项目](https://github.com/cpu-ex/simulator/tree/main/asm)或者[个人简化项目](https://github.com/PENG-AO/RV32I-simulator/tree/master/asm)。
 

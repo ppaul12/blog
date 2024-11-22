@@ -9,11 +9,11 @@ cover: /assets/src/a-travel-at-harbin/pic8.jpeg
 
 # 路程规划
 
-{% include embed/map.html path="a-travel-at-harbin" %}
+{% map path="a-travel-at-harbin" %}
 
 # 沿途风光
 
-{% include embed/gallery.html path="a-travel-at-harbin" %}
+{% gallery path="a-travel-at-harbin" %}
 
 # 小记
 

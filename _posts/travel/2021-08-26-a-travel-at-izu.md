@@ -8,11 +8,11 @@ required: gallery map
 
 # 路程规划
 
-{% include embed/map.html path="a-travel-at-izu" %}
+{% map path="a-travel-at-izu" %}
 
 # 沿途风光
 
-{% include embed/gallery.html path="a-travel-at-izu" %}
+{% gallery path="a-travel-at-izu" %}
 
 # 小计
 

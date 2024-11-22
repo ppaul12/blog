@@ -9,11 +9,11 @@ cover: /assets/src/a-travel-at-miura-again/pic7.jpeg
 
 # 路程规划
 
-{% include embed/map.html path="a-travel-at-miura-again" %}
+{% map path="a-travel-at-miura-again" %}
 
 # 沿途风光
 
-{% include embed/gallery.html path="a-travel-at-miura-again" %}
+{% gallery path="a-travel-at-miura-again" %}
 
 # 小计
 

@@ -9,11 +9,11 @@ cover: /assets/src/a-travel-at-ashikaga/pic1.jpeg
 
 # 路程规划
 
-{% include embed/map.html path="a-travel-at-ashikaga" %}
+{% map path="a-travel-at-ashikaga" %}
 
 # 沿途风光
 
-{% include embed/gallery.html path="a-travel-at-ashikaga" %}
+{% gallery path="a-travel-at-ashikaga" %}
 
 # 小计
 

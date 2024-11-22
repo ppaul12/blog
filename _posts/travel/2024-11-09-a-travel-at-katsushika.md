@@ -9,11 +9,11 @@ cover: /assets/src/a-travel-at-katsushika/pic4.jpeg
 
 # 路程规划
 
-{% include embed/map.html path="a-travel-at-katsushika" %}
+{% map path="a-travel-at-katsushika" %}
 
 # 沿途风光
 
-{% include embed/gallery.html path="a-travel-at-katsushika" %}
+{% gallery path="a-travel-at-katsushika" %}
 
 # 小记
 

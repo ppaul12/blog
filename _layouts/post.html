@@ -11,8 +11,12 @@ layout: default
             {% endfor %}
         </ul></nav>
         <!-- post title -->
+        {% assign date = page.date | date:"%Y.%m.%d" %}
+        {% if page.span %}
+            {% assign date = page.span %}
+        {% endif %}
         <hgroup>
-            <small><em>{{ page.date | date:"%Y.%m.%d" }}</em></small>
+            <small><em>{{ date }}</em></small>
             <h2>{{ page.title }}</h2>
             <h3><em>{{ page.subtitle }}</em></h3>
         </hgroup>
@@ -36,16 +40,14 @@ layout: default
         <!-- post buttons -->
         <nav class="post-buttons">
             <a class="post-buttons-prev"
-                {% if page.previous %}href="{{ page.previous.url }}"{% else %}disabled{% endif %}>
-                {% if page.previous %}{{ page.previous.title }}{% else %}-{% endif %}
-            </a>
+                {% if page.previous %}href="{{ page.previous.url }}"{% else %}disabled{% endif %}
+            >{% if page.previous %}{{ page.previous.title }}{% else %}-{% endif %}</a>
             <a class="post-buttons-next"
-                {% if page.next %}href="{{ page.next.url }}"{% else %}disabled{% endif %}>
-                {% if page.next %}{{ page.next.title }}{% else %}-{% endif %}
-            </a>
+                {% if page.next %}href="{{ page.next.url }}"{% else %}disabled{% endif %}
+            >{% if page.next %}{{ page.next.title }}{% else %}-{% endif %}</a>
         </nav>
         <!-- comment block -->
-        {% include embed/comment.html %}
+        {% include comment.html %}
     </footer>
 </article>
 

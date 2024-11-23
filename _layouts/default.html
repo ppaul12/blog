@@ -3,6 +3,24 @@
     {% include head.html %}
     <body>
         {% include controller.html %}
-        {% include content.html %}
+
+        {% if page.required contains "with-header" %}
+        <header>
+            <hgroup>
+                <h1>{{ site.header }}</h1>
+                <h3><em>{{ site.title }}</em></h3>
+            </hgroup>
+        </header>
+        {% endif %}
+
+        <main>{{ content }}</main>
+
+        {% unless page.required contains "no-footer" %}
+        <footer>
+            <small>by {{ site.author }} with <i class="fa-solid fa-heart fa-fw faa-pulse faa-slow animated"></i></small><br>
+            <small><i class="fa-regular fa-copyright fa-fw"></i> 2021 - 2024</small><br>
+            <small id="site-view"></small>
+        </footer>
+        {% endunless %}
     </body>
 </html>

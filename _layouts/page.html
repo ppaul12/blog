@@ -3,12 +3,14 @@ layout: default
 ---
 
 <article>
-    <header class="card"><hgroup>
-        <h2>{{ page.title | capitalize }}</h2>
-        <h3><em>{{ page.subtitle | capitalize }}</em></h3>
-    </hgroup></header>
+    <header class="card">
+        <hgroup>
+            <h2>{{ page.title | capitalize }}</h2>
+            <h3><em>{{ page.subtitle | capitalize }}</em></h3>
+        </hgroup>
+    </header>
 
     {{ content }}
 
-    <footer class="card">{% include embed/comment.html %}</footer>
+    <footer class="card">{% include comment.html %}</footer>
 </article>

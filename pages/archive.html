@@ -22,9 +22,10 @@ required: search
 {% endfor %}
 <div class="tag-cloud" data-sum="{{ site.posts.size }} posts, {{ word_count }}k words">
     {% for tag in site.tags %}
-    <button id="{{ tag[0] }}" class="tag-{{
-        tag[1].size | times:10 | divided_by:max_count | ceil
-    }}" data-count="{{ tag[1].size }}" onclick="toggleTag(event)">{{ tag[0] }}</button>
+    <button
+        id="{{ tag[0] }}" class="tag-{{ tag[1].size | times:10 | divided_by:max_count | ceil }}"
+        data-count="{{ tag[1].size }}" onclick="toggleTag(event)"
+    >{{ tag[0] }}</button>
     {% endfor %}
 </div>
 

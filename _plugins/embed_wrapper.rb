@@ -1,4 +1,4 @@
-%w[gallery map image youtube].each do |tag|
+%w[gallery map youtube].each do |tag|
   cls = Class.new(Jekyll::Tags::IncludeTag) do
     def initialize(tag, params, tokens)
       super(tag, "embed/#{tag}.html #{params}", tokens)

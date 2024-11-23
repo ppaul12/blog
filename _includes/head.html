@@ -37,12 +37,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="/assets/img/avatar.jpeg">
-    {% seo %}
+    <title>{{ page.title }} | {{ site.title }}</title>
+    {% seo title=false %}
 
     <!-- goat counter -->
     <script src="/assets/js/analytics.js"></script>
-    <script data-goatcounter="https://{{ site.thirdparty.goatcounter.code }}.goatcounter.com/count" async
-        src="https://gc.zgo.at/count.js"></script>
+    <script data-goatcounter="https://{{ site.thirdparty.goatcounter.code }}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 
     <!-- pico css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css">
@@ -55,16 +55,12 @@
 
     <!-- font awesome icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css">
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/font-awesome-animation@latest/css/font-awesome-animation.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome-animation@latest/css/font-awesome-animation.min.css">
     <!-- lxgw wenkai font -->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@chinese-fonts/lxgwwenkai@latest/dist/LXGWWenKai-Regular/result.min.css">
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@chinese-fonts/lxgwwenkai@latest/dist/LXGWWenKai-Bold/result.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@chinese-fonts/lxgwwenkai@latest/dist/LXGWWenKai-Regular/result.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@chinese-fonts/lxgwwenkai@latest/dist/LXGWWenKai-Bold/result.min.css">
     <!-- zhuque faonsong font -->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@chinese-fonts/zqfs@latest/dist/ZhuqueFangsong-Regular/result.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@chinese-fonts/zqfs@latest/dist/ZhuqueFangsong-Regular/result.css">
 
     {% if page.required contains "code" %}
     <!-- prism js -->
@@ -72,12 +68,9 @@
     <link id="prism-theme" rel="stylesheet" data-href="https://cdn.jsdelivr.net/npm/prism-themes@latest/themes/">
     <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/autoloader/prism-autoloader.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/line-numbers/prism-line-numbers.min.js"></script>
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/line-numbers/prism-line-numbers.min.css">
-    <script
-        src="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/line-highlight/prism-line-highlight.min.js"></script>
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/line-highlight/prism-line-highlight.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/line-numbers/prism-line-numbers.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/line-highlight/prism-line-highlight.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/line-highlight/prism-line-highlight.min.css">
     <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/toolbar/prism-toolbar.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/toolbar/prism-toolbar.min.css">
     <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/show-language/prism-show-language.min.js"></script>
@@ -121,10 +114,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-minimap@latest/dist/Control.MiniMap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/leaflet-minimap@latest/dist/Control.MiniMap.min.js"></script>
     <!-- leaflet reset view -->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@drustack/leaflet.resetview@latest/dist/L.Control.ResetView.min.css">
-    <script
-        src="https://cdn.jsdelivr.net/npm/@drustack/leaflet.resetview@latest/dist/L.Control.ResetView.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@drustack/leaflet.resetview@latest/dist/L.Control.ResetView.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@drustack/leaflet.resetview@latest/dist/L.Control.ResetView.min.js"></script>
     <!-- leaflet canvas marker -->
     <script src="https://cdn.jsdelivr.net/npm/leaflet-canvas-marker@latest/dist/leaflet.canvas-markers.min.js"></script>
     <!-- custom map initializer -->

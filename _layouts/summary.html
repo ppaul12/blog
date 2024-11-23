@@ -1,13 +1,18 @@
+---
+layout: post
+required: gallery plain-heading
+---
+
 {% assign travel = "" | split:"" %}
 {% assign thought = "" | split:"" %}
 {% assign study = "" | split:"" %}
 
 {% assign posts = site.posts | reverse %}
-{% assign start = page.date | split:"~" | first %}
-{% assign end = page.date | split:"~" | last %}
+{% assign start = page.span | split:"~" | first | strip %}
+{% assign end = page.span | split:"~" | last | strip %}
 {% for post in posts %}
     {% assign date = post.date | date:"%Y.%m" %}
-    {% unless include.start <= date and date <= include.end %}
+    {% unless start <= date and date <= end %}
         {% continue %}
     {% endunless %}
     {% if post.path contains "travel/" %}
@@ -19,10 +24,8 @@
     {% endif %}
 {% endfor %}
 
-{% unless include.path == "" %}
 <h2><i class="fa-solid fa-camera-retro fa-fw"></i> Photoing</h2>
-{% gallery path=include.path %}
-{% endunless %}
+{% gallery path=page.slug %}
 
 {% unless travel.size == 0 %}
 <h2 data-aos="fade-up"><i class="fa-solid fa-signs-post fa-fw"></i> Traveling</h2>

@@ -28,7 +28,7 @@ marked: true
     <summary role="button" class="outline">《飞行日演唱会》2024.08.30歌单</summary>
     <ol>
         <li>寻找
-            <ol>
+            <ul>
                 <li>彼得潘</li>
                 <li>为爱痴狂</li>
                 <li>有没有爱我都不会慌</li>
@@ -36,10 +36,10 @@ marked: true
                 <li>一辈子的孤单</li>
                 <li>当爱在靠近</li>
                 <li>原来你也在这里</li>
-            </ol>
+            </ul>
         </li>
         <li>成长
-            <ol>
+            <ul>
                 <li>遗忘的都回来了</li>
                 <li>知道不知道</li>
                 <li>点亮橘子树</li>
@@ -48,20 +48,20 @@ marked: true
                 <li>她来听我的演唱会</li>
                 <li>我要你好好的</li>
                 <li>飞行日</li>
-            </ol>
+            </ul>
         </li>
         <li>勇敢
-            <ol>
+            <ul>
                 <li>我们没有在一起</li>
                 <li>听说</li>
                 <li>亲爱的路人</li>
                 <li>各自安好</li>
                 <li>成全</li>
                 <li>所有相爱的人啊</li>
-            </ol>
+            </ul>
         </li>
         <li>陪伴
-            <ol>
+            <ul>
                 <li>继续</li>
                 <li>黄金年代</li>
                 <li>很爱很爱你</li>
@@ -70,7 +70,7 @@ marked: true
                 <li>漂洋过海来看你</li>
                 <li>浪人情歌</li>
                 <li>后来</li>
-            </ol>
+            </ul>
         </li>
     </ol>
 </details>

@@ -39,7 +39,11 @@ required: with-header
         </ul></nav>
         <!-- post title -->
         <hgroup>
-            <small><em>{{ post.date | date:"%Y.%m.%d" }}</em></small>
+            {% assign date = post.date | date:"%Y.%m.%d" %}
+            {% if post.span %}
+                {% assign date = post.span %}
+            {% endif %}
+            <small><em>{{ date }}</em></small>
             <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
             <h4><em>{{ post.subtitle }}</em></h4>
         </hgroup>
@@ -49,34 +53,36 @@ required: with-header
 
 <nav class="post-paginator"><ul>
     <!-- previous page button -->
-    <li><a id="prev-btn" data-aos="slide-left"
-        {% if paginator.previous_page_path %}
-        class="faa-parent animated-hover" href="{{ paginator.previous_page_path }}"
-        {% else %}disabled{% endif %}
-    ><i class="fa-solid fa-arrow-left faa-horizontal faa-reverse"></i></a></li>
+    <li>
+        <a id="prev-btn" data-aos="slide-left"
+            {% if paginator.previous_page_path %}
+            class="faa-parent animated-hover" href="{{ paginator.previous_page_path }}"
+            {% else %}disabled{% endif %}
+        ><i class="fa-solid fa-arrow-left faa-horizontal faa-reverse"></i></a>
+    </li>
 
     <!-- page selector -->
-    <li><details class="dropdown" data-aos="fade-up">
-        <summary>{{ paginator.page }} / {{ paginator.total_pages }}</summary>
-        <ul>
-            {% for i in (1..paginator.total_pages) %}
-                {% if forloop.first %}
-                <li><a href="/">
-                    {{ i }} / {{ paginator.total_pages }}
-                </a></li>
-                {% else %}
-                <li><a href="{{ site.paginate_path | replace:':num', i }}">
-                    {{ i }} / {{ paginator.total_pages }}
-                </a></li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-    </details></li>
+    <li>
+        <details class="dropdown" data-aos="fade-up">
+            <summary>{{ paginator.page }} / {{ paginator.total_pages }}</summary>
+            <ul>
+                {% for i in (1..paginator.total_pages) %}
+                    {% if forloop.first %}
+                    <li><a href="/">{{ i }} / {{ paginator.total_pages }}</a></li>
+                    {% else %}
+                    <li><a href="{{ site.paginate_path | replace:':num', i }}">{{ i }} / {{ paginator.total_pages }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </details>
+    </li>
 
     <!-- next page button -->
-    <li><a id="next-btn" data-aos="slide-right"
-        {% if paginator.next_page_path %}
-        class="faa-parent animated-hover" href="{{ paginator.next_page_path }}"
-        {% else %}disabled{% endif %}
-    ><i class="fa-solid fa-arrow-right faa-horizontal"></i></a></li>
+    <li>
+        <a id="next-btn" data-aos="slide-right"
+            {% if paginator.next_page_path %}
+            class="faa-parent animated-hover" href="{{ paginator.next_page_path }}"
+            {% else %}disabled{% endif %}
+        ><i class="fa-solid fa-arrow-right faa-horizontal"></i></a>
+    </li>
 </ul></nav>

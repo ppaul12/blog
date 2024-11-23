@@ -11,12 +11,7 @@ required: no-footer
             <img src="/assets/img/avatar.jpeg">
             <img src="/assets/img/barca.png">
         </div>
-        <div class="profile-name">
-            <hgroup>
-                <h4>PENG Ao</h4>
-                <h5><em>Paul</em></h5>
-            </hgroup>
-        </div>
+        <div class="profile-name">{{ site.author }}</div>
         <!-- skills -->
         <div class="profile-icons">
             {% assign skills = site.data.profiles.skills | sort:"info" %}
@@ -64,7 +59,7 @@ required: no-footer
     <footer class="card">
         <ul class="profile-info">
             {% for friend in site.data.profiles.friends %}
-            <li class="profile-info-item" data-aos="fade" {% if friend.marked %}heart{% endif %}>
+            <li class="profile-info-item" data-aos="fade" {{ friend.attr }}>
                 <small>
                     <i class="fa-solid fa-user-group fa-fw"></i>
                     <a href="{{ friend.link }}" data-tooltip="{{ friend.info }}">{{ friend.name }}</a>

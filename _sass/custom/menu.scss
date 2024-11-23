@@ -66,82 +66,32 @@
     }
 
     &-item {
-        position: relative;
-        padding: 0 0.5em;
-        margin-bottom: 0.6em;
+        margin-bottom: 1em;
+        width: 5em;
         opacity: 0;
-        font-size: 1.5em;
+        text-align: center;
+        font: italic 1.5em "Times New Roman";
         transform: translateX(calc(pow(-1, var(--ith)) * 200%));
 
         transition: all 0.3s ease calc(var(--ith) * 0.1s + 0.3s);
-
-        &::before,
-        &::after {
-            position: absolute;
-            width: 2px;
-            height: 0;
-            background-color: var(--pico-muted-color);
-            content: "";
-
-            transition: height 0.3s ease;
-        }
-
-        &::before {
-            inset: auto auto 0 0;
-        }
-
-        &::after {
-            inset: 0 0 auto auto;
-        }
-
-        &:has(a:hover) {
-
-            &::before,
-            &::after {
-                height: 100%;
-
-                transition: height 0.3s ease 0.3s;
-            }
-        }
 
         a {
             position: relative;
             text-decoration: none;
 
-            &::before,
             &::after {
                 position: absolute;
-                width: 20vmin;
+                width: 0;
                 height: 2px;
+                inset: auto auto 0 0;
                 background-color: var(--pico-muted-color);
                 content: "";
 
-                transition:
-                    transform 0.3s ease 0.3s,
-                    width 0.3s ease;
+                transition: width 0.3s ease;
             }
 
-            &::before {
-                inset: -0.2em -0.5em auto auto;
-                transform: translateX(-100vw);
-            }
-
-            &::after {
-                inset: auto auto -0.2em -0.5em;
-                transform: translateX(100vw);
-            }
-
-            &:hover {
-
-                &::before,
-                &::after {
-                    width: 50%;
-                    transform: translateX(0);
-
-                    transition:
-                        transform 0.3s ease,
-                        width 0.3s ease 0.3s;
-                }
+            &:hover::after {
+                width: 80%;
             }
         }
     }

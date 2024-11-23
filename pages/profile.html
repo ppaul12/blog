@@ -31,7 +31,8 @@ required: no-footer
     <ul class="profile-info">
         {% for information in site.data.profiles.information %}
         <li class="profile-info-item" data-aos="fade">
-            <i class="{{ information.icon }}"></i> {{ information.info }}
+            <i class="{{ information.icon }}"></i>
+            {{ information.info }}
         </li>
         {% endfor %}
     </ul>
@@ -42,7 +43,8 @@ required: no-footer
     <ul class="profile-info">
         {% for identity in site.data.profiles.identities %}
         <li class="profile-info-item" data-aos="fade">
-            <i class="{{ identity.icon }}"></i> {{ identity.info }}
+            <i class="{{ identity.icon }}"></i>
+            {{ identity.info }}
         </li>
         {% endfor %}
     </ul>
@@ -53,7 +55,8 @@ required: no-footer
     <ul class="profile-info">
         {% for hobby in site.data.profiles.hobbies %}
         <li class="profile-info-item" data-aos="fade">
-            <i class="{{ hobby.icon }}"></i> {{ hobby.info }}
+            <i class="{{ hobby.icon }}"></i>
+            {{ hobby.info }}
         </li>
         {% endfor %}
     </ul>
@@ -61,10 +64,12 @@ required: no-footer
     <footer class="card">
         <ul class="profile-info">
             {% for friend in site.data.profiles.friends %}
-            <li class="profile-info-item" data-aos="fade" {% if friend.marked %}heart{% endif %}><small>
-                <i class="fa-solid fa-user-group fa-fw"></i>
-                <a href="{{ friend.link }}" data-tooltip="{{ friend.info }}">{{ friend.name }}</a>
-            </small></li>
+            <li class="profile-info-item" data-aos="fade" {% if friend.marked %}heart{% endif %}>
+                <small>
+                    <i class="fa-solid fa-user-group fa-fw"></i>
+                    <a href="{{ friend.link }}" data-tooltip="{{ friend.info }}">{{ friend.name }}</a>
+                </small>
+            </li>
             {% endfor %}
         </ul>
     </footer>

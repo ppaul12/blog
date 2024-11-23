@@ -21,20 +21,26 @@ layout: default
     {% assign post_word = page.content | strip_html | strip_newlines | remove: " " | size  %}
     {% assign post_time = post_word | divided_by:200.0 | round:1 | at_least:1.0 %}
     <section class="post-info">
-        <span data-tooltip="{{ post_word }} words"><i class="fa-solid fa-spell-check fa-fw"></i></span>
-        <span data-tooltip="{{ post_time }} min"><i class="fa-solid fa-stopwatch fa-fw"></i></span>
+        <span data-tooltip="{{ post_word | pluralize:'word' }}"><i class="fa-solid fa-spell-check fa-fw"></i></span>
+        <span data-tooltip="{{ post_time | pluralize:'minute' }}"><i class="fa-solid fa-stopwatch fa-fw"></i></span>
         <span id="page-view"><i class="fa-solid fa-eye fa-fw"></i></span>
         <span data-tooltip="BY-NC-SA"><i class="fa-brands fa-creative-commons fa-fw"></i></span>
     </section>
-    <section class="post-content">{{ content }}</section>
+    {% assign post_cls = "post-content" %}
+    {% if page.required contains "plain-heading" %}
+        {% assign post_cls = post_cls | append:"-plain" %}
+    {% endif %}
+    <section class="{{ post_cls }}">{{ content }}</section>
 
     <footer class="card">
         <!-- post buttons -->
         <nav class="post-buttons">
-            <a class="post-buttons-prev" {% if page.previous %}href="{{ page.previous.url }}"{% else %}disabled{% endif %}>
+            <a class="post-buttons-prev"
+                {% if page.previous %}href="{{ page.previous.url }}"{% else %}disabled{% endif %}>
                 {% if page.previous %}{{ page.previous.title }}{% else %}-{% endif %}
             </a>
-            <a class="post-buttons-next" {% if page.next %}href="{{ page.next.url }}"{% else %}disabled{% endif %}>
+            <a class="post-buttons-next"
+                {% if page.next %}href="{{ page.next.url }}"{% else %}disabled{% endif %}>
                 {% if page.next %}{{ page.next.title }}{% else %}-{% endif %}
             </a>
         </nav>

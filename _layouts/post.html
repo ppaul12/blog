@@ -30,7 +30,7 @@ layout: default
     {% if page.required contains "plain-heading" %}
         {% assign post_cls = post_cls | append:"-plain" %}
     {% endif %}
-    <section class="{{ post_cls }}">{{ content }}</section>
+    <section class="{{ post_cls }}">{{ content | format_caption }}</section>
 
     <footer class="card">
         <!-- post buttons -->

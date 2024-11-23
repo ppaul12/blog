@@ -1,16 +1,12 @@
 {% if page.required contains "with-header" %}
 <header>
     <hgroup>
-        <h1>LA VITA</h1>
+        <h1>{{ site.header }}</h1>
         <h3><em>{{ site.title }}</em></h3>
     </hgroup>
 </header>
 {% endif %}
 
-{% assign content = content | replace:"<table","<figure><table" | replace:"table>","table></figure>" %}
-{% if page.required contains "plain-heading" %}
-    {% assign content = content | replace:"post-content","post-content-plain" %}
-{% endif %}
 <main>{{ content }}</main>
 
 {% unless page.required contains "no-footer" %}
@@ -20,14 +16,3 @@
     <small id="site-view"></small>
 </footer>
 {% endunless %}
-
-<script>
-    window.addEventListener("load", () => {
-        document.querySelectorAll("figure > table[caption]").forEach((elem) => {
-            const caption = document.createElement("figcaption")
-            caption.innerText = elem.getAttribute("caption")
-            elem.after(caption)
-            elem.removeAttribute("caption")
-        })
-    })
-</script>

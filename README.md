@@ -1,7 +1,5 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/peng-ao/blog)
-![GitHub last commit](https://img.shields.io/github/last-commit/peng-ao/blog)
 ![GitHub repo size](https://img.shields.io/github/repo-size/peng-ao/blog)
-![Website](https://img.shields.io/website?url=https%3A%2F%2Fppaul.pages.dev)
 
 ---
 

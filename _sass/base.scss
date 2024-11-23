@@ -141,10 +141,6 @@ blockquote {
     border-radius: var(--pico-border-radius);
     background: var(--pico-card-sectioning-background-color);
 
-    & ul {
-        margin-bottom: unset;
-    }
-
     @mixin with-prompt($color, $icon) {
         position: relative;
         padding: 1em 1em 1em 3em;
@@ -163,8 +159,9 @@ blockquote {
             content: $icon;
         }
 
-        p {
-            margin: 0;
+        p,
+        ul {
+            margin-bottom: 0;
             color: $nord3;
         }
     }

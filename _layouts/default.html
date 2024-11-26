@@ -8,8 +8,15 @@
         <header>
             <hgroup>
                 <h1>{{ site.header }}</h1>
-                <h3><em>{{ site.title }}</em></h3>
+                <h3><em id="typed-elem"></em>&nbsp;</h3>
             </hgroup>
+            <datalist id="typed-strings">
+                {% for identity in site.data.profiles.identities %}
+                <option>{{ identity.info }}</option>
+                {% endfor %}
+                <option>{{ site.title }}</option>
+            </datalist>
+            <script>new Typed("#typed-elem", {stringsElement: "#typed-strings", typeSpeed: 80, showCursor: false})</script>
         </header>
         {% endif %}
 

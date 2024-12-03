@@ -18,11 +18,49 @@ required: code
 
 两个交互按钮居中，之间稍留空隙。图标和信息用伪元素`::before`和`::after`实现，以保证点击事件只会被一个标签捕捉。随后便做悬停时`:hover`和激活状态`active`相关的美化即可。以下为可反复点击的测试用按钮。
 
-<div style="text-align: center;">
+<div class="post-reaction">
     <div class="post-reaction-good" onclick="clickReactionTest(event)" data-tag="good" data-num="2"></div>
     <div class="post-reaction-bad" onclick="clickReactionTest(event)" data-tag="bad" data-num="1"></div>
 </div>
-
+<style>
+.post-reaction {
+    text-align: center;
+    animation: 1s fadeIn 1s backwards;
+}
+.post-reaction-good, .post-reaction-bad {
+	display: inline-block;
+    position: relative;
+    margin: 0 1em;
+    text-align: center;
+    color: grey;
+    transition: color 0.3s ease;
+}
+.post-reaction-good::before, .post-reaction-bad::before {
+	 display: block;
+	 font: 900 1.5em "Font Awesome 6 Free";
+}
+.post-reaction-good::after, .post-reaction-bad::after {
+    display: block;
+    font-size: 0.8em;
+    content: attr(data-num);
+}
+.post-reaction-good[active], .post-reaction-bad[active] {
+    color: #d08770;
+    animation: 1s tada backwards;
+}
+:not(.post-reaction[disabled]) > .post-reaction-good:hover, :not(.post-reaction[disabled]) > .post-reaction-bad:hover {
+    color: #ebcb8b;
+}
+:not(.post-reaction[disabled]) > .post-reaction-good:hover::before, :not(.post-reaction[disabled]) > .post-reaction-bad:hover::before {
+    animation: 1s bounce infinite;
+}
+.post-reaction-good::before {
+    content: "\f164";
+}
+.post-reaction-bad::before {
+    content: "\f165";
+}
+</style>
 <script>
 clickReactionTest = (event) => {
     const reactionButton = event.target

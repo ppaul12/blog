@@ -1,6 +1,5 @@
-title: Paul's Trails
 header: LA VITA
-author: P.Paul
+author: PPaul
 
 plugins:
   - jekyll-seo-tag

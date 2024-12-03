@@ -116,6 +116,10 @@ pre {
     max-height: 500px;
     border-radius: unset !important;
     margin: var(--pico-spacing) calc(var(--pico-block-spacing-horizontal) * -1) !important;
+
+    &+div {
+        z-index: 2 !important;
+    }
 }
 
 code {

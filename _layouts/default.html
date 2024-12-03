@@ -14,9 +14,8 @@
                 {% for identity in site.data.profiles.identities %}
                 <option>{{ identity.info }}</option>
                 {% endfor %}
-                <option>{{ site.title }}</option>
             </datalist>
-            <script>new Typed("#typed-elem", {stringsElement: "#typed-strings", typeSpeed: 80, showCursor: false})</script>
+            <script>new Typed("#typed-elem", {stringsElement: "#typed-strings", typeSpeed: 80, loop: true, showCursor: false})</script>
         </header>
         {% endif %}
 

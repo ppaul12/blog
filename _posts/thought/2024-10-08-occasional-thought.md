@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 长志与短优
+title: 长志，常立？
 subtitle: 甲辰寒露期间有感
 tags: 随想
 ---

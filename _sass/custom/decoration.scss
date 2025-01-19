@@ -1,12 +1,12 @@
 [ribbon]::after {
     position: absolute;
-    top: -0.3em;
-    right: 1em;
-    width: 1.2em;
-    height: 1.6em;
+    top: -0.3rem;
+    right: 1rem;
+    width: 1.2rem;
+    height: 1.6rem;
     background: $nord13;
-    border-top-left-radius: 0.2em;
-    border-top-right-radius: 0.2em;
+    border-top-left-radius: 0.2rem;
+    border-top-right-radius: 0.2rem;
     content: "";
     clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 8px), 0 100%);
     z-index: 2;
@@ -18,9 +18,9 @@
 @mixin icon($color, $content) {
     position: absolute;
     top: 0;
-    margin-left: 0.2em;
+    margin-left: 0.2rem;
     color: $color;
-    font: 900 0.5em "Font Awesome 6 Free";
+    font: 900 0.5rem "Font Awesome 6 Free";
     content: $content;
 }
 
@@ -37,9 +37,9 @@
 }
 
 [drop-cap]::first-letter {
-    font-size: 1.8em;
+    font-size: 1.8rem;
     float: left;
-    margin-right: 0.2em;
+    margin-right: 0.2rem;
 }
 
 [caption]::after {

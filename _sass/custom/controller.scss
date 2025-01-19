@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column-reverse;
     position: fixed;
-    right: 0.5em;
-    bottom: 1em;
+    right: 0.5rem;
+    bottom: 1rem;
     z-index: 9;
 
     transition: all 1s ease;
@@ -11,9 +11,9 @@
     button {
         text-align: center;
         align-content: center;
-        height: 3em;
+        height: 3rem;
         aspect-ratio: 1;
-        margin: 0.5em auto;
+        margin: 0.5rem auto;
         border-radius: 50%;
 
         animation: fadeInRight 2s backwards;

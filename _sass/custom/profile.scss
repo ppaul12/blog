@@ -1,11 +1,11 @@
 .profile {
-    margin: 6em auto 2em;
+    margin: 6rem auto 2rem;
     max-width: 640px;
 
     &-avatar {
         position: relative;
-        top: -5em;
-        width: 8em;
+        top: -5rem;
+        width: 8rem;
         aspect-ratio: 1;
         margin: 0 auto;
         text-align: center;
@@ -20,16 +20,16 @@
         img:nth-of-type(2) {
             position: absolute;
             inset: auto 0 0 auto;
-            width: 2em;
+            width: 2rem;
             aspect-ratio: 1;
         }
     }
 
     &-name {
         width: 80%;
-        margin: -3em auto 0;
+        margin: -3rem auto 0;
         text-align: center;
-        font: italic 1.5em "Times New Roman";
+        font: italic 1.5rem "Times New Roman";
 
         animation: fadeInDown 1s backwards;
     }
@@ -43,7 +43,7 @@
         max-width: 480px;
 
         img {
-            margin: 0.5em;
+            margin: 0.5rem;
             border-radius: 0;
 
             animation: rotateIn 1s calc(var(--ith) * 50ms) backwards;
@@ -53,7 +53,7 @@
     &-info {
         position: relative;
         margin-bottom: 0;
-        padding-inline-start: 0.5em;
+        padding-inline-start: 0.5rem;
 
         &-item {
             list-style: none;

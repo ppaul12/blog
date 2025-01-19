@@ -51,10 +51,10 @@
         if (document.documentElement.scrollTop < 200) {
             if (topBtn.hasAttribute("active")) {
                 topBtn.toggleAttribute("inactivating", true)
-                window.setTimeout(() => {
+                window.addEventListener("animationend", () => {
                     topBtn.toggleAttribute("active", false)
                     topBtn.toggleAttribute("inactivating", false)
-                }, 2000)
+                }, {"once": true})
             }
         } else {
             if (!topBtn.hasAttribute("active")) {

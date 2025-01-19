@@ -13,17 +13,17 @@
     &-title {
         flex-grow: 1;
         padding: var(--pico-spacing);
-        max-height: 12em;
+        max-height: 12rem;
     }
 
     &-cover {
-        width: 12em;
+        width: 12rem;
 
         @media (max-width: 420px) {
             width: 100%;
         }
 
-        height: 12em;
+        height: 12rem;
         background-size: cover;
         background-position: center;
         border-top-left-radius: var(--pico-border-radius);
@@ -41,7 +41,7 @@
         justify-content: center !important;
 
         details {
-            min-width: 6em;
+            min-width: 6rem;
             text-align: center;
 
             summary+ul {
@@ -50,6 +50,10 @@
                 overflow-y: scroll;
 
                 animation: 1s fadeIn backwards;
+
+                & a {
+                    overflow: unset !important;
+                }
             }
         }
     }
@@ -62,7 +66,7 @@
             counter-reset: h2;
 
             &::before {
-                margin-right: 0.5em;
+                margin-right: 0.5rem;
                 counter-increment: h1;
                 content: counter(h1);
             }
@@ -72,14 +76,14 @@
             counter-reset: h3;
 
             &::before {
-                margin-right: 0.5em;
+                margin-right: 0.5rem;
                 counter-increment: h2;
                 content: counter(h1)"." counter(h2);
             }
         }
 
         h4::before {
-            margin-right: 0.5em;
+            margin-right: 0.5rem;
             counter-increment: h3;
             content: counter(h1)"." counter(h2)"." counter(h3);
         }
@@ -92,7 +96,7 @@
     &-info {
         text-align: right;
         color: grey;
-        font-size: 0.8em;
+        font-size: 0.8rem;
 
         animation: 1s fadeIn 1s backwards;
     }
@@ -100,15 +104,15 @@
     &-buttons {
         justify-content: space-between !important;
         flex-wrap: wrap;
-        padding-bottom: 1em;
+        padding-bottom: 1rem;
 
         &-prev,
         &-next {
             display: block;
             flex-grow: 1;
-            margin: 0.5em 1em;
-            padding: 0.5em 1em;
-            min-width: 12em;
+            margin: 0.5rem 1rem;
+            padding: 0.5rem 1rem;
+            min-width: 12rem;
             border: 1px solid var(--pico-muted-border-color);
             border-radius: var(--pico-border-radius);
             background: var(--pico-card-background-color);
@@ -118,13 +122,13 @@
 
             &::before {
                 display: block;
-                padding-bottom: 0.5em;
-                margin-bottom: 0.5em;
+                padding-bottom: 0.5rem;
+                margin-bottom: 0.5rem;
                 color: grey;
                 border-bottom: 1px solid lightgrey;
                 font-style: italic;
                 font-weight: bold;
-                font-size: 0.8em;
+                font-size: 0.8rem;
             }
 
             &[disabled] {

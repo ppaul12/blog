@@ -45,8 +45,8 @@
 
             input {
                 position: unset;
-                width: 0.8em;
-                height: 0.8em;
+                width: 0.8rem;
+                height: 0.8rem;
                 margin: unset;
                 appearance: auto;
             }
@@ -54,7 +54,7 @@
 
         &-minimap {
             width: 10em !important;
-            height: 12em !important;
+            height: 12rem !important;
 
             @media (max-width: 420px) {
                 display: none;

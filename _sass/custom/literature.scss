@@ -1,6 +1,6 @@
 .literature {
-    margin: 0.5em auto;
-    padding: 1em;
+    margin: 0.5rem auto;
+    padding: 1rem;
     width: fit-content;
     max-width: 100%;
     border: none;
@@ -19,12 +19,12 @@
 
     &.quote {
         position: relative;
-        padding: 1em 2em;
+        padding: 1rem 2rem;
 
         &::before,
         &::after {
             position: absolute;
-            font: 2em "Font Awesome 6 Free";
+            font: 2rem "Font Awesome 6 Free";
             color: var(--pico-muted-border-color);
         }
 
@@ -47,7 +47,7 @@
 
     header {
         text-align: center;
-        font-size: 1.5em;
+        font-size: 1.5rem;
     }
 
     footer {
@@ -57,12 +57,12 @@
     p {
         max-width: var(--fix, auto);
         margin: 0 auto;
-        line-height: 1.8em;
+        line-height: 1.8rem;
         text-decoration-line: underline;
         text-decoration-style: dotted;
         text-decoration-thickness: 2px;
         text-decoration-color: var(--pico-muted-border-color);
-        text-underline-offset: 0.2em;
+        text-underline-offset: 0.2rem;
         font-family: "Zhuque Fangsong (technical preview)", sans-serif;
     }
 

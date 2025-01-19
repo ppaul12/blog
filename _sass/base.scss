@@ -2,8 +2,8 @@
 
 :root {
     --pico-font-family: "LXGW WenKai", serif;
-    --pico-font-size: 1em;
-    --pico-border-radius: 0.8em;
+    --pico-font-size: 1rem;
+    --pico-border-radius: 0.8rem;
 }
 
 html {
@@ -38,7 +38,7 @@ body {
 }
 
 main {
-    margin: 0.5em auto;
+    margin: 0.5rem auto;
 
     @media (max-width: 420px) {
         max-width: 100%;
@@ -59,7 +59,6 @@ main {
 
     @media (min-width: 1600px) {
         max-width: 45%;
-        font-size: 1.1em;
     }
 }
 
@@ -68,7 +67,7 @@ a {
 }
 
 math {
-    padding-bottom: 0.5em;
+    padding-bottom: 0.5rem;
 }
 
 mjx-container {
@@ -102,7 +101,7 @@ dialog {
         transition: opacity 0.5s ease;
 
         &::before {
-            font: 900 1em "Font Awesome 6 Free";
+            font: 900 1rem "Font Awesome 6 Free";
             content: "\f00d";
         }
 
@@ -125,8 +124,8 @@ pre {
 code {
     background: unset;
     padding: 0 !important;
-    margin: auto 0.4em;
-    font: 0.8em "Roboto Mono" !important;
+    margin: auto 0.4rem;
+    font: 0.8rem "Roboto Mono" !important;
 
     pre>& {
         margin: unset;
@@ -143,7 +142,7 @@ blockquote {
 
     @mixin with-prompt($color, $icon) {
         position: relative;
-        padding: 1em 1em 1em 3em;
+        padding: 1rem 1rem 1rem 3rem;
         border-left-color: $color;
         background: lighten($color, 20%);
 
@@ -152,10 +151,10 @@ blockquote {
             justify-content: center;
             align-items: center;
             position: absolute;
-            width: 2em;
+            width: 2rem;
             inset: 0;
             color: $color;
-            font: 900 1.2em "Font Awesome 6 Free";
+            font: 900 1.2rem "Font Awesome 6 Free";
             content: $icon;
         }
 
@@ -194,7 +193,7 @@ table {
 
 figure {
     overflow: auto;
-    margin: 0.5em auto;
+    margin: 0.5rem auto;
     text-align: center;
 
     @media (max-width: 420px) {

@@ -4,30 +4,27 @@
     &-box {
         position: fixed;
         inset: 0 auto auto 0;
-        width: 3em;
-        height: 3em;
-        border-bottom-right-radius: 100%;
-        box-shadow: 0 0 0 0 var(--pico-color);
-        background-color: var(--pico-color);
+        width: 2.4rem;
+        height: 2.4rem;
         z-index: 9;
         cursor: pointer;
 
         transition:
             top 0.3s ease-in,
             left 0.3s ease-in,
-            box-shadow 0.3s ease-in,
-            border-radius 0.3s ease 0.2s,
-            width 0.3s ease 0.3s;
+            width 0.1s ease 1.3s,
+            height 0.5s ease 0.8s,
+            background-color 0.5s ease 0.8s;
         animation: zoomIn 1s backwards;
     }
 
     &-icon {
         display: block;
         position: absolute;
-        inset: 1.2em auto auto 0.6em;
-        width: 1.2em;
+        inset: 1.2rem auto auto 0.6rem;
+        width: 1.2rem;
         height: 2px;
-        background-color: var(--pico-background-color);
+        background-color: var(--pico-color);
 
         transition: all 0.3s ease-in;
         transform-origin: center;
@@ -45,11 +42,11 @@
         }
 
         &::before {
-            top: -0.4em;
+            top: -0.4rem;
         }
 
         &::after {
-            bottom: -0.4em;
+            bottom: -0.4rem;
         }
     }
 
@@ -59,18 +56,18 @@
         justify-content: end;
         align-items: center;
         position: fixed;
-        inset: 0 100% 100% 0;
+        inset: 0 0 100% 0;
         z-index: 10;
 
-        transition: inherit;
+        transition: inset 0.3s ease 0.8s;
     }
 
     &-item {
-        margin-bottom: 1em;
-        width: 5em;
+        margin-bottom: 1rem;
+        width: 8rem;
         opacity: 0;
         text-align: center;
-        font: italic 1.5em "Times New Roman";
+        font: italic 1.5rem "Times New Roman";
         transform: translateX(calc(pow(-1, var(--ith)) * 200%));
 
         transition: all 0.3s ease calc(var(--ith) * 0.1s + 0.3s);
@@ -98,8 +95,13 @@
 
     &[open]>&-box {
         width: 100%;
-        border-radius: 0;
-        box-shadow: 0 0 0 calc(100vmax * 2) var(--pico-background-color);
+        height: 100%;
+        background-color: var(--pico-background-color);
+
+        transition:
+            width 0.1s ease,
+            height 0.5s ease 0.1s,
+            background-color 0.5s ease 0.1s;
     }
 
     &[open]>&-box>&-icon {
@@ -118,6 +120,8 @@
 
     &[open]>&-content {
         inset: 0 0 0 0;
+
+        transition: inset 0.1s ease;
     }
 
     &[open]>&-content>&-item {
@@ -126,6 +130,6 @@
     }
 
     html[fullscreen] &-box {
-        inset: -3em auto auto -3em;
+        inset: -3rem auto auto -3rem;
     }
 }

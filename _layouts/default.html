@@ -24,7 +24,7 @@
         {% unless page.required contains "no-footer" %}
         <footer>
             <small>by {{ site.author }} with <i class="fa-solid fa-heart fa-fw faa-pulse faa-slow animated"></i></small><br>
-            <small><i class="fa-regular fa-copyright fa-fw"></i> 2021 - 2024</small><br>
+            <small><i class="fa-regular fa-copyright fa-fw"></i> 2021 - {{ "now" | date:"%Y" }}</small><br>
             <small id="site-view"></small>
         </footer>
         {% endunless %}

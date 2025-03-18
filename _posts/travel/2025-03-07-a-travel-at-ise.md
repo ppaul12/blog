@@ -4,7 +4,7 @@ title: 伊势之旅
 subtitle: 名古屋·伊勢·二見浦
 tags: 旅行 随想
 required: gallery map
-cover: /assets/src/a-travel-at-ise/pic5.jpeg
+cover: /assets/src/a-travel-at-ise/pic3.jpeg
 ---
 
 # 路程规划

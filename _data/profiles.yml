@@ -4,14 +4,19 @@ information:
   - info: Japan, Tokyo
     icon: "fa-solid fa-map-pin fa-fw"
   - info: >
-      <a href="https://www.u-tokyo.ac.jp/ja/index.html">U-tokyo</a>,
+      <a href="https://www.u-tokyo.ac.jp/ja/index.html">UTokyo</a>,
       <a href="https://www.is.s.u-tokyo.ac.jp">IS</a>
       (BSc 2019-2023)
     icon: "fa-solid fa-building fa-fw"
   - info: >
-      <a href="https://www.u-tokyo.ac.jp/ja/index.html">U-tokyo</a>,
+      <a href="https://www.u-tokyo.ac.jp/ja/index.html">UTokyo</a>,
       <a href="https://www.is.s.u-tokyo.ac.jp">CS</a>
       (MSc 2023-2025)
+    icon: "fa-solid fa-building fa-fw"
+  - info: >
+      <a href="https://www.u-tokyo.ac.jp/ja/index.html">UTokyo</a>,
+      <a href="https://www.is.s.u-tokyo.ac.jp">CS</a>
+      (PhD 2025-)
     icon: "fa-solid fa-building fa-fw"
   - info: <a href="mailto:pengao@is.s.u-tokyo.ac.jp">pengao[at]is.s.u-tokyo.ac.jp</a>
     icon: "fa-solid fa-envelope fa-fw"

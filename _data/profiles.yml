@@ -48,10 +48,6 @@ hobbies:
     icon: "fa-solid fa-person-hiking fa-fw"
 
 friends:
-  - name: YAN Xiaofan
-    link: https://www.xiaohongshu.com/user/profile/5b1e7da1e8ac2b44976113c7
-    info: 小红书
-    attr: heart
   - name: CHEN Ziheng
     link: https://zoooooone.github.io
     info: Blog

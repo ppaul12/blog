@@ -37,9 +37,6 @@ marked: true
 
 ---
 
-<div style="text-align:center;">In Love ❤️ <span id="love-days"></span></div>
-<script>
-    const then = new Date("2023-11-02T10:00:00.000Z")
-    const days = Math.floor((new Date() - then) / (24 * 60 * 60 * 10)) / 100
-    document.getElementById("love-days").innerText = `${days.toFixed(2)} days`
-</script>
+2025.05.12追记：如一切世事，这段关系也走到了分开的结局。
+
+<div style="text-align:center;">2024.11.02 ~ 2025.05.10<br>555 days</div>

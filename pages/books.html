@@ -5,30 +5,30 @@ subtitle: nourish the mind ...
 permalink: /books
 ---
 
-{% assign booksets = site.data.books %}
-{% for bookset in booksets %}{% unless bookset.books.size > 0 %}{% continue %}{% endunless %}
+{%- assign booksets = site.data.books -%}
+{%- for bookset in booksets -%}{%- unless bookset.books.size > 0 -%}{%- continue -%}{%- endunless -%}
 <section
-    {% if bookset.books.size > 1 %}class="book-shelf" onclick="toggleShelf(event)"{% endif %}
-    {% if forloop.index <= 2 %}active{% endif %}>
+    {%- if bookset.books.size > 1 -%}class="book-shelf" onclick="toggleShelf(event)"{%- endif -%}
+    {%- if forloop.index <= 2 -%}active{%- endif -%}>
     <h4 class="book-shelf-info" data-count="{{ bookset.books.size }}" data-aos="fade">{{ bookset.year }}</h4>
-    {% assign books = bookset.books | sort:"date" %}
-    {% for book in books %}
-    <article class="book-card" {% if bookset.year == "Reading" %}ribbon{% endif %}>
+    {%- assign books = bookset.books | sort:"date" -%}
+    {%- for book in books -%}
+    <article class="book-card" {%- if bookset.year == "Reading" -%}ribbon{%- endif -%}>
         <div class="book-img">
             <a href="{{ book.link }}">
-                <img class="cover" alt="{{ book.title }}"
-                    data-src="/assets/img/covers/{{ book.title }}.jpg" data-aos="zoom-in">
+                {%- capture path -%}/assets/img/covers/{{ book.title }}.jpg{%- endcapture -%}
+                <img class="cover" alt="{{ book.title }}" data-src="{{ path | relative_url }}" data-aos="zoom-in">
             </a>
         </div>
         <hgroup class="book-info" data-aos="fade">
             <h3>{{ book.title }}</h3>
             <h4>{{ book.subtitle }}</h4>
             <h4>{{ book.author }}</h4>
-            <h4><em>{{ bookset.year }}{% if book.date %}.{{ book.date }}{% endif %}</em></h4>
+            <h4><em>{{ bookset.year }}{%- if book.date -%}.{{ book.date }}{%- endif -%}</em></h4>
         </hgroup>
     </article>
-    {% endfor %}
+    {%- endfor -%}
 </section>
-{% endfor %}
+{%- endfor -%}
 
-<script src="/assets/js/books.js"></script>
+<script src="{{ '/assets/js/books.js' | relative_url }}"></script>

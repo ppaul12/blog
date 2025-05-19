@@ -13,6 +13,7 @@
         img-src 'self' data:
             https://cdn.jsdelivr.net/
             https://github.com/
+            https://avatars.githubusercontent.com/
             https://github-readme-stats.vercel.app/
             https://cdn.simpleicons.org/
             https://*.tile.openstreetmap.org/;
@@ -36,12 +37,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="/assets/img/avatar.jpeg">
+    <link rel="icon" type="image/png" href="https://github.com/{{ site.thirdparty.github.user }}.png?size=16">
     <title>{{ page.title }} | {{ site.author }}</title>
-    {% seo title=false %}
+    {%- seo title=false -%}
 
     <!-- goat counter -->
-    <script src="/assets/js/analytics.js"></script>
+    <script src="{{ '/assets/js/analytics.js' | relative_url }}"></script>
     <script data-goatcounter="https://{{ site.thirdparty.goatcounter.code }}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 
     <!-- pico css -->
@@ -64,7 +65,7 @@
     <!-- zhuque faonsong font -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@chinese-fonts/zqfs@latest/dist/ZhuqueFangsong-Regular/result.css">
 
-    {% if page.required contains "code" %}
+    {%- if page.required contains "code" -%}
     <!-- prism js -->
     <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/components/prism-core.min.js"></script>
     <link id="prism-theme" rel="stylesheet" data-href="https://cdn.jsdelivr.net/npm/prism-themes@latest/themes/">
@@ -79,22 +80,22 @@
     <!-- roboto mono font -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/roboto-mono@latest/index.min.css">
     <!-- custom code theme switcher -->
-    <script src="/assets/js/code.js"></script>
-    {% endif %}
+    <script src="{{ '/assets/js/code.js' | relative_url }}"></script>
+    {%- endif -%}
 
-    {% if page.required contains "math" %}
+    {%- if page.required contains "math" -%}
     <!-- mathjax -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@latest/es5/tex-mml-chtml.js"></script>
     <script>MathJax = {loader: {load: ["ui/lazy"]}, tex: {inlineMath: [["$", "$"]], processEscapes: true}}</script>
-    {% endif %}
+    {%- endif -%}
 
-    {% if page.required contains "graph" %}
+    {%- if page.required contains "graph" -%}
     <!-- mermaid -->
     <script src="https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad: true, theme: "forest", flowchart: {useMaxWidth: false, htmlLabels: true}})</script>
-    {% endif %}
+    {%- endif -%}
 
-    {% if page.required contains "gallery" %}
+    {%- if page.required contains "gallery" -%}
     <!-- light gallery -->
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@latest/lightgallery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@latest/plugins/zoom/lg-zoom.min.js"></script>
@@ -105,10 +106,10 @@
     <!-- exifr -->
     <script src="https://cdn.jsdelivr.net/npm/exifr@latest/dist/full.umd.min.js"></script>
     <!-- custom gallery initializer -->
-    <script src="/assets/js/gallery.js"></script>
-    {% endif %}
+    <script src="{{ '/assets/js/gallery.js' | relative_url }}"></script>
+    {%- endif -%}
 
-    {% if page.required contains "map" %}
+    {%- if page.required contains "map" -%}
     <!-- leaflet -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@latest/dist/leaflet.min.css">
     <script src="https://cdn.jsdelivr.net/npm/leaflet@latest/dist/leaflet.min.js"></script>
@@ -121,20 +122,20 @@
     <!-- leaflet canvas marker -->
     <script src="https://cdn.jsdelivr.net/npm/leaflet-canvas-marker@latest/dist/leaflet.canvas-markers.min.js"></script>
     <!-- custom map initializer -->
-    <script src="/assets/js/map.js"></script>
-    {% endif %}
+    <script src="{{ '/assets/js/map.js' | relative_url }}"></script>
+    {%- endif -%}
 
-    {% if page.required contains "search" %}
+    {%- if page.required contains "search" -%}
     <!-- simple jekyll search -->
     <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
-    {% endif %}
+    {%- endif -%}
 
     <!-- custom style -->
-    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
     <!-- custom modal switcher -->
-    <script src="/assets/js/modal.js"></script>
+    <script src="{{ '/assets/js/modal.js' | relative_url }}"></script>
     <!-- custom theme switcher -->
-    <script src="/assets/js/theme.js"></script>
+    <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
     <!-- custom json loader -->
-    <script src="/assets/js/json.js"></script>
+    <script src="{{ '/assets/js/json.js' | relative_url }}"></script>
 </head>

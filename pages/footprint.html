@@ -20,7 +20,7 @@ required: map
 </style>
 <script>
     (async () => {
-        const locSets = await asyncLoadJSON("/assets/json/maps.json")
+        const locSets = await asyncLoadJSON("{{'/assets/json/maps.json' | relative_url }}")
         const locations = Object.entries(Object.groupBy([].concat(
             await locSets.reduce(async (output, locSet) => {
                 const spot = (await asyncLoadJSON(locSet.json)).spot
@@ -32,7 +32,7 @@ required: map
                     }
                 }))
             }, Promise.resolve([])),
-            await asyncLoadJSON("/assets/json/spots.json"),
+            await asyncLoadJSON("{{'/assets/json/spots.json' | relative_url }}"),
         ), ({loc}) => loc)).map((entry) => {
             return {
                 loc: entry[0],

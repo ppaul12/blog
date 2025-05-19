@@ -3,18 +3,19 @@ layout: default
 ---
 
 <article>
-    <header class="card" {% if page.marked %}ribbon{% endif %}>
+    <header class="card" {%- if page.marked -%}ribbon{%- endif -%}>
         <!-- post tags -->
         <nav aria-label="breadcrumb"><ul>
-            {% for tag in page.tags %}
-            <li><a href="/archive.html?tag={{ tag }}">{{ tag }}</a></li>
-            {% endfor %}
+            {%- for tag in page.tags -%}
+                {%- assign tag-path = "/archive.html?tag=" | append: tag -%}
+            <li><a href="{{ tag-path | relative_url }}">{{ tag }}</a></li>
+            {%- endfor -%}
         </ul></nav>
         <!-- post title -->
-        {% assign date = page.date | date:"%Y.%m.%d" %}
-        {% if page.span %}
-            {% assign date = page.span %}
-        {% endif %}
+        {%- assign date = page.date | date:"%Y.%m.%d" -%}
+        {%- if page.span -%}
+            {%- assign date = page.span -%}
+        {%- endif -%}
         <hgroup>
             <small><em>{{ date }}</em></small>
             <h2>{{ page.title }}</h2>
@@ -22,32 +23,32 @@ layout: default
         </hgroup>
     </header>
 
-    {% assign post_word = page.content | strip_html | strip_newlines | remove: " " | size  %}
-    {% assign post_time = post_word | divided_by:200.0 | round:1 | at_least:1.0 %}
+    {%- assign post_word = page.content | strip_html | strip_newlines | remove: " " | size  -%}
+    {%- assign post_time = post_word | divided_by:200.0 | round:1 | at_least:1.0 -%}
     <section class="post-info">
         <span data-tooltip="{{ post_word | pluralize:'word' }}"><i class="fa-solid fa-spell-check fa-fw"></i></span>
         <span data-tooltip="{{ post_time | pluralize:'minute' }}"><i class="fa-solid fa-stopwatch fa-fw"></i></span>
         <span id="page-view"><i class="fa-solid fa-eye fa-fw"></i></span>
         <span data-tooltip="BY-NC-SA"><i class="fa-brands fa-creative-commons fa-fw"></i></span>
     </section>
-    {% assign post_cls = "post-content" %}
-    {% if page.required contains "plain-heading" %}
-        {% assign post_cls = post_cls | append:"-plain" %}
-    {% endif %}
+    {%- assign post_cls = "post-content" -%}
+    {%- if page.required contains "plain-heading" -%}
+        {%- assign post_cls = post_cls | append:"-plain" -%}
+    {%- endif -%}
     <section class="{{ post_cls }}">{{ content | format_caption }}</section>
 
     <footer class="card">
         <!-- post buttons -->
         <nav class="post-buttons">
             <a class="post-buttons-prev"
-                {% if page.previous %}href="{{ page.previous.url }}"{% else %}disabled{% endif %}
-            >{% if page.previous %}{{ page.previous.title }}{% else %}-{% endif %}</a>
+                {%- if page.previous -%}href="{{ page.previous.url | relative_url }}"{%- else -%}disabled{%- endif -%}
+            >{%- if page.previous -%}{{ page.previous.title }}{%- else -%}-{%- endif -%}</a>
             <a class="post-buttons-next"
-                {% if page.next %}href="{{ page.next.url }}"{% else %}disabled{% endif %}
-            >{% if page.next %}{{ page.next.title }}{% else %}-{% endif %}</a>
+                {%- if page.next -%}href="{{ page.next.url | relative_url }}"{%- else -%}disabled{%- endif -%}
+            >{%- if page.next -%}{{ page.next.title }}{%- else -%}-{%- endif -%}</a>
         </nav>
         <!-- comment block -->
-        {% include comment.html %}
+        {%- include comment.html -%}
     </footer>
 </article>
 

@@ -9,8 +9,8 @@
     {%- assign post = a | default:b -%}
 {
     "post": "{{ post.title }}",
-    "link": "{{ post.url }}",
-    "json": "{{ file.path }}",
+    "link": "{{ post.url | relative_url }}",
+    "json": "{{ file.path | relative_url }}",
     "date": "{{ post.date | date:'%s' }}"
 }{%- unless forloop.last %},{% endunless -%}
 {%- endfor -%}

@@ -1,8 +1,8 @@
-<figure {% if include.width %} style="width: {{ include.width }};" {% endif %}>
+<figure {%- if include.width -%} style="width: {{ include.width }};" {% endif %}>
     <iframe loading="lazy" src="https://www.youtube.com/embed/{{ include.id }}" style="aspect-ratio:16/9;"
         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         title="YouTube video player" allowfullscreen></iframe>
-    {% if include.caption %}
+    {%- if include.caption -%}
     <figcaption>{{ include.caption }}</figcaption>
-    {% endif %}
+    {%- endif -%}
 </figure>

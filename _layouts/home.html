@@ -2,60 +2,61 @@
 layout: default
 ---
 
-{% assign edited = site.posts | where_exp:"post", "post.edited == true" %}
-{% assign normal = site.posts | where_exp:"post", "post.edited != true" %}
-{% assign posts = "" | split: "" %}
+{%- assign edited = site.posts | where_exp:"post", "post.edited == true" -%}
+{%- assign normal = site.posts | where_exp:"post", "post.edited != true" -%}
+{%- assign posts = "" | split: "" -%}
 
-{% assign start_num = paginator.page | minus:1 | times:paginator.per_page %}
-{% assign edited_num = edited.size | minus:start_num | at_least:0 %}
-{% if edited_num > 0 %}
-    {% for idx in (start_num..edited.size) limit:edited_num %}
-        {% assign posts = posts | push:edited[idx] %}
-    {% endfor %}
-{% endif %}
+{%- assign start_num = paginator.page | minus:1 | times:paginator.per_page -%}
+{%- assign edited_num = edited.size | minus:start_num | at_least:0 -%}
+{%- if edited_num > 0 -%}
+    {%- for idx in (start_num..edited.size) limit:edited_num -%}
+        {%- assign posts = posts | push:edited[idx] -%}
+    {%- endfor -%}
+{%- endif -%}
 
-{% assign start_num = start_num | minus:edited.size | at_least:0 %}
-{% assign normal_num = paginator.posts.size | minus:edited_num %}
-{% assign end_num = start_num | plus:normal_num | minus:1 %}
-{% if normal_num > 0 %}
-    {% for idx in (start_num..end_num) %}
-        {% assign posts = posts | push:normal[idx] %}
-    {% endfor %}
-{% endif %}
+{%- assign start_num = start_num | minus:edited.size | at_least:0 -%}
+{%- assign normal_num = paginator.posts.size | minus:edited_num -%}
+{%- assign end_num = start_num | plus:normal_num | minus:1 -%}
+{%- if normal_num > 0 -%}
+    {%- for idx in (start_num..end_num) -%}
+        {%- assign posts = posts | push:normal[idx] -%}
+    {%- endfor -%}
+{%- endif -%}
 
-{% for post in posts %}
-<article class="post-card" {% if post.marked %}ribbon{% endif %}>
-    {% if post.cover %}
-    <div class="post-cover" data-aos="fade" style="background-image: url('{{ post.cover }}')"></div>
-    {% endif %}
+{%- for post in posts -%}
+<article class="post-card" {%- if post.marked -%}ribbon{% endif %}>
+    {%- if post.cover -%}
+    <div class="post-cover" data-aos="fade" style="background-image: url('{{ post.cover | relative_url }}')"></div>
+    {%- endif -%}
     <div class="post-title" data-aos="fade">
         <!-- tag cloud -->
         <nav aria-label="breadcrumb"><ul>
-            {% for tag in post.tags %}
-            <li><a href="/archive.html?tag={{ tag }}">{{ tag }}</a></li>
-            {% endfor %}
+            {%- for tag in post.tags -%}
+                {%- assign tag-path = "/archive.html?tag=" | append: tag -%}
+            <li><a href="{{ tag-path | relative_url }}">{{ tag }}</a></li>
+            {%- endfor -%}
         </ul></nav>
         <!-- post title -->
         <hgroup>
-            {% assign date = post.date | date:"%Y.%m.%d" %}
-            {% if post.span %}
-                {% assign date = post.span %}
-            {% endif %}
+            {%- assign date = post.date | date:"%Y.%m.%d" -%}
+            {%- if post.span -%}
+                {%- assign date = post.span -%}
+            {%- endif -%}
             <small><em>{{ date }}</em></small>
-            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
             <h4><em>{{ post.subtitle }}</em></h4>
         </hgroup>
     </div>
-</article>{% if forloop.index == edited_num %}<hr>{% endif %}
-{% endfor %}
+</article>{%- if forloop.index == edited_num -%}<hr>{% endif %}
+{%- endfor -%}
 
 <nav class="post-paginator"><ul>
     <!-- previous page button -->
     <li>
         <a id="prev-btn" data-aos="slide-left"
-            {% if paginator.previous_page_path %}
-            class="faa-parent animated-hover" href="{{ paginator.previous_page_path }}"
-            {% else %}disabled{% endif %}
+            {%- if paginator.previous_page_path -%}
+            class="faa-parent animated-hover" href="{{ paginator.previous_page_path | relative_url }}"
+            {%- else -%}disabled{% endif %}
         ><i class="fa-solid fa-arrow-left faa-horizontal faa-reverse"></i></a>
     </li>
 
@@ -64,13 +65,13 @@ layout: default
         <details class="dropdown" data-aos="fade-up">
             <summary>{{ paginator.page }} / {{ paginator.total_pages }}</summary>
             <ul>
-                {% for i in (1..paginator.total_pages) %}
-                    {% if forloop.first %}
-                    <li><a href="/">{{ i }} / {{ paginator.total_pages }}</a></li>
-                    {% else %}
-                    <li><a href="{{ site.paginate_path | replace:':num', i }}">{{ i }} / {{ paginator.total_pages }}</a></li>
-                    {% endif %}
-                {% endfor %}
+                {%- for i in (1..paginator.total_pages) -%}
+                    {%- if forloop.first -%}
+                <li><a href={{ "/" | relative_url }}>{{ i }} / {{ paginator.total_pages }}</a></li>
+                    {%- else -%}
+                    <li><a href="{{ site.paginate_path | replace:':num', i | relative_url }}">{{ i }} / {{ paginator.total_pages }}</a></li>
+                    {%- endif -%}
+                {%- endfor -%}
             </ul>
         </details>
     </li>
@@ -78,9 +79,9 @@ layout: default
     <!-- next page button -->
     <li>
         <a id="next-btn" data-aos="slide-right"
-            {% if paginator.next_page_path %}
-            class="faa-parent animated-hover" href="{{ paginator.next_page_path }}"
-            {% else %}disabled{% endif %}
+            {%- if paginator.next_page_path -%}
+            class="faa-parent animated-hover" href="{{ paginator.next_page_path | relative_url }}"
+            {%- else -%}disabled{% endif %}
         ><i class="fa-solid fa-arrow-right faa-horizontal"></i></a>
     </li>
 </ul></nav>

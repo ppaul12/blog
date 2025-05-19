@@ -1,2 +1,3 @@
 <div id="{{ include.id | default:'gallery' }}"></div>
-<script>(async () => initGallery("{{ include.id | default:'gallery' }}", await asyncLoadJSON("/assets/src/{{ include.path }}/pic.json")))()</script>
+{%- capture path -%}/assets/src/{{ include.path }}/pic.json{%- endcapture -%}
+<script>(async () => initGallery("{{ include.id | default:'gallery' }}", await asyncLoadJSON("{{ path | relative_url }}")))()</script>

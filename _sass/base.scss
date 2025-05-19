@@ -1,4 +1,6 @@
 // styles of basic elements
+@use "sass:color";
+@use "./colors";
 
 :root {
     --pico-font-family: "LXGW WenKai", serif;
@@ -23,13 +25,13 @@ body {
         font-size: 3em;
         font-family: "Courier New", monospace;
 
+        animation: zoomIn 1s backwards;
+
         & * {
             font-size: inherit;
             font-family: inherit;
             font-weight: unset;
         }
-
-        animation: zoomIn 1s backwards;
     }
 
     &>footer {
@@ -144,7 +146,7 @@ blockquote {
         position: relative;
         padding: 1rem 1rem 1rem 3rem;
         border-left-color: $color;
-        background: lighten($color, 20%);
+        background: color.adjust($color, $lightness: 20%);
 
         &::before {
             display: flex;
@@ -161,24 +163,24 @@ blockquote {
         p,
         ul {
             margin-bottom: 0;
-            color: $nord3;
+            color: colors.$nord3;
         }
     }
 
     &.tip {
-        @include with-prompt($nord14, "\f058");
+        @include with-prompt(colors.$nord14, "\f058");
     }
 
     &.info {
-        @include with-prompt($nord9, "\f05a");
+        @include with-prompt(colors.$nord9, "\f05a");
     }
 
     &.warn {
-        @include with-prompt($nord13, "\f06a");
+        @include with-prompt(colors.$nord13, "\f06a");
     }
 
     &.error {
-        @include with-prompt($nord11, "\f057");
+        @include with-prompt(colors.$nord11, "\f057");
     }
 }
 

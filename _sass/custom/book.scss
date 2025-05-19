@@ -1,3 +1,5 @@
+@use "./card";
+
 .book {
     &-shelf {
         margin-bottom: 2.2rem;
@@ -56,19 +58,18 @@
     }
 
     &-card {
-        @extend .card;
+        @include card.card;
         display: flex;
-
-        @media (max-width: 420px) {
-            flex-direction: column;
-        }
-
         width: 100%;
         align-items: center;
         align-content: space-between;
         justify-content: space-between;
 
         animation: unset;
+
+        @media (max-width: 420px) {
+            flex-direction: column;
+        }
     }
 
     &-img {
@@ -97,12 +98,11 @@
     &-info {
         display: inline-block;
         text-align: right;
+        white-space: nowrap;
 
         @media (max-width: 420px) {
             margin-top: 1rem;
             text-align: center;
         }
-
-        white-space: nowrap;
     }
 }

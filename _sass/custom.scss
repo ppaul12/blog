@@ -1,15 +1,15 @@
 // styles of customized classes
 
-@import "custom/book.scss";
-@import "custom/card.scss";
-@import "custom/controller.scss";
-@import "custom/decoration.scss";
-@import "custom/footnote.scss";
-@import "custom/gallery.scss";
-@import "custom/list.scss";
-@import "custom/literature.scss";
-@import "custom/map.scss";
-@import "custom/menu.scss";
-@import "custom/post.scss";
-@import "custom/profile.scss";
-@import "custom/tags.scss";
+@use "custom/book.scss";
+@use "custom/card.scss";
+@use "custom/controller.scss";
+@use "custom/decoration.scss";
+@use "custom/footnote.scss";
+@use "custom/gallery.scss";
+@use "custom/list.scss";
+@use "custom/literature.scss";
+@use "custom/map.scss";
+@use "custom/menu.scss";
+@use "custom/post.scss";
+@use "custom/profile.scss";
+@use "custom/tags.scss";

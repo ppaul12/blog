@@ -1,6 +1,8 @@
+@use "./card";
+
 .post {
     &-card {
-        @extend .card-hover;
+        @include card.card-hover;
         display: flex;
         flex-wrap: wrap;
         align-content: space-between;
@@ -18,17 +20,13 @@
 
     &-cover {
         width: 12rem;
-
-        @media (max-width: 420px) {
-            width: 100%;
-        }
-
         height: 12rem;
         background-size: cover;
         background-position: center;
         border-top-left-radius: var(--pico-border-radius);
 
         @media (max-width: 420px) {
+            width: 100%;
             border-top-right-radius: var(--pico-border-radius);
         }
 

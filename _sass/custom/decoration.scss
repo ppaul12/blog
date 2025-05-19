@@ -1,10 +1,12 @@
+@use "../colors";
+
 [ribbon]::after {
     position: absolute;
     top: -0.3rem;
     right: 1rem;
     width: 1.2rem;
     height: 1.6rem;
-    background: $nord13;
+    background: colors.$nord13;
     border-top-left-radius: 0.2rem;
     border-top-right-radius: 0.2rem;
     content: "";
@@ -25,15 +27,15 @@
 }
 
 [mark]::after {
-    @include icon($nord13, "\f02e");
+    @include icon(colors.$nord13, "\f02e");
 }
 
 [edit]::after {
-    @include icon($nord12, "\f111");
+    @include icon(colors.$nord12, "\f111");
 }
 
 [heart]::after {
-    @include icon($nord11, "\f004");
+    @include icon(colors.$nord11, "\f004");
 }
 
 [drop-cap]::first-letter {

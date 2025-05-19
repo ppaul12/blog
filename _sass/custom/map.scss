@@ -3,16 +3,15 @@
         width: 100%;
         max-height: 50vh;
         aspect-ratio: 3/2;
-
-        @media(max-width: 420px) {
-            aspect-ratio: 1;
-        }
-
         margin: var(--pico-block-spacing-vertical) auto;
         font-family: var(--pico-font-family);
         z-index: 1;
 
         animation: fadeIn 3s backwards;
+
+        @media(max-width: 420px) {
+            aspect-ratio: 1;
+        }
     }
 
     &-bar a {

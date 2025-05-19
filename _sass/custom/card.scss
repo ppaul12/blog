@@ -1,18 +1,26 @@
-.card {
+@mixin card {
     position: relative;
     background: linear-gradient(to right, var(--pico-card-background-color), var(--pico-card-sectioning-background-color));
 
     animation: fadeIn 3s backwards;
+}
+
+@mixin card-hover {
+    @include card;
+    border: 1px solid var(--pico-muted-border-color);
+
+    transition: all 0.5s ease;
+
+    &:hover {
+        border-color: var(--pico-color);
+        transform: scale(1.02) translateY(-0.5rem);
+    }
+}
+
+.card {
+    @include card;
 
     &-hover {
-        @extend .card;
-        border: 1px solid var(--pico-muted-border-color);
-
-        transition: all 0.5s ease;
-
-        &:hover {
-            border-color: var(--pico-color);
-            transform: scale(1.02) translateY(-0.5rem);
-        }
+        @include card-hover;
     }
 }

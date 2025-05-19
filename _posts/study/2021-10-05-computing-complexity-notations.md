@@ -20,7 +20,7 @@ $f(n),g(n):\mathbb{R}\to\mathbb{R}_{\ge0}$
 
 大$O$和大$\Omega$强调收紧，然而小o和小$\omega$只说明趋近。此外，定义中使用的 $c$ 这个常数，抛开严禁数学定义不谈，其目的在于除去系数影响、只考虑真正决定函数增长速度的部分。
 
-![](/assets/src/computing-complexity-notations/complexity.jpeg){: width="80%"}
+![]({{ "/assets/src/computing-complexity-notations/complexity.jpeg" | relative_url }}){: width="80%"}
 
 # 参考资料
 

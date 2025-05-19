@@ -188,7 +188,7 @@ $ make
 $ ./sim bin/1d-array-test.bin
 ```
 
-![](/assets/src/asm-data-structure/pic1-1.png){: width="80%"}
+![]({{ "/assets/src/asm-data-structure/pic1-1.png" | relative_url }}){: width="80%"}
 
 此外，全局静态列表的声明可以通过汇编语言的数据标签实现，用伪指令`la`获取其地址。
 
@@ -325,4 +325,4 @@ $ cd ..
 $ ./sim bin/2d-array-test.bin
 ```
 
-![](/assets/src/asm-data-structure/pic1-2.png){: width="80%"}
+![]({{ "/assets/src/asm-data-structure/pic1-2.png" | relative_url }}){: width="80%"}

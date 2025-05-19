@@ -219,7 +219,7 @@ $$
 
 ## 对偶图
 
-![](/assets/src/graph-theory-memo/duals graphs.svg){: width="30%"}
+![]({{ "/assets/src/graph-theory-memo/duals graphs.svg" | relative_url }}){: width="30%"}
 
 - 性质1
     - 对偶图为平面图，且为平面嵌入
@@ -235,7 +235,7 @@ $$
 
 ## 支配集
 
-![](/assets/src/graph-theory-memo/dominating set.svg){: width="30%"}
+![]({{ "/assets/src/graph-theory-memo/dominating set.svg" | relative_url }}){: width="30%"}
 
 - 图中所有不属于支配集(红色)的顶点一定会与支配集相邻
 - 极小支配集：该支配集的任意真子集均不是支配集

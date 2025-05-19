@@ -30,7 +30,7 @@ typedef struct node {
 
 为了方便链表的存取、判空等操作，我们可以通过引入dummy节点的方式来实现。即该单链表永远只少拥有一个节点，该节点一般不存信息，只用来牵头。
 
-![](/assets/src/asm-data-structure/pic3-llist.png){: width="80%"}
+![]({{ "/assets/src/asm-data-structure/pic3-llist.png" | relative_url }}){: width="80%"}
 
 而且得益于链表的存储方式，在创建一个空表时我们不需要指定其长度。因此，在创建流程中我们只需要创建一个普通的节点，并将其作为dummy节点返回即可，以后的所有操作皆基于该节点完成。
 
@@ -75,7 +75,7 @@ llist_is_empty:
 
 由于我们每次操作链表时会最先获取到其头部的节点，所以不同于顺序表，对于链表来说，头部的操作会比较简单。比如头部插值，我们只需要创建一个新节点并连到相邻节点之间即可。
 
-![](/assets/src/asm-data-structure/pic3-llist-prepend.png){: width="80%"}
+![]({{ "/assets/src/asm-data-structure/pic3-llist-prepend.png" | relative_url }}){: width="80%"}
 
 ```plaintext
 # prepend to head
@@ -108,7 +108,7 @@ llist_prepend:
 
 同样的，头部删除就更加简洁，直接重新指定一下头部的连接，跳过一个节点即可。因此上述两个操作的时间复杂度均为$O(1)$。
 
-![](/assets/src/asm-data-structure/pic3-llist-pop.png){: width="80%"}
+![]({{ "/assets/src/asm-data-structure/pic3-llist-pop.png" | relative_url }}){: width="80%"}
 
 ```plaintext
 # pop the head
@@ -424,4 +424,4 @@ flowchart TD
 
 由于存储顺序不同，我们将会看到如下的输出(途中会出现一次在删除不存在的6时发生的容量警告)。
 
-![](/assets/src/asm-data-structure/pic3-res.png){: width="80%"}
+![]({{ "/assets/src/asm-data-structure/pic3-res.png" | relative_url }}){: width="80%"}

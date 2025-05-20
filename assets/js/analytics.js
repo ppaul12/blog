@@ -1,6 +1,10 @@
 ---
 ---
 
+const pathname = ("{{ site.baseurl }}".length > 0) ?
+    window.location.pathname.replace(new RegExp("^{{ site.baseurl }}/"), "/") :
+    window.location.pathname
+
 // anonymous mode
 const isAnonymous = () => {
     if (window.localStorage.getItem("is-anonymous") !== null) {
@@ -15,6 +19,8 @@ const isAnonymous = () => {
 
 if (isAnonymous() === "true") {
     window.goatcounter = { no_onload: true }
+} else {
+    window.goatcounter = { path: pathname }
 }
 
 // load all kinds of view numbers
@@ -22,7 +28,7 @@ window.addEventListener("load", () => {
     // load page view number
     const pageView = document.getElementById("page-view")
     if (pageView !== null) {
-        fetch(`https://{{ site.thirdparty.goatcounter.code }}.goatcounter.com/counter/${encodeURIComponent(window.location.pathname)}.json`)
+        fetch(`https://{{ site.thirdparty.goatcounter.code }}.goatcounter.com/counter/${encodeURIComponent(pathname)}.json`)
             .then((response) => response.json())
             .then((data) => {
                 pageView.dataset.tooltip = `${data.count.replace(' ', '')} views`

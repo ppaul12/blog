@@ -14,58 +14,58 @@ required: no-footer
         <div class="profile-name">{{ site.author }}</div>
         <!-- skills -->
         <div class="profile-icons">
-            {% assign skills = site.data.profiles.skills | sort:"info" %}
-            {% for skill in skills %}
+            {%- assign skills = site.data.profiles.skills | sort:"info" -%}
+            {%- for skill in skills -%}
             <img src="https://cdn.simpleicons.org/{{ skill.info }}/{{ skill.color }}"
                 width="15px" height="15px" style="--ith: {{ forloop.index0 }}">
-            {% endfor %}
+            {%- endfor -%}
         </div>
     </header>
 
     <!-- information -->
     <ul class="profile-info">
-        {% for information in site.data.profiles.information %}
+        {%- for information in site.data.profiles.information -%}
         <li class="profile-info-item" data-aos="fade">
             <i class="{{ information.icon }}"></i>
             {{ information.info }}
         </li>
-        {% endfor %}
+        {%- endfor -%}
     </ul>
 
     <hr data-aos="fade">
 
     <!-- identity -->
     <ul class="profile-info">
-        {% for identity in site.data.profiles.identities %}
+        {%- for identity in site.data.profiles.identities -%}
         <li class="profile-info-item" data-aos="fade">
             <i class="{{ identity.icon }}"></i>
             {{ identity.info }}
         </li>
-        {% endfor %}
+        {%- endfor -%}
     </ul>
 
     <hr data-aos="fade">
 
     <!-- hobby -->
     <ul class="profile-info">
-        {% for hobby in site.data.profiles.hobbies %}
+        {%- for hobby in site.data.profiles.hobbies -%}
         <li class="profile-info-item" data-aos="fade">
             <i class="{{ hobby.icon }}"></i>
             {{ hobby.info }}
         </li>
-        {% endfor %}
+        {%- endfor -%}
     </ul>
 
     <footer class="card">
         <ul class="profile-info">
-            {% for friend in site.data.profiles.friends %}
+            {%- for friend in site.data.profiles.friends -%}
             <li class="profile-info-item" data-aos="fade" {{ friend.attr }}>
                 <small>
                     <i class="fa-solid fa-user-group fa-fw"></i>
                     <a href="{{ friend.link }}" data-tooltip="{{ friend.info }}">{{ friend.name }}</a>
                 </small>
             </li>
-            {% endfor %}
+            {%- endfor -%}
         </ul>
     </footer>
 </article>

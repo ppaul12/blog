@@ -10,8 +10,8 @@ required: code math graph
 {:toc}
 
 > 本文汇编代码可参见：
-> - [/asm/lib/llist.s](https://github.com/PENG-AO/RV32I-simulator/blob/master/asm/lib/llist.s)
-> - [/asm/test-codes/llist-test.s](https://github.com/PENG-AO/RV32I-simulator/blob/master/asm/test-codes/llist-test.s)
+> - [/asm/lib/llist.s](https://github.com/{{ site.thirdparty.github.user }}/RV32I-simulator/blob/master/asm/lib/llist.s)
+> - [/asm/test-codes/llist-test.s](https://github.com/{{ site.thirdparty.github.user }}/RV32I-simulator/blob/master/asm/test-codes/llist-test.s)
 
 # 单链表
 

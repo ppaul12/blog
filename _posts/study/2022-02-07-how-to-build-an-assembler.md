@@ -346,7 +346,7 @@ Block:
 
 ![]({{ "/assets/src/how-to-build-an-assembler/assembler_optimize.png" | relative_url }}){: width="80%"}
 
-同时基于类所能携带的大量信息，我们也能够输出更丰富的debug内容，这一部分可充分自由发挥。完整代码参见[学校课题项目](https://github.com/cpu-ex/simulator/tree/main/asm)或者[个人简化项目](https://github.com/PENG-AO/RV32I-simulator/tree/master/asm)。
+同时基于类所能携带的大量信息，我们也能够输出更丰富的debug内容，这一部分可充分自由发挥。完整代码参见[学校课题项目](https://github.com/cpu-ex/simulator/tree/main/asm)或者[个人简化项目](https://github.com/{{ site.thirdparty.github.user }}/RV32I-simulator/tree/master/asm)。
 
 # 声明
 

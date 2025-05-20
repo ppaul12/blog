@@ -1,5 +1,5 @@
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/peng-ao/blog)
-![GitHub repo size](https://img.shields.io/github/repo-size/peng-ao/blog)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ppaul12/blog)
+![GitHub repo size](https://img.shields.io/github/repo-size/ppaul12/blog)
 
 ---
 

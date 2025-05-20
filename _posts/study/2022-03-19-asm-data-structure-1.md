@@ -10,9 +10,9 @@ required: code
 {:toc}
 
 > 本文汇编代码可参见：
-> - [/asm/lib/mlib.s](https://github.com/PENG-AO/RV32I-simulator/blob/master/asm/lib/mlib.s)
-> - [/asm/test-codes/1d-array-test.s](https://github.com/PENG-AO/RV32I-simulator/blob/master/asm/test-codes/1d-array-test.s)
-> - [/asm/test-codes/2d-array-test.s](https://github.com/PENG-AO/RV32I-simulator/blob/master/asm/test-codes/2d-array-test.s)
+> - [/asm/lib/mlib.s](https://github.com/{{ site.thirdparty.github.user }}/RV32I-simulator/blob/master/asm/lib/mlib.s)
+> - [/asm/test-codes/1d-array-test.s](https://github.com/{{ site.thirdparty.github.user }}/RV32I-simulator/blob/master/asm/test-codes/1d-array-test.s)
+> - [/asm/test-codes/2d-array-test.s](https://github.com/{{ site.thirdparty.github.user }}/RV32I-simulator/blob/master/asm/test-codes/2d-array-test.s)
 
 # 汇编层级下的数据结构
 

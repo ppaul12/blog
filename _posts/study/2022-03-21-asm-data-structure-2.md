@@ -10,8 +10,8 @@ required: code math graph
 {:toc}
 
 > 本文汇编代码可参见：
-> - [/asm/lib/slist.s](https://github.com/PENG-AO/RV32I-simulator/blob/master/asm/lib/slist.s)
-> - [/asm/test-codes/slist-test.s](https://github.com/PENG-AO/RV32I-simulator/blob/master/asm/test-codes/slist-test.s)
+> - [/asm/lib/slist.s](https://github.com/{{ site.thirdparty.github.user }}/RV32I-simulator/blob/master/asm/lib/slist.s)
+> - [/asm/test-codes/slist-test.s](https://github.com/{{ site.thirdparty.github.user }}/RV32I-simulator/blob/master/asm/test-codes/slist-test.s)
 
 # 操作结构体
 

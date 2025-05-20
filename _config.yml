@@ -23,11 +23,11 @@ sass:
 
 thirdparty:
   giscus:
-    repo: peng-ao/blog
+    repo: ppaul12/blog
     repo-id: MDEwOlJlcG9zaXRvcnk0MDQwMzExNDM=
     category: Comment
     category-id: DIC_kwDOGBUGp84Cj8AW
   goatcounter:
-    code: peng-ao
+    code: ppaul12
   github:
-    user: peng-ao
+    user: ppaul12

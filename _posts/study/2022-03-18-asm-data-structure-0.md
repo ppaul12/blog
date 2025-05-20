@@ -11,16 +11,16 @@ Just for fun.
 
 # 环境
 
-本系列内容将使用RISC-V的汇编语言完成，测试环境为个人开发的[RV32I模拟器](https://github.com/PENG-AO/RV32I-simulator)。其中汇编器部分的设计思路可参考[对应博文](/2022/02/07/how-to-build-an-assembler.html)。
+本系列内容将使用RISC-V的汇编语言完成，测试环境为个人开发的[RV32I模拟器](https://github.com/{{ site.thirdparty.github.user }}/RV32I-simulator)。其中汇编器部分的设计思路可参考[对应博文](/2022/02/07/how-to-build-an-assembler.html)。
 
-[![](https://github-readme-stats.vercel.app/api/pin/?username=PENG-AO&repo=RV32I-simulator&show_owner=true)](https://github.com/PENG-AO/RV32I-simulator)
+[![](https://github-readme-stats.vercel.app/api/pin/?username={{ site.thirdparty.github.user }}&repo=RV32I-simulator&show_owner=true)](https://github.com/{{ site.thirdparty.github.user }}/RV32I-simulator)
 
 # 用法
 
 ## 克隆项目仓库
 
 ```shell
-$ git clone https://github.com/PENG-AO/RV32I-simulator
+$ git clone https://github.com/{{ site.thirdparty.github.user }}/RV32I-simulator
 ```
 
 通过以上代码克隆项目仓库，阅读根目录下的README做好相关库与python版本的准备。

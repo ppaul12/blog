@@ -7,6 +7,6 @@
     "id": "{{ forloop.index0 }}",
     "title": "{{ post.title | escape }}",
     "subtitle": "{{ post.subtitle | strip_html | escape }}"
-}{% unless forloop.last %},{% endunless %}
+}{%- unless forloop.last -%},{%- endunless -%}
 {%- endfor -%}
 ]

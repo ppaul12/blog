@@ -5,10 +5,10 @@
 
 My blog for personal records of travels, thoughts, studies, and so on, with the help of the following works.
 
-- main: [Jekyll](https://jekyllrb.com), [Cloudflare Pages](https://pages.cloudflare.com)
+- main: [Jekyll](https://jekyllrb.com)
 - styles: [pico.css](https://picocss.com)
 - colors: [Nord Theme](https://www.nordtheme.com)
-- fonts: [LxgwWenKai](https://github.com/lxgw/LxgwWenKai), [Zhuque](https://github.com/TrionesType/zhuque), [Roboto Mono](https://www.jsdelivr.com/package/npm/@fontsource/roboto-mono)
+- fonts: [LxgwWenKai](https://github.com/lxgw/LxgwWenKai), [Zhuque](https://github.com/TrionesType/zhuque), [Maple Mono](https://www.jsdelivr.com/package/npm/@fontsource/maple-mono)
 - icons: [Font Awesome](https://fontawesome.com), [simple-icons](https://simpleicons.org)
 - animations: [animate.css](https://github.com/animate-css/animate.css), [aos](https://michalsnik.github.io/aos/), [font-awesome-animation](https://l-lin.github.io/font-awesome-animation/)
 - comments: [Giscus](https://giscus.app)

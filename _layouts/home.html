@@ -24,7 +24,7 @@ layout: default
 {%- endif -%}
 
 {%- for post in posts -%}
-<article class="post-card" {%- if post.marked -%}ribbon{% endif %}>
+<article class="post-card" {%- if post.marked -%}ribbon{%- endif -%}>
     {%- if post.cover -%}
     <div class="post-cover" data-aos="fade" style="background-image: url('{{ post.cover | relative_url }}')"></div>
     {%- endif -%}
@@ -47,7 +47,7 @@ layout: default
             <h4><em>{{ post.subtitle }}</em></h4>
         </hgroup>
     </div>
-</article>{%- if forloop.index == edited_num -%}<hr>{% endif %}
+</article>{%- if forloop.index == edited_num -%}<hr>{%- endif -%}
 {%- endfor -%}
 
 <nav class="post-paginator"><ul>
@@ -56,7 +56,7 @@ layout: default
         <a id="prev-btn" data-aos="slide-left"
             {%- if paginator.previous_page_path -%}
             class="faa-parent animated-hover" href="{{ paginator.previous_page_path | relative_url }}"
-            {%- else -%}disabled{% endif %}
+            {%- else -%}disabled{%- endif -%}
         ><i class="fa-solid fa-arrow-left faa-horizontal faa-reverse"></i></a>
     </li>
 
@@ -81,7 +81,7 @@ layout: default
         <a id="next-btn" data-aos="slide-right"
             {%- if paginator.next_page_path -%}
             class="faa-parent animated-hover" href="{{ paginator.next_page_path | relative_url }}"
-            {%- else -%}disabled{% endif %}
+            {%- else -%}disabled{%- endif -%}
         ><i class="fa-solid fa-arrow-right faa-horizontal"></i></a>
     </li>
 </ul></nav>

@@ -9,6 +9,6 @@
     "date": "{{ post.date | date:'%y/%m' }}",
     "link": "{{ post.url | relative_url }}",
     "json": "{{ file.path | relative_url }}"
-}{%- unless forloop.last %},{% endunless -%}
+}{%- unless forloop.last -%},{%- endunless -%}
 {%- endfor -%}
 ]

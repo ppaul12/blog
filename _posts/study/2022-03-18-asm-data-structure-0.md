@@ -11,7 +11,7 @@ Just for fun.
 
 # 环境
 
-本系列内容将使用RISC-V的汇编语言完成，测试环境为个人开发的[RV32I模拟器](https://github.com/{{ site.thirdparty.github.user }}/RV32I-simulator)。其中汇编器部分的设计思路可参考[对应博文](/2022/02/07/how-to-build-an-assembler.html)。
+本系列内容将使用RISC-V的汇编语言完成，测试环境为个人开发的[RV32I模拟器](https://github.com/{{ site.thirdparty.github.user }}/RV32I-simulator)。其中汇编器部分的设计思路可参考[对应博文]({% post_url study/2022-02-07-how-to-build-an-assembler %})。
 
 [![](https://github-readme-stats.vercel.app/api/pin/?username={{ site.thirdparty.github.user }}&repo=RV32I-simulator&show_owner=true)](https://github.com/{{ site.thirdparty.github.user }}/RV32I-simulator)
 
@@ -49,9 +49,9 @@ GUI模式下的使用方法可通过输入`help`查看。
 
 # 正文
 
-1. [列表操作](/2022/03/19/asm-data-structure-1.html)
-1. [顺序表](/2022/03/21/asm-data-structure-2.html)
-1. [单链表](/2022/03/27/asm-data-structure-3.html)
+1. [列表操作]({% post_url study/2022-03-19-asm-data-structure-1 %})
+1. [顺序表]({% post_url study/2022-03-21-asm-data-structure-2 %})
+1. [单链表]({% post_url study/2022-03-27-asm-data-structure-3 %})
 
 # 小结
 

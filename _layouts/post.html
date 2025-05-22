@@ -3,7 +3,7 @@ layout: default
 ---
 
 <article>
-    <header class="card" {%- if page.marked -%}ribbon{%- endif -%}>
+    <header class="card" {% if page.marked %}ribbon{% endif %}>
         <!-- post tags -->
         <nav aria-label="breadcrumb"><ul>
             {%- for tag in page.tags -%}
@@ -41,10 +41,10 @@ layout: default
         <!-- post buttons -->
         <nav class="post-buttons">
             <a class="post-buttons-prev"
-                {%- if page.previous -%}href="{{ page.previous.url | relative_url }}"{%- else -%}disabled{%- endif -%}
+                {% if page.previous %}href="{{ page.previous.url | relative_url }}"{% else %}disabled{% endif %}
             >{%- if page.previous -%}{{ page.previous.title }}{%- else -%}-{%- endif -%}</a>
             <a class="post-buttons-next"
-                {%- if page.next -%}href="{{ page.next.url | relative_url }}"{%- else -%}disabled{%- endif -%}
+                {% if page.next %}href="{{ page.next.url | relative_url }}"{% else %}disabled{% endif %}
             >{%- if page.next -%}{{ page.next.title }}{%- else -%}-{%- endif -%}</a>
         </nav>
         <!-- comment block -->

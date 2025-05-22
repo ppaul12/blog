@@ -9,7 +9,7 @@ required: no-footer
     <header class="card">
         <div class="profile-avatar">
             <img src="https://github.com/{{ site.thirdparty.github.user }}.png">
-            <img src={{"/assets/img/barca.png" | relative_url }}>
+            <img src="{{'/assets/img/barca.png' | relative_url }}">
         </div>
         <div class="profile-name">{{ site.author }}</div>
         <!-- skills -->
@@ -26,8 +26,7 @@ required: no-footer
     <ul class="profile-info">
         {%- for information in site.data.profiles.information -%}
         <li class="profile-info-item" data-aos="fade">
-            <i class="{{ information.icon }}"></i>
-            {{ information.info }}
+            <i class="{{ information.icon }}"></i> {{ information.info }}
         </li>
         {%- endfor -%}
     </ul>
@@ -38,8 +37,7 @@ required: no-footer
     <ul class="profile-info">
         {%- for identity in site.data.profiles.identities -%}
         <li class="profile-info-item" data-aos="fade">
-            <i class="{{ identity.icon }}"></i>
-            {{ identity.info }}
+            <i class="{{ identity.icon }}"></i> {{ identity.info }}
         </li>
         {%- endfor -%}
     </ul>
@@ -50,8 +48,7 @@ required: no-footer
     <ul class="profile-info">
         {%- for hobby in site.data.profiles.hobbies -%}
         <li class="profile-info-item" data-aos="fade">
-            <i class="{{ hobby.icon }}"></i>
-            {{ hobby.info }}
+            <i class="{{ hobby.icon }}"></i> {{ hobby.info }}
         </li>
         {%- endfor -%}
     </ul>

@@ -46,7 +46,7 @@ sw t0, 4(a0)
 
 这里我们采取分离式结构，即
 
-![]({{ "/assets/src/asm-data-structure/pic2-slist.png" | relative_url }}){: width="40%"}
+![]({% link assets/src/asm-data-structure/pic2-slist.png %}){: width="40%"}
 
 在所有存取、修改过程中通过维护当前可存入下标`idx`的方式确保正确操作。上述结构可以按照如下的C语言结构体理解。
 
@@ -476,4 +476,4 @@ flowchart TD
 
 因此运行代码后我们将在数出框内看到，三次标星号位置的输出。第一次为非空(False)，第二次应为`2, 1, 3, 5, 4`，第三次将会是`5, 4, 2, 1`。在第三次输出前，由于6不在表中，所以我们会看到一次删除不存在下标内容导致的容量警告(capacity warning)。最终效果如下图。
 
-![]({{ "/assets/src/asm-data-structure/pic2-res.png" | relative_url }}){: width="80%"}
+![]({% link assets/src/asm-data-structure/pic2-res.png %}){: width="80%"}

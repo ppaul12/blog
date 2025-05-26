@@ -57,7 +57,7 @@ observer.observe(document.getElementById("search-results"), { childList: true })
 
 window.addEventListener("load", () => {
     SimpleJekyllSearch({
-        json: "{{ '/assets/json/search.json' | relative_url }}",
+        json: "{% link assets/json/search.json %}",
         searchInput: document.getElementById("search-input"),
         resultsContainer: document.getElementById("search-results"),
         searchResultTemplate: `<option value="{id}"></option>`,

@@ -1,3 +1,2 @@
 <div id="{{ include.id | default:'map' }}"></div>
-{%- capture path -%}/assets/src/{{ include.path }}/map.json{%- endcapture -%}
-<script>(async () => initMap("{{ include.id | default:'map' }}", await asyncLoadJSON("{{ path | relative_url }}")))()</script>
+<script>(async () => initMap("{{ include.id | default:'map' }}", await asyncLoadJSON("{% link assets/src/{{ include.path }}/map.json %}")))()</script>

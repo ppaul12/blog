@@ -1,7 +1,7 @@
 <div class="controller">
     <button
         id="profile-btn" class="contrast faa-parent animated-hover"
-        onclick="location.href='{{ '/profile' | relative_url }}'" active
+        onclick="location.href='{% link pages/profile.html %}'" active
     ><i class="fa-solid fa-user-graduate faa-horizontal faa-slow"></i></button>
 
     <button
@@ -34,10 +34,10 @@
     <span class="menu-box"><span class="menu-icon"></span></span>
     <div class="menu-content">
         <div class="menu-item" style="--ith: 0;"><a href="{{ '/' | relative_url }}">Home</a></div>
-        <div class="menu-item" style="--ith: 1;"><a href="{{ '/album' | relative_url }}">Album</a></div>
-        <div class="menu-item" style="--ith: 2;"><a href="{{ '/footprint' | relative_url }}">Footprint</a></div>
-        <div class="menu-item" style="--ith: 3;"><a href="{{ '/books' | relative_url }}">Bookshelf</a></div>
-        <div class="menu-item" style="--ith: 4;"><a href="{{ '/archive' | relative_url }}">Archive</a></div>
+        <div class="menu-item" style="--ith: 1;"><a href="{% link pages/album.html %}">Album</a></div>
+        <div class="menu-item" style="--ith: 2;"><a href="{% link pages/footprint.html %}">Footprint</a></div>
+        <div class="menu-item" style="--ith: 3;"><a href="{% link pages/books.html %}">Bookshelf</a></div>
+        <div class="menu-item" style="--ith: 4;"><a href="{% link pages/archive.html %}">Archive</a></div>
     </div>
 </div>
 

@@ -36,10 +36,10 @@ In this section, we are stepping closer to the actual implementation. Different 
 
 Besides these two, one optional strategy is write-through for the 1st modification and then write-allocate. In my implementation, write-allocate is adopted. As a result, the reading and writing flow could be described as follows, and the implementation is explicit and intuitive.
 
-![]({{ "/assets/src/multi-layer-cache/workflow.png" | relative_url }}){: width="80%"}
+![]({% link assets/src/multi-layer-cache/workflow.png %}){: width="80%"}
 
 # Cache class
 
 The actual designs are divided into two parts, one for the overall cache system and another for the cache block that stores data. Convincing the upper layer that its next layer has the wanted data, we may universalize the structure with the design pattern of CoR. Once a cache miss happened at the upper layer, just calling data from the lower layer would be fine. Therefore, the upper layer shall never consider how the lower layer provides those data. 
 
-![]({{ "/assets/src/multi-layer-cache/cache-class.png" | relative_url }}){: width="80%"}
+![]({% link assets/src/multi-layer-cache/cache-class.png %}){: width="80%"}

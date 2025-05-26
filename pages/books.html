@@ -16,8 +16,8 @@ permalink: /books
     <article class="book-card" {% if bookset.year == "Reading" %}ribbon{% endif %}>
         <div class="book-img">
             <a href="{{ book.link }}">
-                {%- capture path -%}/assets/img/covers/{{ book.title }}.jpg{%- endcapture -%}
-                <img class="cover" alt="{{ book.title }}" data-src="{{ path | relative_url }}" data-aos="zoom-in">
+                <img class="cover" alt="{{ book.title }}"
+                    data-src="{% link assets/img/covers/{{ book.title }}.jpg %}" data-aos="zoom-in">
             </a>
         </div>
         <hgroup class="book-info" data-aos="fade">
@@ -31,4 +31,4 @@ permalink: /books
 </section>
 {%- endfor -%}
 
-<script src="{{ '/assets/js/books.js' | relative_url }}"></script>
+<script src="{% link assets/js/books.js %}"></script>

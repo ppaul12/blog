@@ -10,7 +10,7 @@ required: gallery
 <script>
     (async () => {
         // load all images
-        const imageSets = await asyncLoadJSON("{{ '/assets/json/album.json' | relative_url }}")
+        const imageSets = await asyncLoadJSON("{% link assets/json/album.json %}")
         const images = await imageSets.reduce(async (output, imageSet) => {
             const entries = await asyncLoadJSON(imageSet.json)
             return (await output).concat(entries.map((entry) => {

@@ -42,7 +42,7 @@
     {%- seo title=false -%}
 
     <!-- goat counter -->
-    <script src="{{ '/assets/js/analytics.js' | relative_url }}"></script>
+    <script src="{% link assets/js/analytics.js %}"></script>
     <script data-goatcounter="https://{{ site.thirdparty.goatcounter.code }}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 
     <!-- pico css -->
@@ -80,7 +80,7 @@
     <!-- maple mono font -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/maple-mono@latest/index.min.css">
     <!-- custom code theme switcher -->
-    <script src="{{ '/assets/js/code.js' | relative_url }}"></script>
+    <script src="{% link assets/js/code.js %}"></script>
     {%- endif -%}
 
     {%- if page.required contains "math" -%}
@@ -106,7 +106,7 @@
     <!-- exifr -->
     <script src="https://cdn.jsdelivr.net/npm/exifr@latest/dist/full.umd.min.js"></script>
     <!-- custom gallery initializer -->
-    <script src="{{ '/assets/js/gallery.js' | relative_url }}"></script>
+    <script src="{% link assets/js/gallery.js %}"></script>
     {%- endif -%}
 
     {%- if page.required contains "map" -%}
@@ -122,7 +122,7 @@
     <!-- leaflet canvas marker -->
     <script src="https://cdn.jsdelivr.net/npm/leaflet-canvas-marker@latest/dist/leaflet.canvas-markers.min.js"></script>
     <!-- custom map initializer -->
-    <script src="{{ '/assets/js/map.js' | relative_url }}"></script>
+    <script src="{% link assets/js/map.js %}"></script>
     {%- endif -%}
 
     {%- if page.required contains "search" -%}
@@ -133,9 +133,9 @@
     <!-- custom style -->
     <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
     <!-- custom modal switcher -->
-    <script src="{{ '/assets/js/modal.js' | relative_url }}"></script>
+    <script src="{% link assets/js/modal.js %}"></script>
     <!-- custom theme switcher -->
-    <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+    <script src="{% link assets/js/theme.js %}"></script>
     <!-- custom json loader -->
-    <script src="{{ '/assets/js/json.js' | relative_url }}"></script>
+    <script src="{% link assets/js/json.js %}"></script>
 </head>

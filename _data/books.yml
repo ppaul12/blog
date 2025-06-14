@@ -1,8 +1,16 @@
 - year: Reading
   books:
+    - title: 围城
+      author: 钱钟书
+      link: https://book.douban.com/subject/27070488/
+      # date: "06.09"
+
+- year: 2025
+  books:
     - title: 书剑恩仇录
       author: 金庸
       link: https://book.douban.com/subject/1442037/
+      date: "06.08"
 
 - year: 2024
   books:

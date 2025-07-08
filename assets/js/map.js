@@ -35,6 +35,10 @@ const initMap = (id, data) => {
         zoom: map.getZoom(),
     }).addTo(map)
 
+    new L.Control.Fullscreen({
+        pseudoFullscreen: true,
+    }).addTo(map)
+
     new L.Control.MiniMap(L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"), {
         position: "bottomleft",
         minimized: false,

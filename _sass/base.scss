@@ -103,7 +103,7 @@ dialog {
         transition: opacity 0.5s ease;
 
         &::before {
-            font: 900 1rem "Font Awesome 6 Free";
+            font: var(--fa-font-solid);
             content: "\f00d";
         }
 
@@ -156,7 +156,8 @@ blockquote {
             width: 2rem;
             inset: 0;
             color: $color;
-            font: 900 1.2rem "Font Awesome 6 Free";
+            font: var(--fa-font-solid);
+            font-size: 1.2rem;
             content: $icon;
         }
 

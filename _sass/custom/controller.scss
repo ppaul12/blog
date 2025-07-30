@@ -9,12 +9,14 @@
     transition: all 1s ease;
 
     button {
+        display: flex;
         text-align: center;
-        align-content: center;
+        align-items: center;
         height: 3rem;
-        aspect-ratio: 1;
+        width: 3rem;
         margin: 0.5rem auto;
         border-radius: 50%;
+        box-shadow: grey 0px 3px 3px;
 
         animation: fadeInRight 2s backwards;
 

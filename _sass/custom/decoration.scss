@@ -22,7 +22,8 @@
     top: 0;
     margin-left: 0.2rem;
     color: $color;
-    font: 900 0.5rem "Font Awesome 6 Free";
+    font: var(--fa-font-solid);
+    font-size: 0.5rem;
     content: $content;
 }
 

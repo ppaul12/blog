@@ -24,7 +24,8 @@
         &::before,
         &::after {
             position: absolute;
-            font: 900 2rem "Font Awesome 6 Free";
+            font: var(--fa-font-solid);
+            font-size: 2rem;
             color: var(--pico-muted-border-color);
         }
 

@@ -36,8 +36,8 @@ required: code
     transition: color 0.3s ease;
 }
 .post-reaction-good::before, .post-reaction-bad::before {
-	 display: block;
-	 font: 900 1.5em "Font Awesome 6 Free";
+    display: block;
+    font: var(--fa-font-solid);
 }
 .post-reaction-good::after, .post-reaction-bad::after {
     display: block;

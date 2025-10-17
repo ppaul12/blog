@@ -24,6 +24,19 @@ const initGallery = (id, data) => {
         const image = document.querySelector(".lg-container.lg-show .lg-current img")
         const caption = document.querySelector(".lg-container.lg-show .lg-sub-html")
         window.exifr.parse(image).then((exif) => {
+            const formatCaption = (caption, exif) => {
+                if (exif === undefined) return caption
+                if (!exif.GPSLatitude || !exif.GPSLongitude) return caption
+
+                const dms2decimal = ([degrees, minutes, seconds], ref) => {
+                    let decimal = degrees + minutes / 60 + seconds / 3600
+                    return (ref === "W" || ref === "S") ? -decimal : decimal
+                }
+                const lat = dms2decimal(exif.GPSLatitude, exif.GPSLatitudeRef)
+                const lon = dms2decimal(exif.GPSLongitude, exif.GPSLongitudeRef)
+                const link = `https://www.google.com/maps?q=${lat},${lon}`
+                return `<a href="${link}" target="_blank" rel="noopener noreferrer">${caption || '📍 (Google Map)'}</a>`
+            }
             caption.innerHTML = ((exif !== undefined) ? [
                 (exif.Model ?? "") || null,
                 (exif.LensModel ?? "") || null,
@@ -34,7 +47,7 @@ const initGallery = (id, data) => {
                 ].filter((item) => item !== null).join(" "))(exif) || null,
                 (exif.DateTimeOriginal ?? "").toLocaleString() || null,
             ] : []).concat([
-                caption.innerText.trim() ? caption.children[caption.childElementCount - 1].outerHTML : null
+                formatCaption(caption.innerText.trim() ? caption.children[caption.childElementCount - 1].outerHTML : null, exif)
             ]).filter((item) => item !== null).join("<br>")
         })
     })

@@ -13,14 +13,14 @@
     },
     {
         "src": "/assets/src/a-travel-at-ise/pic4.jpeg",
-        "loc": "伊勢神宮外宮"
-    },
-    {
-        "src": "/assets/src/a-travel-at-ise/pic5.jpeg",
         "loc": "伊勢神宮内宮"
     },
     {
-        "src": "/assets/src/a-travel-at-ise/pic6.jpeg",
+        "src": "/assets/src/a-travel-at-ise/pic5.jpeg",
         "loc": "二見浦"
+    },
+    {
+        "src": "/assets/src/a-travel-at-ise/pic6.jpeg",
+        "loc": "伊勢市駅"
     }
 ]

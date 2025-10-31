@@ -8,6 +8,13 @@
     --pico-border-radius: 0.8rem;
 }
 
+@supports (font-family: Ubuntu) {
+    :root {
+        --pico-font-size: 1.05rem;
+        letter-spacing: 0.02em;
+    }
+}
+
 html {
     transition: background 0.5s ease;
     scroll-behavior: smooth !important;

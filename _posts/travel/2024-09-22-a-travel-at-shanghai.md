@@ -4,7 +4,7 @@ title: 苏州上海旅行
 subtitle: 南京·江阴·苏州·上海
 tags: 旅行
 required: gallery map
-cover: /assets/src/a-travel-at-shanghai/pic11.jpeg
+cover: /assets/src/a-travel-at-shanghai/pic12.jpeg
 ---
 
 # 路程规划

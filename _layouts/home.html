@@ -43,7 +43,13 @@ layout: default
                 {%- assign date = post.span -%}
             {%- endif -%}
             <small><em>{{ date }}</em></small>
-            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            {%- assign title = post.title -%}
+            {%- assign class = post.title-class | join: " " -%}
+            {%- assign style = post.title-style | join: " " -%}
+            {%- if class or style -%}
+                {%- capture title -%}<span class="{{ class }}" style="{{ style }}">{{ title }}</span>{%- endcapture -%}
+            {%- endif -%}
+            <h3><a href="{{ post.url | relative_url }}">{{ title }}</a></h3>
             <h4><em>{{ post.subtitle }}</em></h4>
         </hgroup>
     </div>

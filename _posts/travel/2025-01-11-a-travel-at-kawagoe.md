@@ -4,7 +4,7 @@ title: 川越冬日小游
 subtitle: 川越·恵比寿
 tags: 旅行
 required: gallery map
-cover: /assets/src/a-travel-at-kawagoe/pic1.jpeg
+cover: /assets/src/a-travel-at-kawagoe/pic5.jpeg
 ---
 
 # 路程规划

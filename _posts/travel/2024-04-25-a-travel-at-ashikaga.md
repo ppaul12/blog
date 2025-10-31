@@ -4,7 +4,7 @@ title: 足利赏紫藤之旅
 subtitle: 足利·あしかがフラワーパーク
 tags: 旅行
 required: gallery map
-cover: /assets/src/a-travel-at-ashikaga/pic1.jpeg
+cover: /assets/src/a-travel-at-ashikaga/pic6.jpeg
 ---
 
 # 路程规划

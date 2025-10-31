@@ -12,13 +12,19 @@ layout: default
             {%- endfor -%}
         </ul></nav>
         <!-- post title -->
-        {%- assign date = page.date | date:"%Y.%m.%d" -%}
-        {%- if page.span -%}
-            {%- assign date = page.span -%}
-        {%- endif -%}
         <hgroup>
+            {%- assign date = page.date | date:"%Y.%m.%d" -%}
+            {%- if page.span -%}
+                {%- assign date = page.span -%}
+            {%- endif -%}
             <small><em>{{ date }}</em></small>
-            <h2>{{ page.title }}</h2>
+            {%- assign title = page.title -%}
+            {%- assign class = page.title-class | join: " " -%}
+            {%- assign style = page.title-style | join: " " -%}
+            {%- if class or style -%}
+                {%- capture title -%}<span class="{{ class }}" style="{{ style }}">{{ title }}</span>{%- endcapture -%}
+            {%- endif -%}
+            <h2>{{ title }}</h2>
             <h3><em>{{ page.subtitle }}</em></h3>
         </hgroup>
     </header>

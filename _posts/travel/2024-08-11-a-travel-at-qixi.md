@@ -4,7 +4,7 @@ title: 七夕都内小游
 subtitle: 浅草·葛西臨海公園
 tags: 旅行
 required: gallery map
-cover: /assets/src/a-travel-at-qixi/pic1.jpeg
+cover: /assets/src/a-travel-at-qixi/pic9.jpeg
 ---
 
 # 路程规划

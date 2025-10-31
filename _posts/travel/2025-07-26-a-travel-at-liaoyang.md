@@ -4,7 +4,7 @@ title: 辽阳小游
 subtitle: 辽阳
 tags: 旅行
 required: gallery map
-cover: /assets/src/a-travel-at-liaoyang/pic6.jpeg
+cover: /assets/src/a-travel-at-liaoyang/pic3.jpeg
 ---
 
 # 路程规划

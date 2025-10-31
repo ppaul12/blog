@@ -39,18 +39,22 @@
         justify-content: center !important;
 
         details {
-            min-width: 6rem;
             text-align: center;
 
-            summary+ul {
-                bottom: 120%;
-                max-height: 10em;
-                overflow-y: scroll;
+            summary {
+                min-width: 6rem;
 
-                animation: 1s fadeIn backwards;
+                &+ul {
+                    bottom: 120%;
+                    max-height: 10em;
+                    overflow-y: scroll;
+                    scrollbar-width: none;
 
-                & a {
-                    overflow: unset !important;
+                    animation: 1s fadeIn backwards;
+
+                    & a {
+                        overflow: unset !important;
+                    }
                 }
             }
         }
@@ -88,6 +92,10 @@
 
         &-plain {
             animation: 1s fadeIn 1s backwards;
+
+            figure.mermaid * {
+                color: black;
+            }
         }
     }
 

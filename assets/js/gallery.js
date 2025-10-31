@@ -1,3 +1,6 @@
+---
+---
+
 const initGallery = (id, data) => {
     const element = document.getElementById(id)
     // load photos to gallery
@@ -7,8 +10,8 @@ const initGallery = (id, data) => {
         dynamic: true,
         dynamicEl: data.map((item) => {
             return {
-                src: item.src,
-                thumb: item.src,
+                src: `{{ site.baseurl }}${item.src}`,
+                thumb: `{{ site.baseurl }}${item.src}`,
                 subHtml: "<br>".repeat(4) + ((item.link !== undefined) ?
                     `<a href="${item.link}">${item.loc}</a>` : `<span>${item.loc}</span>`),
             }
@@ -40,11 +43,11 @@ const initGallery = (id, data) => {
             caption.innerHTML = ((exif !== undefined) ? [
                 (exif.Model ?? "") || null,
                 (exif.LensModel ?? "") || null,
-                ((exif) => [
+                [
                     ((f) => (f === undefined) ? null : `f/${f.toFixed(1)}`)(exif.FNumber),
                     ((e) => (e === undefined) ? null : (e < 1) ? `1/${Math.floor(1 / e)}s` : `${e}s`)(exif.ExposureTime),
-                    ((iso) => (iso === undefined) ? null : `ISO${iso}`)(exif.ISOSpeed ?? exif.ISO),
-                ].filter((item) => item !== null).join(" "))(exif) || null,
+                    ((iso) => (iso === undefined) ? null : `ISO${iso}`)(exif.ISOSpeed ?? exif.ISO)
+                ].filter((item) => item !== null).join(" ") || null,
                 (exif.DateTimeOriginal ?? "").toLocaleString() || null,
             ] : []).concat([
                 formatCaption(caption.innerText.trim() ? caption.children[caption.childElementCount - 1].outerHTML : null, exif)

@@ -45,6 +45,14 @@
     margin-right: 0.2rem;
 }
 
+[bigger-cap] {
+    font-size: calc(var(--pico-font-size) * 0.8);
+
+    &::first-letter {
+        font-size: calc(var(--pico-font-size) * 1.05);
+    }
+}
+
 [caption]::after {
     display: block;
     text-align: center;

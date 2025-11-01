@@ -18,13 +18,10 @@ layout: default
                 {%- assign date = page.span -%}
             {%- endif -%}
             <small><em>{{ date }}</em></small>
-            {%- assign title = page.title -%}
             {%- assign class = page.title-class | join: " " -%}
             {%- assign style = page.title-style | join: " " -%}
-            {%- if class or style -%}
-                {%- capture title -%}<span class="{{ class }}" style="{{ style }}">{{ title }}</span>{%- endcapture -%}
-            {%- endif -%}
-            <h2>{{ title }}</h2>
+            {%- assign attr = page.title-attr | join: " " -%}
+            <h2><div {{ attr }} class="{{ class }}" style="{{ style }}">{{ page.title }}</div></h2>
             <h3><em>{{ page.subtitle }}</em></h3>
         </hgroup>
     </header>

@@ -2,7 +2,7 @@
 layout: post
 title: REFRESHMENT
 title-style:
-    - "font-family: serif;"
+    - "font-family: Times New Roman;"
 title-attr:
     - "bigger-cap"
 tags: 随想 现代诗

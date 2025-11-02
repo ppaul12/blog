@@ -1,3 +1,13 @@
+function* cycle(iterable) {
+    const items = [...iterable]
+    while (true) {
+        for (const item of items) {
+            yield item
+        }
+    }
+}
+const cyclic = cycle(["red", "orange", "purple", "pink", "brown", "olive", "green"])
+
 const initMap = (id, data) => {
     const map = L.map(id)
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -11,7 +21,7 @@ const initMap = (id, data) => {
         return L.circle(data.spot[info[0]], { fillColor: "blue", fillOpacity: 0.1, radius: info[1] })
     })
     const path = (data.path ?? []).map((names) => {
-        return L.polyline(names.map((name) => data.spot[name]), { color: "grey" })
+        return L.polyline(names.map((name) => data.spot[name]), { color: cyclic.next().value })
     })
 
     L.control.layers(null, {

@@ -4,7 +4,7 @@ title: 再访京阪神旅行
 subtitle: 神戸·有馬·京都·大阪
 tags: 旅行
 required: gallery map
-cover: /assets/src/a-travel-at-keihanshin/pic12.jpeg
+cover: /assets/src/a-travel-at-keihanshin/pic5.jpeg
 ---
 
 # 路程规划

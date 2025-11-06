@@ -18,10 +18,7 @@ layout: default
                 {%- assign date = page.span -%}
             {%- endif -%}
             <small><em>{{ date }}</em></small>
-            {%- assign class = page.title-class | join: " " -%}
-            {%- assign style = page.title-style | join: " " -%}
-            {%- assign attr = page.title-attr | join: " " -%}
-            <h2><div {{ attr }} class="{{ class }}" style="{{ style }}">{{ page.title }}</div></h2>
+            <h2>{{ page.title | format_title }}</h2>
             <h3><em>{{ page.subtitle }}</em></h3>
         </hgroup>
     </header>
@@ -45,10 +42,10 @@ layout: default
         <nav class="post-buttons">
             <a class="post-buttons-prev"
                 {% if page.previous %}href="{{ page.previous.url | relative_url }}"{% else %}disabled{% endif %}
-            >{%- if page.previous -%}{{ page.previous.title }}{%- else -%}-{%- endif -%}</a>
+            >{%- if page.previous -%}{{ page.previous.title | format_title }}{%- else -%}-{%- endif -%}</a>
             <a class="post-buttons-next"
                 {% if page.next %}href="{{ page.next.url | relative_url }}"{% else %}disabled{% endif %}
-            >{%- if page.next -%}{{ page.next.title }}{%- else -%}-{%- endif -%}</a>
+            >{%- if page.next -%}{{ page.next.title | format_title }}{%- else -%}-{%- endif -%}</a>
         </nav>
         <!-- comment block -->
         {%- include comment.html -%}

@@ -7,13 +7,13 @@ const pathname = ("{{ site.baseurl }}".length > 0) ?
 
 // anonymous mode
 const isAnonymous = () => {
-    if (window.localStorage.getItem("is-anonymous") !== null) {
-        return window.localStorage.getItem("is-anonymous")
+    if (window.sessionStorage.getItem("is-anonymous") !== null) {
+        return window.sessionStorage.getItem("is-anonymous")
     }
 
     const url = new URL(window.location)
     const mode = (url.searchParams.get("anonymous") !== null) ? "true" : "false"
-    window.localStorage.setItem("is-anonymous", mode)
+    window.sessionStorage.setItem("is-anonymous", mode)
     return mode
 }
 

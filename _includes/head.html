@@ -38,7 +38,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="https://github.com/{{ site.thirdparty.github.user }}.png?size=16">
-    <title>{{ page.title }} | {{ site.author }}</title>
+    <title>{{ page.title | format_title | strip_html }} | {{ site.author }}</title>
     {%- seo title=false -%}
 
     <!-- goat counter -->

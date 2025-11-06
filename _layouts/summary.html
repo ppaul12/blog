@@ -32,7 +32,7 @@ required: gallery plain-heading
 <ol class="item-list">
     {%- for post in travel -%}
     <li data-aos="fade-up">
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <a href="{{ post.url | relative_url }}">{{ post.title | format_title:false }}</a>
         <em>({{ post.date | date:"%Y.%m.%d" }})</em>
     </li>
     {%- endfor -%}
@@ -44,7 +44,7 @@ required: gallery plain-heading
 <ol class="item-list">
     {%- for post in thought -%}
     <li data-aos="fade-up">
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <a href="{{ post.url | relative_url }}">{{ post.title | format_title:false }}</a>
         <em>({{ post.date | date:"%Y.%m.%d" }})</em>
     </li>
     {%- endfor -%}
@@ -56,7 +56,7 @@ required: gallery plain-heading
 <ol class="item-list">
     {%- for post in study -%}
     <li data-aos="fade-up">
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <a href="{{ post.url | relative_url }}">{{ post.title | format_title:false }}</a>
         <em>({{ post.date | date:"%Y.%m.%d" }})</em>
     </li>
     {%- endfor -%}

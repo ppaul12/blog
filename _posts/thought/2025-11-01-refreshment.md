@@ -1,10 +1,11 @@
 ---
 layout: post
-title: REFRESHMENT
-title-style:
-    - "font-family: Times New Roman;"
-title-attr:
-    - "bigger-cap"
+title:
+    text: REFRESHMENT
+    style:
+        - "font-family: Times New Roman;"
+    attr:
+        - "bigger-cap"
 tags: 随想 现代诗
 ---
 

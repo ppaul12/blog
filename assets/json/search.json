@@ -5,7 +5,7 @@
 {%- for post in site.posts -%}
 {
     "id": "{{ forloop.index0 }}",
-    "title": "{{ post.title | escape }}",
+    "title": "{{ post.title | format_title | strip_html | escape }}",
     "subtitle": "{{ post.subtitle | strip_html | escape }}"
 }{%- unless forloop.last -%},{%- endunless -%}
 {%- endfor -%}

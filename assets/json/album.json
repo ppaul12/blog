@@ -4,11 +4,11 @@
 [
 {%- assign files = site.static_files | where_exp:"file", "file.name contains 'pic.json'" | compact -%}
 {%- for file in files -%}
-    {%- assign a = site.posts | where_exp:"post", "post.content contains file.path" | first -%}
-    {%- assign b = site.posts | where_exp:"post", "file.path contains post.slug" | first -%}
+    {%- assign a = site.posts | find_exp:"post", "post.content contains file.path" -%}
+    {%- assign b = site.posts | find_exp:"post", "file.path contains post.slug" -%}
     {%- assign post = a | default:b -%}
 {
-    "post": "{{ post.title }}",
+    "post": "{{ post.title | format_title | strip_html }}",
     "link": "{{ post.url | relative_url }}",
     "json": "{{ file.path | relative_url }}",
     "date": "{{ post.date | date:'%s' }}"

@@ -40,12 +40,14 @@
 }
 
 [drop-cap]::first-letter {
+    // block required
     font-size: 1.8rem;
     float: left;
     margin-right: 0.2rem;
 }
 
 [bigger-cap] {
+    // block required
     font-size: calc(var(--pico-font-size) * 0.8);
 
     &::first-letter {

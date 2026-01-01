@@ -23,7 +23,8 @@ required: map
         const locSets = await asyncLoadJSON("{% link assets/json/maps.json %}")
         const locations = Object.entries(Object.groupBy([].concat(
             await locSets.reduce(async (output, locSet) => {
-                const spot = (await asyncLoadJSON(locSet.json)).spot
+                const data = await asyncLoadJSON(locSet.json)
+                const spot = data.album ?? data.spot
                 return (await output).concat(Object.entries(spot).map((entry) => {
                     return {
                         loc: entry[0],

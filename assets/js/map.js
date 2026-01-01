@@ -6,7 +6,7 @@ function* cycle(iterable) {
         }
     }
 }
-const cyclic = cycle(["red", "orange", "purple", "pink", "brown", "olive", "green"])
+const cyclic = cycle(["red", "orange", "purple", "brown", "olive", "green"])
 
 const initMap = (id, data) => {
     const map = L.map(id)

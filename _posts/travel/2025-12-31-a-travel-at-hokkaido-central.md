@@ -95,7 +95,5 @@ cover: /assets/src/a-travel-at-hokkaido-central/pic14.jpeg
 - 山形 1606 - 東京 1915 (つばさ150号)
 </details>
 
----
-
 [^1]: [JR East-South Hokkaido Rail Pass](https://www.jreast.co.jp/multi/pass/easthokkaido.html)
 [^2]: 不包含在JR East-South Hokkaido Rail Pass[^1]内

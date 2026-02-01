@@ -1,9 +1,19 @@
 - year: Reading
   books:
+    - title: 坛经释义
+      link: https://book.douban.com/subject/25719394/
+      # date: "01.16"
+    - title: 我敢在你怀里孤独
+      author: 刘若英
+      link: https://book.douban.com/subject/26416401/
+      date: "1.19"
+
+- year: 2026
+  books:
     - title: 下楼谈恋爱
       author: 刘若英
       link: https://book.douban.com/subject/1035614/
-      # date: "12.31"
+      date: "1.18"
 
 - year: 2025
   books:

@@ -6,10 +6,6 @@
     - title: 乐之本事
       author: 焦元溥
       link: https://book.douban.com/subject/26584734/
-    - title: 心
-      author: 夏目漱石
-      link: https://book.douban.com/subject/27135380/
-      # date: "03.17"
 
 - year: 2026
   books:
@@ -21,6 +17,10 @@
       author: 刘若英
       link: https://book.douban.com/subject/26416401/
       date: "02.18"
+    - title: 心
+      author: 夏目漱石
+      link: https://book.douban.com/subject/27135380/
+      date: "06.09"
 
 - year: 2025
   books:

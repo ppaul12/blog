@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 流萤集摘抄
+title: 《流萤集》摘抄
 tags: 现代诗 随想 摘抄
 ---
 

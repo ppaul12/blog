@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 飞鸟集摘抄
+title: 《飞鸟集》摘抄
 tags: 现代诗 随想 摘抄
 ---
 

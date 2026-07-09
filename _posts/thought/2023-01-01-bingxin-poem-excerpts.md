@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 繁星·春水摘抄
+title: 《繁星·春水》摘抄
 tags: 现代诗 随想 摘抄
 ---
 

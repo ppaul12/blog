@@ -3,6 +3,12 @@ layout: post
 required: gallery plain-heading
 ---
 
+{%- assign content = content | strip -%}
+{%- unless content == empty -%}
+{{ content }}
+<hr>
+{%- endunless -%}
+
 {%- assign travel = "" | split:"" -%}
 {%- assign thought = "" | split:"" -%}
 {%- assign study = "" | split:"" -%}
@@ -24,11 +30,11 @@ required: gallery plain-heading
     {%- endif -%}
 {%- endfor -%}
 
-<h2><i class="fa-solid fa-camera-retro fa-fw"></i> Photoing</h2>
+<h3><i class="fa-solid fa-camera-retro fa-fw"></i> Photoing</h3>
 {%- gallery path=page.slug -%}
 
 {%- unless travel.size == 0 -%}
-<h2 data-aos="fade-up"><i class="fa-solid fa-signs-post fa-fw"></i> Traveling</h2>
+<h3 data-aos="fade-up"><i class="fa-solid fa-signs-post fa-fw"></i> Traveling</h3>
 <ol class="item-list">
     {%- for post in travel -%}
     <li data-aos="fade-up">
@@ -40,7 +46,7 @@ required: gallery plain-heading
 {%- endunless -%}
 
 {%- unless thought.size == 0 -%}
-<h2 data-aos="fade-up"><i class="fa-solid fa-book-open-reader fa-fw"></i> Thinking</h2>
+<h3 data-aos="fade-up"><i class="fa-solid fa-book-open-reader fa-fw"></i> Thinking</h3>
 <ol class="item-list">
     {%- for post in thought -%}
     <li data-aos="fade-up">
@@ -52,12 +58,37 @@ required: gallery plain-heading
 {%- endunless -%}
 
 {%- unless study.size == 0 -%}
-<h2 data-aos="fade-up"><i class="fa-solid fa-laptop-code fa-fw"></i> Studying</h2>
+<h3 data-aos="fade-up"><i class="fa-solid fa-laptop-code fa-fw"></i> Studying</h3>
 <ol class="item-list">
     {%- for post in study -%}
     <li data-aos="fade-up">
         <a href="{{ post.url | relative_url }}">{{ post.title | format_title:false }}</a>
         <em>({{ post.date | date:"%Y.%m.%d" }})</em>
+    </li>
+    {%- endfor -%}
+</ol>
+{%- endunless -%}
+
+{%- assign summaries = "" | split:"" -%}
+{%- for post in site.posts -%}
+    {%- unless post.layout == "summary" -%}
+        {%- continue -%}
+    {%- endunless -%}
+    {%- assign post-date = post.date | date:"%Y.%m" -%}
+    {%- assign page-date = page.date | date:"%Y.%m" -%}
+    {%- unless post-date < page-date -%}
+        {%- continue -%}
+    {%- endunless -%}
+    {%- assign summaries = summaries | push:post -%}
+{%- endfor -%}
+{%- unless summaries == empty -%}
+<hr>
+<h3 data-aos="fade-up"><i class="fa-solid fa-note-sticky fa-fw"></i> More ...</h3>
+<ol class="item-list">
+    {%- for post in summaries limit:3 -%}
+    <li data-aos="fade-up">
+        <a href="{{ post.url | relative_url }}">{{ post.title | format_title:false }}</a>
+        <em>({{ post.subtitle }})</em>
     </li>
     {%- endfor -%}
 </ol>

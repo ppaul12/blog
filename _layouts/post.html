@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<article>
+<article style="view-transition-name: post-{{ page.id | slugify }};">
     <header class="card" {% if page.marked %}ribbon{% endif %}>
         <!-- post tags -->
         <nav aria-label="breadcrumb"><ul>

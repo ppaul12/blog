@@ -231,3 +231,7 @@ nav[aria-label=breadcrumb] {
     --pico-nav-breadcrumb-divider: '/';
     justify-content: end;
 }
+
+@view-transition {
+    navigation: auto;
+}

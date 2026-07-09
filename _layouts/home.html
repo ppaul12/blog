@@ -24,7 +24,7 @@ layout: default
 {%- endif -%}
 
 {%- for post in posts -%}
-<article class="post-card" {% if post.marked %}ribbon{% endif %}>
+<article class="post-card" style="view-transition-name: post-{{ post.id | slugify }};" {% if post.marked %}ribbon{% endif %}>
     {%- if post.cover -%}
     <div class="post-cover" data-aos="fade" style="background-image: url('{{ post.cover | relative_url }}')"></div>
     {%- endif -%}

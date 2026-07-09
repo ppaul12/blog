@@ -1,9 +1,9 @@
-const observer = new IntersectionObserver((entries) => {
+const books_observer = new IntersectionObserver((entries) => {
     for (const entry of entries) {
         if (entry.isIntersecting) {
             const img = entry.target
             img.src = img.dataset.src
-            observer.unobserve(img)
+            books_observer.unobserve(img)
         }
     }
 }, {
@@ -12,7 +12,7 @@ const observer = new IntersectionObserver((entries) => {
 })
 
 document.querySelectorAll(".book-img .cover").forEach((img) => {
-    observer.observe(img)
+    books_observer.observe(img)
 })
 
 const toggleShelf = (event) => {

@@ -44,7 +44,7 @@ const toggleTag = (event) => {
     updateAll()
 }
 
-const observer = new MutationObserver(() => {
+const archive_bserver = new MutationObserver(() => {
     const url = new URL(window.location)
     url.searchParams.delete("idx")
     document.getElementById("search-results").childNodes.forEach((data) => {
@@ -53,7 +53,7 @@ const observer = new MutationObserver(() => {
     window.history.replaceState(null, null, url.href)
     updateAll()
 })
-observer.observe(document.getElementById("search-results"), { childList: true })
+archive_bserver.observe(document.getElementById("search-results"), { childList: true })
 
 window.addEventListener("load", () => {
     SimpleJekyllSearch({

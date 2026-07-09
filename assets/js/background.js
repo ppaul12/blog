@@ -81,11 +81,11 @@ const setDynamicBackground = (theme) => {
 }
 
 setDynamicBackground(document.documentElement.dataset.theme)
-const observer = new MutationObserver((mutations) => {
+const background_observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
         if (mutation.attributeName === "data-theme") {
             setDynamicBackground(mutation.target.getAttribute(mutation.attributeName))
         }
     })
 })
-observer.observe(document.documentElement, { attributes: true })
+background_observer.observe(document.documentElement, { attributes: true })

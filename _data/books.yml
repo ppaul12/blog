@@ -3,9 +3,6 @@
     - title: 坛经释义
       link: https://book.douban.com/subject/25719394/
       # date: "01.16"
-    - title: 乐之本事
-      author: 焦元溥
-      link: https://book.douban.com/subject/26584734/
 
 - year: 2026
   books:
@@ -21,6 +18,10 @@
       author: 夏目漱石
       link: https://book.douban.com/subject/27135380/
       date: "06.09"
+    - title: 乐之本事
+      author: 焦元溥
+      link: https://book.douban.com/subject/26584734/
+      date: "09.27"
 
 - year: 2025
   books:
@@ -350,7 +351,7 @@
     - title: 道德经
       author: 李耳
       link: https://book.douban.com/subject/11026496/
-    
+
     - title: 宮本武蔵
       author: 吉川英治
       link: https://book.douban.com/subject/11498371/

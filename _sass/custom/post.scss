@@ -1,5 +1,10 @@
 @use "./card";
 
+article[data-immersive] {
+    position: relative;
+    z-index: 20;
+}
+
 .post {
     &-card {
         @include card.card-hover;

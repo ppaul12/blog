@@ -5,17 +5,13 @@
         {%- include controller.html -%}
 
         {%- if page.required contains "with-header" -%}
-        <header>
-            <hgroup>
-                <h1>{{ site.header }}</h1>
-                <h3><em id="typed-elem"></em>&nbsp;</h3>
-            </hgroup>
-            <datalist id="typed-strings">
-                {%- for identity in site.data.profiles.identities -%}
-                <option>{{ identity.info }}</option>
-                {%- endfor -%}
-            </datalist>
-            <script>new Typed("#typed-elem", {stringsElement: "#typed-strings", typeSpeed: 80, loop: true, showCursor: false})</script>
+        <header class="home-brand">
+            <div class="home-brand-lockup">
+                <img class="home-brand-avatar" src="https://github.com/{{ site.thirdparty.github.user }}.png" alt="{{ site.author }}">
+                {%- assign brand_words = site.header | split:" " -%}
+                <h1 class="home-brand-title">{{ brand_words[0] }} <span class="home-brand-accent">{{ brand_words[1] }}</span></h1>
+                <p class="home-brand-tagline">{{ site.tagline }}</p>
+            </div>
         </header>
         {%- endif -%}
 

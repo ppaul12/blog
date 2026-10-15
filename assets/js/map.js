@@ -10,6 +10,11 @@ const cyclic = cycle(["red", "orange", "purple", "brown", "olive", "green"])
 
 const initMap = (id, data) => {
     const map = L.map(id)
+    const article = map.getContainer().closest("article")
+    map.on("fullscreenchange", () => {
+        article?.toggleAttribute("data-immersive", map.isFullscreen())
+    })
+
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 18, attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>"
     }).addTo(map)

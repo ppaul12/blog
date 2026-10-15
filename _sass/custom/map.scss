@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "../colors";
+
 .leaflet {
     &-container {
         width: 100%;
@@ -66,4 +69,94 @@
             }
         }
     }
+}
+
+[data-theme=light] {
+    .marker-cluster {
+        &-small {
+            background-color: color.change(colors.$nord8, $alpha: 0.35);
+
+            div {
+                background-color: colors.$nord8;
+                color: colors.$nord0;
+            }
+        }
+
+        &-medium {
+            background-color: color.change(colors.$nord9, $alpha: 0.35);
+
+            div {
+                background-color: colors.$nord9;
+                color: colors.$nord0;
+            }
+        }
+
+        &-large {
+            background-color: color.change(colors.$nord15, $alpha: 0.35);
+
+            div {
+                background-color: colors.$nord15;
+                color: colors.$nord0;
+            }
+        }
+
+        div {
+            border: 1px solid color.change(colors.$nord6, $alpha: 0.8);
+            font-weight: 700;
+        }
+    }
+}
+
+[data-theme=dark] {
+    .marker-cluster {
+        &-small {
+            background-color: color.change(colors.$nord7, $alpha: 0.35);
+
+            div {
+                background-color: colors.$nord7;
+                color: colors.$nord0;
+            }
+        }
+
+        &-medium {
+            background-color: color.change(colors.$nord9, $alpha: 0.4);
+
+            div {
+                background-color: colors.$nord9;
+                color: colors.$nord0;
+            }
+        }
+
+        &-large {
+            background-color: color.change(colors.$nord15, $alpha: 0.4);
+
+            div {
+                background-color: colors.$nord15;
+                color: colors.$nord0;
+            }
+        }
+
+        div {
+            border: 1px solid color.change(colors.$nord0, $alpha: 0.8);
+            font-weight: 700;
+        }
+    }
+}
+
+.marker-cluster > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: grid;
+    place-items: center;
+    margin: 0;
+    transform: translate(-50%, -50%);
+}
+
+.marker-cluster > div > span {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    place-items: center;
+    line-height: 1;
 }

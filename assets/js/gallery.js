@@ -3,6 +3,14 @@
 
 const initGallery = (id, data) => {
     const element = document.getElementById(id)
+    const article = element.closest("article")
+    element.addEventListener("click", (event) => {
+        if (event.target instanceof Element && event.target.closest(".lg-maximize")) {
+            const container = element.querySelector(".lg-container")
+            article?.toggleAttribute("data-immersive", !container.classList.contains("lg-inline"))
+        }
+    })
+
     // load photos to gallery
     window.lightGallery(element, {
         plugins: [lgZoom, lgAutoplay, lgThumbnail],

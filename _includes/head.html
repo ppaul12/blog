@@ -53,9 +53,6 @@
     <!-- animation on scroll -->
     <script src="https://cdn.jsdelivr.net/npm/aos@latest/dist/aos.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@latest/dist/aos.min.css">
-    <!-- typed -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@latest/dist/typed.umd.min.js"></script>
-
     <!-- font awesome icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome-animation@latest/css/font-awesome-animation.min.css">
@@ -117,6 +114,12 @@
     <!-- leaflet -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@latest/dist/leaflet.min.css">
     <script src="https://cdn.jsdelivr.net/npm/leaflet@latest/dist/leaflet.min.js"></script>
+    {%- if page.required contains "markercluster" -%}
+    <!-- leaflet marker cluster -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@latest/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@latest/dist/MarkerCluster.Default.css">
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.markercluster@latest/dist/leaflet.markercluster.js"></script>
+    {%- endif -%}
     <!-- leaflet minimap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-minimap@latest/dist/Control.MiniMap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/leaflet-minimap@latest/dist/Control.MiniMap.min.js"></script>
@@ -126,8 +129,6 @@
     <!-- leaflet fullscreen -->
     <script src="https://cdn.jsdelivr.net/npm/leaflet-fullscreen@latest/dist/Leaflet.fullscreen.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-fullscreen@latest/dist/leaflet.fullscreen.min.css">
-    <!-- leaflet canvas marker -->
-    <script src="https://cdn.jsdelivr.net/npm/leaflet-canvas-marker@latest/dist/leaflet.canvas-markers.min.js"></script>
     <!-- custom map initializer -->
     <script src="{% link assets/js/map.js %}"></script>
     {%- endif -%}

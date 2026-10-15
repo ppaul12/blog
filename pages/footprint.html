@@ -3,7 +3,7 @@ layout: page
 title: footprint
 subtitle: explore the world ...
 permalink: /footprint
-required: map
+required: map markercluster
 ---
 
 <div id="footprint"></div>
@@ -64,9 +64,15 @@ required: map
             shadowUrl: "https://cdn.jsdelivr.net/npm/leaflet@latest/dist/images/marker-shadow.png",
             shadowSize: [20, 20]
         })
-        L.canvasIconLayer({}).addTo(map).addLayers(locations.map((item) => {
+        const markers = L.markerClusterGroup({
+            chunkedLoading: true,
+            maxClusterRadius: 40,
+            showCoverageOnHover: false,
+        })
+        markers.addLayers(locations.map((item) => {
             return L.marker(item.pos, {icon: icon}).bindPopup(item.loc + (item.info ? `: ${item.info}` : ""), {closeButton: false})
         }))
+        map.addLayer(markers)
 
         L.control.scale({position: "bottomright", imperial: false}).addTo(map)
 

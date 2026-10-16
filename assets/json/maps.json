@@ -6,7 +6,10 @@
 {%- for file in files -%}
     {%- assign post =  site.posts | find_exp:"post", "post.content contains file.path" -%}
 {
-    "date": "{{ post.date | date:'%y/%m' }}",
+    "date": "{{ post.date | date:'%Y/%m' }}",
+    "year": "{{ post.date | date:'%Y' }}",
+    "title": {{ post.title | strip_html | jsonify }},
+    "subtitle": {{ post.subtitle | jsonify }},
     "link": "{{ post.url | relative_url }}",
     "json": "{{ file.path | relative_url }}"
 }{%- unless forloop.last -%},{%- endunless -%}

@@ -6,89 +6,328 @@ permalink: /footprint
 required: map markercluster
 ---
 
-<div id="footprint"></div>
-<style>
-    #footprint {
-        width: 100%;
-        max-height: 80vh;
-        aspect-ratio: 1;
+<div class="footprint-dashboard">
+    <section class="footprint-stats" aria-label="Travel statistics and date filter">
+        <div class="footprint-stats-summary">
+            <div class="footprint-stat">
+                <strong id="footprint-place-count">—</strong>
+                <span>Places</span>
+            </div>
+            <div class="footprint-stat">
+                <strong id="footprint-trip-count">—</strong>
+                <span>Journeys</span>
+            </div>
+        </div>
+        <div class="footprint-stats-controls">
+            <label class="footprint-date-filter">
+                <span class="visually-hidden">Filter by date</span>
+                <select id="footprint-date">
+                    <option value="">All dates</option>
+                </select>
+            </label>
+            <button id="footprint-reset" type="button" class="footprint-reset" aria-label="Reset filters"
+                title="Reset filters">
+                <i class="fa-solid fa-arrow-rotate-left fa-fw" aria-hidden="true"></i>
+            </button>
+        </div>
+    </section>
 
-        @media(max-width: 420px) {
-            aspect-ratio: 2/3;
-        }
-    }
-</style>
+    <section class="footprint-explorer" aria-label="Travel map and place details">
+        <div id="footprint-map" aria-label="Travel map"></div>
+        <aside id="footprint-detail" class="footprint-detail" aria-live="polite">
+            <p class="footprint-eyebrow">PLACE DETAILS</p>
+            <div class="footprint-detail-empty">
+                <span class="footprint-detail-mark" aria-hidden="true">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                </span>
+                <h3>Select a place</h3>
+                <p>Select a marker on the map to see its dates and related journeys.</p>
+            </div>
+            <div class="footprint-detail-content" hidden>
+                <h3 id="footprint-detail-title"></h3>
+                <p id="footprint-detail-meta" class="footprint-detail-meta"></p>
+                <div id="footprint-detail-dates" class="footprint-visits" aria-label="Visit dates"></div>
+                <div id="footprint-related-journeys">
+                    <div class="footprint-detail-rule"></div>
+                    <h4>Related journeys</h4>
+                    <div id="footprint-detail-records" class="footprint-detail-records"></div>
+                </div>
+            </div>
+        </aside>
+    </section>
+
+    <section class="footprint-journeys" aria-labelledby="footprint-journeys-title">
+        <div class="footprint-section-heading">
+            <h2 id="footprint-journeys-title">Recent journeys</h2>
+            <a href="{% link pages/archive.html %}?tag=%E6%97%85%E8%A1%8C" class="footprint-all-journeys">
+                All journeys <span aria-hidden="true">→</span>
+            </a>
+        </div>
+        <div id="footprint-journey-cards" class="footprint-journey-cards" aria-live="polite">
+            <p class="footprint-loading">Loading journeys…</p>
+        </div>
+    </section>
+</div>
+
 <script>
     (async () => {
-        const locSets = await asyncLoadJSON("{% link assets/json/maps.json %}")
-        const locations = Object.entries(Object.groupBy([].concat(
-            await locSets.reduce(async (output, locSet) => {
+        const dateSelect = document.getElementById("footprint-date")
+        const journeyCards = document.getElementById("footprint-journey-cards")
+
+        try {
+            const [locSets, spots] = await Promise.all([
+                asyncLoadJSON("{% link assets/json/maps.json %}"),
+                asyncLoadJSON("{% link assets/json/spots.json %}"),
+            ])
+            const formatPeriod = (value) => {
+                const matches = [...String(value).matchAll(/(\d{4})\/(\d{2})/g)]
+                if (!matches.length) return {label: String(value), months: []}
+
+                const toParts = ([, year, month]) => [Number(year), Number(month)]
+                const [startYear, startMonth] = toParts(matches[0])
+                const [endYear, endMonth] = matches[1]
+                    ? toParts(matches[1])
+                    : String(value).includes("~")
+                        ? [new Date().getFullYear(), new Date().getMonth() + 1]
+                        : [startYear, startMonth]
+                const months = []
+                const cursor = new Date(startYear, startMonth - 1, 1)
+                const end = new Date(endYear, endMonth - 1, 1)
+                while (cursor <= end) {
+                    months.push(`${cursor.getFullYear()}-${String(cursor.getMonth() + 1).padStart(2, "0")}`)
+                    cursor.setMonth(cursor.getMonth() + 1)
+                }
+                const start = `${startYear}/${String(startMonth).padStart(2, "0")}`
+                const finish = `${endYear}/${String(endMonth).padStart(2, "0")}`
+                const label = matches[1]
+                    ? `${start}–${finish}`
+                    : String(value).includes("~") ? `${start}–present` : start
+                return {label, months}
+            }
+
+            const tripLocations = (await Promise.all(locSets.map(async (locSet) => {
                 const data = await asyncLoadJSON(locSet.json)
                 const spot = data.album ?? data.spot
-                return (await output).concat(Object.entries(spot).map((entry) => {
-                    return {
-                        loc: entry[0],
-                        pos: entry[1],
-                        info: [`<a href="${locSet.link}">${locSet.date}</a>`],
-                    }
+                return Object.entries(spot).map(([loc, pos]) => ({
+                    loc,
+                    pos,
+                    records: [{
+                        date: locSet.date,
+                        year: locSet.year,
+                        title: locSet.title,
+                        subtitle: locSet.subtitle,
+                        url: locSet.link,
+                    }],
+                    notes: [],
                 }))
-            }, Promise.resolve([])),
-            await asyncLoadJSON("{% link assets/json/spots.json %}"),
-        ), ({loc}) => loc)).map((entry) => {
-            return {
-                loc: entry[0],
-                pos: entry[1][0].pos,
-                info: entry[1].reduce(
-                    (output, item) => output.concat(item.info), []
-                ).toSorted((a, b) => {
-                    const elem = document.createElement("div")
-                    elem.innerHTML = a
-                    a = elem.innerText
-                    elem.innerHTML = b
-                    b = elem.innerText
-                    return a.localeCompare(b)
-                }).join(", ")
+            }))).flat()
+
+            const locations = Object.entries(Object.groupBy(
+                tripLocations.concat(spots.map((spot) => ({...spot, records: [], notes: spot.info ?? []}))),
+                ({loc}) => loc,
+            )).map(([loc, entries]) => {
+                const records = entries.flatMap(({records}) => records).sort((a, b) => b.date.localeCompare(a.date))
+                const notes = [...new Set(entries.flatMap(({notes}) => notes))]
+                const periods = [...notes, ...records.map(({date}) => date)].map(formatPeriod)
+                return {
+                    loc,
+                    pos: entries[0].pos,
+                    records,
+                    notes,
+                    visits: [...new Set(periods.map(({label}) => label))].sort((a, b) => b.localeCompare(a)),
+                    visitMonths: [...new Set(periods.flatMap(({months}) => months))],
+                }
+            })
+
+            const filterYears = [...new Set(locations.flatMap(({visitMonths}) => visitMonths.map((month) => month.slice(0, 4))))]
+                .sort((a, b) => b.localeCompare(a))
+            filterYears.forEach((year) => {
+                const group = document.createElement("optgroup")
+                group.label = year
+                const yearOption = document.createElement("option")
+                yearOption.value = year
+                yearOption.textContent = `All ${year}`
+                group.append(yearOption)
+                const months = [...new Set(locations.flatMap(({visitMonths}) => visitMonths))]
+                    .filter((month) => month.startsWith(`${year}-`))
+                    .sort((a, b) => b.localeCompare(a))
+                months.forEach((month) => {
+                    const option = document.createElement("option")
+                    option.value = month
+                    option.textContent = month.replace("-", "/")
+                    group.append(option)
+                })
+                dateSelect.append(group)
+            })
+
+            const map = L.map("footprint-map").setView([39.92503939668526, 116.43328011233142], 4)
+            const tileUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            L.tileLayer(tileUrl, {
+                maxZoom: 18,
+                attribution: "&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
+            }).addTo(map)
+
+            const icon = L.icon({
+                iconUrl: "https://cdn.jsdelivr.net/npm/leaflet@latest/dist/images/marker-icon.png",
+                iconSize: [12, 20],
+                iconAnchor: [6, 20],
+                popupAnchor: [0, -10],
+                shadowUrl: "https://cdn.jsdelivr.net/npm/leaflet@latest/dist/images/marker-shadow.png",
+                shadowSize: [20, 20],
+            })
+            const markers = L.markerClusterGroup({
+                chunkedLoading: true,
+                maxClusterRadius: 40,
+                showCoverageOnHover: false,
+            })
+            markers.addTo(map)
+
+            const detail = document.getElementById("footprint-detail")
+            const detailEmpty = detail.querySelector(".footprint-detail-empty")
+            const detailContent = detail.querySelector(".footprint-detail-content")
+            const detailTitle = document.getElementById("footprint-detail-title")
+            const detailMeta = document.getElementById("footprint-detail-meta")
+            const detailDates = document.getElementById("footprint-detail-dates")
+            const relatedJourneys = document.getElementById("footprint-related-journeys")
+            const detailRecords = document.getElementById("footprint-detail-records")
+
+            const showLocation = (location) => {
+                detailEmpty.hidden = true
+                detailContent.hidden = false
+                detailTitle.textContent = location.loc
+                detailMeta.textContent = location.records.length
+                    ? `${location.records.length} ${location.records.length === 1 ? "journey" : "journeys"} · Last visited ${location.records[0].year}`
+                    : "Saved place · No linked journeys"
+                detailDates.replaceChildren()
+                relatedJourneys.hidden = !location.records.length
+                const visits = location.visits.length ? location.visits : ["No dates recorded"]
+                visits.forEach((visit) => {
+                    const tag = document.createElement("span")
+                    tag.className = location.visits.length ? "footprint-visit-tag" : "footprint-visit-tag is-empty"
+                    tag.textContent = visit
+                    detailDates.append(tag)
+                })
+                detailRecords.replaceChildren()
+
+                location.records.forEach((record) => {
+                    const link = document.createElement("a")
+                    link.className = "footprint-record-link"
+                    link.href = record.url
+                    const title = document.createElement("strong")
+                    title.textContent = record.title || "View journey"
+                    const date = document.createElement("span")
+                    date.textContent = `${record.year}.${record.date.split("/")[1]}`
+                    link.append(title, date)
+                    detailRecords.append(link)
+                })
+
             }
-        })
 
-        const map = L.map("footprint").setView([39.92503939668526, 116.43328011233142], 4) // set Beijing as the center
-        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-            maxZoom: 18, attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>"
-        }).addTo(map)
+            const markerFor = (location) => {
+                return L.marker(location.pos, {icon})
+                    .on("click", () => showLocation(location))
+            }
 
-        const icon = L.icon({
-            iconUrl: "https://cdn.jsdelivr.net/npm/leaflet@latest/dist/images/marker-icon.png",
-            iconSize: [12, 20],
-            iconAnchor: [6, 20],
-            popupAnchor: [0, -10],
-            shadowUrl: "https://cdn.jsdelivr.net/npm/leaflet@latest/dist/images/marker-shadow.png",
-            shadowSize: [20, 20]
-        })
-        const markers = L.markerClusterGroup({
-            chunkedLoading: true,
-            maxClusterRadius: 40,
-            showCoverageOnHover: false,
-        })
-        markers.addLayers(locations.map((item) => {
-            return L.marker(item.pos, {icon: icon}).bindPopup(item.loc + (item.info ? `: ${item.info}` : ""), {closeButton: false})
-        }))
-        map.addLayer(markers)
+            const getFilteredLocations = () => {
+                const selectedDate = dateSelect.value
+                return locations.filter((location) => {
+                    if (!selectedDate) return true
+                    return selectedDate.length === 4
+                        ? location.visitMonths.some((month) => month.startsWith(`${selectedDate}-`))
+                        : location.visitMonths.includes(selectedDate)
+                })
+            }
 
-        L.control.scale({position: "bottomright", imperial: false}).addTo(map)
+            const matchesSelectedDate = (months, selectedDate) => {
+                if (!selectedDate) return true
+                return selectedDate.length === 4
+                    ? months.some((month) => month.startsWith(`${selectedDate}-`))
+                    : months.includes(selectedDate)
+            }
 
-        L.control.resetView({
-            position: "topleft",
-            latlng: map.getCenter(),
-            zoom: map.getZoom(),
-        }).addTo(map)
+            const refreshMarkers = () => {
+                const selectedDate = dateSelect.value
+                const hasFilter = Boolean(selectedDate)
+                const filtered = getFilteredLocations()
+                markers.clearLayers()
+                markers.addLayers(filtered.map(markerFor))
+                document.getElementById("footprint-place-count").textContent = hasFilter
+                    ? `${filtered.length} / ${locations.length}`
+                    : filtered.length
+                document.getElementById("footprint-trip-count").textContent = locSets
+                    .filter((journey) => matchesSelectedDate(formatPeriod(journey.date).months, selectedDate))
+                    .length
 
-        new L.Control.Fullscreen({
-            pseudoFullscreen: true,
-        }).addTo(map)
+                if (!filtered.length) {
+                    detailEmpty.hidden = false
+                    detailContent.hidden = true
+                    detailEmpty.querySelector("h3").textContent = "No places found"
+                    detailEmpty.querySelector("p").textContent = "Try another date or reset the filter."
+                }
+            }
 
-        new L.Control.MiniMap(L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"), {
-            minimized: false,
-            position: "bottomleft",
-        }).addTo(map)
+            dateSelect.addEventListener("change", () => refreshMarkers())
+            document.getElementById("footprint-reset").addEventListener("click", () => {
+                dateSelect.value = ""
+                detailEmpty.hidden = false
+                detailContent.hidden = true
+                detailEmpty.querySelector("h3").textContent = "Select a place"
+                detailEmpty.querySelector("p").textContent = "Select a marker on the map to see its dates and related journeys."
+                refreshMarkers()
+                map.setView([39.92503939668526, 116.43328011233142], 4, {animate: true})
+            })
+            refreshMarkers()
+
+            L.control.scale({position: "bottomright", imperial: false}).addTo(map)
+            L.control.resetView({
+                position: "topleft",
+                latlng: map.getCenter(),
+                zoom: map.getZoom(),
+            }).addTo(map)
+            new L.Control.Fullscreen({pseudoFullscreen: true}).addTo(map)
+            new L.Control.MiniMap(L.tileLayer(tileUrl), {
+                minimized: true,
+                position: "bottomleft",
+            }).addTo(map)
+
+            const renderJourneys = (journeys) => {
+                journeyCards.replaceChildren()
+                journeys.forEach((journey) => {
+                    const card = document.createElement("a")
+                    card.className = "footprint-journey-card"
+                    card.href = journey.link
+                    const date = document.createElement("span")
+                    date.className = "footprint-journey-date"
+                    date.textContent = `${journey.year}.${journey.date.split("/")[1]}`
+                    const title = document.createElement("strong")
+                    title.textContent = journey.title || "Untitled journey"
+                    const subtitle = document.createElement("span")
+                    subtitle.className = "footprint-journey-subtitle"
+                    subtitle.textContent = journey.subtitle || "Open journey"
+                    card.append(date, title, subtitle)
+                    journeyCards.append(card)
+                })
+            }
+
+            const recentJourneys = [...locSets].sort((a, b) => b.date.localeCompare(a.date))
+            const getJourneyLimit = () => window.matchMedia("(max-width: 600px)").matches
+                ? 1
+                : window.matchMedia("(max-width: 900px)").matches ? 2 : 3
+            let journeyLimit = getJourneyLimit()
+            renderJourneys(recentJourneys.slice(0, journeyLimit))
+
+            window.addEventListener("resize", () => {
+                map.invalidateSize()
+                const nextLimit = getJourneyLimit()
+                if (nextLimit !== journeyLimit) {
+                    journeyLimit = nextLimit
+                    renderJourneys(recentJourneys.slice(0, journeyLimit))
+                }
+            })
+        } catch (error) {
+            console.error("Failed to load footprint data:", error)
+            document.getElementById("footprint-place-count").textContent = "—"
+            journeyCards.textContent = "Journey data could not be loaded."
+        }
     })()
 </script>

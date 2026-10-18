@@ -6,37 +6,153 @@ permalink: /album
 required: gallery
 ---
 
-<div id="album"></div>
+<div id="album" class="album-grid" aria-live="polite" aria-busy="true"></div>
 <script>
     (async () => {
-        // load all images
+        const album = document.getElementById("album")
         const imageSets = await asyncLoadJSON("{% link assets/json/album.json %}")
-        const images = await imageSets.reduce(async (output, imageSet) => {
+        const images = (await Promise.all(imageSets.map(async (imageSet) => {
             const entries = await asyncLoadJSON(imageSet.json)
-            return (await output).concat(entries.map((entry) => {
-                return {
-                    src: entry.src,
-                    loc: imageSet.post,
-                    date: imageSet.date,
-                    link: imageSet.link,
-                }
-            }))
-        }, Promise.resolve([]))
-        // reorder images on demand
+            return entries.map((entry) => ({ ...entry, loc: imageSet.post, date: imageSet.date, link: imageSet.link }))
+        }))).flat()
+
         const url = new URL(window.location)
         switch (url.searchParams.get("order") || "shuffle") {
-            case "ascend":
-                images.sort((a, b) => a.date - b.date); break
-            case "descend":
-                images.sort((a, b) => b.date - a.date); break
+            case "ascend": images.sort((a, b) => a.date - b.date); break
+            case "descend": images.sort((a, b) => b.date - a.date); break
             case "shuffle":
             default:
                 for (let i = images.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [images[i], images[j]] = [images[j], images[i]]
+                    const j = Math.floor(Math.random() * (i + 1))
+                    const image = images[i]
+                    images[i] = images[j]
+                    images[j] = image
                 }
         }
-        // init gallery with images
-        initGallery("album", images)
+
+        const gallery = initGallery("album", images, { openOnInit: false, inline: false, showMaximizeIcon: false })
+        const cards = []
+        images.forEach((item, index) => {
+            const card = document.createElement("button")
+            card.type = "button"
+            card.className = "album-card"
+            card.dataset.aos = "fade-up"
+            card.dataset.aosDuration = "600"
+            card.setAttribute("aria-label", `打开照片：${item.loc}`)
+            card.addEventListener("click", () => gallery.openGallery(index))
+
+            const image = document.createElement("img")
+            image.alt = item.loc || "相册照片"
+            image.loading = "lazy"
+            image.decoding = "async"
+            const ratio = Number(item.width) / Number(item.height)
+            card.dataset.ratio = Number.isFinite(ratio) && ratio > 0 ? ratio : "1.3333"
+            image.addEventListener("load", () => {
+                if (image.naturalWidth && image.naturalHeight) {
+                    card.dataset.ratio = image.naturalWidth / image.naturalHeight
+                    scheduleLayout()
+                }
+            }, { once: true })
+            image.src = `{{ site.baseurl }}${item.src}`
+            card.append(image)
+
+            const caption = document.createElement("span")
+            caption.className = "album-caption"
+            caption.textContent = item.loc || ""
+            card.append(caption)
+            cards.push(card)
+        })
+
+        let layoutFrame
+        let aosRefreshTimer
+        let aosReady = false
+        let lastLayoutWidth = 0
+        const getRatio = (card) => Number(card.dataset.ratio) || 1.3333
+        const scheduleAOSRefresh = () => {
+            if (!aosReady || typeof AOS === "undefined") return
+            clearTimeout(aosRefreshTimer)
+            aosRefreshTimer = setTimeout(() => AOS.refresh(), 200)
+        }
+        const getLayoutMetrics = (width) => {
+            const isNarrow = width < 600
+            const targetHeight = isNarrow
+                ? Math.min(260, width / 2.4)
+                : Math.min(280, width / 4.5)
+
+            return {
+                gap: parseFloat(getComputedStyle(album).rowGap) || 8,
+                targetHeight,
+                minHeight: isNarrow ? targetHeight * 0.88 : Math.min(140, targetHeight * 0.72),
+            }
+        }
+        const applyRowLayout = (items, index, rowCount, width, gap, targetHeight) => {
+            const ratioTotal = items.reduce((sum, item) => sum + item.ratio, 0)
+            const fittedHeight = (width - gap * (items.length - 1)) / ratioTotal
+            const height = index === rowCount - 1 ? Math.min(targetHeight, fittedHeight) : fittedHeight
+
+            items.forEach(({ card, ratio }) => {
+                card.style.width = `${ratio * height}px`
+                card.style.height = `${height}px`
+            })
+        }
+        const layout = () => {
+            const width = album.clientWidth
+            if (!width) return
+
+            const { gap, targetHeight, minHeight } = getLayoutMetrics(width)
+            if (album.firstElementChild && width === lastLayoutWidth) {
+                const rows = [...album.children]
+                rows.forEach((rowElement, index) => {
+                    const items = [...rowElement.children].map((card) => ({ card, ratio: getRatio(card) }))
+                    applyRowLayout(items, index, rows.length, width, gap, targetHeight)
+                })
+                scheduleAOSRefresh()
+                return
+            }
+
+            lastLayoutWidth = width
+            const rows = []
+            let row = []
+            let ratioTotal = 0
+
+            cards.forEach((card) => {
+                const ratio = getRatio(card)
+                const candidateCount = row.length + 1
+                const candidateRatioTotal = ratioTotal + ratio
+                const candidateHeight = (width - gap * (candidateCount - 1)) / candidateRatioTotal
+                if (row.length && candidateHeight < minHeight) {
+                    rows.push(row)
+                    row = []
+                    ratioTotal = 0
+                }
+                row.push({ card, ratio })
+                ratioTotal += ratio
+            })
+            if (row.length) rows.push(row)
+
+            const rowsFragment = document.createDocumentFragment()
+            rows.forEach((items, index) => {
+                const rowElement = document.createElement("div")
+                rowElement.className = "album-row"
+                applyRowLayout(items, index, rows.length, width, gap, targetHeight)
+                items.forEach(({ card }) => rowElement.append(card))
+                rowsFragment.append(rowElement)
+            })
+            album.replaceChildren(rowsFragment)
+            scheduleAOSRefresh()
+        }
+        const scheduleLayout = () => {
+            cancelAnimationFrame(layoutFrame)
+            layoutFrame = requestAnimationFrame(layout)
+        }
+
+        const resizeObserver = new ResizeObserver(scheduleLayout)
+        resizeObserver.observe(album)
+        layout()
+        if (typeof AOS !== "undefined") {
+            AOS.refreshHard()
+            aosReady = true
+        }
+        album.setAttribute("aria-busy", "false")
     })()
 </script>

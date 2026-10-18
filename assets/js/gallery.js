@@ -1,7 +1,7 @@
 ---
 ---
 
-const initGallery = (id, data) => {
+const initGallery = (id, data, { openOnInit = true, inline = true, closable = !inline, showMaximizeIcon = inline } = {}) => {
     const element = document.getElementById(id)
     const article = element.closest("article")
     element.addEventListener("click", (event) => {
@@ -12,9 +12,9 @@ const initGallery = (id, data) => {
     })
 
     // load photos to gallery
-    window.lightGallery(element, {
+    const gallery = window.lightGallery(element, {
         plugins: [lgZoom, lgAutoplay, lgThumbnail],
-        container: element,
+        ...(inline ? { container: element } : {}),
         dynamic: true,
         dynamicEl: data.map((item) => {
             return {
@@ -25,15 +25,17 @@ const initGallery = (id, data) => {
             }
         }),
         mode: "lg-zoom-in-out",
-        closable: false,
+        closable,
         thumbnail: data.length < 50,
         slideShowAutoPlay: false,
-        showMaximizeIcon: true
-    }).openGallery()
+        showMaximizeIcon
+    })
+    if (openOnInit) gallery.openGallery()
     // insert exif info
     element.addEventListener("lgAfterSlide", () => {
         const image = document.querySelector(".lg-container.lg-show .lg-current img")
         const caption = document.querySelector(".lg-container.lg-show .lg-sub-html")
+        if (!image || !caption || !window.exifr) return
         window.exifr.parse(image).then((exif) => {
             const formatCaption = (caption, exif) => {
                 if (exif === undefined) return caption
@@ -62,4 +64,5 @@ const initGallery = (id, data) => {
             ]).filter((item) => item !== null).join("<br>")
         })
     })
+    return gallery
 }

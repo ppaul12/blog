@@ -128,12 +128,18 @@ required: map markercluster
             )).map(([loc, entries]) => {
                 const records = entries.flatMap(({records}) => records).sort((a, b) => b.date.localeCompare(a.date))
                 const notes = [...new Set(entries.flatMap(({notes}) => notes))]
-                const periods = [...notes, ...records.map(({date}) => date)].map(formatPeriod)
+                const residencePeriods = notes.filter((note) => note.includes("~"))
+                const isResidence = residencePeriods.length > 0
+                const periods = (isResidence
+                    ? residencePeriods
+                    : [...notes, ...records.map(({date}) => date)]).map(formatPeriod)
                 return {
                     loc,
                     pos: entries[0].pos,
-                    records,
-                    notes,
+                    records: isResidence ? [] : records,
+                    notes: isResidence ? residencePeriods : notes,
+                    isResidence,
+                    residencePeriods: isResidence ? residencePeriods : [],
                     visits: [...new Set(periods.map(({label}) => label))].sort((a, b) => b.localeCompare(a)),
                     visitMonths: [...new Set(periods.flatMap(({months}) => months))],
                 }
@@ -175,9 +181,15 @@ required: map markercluster
                 shadowUrl: "https://cdn.jsdelivr.net/npm/leaflet@latest/dist/images/marker-shadow.png",
                 shadowSize: [20, 20],
             })
+            const residenceIcon = L.divIcon({
+                className: "footprint-residence-marker",
+                html: '<span class="footprint-residence-marker__body"><i class="fa-solid fa-house" aria-hidden="true"></i></span>',
+                iconSize: [30, 38],
+                iconAnchor: [15, 36],
+            })
             const markers = L.markerClusterGroup({
                 chunkedLoading: true,
-                maxClusterRadius: 40,
+                maxClusterRadius: 60,
                 showCoverageOnHover: false,
             })
             markers.addTo(map)
@@ -195,10 +207,13 @@ required: map markercluster
                 detailEmpty.hidden = true
                 detailContent.hidden = false
                 detailTitle.textContent = location.loc
-                detailMeta.textContent = location.records.length
-                    ? `${location.records.length} ${location.records.length === 1 ? "journey" : "journeys"} · Last visited ${location.records[0].year}`
-                    : "Saved place · No linked journeys"
+                detailMeta.textContent = location.isResidence
+                    ? `Former residence · ${location.residencePeriods.map((period) => formatPeriod(period).label).join(", ")}`
+                    : location.records.length
+                        ? `${location.records.length} ${location.records.length === 1 ? "journey" : "journeys"} · Last visited ${location.records[0].year}`
+                        : "Saved place · No linked journeys"
                 detailDates.replaceChildren()
+                detailDates.hidden = location.isResidence
                 relatedJourneys.hidden = !location.records.length
                 const visits = location.visits.length ? location.visits : ["No dates recorded"]
                 visits.forEach((visit) => {
@@ -224,7 +239,8 @@ required: map markercluster
             }
 
             const markerFor = (location) => {
-                return L.marker(location.pos, {icon})
+                const markerIcon = location.isResidence ? residenceIcon : icon
+                return L.marker(location.pos, {icon: markerIcon, title: location.loc})
                     .on("click", () => showLocation(location))
             }
 

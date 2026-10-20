@@ -6,18 +6,56 @@ permalink: /album
 required: gallery
 ---
 
+<nav class="album-toolbar" aria-label="Album navigation" data-aos="fade-down" data-aos-duration="600">
+    <p id="album-count" class="album-count" aria-live="polite">Loading album…</p>
+    <fieldset class="album-order-group">
+        <legend class="visually-hidden">Photo order</legend>
+        <label class="album-order-option" title="Random order">
+            <input type="radio" name="album-order" value="shuffle" aria-label="Random order">
+            <span class="album-order-icon"><i class="fa-solid fa-shuffle fa-fw" aria-hidden="true"></i></span>
+        </label>
+        <label class="album-order-option" title="Oldest first">
+            <input type="radio" name="album-order" value="ascend" aria-label="Oldest first">
+            <span class="album-order-icon"><i class="fa-solid fa-arrow-down-1-9 fa-fw" aria-hidden="true"></i></span>
+        </label>
+        <label class="album-order-option" title="Newest first">
+            <input type="radio" name="album-order" value="descend" aria-label="Newest first">
+            <span class="album-order-icon"><i class="fa-solid fa-arrow-up-1-9 fa-fw" aria-hidden="true"></i></span>
+        </label>
+    </fieldset>
+</nav>
 <div id="album" class="album-grid" aria-live="polite" aria-busy="true"></div>
 <script>
     (async () => {
         const album = document.getElementById("album")
+        const albumCount = document.getElementById("album-count")
+        const orderInputs = [...document.querySelectorAll('input[name="album-order"]')]
+        const url = new URL(window.location)
+        const currentOrder = ["shuffle", "ascend", "descend"].includes(url.searchParams.get("order")) ? url.searchParams.get("order") : "shuffle"
+        orderInputs.forEach((input) => {
+            input.checked = input.value === currentOrder
+            input.addEventListener("change", () => {
+                if (!input.checked) return
+                url.searchParams.set("order", input.value)
+                window.location.assign(url)
+            })
+        })
+
         const imageSets = await asyncLoadJSON("{% link assets/json/album.json %}")
         const images = (await Promise.all(imageSets.map(async (imageSet) => {
             const entries = await asyncLoadJSON(imageSet.json)
             return entries.map((entry) => ({ ...entry, loc: imageSet.post, date: imageSet.date, link: imageSet.link }))
         }))).flat()
+        const journeyCount = imageSets.filter((imageSet) => imageSet.journey).length
+        const photoCount = document.createElement("span")
+        photoCount.className = "album-count-part"
+        photoCount.textContent = `${images.length} photos`
+        const journeyTotal = document.createElement("span")
+        journeyTotal.className = "album-count-part"
+        journeyTotal.textContent = ` ${journeyCount} journeys`
+        albumCount.replaceChildren(photoCount, document.createElement("wbr"), journeyTotal)
 
-        const url = new URL(window.location)
-        switch (url.searchParams.get("order") || "shuffle") {
+        switch (currentOrder) {
             case "ascend": images.sort((a, b) => a.date - b.date); break
             case "descend": images.sort((a, b) => b.date - a.date); break
             case "shuffle":
@@ -38,11 +76,11 @@ required: gallery
             card.className = "album-card"
             card.dataset.aos = "fade-up"
             card.dataset.aosDuration = "600"
-            card.setAttribute("aria-label", `打开照片：${item.loc}`)
+            card.setAttribute("aria-label", `Open photo: ${item.loc}`)
             card.addEventListener("click", () => gallery.openGallery(index))
 
             const image = document.createElement("img")
-            image.alt = item.loc || "相册照片"
+            image.alt = item.loc || "Album photo"
             image.loading = "lazy"
             image.decoding = "async"
             const ratio = Number(item.width) / Number(item.height)

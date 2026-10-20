@@ -7,7 +7,8 @@ required: map markercluster
 ---
 
 <div class="footprint-dashboard">
-    <section class="footprint-stats" aria-label="Travel statistics and date filter">
+    <section class="footprint-stats" aria-label="Travel statistics and date filter"
+        data-aos="fade-down" data-aos-duration="650">
         <div class="footprint-stats-summary">
             <div class="footprint-stat">
                 <strong id="footprint-place-count">—</strong>
@@ -33,8 +34,9 @@ required: map markercluster
     </section>
 
     <section class="footprint-explorer" aria-label="Travel map and place details">
-        <div id="footprint-map" aria-label="Travel map"></div>
-        <aside id="footprint-detail" class="footprint-detail" aria-live="polite">
+        <div id="footprint-map" aria-label="Travel map" data-aos="fade-up" data-aos-duration="750"></div>
+        <aside id="footprint-detail" class="footprint-detail" aria-live="polite"
+            data-aos="fade-up" data-aos-duration="750" data-aos-delay="120">
             <p class="footprint-eyebrow">PLACE DETAILS</p>
             <div class="footprint-detail-empty">
                 <span class="footprint-detail-mark" aria-hidden="true">
@@ -56,8 +58,9 @@ required: map markercluster
         </aside>
     </section>
 
-    <section class="footprint-journeys" aria-labelledby="footprint-journeys-title">
-        <div class="footprint-section-heading">
+    <section class="footprint-journeys" aria-labelledby="footprint-journeys-title"
+        data-aos="fade-up" data-aos-duration="750">
+        <div class="footprint-section-heading" data-aos="fade-up" data-aos-duration="600">
             <h2 id="footprint-journeys-title">Recent journeys</h2>
             <a href="{% link pages/archive.html %}?tag=%E6%97%85%E8%A1%8C" class="footprint-all-journeys">
                 All journeys <span aria-hidden="true">→</span>
@@ -311,6 +314,8 @@ required: map markercluster
                 journeys.forEach((journey) => {
                     const card = document.createElement("a")
                     card.className = "footprint-journey-card"
+                    card.dataset.aos = "fade-up"
+                    card.dataset.aosDuration = "600"
                     card.href = journey.link
                     const date = document.createElement("span")
                     date.className = "footprint-journey-date"
@@ -323,6 +328,7 @@ required: map markercluster
                     card.append(date, title, subtitle)
                     journeyCards.append(card)
                 })
+                AOS.refreshHard()
             }
 
             const recentJourneys = [...locSets].sort((a, b) => b.date.localeCompare(a.date))

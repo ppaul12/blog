@@ -11,7 +11,8 @@
     "post": "{{ post.title | format_title | strip_html }}",
     "link": "{{ post.url | relative_url }}",
     "json": "{{ file.path | relative_url }}",
-    "date": "{{ post.date | date:'%s' }}"
+    "date": "{{ post.date | date:'%s' }}",
+    "journey": {% if post.tags contains '旅行' %}true{% else %}false{% endif %}
 }{%- unless forloop.last -%},{%- endunless -%}
 {%- endfor -%}
 ]

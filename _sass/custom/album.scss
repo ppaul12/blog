@@ -9,6 +9,70 @@ body:has(.album-grid) main {
     }
 }
 
+.album-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0 auto 1rem;
+}
+
+.album-count {
+    margin: 0;
+    color: var(--pico-muted-color);
+    font-size: 0.9rem;
+}
+
+.album-count-part {
+    white-space: nowrap;
+}
+
+.album-order-group {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 0.2rem;
+    width: auto;
+    margin: 0;
+    padding: 0.2rem;
+    border: 1px solid var(--pico-muted-border-color);
+    border-radius: var(--pico-border-radius);
+}
+
+.album-order-option {
+    position: relative;
+    display: grid;
+    place-items: center;
+    margin: 0;
+    color: var(--pico-muted-color);
+    cursor: pointer;
+
+    input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+    }
+
+    input:checked + .album-order-icon {
+        color: var(--pico-primary-inverse);
+        background: var(--pico-primary);
+    }
+
+    input:focus-visible + .album-order-icon {
+        outline: 2px solid var(--pico-primary);
+        outline-offset: 2px;
+    }
+}
+
+.album-order-icon {
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    border-radius: calc(var(--pico-border-radius) * 0.7);
+    transition: color 0.15s ease, background-color 0.15s ease;
+}
+
 .album-grid {
     --album-gap: clamp(0.45rem, 1.2vw, 1rem);
     display: flex;
@@ -69,6 +133,12 @@ body:has(.album-grid) main {
 
     &:hover .album-caption,
     &:focus-visible .album-caption {
+        opacity: 1;
+    }
+}
+
+@media (hover: none) {
+    .album-card .album-caption {
         opacity: 1;
     }
 }

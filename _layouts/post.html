@@ -3,7 +3,11 @@ layout: default
 ---
 
 <article style="view-transition-name: post-{{ page.id | slugify }};">
-    <header class="card" {% if page.marked %}ribbon{% endif %}>
+    <header class="card{% if page.cover %} post-hero{% endif %}" {% if page.marked %}ribbon{% endif %}>
+        {%- if page.cover -%}
+        <img class="post-hero-image" src="{{ page.cover | relative_url }}" alt="" fetchpriority="high"
+            {% if page.cover_position %}style="object-position: {{ page.cover_position | escape }};"{% endif %}>
+        {%- endif -%}
         <!-- post tags -->
         <nav aria-label="breadcrumb"><ul>
             {%- for tag in page.tags -%}

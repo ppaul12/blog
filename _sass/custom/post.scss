@@ -6,6 +6,54 @@ article[data-immersive] {
 }
 
 .post {
+    &-hero {
+        isolation: isolate;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: clamp(12rem, 20vw, 16rem);
+        background: #2e3440;
+
+        &-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            pointer-events: none;
+            object-fit: cover;
+            object-position: top;
+            mix-blend-mode: exclusion;
+            z-index: -2;
+        }
+
+        hgroup {
+            margin: 0.5rem 0 0;
+            text-shadow: 0 2px 8px rgb(0 0 0 / 45%);
+        }
+
+        hgroup>*,
+        hgroup em,
+        nav a,
+        nav li,
+        nav li::after {
+            color: #fff;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        nav a:focus-visible {
+            outline: 2px solid #fff;
+            outline-offset: 4px;
+        }
+
+        @media (max-width: 600px) {
+            min-height: 10rem;
+        }
+    }
+
     &-card {
         @include card.card-hover;
         display: flex;

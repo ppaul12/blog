@@ -1,5 +1,5 @@
 ---
-layout: summary
+layout: post/summary
 title: Days in Japan (3)
 subtitle: 纸上得来终觉浅
 span: 2021.04 ~ 2022.03

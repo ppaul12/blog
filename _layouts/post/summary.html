@@ -71,7 +71,7 @@ required: gallery plain-heading
 
 {%- assign summaries = "" | split:"" -%}
 {%- for post in site.posts -%}
-    {%- unless post.layout == "summary" -%}
+    {%- unless post.layout == "post/summary" -%}
         {%- continue -%}
     {%- endunless -%}
     {%- assign post-date = post.date | date:"%Y.%m" -%}

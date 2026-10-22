@@ -1,5 +1,5 @@
 ---
-layout: summary
+layout: post/summary
 title: Days in Japan (7)
 subtitle: 也无风雨也无晴
 span: 2025.04 ~ 2026.03

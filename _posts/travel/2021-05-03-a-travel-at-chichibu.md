@@ -1,19 +1,8 @@
 ---
-layout: post
+layout: post/travel
 title: 秩父赏芝樱之旅
 tags: 旅行
-required: gallery map
 ---
-
-# 路程规划
-
-{% map path="a-travel-at-chichibu" %}
-
-# 沿途风光
-
-{% gallery path="a-travel-at-chichibu" %}
-
-# 小计
 
 - 时间：当日往返，2021/05/03
 - 人数：2人

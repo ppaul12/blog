@@ -1,0 +1,29 @@
+---
+layout: post
+---
+
+<h2>路程规划</h2>
+{% map path=page.slug %}
+
+<h2>沿途风光</h2>
+{% gallery path=page.slug %}
+
+<h2>小记</h2>
+{%- assign info_keys = "time,people,transport,distance,cost" | split: "," -%}
+{%- assign info_labels = "时间,人数,交通方式,里程,费用" | split: "," -%}
+{%- capture travel_info -%}
+    {%- for key in info_keys -%}
+        {%- assign value = page.travel[key] | append: "" | strip -%}
+        {%- unless value == empty -%}
+        <div class="travel-info-card">
+            <dt>{{ info_labels[forloop.index0] }}</dt>
+            <dd>{{ value | escape }}</dd>
+        </div>
+        {%- endunless -%}
+    {%- endfor -%}
+{%- endcapture -%}
+{% unless travel_info == empty %}
+<dl class="travel-info">{{ travel_info }}</dl>
+{% endunless %}
+
+{{ content }}

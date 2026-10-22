@@ -1,20 +1,9 @@
 ---
-layout: post
+layout: post/travel
 title: 新潟之旅
 tags: 旅行
-required: gallery map
 cover: /assets/src/a-travel-at-niigata/pic4.jpeg
 ---
-
-# 路程规划
-
-{% map path="a-travel-at-niigata" %}
-
-# 沿途风光
-
-{% gallery path="a-travel-at-niigata" %}
-
-# 小计
 
 - 时间：当日往返，2022/03/08
 - 人数：2人

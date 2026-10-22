@@ -1,21 +1,10 @@
 ---
-layout: post
+layout: post/travel
 title: 松本之旅
 subtitle: 松本·诹访
 tags: 旅行
-required: gallery map
 cover: /assets/src/a-travel-at-matsumoto/pic1.jpeg
 ---
-
-# 路程规划
-
-{% map path="a-travel-at-matsumoto" %}
-
-# 沿途风光
-
-{% gallery path="a-travel-at-matsumoto" %}
-
-# 小计
 
 - 时间：当日往返，2022/03/06
 - 人数：2人

@@ -1,21 +1,10 @@
 ---
-layout: post
+layout: post/travel
 title: 羽越本线之旅
 subtitle: 羽越本線·酒田
 tags: 旅行
-required: gallery map
 cover: /assets/src/a-travel-at-uetsu/pic4.jpeg
 ---
-
-# 路程规划
-
-{% map path="a-travel-at-uetsu" %}
-
-# 沿途风光
-
-{% gallery path="a-travel-at-uetsu" %}
-
-# 小计
 
 - 时间：当日往返，2022/03/10
 - 人数：1人

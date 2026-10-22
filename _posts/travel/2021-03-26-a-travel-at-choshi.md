@@ -1,20 +1,9 @@
 ---
-layout: post
+layout: post/travel
 title: 铫子之旅
 subtitle: 鹿岛·佐原·铫子
 tags: 旅行
-required: gallery map
 ---
-
-# 路程规划
-
-{% map path="a-travel-at-choshi" %}
-
-# 沿途风光
-
-{% gallery path="a-travel-at-choshi" %}
-
-# 小计
 
 - 时间：当日往返，2021/03/26
 - 人数：2人

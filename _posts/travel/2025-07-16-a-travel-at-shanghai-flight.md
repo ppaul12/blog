@@ -1,21 +1,10 @@
 ---
-layout: post
+layout: post/travel
 title: 上海转机小游
 subtitle: 上海
 tags: 旅行
-required: gallery map
 cover: /assets/src/a-travel-at-shanghai-flight/pic4.jpeg
 ---
-
-# 路程规划
-
-{% map path="a-travel-at-shanghai-flight" %}
-
-# 沿途风光
-
-{% gallery path="a-travel-at-shanghai-flight" %}
-
-# 小记
 
 - 时间：隔夜转机，2025/07/16 ~ 2025/07/17
 - 人数：1人

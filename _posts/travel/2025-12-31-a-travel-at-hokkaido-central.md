@@ -1,21 +1,10 @@
 ---
-layout: post
+layout: post/travel
 title: 北海道 道央 旅行
 subtitle: 札幌·小樽·旭川·美瑛·苫小牧·室蘭·山形
 tags: 旅行 随想
-required: gallery map
 cover: /assets/src/a-travel-at-hokkaido-central/pic14.jpeg
 ---
-
-# 路程规划
-
-{% map path="a-travel-at-hokkaido-central" %}
-
-# 沿途风光
-
-{% gallery path="a-travel-at-hokkaido-central" %}
-
-# 小记
 
 - 时间：2025/12/26 ~ 2025/12/31
 - 人数：1人

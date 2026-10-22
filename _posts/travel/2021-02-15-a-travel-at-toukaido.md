@@ -1,20 +1,9 @@
 ---
-layout: post
+layout: post/travel
 title: 东海道旅行
 subtitle: 小田原·静岡·掛川·浜松·岐阜·長浜·京都·奈良·神戸
 tags: 旅行
-required: gallery map
 ---
-
-# 路程规划
-
-{% map path="a-travel-at-toukaido" %}
-
-# 沿途风光
-
-{% gallery path="a-travel-at-toukaido" %}
-
-# 小计
 
 - 时间
     - 东海道部分：为期两天，2021/02/09 ~ 2021/02/10

@@ -1,24 +1,13 @@
 ---
-layout: post
+layout: post/travel
 title: 伊势之旅
 subtitle: 名古屋·伊勢·二見浦
 tags: 旅行 随想
-required: gallery map
 cover: /assets/src/a-travel-at-ise/pic3.jpeg
 ---
 
-# 路程规划
-
-{% map path="a-travel-at-ise" %}
-
-# 沿途风光
-
-{% gallery path="a-travel-at-ise" %}
-
-# 小记
-
 - 时间：为期两天，2025/03/06 ~ 2025/03/07
-- 人数：一人
+- 人数：1人
 - 形式：电车
 - 费用：约8k日元（不含餐食）
 

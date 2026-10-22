@@ -1,21 +1,10 @@
 ---
-layout: post
+layout: post/travel
 title: 长野之旅
 subtitle: 上田·長野·上越妙高·高田
 tags: 旅行
-required: gallery map
 cover: /assets/src/a-travel-at-nagano/pic4.jpeg
 ---
-
-# 路程规划
-
-{% map path="a-travel-at-nagano" %}
-
-# 沿途风光
-
-{% gallery path="a-travel-at-nagano" %}
-
-# 小计
 
 - 时间：当日往返，2022/03/07
 - 人数：2人

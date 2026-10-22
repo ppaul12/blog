@@ -1,19 +1,8 @@
 ---
-layout: post
+layout: post/travel
 title: 日光·会津旅行
 tags: 旅行
-required: gallery map
 ---
-
-# 路程规划
-
-{% map path="a-travel-at-aizu" %}
-
-# 沿途风光
-
-{% gallery path="a-travel-at-aizu" %}
-
-# 小计
 
 - 时间：为期3天，2019/12/28 ~ 2019/12/30
 - 人数：2人

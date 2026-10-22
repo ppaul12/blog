@@ -1,21 +1,10 @@
 ---
-layout: post
+layout: post/travel
 title: 再访新加坡旅行
 subtitle: 新加坡
 tags: 旅行
-required: gallery map
 cover: /assets/src/a-travel-at-singapore-again/pic6.jpeg
 ---
-
-# 路程规划
-
-{% map path="a-travel-at-singapore-again" %}
-
-# 沿途风光
-
-{% gallery path="a-travel-at-singapore-again" %}
-
-# 小记
 
 - 时间：2026/03/17 ~ 2026/03/22
 - 人数：随研究室同行

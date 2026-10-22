@@ -1,21 +1,10 @@
 ---
-layout: post
+layout: post/travel
 title: 苏州上海旅行
 subtitle: 南京·江阴·苏州·上海
 tags: 旅行
-required: gallery map
 cover: /assets/src/a-travel-at-shanghai/pic12.jpeg
 ---
-
-# 路程规划
-
-{% map path="a-travel-at-shanghai" %}
-
-# 沿途风光
-
-{% gallery path="a-travel-at-shanghai" %}
-
-# 小记
 
 - 时间：为期五天，2024/09/18 ~ 2024/09/22
 - 人数：2人

@@ -1,24 +1,13 @@
 ---
-layout: post
+layout: post/travel
 title: 再访京阪神旅行
 subtitle: 神戸·有馬·京都·大阪
 tags: 旅行
-required: gallery map
 cover: /assets/src/a-travel-at-keihanshin/pic5.jpeg
 ---
 
-# 路程规划
-
-{% map path="a-travel-at-keihanshin" %}
-
-# 沿途风光
-
-{% gallery path="a-travel-at-keihanshin" %}
-
-# 小记
-
 - 时间：为期四天，2025/02/05 ~ 2025/02/09
-- 人数：一人
+- 人数：1人
 - 形式：电车
 - 费用：借住朋友家闲游，小于1w日元（不含餐食）
 

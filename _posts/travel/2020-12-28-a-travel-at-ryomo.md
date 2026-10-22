@@ -1,20 +1,9 @@
 ---
-layout: post
+layout: post/travel
 title: 两毛地区旅行
 subtitle: 館林·足利·高崎·前橋
 tags: 旅行
-required: gallery map
 ---
-
-# 路程规划
-
-{% map path="a-travel-at-ryomo" %}
-
-# 沿途风光
-
-{% gallery path="a-travel-at-ryomo" %}
-
-# 小计
 
 - 时间：为期三天，2020/12/26 ~ 2021/12/28
 - 人数：1人

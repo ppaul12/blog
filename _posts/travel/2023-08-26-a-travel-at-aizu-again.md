@@ -1,21 +1,10 @@
 ---
-layout: post
+layout: post/travel
 title: 再访会津旅行
 subtitle: 会津若松·喜多方·郡山·高萩
 tags: 旅行
-required: gallery map
 cover: /assets/src/a-travel-at-aizu-again/pic5.jpeg
 ---
-
-# 路程规划
-
-{% map path="a-travel-at-aizu-again" %}
-
-# 沿途风光
-
-{% gallery path="a-travel-at-aizu-again" %}
-
-# 小计
 
 - 时间：为期2天，2023/08/25 ~ 2023/08/26
 - 人数：1人

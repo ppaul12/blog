@@ -1,21 +1,10 @@
 ---
-layout: post
+layout: post/travel
 title: 山形之旅
 subtitle: 米泽·山形·仙台
 tags: 旅行
-required: gallery map
 cover: /assets/src/a-travel-at-yamagata/pic1.jpeg
 ---
-
-# 路程规划
-
-{% map path="a-travel-at-yamagata" %}
-
-# 沿途风光
-
-{% gallery path="a-travel-at-yamagata" %}
-
-# 小计
 
 - 时间：当日往返，2023/08/24
 - 人数：1人

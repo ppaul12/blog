@@ -1,24 +1,13 @@
 ---
-layout: post
+layout: post/travel
 title: 和歌山旅行
 subtitle: 和歌山·白浜·串本·那智·新宮·京都·宇治
 tags: 旅行
-required: gallery map
 cover: /assets/src/a-travel-at-wakayama/pic2.jpeg
 ---
 
-# 路程规划
-
-{% map path="a-travel-at-wakayama" %}
-
-# 沿途风光
-
-{% gallery path="a-travel-at-wakayama" %}
-
-# 小记
-
 - 时间：为期七天，2025/02/09 ~ 2025/02/15
-- 人数：三人
+- 人数：与父母3人
 - 形式：自驾+电车
 - 费用：人均9w日元（含餐食及单程新干线等）
 

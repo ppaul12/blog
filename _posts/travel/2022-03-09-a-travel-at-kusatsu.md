@@ -1,21 +1,10 @@
 ---
-layout: post
+layout: post/travel
 title: 草津温泉之旅
 subtitle: 草津温泉·高崎
 tags: 旅行
-required: gallery map
 cover: /assets/src/a-travel-at-kusatsu/pic1.jpeg
 ---
-
-# 路程规划
-
-{% map path="a-travel-at-kusatsu" %}
-
-# 沿途风光
-
-{% gallery path="a-travel-at-kusatsu" %}
-
-# 小计
 
 - 时间：当日往返，2022/03/09
 - 人数：2人

@@ -1,21 +1,10 @@
 ---
-layout: post
+layout: post/travel
 title: 新加坡旅行
 subtitle: 新加坡
 tags: 旅行 随想
-required: gallery map
 cover: /assets/src/a-travel-at-singapore/pic3.jpeg
 ---
-
-# 路程规划
-
-{% map path="a-travel-at-singapore" %}
-
-# 沿途风光
-
-{% gallery path="a-travel-at-singapore" %}
-
-# 小记
 
 - 时间：2025/09/06 ~ 2025/09/09（实际游玩时间为中间的两整天）
 - 人数：1人

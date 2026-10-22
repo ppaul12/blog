@@ -1,21 +1,10 @@
 ---
-layout: post
+layout: post/travel
 title: 东京夏日小游
 subtitle: 江東区·港区·渋谷区
 tags: 旅行
-required: gallery map
 cover: /assets/src/a-travel-at-tokyo-summer/pic2.jpeg
 ---
-
-# 路程规划
-
-{% map path="a-travel-at-tokyo-summer" %}
-
-# 沿途风光
-
-{% gallery path="a-travel-at-tokyo-summer" %}
-
-# 小记
 
 东京过了梅雨，便是夏日，日子愈加闷热。近来状态一般，全然提不起劲头，睡眠也一路滑坡。于是约上朋友，在东京都内随意转转。在一个城市生活了七年后，早已没有了所谓逛景点的新鲜感。每次相约出行就像在收割完毕的田里找寻遗落的谷粒，与其说要找到足够的谷粒够一次食用，不如说就是借着找谷粒的由头去田里走上两圈。
 

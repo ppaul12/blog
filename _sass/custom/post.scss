@@ -6,29 +6,52 @@ article[data-immersive] {
 }
 
 .travel-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 7rem), 1fr));
+    container: travel-info / inline-size;
+    display: flex;
+    flex-wrap: wrap;
     gap: 0.75rem;
     margin: 0 0 1.5rem;
 
     &-card {
-        min-width: 0;
+        position: relative;
+        flex: 1 1 auto;
+        width: max-content;
+        min-width: min(7rem, 100%);
+        max-width: 100%;
         padding: 0.65rem 0.8rem;
         border: 1px solid color-mix(in srgb, var(--pico-muted-border-color) 45%, transparent);
         border-radius: calc(var(--pico-border-radius) * 0.65);
         background: color-mix(in srgb, var(--pico-card-sectioning-background-color) 35%, transparent);
         color: color-mix(in srgb, var(--pico-color) 65%, var(--pico-background-color));
         overflow-wrap: anywhere;
-        transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+        transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease,
+            transform 0.2s ease, box-shadow 0.2s ease;
 
-        &:hover {
+        &:hover,
+        &:focus-visible,
+        &:focus-within {
+            z-index: 2;
             color: var(--pico-color);
-            border-color: color-mix(in srgb, var(--pico-muted-border-color) 70%, transparent);
-            background-color: color-mix(in srgb, var(--pico-card-sectioning-background-color) 50%, transparent);
+            border-color: color-mix(in srgb, var(--pico-muted-border-color) 55%, transparent);
+            background-color: color-mix(in srgb, var(--pico-primary) 8%, var(--pico-card-background-color));
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px color-mix(in srgb, var(--pico-primary) 15%, transparent);
         }
 
-        @media (prefers-reduced-motion: reduce) {
-            transition: none;
+        &:focus-visible {
+            outline: 1px solid var(--pico-muted-color);
+            outline-offset: 2px;
+        }
+
+        &[data-tooltip] {
+            border-bottom-style: solid;
+            border-bottom-color: color-mix(in srgb, var(--pico-muted-border-color) 45%, transparent);
+            cursor: default;
+
+            &:hover,
+            &:focus-visible {
+                border-bottom-color: color-mix(in srgb, var(--pico-muted-border-color) 55%, transparent);
+            }
         }
     }
 
@@ -46,12 +69,10 @@ article[data-immersive] {
         line-height: 1.6;
     }
 
-    @media (max-width: 600px) {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.6rem;
-
+    @container travel-info (min-width: 38rem) {
         &-card {
-            padding: 0.6rem 0.7rem;
+            flex: 1 1 0;
+            min-width: 0;
         }
     }
 }

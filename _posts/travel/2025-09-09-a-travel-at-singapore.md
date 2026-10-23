@@ -4,12 +4,18 @@ title: 新加坡旅行
 subtitle: 新加坡
 tags: 旅行 随想
 cover: /assets/src/a-travel-at-singapore/pic3.jpeg
+travel:
+    time:
+        text: "09/06 ~ 09/09"
+        note: "实际游玩时间为中间的两整天"
+    people:
+        text: "1人"
+    transport:
+        text: "步行+地铁"
+    cost:
+        text: "约6w日元"
+        note: "其中75%为机票"
 ---
-
-- 时间：2025/09/06 ~ 2025/09/09（实际游玩时间为中间的两整天）
-- 人数：1人
-- 形式：步行+地铁
-- 费用：约6w日元（其中75%为机票）
 
 旅行归来已时日良久，随后忙于学校的事情，才得以整理。
 

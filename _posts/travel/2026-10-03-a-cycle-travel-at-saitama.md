@@ -5,10 +5,18 @@ subtitle: 北区·户田·埼玉·墨田区
 tags: 旅行 轮行
 cover: /assets/src/a-cycle-travel-at-saitama/pic1.jpeg
 travel:
-    people: "1人"
-    transport: "电车+自行车"
-    distance: "约30余km"
-    cost: "550日元(不含餐饮)"
+    time:
+        text: "当日往返"
+    people:
+        text: "1人"
+    transport:
+        text: "电车+自行车"
+    distance:
+        text: "30+km"
+        note: "骑行距离"
+    cost:
+        text: "550日元"
+        note: "不含餐食"
 ---
 
 东京洋洋洒洒下了三十多天雨，自从国内回到日本后便鲜有晴天。阴沉的天，人的斗志也低了下来，于是脑子中的乱七八糟的想法便开始攻城略地。2019年10月来到日本之后我一直都在骑小轮的折叠车，尤其是来到东京后这辆20寸的折叠车就一直伴我左右。上面贴满了每一年的大学的停车许可，好似这辆车才是我在东京大学生活了七年的见证。

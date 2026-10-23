@@ -6,7 +6,7 @@ tags: 旅行
 cover: /assets/src/a-travel-at-enoshima/pic2.jpeg
 ---
 
-- 时间：当日往返，2023/11/02
+- 时间：当日往返
 - 人数：2人
 - 形式：电车
 - 费用：不计，意义非凡故

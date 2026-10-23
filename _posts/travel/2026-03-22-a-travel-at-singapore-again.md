@@ -4,10 +4,12 @@ title: 再访新加坡旅行
 subtitle: 新加坡
 tags: 旅行
 cover: /assets/src/a-travel-at-singapore-again/pic6.jpeg
+travel:
+    time:
+        text: "03/17 ~ 03/22"
+    people:
+        text: "随研究室同行"
 ---
-
-- 时间：2026/03/17 ~ 2026/03/22
-- 人数：随研究室同行
 
 没想到短短半年之内我又一次来到了新加坡。不同于[上次]({% post_url travel/2025-09-09-a-travel-at-singapore %})是独自旅行，这次是借着研究室访学而来。原本只放了些照片在[Days in Japan (7)]({% post_url collection/2025-04-01-days-in-japan-7 %})中，后续翻相册时发现仍然还有许多值得留下的内容，索性便单开了一个post。但去日已多，当时的所思所想也已经忘了大半，遂留下几句只言片语罢：
 1. 新加坡的早餐仍然令人怀念。

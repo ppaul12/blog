@@ -5,10 +5,18 @@ subtitle: 三浦·城ヶ島
 tags: 旅行 轮行
 cover: /assets/src/a-cycle-travel-at-miura/pic9.jpeg
 travel:
-    people: "1人"
-    transport: "电车+自行车"
-    distance: "约24余km"
-    cost: "约2k日元(不含餐饮)"
+    time:
+        text: "当日往返"
+    people:
+        text: "1人"
+    cost:
+        text: "约2k日元"
+        note: "不含餐食"
+    transport:
+        text: "电车+自行车"
+    distance:
+        text: "24+km"
+        note: "骑行距离"
 ---
 
 又是一个周末，又是一个好天气，再次出门“轮行”。计划时本有两个计划，但与ChatGPT交涉后得知本周末是新月，极其适合观星，于是便踏上了去往三浦半岛的旅程。不同于[上次]({% post_url travel/2026-10-03-a-cycle-travel-at-saitama %})多为平路，这次的途中上下起伏更多，更具挑战性：小轮车天然在稳定性上有所不同，对地面的颠簸、高速时的抖动都十分敏感，骑行时的技巧也与一般的山地车、公路车有所不同。

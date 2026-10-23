@@ -9,15 +9,17 @@ layout: post
 {% gallery path=page.slug %}
 
 <h2>小记</h2>
-{%- assign info_keys = "time,people,transport,distance,cost" | split: "," -%}
-{%- assign info_labels = "时间,人数,交通方式,里程,费用" | split: "," -%}
+{%- assign info_keys = "time,people,cost,transport,distance" | split: "," -%}
+{%- assign info_labels = "时间,人数,费用,交通方式,里程" | split: "," -%}
 {%- capture travel_info -%}
     {%- for key in info_keys -%}
-        {%- assign value = page.travel[key] | append: "" | strip -%}
-        {%- unless value == empty -%}
-        <div class="travel-info-card">
+        {%- assign item = page.travel[key] -%}
+        {%- assign text = item.text | append: "" | strip -%}
+        {%- assign note = item.note | append: "" | strip -%}
+        {%- unless text == empty -%}
+        <div class="travel-info-card"{% unless note == empty %} tabindex="0" data-tooltip="{{ note | escape }}"{% endunless %}>
             <dt>{{ info_labels[forloop.index0] }}</dt>
-            <dd>{{ value | escape }}</dd>
+            <dd>{{ text | escape }}</dd>
         </div>
         {%- endunless -%}
     {%- endfor -%}

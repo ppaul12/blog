@@ -26,11 +26,32 @@ const initGallery = (id, data, { openOnInit = true, inline = true, closable = !i
         }),
         mode: "lg-zoom-in-out",
         closable,
+        // Use explicit navigation instead of gestures, including on touch devices.
+        enableDrag: false,
+        enableSwipe: false,
+        keyPress: false,
+        hideBarsDelay: 0,
+        mobileSettings: {
+            controls: true,
+            showCloseIcon: closable,
+            download: false,
+            showGestureButtons: false
+        },
         thumbnail: data.length < 50,
+        thumbWidth: inline ? 88 : 100,
+        thumbHeight: "var(--gallery-thumb-height)",
         slideShowAutoPlay: false,
         showMaximizeIcon
     })
     if (openOnInit) gallery.openGallery()
+    element.addEventListener("gallery:show-photo", ({ detail }) => {
+        if (!Number.isInteger(detail?.index) || detail.index < 0 || detail.index >= data.length) return
+        gallery.slide(detail.index)
+        element.scrollIntoView({
+            behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+            block: "start",
+        })
+    })
     // insert exif info
     element.addEventListener("lgAfterSlide", () => {
         const image = document.querySelector(".lg-container.lg-show .lg-current img")

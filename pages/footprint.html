@@ -63,8 +63,15 @@ required: map markercluster
                 All journeys <span aria-hidden="true">→</span>
             </a>
         </div>
-        <div id="footprint-journey-cards" class="footprint-journey-cards" aria-live="polite">
-            <p class="footprint-loading">Loading journeys…</p>
+        <div id="footprint-journey-cards" class="footprint-journey-cards">
+            {% assign recent_journeys = site.posts | where: "layout", "post/travel" | sort: "date" | reverse %}
+            {% for journey in recent_journeys limit: 3 %}
+            <a class="footprint-journey-card" href="{{ journey.url | relative_url }}">
+                <span class="footprint-journey-date">{{ journey.date | date: "%Y.%m" }}</span>
+                <strong>{{ journey.title | default: "Untitled journey" | strip_html | escape }}</strong>
+                <span class="footprint-journey-subtitle">{{ journey.subtitle | default: "Open journey" | escape }}</span>
+            </a>
+            {% endfor %}
         </div>
     </section>
 </div>
@@ -72,7 +79,6 @@ required: map markercluster
 <script>
     (async () => {
         const dateSelect = document.getElementById("footprint-date")
-        const journeyCards = document.getElementById("footprint-journey-cards")
 
         try {
             const [locSets, spots] = await Promise.all([
@@ -113,7 +119,7 @@ required: map markercluster
                     pos,
                     records: [{
                         date: locSet.date,
-                        year: locSet.year,
+                        year: locSet.date.slice(0, 4),
                         title: locSet.title,
                         subtitle: locSet.subtitle,
                         url: locSet.link,
@@ -306,44 +312,12 @@ required: map markercluster
                 position: "bottomleft",
             }).addTo(map)
 
-            const renderJourneys = (journeys) => {
-                journeyCards.replaceChildren()
-                journeys.forEach((journey) => {
-                    const card = document.createElement("a")
-                    card.className = "footprint-journey-card"
-                    card.href = journey.link
-                    const date = document.createElement("span")
-                    date.className = "footprint-journey-date"
-                    date.textContent = `${journey.year}.${journey.date.split("/")[1]}`
-                    const title = document.createElement("strong")
-                    title.textContent = journey.title || "Untitled journey"
-                    const subtitle = document.createElement("span")
-                    subtitle.className = "footprint-journey-subtitle"
-                    subtitle.textContent = journey.subtitle || "Open journey"
-                    card.append(date, title, subtitle)
-                    journeyCards.append(card)
-                })
-            }
-
-            const recentJourneys = [...locSets].sort((a, b) => b.date.localeCompare(a.date))
-            const getJourneyLimit = () => window.matchMedia("(max-width: 600px)").matches
-                ? 1
-                : window.matchMedia("(max-width: 900px)").matches ? 2 : 3
-            let journeyLimit = getJourneyLimit()
-            renderJourneys(recentJourneys.slice(0, journeyLimit))
-
             window.addEventListener("resize", () => {
                 map.invalidateSize()
-                const nextLimit = getJourneyLimit()
-                if (nextLimit !== journeyLimit) {
-                    journeyLimit = nextLimit
-                    renderJourneys(recentJourneys.slice(0, journeyLimit))
-                }
             })
         } catch (error) {
             console.error("Failed to load footprint data:", error)
             document.getElementById("footprint-place-count").textContent = "—"
-            journeyCards.textContent = "Journey data could not be loaded."
         }
     })()
 </script>

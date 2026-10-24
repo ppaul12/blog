@@ -2,16 +2,23 @@
 ---
 
 [
-{%- assign files = site.static_files | where_exp:"file", "file.name contains 'map.json'" | compact -%}
-{%- for file in files -%}
-    {%- assign post =  site.posts | find_exp:"post", "post.content contains file.path" -%}
+{%- assign posts = site.posts | where: "layout", "post/travel" -%}
+{%- assign journeys = "" | split: "," -%}
+{%- for post in posts -%}
+    {%- assign map_path = "/assets/src/" | append: post.slug | append: "/map.json" -%}
+    {%- assign file = site.static_files | where: "path", map_path | first -%}
+    {%- if file -%}
+        {%- assign journeys = journeys | push: post -%}
+    {%- endif -%}
+{%- endfor -%}
+{%- for post in journeys -%}
+    {%- assign map_path = "/assets/src/" | append: post.slug | append: "/map.json" -%}
 {
     "date": "{{ post.date | date:'%Y/%m' }}",
-    "year": "{{ post.date | date:'%Y' }}",
     "title": {{ post.title | strip_html | jsonify }},
     "subtitle": {{ post.subtitle | jsonify }},
     "link": "{{ post.url | relative_url }}",
-    "json": "{{ file.path | relative_url }}"
+    "json": "{{ map_path | relative_url }}"
 }{%- unless forloop.last -%},{%- endunless -%}
 {%- endfor -%}
 ]

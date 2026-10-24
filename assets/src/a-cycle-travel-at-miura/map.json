@@ -7,5 +7,10 @@
     },
     "path": [
         ["三浦海岸駅", "宮川公園", "城ヶ島公園", "三崎口駅"]
+    ],
+    "track": [
+        "/assets/src/a-cycle-travel-at-miura/track/Cycling_2026-10-10_14-59-40_km.gpx",
+        "/assets/src/a-cycle-travel-at-miura/track/Cycling_2026-10-10_16-52-54_km.gpx",
+        "/assets/src/a-cycle-travel-at-miura/track/Cycling_2026-10-10_19-29-26_km.gpx"
     ]
 }

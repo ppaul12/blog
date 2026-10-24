@@ -3,7 +3,7 @@ layout: post/travel
 title: 三浦轮行小游
 subtitle: 三浦·城ヶ島
 tags: 旅行 轮行
-cover: /assets/src/a-cycle-travel-at-miura/pic9.jpeg
+cover: /assets/src/a-cycle-travel-at-miura/pic/pic9.jpeg
 travel:
     time:
         text: "当日往返"

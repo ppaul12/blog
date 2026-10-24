@@ -404,13 +404,6 @@ main:has(.footprint-dashboard) {
     font-size: 0.78rem;
 }
 
-.footprint-loading {
-    grid-column: 1 / -1;
-    margin: 0;
-    padding: 1rem;
-    color: var(--pico-muted-color);
-}
-
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -430,6 +423,10 @@ main:has(.footprint-dashboard) {
 
     .footprint-journey-cards {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footprint-journey-card:nth-child(n + 3) {
+        display: none;
     }
 
     .footprint-explorer {
@@ -492,6 +489,10 @@ main:has(.footprint-dashboard) {
 
     .footprint-journey-card {
         min-height: 7.5rem;
+
+        &:nth-child(n + 2) {
+            display: none;
+        }
     }
 
     .footprint-all-journeys {

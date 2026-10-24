@@ -3,7 +3,7 @@ layout: post/travel
 title: 埼玉轮行小游
 subtitle: 北区·户田·埼玉·墨田区
 tags: 旅行 轮行
-cover: /assets/src/a-cycle-travel-at-saitama/pic1.jpeg
+cover: /assets/src/a-cycle-travel-at-saitama/pic/pic1.jpeg
 travel:
     time:
         text: "当日往返"

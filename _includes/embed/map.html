@@ -1,2 +1,15 @@
 <div id="{{ include.id | default:'map' }}"></div>
-<script>(async () => initMap("{{ include.id | default:'map' }}", await asyncLoadJSON("{% link assets/src/{{ include.path }}/map.json %}")))()</script>
+<script>
+(async () => {
+    const mapId = {{ include.id | default: 'map' | jsonify }}
+    try {
+        const mapData = await asyncLoadJSON("{% link assets/src/{{ include.path }}/map.json %}")
+        await initMap(mapId, mapData, {{ site.baseurl | default: '' | jsonify }})
+    } catch (error) {
+        console.warn("Unable to load map data", error)
+        const container = document.getElementById(mapId)
+        container.textContent = "Unable to load map."
+        container.setAttribute("role", "alert")
+    }
+})()
+</script>

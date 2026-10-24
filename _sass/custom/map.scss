@@ -197,9 +197,12 @@
         &-minimap {
             width: 10em !important;
             height: 12rem !important;
+            // Preserve dimensions so Leaflet can initialize the hidden map correctly.
+            visibility: hidden;
 
-            @media (max-width: 420px) {
-                display: none;
+            .leaflet-pseudo-fullscreen &,
+            .leaflet-container:fullscreen & {
+                visibility: visible;
             }
         }
     }

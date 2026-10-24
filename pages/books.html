@@ -5,30 +5,68 @@ subtitle: nourish the mind ...
 permalink: /books
 ---
 
-{%- assign booksets = site.data.books -%}
-{%- for bookset in booksets -%}{%- unless bookset.books.size > 0 -%}{%- continue -%}{%- endunless -%}
-<section
-    {% if bookset.books.size > 1 %}class="book-shelf" onclick="toggleShelf(event)"{% endif %}
-    {%- if forloop.index <= 2 -%}active{%- endif -%}>
-    <h4 class="book-shelf-info" data-count="{{ bookset.books.size }}" data-aos="fade">{{ bookset.year }}</h4>
-    {%- assign books = bookset.books | sort:"date" -%}
-    {%- for book in books -%}
-    <article class="book-card" {% if bookset.year == "Reading" %}ribbon{% endif %}>
-        <div class="book-img">
-            <a href="{{ book.link }}">
-                <img class="cover" alt="{{ book.title }}"
-                    data-src="{% link assets/img/covers/{{ book.title }}.jpg %}" data-aos="zoom-in">
-            </a>
-        </div>
-        <hgroup class="book-info" data-aos="fade">
-            <h3>{{ book.title }}</h3>
-            <h4>{{ book.subtitle }}</h4>
-            <h4>{{ book.author }}</h4>
-            <h4><em>{{ bookset.year }}{%- if book.date -%}.{{ book.date }}{%- endif -%}</em></h4>
-        </hgroup>
-    </article>
-    {%- endfor -%}
-</section>
-{%- endfor -%}
+<div class="books-page">
+    <nav class="books-navigation" aria-label="Reading years" hidden>
+        <select id="books-year" aria-label="Jump to year">
+            <option value="">Jump to…</option>
+            {% for bookset in site.data.books %}
+            {% if bookset.books.size > 0 %}
+            <option value="{{ bookset.year | downcase }}">{{ bookset.year }} ({{ bookset.books.size }})</option>
+            {% endif %}
+            {% endfor %}
+        </select>
+    </nav>
+
+    {% assign latest_year_opened = false %}
+    {% for bookset in site.data.books %}
+    {% unless bookset.books.size > 0 %}{% continue %}{% endunless %}
+    {% assign shelf_id = bookset.year | downcase %}
+    {% assign books = bookset.books %}
+    {% assign dated_books = books | where_exp: 'book', 'book.date' %}
+    {% if dated_books.size > 0 %}{% assign books = books | sort: 'date' | reverse %}{% endif %}
+
+    {% if bookset.year == 'Reading' %}
+    <section class="book-current" id="{{ shelf_id }}" aria-labelledby="books-reading-heading">
+        <h3 id="books-reading-heading">Reading <span aria-label="{{ books.size | pluralize: 'book' }}">({{ books.size }})</span></h3>
+    {% else %}
+    <details class="book-shelf" id="{{ shelf_id }}" {% unless latest_year_opened %}open{% endunless %}>
+        <summary>
+            <span class="book-year">{{ bookset.year }}</span>
+            <span class="book-count" aria-label="{{ books.size | pluralize: 'book' }}">({{ books.size }})</span>
+            <span class="book-shelf-action"><span class="book-chevron" aria-hidden="true">⌄</span></span>
+            <span class="book-preview">{% for book in books limit: 3 %}{{ book.title }}{% unless forloop.last %} · {% endunless %}{% endfor %}{% if books.size > 3 %} …{% endif %}</span>
+        </summary>
+        {% assign latest_year_opened = true %}
+    {% endif %}
+
+        <ul class="book-list">
+            {% for book in books %}
+            <li class="book-card">
+                <div class="book-img">
+                    {% if book.link %}<a href="{{ book.link }}" aria-label="Book information: {{ book.title | escape }}">{% endif %}
+                        <img class="cover" alt="Cover: {{ book.title | escape }}" src="{% link assets/img/covers/{{ book.title }}.jpg %}" width="60" height="80" loading="lazy" decoding="async">
+                    {% if book.link %}</a>{% endif %}
+                </div>
+                <div class="book-info">
+                    <h4>{% if book.link %}<a href="{{ book.link }}">{{ book.title }}<span class="book-external" aria-hidden="true"> ↗</span></a>{% else %}{{ book.title }}{% endif %}</h4>
+                    {% if book.subtitle %}<p class="book-subtitle">{{ book.subtitle }}</p>{% endif %}
+                    {% if book.author %}<p class="book-author">{{ book.author }}</p>{% endif %}
+                    {% if book.note %}
+                        {% assign related_post = site.posts | where: 'path', book.note | first %}
+                        {% if related_post %}
+                        <a class="book-note" href="{{ related_post.url | relative_url }}" aria-label="Notes: {{ related_post.title | strip_html | escape }}" title="{{ related_post.title | strip_html | escape }}">Notes <span aria-hidden="true">→</span></a>
+                        {% endif %}
+                    {% endif %}
+                </div>
+                {% unless bookset.year == 'Reading' %}
+                <time class="book-date" datetime="{{ bookset.year }}{% if book.date %}-{{ book.date | replace: '.', '-' }}{% endif %}" aria-label="Finished {{ bookset.year }}{% if book.date %}-{{ book.date | replace: '.', '-' }}{% endif %}"><span class="book-finished">Finished </span>{% if book.date %}{{ book.date | replace: '.', '/' }}{% else %}{{ bookset.year }}{% endif %}</time>
+                {% endunless %}
+            </li>
+            {% endfor %}
+        </ul>
+
+    {% if bookset.year == 'Reading' %}</section>{% else %}</details>{% endif %}
+    {% endfor %}
+</div>
 
 <script src="{% link assets/js/books.js %}"></script>

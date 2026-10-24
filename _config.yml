@@ -1,6 +1,6 @@
 header: LA VITA
 tagline: tra viaggi e pensieri
-author: PPaul
+author: ppaul
 
 plugins:
   - jekyll-seo-tag

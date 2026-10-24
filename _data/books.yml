@@ -3,6 +3,9 @@
     - title: 坛经释义
       link: https://book.douban.com/subject/25719394/
       # date: "01.16"
+    - title: Il Piccolo Principe
+      author: Antoine de Saint-Exupéry
+      link: https://www.feltrinellieditore.it/opera/il-piccolo-principe/
 
 - year: 2026
   books:
@@ -60,6 +63,7 @@
       author: 泰戈尔
       link: https://book.douban.com/subject/4703525/
       date: "05.24"
+      note: _posts/thought/2024-05-24-fireflies-excerpts.md
 
     - title: 美丽新世界
       author: 阿道司·赫胥黎
@@ -70,6 +74,7 @@
       author: 晏几道
       link: https://book.douban.com/subject/30206758/
       date: "07.10"
+      note: _posts/thought/2024-07-10-xiaoshan-ci-excerpts.md
 
     - title: 亲密关系
       author: 罗兰·米勒
@@ -87,11 +92,13 @@
       author: 冰心
       link: https://book.douban.com/subject/26835043/
       date: "01.01"
+      note: _posts/thought/2023-01-01-bingxin-poem-excerpts.md
 
     - title: 飞鸟集
       author: 泰戈尔,郑振铎
       link: https://book.douban.com/subject/4243288/
       date: "01.19"
+      note: _posts/thought/2022-11-30-stray-birds-excerpts.md
 
     - title: 汪国真诗精编
       author: 汪国真
@@ -114,6 +121,7 @@
       author: 叶嘉莹
       link: https://book.douban.com/subject/35888698/
       date: "05.14"
+      note: _posts/thought/2023-05-14-qinguan-ci-excerpts.md
 
     - title: 新月集
       author: 泰戈尔,郑振铎
@@ -172,6 +180,7 @@
     - title: 诗经
       link: https://book.douban.com/subject/30136325/
       date: "11.08"
+      note: _posts/collection/2022-11-10-shijing.md
 
     - title: 诗经讲义稿
       author: 傅斯年
@@ -208,6 +217,7 @@
       author: 鸠摩罗什
       link: https://book.douban.com/subject/4843456/
       date: "08.03"
+      note: _posts/thought/2022-03-13-jingangjing.md
 
     - title: 天龙八部
       author: 金庸

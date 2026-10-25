@@ -6,36 +6,33 @@
     (() => {
         const parseDailyPhotoFilename = (src) => {
             const match = src.split("/").pop().match(/^(\d{4})(\d{2})(\d{2})-([1-9]\d*)\.[^.]+$/)
-            if (!match) return null
+            if (!match) throw new Error(`Invalid daily photo filename: ${src}`)
             const [, year, month, day, number] = match
             const sequence = Number(number)
             const date = new Date(Date.UTC(Number(year), Number(month) - 1, Number(day)))
             if (date.getUTCFullYear() !== Number(year) || date.getUTCMonth() + 1 !== Number(month)
-                || date.getUTCDate() !== Number(day) || !Number.isSafeInteger(sequence)) return null
+                || date.getUTCDate() !== Number(day) || !Number.isSafeInteger(sequence)) {
+                throw new Error(`Invalid daily photo date or sequence: ${src}`)
+            }
             return { date: `${year}-${month}-${day}`, sequence }
         }
 
         const collectSummaryPhotos = (sources, start, end) => {
             const photos = sources.flatMap((source, sourceIndex) => source.items.map((item, photoIndex) => {
-                const filename = item.src.split("/").pop()
-                const filenameMonth = filename.match(/^(\d{4}-(?:0[1-9]|1[0-2]))-/)?.[1]
-                const photo = source.link ? null : parseDailyPhotoFilename(item.src)
-                const month = source.link ? source.date.slice(0, 7)
-                    : (photo?.date.slice(0, 7) || filenameMonth || source.date.slice(0, 7))
+                const { date, sequence } = source.link
+                    ? { date: source.date, sequence: photoIndex }
+                    : parseDailyPhotoFilename(item.src)
                 return {
                     ...item,
-                    month,
-                    // Missing dates retain month precision and their original relative order.
-                    orderDate: source.link ? `${source.date}T00:00:00`
-                        : (photo ? `${photo.date}T00:00:00` : `${month}-00`),
+                    month: date.slice(0, 7),
+                    orderDate: `${date}T00:00:00`,
                     sourceIndex,
-                    photoSequence: photo?.sequence ?? photoIndex,
-                    photoIndex,
+                    photoSequence: sequence,
                     journey: source.link ? source : null,
                 }
             })).filter((item) => start <= item.month && item.month <= end)
             photos.sort((a, b) => a.orderDate.localeCompare(b.orderDate)
-                || a.sourceIndex - b.sourceIndex || a.photoSequence - b.photoSequence || a.photoIndex - b.photoIndex)
+                || a.sourceIndex - b.sourceIndex || a.photoSequence - b.photoSequence)
 
             const seen = new Set()
             return photos.filter(({ src }) => {

@@ -2,18 +2,33 @@
 @use "../colors";
 
 // Share the native Leaflet layers panel and its input styling.
-.leaflet-control-layers-list .map-segments {
+.leaflet-control-layers-list .map-control-group {
     min-width: 0;
-    margin: 0.35rem 0 0;
-    padding: 0.35rem 0 0;
+    margin: 0;
+    padding: 0;
     border: 0;
-    border-top: 1px solid #ddd;
+
+    & + .map-control-group {
+        margin-top: 0.35rem;
+        padding-top: 0.35rem;
+        border-top: 1px solid #ddd;
+    }
+
+    legend {
+        float: left;
+        width: 100%;
+        margin: 0 0 0.2rem;
+        padding: 0;
+        color: inherit;
+        font-size: inherit;
+        font-weight: 700;
+    }
 
     label {
         display: block;
     }
 
-    input[type=radio] {
+    input {
         background: transparent;
         border: initial;
         box-shadow: none;
@@ -23,6 +38,10 @@
             outline: 2px solid colors.$nord10;
             outline-offset: 1px;
         }
+    }
+
+    &.map-tracks input {
+        accent-color: var(--map-track-color);
     }
 }
 

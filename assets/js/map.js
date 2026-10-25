@@ -9,10 +9,9 @@ const createMapLocationMarker = (name, coordinates, options = {}) => {
         .bindPopup(popup, { closeButton: false })
 }
 
-const loadMapTracks = async (trackURLs = [], baseURL = "") => {
+const loadMapTracks = async (trackURLs = [], baseURL = "", color = "#d65a31") => {
     // Keep files and GPX track segments separate, including gaps between recordings.
-    const trackColors = ["#d65a31", "#315fb5", "#8661ae", "#328060"]
-    const trackLayers = await Promise.all(trackURLs.map(async (url, index) => {
+    const trackLayers = await Promise.all(trackURLs.map(async (url) => {
         try {
             const response = await fetch(resolveMapAssetURL(url, baseURL))
             if (!response.ok) throw new Error(`GPX HTTP ${response.status}`)
@@ -24,7 +23,7 @@ const loadMapTracks = async (trackURLs = [], baseURL = "") => {
                 ]).filter(([lat, lng]) => Number.isFinite(lat) && Number.isFinite(lng))
                 if (points.length < 2) return null
                 return L.polyline(points, {
-                    color: trackColors[index % trackColors.length], weight: 4, opacity: 0.85,
+                    color, weight: 4, opacity: 0.85,
                     interactive: false,
                 })
             }).filter(Boolean)
@@ -35,6 +34,37 @@ const loadMapTracks = async (trackURLs = [], baseURL = "") => {
         }
     }))
     return L.featureGroup(trackLayers.filter(Boolean))
+}
+
+const createMapControlGroup = (layersControl, title, className = "") => {
+    const group = L.DomUtil.create("fieldset", `map-control-group ${className}`.trim())
+    const legend = document.createElement("legend")
+    legend.textContent = title
+    group.append(legend)
+    L.DomEvent.disableClickPropagation(group)
+    L.DomEvent.disableScrollPropagation(group)
+    group.addEventListener("keydown", (event) => event.stopPropagation())
+    layersControl.getContainer().querySelector(".leaflet-control-layers-list").append(group)
+    return group
+}
+
+const addMapTrackSelector = (map, layersControl, tracks) => {
+    if (tracks.length === 0) return
+    const selector = createMapControlGroup(layersControl, "Tracks", "map-tracks")
+    tracks.forEach(({ type, layer, color }) => {
+        const label = document.createElement("label")
+        const checkbox = document.createElement("input")
+        checkbox.type = "checkbox"
+        checkbox.checked = map.hasLayer(layer)
+        checkbox.style.setProperty("--map-track-color", color)
+        checkbox.setAttribute("aria-controls", map.getContainer().id)
+        checkbox.addEventListener("change", () => {
+            if (checkbox.checked) layer.addTo(map)
+            else map.removeLayer(layer)
+        })
+        label.append(checkbox, document.createTextNode(` ${type}`))
+        selector.append(label)
+    })
 }
 
 const addMapPhotoLocations = (map, layersControl, galleries, baseURL = "") => {
@@ -159,8 +189,7 @@ const addMapSegmentSelector = (map, layersControl, { locations, segments, marker
     map.on("fullscreenchange", () => {
         if (selectedBounds) map.fitBounds(selectedBounds, { padding: [36, 36], maxZoom: 14 })
     })
-    const selector = L.DomUtil.create("fieldset", "map-segments")
-    selector.setAttribute("aria-label", "path-segments")
+    const selector = createMapControlGroup(layersControl, "Plans", "map-segments")
     const selectSegment = (selected) => {
         map.closePopup()
         markers.clearLayers()
@@ -225,10 +254,6 @@ const addMapSegmentSelector = (map, layersControl, { locations, segments, marker
         label.append(radio, document.createTextNode(` ${text}`))
         selector.append(label)
     })
-    L.DomEvent.disableClickPropagation(selector)
-    L.DomEvent.disableScrollPropagation(selector)
-    selector.addEventListener("keydown", (event) => event.stopPropagation())
-    layersControl.getContainer().querySelector(".leaflet-control-layers-list").append(selector)
 }
 
 // baseURL prefixes root-relative assets referenced in map and gallery data.
@@ -261,17 +286,25 @@ const initMap = async (mapId, mapData, baseURL = "") => {
     const markers = L.layerGroup(Object.entries(locations).map(([name, coordinates]) => {
         return createMapLocationMarker(name, coordinates)
     })).addTo(map)
-    const tracks = await loadMapTracks(mapData.track ?? [], baseURL)
-    const trackBounds = tracks.getBounds()
+    const trackColors = ["#d65a31", "#315fb5", "#8661ae", "#328060"]
+    const tracks = (await Promise.all(Object.entries(mapData.track ?? {}).map(async ([type, urls], index) => {
+        const color = trackColors[index % trackColors.length]
+        const layer = await loadMapTracks(urls, baseURL, color)
+        return { type, layer, color }
+    }))).filter(({ layer }) => layer.getBounds().isValid())
+    const trackBounds = L.featureGroup(tracks.map(({ layer }) => layer)).getBounds()
     const hasTracks = trackBounds.isValid()
-    if (hasTracks) tracks.addTo(map)
+    tracks.forEach(({ layer }) => layer.addTo(map))
     const layersControl = L.control.layers(null, {
         "📍": markers,
-        ...hasTracks && { "🚴": tracks },
     }, { collapsed: false }).addTo(map)
     const galleries = Array.from((article || document).querySelectorAll("[data-gallery-source]"))
         .filter((gallery) => gallery.dataset.gallerySource?.trim())
     addMapPhotoLocations(map, layersControl, galleries, baseURL)
+    // Keep Leaflet's native overlays together; their container survives control updates.
+    const spots = layersControl.getContainer().querySelector(".leaflet-control-layers-overlays")
+    createMapControlGroup(layersControl, "Spots", "map-spots").append(spots)
+    addMapTrackSelector(map, layersControl, tracks)
 
     const bounds = L.latLngBounds(Object.values(locations))
     if (hasTracks) bounds.extend(trackBounds)

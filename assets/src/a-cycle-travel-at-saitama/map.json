@@ -11,9 +11,14 @@
         ["赤羽岩淵", "浮間公園", "彩湖", "浦和"],
         ["鶯谷", "隅田公園"]
     ],
-    "track": [
-        "/assets/src/a-cycle-travel-at-saitama/track/Cycling_2026-10-03_12-58-43_km.gpx",
-        "/assets/src/a-cycle-travel-at-saitama/track/Cycling_2026-10-03_17-10-26_km.gpx",
-        "/assets/src/a-cycle-travel-at-saitama/track/Cycling_2026-10-03_18-27-39_km.gpx"
-    ]
+    "track": {
+        "🚴": [
+            "/assets/src/a-cycle-travel-at-saitama/track/Cycling_2026-10-03_12-58-43_km.gpx",
+            "/assets/src/a-cycle-travel-at-saitama/track/Cycling_2026-10-03_17-10-26_km.gpx",
+            "/assets/src/a-cycle-travel-at-saitama/track/Cycling_2026-10-03_18-27-39_km.gpx"
+        ],
+        "🚃": [
+            "/assets/src/a-cycle-travel-at-saitama/track/Railway-20261003.gpx"
+        ]
+    }
 }

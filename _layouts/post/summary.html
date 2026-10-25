@@ -30,9 +30,6 @@ required: gallery plain-heading
     {%- endif -%}
 {%- endfor -%}
 
-<h3><i class="fa-solid fa-camera-retro fa-fw"></i> Photoing</h3>
-{%- gallery path=page.slug -%}
-
 {%- unless travel.size == 0 -%}
 <h3 data-aos="fade-up"><i class="fa-solid fa-signs-post fa-fw"></i> Traveling</h3>
 <ol class="item-list">
@@ -68,6 +65,9 @@ required: gallery plain-heading
     {%- endfor -%}
 </ol>
 {%- endunless -%}
+
+<h3><i class="fa-solid fa-camera-retro fa-fw"></i> Photoing</h3>
+{%- include embed/summary-gallery.html travel=travel start=start end=end -%}
 
 {%- assign summaries = "" | split:"" -%}
 {%- for post in site.posts -%}

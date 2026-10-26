@@ -1,13 +1,11 @@
 ---
 layout: post
+toc: true
 title: 点云变化检测
 subtitle: "Change detection of urban objects using 3D point clouds: A review"
 tags: 点云 备忘录
 required: math graph
 ---
-
-- toc
-{:toc}
 
 This is a personal memo of this [survey paper](https://www.sciencedirect.com/science/article/pii/S0924271623000163).
 

@@ -1,12 +1,10 @@
 ---
 layout: post
+toc: true
 title: λ计算
 tags: 计算理论 备忘录 程序语言
 required: math code
 ---
-
-- toc
-{:toc}
 
 TL;DR
 

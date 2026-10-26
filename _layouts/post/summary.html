@@ -32,7 +32,7 @@ required: gallery plain-heading
 
 {%- unless travel.size == 0 -%}
 <h3 data-aos="fade-up"><i class="fa-solid fa-signs-post fa-fw"></i> Traveling</h3>
-<ol class="item-list">
+<ol item-list>
     {%- for post in travel -%}
     <li data-aos="fade-up">
         <a href="{{ post.url | relative_url }}">{{ post.title | format_title:false }}</a>
@@ -44,7 +44,7 @@ required: gallery plain-heading
 
 {%- unless thought.size == 0 -%}
 <h3 data-aos="fade-up"><i class="fa-solid fa-book-open-reader fa-fw"></i> Thinking</h3>
-<ol class="item-list">
+<ol item-list>
     {%- for post in thought -%}
     <li data-aos="fade-up">
         <a href="{{ post.url | relative_url }}">{{ post.title | format_title:false }}</a>
@@ -56,7 +56,7 @@ required: gallery plain-heading
 
 {%- unless study.size == 0 -%}
 <h3 data-aos="fade-up"><i class="fa-solid fa-laptop-code fa-fw"></i> Studying</h3>
-<ol class="item-list">
+<ol item-list>
     {%- for post in study -%}
     <li data-aos="fade-up">
         <a href="{{ post.url | relative_url }}">{{ post.title | format_title:false }}</a>
@@ -66,8 +66,232 @@ required: gallery plain-heading
 </ol>
 {%- endunless -%}
 
-<h3><i class="fa-solid fa-camera-retro fa-fw"></i> Photoing</h3>
-{%- include embed/summary-gallery.html travel=travel start=start end=end -%}
+<h3 data-aos="fade-up"><i class="fa-solid fa-camera-retro fa-fw"></i> Photoing</h3>
+<div id="summary-photos" class="summary-photos" aria-busy="true">
+    <p class="summary-photo-status" role="status">Loading photos…</p>
+</div>
+<noscript><p>Enable JavaScript to view photos. Travel journals are listed below.</p></noscript>
+<script>
+    (() => {
+        const parseDailyPhotoFilename = (src) => {
+            const match = src.split("/").pop().match(/^(\d{4})(\d{2})(\d{2})-([1-9]\d*)\.[^.]+$/)
+            if (!match) throw new Error(`Invalid daily photo filename: ${src}`)
+            const [, year, month, day, number] = match
+            const sequence = Number(number)
+            const date = new Date(Date.UTC(Number(year), Number(month) - 1, Number(day)))
+            if (date.getUTCFullYear() !== Number(year) || date.getUTCMonth() + 1 !== Number(month)
+                || date.getUTCDate() !== Number(day) || !Number.isSafeInteger(sequence)) {
+                throw new Error(`Invalid daily photo date or sequence: ${src}`)
+            }
+            return { date: `${year}-${month}-${day}`, sequence }
+        }
+
+        const collectSummaryPhotos = (sources, start, end) => {
+            const photos = sources.flatMap((source, sourceIndex) => source.items.map((item, photoIndex) => {
+                const { date, sequence } = source.link
+                    ? { date: source.date, sequence: photoIndex }
+                    : parseDailyPhotoFilename(item.src)
+                return {
+                    ...item,
+                    month: date.slice(0, 7),
+                    orderDate: `${date}T00:00:00`,
+                    sourceIndex,
+                    photoSequence: sequence,
+                    journey: source.link ? source : null,
+                }
+            })).filter((item) => start <= item.month && item.month <= end)
+            photos.sort((a, b) => a.orderDate.localeCompare(b.orderDate)
+                || a.sourceIndex - b.sourceIndex || a.photoSequence - b.photoSequence)
+
+            const seen = new Set()
+            return photos.filter(({ src }) => {
+                if (seen.has(src)) return false
+                seen.add(src)
+                return true
+            })
+        }
+
+        const initSummaryGallery = async (id, { sources, start, end }, baseURL = "") => {
+            const element = document.getElementById(id)
+            const status = element.querySelector("[role=status]")
+            try {
+                const results = await Promise.allSettled(sources.map(async (source) => ({
+                    ...source,
+                    items: await asyncLoadJSON(source.json),
+                })))
+                const loaded = results.filter((result) => result.status === "fulfilled").map((result) => result.value)
+                const failed = results.filter((result) => result.status === "rejected")
+                failed.forEach((result) => console.warn("Unable to load summary photos", result.reason))
+                if (loaded.length === 0) throw new Error("No photo collections could be loaded.")
+
+                const photos = collectSummaryPhotos(loaded, start, end)
+                status.textContent = failed.length ? "Some photo collections could not be loaded." : ""
+                status.hidden = failed.length === 0
+
+                const counts = new Map()
+                photos.forEach(({ month, journey }) => {
+                    if (!counts.has(month)) counts.set(month, { daily: 0, travel: 0 })
+                    counts.get(month)[journey ? "travel" : "daily"]++
+                })
+                const legend = document.createElement("p")
+                legend.className = "summary-photo-chart-legend"
+                legend.dataset.aos = "fade-up"
+                for (const [type, label] of [["daily", "Daily"], ["travel", "Travel"]]) {
+                    const key = document.createElement("span")
+                    key.className = `summary-photo-chart-key is-${type}`
+                    key.textContent = label
+                    legend.append(key)
+                }
+                const totalCount = document.createElement("span")
+                totalCount.className = "summary-photo-chart-total"
+                totalCount.textContent = `${photos.length} ${photos.length === 1 ? "photo" : "photos"} in total`
+                legend.append(totalCount)
+                const chart = document.createElement("nav")
+                chart.className = "summary-photo-chart"
+                chart.dataset.aos = "fade-up"
+                chart.setAttribute("aria-label", `Monthly photo counts: ${photos.length} photos in total`)
+                const maximum = Math.max(1, ...Array.from(counts.values(), ({ daily, travel }) => daily + travel))
+                let [year, monthNumber] = start.split("-").map(Number)
+                for (let month = start; month <= end;) {
+                    const { daily = 0, travel = 0 } = counts.get(month) || {}
+                    const count = daily + travel
+                    const item = document.createElement(count ? "a" : "span")
+                    item.className = "summary-photo-chart-item"
+                    item.style.setProperty("--summary-month-height", `${count / maximum * 100}%`)
+                    const label = `${month.replace("-", ".")}: ${count} ${count === 1 ? "photo" : "photos"} (${daily} daily, ${travel} travel)`
+                    item.setAttribute("aria-label", label)
+                    item.title = label
+                    if (count) item.href = `#${id}-${month}`
+                    else item.classList.add("is-empty")
+
+                    const total = document.createElement("span")
+                    total.className = "summary-photo-chart-count"
+                    total.textContent = count
+                    const column = document.createElement("span")
+                    column.className = "summary-photo-chart-column"
+                    const bar = document.createElement("span")
+                    bar.className = "summary-photo-chart-bar"
+                    bar.setAttribute("aria-hidden", "true")
+                    for (const [type, amount] of [["daily", daily], ["travel", travel]]) {
+                        const segment = document.createElement("span")
+                        segment.className = `summary-photo-chart-segment is-${type}`
+                        segment.style.height = `${count ? amount / count * 100 : 0}%`
+                        bar.append(segment)
+                    }
+                    column.append(bar)
+                    const monthLabel = document.createElement("span")
+                    monthLabel.className = "summary-photo-chart-month"
+                    monthLabel.textContent = String(monthNumber).padStart(2, "0")
+                    const yearLabel = document.createElement("span")
+                    yearLabel.className = "summary-photo-chart-year"
+                    yearLabel.textContent = month === start || monthNumber === 1 ? year : ""
+                    item.append(total, column, monthLabel, yearLabel)
+                    chart.append(item)
+
+                    if (++monthNumber > 12) { year++; monthNumber = 1 }
+                    month = `${year}-${String(monthNumber).padStart(2, "0")}`
+                }
+                element.append(legend, chart)
+                if (photos.length === 0) return
+
+                // The entire year shares a single lightbox, including across month boundaries.
+                const gallery = initGallery(id, photos, {
+                    openOnInit: false, inline: false, showMaximizeIcon: false,
+                })
+                const fragment = document.createDocumentFragment()
+                let refreshTimer
+                const refreshLayout = () => {
+                    if (typeof AOS === "undefined") return
+                    clearTimeout(refreshTimer)
+                    refreshTimer = setTimeout(() => AOS.refresh(), 200)
+                }
+                let month, grid
+                photos.forEach((item, index) => {
+                    if (item.month !== month) {
+                        month = item.month
+                        const section = document.createElement("section")
+                        section.className = "summary-photo-month"
+                        const heading = document.createElement("h4")
+                        heading.dataset.aos = "fade-up"
+                        heading.id = `${id}-${month}`
+                        heading.tabIndex = -1
+                        const time = document.createElement("time")
+                        time.dateTime = month
+                        time.textContent = month.replace("-", ".")
+                        heading.append(time)
+                        section.setAttribute("aria-labelledby", heading.id)
+                        section.append(heading)
+                        grid = document.createElement("div")
+                        grid.className = "summary-photo-grid"
+                        section.append(grid)
+                        fragment.append(section)
+                    }
+
+                    const caption = item.loc || item.journey?.title || item.month.replace("-", ".")
+                    const card = document.createElement("button")
+                    card.type = "button"
+                    card.className = `summary-photo-card is-${item.journey ? "travel" : "daily"}`
+                    card.dataset.aos = "fade-up"
+                    card.setAttribute("aria-label", `Open photo ${index + 1} of ${photos.length}: ${caption}`)
+                    card.addEventListener("click", () => gallery.openGallery(index))
+                    const image = document.createElement("img")
+                    image.alt = caption
+                    image.loading = "lazy"
+                    image.decoding = "async"
+                    const setRatio = (width, height) => {
+                        const ratio = Number(width) / Number(height)
+                        if (Number.isFinite(ratio) && ratio > 0) {
+                            card.style.setProperty("--summary-photo-ratio", ratio)
+                        }
+                    }
+                    setRatio(item.width, item.height)
+                    image.addEventListener("load", () => {
+                        setRatio(image.naturalWidth, image.naturalHeight)
+                        refreshLayout()
+                    }, { once: true })
+                    image.src = `${baseURL}${item.src}`
+                    const label = document.createElement("span")
+                    label.className = "summary-photo-caption"
+                    label.textContent = caption
+                    card.append(image, label)
+                    grid.append(card)
+                })
+                element.append(fragment)
+                // Adding the grids moves the article lists below them.
+                refreshLayout()
+            } catch (error) {
+                console.warn("Unable to initialize summary gallery", error)
+                status.textContent = "Unable to load photos. Please reload to try again."
+            } finally {
+                element.setAttribute("aria-busy", "false")
+                if (typeof AOS !== "undefined") AOS.refreshHard()
+            }
+        }
+
+        initSummaryGallery("summary-photos", {
+            start: {{ start | replace: '.', '-' | jsonify }},
+            end: {{ end | replace: '.', '-' | jsonify }},
+            sources: [
+                {
+                    json: "{% link assets/src/{{ page.slug }}/pic.json %}",
+                    date: {{ page.date | date: '%Y-%m-%d' | jsonify }}
+                }
+                {%- for post in travel -%}
+                    {%- assign photo_path = '/assets/src/' | append: post.slug | append: '/pic.json' -%}
+                    {%- assign photo_file = site.static_files | where: 'path', photo_path | first -%}
+                    {%- if photo_file -%},
+                {
+                    json: {{ photo_path | relative_url | jsonify }},
+                    date: {{ post.date | date: '%Y-%m-%d' | jsonify }},
+                    title: {{ post.title | format_title: false | strip_html | jsonify | replace: '<', '\u003c' }},
+                    link: {{ post.url | relative_url | jsonify }}
+                }
+                    {%- endif -%}
+                {%- endfor -%}
+            ]
+        }, {{ site.baseurl | default: '' | jsonify }});
+    })()
+</script>
 
 {%- assign summaries = "" | split:"" -%}
 {%- for post in site.posts -%}
@@ -84,7 +308,7 @@ required: gallery plain-heading
 {%- unless summaries == empty -%}
 <hr>
 <h3 data-aos="fade-up"><i class="fa-solid fa-note-sticky fa-fw"></i> More ...</h3>
-<ol class="item-list">
+<ol item-list>
     {%- for post in summaries limit:3 -%}
     <li data-aos="fade-up">
         <a href="{{ post.url | relative_url }}">{{ post.title | format_title:false }}</a>

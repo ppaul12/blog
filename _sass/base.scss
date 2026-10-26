@@ -1,11 +1,14 @@
 // styles of basic elements
 @use "sass:color";
 @use "./colors";
+@use "./utilities" as utils;
 
 :root {
     --pico-font-family: "LXGW WenKai", serif;
     --pico-font-size: 1rem;
     --pico-border-radius: 0.8rem;
+    --page-max-width: 880px;
+    --page-gutter: clamp(16px, calc(2.5vw + 6px), 32px);
 }
 
 @supports (font-family: Ubuntu) {
@@ -26,51 +29,27 @@ html {
 }
 
 body {
-    &>header {
-        margin: auto;
-        padding-top: 2em;
-        padding-bottom: 1em;
-        text-align: center;
-        font-size: 2em;
-        font-family: "Times New Roman", serif;
-
-        animation: zoomIn 1s backwards;
-
-        & * {
-            font-size: inherit;
-            font-family: inherit;
-            font-weight: unset;
-        }
-    }
-
     &>footer {
         text-align: center;
     }
 }
 
-main {
+// Page metadata selects the width once for both content and inner-page navigation.
+body.page-width-wide {
+    --page-max-width: 1120px;
+}
+
+body.page-width-narrow {
+    --page-max-width: 640px;
+}
+
+main,
+.site-header {
+    box-sizing: border-box;
+    width: min(calc(100% - var(--page-gutter) - var(--page-gutter)), var(--page-max-width));
+    min-width: 0;
+    padding: 0;
     margin: 0.5rem auto;
-
-    @media (max-width: 420px) {
-        max-width: 100%;
-        padding: 0 var(--pico-spacing);
-    }
-
-    @media (min-width: 660px) {
-        max-width: 90%;
-    }
-
-    @media (min-width: 800px) {
-        max-width: 80%;
-    }
-
-    @media (min-width: 1200px) {
-        max-width: 60%;
-    }
-
-    @media (min-width: 1600px) {
-        max-width: 45%;
-    }
 }
 
 a {
@@ -208,7 +187,7 @@ figure {
     margin: 0.5rem auto;
     text-align: center;
 
-    @media (max-width: 420px) {
+    @include utils.below(utils.$narrow) {
         min-width: 100%;
     }
 
@@ -223,7 +202,7 @@ figure {
 
     figcaption {
         font-size: 80%;
-        color: grey;
+        color: var(--pico-muted-color);
     }
 }
 

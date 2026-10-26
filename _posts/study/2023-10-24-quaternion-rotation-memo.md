@@ -1,12 +1,10 @@
 ---
 layout: post
+toc: true
 title: 四元数与旋转
 tags: 计算机图形
 required: math
 ---
-
-- toc
-{:toc}
 
 本篇简记四元数与三位旋转的相关内容，其中插值问题待后续展开。
 

@@ -1,6 +1,7 @@
 const bg = document.createElement("div")
 bg.id = "bg"
 bg.style.position = "fixed"
+bg.style.opacity = 0.5
 bg.style.inset = 0
 bg.style.zIndex = -100
 document.body.appendChild(bg)

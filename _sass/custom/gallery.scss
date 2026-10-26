@@ -1,3 +1,5 @@
+@use "../utilities" as utils;
+
 .lg-container {
     // Fullscreen galleries keep their own palette, independent of the page theme.
     --gallery-surface: #171b22;
@@ -86,7 +88,7 @@
         }
     }
 
-    @media (max-width: 600px) {
+    @include utils.below(utils.$compact) {
         &.lg-inline {
             --gallery-thumb-height: 52px;
 

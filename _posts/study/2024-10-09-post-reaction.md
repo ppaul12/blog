@@ -1,5 +1,6 @@
 ---
 layout: post
+toc: true
 title: 静态博客文章reaction
 subtitle: 基于GoatCounter event实现
 tags: 博客搭建
@@ -8,9 +9,6 @@ required: code
 
 > 2024.11.03：本站已将评论系统由[utterances](https://utteranc.es)迁移至[giscus](https://giscus.app)。giscus基于GitHub Discussion构建，支持对于整体的reaction。因此本文内容已不在本站使用，仅供读者参考。
 {: .warn}
-
-- toc
-{:toc}
 
 常见第三方评论系统，如[disqus](https://disqus.com)、[waline](https://waline.js.org)等，都支持对于博客文章的reaction功能。然而秉持着缩减建站所需的账户数量，以及集中博客相关的数据的目的，我尽可能地将博客代码和文章评论都统一在了GitHub上。代码自成一个仓库，文章评论则由[utterances](https://utteranc.es)自动生成于仓库的issue中。但由于是静态博客，GitHub仓库也不提供基础的数据库功能，因此访问量相关的数据就必须依赖第三方的服务保管。曾经使用的是[Google Analytics](https://developers.google.com/analytics)，后转为了更为轻量易用的[GoatCounter](https://www.goatcounter.com)。GoatCounter所提供的基础功能只是简单的浏览统计，引入指定`Javascript`文件，无需额外配置，即可记录访问量。一筹莫展之际，`events`功能却为文章的reaction提供了一丝希望。
 

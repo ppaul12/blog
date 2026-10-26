@@ -1,25 +1,14 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: 'zh' }}" data-theme="dark">
     {%- include head.html -%}
-    <body>
-        {%- include controller.html -%}
-
-        {%- if page.required contains "with-header" -%}
-        <header class="home-brand">
-            <div class="home-brand-lockup">
-                <img class="home-brand-avatar" src="https://github.com/{{ site.thirdparty.github.user }}.png" alt="{{ site.author }}">
-                {%- assign brand_words = site.header | split:" " -%}
-                <h1 class="home-brand-title">{{ brand_words[0] }} <span class="home-brand-accent">{{ brand_words[1] }}</span></h1>
-                <p class="home-brand-tagline">{{ site.tagline }}</p>
-            </div>
-        </header>
-        {%- endif -%}
+    <body{% if page.page_width %} class="page-width-{{ page.page_width | escape }}"{% endif %}>
+        {%- include navigation.html -%}
 
         <main>{{ content }}</main>
 
         {%- unless page.required contains "no-footer" -%}
         <footer>
-            <small>by {{ site.author }} with <i class="fa-solid fa-heart fa-fw faa-pulse faa-slow animated"></i></small><br>
+            <small>by {{ site.data.profiles.author.name }} with <i class="fa-solid fa-heart fa-fw faa-pulse faa-slow animated"></i></small><br>
             <small><i class="fa-regular fa-copyright fa-fw"></i> 2021 - {{ "now" | date:"%Y" }}</small><br>
             <small id="site-view"></small>
         </footer>

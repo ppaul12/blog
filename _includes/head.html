@@ -38,7 +38,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="https://github.com/{{ site.thirdparty.github.user }}.png?size=16">
-    <title>{{ page.title | format_title | strip_html }} | {{ site.author }}</title>
+    <title>{{ page.title | format_title | strip_html }} | {{ site.data.profiles.author.name }}</title>
     {%- seo title=false -%}
 
     <!-- goat counter -->
@@ -52,6 +52,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css/animate.min.css">
     <!-- animation on scroll -->
     <script src="https://cdn.jsdelivr.net/npm/aos@latest/dist/aos.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            AOS.init({offset: 60, duration: 1200})
+        }, {once: true})
+    </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@latest/dist/aos.min.css">
     <!-- font awesome icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css">

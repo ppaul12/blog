@@ -1,12 +1,10 @@
+@use "../utilities" as utils;
+
 html:has(.books-page) {
     scroll-behavior: auto !important;
 }
 
 main:has(.books-page) {
-    width: min(48rem, calc(100% - 2rem));
-    max-width: none;
-    padding: 0;
-
     & > article > header,
     & > article > footer {
         animation: none;
@@ -172,10 +170,13 @@ main:has(.books-page) {
 
     &-preview {
         flex-basis: 100%;
+        min-width: 0;
         color: var(--book-muted-color);
         font-size: 0.8rem;
         line-height: 1.6;
-        overflow-wrap: anywhere;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     &-list {
@@ -221,6 +222,10 @@ main:has(.books-page) {
             margin: 0;
             font-size: 1rem;
             line-height: 1.5;
+
+            a:is(:hover, :focus-visible) .book-external {
+                color: var(--pico-primary);
+            }
         }
 
         p {
@@ -236,6 +241,14 @@ main:has(.books-page) {
             color: var(--pico-primary);
             font-size: 0.75rem;
             line-height: 1.6;
+
+            i {
+                transition: color 150ms ease;
+            }
+
+            &:is(:hover, :focus-visible) i {
+                color: var(--pico-primary-hover);
+            }
         }
     }
 
@@ -243,6 +256,7 @@ main:has(.books-page) {
         font-size: 0.7em;
         color: var(--book-muted-color);
         white-space: nowrap;
+        transition: color 150ms ease;
     }
 
     &-date {
@@ -252,7 +266,22 @@ main:has(.books-page) {
     }
 }
 
-@media (max-width: 600px) {
+@media (prefers-reduced-motion: no-preference) {
+    .book-external,
+    .book-info .book-note i {
+        transition: color 150ms ease, transform 150ms ease;
+    }
+
+    .book-info h4 a:is(:hover, :focus-visible) .book-external {
+        transform: translate(0.12em, -0.12em);
+    }
+
+    .book-note:is(:hover, :focus-visible) i {
+        transform: rotate(-12deg);
+    }
+}
+
+@include utils.below(utils.$compact) {
     .book {
         &-card {
             grid-template-columns: 60px minmax(0, 1fr);
@@ -282,12 +311,5 @@ main:has(.books-page) {
                 align-self: center;
             }
         }
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .books-page a,
-    .book-chevron {
-        transition: none;
     }
 }

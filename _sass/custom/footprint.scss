@@ -1,20 +1,5 @@
 @use "../colors";
-
-main:has(.footprint-dashboard) {
-    max-width: 100%;
-
-    @media (min-width: 660px) {
-        max-width: 90%;
-    }
-
-    @media (min-width: 800px) {
-        max-width: 80%;
-    }
-
-    @media (min-width: 1200px) {
-        max-width: 60%;
-    }
-}
+@use "../utilities" as utils;
 
 .footprint {
     &-dashboard {
@@ -416,7 +401,7 @@ main:has(.footprint-dashboard) {
     border: 0;
 }
 
-@media (max-width: 900px) {
+@include utils.below(utils.$wide) {
     .footprint {
         &-stats {
             grid-template-columns: minmax(0, 1fr);
@@ -449,12 +434,7 @@ main:has(.footprint-dashboard) {
     }
 }
 
-@media (max-width: 600px) {
-    main:has(.footprint-dashboard) {
-        max-width: 100%;
-        padding-inline: 0.6rem;
-    }
-
+@include utils.below(utils.$compact) {
     .footprint {
         &-stats-summary {
             gap: 0.65rem 1rem;

@@ -1,4 +1,5 @@
 @use "./card";
+@use "../utilities" as utils;
 
 article[data-immersive] {
     position: relative;
@@ -78,13 +79,30 @@ article[data-immersive] {
 }
 
 .post {
+    &-toc {
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+
+        > summary {
+            font-weight: bold;
+        }
+
+        &[open] > summary {
+            margin-bottom: 0.75rem;
+        }
+
+        a {
+            overflow-wrap: anywhere;
+        }
+    }
+
     &-hero {
         isolation: isolate;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         min-height: clamp(12rem, 20vw, 16rem);
-        background: #2e3440;
+        background: var(--pico-card-sectioning-background-color);
 
         &-image {
             position: absolute;
@@ -95,13 +113,12 @@ article[data-immersive] {
             pointer-events: none;
             object-fit: cover;
             object-position: top;
-            mix-blend-mode: exclusion;
+            opacity: 0.2;
             z-index: -2;
         }
 
         hgroup {
             margin: 0.5rem 0 0;
-            text-shadow: 0 2px 8px rgb(0 0 0 / 45%);
         }
 
         hgroup>*,
@@ -109,7 +126,7 @@ article[data-immersive] {
         nav a,
         nav li,
         nav li::after {
-            color: #fff;
+            color: var(--pico-color);
         }
 
         nav a {
@@ -118,12 +135,12 @@ article[data-immersive] {
             }
 
             &:focus-visible {
-                outline: 2px solid #fff;
+                outline: 2px solid var(--pico-color);
                 outline-offset: 4px;
             }
         }
 
-        @media (max-width: 600px) {
+        @include utils.below(utils.$compact) {
             min-height: 10rem;
         }
     }
@@ -152,12 +169,12 @@ article[data-immersive] {
         background-position: center;
         border-top-left-radius: var(--pico-border-radius);
 
-        @media (max-width: 420px) {
+        @include utils.below(utils.$compact) {
             width: 100%;
             border-top-right-radius: var(--pico-border-radius);
         }
 
-        @media (min-width: 420px) {
+        @include utils.from(utils.$compact) {
             border-bottom-left-radius: var(--pico-border-radius);
         }
     }
@@ -228,7 +245,7 @@ article[data-immersive] {
 
     &-info {
         text-align: right;
-        color: grey;
+        color: var(--pico-muted-color);
         font-size: 0.8rem;
 
         animation: 1s fadeIn 1s backwards;
@@ -257,8 +274,8 @@ article[data-immersive] {
                 display: block;
                 padding-bottom: 0.5rem;
                 margin-bottom: 0.5rem;
-                color: grey;
-                border-bottom: 1px solid lightgrey;
+                color: var(--pico-muted-color);
+                border-bottom: 1px solid var(--pico-muted-border-color);
                 font-style: italic;
                 font-weight: bold;
                 font-size: 0.8rem;
@@ -267,7 +284,7 @@ article[data-immersive] {
             &[disabled] {
                 border-style: dashed;
 
-                @media (max-width: 420px) {
+                @include utils.below(utils.$narrow) {
                     display: none;
                 }
             }

@@ -1,13 +1,11 @@
 ---
 layout: post
+toc: true
 title: 数据结构的汇编实现 (1)
 subtitle: 列表操作
 tags: 数据结构 Assembly C/C++
 required: code
 ---
-
-- toc
-{:toc}
 
 > 本文汇编代码可参见：
 > - [/asm/lib/mlib.s](https://github.com/{{ site.thirdparty.github.user }}/RV32I-simulator/blob/master/asm/lib/mlib.s)

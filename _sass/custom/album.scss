@@ -1,12 +1,3 @@
-body:has(.album-grid) main {
-    width: min(60vw, 1100px);
-    max-width: none;
-
-    @media (max-width: 600px) {
-        width: 96vw;
-    }
-}
-
 .album {
     &-toolbar {
         display: flex;

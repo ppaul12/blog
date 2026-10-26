@@ -10,6 +10,7 @@
     color: color.adjust(colors.$nord4, $lightness: -60%);
 
     transition: all 0.5s ease;
+    animation: bounceIn 1s calc(900ms + var(--tag-delay, 0ms)) backwards;
 
     &:hover,
     &[active] {
@@ -30,7 +31,6 @@
                 color.adjust(colors.$nord9, $lightness: 20%),
                 $i * 10%
             );
-            animation: bounceIn 1s ($i + 9) * 100ms backwards;
         }
     }
 
@@ -45,7 +45,7 @@
             display: block;
             position: absolute;
             inset: auto 0.5rem 0 auto;
-            color: grey;
+            color: var(--pico-muted-color);
             font-style: italic;
             font-size: 0.8rem;
             content: attr(data-sum);
@@ -72,7 +72,7 @@
         &::after {
             display: block;
             text-align: right;
-            color: grey;
+            color: var(--pico-muted-color);
             font-style: italic;
             font-size: 0.8rem;
             content: attr(data-count);
@@ -88,7 +88,7 @@
 
             &::before {
                 margin-right: 1rem;
-                color: grey;
+                color: var(--pico-muted-color);
                 font-style: italic;
                 font-size: 0.8rem;
                 content: attr(data-date);

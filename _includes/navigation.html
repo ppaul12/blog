@@ -1,0 +1,87 @@
+{%- assign is_home = false -%}
+{%- if page.required contains "with-header" -%}
+    {%- assign is_home = true -%}
+{%- endif -%}
+{%- assign brand_words = site.data.profiles.author.brand-words | split: " " -%}
+{%- capture navigation_items -%}
+<ul class="site-nav-actions">
+    {%- for item in site.data.navigation -%}
+    <li><a class="site-nav-item" href="{{ item.url | relative_url }}" aria-label="{{ item.label }}" title="{{ item.label }}"
+        style="--nav-transition-name: nav-{{ item.id }};"{% if page.url == item.url or item.id == 'home' and is_home %} aria-current="page"{% endif %}>
+        <i class="fa-solid {{ item.icon }} fa-fw" aria-hidden="true"></i><span class="site-nav-label">{{ item.label }}</span>
+    </a></li>
+    {%- endfor -%}
+    <li class="site-nav-theme"><button class="site-nav-item" type="button" onclick="toggleTheme()"
+        aria-label="Toggle color theme" title="Toggle color theme" style="--nav-transition-name: nav-theme;">
+        <i class="fa-solid fa-circle-half-stroke fa-fw" aria-hidden="true"></i><span class="site-nav-label">Theme</span>
+    </button></li>
+</ul>
+{%- endcapture -%}
+
+<header class="site-header{% if is_home %} site-header--home{% endif %}">
+    {%- if is_home -%}
+    <div class="home-brand">
+        <div class="home-brand-lockup">
+            <img class="home-brand-avatar" src="https://github.com/{{ site.thirdparty.github.user }}.png" alt="{{ site.author }}">
+            <h1 class="home-brand-title">{{ brand_words[0] }} <span class="home-brand-accent">{{ brand_words[1] }}</span></h1>
+            <p class="home-brand-tagline">{{ site.data.profiles.author.tag-line }}</p>
+        </div>
+    </div>
+    {%- endif -%}
+    <nav class="site-navigation site-navigation--{% if is_home %}home{% else %}page{% endif %}" id="site-navigation" aria-label="Main navigation">
+        {%- unless is_home -%}
+        <ul class="site-nav-identity"><li>
+            <span class="site-nav-brand home-brand-title">{{ brand_words[0] }} <span class="home-brand-accent">{{ brand_words[1] }}</span></span>
+        </li></ul>
+        {%- endunless -%}
+
+        {{ navigation_items }}
+        {%- unless is_home -%}
+        <details class="site-nav-menu">
+            <summary aria-label="Menu" aria-controls="site-nav-panel">
+                <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+            </summary>
+            <div class="site-nav-panel" id="site-nav-panel">
+                {{ navigation_items }}
+            </div>
+        </details>
+        {%- endunless -%}
+    </nav>
+</header>
+
+<aside class="reading-tools" id="reading-tools" aria-label="Reading tools" aria-hidden="true" inert>
+    <button id="top-btn" class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+        <i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i>
+    </button>
+</aside>
+
+<script>
+    (() => {
+        const readingTools = document.getElementById("reading-tools")
+        const topButton = document.getElementById("top-btn")
+        if (!readingTools || !topButton) return
+
+        const update = () => {
+            const visible = window.scrollY >= window.innerHeight
+            if (!visible && document.activeElement === topButton) topButton.blur()
+            readingTools.toggleAttribute("data-visible", visible)
+            readingTools.inert = !visible
+            readingTools.setAttribute("aria-hidden", String(!visible))
+        }
+
+        let frame
+        window.addEventListener("scroll", () => {
+            if (frame) return
+            frame = requestAnimationFrame(() => {
+                frame = null
+                update()
+            })
+        }, { passive: true })
+        window.addEventListener("resize", update)
+        window.addEventListener("pageshow", update)
+        topButton.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" })
+        })
+        update()
+    })()
+</script>

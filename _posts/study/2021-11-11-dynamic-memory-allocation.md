@@ -1,13 +1,11 @@
 ---
 layout: post
+toc: true
 title: 动态内存分配
 subtitle: 多维数组
 tags: 数据结构 C/C++
 required: code math
 ---
-
-- toc
-{:toc}
 
 # 数组的内存分布
 

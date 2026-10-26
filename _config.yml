@@ -1,7 +1,3 @@
-header: LA VITA
-tagline: tra viaggi e pensieri
-author: ppaul
-
 plugins:
   - jekyll-seo-tag
   - jekyll-paginate

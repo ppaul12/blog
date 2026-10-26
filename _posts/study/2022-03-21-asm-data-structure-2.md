@@ -1,13 +1,11 @@
 ---
 layout: post
+toc: true
 title: 数据结构的汇编实现 (2)
 subtitle: 顺序表
 tags: 数据结构 Assembly C/C++
 required: code math graph
 ---
-
-- toc
-{:toc}
 
 > 本文汇编代码可参见：
 > - [/asm/lib/slist.s](https://github.com/{{ site.thirdparty.github.user }}/RV32I-simulator/blob/master/asm/lib/slist.s)

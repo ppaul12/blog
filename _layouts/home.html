@@ -42,7 +42,7 @@ layout: default
             {%- if post.span -%}
                 {%- assign date = post.span -%}
             {%- endif -%}
-            <small><em>{{ date }}</em></small>
+            <small>{{ date }}</small>
             <h3><a href="{{ post.url | relative_url }}">{{ post.title | format_title }}</a></h3>
             <h4><em>{{ post.subtitle }}</em></h4>
         </hgroup>

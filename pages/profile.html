@@ -1,5 +1,6 @@
 ---
 layout: default
+page_width: narrow
 title: profile
 permalink: /profile
 required: no-footer
@@ -11,7 +12,7 @@ required: no-footer
             <img src="https://github.com/{{ site.thirdparty.github.user }}.png">
             <img src="{% link assets/img/barca.png %}">
         </div>
-        <div class="profile-name">{{ site.author }}</div>
+        <div class="profile-name">{{ site.data.profiles.author.name }}</div>
         <!-- skills -->
         <div class="profile-icons">
             {%- assign skills = site.data.profiles.skills | sort:"info" -%}

@@ -33,7 +33,7 @@ permalink: /books
         <summary>
             <span class="book-year">{{ bookset.year }}</span>
             <span class="book-count" aria-label="{{ books.size | pluralize: 'book' }}">({{ books.size }})</span>
-            <span class="book-shelf-action"><span class="book-chevron" aria-hidden="true">⌄</span></span>
+            <span class="book-shelf-action"><i class="book-chevron fa-solid fa-chevron-down fa-fw" aria-hidden="true"></i></span>
             <span class="book-preview">{% for book in books limit: 3 %}{{ book.title }}{% unless forloop.last %} · {% endunless %}{% endfor %}{% if books.size > 3 %} …{% endif %}</span>
         </summary>
         {% assign latest_year_opened = true %}
@@ -48,13 +48,13 @@ permalink: /books
                     {% if book.link %}</a>{% endif %}
                 </div>
                 <div class="book-info">
-                    <h4>{% if book.link %}<a href="{{ book.link }}">{{ book.title }}<span class="book-external" aria-hidden="true"> ↗</span></a>{% else %}{{ book.title }}{% endif %}</h4>
+                    <h4>{% if book.link %}<a href="{{ book.link }}">{{ book.title }} <i class="book-external fa-solid fa-arrow-up-right-from-square fa-fw" aria-hidden="true"></i></a>{% else %}{{ book.title }}{% endif %}</h4>
                     {% if book.subtitle %}<p class="book-subtitle">{{ book.subtitle }}</p>{% endif %}
                     {% if book.author %}<p class="book-author">{{ book.author }}</p>{% endif %}
                     {% if book.note %}
                         {% assign related_post = site.posts | where: 'path', book.note | first %}
                         {% if related_post %}
-                        <a class="book-note" href="{{ related_post.url | relative_url }}" aria-label="Notes: {{ related_post.title | strip_html | escape }}" title="{{ related_post.title | strip_html | escape }}">Notes <span aria-hidden="true">→</span></a>
+                        <a class="book-note" href="{{ related_post.url | relative_url }}" aria-label="Notes: {{ related_post.title | strip_html | escape }}" title="{{ related_post.title | strip_html | escape }}"><i class="fa-solid fa-pen-clip fa-fw" aria-hidden="true"></i> Notes</a>
                         {% endif %}
                     {% endif %}
                 </div>

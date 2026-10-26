@@ -1,5 +1,6 @@
 @use "sass:color";
 @use "../colors";
+@use "../utilities" as utils;
 
 // Share the native Leaflet layers panel and its input styling.
 .leaflet-control-layers-list .map-control-group {
@@ -167,7 +168,7 @@
 
         animation: fadeIn 3s backwards;
 
-        @media(max-width: 420px) {
+        @include utils.below(utils.$narrow) {
             aspect-ratio: 1;
         }
     }

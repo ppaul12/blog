@@ -1,13 +1,11 @@
 ---
 layout: post
+toc: true
 title: Multi-layer Cache System
 tags: C/C++
 lang: en
 required: code
 ---
-
-- toc
-{:toc}
 
 # Intro
 

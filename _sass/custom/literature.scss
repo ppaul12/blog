@@ -1,3 +1,5 @@
+@use "../utilities" as utils;
+
 .literature {
     margin: 0.5rem auto;
     padding: 1rem;
@@ -12,7 +14,7 @@
         text-align: center;
         min-width: 60%;
 
-        @media (max-width: 420px) {
+        @include utils.below(utils.$narrow) {
             min-width: 100%;
         }
     }
@@ -39,7 +41,7 @@
             content: "\f10e";
         }
 
-        @media (max-width: 420px) {
+        @include utils.below(utils.$narrow) {
             &:not([keep-br]) p br {
                 display: none;
             }

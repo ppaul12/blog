@@ -21,7 +21,7 @@ layout: default
             {%- if page.span -%}
                 {%- assign date = page.span -%}
             {%- endif -%}
-            <small><em>{{ date }}</em></small>
+            <small>{{ date }}</small>
             <h2>{{ page.title | format_title }}</h2>
             <h3><em>{{ page.subtitle }}</em></h3>
         </hgroup>
@@ -55,14 +55,3 @@ layout: default
         {%- include comment.html -%}
     </footer>
 </article>
-
-<script>
-    const toc = document.getElementById("markdown-toc")
-    if (toc !== null) {
-        // copy toc to modal
-        toc.className = "tree-list"
-        document.querySelector("#toc-box article").appendChild(toc)
-        // activate toc button
-        document.getElementById("toc-btn").toggleAttribute("active", true)
-    }
-</script>

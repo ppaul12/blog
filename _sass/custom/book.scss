@@ -36,10 +36,10 @@ main:has(.books-page) {
         }
 
         select {
+            --pico-form-element-spacing-vertical: 0.45rem;
             width: auto;
             min-width: 9rem;
             margin: 0;
-            padding-block: 0.45rem;
             font-size: inherit;
         }
     }

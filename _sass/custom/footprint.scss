@@ -77,16 +77,26 @@
         margin: 0;
 
         select {
+            --pico-border-radius: 0.85rem;
             display: block;
             width: 100%;
             min-height: 2.8rem;
             margin: 0;
             padding-inline: 0.9rem 2rem;
-            border-radius: 0.85rem;
         }
     }
 
     &-reset {
+        --pico-form-element-spacing-vertical: 0;
+        --pico-form-element-spacing-horizontal: 0;
+        --pico-border-width: 1px;
+        --pico-line-height: 1;
+        // Keep the current theme colors through Pico's hover and focus states.
+        --pico-primary-background: #{colors.$nord6};
+        --pico-primary-hover-background: var(--pico-primary-background);
+        --pico-primary-border: var(--pico-muted-border-color);
+        --pico-primary-hover-border: var(--pico-primary-border);
+        --pico-primary-inverse: #{colors.$nord3};
         display: inline-grid;
         width: 2.8rem;
         min-width: 2.8rem;
@@ -94,12 +104,7 @@
         flex: 0 0 2.8rem;
         align-self: center;
         margin: 0;
-        padding: 0;
-        line-height: 1;
         place-items: center;
-        border: 1px solid var(--pico-muted-border-color);
-        background: colors.$nord6;
-        color: colors.$nord3 !important;
         cursor: pointer;
 
         i {
@@ -107,8 +112,7 @@
         }
 
         &:hover {
-            border-color: var(--pico-primary);
-            color: var(--pico-primary);
+            --pico-primary-border: var(--pico-primary);
         }
     }
 
@@ -228,8 +232,8 @@
 }
 
 [data-theme=dark] .footprint-reset {
-    background: colors.$nord2;
-    color: colors.$nord6 !important;
+    --pico-primary-background: #{colors.$nord2};
+    --pico-primary-inverse: #{colors.$nord6};
 }
 
 .footprint {

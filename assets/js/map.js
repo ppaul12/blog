@@ -35,7 +35,7 @@ const addMapMaximizeControl = (map) => {
         callback?.()
     }
     const close = (onClose) => {
-        if (!viewer) return onClose?.()
+        if (!viewer) return
         if (onClose) afterRestore = onClose
         if (viewer.classList.contains("is-closing")) return
         viewer.addEventListener("animationend", (event) => {

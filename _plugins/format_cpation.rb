@@ -1,9 +1,12 @@
+require "cgi"
+
 def format_table_caption(html)
   html.gsub(/<table\s*([^>]*)>(.*?)<\/table>/m) do |text|
     attributes, content = $1, $2
     attributes = attributes.scan(/(\w+)\s*=\s*["']([^"']*)["']/).to_h
+    classes = ((attributes["class"] || "").split + ["striped"]).uniq.join(" ")
     [
-      "<figure><table>#{content}</table>",
+      "<figure><table class=\"#{CGI.escapeHTML(classes)}\">#{content}</table>",
       attributes.key?("caption") ? "<figcaption>#{attributes['caption']}</figcaption>" : "",
       "</figure>"
     ].join(" ")

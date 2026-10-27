@@ -128,11 +128,6 @@ blockquote {
 
 table {
     white-space: nowrap;
-
-    tbody tr:nth-child(odd) th,
-    tbody tr:nth-child(odd) td {
-        background-color: var(--pico-table-row-stripped-background-color);
-    }
 }
 
 figure {

@@ -22,8 +22,7 @@ html {
     transition: background 0.5s ease;
     scroll-behavior: smooth !important;
 
-    &[overlay],
-    &[fullscreen] {
+    &[overlay] {
         overflow: hidden;
     }
 }

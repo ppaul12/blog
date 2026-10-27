@@ -256,8 +256,7 @@
 
 // Reading controls stay out of dialogs and immersive photo/map viewers.
 html[overlay] .reading-tools,
-html[fullscreen] .reading-tools,
-body:has([data-immersive], :fullscreen, .leaflet-pseudo-fullscreen, .lg-container.lg-show:not(.lg-inline)) .reading-tools {
+body:has(:fullscreen, .map-maximized-overlay, .lg-container.lg-show:not(.lg-inline)) .reading-tools {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;

@@ -1,5 +1,37 @@
 @use "../utilities" as utils;
 
+.gallery-maximized-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    overflow: hidden;
+    overscroll-behavior: contain;
+    background: var(--pico-background-color);
+    animation: fadeIn 140ms ease-out both;
+
+    &.is-closing {
+        animation: fadeOut 120ms ease-in both;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        &,
+        &.is-closing {
+            animation-duration: 1ms;
+        }
+    }
+
+    > .lg-container {
+        width: 100%;
+        height: 100%;
+        animation: none;
+
+        .lg-outer,
+        .lg-backdrop {
+            position: absolute;
+        }
+    }
+}
+
 .lg-container {
     // Fullscreen galleries keep their own palette, independent of the page theme.
     --gallery-surface: #171b22;

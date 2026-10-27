@@ -157,6 +157,80 @@
     }
 }
 
+.map-maximize-placeholder {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+}
+
+// Match the body-level lightGallery viewer without altering the document viewport.
+.map-maximized-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    overflow: hidden;
+    overscroll-behavior: contain;
+    background: var(--pico-background-color);
+    animation: map-maximize-in 140ms ease-out both;
+
+    &.is-closing {
+        animation: map-maximize-out 120ms ease-in both;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        &,
+        &.is-closing {
+            animation-duration: 1ms;
+        }
+    }
+
+    > .leaflet-container {
+        position: absolute !important;
+        inset: 0;
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        margin: 0 !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+    }
+}
+
+@keyframes map-maximize-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes map-maximize-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.map-maximize-button {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: #fff;
+    color: #333;
+    font-size: 14px;
+    line-height: 1;
+
+    &:hover {
+        background: #f4f4f4;
+    }
+
+    &:focus-visible {
+        outline: 2px solid #315fb5;
+        outline-offset: -2px;
+    }
+}
+
 .leaflet {
     &-container {
         width: 100%;
@@ -166,17 +240,9 @@
         font-family: var(--pico-font-family);
         z-index: 1;
 
-        animation: fadeIn 3s backwards;
-
         @include utils.below(utils.$narrow) {
             aspect-ratio: 1;
         }
-    }
-
-    &-pseudo-fullscreen {
-        max-height: unset !important;
-        margin: unset !important;
-        z-index: 100 !important;
     }
 
     &-bar a {
@@ -222,8 +288,7 @@
             // Preserve dimensions so Leaflet can initialize the hidden map correctly.
             visibility: hidden;
 
-            .leaflet-pseudo-fullscreen &,
-            .leaflet-container:fullscreen & {
+            .map-maximized-overlay & {
                 visibility: visible;
             }
         }

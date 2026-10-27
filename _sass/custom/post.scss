@@ -1,11 +1,6 @@
 @use "./card";
 @use "../utilities" as utils;
 
-article[data-immersive] {
-    position: relative;
-    z-index: 20;
-}
-
 .travel-info {
     container: travel-info / inline-size;
     display: flex;

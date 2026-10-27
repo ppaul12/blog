@@ -1,16 +1,16 @@
 // styles of customized classes
 
 @use "utilities";
-@use "custom/album.scss";
+@use "custom/photo/album";
 @use "custom/book.scss";
 @use "custom/card.scss";
 @use "custom/footnote.scss";
 @use "custom/footprint.scss";
-@use "custom/gallery.scss";
+@use "custom/photo/lightbox.scss";
+@use "custom/photo/gallery.scss";
 @use "custom/literature.scss";
 @use "custom/map.scss";
 @use "custom/navigation.scss";
 @use "custom/post.scss";
 @use "custom/profile.scss";
-@use "custom/summary.scss";
 @use "custom/tags.scss";

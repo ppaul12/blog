@@ -101,7 +101,7 @@
     <script>mermaid.initialize({startOnLoad: true, theme: "forest", flowchart: {useMaxWidth: false, htmlLabels: true}})</script>
     {%- endif -%}
 
-    {%- if page.required contains "gallery" or page.layout == "post/travel" -%}
+    {%- if page.required contains "gallery" or page.required contains "album" or page.layout == "post/travel" -%}
     <!-- light gallery -->
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@latest/lightgallery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@latest/plugins/zoom/lg-zoom.min.js"></script>
@@ -111,8 +111,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@latest/css/lg-transitions.css">
     <!-- exifr -->
     <script src="https://cdn.jsdelivr.net/npm/exifr@latest/dist/full.umd.min.js"></script>
-    <!-- custom gallery initializer -->
-    <script src="{% link assets/js/gallery.js %}"></script>
+    <!-- shared photo viewer -->
+    <script src="{% link assets/js/photo/lightbox.js %}"></script>
+    {%- if page.required contains "gallery" or page.layout == "post/travel" -%}
+    <script src="{% link assets/js/photo/gallery.js %}"></script>
+    {%- endif -%}
+    {%- if page.required contains "album" -%}
+    <script src="{% link assets/js/photo/album/base.js %}"></script>
+        {%- if page.layout == "post/summary" -%}
+    <script src="{% link assets/js/photo/album/timeline.js %}"></script>
+        {%- else -%}
+    <script src="{% link assets/js/photo/album/collection.js %}"></script>
+        {%- endif -%}
+    {%- endif -%}
     {%- endif -%}
 
     {%- if page.required contains "map" or page.layout == "post/travel" -%}

@@ -1,0 +1,145 @@
+.lg-container {
+    // Fullscreen photo viewers keep their own palette, independent of the page theme.
+    --lightbox-surface: #171b22;
+    --lightbox-text: #e5e9f0;
+    --lightbox-muted: #b8c0cd;
+    --lightbox-accent: #88c0d0;
+    --lightbox-control: rgb(0 0 0 / 25%);
+    --lightbox-control-hover: rgb(255 255 255 / 10%);
+    --lightbox-thumb-border: rgb(229 233 240 / 20%);
+    --lightbox-thumb-height: 80px;
+
+    font-family: var(--pico-font-family) !important;
+    animation: fadeIn 0.25s backwards;
+
+    // Keep the photo clear of captions and thumbnails as their sizes change.
+    .lg-outer {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto minmax(0, 1fr) auto;
+    }
+
+    .lg-toolbar {
+        grid-area: 1 / 1;
+        position: relative;
+    }
+
+    .lg-outer .lg-content {
+        grid-area: 2 / 1;
+        position: relative;
+        min-height: 0;
+        // Override the library's inline offsets, which are measured only on open.
+        inset: 0 !important;
+    }
+
+    .lg-components {
+        grid-area: 3 / 1;
+        position: relative;
+    }
+
+    .lg-backdrop {
+        background-color: var(--lightbox-surface);
+        border-radius: inherit;
+    }
+
+    .lg-toolbar,
+    .lg-sub-html {
+        background: none;
+    }
+
+    .lg-toolbar .lg-icon,
+    .lg-prev,
+    .lg-next {
+        color: var(--lightbox-muted);
+        border-radius: 0.5rem;
+        box-shadow: none;
+        text-shadow: none;
+        transition: color 0.2s ease, background-color 0.2s ease, opacity 0.25s ease,
+            transform 0.25s ease;
+
+        &:hover:not(.disabled),
+        &:focus-visible {
+            color: var(--lightbox-text);
+            background-color: var(--lightbox-control-hover);
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--lightbox-accent);
+            outline-offset: -4px;
+        }
+    }
+
+    .lg-prev,
+    .lg-next {
+        background-color: var(--lightbox-control);
+    }
+
+    .lg-counter,
+    .lg-error-msg {
+        color: var(--lightbox-muted);
+    }
+
+    .lg-counter {
+        font-size: 0.8rem;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .lg-sub-html {
+        color: var(--lightbox-muted);
+        font-size: 0.8rem !important;
+        line-height: 1.5;
+        padding: 0.5rem 1rem;
+        overflow-wrap: anywhere;
+
+        a {
+            color: var(--lightbox-text);
+            text-decoration-color: var(--lightbox-thumb-border);
+            text-underline-offset: 0.2em;
+
+            &:hover {
+                color: var(--lightbox-accent);
+            }
+
+            &:focus-visible {
+                outline: 2px solid var(--lightbox-accent);
+                outline-offset: 2px;
+                border-radius: 2px;
+            }
+        }
+    }
+
+    .lg-outer .lg-thumb-outer {
+        background: transparent;
+    }
+
+    .lg-outer .lg-thumb-item {
+        border: 2px solid transparent;
+        border-radius: 0.35rem;
+        opacity: 0.65;
+        transition: opacity 0.2s ease, border-color 0.2s ease;
+
+        &:hover,
+        &:focus-visible {
+            border-color: var(--lightbox-thumb-border);
+            opacity: 1;
+        }
+
+        &.active {
+            border-color: var(--lightbox-accent);
+            opacity: 1;
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--lightbox-accent);
+            outline-offset: -2px;
+        }
+    }
+
+    .lg-progress-bar {
+        background-color: var(--lightbox-thumb-border);
+
+        .lg-progress {
+            background-color: var(--lightbox-accent);
+        }
+    }
+}

@@ -4,196 +4,30 @@ page_width: wide
 title: album
 subtitle: recall the old memories ...
 permalink: /album
-required: gallery
+required: album
 ---
 
-<nav class="album-toolbar" aria-label="Album navigation">
-    <p id="album-count" class="album-count" aria-live="polite">Loading album…</p>
-    <fieldset class="album-order-group">
-        <legend class="visually-hidden">Photo order</legend>
-        <label class="album-order-option" title="Random order">
-            <input type="radio" name="album-order" value="shuffle" aria-label="Random order">
-            <span class="album-order-icon"><i class="fa-solid fa-shuffle fa-fw" aria-hidden="true"></i></span>
-        </label>
-        <label class="album-order-option" title="Oldest first">
-            <input type="radio" name="album-order" value="ascend" aria-label="Oldest first">
-            <span class="album-order-icon"><i class="fa-solid fa-arrow-down-1-9 fa-fw" aria-hidden="true"></i></span>
-        </label>
-        <label class="album-order-option" title="Newest first">
-            <input type="radio" name="album-order" value="descend" aria-label="Newest first">
-            <span class="album-order-icon"><i class="fa-solid fa-arrow-up-1-9 fa-fw" aria-hidden="true"></i></span>
-        </label>
-    </fieldset>
-</nav>
-<div id="album" class="album-grid" aria-live="polite" aria-busy="true"></div>
+<div class="collection-album">
+    <nav class="collection-album-toolbar" aria-label="Album navigation">
+        <p id="collection-album-count" class="collection-album-count" aria-live="polite">Loading album…</p>
+        <fieldset class="collection-album-order-group">
+            <legend class="visually-hidden">Photo order</legend>
+            <label class="collection-album-order-option" title="Random order">
+                <input type="radio" name="collection-album-order" value="shuffle" aria-label="Random order">
+                <span class="collection-album-order-icon"><i class="fa-solid fa-shuffle fa-fw" aria-hidden="true"></i></span>
+            </label>
+            <label class="collection-album-order-option" title="Oldest first">
+                <input type="radio" name="collection-album-order" value="ascend" aria-label="Oldest first">
+                <span class="collection-album-order-icon"><i class="fa-solid fa-arrow-down-1-9 fa-fw" aria-hidden="true"></i></span>
+            </label>
+            <label class="collection-album-order-option" title="Newest first">
+                <input type="radio" name="collection-album-order" value="descend" aria-label="Newest first">
+                <span class="collection-album-order-icon"><i class="fa-solid fa-arrow-up-1-9 fa-fw" aria-hidden="true"></i></span>
+            </label>
+        </fieldset>
+    </nav>
+    <div id="collection-album" class="album-grid" aria-live="polite" aria-busy="true"></div>
+</div>
 <script>
-    (async () => {
-        const album = document.getElementById("album")
-        const albumCount = document.getElementById("album-count")
-        const orderInputs = [...document.querySelectorAll('input[name="album-order"]')]
-        const url = new URL(window.location)
-        const currentOrder = ["shuffle", "ascend", "descend"].includes(url.searchParams.get("order")) ? url.searchParams.get("order") : "shuffle"
-        orderInputs.forEach((input) => {
-            input.checked = input.value === currentOrder
-            input.addEventListener("change", () => {
-                if (!input.checked) return
-                url.searchParams.set("order", input.value)
-                window.location.assign(url)
-            })
-        })
-
-        const imageSets = await asyncLoadJSON("{% link assets/json/album.json %}")
-        const images = (await Promise.all(imageSets.map(async (imageSet) => {
-            const entries = await asyncLoadJSON(imageSet.json)
-            return entries.map((entry) => ({ ...entry, loc: imageSet.post, date: imageSet.date, link: imageSet.link }))
-        }))).flat()
-        const journeyCount = imageSets.filter((imageSet) => imageSet.journey).length
-        const photoCount = document.createElement("span")
-        photoCount.className = "album-count-part"
-        photoCount.textContent = `${images.length} photos`
-        const journeyTotal = document.createElement("span")
-        journeyTotal.className = "album-count-part"
-        journeyTotal.textContent = ` ${journeyCount} journeys`
-        albumCount.replaceChildren(photoCount, document.createElement("wbr"), journeyTotal)
-
-        switch (currentOrder) {
-            case "ascend": images.sort((a, b) => a.date - b.date); break
-            case "descend": images.sort((a, b) => b.date - a.date); break
-            case "shuffle":
-            default:
-                for (let i = images.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1))
-                    const image = images[i]
-                    images[i] = images[j]
-                    images[j] = image
-                }
-        }
-
-        const gallery = initGallery("album", images, { openOnInit: false, inline: false, showMaximizeIcon: false })
-        const cards = []
-        images.forEach((item, index) => {
-            const card = document.createElement("button")
-            card.type = "button"
-            card.className = "album-card"
-            card.dataset.aos = "fade-up"
-            card.dataset.aosDuration = "600"
-            card.setAttribute("aria-label", `Open photo: ${item.loc}`)
-            card.addEventListener("click", () => gallery.openGallery(index))
-
-            const image = document.createElement("img")
-            image.alt = item.loc || "Album photo"
-            image.loading = "lazy"
-            image.decoding = "async"
-            const ratio = Number(item.width) / Number(item.height)
-            card.dataset.ratio = Number.isFinite(ratio) && ratio > 0 ? ratio : "1.3333"
-            image.addEventListener("load", () => {
-                if (image.naturalWidth && image.naturalHeight) {
-                    card.dataset.ratio = image.naturalWidth / image.naturalHeight
-                    scheduleLayout()
-                }
-            }, { once: true })
-            image.src = `{{ site.baseurl }}${item.src}`
-            card.append(image)
-
-            const caption = document.createElement("span")
-            caption.className = "album-caption"
-            caption.textContent = item.loc || ""
-            card.append(caption)
-            cards.push(card)
-        })
-
-        let layoutFrame
-        let aosRefreshTimer
-        let aosReady = false
-        let lastLayoutWidth = 0
-        // Share the SCSS threshold, while measuring the album container itself.
-        const compactWidth = parseFloat(getComputedStyle(album).getPropertyValue("--breakpoint-compact"))
-        const getRatio = (card) => Number(card.dataset.ratio) || 1.3333
-        const scheduleAOSRefresh = () => {
-            if (!aosReady || typeof AOS === "undefined") return
-            clearTimeout(aosRefreshTimer)
-            aosRefreshTimer = setTimeout(() => AOS.refresh(), 200)
-        }
-        const getLayoutMetrics = (width) => {
-            const isNarrow = width < compactWidth
-            const targetHeight = isNarrow
-                ? Math.min(260, width / 2.4)
-                : Math.min(280, width / 4.5)
-
-            return {
-                gap: parseFloat(getComputedStyle(album).rowGap) || 8,
-                targetHeight,
-                minHeight: isNarrow ? targetHeight * 0.88 : Math.min(140, targetHeight * 0.72),
-            }
-        }
-        const applyRowLayout = (items, index, rowCount, width, gap, targetHeight) => {
-            const ratioTotal = items.reduce((sum, item) => sum + item.ratio, 0)
-            const fittedHeight = (width - gap * (items.length - 1)) / ratioTotal
-            const height = index === rowCount - 1 ? Math.min(targetHeight, fittedHeight) : fittedHeight
-
-            items.forEach(({ card, ratio }) => {
-                card.style.width = `${ratio * height}px`
-                card.style.height = `${height}px`
-            })
-        }
-        const layout = () => {
-            const width = album.clientWidth
-            if (!width) return
-
-            const { gap, targetHeight, minHeight } = getLayoutMetrics(width)
-            if (album.firstElementChild && width === lastLayoutWidth) {
-                const rows = [...album.children]
-                rows.forEach((rowElement, index) => {
-                    const items = [...rowElement.children].map((card) => ({ card, ratio: getRatio(card) }))
-                    applyRowLayout(items, index, rows.length, width, gap, targetHeight)
-                })
-                scheduleAOSRefresh()
-                return
-            }
-
-            lastLayoutWidth = width
-            const rows = []
-            let row = []
-            let ratioTotal = 0
-
-            cards.forEach((card) => {
-                const ratio = getRatio(card)
-                const candidateCount = row.length + 1
-                const candidateRatioTotal = ratioTotal + ratio
-                const candidateHeight = (width - gap * (candidateCount - 1)) / candidateRatioTotal
-                if (row.length && candidateHeight < minHeight) {
-                    rows.push(row)
-                    row = []
-                    ratioTotal = 0
-                }
-                row.push({ card, ratio })
-                ratioTotal += ratio
-            })
-            if (row.length) rows.push(row)
-
-            const rowsFragment = document.createDocumentFragment()
-            rows.forEach((items, index) => {
-                const rowElement = document.createElement("div")
-                rowElement.className = "album-row"
-                applyRowLayout(items, index, rows.length, width, gap, targetHeight)
-                items.forEach(({ card }) => rowElement.append(card))
-                rowsFragment.append(rowElement)
-            })
-            album.replaceChildren(rowsFragment)
-            scheduleAOSRefresh()
-        }
-        const scheduleLayout = () => {
-            cancelAnimationFrame(layoutFrame)
-            layoutFrame = requestAnimationFrame(layout)
-        }
-
-        const resizeObserver = new ResizeObserver(scheduleLayout)
-        resizeObserver.observe(album)
-        layout()
-        if (typeof AOS !== "undefined") {
-            AOS.refreshHard()
-            aosReady = true
-        }
-        album.setAttribute("aria-busy", "false")
-    })()
+    initCollectionAlbum("collection-album", "{% link assets/json/album.json %}", {{ site.baseurl | default: '' | jsonify }})
 </script>

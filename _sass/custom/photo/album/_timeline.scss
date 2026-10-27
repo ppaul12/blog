@@ -1,0 +1,174 @@
+@use "../../../colors";
+
+.timeline-album {
+    --album-gap: clamp(0.45rem, 1.2vw, 0.8rem);
+    --album-row-height: clamp(7rem, 12vw, 10rem);
+    --timeline-album-daily-color: #{colors.$nord13};
+    --timeline-album-travel-color: #{colors.$nord14};
+    margin-bottom: 2rem;
+
+    &-chart {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(0, 1fr);
+        gap: clamp(0.15rem, 0.8vw, 0.6rem);
+        padding: 0.25rem 0;
+        margin: 0 0 1rem;
+
+        &-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem 1rem;
+            margin: 0;
+            color: var(--pico-muted-color);
+            font-size: 0.7rem;
+        }
+
+        &-key {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+
+            &::before {
+                content: "";
+                width: 0.55rem;
+                height: 0.55rem;
+                border-radius: 0.1rem;
+                background: var(--timeline-album-daily-color);
+            }
+
+            &.is-travel::before {
+                background: var(--timeline-album-travel-color);
+            }
+        }
+
+        &-total {
+            margin-inline-start: auto;
+            font-variant-numeric: tabular-nums;
+            white-space: nowrap;
+        }
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0.25rem;
+            min-width: 0;
+            margin: 0;
+            padding: 0.35rem 0;
+            border-radius: 0.35rem;
+            color: var(--pico-muted-color);
+            font-variant-numeric: tabular-nums;
+            text-align: center;
+            text-decoration: none;
+            transition: color 0.15s ease, background-color 0.15s ease;
+
+            &:hover,
+            &:focus-visible {
+                color: var(--pico-primary);
+                background: color-mix(in srgb, var(--pico-primary) 9%, transparent);
+
+                .timeline-album-chart-count {
+                    opacity: 1;
+                }
+
+                .timeline-album-chart-bar {
+                    filter: brightness(1.15);
+                }
+            }
+
+            &:focus-visible {
+                outline: 2px solid var(--pico-primary);
+                outline-offset: 2px;
+            }
+
+            &.is-empty .timeline-album-chart-bar {
+                height: 2px;
+                background: var(--pico-muted-border-color);
+            }
+        }
+
+        &-count {
+            opacity: 0;
+            font-size: 0.75rem;
+            line-height: 1.25;
+            transition: opacity 0.15s ease;
+
+            @media (hover: none) {
+                opacity: 1;
+            }
+        }
+
+        &-column {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 4rem;
+            border-bottom: 1px solid var(--pico-muted-border-color);
+        }
+
+        &-bar {
+            display: flex;
+            flex-direction: column-reverse;
+            width: 65%;
+            height: var(--timeline-album-month-height);
+            overflow: hidden;
+            border-radius: 0.25rem 0.25rem 0 0;
+            transition: filter 0.15s ease;
+        }
+
+        &-segment {
+            display: block;
+            flex-shrink: 0;
+            background: var(--timeline-album-daily-color);
+
+            &.is-travel {
+                background: var(--timeline-album-travel-color);
+            }
+        }
+
+        &-month {
+            font-size: 0.75rem;
+            line-height: 1.5;
+        }
+
+        &-year {
+            min-height: 1em;
+            font-size: 0.6rem;
+            line-height: 1;
+            align-self: center;
+            white-space: nowrap;
+            word-break: normal;
+            overflow-wrap: normal;
+        }
+    }
+
+    &-month {
+        margin: 1.75rem 0 0;
+
+        h4 {
+            scroll-margin-top: 1rem;
+            margin: 0 0 0.8rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--pico-muted-border-color);
+            font-variant-numeric: tabular-nums;
+        }
+    }
+}
+
+.timeline-album .album-card {
+    --album-outline-color: var(--timeline-album-daily-color);
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    // Keep AOS's fade/move transitions and let it control duration and easing.
+    transition-property: opacity, transform, outline-color;
+
+    &.is-travel {
+        --album-outline-color: var(--timeline-album-travel-color);
+    }
+
+    &:hover,
+    &:focus-visible {
+        outline-color: var(--album-outline-color);
+    }
+}

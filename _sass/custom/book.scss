@@ -119,11 +119,8 @@ main:has(.books-page) {
             margin: 0;
             padding: 0.7rem 1rem;
             color: var(--pico-color);
-            list-style: none;
-
-            &::-webkit-details-marker {
-                display: none;
-            }
+            // Pico hides native markers; retain the existing list positioning.
+            list-style-position: outside;
 
             &::after {
                 display: none;

@@ -5,26 +5,16 @@
 
 :root {
     --pico-font-family: "LXGW WenKai", serif;
-    --pico-font-size: 1rem;
+    --pico-font-size: 1.05rem;
     --pico-border-radius: 0.8rem;
     --page-max-width: 880px;
     --page-gutter: clamp(16px, calc(2.5vw + 6px), 32px);
-}
-
-@supports (font-family: Ubuntu) {
-    :root {
-        --pico-font-size: 1.05rem;
-        letter-spacing: 0.02em;
-    }
+    letter-spacing: 0.02em;
 }
 
 html {
     transition: background 0.5s ease;
     scroll-behavior: smooth !important;
-
-    &[overlay] {
-        overflow: hidden;
-    }
 }
 
 body {
@@ -62,42 +52,6 @@ math {
 mjx-container {
     overflow-y: hidden;
     min-width: auto !important;
-}
-
-dialog {
-    &[open] {
-        animation: fadeIn 0.5s backwards;
-    }
-
-    &[close] {
-        animation: fadeOut 0.3s backwards;
-    }
-
-    article {
-        width: auto;
-        max-height: 80vh;
-
-        header {
-            position: sticky;
-            top: calc(var(--pico-block-spacing-vertical) * -1);
-            z-index: 1;
-        }
-    }
-
-    .close-btn {
-        text-align: right;
-
-        transition: opacity 0.5s ease;
-
-        &::before {
-            font: var(--fa-font-solid);
-            content: "\f00d";
-        }
-
-        &:hover {
-            opacity: 0.6;
-        }
-    }
 }
 
 pre {

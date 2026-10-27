@@ -254,8 +254,7 @@
     box-shadow: 0 3px 10px var(--site-shadow-color);
 }
 
-// Reading controls stay out of dialogs and immersive photo/map viewers.
-html[overlay] .reading-tools,
+// Reading controls stay out of immersive photo/map viewers.
 body:has(:fullscreen, .map-maximized-overlay, .lg-container.lg-show:not(.lg-inline)) .reading-tools {
     opacity: 0;
     visibility: hidden;

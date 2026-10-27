@@ -16,18 +16,38 @@ $nord13: #ebcb8b;
 $nord14: #a3be8c;
 $nord15: #b48ead;
 
-// Light scheme
+// Shared theme mappings; keep the same specificity as the scheme overrides.
 [data-theme=light],
-:root:not([data-theme=dark]) {
-    --pico-background-color: #{$nord6};
-    --pico-color: #{$nord0};
-
+:root:not([data-theme=dark]),
+[data-theme=dark] {
     --pico-h1-color: var(--pico-color);
     --pico-h2-color: var(--pico-color);
     --pico-h3-color: var(--pico-color);
     --pico-h4-color: var(--pico-color);
     --pico-h5-color: var(--pico-color);
     --pico-h6-color: var(--pico-color);
+
+    --pico-primary-inverse: var(--pico-background-color);
+
+    --pico-contrast-inverse: var(--pico-background-color);
+
+    --pico-mark-background-color: #{$nord13};
+    --pico-mark-color: var(--pico-color);
+    --pico-ins-color: #{$nord14};
+    --pico-del-color: #{$nord11};
+
+    --pico-card-background-color: var(--pico-background-color);
+    --pico-card-border-color: var(--pico-muted-border-color);
+
+    --pico-tooltip-background-color: var(--pico-contrast);
+    --pico-tooltip-color: var(--pico-contrast-inverse);
+}
+
+// Light scheme
+[data-theme=light],
+:root:not([data-theme=dark]) {
+    --pico-background-color: #{$nord6};
+    --pico-color: #{$nord0};
 
     --pico-muted-color: #{$nord3};
     --pico-muted-border-color: #{$nord4};
@@ -37,36 +57,17 @@ $nord15: #b48ead;
     --pico-primary: #{$nord10};
     --pico-primary-hover: #{$nord9};
     --pico-primary-focus: #{$nord9};
-    --pico-primary-inverse: var(--pico-background-color);
 
     --pico-contrast-background: #{$nord2};
     --pico-contrast-hover-background: #{$nord1};
-    --pico-contrast-inverse: var(--pico-background-color);
 
-    --pico-mark-background-color: #{$nord13};
-    --pico-mark-color: var(--pico-color);
-    --pico-ins-color: #{$nord14};
-    --pico-del-color: #{$nord11};
-
-    --pico-card-background-color: var(--pico-background-color);
-    --pico-card-border-color: var(--pico-muted-border-color);
     --pico-card-sectioning-background-color: #{$nord5};
-
-    --pico-tooltip-background-color: var(--pico-contrast);
-    --pico-tooltip-color: var(--pico-contrast-inverse);
 }
 
 // Dark scheme
 [data-theme=dark] {
     --pico-background-color: #{$nord0};
     --pico-color: #{$nord6};
-
-    --pico-h1-color: var(--pico-color);
-    --pico-h2-color: var(--pico-color);
-    --pico-h3-color: var(--pico-color);
-    --pico-h4-color: var(--pico-color);
-    --pico-h5-color: var(--pico-color);
-    --pico-h6-color: var(--pico-color);
 
     --pico-muted-color: #{$nord4};
     --pico-muted-border-color: #{$nord3};
@@ -76,21 +77,9 @@ $nord15: #b48ead;
     --pico-primary: #{$nord9};
     --pico-primary-hover: #{$nord10};
     --pico-primary-focus: #{$nord10};
-    --pico-primary-inverse: var(--pico-background-color);
 
     --pico-contrast-background: #{$nord5};
     --pico-contrast-hover-background: #{$nord4};
-    --pico-contrast-inverse: var(--pico-background-color);
 
-    --pico-mark-background-color: #{$nord13};
-    --pico-mark-color: var(--pico-color);
-    --pico-ins-color: #{$nord14};
-    --pico-del-color: #{$nord11};
-
-    --pico-card-background-color: var(--pico-background-color);
-    --pico-card-border-color: var(--pico-muted-border-color);
     --pico-card-sectioning-background-color: #{$nord1};
-
-    --pico-tooltip-background-color: var(--pico-contrast);
-    --pico-tooltip-color: var(--pico-contrast-inverse);
 }

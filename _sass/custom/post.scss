@@ -175,7 +175,7 @@
     }
 
     &-paginator {
-        justify-content: center !important;
+        justify-content: center;
 
         details {
             text-align: center;
@@ -192,6 +192,7 @@
                     animation: 1s fadeIn backwards;
 
                     & a {
+                        // Pico's dropdown links set overflow with !important.
                         overflow: unset !important;
                     }
                 }
@@ -247,7 +248,7 @@
     }
 
     &-buttons {
-        justify-content: space-between !important;
+        justify-content: space-between;
         flex-wrap: wrap;
         padding-bottom: 1rem;
 

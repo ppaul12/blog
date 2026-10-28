@@ -2,7 +2,8 @@
 const initAlbum = (id, photos, baseURL = "") => {
     const element = document.getElementById(id)
     // Resolve display text once so thumbnails and large images agree.
-    const items = photos.map((photo) => ({ ...photo, caption: photo.caption ?? photo.loc ?? "" }))
+    const normalizePhotos = (photos) => photos.map((photo) => ({ ...photo, caption: photo.caption ?? photo.loc ?? "" }))
+    let items = normalizePhotos(photos)
     const lightbox = initLightbox(id, items)
     let refreshTimer
     const refreshAOS = () => {
@@ -51,5 +52,9 @@ const initAlbum = (id, photos, baseURL = "") => {
         card.append(image, text)
         return card
     }
-    return { createCard }
+    const setPhotos = (photos) => {
+        items = normalizePhotos(photos)
+        lightbox.setPhotos(items)
+    }
+    return { createCard, setPhotos }
 }

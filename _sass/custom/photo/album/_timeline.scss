@@ -27,16 +27,28 @@
             align-items: center;
             gap: 0.35rem;
 
-            &::before {
-                content: "";
-                width: 0.55rem;
-                height: 0.55rem;
-                border-radius: 0.1rem;
-                background: var(--timeline-album-daily-color);
+            margin: 0;
+            color: inherit;
+            font-size: inherit;
+            cursor: pointer;
+            --timeline-album-key-color: var(--timeline-album-daily-color);
+
+            &.is-travel {
+                --timeline-album-key-color: var(--timeline-album-travel-color);
             }
 
-            &.is-travel::before {
-                background: var(--timeline-album-travel-color);
+            input[type="checkbox"] {
+                appearance: auto;
+                width: 0.8rem;
+                height: 0.8rem;
+                margin: 0;
+                background: none;
+                accent-color: var(--timeline-album-key-color);
+                cursor: pointer;
+            }
+
+            &:has(input:not(:checked)) {
+                opacity: 0.55;
             }
         }
 

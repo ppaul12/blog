@@ -3,21 +3,22 @@
 
 const initLightbox = (id, data, { inline = false, closable = !inline, showMaximizeIcon = inline } = {}) => {
     const element = document.getElementById(id)
+    const galleryItems = (photos) => photos.map((item) => {
+        const caption = document.createElement(item.link !== undefined ? "a" : "span")
+        caption.textContent = item.caption ?? item.loc ?? ""
+        if (item.link !== undefined) caption.setAttribute("href", item.link)
+        return {
+            src: `{{ site.baseurl }}${item.src}`,
+            thumb: `{{ site.baseurl }}${item.src}`,
+            subHtml: "<br>".repeat(4) + caption.outerHTML,
+        }
+    })
     // Populate the shared large-image viewer.
     const lightbox = window.lightGallery(element, {
         plugins: [lgZoom, lgAutoplay, lgThumbnail],
         ...(inline ? { container: element } : {}),
         dynamic: true,
-        dynamicEl: data.map((item) => {
-            const caption = document.createElement(item.link !== undefined ? "a" : "span")
-            caption.textContent = item.caption ?? item.loc ?? ""
-            if (item.link !== undefined) caption.setAttribute("href", item.link)
-            return {
-                src: `{{ site.baseurl }}${item.src}`,
-                thumb: `{{ site.baseurl }}${item.src}`,
-                subHtml: "<br>".repeat(4) + caption.outerHTML,
-            }
-        }),
+        dynamicEl: galleryItems(data),
         mode: "lg-zoom-in-out",
         closable,
         // Use explicit navigation instead of gestures, including on touch devices.
@@ -70,5 +71,6 @@ const initLightbox = (id, data, { inline = false, closable = !inline, showMaximi
             ]).filter((item) => item !== null).join("<br>")
         })
     })
+    lightbox.setPhotos = (photos) => lightbox.refresh(galleryItems(photos))
     return lightbox
 }

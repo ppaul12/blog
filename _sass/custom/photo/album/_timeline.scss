@@ -1,8 +1,6 @@
 @use "../../../colors";
 
 .timeline-album {
-    --album-gap: clamp(0.45rem, 1.2vw, 0.8rem);
-    --album-row-height: clamp(7rem, 12vw, 10rem);
     --timeline-album-daily-color: #{colors.$nord13};
     --timeline-album-travel-color: #{colors.$nord14};
     margin-bottom: 2rem;
@@ -144,15 +142,13 @@
     }
 
     &-month {
+        flex: 0 0 100%;
+        min-width: 0;
+        scroll-margin-top: 1rem;
         margin: 1.75rem 0 0;
-
-        h4 {
-            scroll-margin-top: 1rem;
-            margin: 0 0 0.8rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--pico-muted-border-color);
-            font-variant-numeric: tabular-nums;
-        }
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--pico-muted-border-color);
+        font-variant-numeric: tabular-nums;
     }
 }
 
@@ -160,8 +156,6 @@
     --album-outline-color: var(--timeline-album-daily-color);
     outline: 2px solid transparent;
     outline-offset: 2px;
-    // Keep AOS's fade/move transitions and let it control duration and easing.
-    transition-property: opacity, transform, outline-color;
 
     &.is-travel {
         --album-outline-color: var(--timeline-album-travel-color);

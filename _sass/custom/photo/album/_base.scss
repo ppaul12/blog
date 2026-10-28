@@ -1,14 +1,33 @@
+@use "../../../utilities" as utils;
+
 // Shared thumbnail layout. Large images are handled by the photo lightbox.
+.collection-album,
+.timeline-album {
+    --album-gap: clamp(0.45rem, 1.2vw, 1rem);
+    container: album / inline-size;
+}
+
 .album-grid {
+    --album-row-height: min(280px, calc(100cqw / 4.5));
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     gap: var(--album-gap);
 
     // Keep a short final row close to the target height.
+    &::after,
+    > .album-row-spacer {
+        flex: 999 1 0;
+    }
+
     &::after {
         content: "";
-        flex: 999 1 0;
+    }
+}
+
+@container album (width < #{utils.$compact}) {
+    .album-grid {
+        --album-row-height: min(260px, calc(100cqw / 2.4));
     }
 }
 

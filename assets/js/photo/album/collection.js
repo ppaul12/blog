@@ -48,11 +48,9 @@ const initCollectionAlbum = async (id, indexURL, baseURL = "") => {
         images.forEach((item, index) => {
             fragment.append(album.createCard(index, {
                 label: `Open photo: ${item.loc}`,
-                animationDuration: 600,
             }))
         })
         element.append(fragment)
-        album.refreshAOS()
     } catch (error) {
         console.warn("Unable to initialize collection album", error)
         albumCount.textContent = "Unable to load photos. Please reload to try again."

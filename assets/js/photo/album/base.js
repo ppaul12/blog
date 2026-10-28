@@ -10,22 +10,21 @@ const initAlbum = (id, photos, baseURL = "") => {
         clearTimeout(refreshTimer)
         refreshTimer = setTimeout(() => AOS.refresh(), 200)
     }
-    // Flex handles layout; only refresh scroll animations when its bounds change.
+    // Container resizing and image loads can move animation anchors.
     const observer = new ResizeObserver(refreshAOS)
     observer.observe(element)
 
     const createCard = (index, {
         label = `Open photo: ${items[index].caption}`,
         className = "",
-        animationDuration,
     } = {}) => {
         const photo = items[index]
         const caption = photo.caption
         const card = document.createElement("button")
         card.type = "button"
         card.className = `album-card${className ? ` ${className}` : ""}`
-        card.dataset.aos = "fade-up"
-        if (animationDuration !== undefined) card.dataset.aosDuration = animationDuration
+        card.dataset.aos = "fade"
+        card.dataset.aosDuration = 600
         card.setAttribute("aria-label", label)
         card.addEventListener("click", () => lightbox.openGallery(index))
 
@@ -52,5 +51,5 @@ const initAlbum = (id, photos, baseURL = "") => {
         card.append(image, text)
         return card
     }
-    return { createCard, refreshAOS }
+    return { createCard }
 }

@@ -64,7 +64,7 @@ const initTimelineAlbum = async (id, { sources, start, end }, baseURL = "") => {
         })
         const legend = document.createElement("p")
         legend.className = "timeline-album-chart-legend"
-        legend.dataset.aos = "fade-up"
+        legend.dataset.aos = "fade"
         for (const [type, label] of [["daily", "Daily"], ["travel", "Travel"]]) {
             const key = document.createElement("span")
             key.className = `timeline-album-chart-key is-${type}`
@@ -77,7 +77,7 @@ const initTimelineAlbum = async (id, { sources, start, end }, baseURL = "") => {
         legend.append(totalCount)
         const chart = document.createElement("nav")
         chart.className = "timeline-album-chart"
-        chart.dataset.aos = "fade-up"
+        chart.dataset.aos = "fade"
         chart.setAttribute("aria-label", `Monthly photo counts: ${photos.length} photos in total`)
         const maximum = Math.max(1, ...Array.from(counts.values(), ({ daily, travel }) => daily + travel))
         let [year, monthNumber] = start.split("-").map(Number)
@@ -125,27 +125,22 @@ const initTimelineAlbum = async (id, { sources, start, end }, baseURL = "") => {
 
         // The entire year shares a single lightbox, including across month boundaries.
         const album = initAlbum(id, photos, baseURL)
-        const fragment = document.createDocumentFragment()
-        let month, grid
+        const grid = document.createElement("div")
+        grid.className = "album-grid"
+        let month
         photos.forEach((item, index) => {
             if (item.month !== month) {
                 month = item.month
-                const section = document.createElement("section")
-                section.className = "timeline-album-month"
                 const heading = document.createElement("h4")
-                heading.dataset.aos = "fade-up"
+                heading.className = "timeline-album-month"
+                heading.dataset.aos = "fade"
                 heading.id = `${id}-${month}`
                 heading.tabIndex = -1
                 const time = document.createElement("time")
                 time.dateTime = month
                 time.textContent = month.replace("-", ".")
                 heading.append(time)
-                section.setAttribute("aria-labelledby", heading.id)
-                section.append(heading)
-                grid = document.createElement("div")
-                grid.className = "album-grid"
-                section.append(grid)
-                fragment.append(section)
+                grid.append(heading)
             }
 
             const card = album.createCard(index, {
@@ -153,10 +148,15 @@ const initTimelineAlbum = async (id, { sources, start, end }, baseURL = "") => {
                 className: `is-${item.journey ? "travel" : "daily"}`,
             })
             grid.append(card)
+            if (index + 1 < photos.length && photos[index + 1].month !== month) {
+                // Intermediate months need a filler; the grid's ::after ends the last month.
+                const spacer = document.createElement("span")
+                spacer.className = "album-row-spacer"
+                spacer.setAttribute("aria-hidden", "true")
+                grid.append(spacer)
+            }
         })
-        element.append(fragment)
-        // Adding the grids moves the article lists below them.
-        album.refreshAOS()
+        element.append(grid)
     } catch (error) {
         console.warn("Unable to initialize timeline album", error)
         status.textContent = "Unable to load photos. Please reload to try again."

@@ -1,69 +1,156 @@
 ---
 layout: default
-page_width: narrow
 title: profile
 permalink: /profile
-required: no-footer
 ---
 
-<article class="profile">
-    <header class="card">
-        <div class="profile-avatar">
-            <img src="https://github.com/{{ site.thirdparty.github.user }}.png">
-            <img src="{% link assets/img/barca.png %}">
-        </div>
-        <div class="profile-name">{{ site.data.profiles.author.name }}</div>
-        <!-- skills -->
-        <div class="profile-icons">
-            {%- assign skills = site.data.profiles.skills | sort:"info" -%}
-            {%- for skill in skills -%}
-            <img src="https://cdn.simpleicons.org/{{ skill.info }}/{{ skill.color }}"
-                width="15px" height="15px" style="--ith: {{ forloop.index0 }}">
-            {%- endfor -%}
+{%- assign profile = site.data.profiles -%}
+
+<article class="profile" aria-labelledby="profile-name">
+    <!-- Personal information -->
+    <header class="profile-hero" data-aos="fade-up">
+        <p class="profile-eyebrow">A LITTLE ABOUT ME</p>
+        <h1 class="profile-name" id="profile-name">{{ profile.author.name | slice: -4,4 }}</h1>
+        <blockquote class="profile-description literature quote" lang="en">
+            <p>{{ profile.author.quote.text }}</p>
+            <footer class="profile-quote-credit"><cite>{{ profile.author.quote.work | escape }}</cite></footer>
+        </blockquote>
+        <div class="profile-overview">
+            <section class="profile-languages" aria-labelledby="profile-languages-heading">
+                <h2 class="profile-info-heading" id="profile-languages-heading">Languages</h2>
+                <dl class="grid">
+                    {% for language in profile.author.languages %}
+                    <div>
+                        <dt>{{ language.name | escape }}</dt>
+                        <dd>{{ language.usage | escape }}</dd>
+                    </div>
+                    {% endfor %}
+                </dl>
+            </section>
+            <section class="profile-toolkit" aria-labelledby="profile-toolkit-heading">
+                <h2 class="profile-info-heading" id="profile-toolkit-heading">Tech stack</h2>
+                <ul class="profile-tools" aria-label="Tech stack">
+                    {% for skill in profile.toolkit %}
+                    <li>
+                        <img src="https://cdn.simpleicons.org/{{ skill.icon }}/{{ skill.color }}"
+                            alt="{{ skill.name | escape }}" title="{{ skill.name | escape }}"
+                            width="22" height="22" loading="lazy">
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>
         </div>
     </header>
 
-    <!-- information -->
-    <ul class="profile-info">
-        {%- for information in site.data.profiles.information -%}
-        <li class="profile-info-item" data-aos="fade">
-            <i class="{{ information.icon }}"></i> {{ information.info }}
-        </li>
-        {%- endfor -%}
-    </ul>
+    <!-- Education and research experience -->
+    <section class="profile-section" aria-labelledby="profile-education">
+        <p class="profile-eyebrow" data-aos="fade">01 / STILL LEARNING</p>
+        <h2 id="profile-education" data-aos="fade-up">The student years</h2>
+        <div class="profile-timelines">
+            <ol class="profile-timeline" aria-label="Education">
+                {% for entry in profile.education %}
+                <li data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 100 }}">
+                    <span class="profile-date">{{ entry.period | escape }}</span>
+                    {% capture education_organization %}
+                        {%- if entry.institution.url -%}
+                            <a href="{{ entry.institution.url | escape }}">{{ entry.institution.name | escape }}</a>
+                        {%- else -%}
+                            {{ entry.institution.name | escape }}
+                        {%- endif -%}
+                        {%- if entry.department -%}
+                            , {% if entry.department.url %}<a href="{{ entry.department.url | escape }}">{{ entry.department.name | escape }}</a>{% else %}{{ entry.department.name | escape }}{% endif %}
+                        {%- endif -%}
+                    {% endcapture %}
+                    <h3 class="profile-timeline-title"><span class="profile-organization">{{ education_organization | strip }}</span> · {{ entry.degree | escape }}</h3>
+                    {% if entry.research %}
+                    <p class="profile-keywords profile-study-research">{% if entry.research.field %}{{ entry.research.field | escape }}: {% endif %}{{ entry.research.topics | join: ' · ' | escape }}</p>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ol>
+            <ol class="profile-timeline" aria-label="Other experience">
+                {% for entry in profile.experience %}
+                <li data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 100 }}">
+                    <span class="profile-date">{{ entry.period | escape }}</span>
+                    <h3 class="profile-timeline-title">{{ entry.role | escape }}</h3>
+                    <p class="profile-organization">
+                        {%- if entry.organization.url -%}
+                            <a href="{{ entry.organization.url | escape }}">{{ entry.organization.name | escape }}</a>
+                        {%- else -%}
+                            {{ entry.organization.name | escape }}
+                        {%- endif -%}
+                    </p>
+                    {% if entry.keywords and entry.keywords.size > 0 %}
+                    <p class="profile-keywords">{{ entry.keywords | join: ' · ' | escape }}</p>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ol>
+        </div>
+    </section>
 
-    <hr data-aos="fade">
-
-    <!-- identity -->
-    <ul class="profile-info">
-        {%- for identity in site.data.profiles.identities -%}
-        <li class="profile-info-item" data-aos="fade">
-            <i class="{{ identity.icon }}"></i> {{ identity.info }}
-        </li>
-        {%- endfor -%}
-    </ul>
-
-    <hr data-aos="fade">
-
-    <!-- hobby -->
-    <ul class="profile-info">
-        {%- for hobby in site.data.profiles.hobbies -%}
-        <li class="profile-info-item" data-aos="fade">
-            <i class="{{ hobby.icon }}"></i> {{ hobby.info }}
-        </li>
-        {%- endfor -%}
-    </ul>
-
-    <footer class="card">
-        <ul class="profile-info">
-            {%- for friend in site.data.profiles.friends -%}
-            <li class="profile-info-item" data-aos="fade" {{ friend.attr }}>
-                <small>
-                    <i class="fa-solid fa-user-group fa-fw"></i>
-                    <a href="{{ friend.link }}" data-tooltip="{{ friend.info }}">{{ friend.name }}</a>
-                </small>
+    <!-- Personal identities -->
+    <section class="profile-section" aria-labelledby="profile-identities">
+        <p class="profile-eyebrow" data-aos="fade">02 / MORE THAN ONE THING</p>
+        <h2 id="profile-identities" data-aos="fade-up">A few sides of me</h2>
+        <ul class="profile-identities">
+            {% for identity in profile.identities %}
+            {% assign identity_words = identity.name | split: ' ' %}
+            {% assign identity_role = identity_words | slice: 1, 99 | join: ' ' %}
+            <li{% if identity.accent %} class="profile-identity-{{ identity.accent | escape }}"{% endif %} data-aos="fade-up" data-aos-delay="{{ forloop.index0 | modulo: 3 | times: 100 }}">
+                <i class="ko ko-inkbrush ko-{{ identity.icon | escape }}" aria-hidden="true"></i>
+                <span><span>{{ identity_words[0] }}</span> <span>{{ identity_role }}</span></span>
             </li>
-            {%- endfor -%}
+            {% endfor %}
         </ul>
+    </section>
+
+    <!-- Interest links -->
+    <section class="profile-section" aria-labelledby="profile-hobbies">
+        <p class="profile-eyebrow" data-aos="fade">03 / FOLLOW MY CURIOSITY</p>
+        <h2 id="profile-hobbies" data-aos="fade-up">Things I return to</h2>
+        <div class="profile-hobbies">
+            {% for hobby in profile.hobbies %}
+            <div data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 100 }}">
+                <a class="profile-hobby" href="{{ hobby.url | relative_url }}">
+                    <i class="ko ko-{{ hobby.icon | escape }}" aria-hidden="true"></i>
+                    <h3>{{ hobby.name }} <span aria-hidden="true">↗</span></h3>
+                    <p>{{ hobby.description }}</p>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Contact and friends -->
+    <footer class="profile-connections" data-aos="fade-up" aria-label="Contact and friends">
+        <div class="grid">
+            <section aria-labelledby="profile-contact-heading">
+                <h2 class="profile-info-heading" id="profile-contact-heading">Contact</h2>
+                <ul class="profile-contact-list" aria-label="Contact and profiles">
+                    {% for link in profile.contacts %}
+                    <li{% if link.url contains 'mailto:' %} class="profile-contact-email"{% endif %}>
+                        <a href="{{ link.url | escape }}">
+                            <img src="https://cdn.simpleicons.org/{{ link.icon | default: 'safari' }}/81A1C1" alt="" width="17" height="17">
+                            <span>{{ link.name | escape }}</span>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>
+            <section aria-labelledby="profile-friends-heading">
+                <h2 class="profile-info-heading" id="profile-friends-heading">Friends</h2>
+                <ul class="profile-contact-list profile-friend-list" aria-label="Friends">
+                    {% for friend in profile.friends %}
+                    <li>
+                        <a href="{{ friend.url | escape }}">
+                            <img src="https://cdn.simpleicons.org/{{ friend.icon }}/81A1C1" alt="" width="17" height="17">
+                            <span>{{ friend.name | escape }}</span>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>
+        </div>
     </footer>
 </article>

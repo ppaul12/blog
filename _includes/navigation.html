@@ -2,7 +2,7 @@
 {%- if page.required contains "with-header" -%}
     {%- assign is_home = true -%}
 {%- endif -%}
-{%- assign brand_words = site.data.profiles.author.brand-words | split: " " -%}
+{%- assign brand_words = site.data.profiles.author.brand.words | split: " " -%}
 {%- capture navigation_items -%}
 <ul class="site-nav-actions">
     {%- for item in site.data.navigation -%}
@@ -24,7 +24,7 @@
         <div class="home-brand-lockup">
             <img class="home-brand-avatar" src="https://github.com/{{ site.thirdparty.github.user }}.png" alt="{{ site.author }}">
             <h1 class="home-brand-title">{{ brand_words[0] }} <span class="home-brand-accent">{{ brand_words[1] }}</span></h1>
-            <p class="home-brand-tagline">{{ site.data.profiles.author.tag-line }}</p>
+            <p class="home-brand-tagline">{{ site.data.profiles.author.brand.tagline }}</p>
         </div>
     </div>
     {%- endif -%}

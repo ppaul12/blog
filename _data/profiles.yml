@@ -1,83 +1,187 @@
 author:
   name: ppaul
-  brand-words: LA VITA
-  tag-line: tra viaggi e pensieri
+  quote:
+    text: Let life be beautiful like summer flowers<br> and death like autumn leaves.
+    work: Stray Birds
+  brand:
+    words: LA VITA
+    tagline: tra viaggi e pensieri
+  languages:
+  - name: Chinese
+    usage: Native
+  - name: Japanese
+    usage: Daily life & research
+  - name: English
+    usage: Daily life & research
+  - name: Italian
+    usage: Learning
 
-information:
-  - info: China, Shenyang
-    icon: "fa-solid fa-house-chimney fa-fw"
-  - info: Japan, Tokyo
-    icon: "fa-solid fa-map-pin fa-fw"
-  - info: >
-      <a href="https://www.u-tokyo.ac.jp/ja/index.html">UTokyo</a>,
-      <a href="https://www.is.s.u-tokyo.ac.jp">IS</a>
-      (BSc 2019-2023)
-    icon: "fa-solid fa-building fa-fw"
-  - info: >
-      <a href="https://www.u-tokyo.ac.jp/ja/index.html">UTokyo</a>,
-      <a href="https://www.is.s.u-tokyo.ac.jp">CS</a>
-      (MSc 2023-2025)
-    icon: "fa-solid fa-building fa-fw"
-  - info: >
-      <a href="https://www.u-tokyo.ac.jp/ja/index.html">UTokyo</a>,
-      <a href="https://www.is.s.u-tokyo.ac.jp">CS</a>
-      (PhD 2025-)
-    icon: "fa-solid fa-building fa-fw"
-  - info: <a href="mailto:pengao@is.s.u-tokyo.ac.jp">pengao[at]is.s.u-tokyo.ac.jp</a>
-    icon: "fa-solid fa-envelope fa-fw"
-  - info: >
-      <a href="https://github.com/ppaul12">Github</a>,
-      <a href="https://leetcode.cn/u/peng_ao">LeetCode</a>
-    icon: "fa-solid fa-handshake fa-fw"
+education:
+- period: 2019.04 - 2023.03
+  degree: BSc
+  institution:
+    name: UTokyo
+    url: https://www.u-tokyo.ac.jp/ja/index.html
+  department:
+    name: IS
+    url: https://www.is.s.u-tokyo.ac.jp
+- period: 2023.04 - 2025.03
+  degree: MSc
+  institution:
+    name: UTokyo
+    url: https://www.u-tokyo.ac.jp/ja/index.html
+  department:
+    name: CS
+    url: https://www.is.s.u-tokyo.ac.jp
+  research:
+    topics:
+    - Autonomous driving system
+    - Vector map
+- period: 2025.04 - present
+  degree: PhD
+  institution:
+    name: UTokyo
+    url: https://www.u-tokyo.ac.jp/ja/index.html
+  department:
+    name: CS
+    url: https://www.is.s.u-tokyo.ac.jp
+  research:
+    field: SE for AI
+    topics:
+    - LLM safety
+    - AI system design
+
+experience:
+- period: 2023.04 - 2025.03
+  role: Collaborative research
+  organization:
+    name: MAP IV, Inc.
+  keywords:
+  - Autonomous driving system
+  - Vector map
+- period: 2025.08 - 2026.04
+  role: Collaborative research
+  organization:
+    name: Fujitsu Limited
+  keywords:
+  - LLM safety
+  - White-box analysis
+
+toolkit:
+- name: C
+  icon: c
+  color: A8B9CC
+- name: C++
+  icon: cplusplus
+  color: '00599C'
+- name: Python
+  icon: python
+  color: 3776AB
+- name: Bash
+  icon: gnubash
+  color: 4EAA25
+- name: OCaml
+  icon: ocaml
+  color: EC6813
+- name: HTML
+  icon: html5
+  color: E34F26
+- name: Sass
+  icon: sass
+  color: CC6699
+- name: CSS
+  icon: css
+  color: '663399'
+- name: JavaScript
+  icon: javascript
+  color: F7DF1E
+- name: LaTeX
+  icon: latex
+  color: '008080'
+- name: Markdown
+  icon: markdown
+  color: '808080'
+- name: Typst
+  icon: typst
+  color: 239DAD
+- name: Git
+  icon: git
+  color: F05032
+- name: Ubuntu
+  icon: ubuntu
+  color: E95420
+- name: Docker
+  icon: docker
+  color: 2496ED
+- name: Podman
+  icon: podman
+  color: 892CA0
+- name: Neovim
+  icon: neovim
+  color: 57A143
+- name: PyTorch
+  icon: pytorch
+  color: EE4C2C
+- name: scikit-learn
+  icon: scikitlearn
+  color: F7931E
+- name: Hugging Face
+  icon: huggingface
+  color: FFD21E
+- name: NumPy
+  icon: numpy
+  color: 4DABCF
+- name: pandas
+  icon: pandas
+  color: 8E82BD
 
 identities:
-  - info: Professional student
-    icon: "fa-solid fa-graduation-cap fa-fw"
-  - info: Perfectionist coder
-    icon: "fa-solid fa-coffee fa-fw"
-  - info: Optimistic reader
-    icon: "fa-solid fa-book-reader fa-fw"
-  - info: Lite bodybuilder
-    icon: "fa-solid fa-dumbbell fa-fw"
-  - info: Inquisitive traveler
-    icon: "fa-solid fa-compass fa-fw"
-  - info: Amateur photographer
-    icon: "fa-solid fa-camera fa-fw"
+- name: Professional student
+  icon: student-graduating
+- name: Perfectionist coder
+  icon: developer-laptop
+- name: Optimistic reader
+  icon: reading-document
+- name: Inquisitive traveler
+  icon: hiking-up-hill
+- name: Amateur photographer
+  icon: taking-photograph
+- name: Barça culés
+  icon: person-watching-football-match-2
+  accent: blaugrana
 
 hobbies:
-  - info: Coding
-    icon: "fa-solid fa-laptop-code fa-fw"
-  - info: Reading
-    icon: "fa-solid fa-book fa-fw"
-  - info: Traveling
-    icon: "fa-solid fa-person-hiking fa-fw"
+- name: Coding
+  icon: laptop
+  description: Code & learning.
+  url: https://github.com/ppaul12
+- name: Reading
+  icon: open-textbook
+  description: Books & reflections.
+  url: "/books"
+- name: Traveling
+  icon: route
+  description: Places & memories.
+  url: "/footprint"
+
+contacts:
+- name: pengao[at]is.s.u-tokyo.ac.jp
+  url: mailto:pengao@is.s.u-tokyo.ac.jp
+  icon: gmail
+- name: GitHub
+  url: https://github.com/ppaul12
+  icon: github
+- name: LeetCode
+  url: https://leetcode.cn/u/peng_ao
+  icon: leetcode
+- name: Steam
+  url: https://steamcommunity.com/profiles/76561199826642598
+  icon: steam
 
 friends:
-  - name: CHEN Ziheng
-    link: https://zoooooone.github.io
-    info: Blog
-  - name: GAO Suihan
-    link: https://github.com/TimG233
-    info: GitHub
-
-skills:
-  - info: c
-    color: "A8B9CC"
-  - info: cplusplus
-    color: "00599C"
-  - info: python
-    color: "3776AB"
-  - info: gnubash
-    color: "4EAA25"
-  - info: ocaml
-    color: "EC6813"
-  - info: html5
-    color: "E34F26"
-  - info: sass
-    color: "CC6699"
-  - info: javascript
-    color: "F7DF1E"
-  - info: latex
-    color: "008080"
-  - info: markdown
-    color: "000000"
+- name: CHEN Ziheng
+  url: https://zoooooone.github.io
+  icon: safari
+- name: GAO Suihan
+  url: https://github.com/TimG233
+  icon: github

@@ -24,10 +24,11 @@ const initLightbox = (id, data, { inline = false, closable = !inline, showMaximi
         // Use explicit navigation instead of gestures, including on touch devices.
         enableDrag: false,
         enableSwipe: false,
-        keyPress: false,
+        keyPress: true,
         hideBarsDelay: 0,
         mobileSettings: {
             controls: true,
+            enableSwipe: true,
             showCloseIcon: closable,
             download: false,
             showGestureButtons: false

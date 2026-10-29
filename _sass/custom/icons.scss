@@ -1,0 +1,48 @@
+// Register official Koboyo slugs here; each has a matching local SVG filename.
+// URLs are relative to the generated assets/main.css, so baseurl works unchanged.
+$koboyo-icons: (
+    "laptop",
+    "open-textbook",
+    "route",
+    "student-graduating",
+    "developer-laptop",
+    "reading-document",
+    "person-watching-football-match-2",
+    "hiking-up-hill",
+    "taking-photograph"
+);
+
+$koboyo-styles: ("original", "inkbrush", "blockprint", "cartoon", "solid");
+
+// Alpha masks keep the source aspect ratio and inherit the surrounding color.
+.ko {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: var(--ko-size, 1.25em);
+    height: var(--ko-size, 1.25em);
+    vertical-align: -0.2em;
+    color: inherit;
+    line-height: 1;
+    background-color: currentColor;
+    -webkit-mask: var(--ko-image, linear-gradient(transparent, transparent)) center / contain no-repeat;
+    mask: var(--ko-image, linear-gradient(transparent, transparent)) center / contain no-repeat;
+    mask-mode: alpha;
+}
+
+@each $name in $koboyo-icons {
+    .ko-#{$name} {
+        --ko-image: url("img/koboyo/original/#{$name}.svg");
+    }
+
+    @each $style in $koboyo-styles {
+        .ko-#{$name}.ko-#{$style} {
+            --ko-image: url("img/koboyo/#{$style}/#{$name}.svg");
+        }
+    }
+}
+
+.ko-fw { width: 1.5em; }
+.ko-lg { --ko-size: 2em; }
+.ko-xl { --ko-size: 3em; }

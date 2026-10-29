@@ -9,7 +9,7 @@ My blog for personal records of travels, thoughts, studies, and so on, with the 
 - styles: [pico.css](https://picocss.com)
 - colors: [Nord Theme](https://www.nordtheme.com)
 - fonts: [LxgwWenKai](https://github.com/lxgw/LxgwWenKai), [Zhuque](https://github.com/TrionesType/zhuque), [Maple Mono](https://www.jsdelivr.com/package/npm/@fontsource/maple-mono)
-- icons: [Font Awesome](https://fontawesome.com), [simple-icons](https://simpleicons.org)
+- icons: [Font Awesome](https://fontawesome.com), [simple-icons](https://simpleicons.org), [Koboyo](https://koboyo.com/icons)
 - animations: [animate.css](https://github.com/animate-css/animate.css), [aos](https://michalsnik.github.io/aos/), [font-awesome-animation](https://l-lin.github.io/font-awesome-animation/), [particles.js](https://github.com/VincentGarreau/particles.js)
 - comments: [Giscus](https://giscus.app)
 - code highlight: [prism.js](https://prismjs.com/index.html)

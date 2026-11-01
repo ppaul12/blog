@@ -1,0 +1,161 @@
+@use "../../utilities" as utils;
+
+.footprint-detail {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: clamp(30rem, 58vh, 44rem);
+    align-self: stretch;
+    overflow: hidden;
+    padding: 1.35rem;
+}
+
+.footprint {
+    &-detail-empty {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        min-height: 17rem;
+
+        h3 {
+            margin: 0 0 0.45rem;
+            font-size: 1.3rem;
+        }
+
+        p {
+            max-width: 18rem;
+            margin: 0;
+            color: var(--pico-muted-color);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+    }
+
+    &-detail-mark {
+        display: grid;
+        width: 88px;
+        height: 88px;
+        margin-bottom: 1.3rem;
+        place-items: center;
+        color: var(--site-accent-text);
+
+        .ko {
+            --ko-size: 88px;
+        }
+    }
+
+    &-detail-content {
+        display: flex;
+        flex: 1;
+        min-height: 0;
+        flex-direction: column;
+
+        > :not(#footprint-related-journeys) {
+            flex-shrink: 0;
+        }
+
+        h3 {
+            margin-bottom: 0.35rem;
+            font-size: 1.8rem;
+        }
+
+        h4 {
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+        }
+    }
+
+    &-detail-meta,
+    &-place-notes {
+        color: var(--pico-muted-color);
+        font-size: 0.82rem;
+    }
+
+    &-visits {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin: 0.65rem 0 1rem;
+    }
+
+    &-visit-tag {
+        display: inline-flex;
+        align-items: center;
+        min-height: 1.8rem;
+        padding: 0.2rem 0.6rem;
+        border: 1px solid var(--pico-muted-border-color);
+        border-radius: 999px;
+        background: var(--pico-card-background-color);
+        color: var(--pico-muted-color);
+        font-size: 0.76rem;
+        line-height: 1.3;
+
+        &.is-empty {
+            border-style: dashed;
+            background: transparent;
+        }
+    }
+
+    &-detail-rule {
+        flex-shrink: 0;
+        height: 1px;
+        margin: 1rem 0;
+        background: var(--pico-muted-border-color);
+    }
+
+    &-detail-records {
+        display: grid;
+        flex: 1;
+        gap: 0.55rem;
+        max-height: 18rem;
+        min-height: 0;
+        overflow-y: auto;
+        scrollbar-gutter: stable;
+        align-content: start;
+    }
+}
+
+#footprint-related-journeys {
+    display: flex;
+    min-height: 0;
+    flex: 1;
+    flex-direction: column;
+
+    h4 {
+        flex-shrink: 0;
+    }
+}
+
+@include utils.below(utils.$wide) {
+    .footprint {
+        &-detail {
+            height: auto;
+            overflow: visible;
+        }
+
+        &-detail-content {
+            display: block;
+        }
+
+        #footprint-related-journeys {
+            display: block;
+        }
+
+        &-detail-empty {
+            min-height: 12rem;
+        }
+    }
+}
+
+@include utils.below(utils.$compact) {
+    .footprint {
+        &-detail {
+            padding: 1rem;
+        }
+
+        &-detail-empty {
+            min-height: 10rem;
+        }
+    }
+}

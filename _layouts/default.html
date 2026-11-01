@@ -12,9 +12,12 @@
 
         {%- unless page.required contains "no-footer" -%}
         <footer>
-            <small>by {{ site.data.profiles.author.name }} with <i class="fa-solid fa-heart fa-fw faa-pulse faa-slow animated"></i></small><br>
-            <small><i class="fa-regular fa-copyright fa-fw"></i> 2021 - {{ "now" | date:"%Y" }}</small><br>
-            <small id="site-view"></small>
+            <small id="site-view"></small><br>
+            <small>
+                {{ site.appearance.palette | replace:"-"," " | capitalize }},
+                by {{ site.data.profiles.author.name }} with <i class="fa-solid fa-heart fa-fw faa-pulse faa-slow animated"></i>
+            </small><br>
+            <small><i class="fa-regular fa-copyright fa-fw"></i> 2021 - {{ "now" | date:"%Y" }}</small>
         </footer>
         {%- endunless -%}
     </body>

@@ -1,6 +1,6 @@
 @use "../../utilities" as utils;
 
-// Inline gallery layout; shared viewer controls remain in lightbox.scss.
+// Inline gallery layout; shared viewer controls remain in the lightbox module.
 .lg-container {
     &.lg-inline {
         // These tokens follow theme changes without affecting maximized viewers.

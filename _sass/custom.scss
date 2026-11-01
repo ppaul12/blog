@@ -1,14 +1,13 @@
 // styles of customized classes
 
 @use "utilities";
+@use "custom/footprint";
+@use "custom/photo";
+
 @use "custom/icons.scss";
-@use "custom/photo/album";
 @use "custom/book.scss";
 @use "custom/card.scss";
 @use "custom/footnote.scss";
-@use "custom/footprint.scss";
-@use "custom/photo/lightbox.scss";
-@use "custom/photo/gallery.scss";
 @use "custom/literature.scss";
 @use "custom/map.scss";
 @use "custom/navigation.scss";

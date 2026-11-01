@@ -1,0 +1,50 @@
+.footprint {
+    &-dashboard {
+        color: var(--pico-color);
+
+        h2,
+        h3,
+        h4,
+        p {
+            margin-top: 0;
+        }
+
+        h2,
+        h3,
+        h4 {
+            color: var(--pico-color);
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    &-eyebrow {
+        margin-bottom: 0.55rem;
+        color: var(--site-accent-text);
+        font-size: 0.7rem;
+        font-weight: 750;
+        letter-spacing: 0.14em;
+    }
+}
+
+#footprint-map.leaflet-container,
+.footprint-detail {
+    box-sizing: border-box;
+    border: 1px solid var(--pico-muted-border-color);
+    border-radius: 1.15rem;
+    background: var(--pico-card-sectioning-background-color);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

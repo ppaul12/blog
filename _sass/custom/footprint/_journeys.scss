@@ -1,0 +1,75 @@
+@use "../../utilities" as utils;
+
+.footprint {
+    &-journeys {
+        margin-top: 2rem;
+
+        [data-aos]:not(.aos-init), [data-aos]:focus-within {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    &-section-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 0.9rem;
+
+        h2 {
+            margin: 0;
+            font-size: 1.4rem;
+        }
+    }
+
+    &-all-journeys {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.55rem 0.8rem;
+        border-radius: 0.8rem;
+        color: var(--pico-primary);
+        font-size: 0.84rem;
+        font-weight: 650;
+
+        &:hover {
+            background: var(--pico-card-sectioning-background-color);
+        }
+    }
+
+    &-journey-cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.8rem;
+    }
+}
+
+@include utils.below(utils.$wide) {
+    .footprint {
+        &-journey-cards {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        &-journey-card:nth-child(n + 3) {
+            display: none;
+        }
+    }
+}
+
+@include utils.below(utils.$compact) {
+    .footprint {
+        &-journey-cards {
+            grid-template-columns: 1fr;
+        }
+
+        &-journey-card:nth-child(n + 2) {
+            display: none;
+        }
+
+        &-all-journeys {
+            padding-inline: 0.3rem;
+            font-size: 0.78rem;
+        }
+    }
+}

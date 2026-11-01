@@ -1,0 +1,185 @@
+$notch-radius: 0.4rem;
+$border-width: 1px;
+
+.footprint-ticket {
+    --ticket-stub-width: 3.25rem;
+    --ticket-padding: 0.85rem;
+    --ticket-title-size: 1.08rem;
+    --ticket-min-height: 7.25rem;
+    --ticket-border: var(--site-border-subtle);
+    --ticket-stub-background: var(--site-accent-subtle);
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) var(--ticket-stub-width);
+    min-width: 0;
+    min-height: var(--ticket-min-height);
+    border: $border-width solid var(--ticket-border);
+    border-radius: 0.55rem;
+    background: var(--site-background);
+    color: var(--site-text);
+    transition: border-color 180ms ease;
+
+    // Mask both the ticket face and outer border to create transparent notches.
+    mask-image:
+        radial-gradient(circle at calc(100% - var(--ticket-stub-width) - #{$border-width}) 0,
+            transparent $notch-radius, black calc($notch-radius + 0.5px)),
+        radial-gradient(circle at calc(100% - var(--ticket-stub-width) - #{$border-width}) 100%,
+            transparent $notch-radius, black calc($notch-radius + 0.5px));
+    mask-composite: intersect;
+
+    // A one-pixel arc follows the outside of each transparent cutout.
+    &::before,
+    &::after {
+        position: absolute;
+        z-index: 1;
+        right: calc(var(--ticket-stub-width) - #{$notch-radius} - #{$border-width});
+        width: calc(2 * ($notch-radius + $border-width));
+        height: calc(2 * ($notch-radius + $border-width));
+        border: $border-width solid var(--ticket-border);
+        border-radius: 50%;
+        content: "";
+        pointer-events: none;
+    }
+
+    &::before {
+        top: calc(-1 * ($notch-radius + 2 * $border-width));
+    }
+
+    &::after {
+        bottom: calc(-1 * ($notch-radius + 2 * $border-width));
+    }
+
+    &:hover,
+    &:focus-visible {
+        --ticket-border: var(--site-accent-border);
+        --ticket-stub-background: color-mix(in srgb, var(--site-accent-text) 12%, var(--site-accent-subtle));
+        color: var(--site-text);
+    }
+
+    &:focus-visible {
+        // An inset ring remains visible inside the cutout mask.
+        outline: none;
+        box-shadow: inset 0 0 0 2px var(--site-accent-border);
+    }
+
+    &-main {
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        gap: 0.4rem;
+        padding: var(--ticket-padding);
+        border-left: 0.2rem solid var(--site-accent-fill);
+        border-radius: 0.5rem 0 0 0.5rem;
+    }
+
+    &-volume {
+        font-size: 0.55rem;
+        line-height: 1.4;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+
+    &-heading {
+        display: flex;
+        align-items: baseline;
+        gap: 0.45rem;
+
+        i {
+            flex-shrink: 0;
+            color: var(--site-accent-text);
+            font-size: 0.9em;
+        }
+    }
+
+    &-title {
+        color: var(--site-text);
+        font-size: var(--ticket-title-size);
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+    }
+
+    &-subtitle {
+        overflow: hidden;
+        color: var(--site-text-muted);
+        font-size: 0.7rem;
+        line-height: 1.6;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &-footer {
+        display: flex;
+        margin-top: 0.2rem;
+        padding-top: 0.45rem;
+        border-top: 1px solid var(--site-border-subtle);
+    }
+
+    &-date,
+    &-number {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-variant-numeric: tabular-nums;
+    }
+
+    &-date {
+        font-size: 0.95rem;
+        line-height: 1;
+        writing-mode: vertical-rl;
+    }
+
+    &-open {
+        color: var(--site-accent-text);
+        font-size: 0.65rem;
+        white-space: nowrap;
+    }
+
+    &-stub {
+        display: grid;
+        grid-template-columns: auto auto;
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+        gap: 0.25rem;
+        padding: 0.65rem 0.25rem;
+        border-left: 1px dashed var(--site-border-control);
+        border-radius: 0 0.5rem 0.5rem 0;
+        background: var(--ticket-stub-background);
+        color: var(--site-accent-text);
+        transition: background-color 180ms ease;
+    }
+
+    &-volume-column {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        color: var(--site-text-muted);
+        writing-mode: vertical-rl;
+    }
+
+    &-number {
+        font-size: 0.85rem;
+        line-height: 1;
+    }
+
+    &--compact {
+        --ticket-stub-width: 2.65rem;
+        --ticket-padding: 0.65rem;
+        --ticket-title-size: 0.86rem;
+        --ticket-min-height: 6.5rem;
+
+        .footprint-ticket-subtitle,
+        .footprint-ticket-open {
+            font-size: 0.62rem;
+        }
+
+        .footprint-ticket-date {
+            font-size: 0.82rem;
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .footprint-ticket,
+    .footprint-ticket-stub {
+        transition: none;
+    }
+}

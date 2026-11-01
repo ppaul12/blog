@@ -39,7 +39,7 @@ required: map markercluster
             <p class="footprint-eyebrow">PLACE DETAILS</p>
             <div class="footprint-detail-empty">
                 <span class="footprint-detail-mark" aria-hidden="true">
-                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    <i class="ko ko-route" aria-hidden="true"></i>
                 </span>
                 <h3>Select a place</h3>
                 <p>Select a marker on the map to see its dates and related journeys.</p>
@@ -58,7 +58,7 @@ required: map markercluster
     </section>
 
     <section class="footprint-journeys" aria-labelledby="footprint-journeys-title">
-        <div class="footprint-section-heading">
+        <div class="footprint-section-heading" data-aos="fade-up" data-aos-duration="500">
             <h2 id="footprint-journeys-title">Recent journeys</h2>
             <a href="{% link pages/archive.html %}?tag=%E6%97%85%E8%A1%8C" class="footprint-all-journeys">
                 All journeys <span aria-hidden="true">→</span>
@@ -67,15 +67,51 @@ required: map markercluster
         <div id="footprint-journey-cards" class="footprint-journey-cards">
             {% assign recent_journeys = site.posts | where: "layout", "post/travel" | sort: "date" | reverse %}
             {% for journey in recent_journeys limit: 3 %}
-            <a class="footprint-journey-card" href="{{ journey.url | relative_url }}">
-                <span class="footprint-journey-date">{{ journey.date | date: "%Y.%m" }}</span>
-                <strong>{{ journey.title | default: "Untitled journey" | strip_html | escape }}</strong>
-                <span class="footprint-journey-subtitle">{{ journey.subtitle | default: "Open journey" | escape }}</span>
+            <a class="footprint-journey-card footprint-ticket" href="{{ journey.url | relative_url }}" data-aos="fade-up" data-aos-duration="500" data-aos-delay="{{ forloop.index0 | times: 100 }}">
+                <span class="footprint-ticket-main">
+                    <span class="footprint-ticket-heading">
+                        <i class="fa-solid fa-person-hiking" aria-hidden="true"></i>
+                        <strong class="footprint-ticket-title">{{ journey.title | default: "Untitled journey" | strip_html | escape }}</strong>
+                    </span>
+                    <span class="footprint-ticket-subtitle"{% unless journey.subtitle %} hidden{% endunless %}>{{ journey.subtitle | escape }}</span>
+                    <span class="footprint-ticket-footer">
+                        <span class="footprint-ticket-open" aria-hidden="true">Read journey ↗</span>
+                    </span>
+                </span>
+                <span class="footprint-ticket-stub">
+                    <span class="visually-hidden">Travel date</span>
+                    <time class="footprint-ticket-date" datetime="{{ journey.date | date: '%Y-%m' }}">{{ journey.date | date: "%Y.%m" }}</time>
+                    <span class="footprint-ticket-volume-column" aria-hidden="true">
+                        <span class="footprint-ticket-volume">Vol.</span>
+                        <span class="footprint-ticket-number">{{ forloop.index | prepend: "00" | slice: -2, 2 }}</span>
+                    </span>
+                </span>
             </a>
             {% endfor %}
         </div>
     </section>
 </div>
+
+<template id="footprint-ticket-template">
+    <span class="footprint-ticket-main">
+        <span class="footprint-ticket-heading">
+            <i class="fa-solid fa-person-hiking" aria-hidden="true"></i>
+            <strong class="footprint-ticket-title"></strong>
+        </span>
+        <span class="footprint-ticket-subtitle" hidden></span>
+        <span class="footprint-ticket-footer">
+            <span class="footprint-ticket-open" aria-hidden="true">Read journey ↗</span>
+        </span>
+    </span>
+    <span class="footprint-ticket-stub">
+        <span class="visually-hidden">Travel date</span>
+        <time class="footprint-ticket-date"></time>
+        <span class="footprint-ticket-volume-column" aria-hidden="true">
+            <span class="footprint-ticket-volume">Vol.</span>
+            <span class="footprint-ticket-number"></span>
+        </span>
+    </span>
+</template>
 
 <script>
     (async () => {
@@ -209,6 +245,46 @@ required: map markercluster
             const detailDates = document.getElementById("footprint-detail-dates")
             const relatedJourneys = document.getElementById("footprint-related-journeys")
             const detailRecords = document.getElementById("footprint-detail-records")
+            const ticketTemplate = document.getElementById("footprint-ticket-template")
+            let detailAnimations = []
+
+            const animateDetail = () => {
+                detailAnimations.forEach((animation) => animation.cancel())
+                detailAnimations = []
+
+                const elements = detailContent.hidden
+                    ? [...detailEmpty.children]
+                    : [detailTitle, detailMeta, detailDates, relatedJourneys.querySelector("h4"), ...detailRecords.children]
+                detailAnimations = elements
+                    .filter((element) => !element.hidden && element.getClientRects().length)
+                    .map((element, index) => element.animate([
+                        { opacity: 0, transform: "translateY(10px)" },
+                        { opacity: 1, transform: "translateY(0)" },
+                    ], {
+                        duration: 1000,
+                        delay: Math.min(index, 5) * 45,
+                        easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+                        fill: "backwards",
+                    }))
+            }
+
+            const createJourneyTicket = (record, index) => {
+                const link = document.createElement("a")
+                link.className = "footprint-record-link footprint-ticket footprint-ticket--compact"
+                link.href = record.url
+                link.append(ticketTemplate.content.cloneNode(true))
+
+                link.querySelector(".footprint-ticket-title").textContent = record.title || "View journey"
+                const subtitle = link.querySelector(".footprint-ticket-subtitle")
+                subtitle.textContent = record.subtitle || ""
+                subtitle.hidden = !record.subtitle
+
+                const date = link.querySelector(".footprint-ticket-date")
+                date.textContent = record.date.replace("/", ".")
+                date.dateTime = record.date.replace("/", "-")
+                link.querySelector(".footprint-ticket-number").textContent = String(index + 1).padStart(2, "0")
+                return link
+            }
 
             const showLocation = (location) => {
                 detailEmpty.hidden = true
@@ -229,20 +305,8 @@ required: map markercluster
                     tag.textContent = visit
                     detailDates.append(tag)
                 })
-                detailRecords.replaceChildren()
-
-                location.records.forEach((record) => {
-                    const link = document.createElement("a")
-                    link.className = "footprint-record-link"
-                    link.href = record.url
-                    const title = document.createElement("strong")
-                    title.textContent = record.title || "View journey"
-                    const date = document.createElement("span")
-                    date.textContent = `${record.year}.${record.date.split("/")[1]}`
-                    link.append(title, date)
-                    detailRecords.append(link)
-                })
-
+                detailRecords.replaceChildren(...location.records.map(createJourneyTicket))
+                animateDetail()
             }
 
             const markerFor = (location) => {
@@ -292,6 +356,7 @@ required: map markercluster
                     detailContent.hidden = true
                     detailEmpty.querySelector("h3").textContent = "No places found"
                     detailEmpty.querySelector("p").textContent = "Try another date or reset the filter."
+                    animateDetail()
                 }
             }
 
@@ -303,6 +368,7 @@ required: map markercluster
                 detailEmpty.querySelector("h3").textContent = "Select a place"
                 detailEmpty.querySelector("p").textContent = "Select a marker on the map to see its dates and related journeys."
                 refreshMarkers()
+                animateDetail()
                 map.setView([39.92503939668526, 116.43328011233142], 4, {animate: true})
             })
             refreshMarkers()

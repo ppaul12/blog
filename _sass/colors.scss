@@ -1,85 +1,151 @@
-// nord colors
-$nord0: #2e3440;
-$nord1: #3b4252;
-$nord2: #434c5e;
-$nord3: #4c566a;
-$nord4: #d8dee9;
-$nord5: #e5e9f0;
-$nord6: #eceff4;
-$nord7: #8fbcbb;
-$nord8: #88c0d0;
-$nord9: #81a1c1;
-$nord10: #5e81ac;
-$nord11: #bf616a;
-$nord12: #d08770;
-$nord13: #ebcb8b;
-$nord14: #a3be8c;
-$nord15: #b48ead;
-
-// Shared theme mappings; keep the same specificity as the scheme overrides.
+// Palette-independent mappings; seed_palettes.rb generates the --site-* values.
 [data-theme=light],
 :root:not([data-theme=dark]),
 [data-theme=dark] {
-    --pico-h1-color: var(--pico-color);
-    --pico-h2-color: var(--pico-color);
-    --pico-h3-color: var(--pico-color);
-    --pico-h4-color: var(--pico-color);
-    --pico-h5-color: var(--pico-color);
-    --pico-h6-color: var(--pico-color);
+    // Page and typography
+    --pico-background-color: var(--site-background);
+    --pico-color: var(--site-text);
+    --pico-text-selection-color: color-mix(in srgb, var(--site-accent-fill) 25%, transparent);
+    --pico-h1-color: var(--site-text);
+    --pico-h2-color: var(--site-text);
+    --pico-h3-color: var(--site-text);
+    --pico-h4-color: var(--site-text);
+    --pico-h5-color: var(--site-text);
+    --pico-h6-color: var(--site-text);
+    --pico-muted-color: var(--site-text-muted);
+    --pico-muted-border-color: var(--site-border-subtle);
+    --pico-muted-border-color-rgb: var(--site-border-rgb);
 
-    --pico-primary-inverse: var(--pico-background-color);
+    // Primary, secondary, and contrast actions
+    --pico-primary: var(--site-accent-text);
+    --pico-primary-underline: var(--site-accent-text);
+    --pico-primary-hover-underline: var(--site-accent-hover);
+    --pico-primary-hover: var(--site-accent-hover);
+    --pico-primary-background: var(--site-accent-fill);
+    --pico-primary-hover-background: var(--site-accent-hover-fill);
+    --pico-primary-border: var(--site-accent-fill);
+    --pico-primary-hover-border: var(--site-accent-border);
+    --pico-primary-inverse: var(--site-on-accent);
+    --pico-primary-focus: color-mix(in srgb, var(--site-accent-border) 30%, transparent);
+    --pico-secondary: var(--site-secondary-text);
+    --pico-secondary-underline: var(--site-secondary-text);
+    --pico-secondary-hover-underline: var(--site-secondary-hover);
+    --pico-secondary-hover: var(--site-secondary-hover);
+    --pico-secondary-background: var(--site-secondary-fill);
+    --pico-secondary-hover-background: var(--site-secondary-hover-fill);
+    --pico-secondary-border: var(--site-secondary-fill);
+    --pico-secondary-hover-border: var(--site-secondary-border);
+    --pico-secondary-inverse: var(--site-on-secondary);
+    --pico-secondary-focus: color-mix(in srgb, var(--site-secondary-border) 30%, transparent);
+    --pico-contrast: var(--site-text);
+    --pico-contrast-hover: var(--site-text-muted);
+    --pico-contrast-underline: var(--site-text);
+    --pico-contrast-hover-underline: var(--site-text-muted);
+    --pico-contrast-background: var(--site-text);
+    --pico-contrast-hover-background: var(--site-text);
+    --pico-contrast-border: var(--site-text);
+    --pico-contrast-hover-border: var(--site-text);
+    --pico-contrast-inverse: var(--site-background);
+    --pico-contrast-focus: color-mix(in srgb, var(--site-text) 30%, transparent);
 
-    --pico-contrast-inverse: var(--pico-background-color);
+    // State colors and text elements
+    --pico-mark-background-color: var(--site-warning-subtle);
+    --pico-mark-color: var(--site-warning-text);
+    --pico-ins-color: var(--site-success-text);
+    --pico-del-color: var(--site-danger-text);
+    --pico-blockquote-border-color: var(--site-border-control);
+    --pico-blockquote-footer-color: var(--site-text-muted);
+    --pico-code-background-color: var(--site-surface);
+    --pico-code-color: var(--site-text);
+    --pico-code-kbd-background-color: var(--site-text);
+    --pico-code-kbd-color: var(--site-background);
 
-    --pico-mark-background-color: #{$nord13};
-    --pico-mark-color: var(--pico-color);
-    --pico-ins-color: #{$nord14};
-    --pico-del-color: #{$nord11};
+    // Forms and validation
+    --pico-form-element-background-color: var(--site-background);
+    --pico-form-element-selected-background-color: var(--site-surface);
+    --pico-form-element-color: var(--site-text);
+    --pico-form-element-placeholder-color: var(--site-text-muted);
+    --pico-form-element-border-color: var(--site-border-control);
+    --pico-form-element-active-background-color: var(--site-background);
+    --pico-form-element-active-border-color: var(--site-accent-border);
+    --pico-form-element-disabled-background-color: var(--site-surface);
+    --pico-form-element-disabled-border-color: var(--site-border-subtle);
+    --pico-form-element-invalid-border-color: var(--site-danger-border);
+    --pico-form-element-invalid-active-border-color: var(--site-danger-border);
+    --pico-form-element-invalid-focus-color: var(--site-danger-subtle);
+    --pico-form-element-valid-border-color: var(--site-success-border);
+    --pico-form-element-valid-active-border-color: var(--site-success-border);
+    --pico-form-element-valid-focus-color: var(--site-success-subtle);
+    --pico-form-element-focus-color: var(--pico-primary-focus);
 
-    --pico-card-background-color: var(--pico-background-color);
-    --pico-card-border-color: var(--pico-muted-border-color);
+    // Switches, ranges, and progress
+    --pico-switch-background-color: var(--site-border-control);
+    --pico-switch-checked-background-color: var(--site-accent-fill);
+    --pico-switch-color: var(--site-background);
+    --pico-range-border-color: var(--site-border-control);
+    --pico-range-active-border-color: var(--site-accent-border);
+    --pico-range-thumb-color: var(--site-accent-fill);
+    --pico-range-thumb-border-color: var(--site-background);
+    --pico-range-thumb-active-color: var(--site-accent-hover);
+    --pico-progress-background-color: var(--site-surface);
+    --pico-progress-color: var(--site-accent-fill);
 
-    --pico-tooltip-background-color: var(--pico-contrast);
-    --pico-tooltip-color: var(--pico-contrast-inverse);
+    // Tables, cards, dropdowns, and overlays
+    --pico-card-background-color: var(--site-background);
+    --pico-card-border-color: var(--site-border-subtle);
+    --pico-card-box-shadow: var(--pico-box-shadow);
+    --pico-card-sectioning-background-color: var(--site-surface);
+    --pico-dropdown-background-color: var(--site-surface-raised);
+    --pico-dropdown-border-color: var(--site-border-control);
+    --pico-dropdown-box-shadow: var(--pico-box-shadow);
+    --pico-dropdown-color: var(--site-text);
+    --pico-dropdown-hover-background-color: var(--site-surface);
+    --pico-tooltip-background-color: var(--site-text);
+    --pico-tooltip-color: var(--site-background);
+    --pico-table-border-color: var(--site-border-subtle);
+    --pico-table-row-stripped-background-color: var(--site-surface);
+    --pico-accordion-border-color: var(--site-border-subtle);
+    --pico-accordion-active-summary-color: var(--site-accent-hover);
+    --pico-accordion-close-summary-color: var(--site-text);
+    --pico-accordion-open-summary-color: var(--site-text-muted);
+    --pico-modal-overlay-background-color: color-mix(in srgb, var(--site-background) 75%, transparent);
+
+    // Preserve Pico's layered shadow geometry while replacing its fixed blue-gray.
+    --pico-box-shadow:
+        0.0145rem 0.029rem 0.174rem color-mix(in srgb, var(--site-shadow-color) 10%, transparent),
+        0.0335rem 0.067rem 0.402rem color-mix(in srgb, var(--site-shadow-color) 14%, transparent),
+        0.0625rem 0.125rem 0.75rem color-mix(in srgb, var(--site-shadow-color) 17%, transparent),
+        0.1125rem 0.225rem 1.35rem color-mix(in srgb, var(--site-shadow-color) 20%, transparent),
+        0.2085rem 0.417rem 2.502rem color-mix(in srgb, var(--site-shadow-color) 24%, transparent),
+        0.5rem 1rem 6rem color-mix(in srgb, var(--site-shadow-color) 33%, transparent),
+        0 0 0 0.0625rem color-mix(in srgb, var(--site-shadow-color) 8%, transparent);
+
+    // SVG image documents cannot inherit variables from their embedding page.
+    @each $icon in checkbox, minus, chevron, date, time, search, close, loading, valid, invalid {
+        --pico-icon-#{$icon}: var(--site-icon-#{$icon});
+    }
 }
 
-// Light scheme
-[data-theme=light],
-:root:not([data-theme=dark]) {
-    --pico-background-color: #{$nord6};
-    --pico-color: #{$nord0};
+:root[data-theme=light] { color-scheme: light; }
+:root[data-theme=dark] { color-scheme: dark; }
 
-    --pico-muted-color: #{$nord3};
-    --pico-muted-border-color: #{$nord4};
-    --pico-muted-border-color-rgb: 216, 222, 233; // nord4
-    --site-shadow-color: rgb(46 52 64 / 18%);
+// Pico forces these icons to white. Use the generated fill/foreground pairing instead.
+:is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline) {
+    --pico-icon-loading: var(--site-icon-loading-on-accent);
+    --pico-icon-chevron: var(--site-icon-chevron-on-accent);
 
-    --pico-primary: #{$nord10};
-    --pico-primary-hover: #{$nord9};
-    --pico-primary-focus: #{$nord9};
+    &.secondary {
+        --pico-icon-loading: var(--site-icon-loading-on-secondary);
+        --pico-icon-chevron: var(--site-icon-chevron-on-secondary);
+    }
 
-    --pico-contrast-background: #{$nord2};
-    --pico-contrast-hover-background: #{$nord1};
-
-    --pico-card-sectioning-background-color: #{$nord5};
+    &.contrast {
+        --pico-icon-loading: var(--site-icon-loading-on-contrast);
+        --pico-icon-chevron: var(--site-icon-chevron-on-contrast);
+    }
 }
 
-// Dark scheme
-[data-theme=dark] {
-    --pico-background-color: #{$nord0};
-    --pico-color: #{$nord6};
-
-    --pico-muted-color: #{$nord4};
-    --pico-muted-border-color: #{$nord3};
-    --pico-muted-border-color-rgb: 76, 86, 106; // nord3
-    --site-shadow-color: rgb(0 0 0 / 35%);
-
-    --pico-primary: #{$nord9};
-    --pico-primary-hover: #{$nord10};
-    --pico-primary-focus: #{$nord10};
-
-    --pico-contrast-background: #{$nord5};
-    --pico-contrast-hover-background: #{$nord4};
-
-    --pico-card-sectioning-background-color: #{$nord1};
+:root[data-theme] details summary[role=button]:not(.outline)::after,
+:root[data-theme] [aria-busy=true]:not(input, select, textarea):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before {
+    filter: none;
 }

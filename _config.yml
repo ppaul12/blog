@@ -18,6 +18,10 @@ kramdown:
 sass:
   style: compressed
 
+appearance:
+  palette: iris-vale
+  mode: auto
+
 thirdparty:
   giscus:
     repo: ppaul12/blog

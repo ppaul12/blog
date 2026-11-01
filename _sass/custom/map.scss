@@ -1,5 +1,3 @@
-@use "sass:color";
-@use "../colors";
 @use "../utilities" as utils;
 
 // Share the native Leaflet layers panel and its input styling.
@@ -33,10 +31,10 @@
         background: transparent;
         border: initial;
         box-shadow: none;
-        color-scheme: light;
+        color-scheme: light; // Leaflet controls sit on the light map surface.
 
         &:focus-visible {
-            outline: 2px solid colors.$nord10;
+            outline: 2px solid var(--site-map-track-1);
             outline-offset: 1px;
         }
     }
@@ -91,11 +89,11 @@
     display: grid;
     place-items: center;
     padding: 0;
-    border: 2px solid #fff;
+    border: 2px solid var(--site-map-halo);
     border-radius: 50%;
-    background: colors.$nord15;
+    background: var(--site-map-photo-fill);
     box-shadow: 0 1px 5px #0006;
-    color: colors.$nord0;
+    color: var(--site-on-map-photo);
 
     svg {
         display: block;
@@ -104,7 +102,7 @@
     }
 
     &:focus-visible {
-        outline: 3px solid colors.$nord10;
+        outline: 3px solid var(--site-map-track-1);
         outline-offset: 2px;
     }
 }
@@ -130,7 +128,7 @@
             font-size: 12px;
 
             &:focus-visible {
-                outline: 2px solid colors.$nord10;
+                outline: 2px solid var(--site-map-track-1);
                 outline-offset: -2px;
             }
         }
@@ -295,75 +293,22 @@
     }
 }
 
-[data-theme=light] {
-    .marker-cluster {
-        &-small {
-            background-color: color.change(colors.$nord8, $alpha: 0.35);
+// Sequential colors express cluster size; overlays retain their own map contrast.
+.marker-cluster {
+    @each $size, $index in (small: 1, medium: 2, large: 3) {
+        &-#{$size} {
+            background: color-mix(in srgb, var(--site-map-cluster-#{$index}) 35%, transparent);
 
             div {
-                background-color: colors.$nord8;
-                color: colors.$nord0;
+                background: var(--site-map-cluster-#{$index});
+                color: var(--site-on-map-cluster);
             }
-        }
-
-        &-medium {
-            background-color: color.change(colors.$nord9, $alpha: 0.35);
-
-            div {
-                background-color: colors.$nord9;
-                color: colors.$nord0;
-            }
-        }
-
-        &-large {
-            background-color: color.change(colors.$nord15, $alpha: 0.35);
-
-            div {
-                background-color: colors.$nord15;
-                color: colors.$nord0;
-            }
-        }
-
-        div {
-            border: 1px solid color.change(colors.$nord6, $alpha: 0.8);
-            font-weight: 700;
         }
     }
-}
 
-[data-theme=dark] {
-    .marker-cluster {
-        &-small {
-            background-color: color.change(colors.$nord7, $alpha: 0.35);
-
-            div {
-                background-color: colors.$nord7;
-                color: colors.$nord0;
-            }
-        }
-
-        &-medium {
-            background-color: color.change(colors.$nord9, $alpha: 0.4);
-
-            div {
-                background-color: colors.$nord9;
-                color: colors.$nord0;
-            }
-        }
-
-        &-large {
-            background-color: color.change(colors.$nord15, $alpha: 0.4);
-
-            div {
-                background-color: colors.$nord15;
-                color: colors.$nord0;
-            }
-        }
-
-        div {
-            border: 1px solid color.change(colors.$nord0, $alpha: 0.8);
-            font-weight: 700;
-        }
+    div {
+        border: 1px solid var(--site-map-halo);
+        font-weight: 700;
     }
 }
 

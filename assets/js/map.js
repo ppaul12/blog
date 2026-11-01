@@ -111,7 +111,19 @@ const createMapLocationMarker = (name, coordinates, options = {}) => {
         .bindPopup(popup, { closeButton: false })
 }
 
-const loadMapTracks = async (trackURLs = [], baseURL = "", color = "#d65a31") => {
+const mapTrackColor = (type) => {
+    // Stable type assignments survive reordering, filtering, and page changes.
+    const knownTypes = ["🚴", "🚶", "🚗", "🚃"]
+    let index = knownTypes.indexOf(type)
+    if (index < 0) {
+        index = Array.from(type).reduce((hash, character) => (hash * 31 + character.codePointAt(0)) >>> 0, 0) % 4
+    }
+    return getComputedStyle(document.documentElement)
+        .getPropertyValue(`--site-map-track-${index + 1}`).trim()
+}
+
+const loadMapTracks = async (trackURLs = [], baseURL = "", color = mapTrackColor("🚴")) => {
+    const haloColor = getComputedStyle(document.documentElement).getPropertyValue("--site-map-halo").trim()
     // Keep files and GPX track segments separate, including gaps between recordings.
     const trackLayers = await Promise.all(trackURLs.map(async (url) => {
         try {
@@ -124,10 +136,15 @@ const loadMapTracks = async (trackURLs = [], baseURL = "", color = "#d65a31") =>
                     Number(point.getAttribute("lat")), Number(point.getAttribute("lon")),
                 ]).filter(([lat, lng]) => Number.isFinite(lat) && Number.isFinite(lng))
                 if (points.length < 2) return null
-                return L.polyline(points, {
-                    color, weight: 4, opacity: 0.85,
+                const halo = L.polyline(points, {
+                    color: haloColor,
+                    weight: 7, opacity: 0.9, interactive: false,
+                })
+                const line = L.polyline(points, {
+                    color, weight: 4, opacity: 1,
                     interactive: false,
                 })
+                return L.featureGroup([halo, line])
             }).filter(Boolean)
             return L.featureGroup(lines)
         } catch (error) {
@@ -380,9 +397,8 @@ const initMap = async (mapId, mapData, baseURL = "") => {
     const markers = L.layerGroup(Object.entries(locations).map(([name, coordinates]) => {
         return createMapLocationMarker(name, coordinates)
     })).addTo(map)
-    const trackColors = ["#d65a31", "#315fb5", "#8661ae", "#328060"]
-    const tracks = (await Promise.all(Object.entries(mapData.track ?? {}).map(async ([type, urls], index) => {
-        const color = trackColors[index % trackColors.length]
+    const tracks = (await Promise.all(Object.entries(mapData.track ?? {}).map(async ([type, urls]) => {
+        const color = mapTrackColor(type)
         const layer = await loadMapTracks(urls, baseURL, color)
         return { type, layer, color }
     }))).filter(({ layer }) => layer.getBounds().isValid())

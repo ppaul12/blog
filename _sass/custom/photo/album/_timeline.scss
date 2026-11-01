@@ -1,8 +1,6 @@
-@use "../../../colors";
-
 .timeline-album {
-    --timeline-album-daily-color: #{colors.$nord13};
-    --timeline-album-travel-color: #{colors.$nord14};
+    --timeline-album-daily-color: var(--site-category-1);
+    --timeline-album-travel-color: var(--site-category-2);
     margin-bottom: 2rem;
 
     &-chart {

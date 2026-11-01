@@ -1,5 +1,4 @@
 @use "../utilities" as utils;
-@use "../colors";
 
 .profile {
     --profile-section-gap: 1.4rem;
@@ -359,17 +358,13 @@
         .ko {
             width: 4.5rem;
             height: 4.5rem;
-            color: var(--pico-color);
-            -webkit-mask-size: auto var(--identity-art-height, 3.2rem);
+            color: var(--pico-primary);
             mask-size: auto var(--identity-art-height, 3.2rem);
         }
 
+        // Identity colors describe the content and stay independent of the palette.
         .profile-identity-blaugrana {
-            background: linear-gradient(to right, colors.$nord11 50%, colors.$nord9 50%) center bottom 0.6rem / 3.5rem 0.25rem no-repeat;
-        }
-
-        .ko-hiking-up-hill {
-            --identity-art-height: 3.9rem;
+            background: linear-gradient(to right, #a50044 50%, #004d98 50%) center bottom 0.6rem / 3.5rem 0.25rem no-repeat;
         }
     }
 

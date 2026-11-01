@@ -1,13 +1,10 @@
-@use "sass:color";
-@use "../colors";
-
 .tag {
     margin: 0.2rem 0.2rem;
     padding: 0.2rem 0.5rem;
     border-radius: 2rem;
     font-size: 0.8rem;
     text-decoration: none;
-    color: color.adjust(colors.$nord4, $lightness: -60%);
+    color: var(--site-tag-text);
 
     transition: all 0.5s ease;
     animation: bounceIn 1s calc(900ms + var(--tag-delay, 0ms)) backwards;
@@ -26,11 +23,7 @@
     @for $i from 0 through 10 {
         &-#{$i} {
             @extend .tag;
-            background: color.mix(
-                color.adjust(colors.$nord15, $lightness: 20%),
-                color.adjust(colors.$nord9, $lightness: 20%),
-                $i * 10%
-            );
+            background: var(--site-tag-#{$i});
         }
     }
 

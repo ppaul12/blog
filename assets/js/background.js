@@ -6,12 +6,10 @@ bg.style.inset = 0
 bg.style.zIndex = -100
 document.body.appendChild(bg)
 
-const setDynamicBackground = (theme) => {
-    bg.childNodes.forEach((child) => bg.removeChild(child))
-    const color = {
-        "light": "#808080",
-        "dark": "#C0C0C0",
-    }[theme]
+const setDynamicBackground = () => {
+    bg.replaceChildren()
+    const color = getComputedStyle(document.documentElement)
+        .getPropertyValue("--site-particle").trim()
 
     particlesJS(bg.id, {
         "particles": {
@@ -23,13 +21,13 @@ const setDynamicBackground = (theme) => {
                 }
             },
             "color": {
-                "value": `${color}`
+                "value": color
             },
             "shape": {
                 "type": "circle",
                 "stroke": {
                     "width": 0,
-                    "color": `${color}`
+                    "color": color
                 },
                 "polygon": {
                     "nb_sides": 5
@@ -58,7 +56,7 @@ const setDynamicBackground = (theme) => {
             "line_linked": {
                 "enable": true,
                 "distance": 150,
-                "color": `${color}`,
+                "color": color,
                 "opacity": 0.4,
                 "width": 1
             },
@@ -81,12 +79,8 @@ const setDynamicBackground = (theme) => {
     })
 }
 
-setDynamicBackground(document.documentElement.dataset.theme)
-const background_observer = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
-        if (mutation.attributeName === "data-theme") {
-            setDynamicBackground(mutation.target.getAttribute(mutation.attributeName))
-        }
-    })
+setDynamicBackground()
+new MutationObserver(setDynamicBackground).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-theme"],
 })
-background_observer.observe(document.documentElement, { attributes: true })

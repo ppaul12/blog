@@ -37,6 +37,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Resolve the scheme before styles and code-theme consumers load. -->
+    <script src="{% link assets/js/theme.js %}"></script>
     <link rel="icon" type="image/png" href="https://github.com/{{ site.thirdparty.github.user }}.png?size=16">
     <title>{{ page.title | format_title | strip_html }} | {{ site.data.profiles.author.name }}</title>
     {%- seo title=false -%}
@@ -152,9 +154,8 @@
     {%- endif -%}
 
     <!-- custom style -->
+    <link rel="stylesheet" href="{{ '/assets/palettes.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
-    <!-- custom theme switcher -->
-    <script src="{% link assets/js/theme.js %}"></script>
     <!-- custom json loader -->
     <script src="{% link assets/js/json.js %}"></script>
 </head>

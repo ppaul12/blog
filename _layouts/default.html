@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: 'zh' }}" data-theme="dark">
+<html lang="{{ page.lang | default: 'zh' }}"
+    data-palette="{{ site.data.appearance.palette | escape }}"
+    data-mode="{{ site.data.appearance.mode }}"
+    data-theme="{% if site.data.appearance.mode == 'dark' %}dark{% else %}light{% endif %}"
+>
     {%- include head.html -%}
     <body{% if page.page_width %} class="page-width-{{ page.page_width | escape }}"{% endif %}>
         {%- include navigation.html -%}

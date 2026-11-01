@@ -1,0 +1,13 @@
+nord:
+  accent: "#81a1c1"
+  secondary: "#b48ead"
+  neutral: "#2e3440"
+
+blaugrana:
+  accent: "#5275a3"
+  secondary: "#a4546a"
+  neutral: "#343641"
+
+iris-vale:
+  accent: "#1660ab" # 鸢尾蓝
+  neutral: "#2b313f" # 幽谷灰

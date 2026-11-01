@@ -1,5 +1,3 @@
-@use "./colors";
-
 // Shared layout thresholds, also exported for JavaScript container layouts.
 $narrow: 420px;
 $compact: 600px;
@@ -64,7 +62,7 @@ $wide: 900px;
     right: 1rem;
     width: 1.2rem;
     height: 1.6rem;
-    background: colors.$nord13;
+    background: var(--site-warning-fill);
     border-top-left-radius: 0.2rem;
     border-top-right-radius: 0.2rem;
     content: "";
@@ -86,15 +84,15 @@ $wide: 900px;
 }
 
 [mark]::after {
-    @include icon(colors.$nord13, "\f02e");
+    @include icon(var(--site-warning-fill), "\f02e");
 }
 
 [edit]::after {
-    @include icon(colors.$nord12, "\f111");
+    @include icon(var(--site-secondary-text), "\f111");
 }
 
 [heart]::after {
-    @include icon(colors.$nord11, "\f004");
+    @include icon(var(--site-danger-text), "\f004");
 }
 
 [drop-cap]::first-letter {

@@ -188,6 +188,15 @@
     }
 }
 
+.site-nav-theme .site-nav-item > i {
+    transform: rotate(0deg);
+    transition: transform 360ms ease-in-out;
+
+    :root[data-theme="dark"] & {
+        transform: rotate(180deg);
+    }
+}
+
 // Expand the home links together once the header has room for every label.
 @container home-header (min-width: 48rem) {
     .site-navigation--home > .site-nav-actions {

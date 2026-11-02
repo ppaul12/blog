@@ -176,10 +176,3 @@ $border-width: 1px;
         }
     }
 }
-
-@media (prefers-reduced-motion: reduce) {
-    .footprint-ticket,
-    .footprint-ticket-stub {
-        transition: none;
-    }
-}

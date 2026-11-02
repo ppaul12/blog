@@ -1,0 +1,25 @@
+<aside class="controller" aria-label="Controller">
+    <button id="devices-btn" class="controller-button" type="button" active hidden
+        data-modal="album-devices-modal" aria-label="Open devices overview" title="Devices" aria-haspopup="dialog" aria-controls="album-devices-modal">
+        <i class="fa-solid fa-camera fa-fw" aria-hidden="true"></i>
+    </button>
+    <button id="top-btn" class="controller-button" type="button" inert
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" aria-label="Back to top" title="Back to top">
+        <i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i>
+    </button>
+</aside>
+
+<script>
+    (() => {
+        const button = document.getElementById("top-btn")
+        const update = () => {
+            const active = window.scrollY >= window.innerHeight
+            button.toggleAttribute("active", active)
+            button.inert = !active
+        }
+        window.addEventListener("scroll", update, { passive: true })
+        window.addEventListener("resize", update)
+        window.addEventListener("pageshow", update)
+        update()
+    })()
+</script>

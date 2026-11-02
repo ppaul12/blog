@@ -7,6 +7,7 @@
     {%- include head.html -%}
     <body{% if page.page_width %} class="page-width-{{ page.page_width | escape }}"{% endif %}>
         {%- include navigation.html -%}
+        {%- include controller.html -%}
 
         <main>{{ content }}</main>
 

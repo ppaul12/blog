@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="phone-home-single-slide-v3" width="1600" height="1440" viewBox="0 0 1600 1440" role="img" aria-labelledby="phone-title phone-desc">
+  <title id="phone-title">iPhone SE3</title>
+  <style>
+#phone-home-single-slide-v3 { color: var(--device-line-color, #111); }
+@media (prefers-color-scheme: dark) {
+  #phone-home-single-slide-v3 { color: var(--device-line-color, #eee); }
+}
+#phone-home-single-slide-v3 .solid, #phone-home-single-slide-v3 .line { fill: none; stroke: currentColor; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+#phone-home-single-slide-v3 .rear { transform: translateX(-260px); animation: phone-home-single-slide-v3-unfold-rear 1.8s ease-in-out both; }
+#phone-home-single-slide-v3 .front { transform: translateX(260px); animation: phone-home-single-slide-v3-unfold-front 1.8s ease-in-out both; }
+@keyframes phone-home-single-slide-v3-unfold-rear {
+  from { transform: translateX(100px); }
+  to { transform: translateX(-260px); }
+}
+@keyframes phone-home-single-slide-v3-unfold-front {
+  from { transform: translateX(-100px); }
+  to { transform: translateX(260px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #phone-home-single-slide-v3 .rear, #phone-home-single-slide-v3 .front { animation: none; }
+}
+  /* Only device silhouettes are filled; the canvas stays transparent. */
+#phone-home-single-slide-v3 .device-body { fill: var(--device-background-color, #fff); }
+@media (prefers-color-scheme: dark) {
+  #phone-home-single-slide-v3 .device-body { fill: var(--device-background-color, #1b1e23); }
+}
+</style>
+  <g id="home-v3-rear-phone" class="rear" transform="translate(-260 0)">
+    <rect id="home-v3-rear-body" class="solid device-body" x="400" y="80" width="600" height="1280" rx="94"/>
+    <g class="line">
+      <circle cx="480" cy="162" r="35"/>
+      <circle cx="540" cy="162" r="6"/>
+      <circle cx="580" cy="162" r="17"/>
+    </g>
+    <!-- Symmetric nominal bounds x=640..760, y=645..795; center=(700,720). -->
+    <g id="home-v3-apple-logo" class="line">
+      <path d="M700 681 C698 664 708 650 726 645 C727 663 717 678 700 681 Z"/>
+      <path d="M700 694 C682 685 666 686 653 701 C630 728 640 755 653 776 C662 791 671 799 683 793 C694 787 701 787 712 792 C727 800 738 786 747 773 C753 764 757 755 760 747 C739 738 735 718 755 704 C741 685 721 684 707 692 C704 694 702 695 700 694 Z"/>
+    </g>
+  </g>
+  <g id="home-v3-front-phone" class="front" transform="translate(260 0)">
+    <rect id="home-v3-front-body" class="solid device-body" x="600" y="80" width="600" height="1280" rx="94"/>
+    <g class="line">
+      <rect x="614" y="94" width="572" height="1252" rx="81"/>
+      <rect id="home-v3-screen" x="630" y="230" width="540" height="970"/>
+      <circle cx="800" cy="162" r="9"/>
+      <rect x="850" y="157" width="100" height="10" rx="5"/>
+      <circle id="home-v3-home-button" cx="900" cy="1276" r="44"/>
+    </g>
+  </g>
+</svg>

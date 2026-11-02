@@ -4,7 +4,6 @@
 
     const shelves = [...page.querySelectorAll(".book-shelf")]
     const picker = page.querySelector("#books-year")
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)")
     let ready = false
     let scrollTimer
 
@@ -36,7 +35,7 @@
         shelf.querySelector("summary")?.focus({ preventScroll: true })
         shelf.scrollIntoView({
             block: "start",
-            behavior: smooth && !reducedMotion.matches ? "smooth" : "instant",
+            behavior: smooth ? "smooth" : "instant",
         })
     }
 

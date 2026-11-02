@@ -7,7 +7,56 @@ permalink: /album
 required: album
 ---
 
-<div class="collection-album">
+{% assign current_devices = site.data.devices | where: 'status', 'current' %}
+{% assign previous_devices = site.data.devices | where: 'status', 'previous' %}
+{% assign devices = current_devices | concat: previous_devices %}
+{% if devices.size > 0 %}
+<dialog id="album-devices-modal" class="album-devices-modal site-modal" data-closed aria-labelledby="album-devices-heading">
+    <article tabindex="-1">
+        <header class="album-devices-header">
+            <button type="button" rel="prev" data-modal="album-devices-modal" aria-label="Close devices overview" autofocus></button>
+            <h2 id="album-devices-heading"><i class="ko ko-camera" aria-hidden="true"></i><span>Devices</span></h2>
+        </header>
+        <div class="album-devices-book" role="region" aria-label="Device pages" tabindex="0">
+            {% for device in devices %}
+            <section class="album-devices-page" aria-label="{{ device.name | escape }}">
+                <div class="album-devices-page-heading">
+                    <p class="album-devices-status">{% if device.status == 'current' %}Currently using{% else %}Previously used{% endif %}</p>
+                    <span class="album-devices-count">{{ forloop.index }} / {{ forloop.length }}</span>
+                </div>
+                <div class="album-devices-hero">
+                    <div class="album-devices-illustration"{% if device.illustration %} data-device-svg="{{ '/assets/img/devices/' | append: device.illustration | relative_url }}"{% endif %} aria-hidden="true">
+                        {%- unless device.illustration -%}
+                        <i class="ko ko-original {% if device.type == 'phone' %}ko-smartphone-2{% else %}ko-camera{% endif %}"></i>
+                        {%- endunless -%}
+                    </div>
+                    <div class="album-devices-info">
+                        <h3>{{ device.name | escape }}</h3>
+                        {% if device.since or device.until %}
+                        <p class="album-devices-period">{% if device.since %}{{ device.since | escape }}{% endif %}{% if device.status == 'current' %}{% if device.since %} — {% endif %}Present{% elsif device.until %}{% if device.since %} — {% endif %}{{ device.until | escape }}{% endif %}</p>
+                        {% endif %}
+                    </div>
+                </div>
+                {% if device.lenses.size > 0 %}
+                <dl class="album-devices-spec">
+                    <dt>Lenses</dt>
+                    <dd>
+                        <ul>
+                            {% for lens in device.lenses %}
+                            <li>{{ lens | escape }}</li>
+                            {% endfor %}
+                        </ul>
+                    </dd>
+                </dl>
+                {% endif %}
+            </section>
+            {% endfor %}
+        </div>
+    </article>
+</dialog>
+{% endif %}
+
+<section class="collection-album" aria-label="Photos">
     <nav class="collection-album-toolbar" aria-label="Album navigation">
         <p id="collection-album-count" class="collection-album-count" aria-live="polite">Loading album…</p>
         <fieldset class="collection-album-order-group">
@@ -27,7 +76,8 @@ required: album
         </fieldset>
     </nav>
     <div id="collection-album" class="album-grid" aria-live="polite" aria-busy="true"></div>
-</div>
+</section>
+<script src="{% link assets/js/photo/album/devices.js %}"></script>
 <script>
     initCollectionAlbum("collection-album", "{% link assets/json/album.json %}", {{ site.baseurl | default: '' | jsonify }})
 </script>

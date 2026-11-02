@@ -175,13 +175,6 @@
         animation: map-maximize-out 120ms ease-in both;
     }
 
-    @media (prefers-reduced-motion: reduce) {
-        &,
-        &.is-closing {
-            animation-duration: 1ms;
-        }
-    }
-
     > .leaflet-container {
         position: absolute !important;
         inset: 0;

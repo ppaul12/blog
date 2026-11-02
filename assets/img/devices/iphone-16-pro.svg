@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="phone-triple-animated" width="1600" height="1440" viewBox="0 0 1600 1440" role="img" aria-labelledby="phone-triple-animated-title phone-triple-animated-desc">
+  <title id="phone-triple-animated-title">iPhone 16 Pro</title>
+  <style>
+#phone-triple-animated { color: var(--device-line-color, #111); }
+@media (prefers-color-scheme: dark) {
+  #phone-triple-animated { color: var(--device-line-color, #eee); }
+}
+#phone-triple-animated .outline, #phone-triple-animated .detail { fill: none; stroke: currentColor; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+#phone-triple-animated .rear { transform: translateX(-200px); animation: phone-triple-animated-unfold-rear 1.8s ease-in-out both; }
+#phone-triple-animated .front { transform: translateX(200px); animation: phone-triple-animated-unfold-front 1.8s ease-in-out both; }
+@keyframes phone-triple-animated-unfold-rear {
+  from { transform: translateX(200px); }
+  to { transform: translateX(-200px); }
+}
+@keyframes phone-triple-animated-unfold-front {
+  from { transform: translateX(-200px); }
+  to { transform: translateX(200px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #phone-triple-animated .rear, #phone-triple-animated .front { animation: none; }
+}
+  /* Only device silhouettes are filled; the canvas stays transparent. */
+#phone-triple-animated .device-body { fill: var(--device-background-color, #fff); }
+@media (prefers-color-scheme: dark) {
+  #phone-triple-animated .device-body { fill: var(--device-background-color, #1b1e23); }
+}
+</style>
+  <g id="phone-triple-animated-rear-phone" class="rear">
+    <rect class="outline device-body" x="298.823529" y="80" width="602.352941" height="1280" rx="94.117647" />
+    <rect class="detail" x="336.470588" y="136.470588" width="320" height="320" rx="62.117647" />
+    <g id="phone-triple-animated-rear-cameras" class="detail">
+      <circle cx="417.411765" cy="217.411765" r="62.117647" />
+      <circle cx="571.764706" cy="290.823529" r="62.117647" />
+      <circle cx="417.411765" cy="373.647059" r="62.117647" />
+      <circle cx="577.411765" cy="183.529412" r="22.588235" />
+      <circle cx="577.411765" cy="404.705882" r="22.588235" />
+    </g>
+    <g id="phone-triple-animated-rear-logo" class="detail">
+      <path d="M 598.635294 665.082353 C 595.435294 645.882353 609.035294 630.682353 629.835294 625.882353 C 630.635294 645.882353 617.035294 661.882353 598.635294 665.082353 Z" />
+      <path d="M 597.835294 677.882353 C 581.035294 669.882353 568.235294 667.482353 554.635294 675.482353 C 529.035294 690.682353 530.635294 722.682353 541.035294 748.282353 C 549.835294 771.482353 563.435294 789.882353 577.835294 786.682353 C 588.235294 784.282353 594.635294 780.282353 602.635294 782.682353 C 616.235294 785.882353 623.435294 790.682353 634.635294 781.082353 C 646.635294 771.482353 656.235294 756.282353 662.635294 740.282353 C 640.235294 730.682353 637.035294 707.482353 658.635294 690.682353 C 643.435294 669.082353 624.235294 669.082353 607.435294 676.282353 C 603.435294 677.882353 600.235294 678.682353 597.835294 677.882353 Z" />
+    </g>
+  </g>
+  <g id="phone-triple-animated-front-phone" class="front">
+    <rect class="outline device-body" x="698.823529" y="80" width="602.352941" height="1280" rx="94.117647" />
+    <rect class="detail" x="713.882353" y="95.058824" width="572.235294" height="1249.882353" rx="80.941176" />
+    <rect class="detail" x="909.647059" y="132.705882" width="180.705882" height="50.823529" rx="25.411765" />
+  </g>
+</svg>

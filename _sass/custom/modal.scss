@@ -1,0 +1,24 @@
+// The dialog's own attributes are the only modal state.
+:root {
+    scrollbar-gutter: stable;
+}
+
+html:has(.site-modal[open]) {
+    overflow: hidden;
+}
+
+.site-modal {
+    transition: opacity 200ms ease;
+
+    > article {
+        transition: transform 200ms ease;
+    }
+
+    &[data-closed] {
+        opacity: 0;
+
+        > article {
+            transform: translateY(12px) scale(0.98);
+        }
+    }
+}

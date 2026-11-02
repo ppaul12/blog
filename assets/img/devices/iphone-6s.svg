@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="phone-classic-animated" width="1600" height="1440" viewBox="0 0 1600 1440" role="img" aria-labelledby="phone-classic-animated-title phone-classic-animated-desc">
+  <title id="phone-classic-animated-title">iPhone 6S</title>
+  <style>
+#phone-classic-animated { color: var(--device-line-color, #111); }
+@media (prefers-color-scheme: dark) {
+  #phone-classic-animated { color: var(--device-line-color, #eee); }
+}
+#phone-classic-animated .outline, #phone-classic-animated .detail { fill: none; stroke: currentColor; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+#phone-classic-animated .rear { transform: translateX(-200px); animation: phone-classic-animated-unfold-rear 1.8s ease-in-out both; }
+#phone-classic-animated .front { transform: translateX(200px); animation: phone-classic-animated-unfold-front 1.8s ease-in-out both; }
+@keyframes phone-classic-animated-unfold-rear {
+  from { transform: translateX(200px); }
+  to { transform: translateX(-200px); }
+}
+@keyframes phone-classic-animated-unfold-front {
+  from { transform: translateX(-200px); }
+  to { transform: translateX(200px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #phone-classic-animated .rear, #phone-classic-animated .front { animation: none; }
+}
+  /* Only device silhouettes are filled; the canvas stays transparent. */
+#phone-classic-animated .device-body { fill: var(--device-background-color, #fff); }
+@media (prefers-color-scheme: dark) {
+  #phone-classic-animated .device-body { fill: var(--device-background-color, #1b1e23); }
+}
+</style>
+  <g id="phone-classic-animated-rear-phone" class="rear">
+    <rect class="outline device-body" x="300" y="80" width="600" height="1280" rx="92" />
+    <g class="detail">
+      <path d="M 300 194 H 900 M 300 1234 H 900" />
+      <circle id="phone-classic-animated-rear-camera" cx="404" cy="138" r="27" />
+      <circle id="phone-classic-animated-rear-flash" cx="478" cy="138" r="13" />
+    </g>
+    <g id="phone-classic-animated-rear-logo" class="detail">
+      <path d="M 586.76 395.28 C 583.88 378 596.12 364.32 614.84 360 C 615.56 378 603.32 392.4 586.76 395.28 Z" />
+      <path d="M 586.04 406.8 C 570.92 399.6 559.4 397.44 547.16 404.64 C 524.12 418.32 525.56 447.12 534.92 470.16 C 542.84 491.04 555.08 507.6 568.04 504.72 C 577.4 502.56 583.16 498.96 590.36 501.12 C 602.6 504 609.08 508.32 619.16 499.68 C 629.96 491.04 638.6 477.36 644.36 462.96 C 624.2 454.32 621.32 433.44 640.76 418.32 C 627.08 398.88 609.8 398.88 594.68 405.36 C 591.08 406.8 588.2 407.52 586.04 406.8 Z" />
+    </g>
+  </g>
+  <g id="phone-classic-animated-front-phone" class="front">
+    <rect class="outline device-body" x="700" y="80" width="600" height="1280" rx="92" />
+    <rect class="detail" x="714" y="94" width="572" height="1252" rx="80" />
+    <rect id="phone-classic-animated-screen" class="detail" x="736" y="226" width="528" height="972" />
+    <g class="detail">
+      <circle id="phone-classic-animated-front-camera" cx="902" cy="158" r="10" />
+      <path id="phone-classic-animated-earpiece" d="M 963 158 H 1037" />
+      <circle id="phone-classic-animated-home-button" cx="1000" cy="1268" r="45" />
+    </g>
+  </g>
+</svg>

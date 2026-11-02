@@ -1,0 +1,45 @@
+- name: OLYMPUS OM-D E-M10
+  illustration: olympus-omd-em10.svg
+  type: camera
+  status: current
+  since: "2026.06"
+  lenses:
+    - M.ZUIKO DIGITAL ED 14-42mm F3.5-5.6 EZ
+    - M.ZUIKO DIGITAL ED 40-150mm F4.0-5.6 R
+
+- name: iPhone 16 Pro
+  illustration: iphone-16-pro.svg
+  type: phone
+  status: current
+  since: "2024.12"
+
+- name: CANON EOS M200
+  illustration: canon-eos-m200.svg
+  type: camera
+  status: previous
+  since: "2021.11"
+  until: "2026.06"
+  lenses:
+    - EF-M15-45mm F3.5-6.3 IS STM
+    - EF-M55-200mm F4.5-6.3 IS STM
+
+- name: iPhone SE3
+  illustration: iphone-se3.svg
+  type: phone
+  status: previous
+  since: "2023;09"
+  until: "2024.12"
+
+- name: iPhone 11
+  illustration: iphone-11.svg
+  type: phone
+  status: previous
+  since: "2020.01"
+  until: "2023.09"
+
+- name: iPhone 6S
+  illustration: iphone-6s.svg
+  type: phone
+  status: previous
+  since: "2017"
+  until: "2020.01"

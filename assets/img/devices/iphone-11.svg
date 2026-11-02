@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="phone-dual-animated" width="1600" height="1440" viewBox="0 0 1600 1440" role="img" aria-labelledby="phone-dual-animated-title phone-dual-animated-desc">
+  <title id="phone-dual-animated-title">iPhone 11</title>
+  <style>
+#phone-dual-animated { color: var(--device-line-color, #111); }
+@media (prefers-color-scheme: dark) {
+  #phone-dual-animated { color: var(--device-line-color, #eee); }
+}
+#phone-dual-animated .outline, #phone-dual-animated .detail { fill: none; stroke: currentColor; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+#phone-dual-animated .rear { transform: translateX(-200px); animation: phone-dual-animated-unfold-rear 1.8s ease-in-out both; }
+#phone-dual-animated .front { transform: translateX(200px); animation: phone-dual-animated-unfold-front 1.8s ease-in-out both; }
+@keyframes phone-dual-animated-unfold-rear {
+  from { transform: translateX(200px); }
+  to { transform: translateX(-200px); }
+}
+@keyframes phone-dual-animated-unfold-front {
+  from { transform: translateX(-200px); }
+  to { transform: translateX(200px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #phone-dual-animated .rear, #phone-dual-animated .front { animation: none; }
+}
+  /* Only device silhouettes are filled; the canvas stays transparent. */
+#phone-dual-animated .device-body { fill: var(--device-background-color, #fff); }
+@media (prefers-color-scheme: dark) {
+  #phone-dual-animated .device-body { fill: var(--device-background-color, #1b1e23); }
+}
+</style>
+  <g id="phone-dual-animated-rear-phone" class="rear">
+    <rect class="outline device-body" x="289.69697" y="80" width="620.606061" height="1280" rx="96.969697" />
+    <rect id="phone-dual-animated-camera-module" class="detail" x="328.484848" y="118.787879" width="223.030303" height="252.121212" rx="56.242424" />
+    <g id="phone-dual-animated-rear-cameras" class="detail">
+      <circle id="phone-dual-animated-upper-camera" cx="396.363636" cy="186.666667" r="46.545455" />
+      <circle id="phone-dual-animated-lower-camera" cx="396.363636" cy="303.030303" r="46.545455" />
+      <circle id="phone-dual-animated-microphone" cx="493.333333" cy="181.818182" r="8.727273" />
+      <circle id="phone-dual-animated-flash" cx="493.333333" cy="244.848485" r="19.393939" />
+    </g>
+    <g id="phone-dual-animated-rear-logo" class="detail">
+      <g>
+        <path d="M 600.727273 681.454545 C 597.818182 664 610.181818 650.181818 629.090909 645.818182 C 629.818182 664 617.454545 678.545455 600.727273 681.454545 Z" />
+        <path d="M 600 693.090909 C 584.727273 685.818182 573.090909 683.636364 560.727273 690.909091 C 537.454545 704.727273 538.909091 733.818182 548.363636 757.090909 C 556.363636 778.181818 568.727273 794.909091 581.818182 792 C 591.272727 789.818182 597.090909 786.181818 604.363636 788.363636 C 616.727273 791.272727 623.272727 795.636364 633.454545 786.909091 C 644.363636 778.181818 653.090909 764.363636 658.909091 749.818182 C 638.545455 741.090909 635.636364 720 655.272727 704.727273 C 641.454545 685.090909 624 685.090909 608.727273 691.636364 C 605.090909 693.090909 602.181818 693.818182 600 693.090909 Z" />
+      </g>
+    </g>
+  </g>
+  <g id="phone-dual-animated-front-phone" class="front">
+    <rect class="outline device-body" x="689.69697" y="80" width="620.606061" height="1280" rx="96.969697" />
+    <path id="phone-dual-animated-notched-screen" class="detail" d="M 786.666667 107.151515 H 844.848485 Q 852.606061 107.151515 852.606061 114.909091 C 852.606061 145.939394 869.090909 157.575758 891.393939 157.575758 H 1108.606061 C 1130.909091 157.575758 1147.393939 145.939394 1147.393939 114.909091 Q 1147.393939 107.151515 1155.151515 107.151515 H 1213.333333 Q 1283.151515 107.151515 1283.151515 176.969697 V 1263.030303 Q 1283.151515 1332.848485 1213.333333 1332.848485 H 786.666667 Q 716.848485 1332.848485 716.848485 1263.030303 V 176.969697 Q 716.848485 107.151515 786.666667 107.151515 Z" />
+  </g>
+</svg>

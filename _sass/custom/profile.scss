@@ -282,14 +282,6 @@
         transform: none;
     }
 
-    @media (prefers-reduced-motion: reduce) {
-        [data-aos] {
-            opacity: 1 !important;
-            transform: none !important;
-            transition: none !important;
-        }
-    }
-
     &-tools {
         display: flex;
         flex-wrap: wrap;
@@ -316,10 +308,6 @@
                 &:hover {
                     scale: 1.15;
                 }
-            }
-
-            @media (prefers-reduced-motion: reduce) {
-                transition: none;
             }
         }
     }

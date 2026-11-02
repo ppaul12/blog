@@ -22,7 +22,7 @@ $wide: 900px;
     }
 }
 
-// Shared appearance for navigation tools and the floating back-to-top button.
+// Shared appearance for navigation and controller buttons.
 @mixin utility-control {
     color: var(--pico-muted-color);
     background: transparent;
@@ -42,15 +42,6 @@ $wide: 900px;
     &:focus-visible {
         outline: 2px solid var(--pico-primary);
         outline-offset: 2px;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        transition: none;
-
-        &:hover,
-        &:focus-visible {
-            transform: none;
-        }
     }
 }
 

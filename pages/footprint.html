@@ -315,7 +315,7 @@ required: map markercluster
                     .on("click", () => {
                         showLocation(location)
                         maximizeControl.close(() => detail.scrollIntoView({
-                            behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+                            behavior: "smooth",
                             block: "start",
                         }))
                     })

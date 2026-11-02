@@ -220,56 +220,6 @@
     }
 }
 
-// Floating reading tools.
-.reading-tools {
-    position: fixed;
-    right: calc(12px + env(safe-area-inset-right));
-    bottom: calc(16px + env(safe-area-inset-bottom));
-    z-index: 9;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translateY(4px);
-    transition: opacity 360ms ease-in-out,
-        transform 360ms cubic-bezier(0.22, 1, 0.36, 1),
-        visibility 0s linear 360ms;
-
-    &[data-visible] {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-        transform: none;
-        transition-delay: 0s;
-    }
-
-    @include utils.from(utils.$wide) {
-        // Outside the content card when its side gutter has enough room.
-        right: max(calc(24px + env(safe-area-inset-right)), calc((100% - var(--page-max-width)) / 2 - 60px));
-        bottom: calc(24px + env(safe-area-inset-bottom));
-    }
-}
-
-.back-to-top {
-    @include utils.utility-control;
-    display: grid;
-    place-items: center;
-    width: 44px;
-    height: 44px;
-    padding: 0;
-    margin: 0;
-    font-size: 0.9rem;
-    background: var(--pico-card-background-color);
-    border-color: var(--pico-muted-border-color);
-    box-shadow: 0 3px 10px var(--site-shadow-color);
-}
-
-// Reading controls stay out of immersive photo/map viewers.
-body:has(:fullscreen, .map-maximized-overlay, .lg-container.lg-show:not(.lg-inline)) .reading-tools {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
 @include utils.below(utils.$compact) {
     .site-navigation {
         gap: 0.35rem;

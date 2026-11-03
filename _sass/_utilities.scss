@@ -22,6 +22,19 @@ $wide: 900px;
     }
 }
 
+// Share feedback with keyboard users; avoid sticky hover on touch input.
+@mixin hover-focus($focus: focus-visible) {
+    &:#{$focus} {
+        @content;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+}
+
 // Shared appearance for navigation and controller buttons.
 @mixin utility-control {
     color: var(--pico-muted-color);

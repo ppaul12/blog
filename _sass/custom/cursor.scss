@@ -1,0 +1,65 @@
+// Native input remains the default until the script has a valid mouse position.
+.site-cursor {
+    $size: 16px;
+    $ring: 2px;
+
+    --cursor-opacity: 0.9;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2147483647;
+    pointer-events: none;
+    user-select: none;
+    contain: layout style;
+
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        box-sizing: border-box;
+        border-radius: 50%;
+        opacity: var(--cursor-opacity);
+        transform: translate(-50%, -50%);
+        transition: opacity 160ms ease-out, transform 100ms ease-out;
+    }
+
+    &::before {
+        width: $size;
+        height: $size;
+        border: $ring solid var(--site-surface);
+        box-shadow: 0 0 0 1px color-mix(in srgb, var(--site-text) 60%, transparent);
+    }
+
+    &::after {
+        width: $size - 2 * $ring;
+        height: $size - 2 * $ring;
+        background: var(--site-text);
+    }
+
+    &[data-pressed]::after {
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+
+    &[data-mode="hover"] {
+        --cursor-opacity: 0.45;
+    }
+
+    &[data-mode="control"] {
+        --cursor-opacity: 0;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) and (forced-colors: none) {
+    html[data-site-cursor] {
+        &, * {
+            cursor: none !important;
+        }
+
+        // Keep the element rendered so entering/leaving controls can fade smoothly.
+        .site-cursor {
+            display: block;
+        }
+    }
+}

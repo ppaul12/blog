@@ -1,3 +1,5 @@
+@use "../../../utilities" as utils;
+
 .collection-album {
     &-toolbar {
         display: flex;
@@ -26,6 +28,11 @@
         padding: 0.2rem;
         border: 1px solid var(--pico-muted-border-color);
         border-radius: var(--pico-border-radius);
+        transition: border-color 160ms ease;
+
+        @include utils.hover-focus(focus-within) {
+            border-color: color-mix(in srgb, var(--pico-primary) 55%, var(--pico-muted-border-color));
+        }
     }
 
     &-order-option {
@@ -51,6 +58,22 @@
         input:focus-visible + .collection-album-order-icon {
             outline: 2px solid var(--pico-primary);
             outline-offset: 2px;
+        }
+
+        @media (hover: hover) {
+            &:hover input:not(:checked):not(:disabled) + .collection-album-order-icon {
+                color: var(--pico-primary);
+                background-color: color-mix(in srgb, var(--pico-primary) 10%, transparent);
+            }
+
+            &:hover input:checked:not(:disabled) + .collection-album-order-icon {
+                background-color: var(--pico-primary-hover);
+            }
+        }
+
+        &:active input:not(:checked):not(:disabled) + .collection-album-order-icon {
+            color: var(--pico-primary);
+            background-color: color-mix(in srgb, var(--pico-primary) 18%, transparent);
         }
     }
 

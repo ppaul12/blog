@@ -13,7 +13,7 @@
 - id: books
   label: Bookshelf
   url: /books
-  icon: fa-book-open
+  icon: fa-book-bookmark
 - id: archive
   label: Archive
   url: /archive

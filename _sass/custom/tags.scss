@@ -1,3 +1,5 @@
+@use "../utilities" as utils;
+
 .tag {
     margin: 0.2rem 0.2rem;
     padding: 0.2rem 0.5rem;
@@ -48,9 +50,14 @@
     }
 
     &-posts {
-        margin-top: 1rem;
-        padding: 0.5rem 1rem 0;
-        border-top: 2px solid var(--pico-muted-border-color);
+        --timeline-date-width: 3.25rem;
+        --timeline-gap: 2rem;
+        --timeline-axis: calc(var(--timeline-date-width) + var(--timeline-gap) / 2);
+        --timeline-row-padding: 0.15rem;
+        --timeline-node-offset: calc(var(--timeline-row-padding) + 0.75rem);
+
+        margin-top: 1.75rem;
+        padding: 0 1rem;
 
         &:not(&:has(*[active])) {
             display: none;
@@ -58,6 +65,7 @@
 
         &::before {
             display: block;
+            margin-bottom: 0.5rem;
             font-size: 1.5rem;
             content: attr(data-title);
         }
@@ -72,20 +80,78 @@
         }
 
         li {
+            display: grid;
+            grid-template-columns: var(--timeline-date-width) minmax(0, 1fr);
+            column-gap: var(--timeline-gap);
             position: relative;
             list-style: none;
+            margin: 0;
+            padding: var(--timeline-row-padding) 0;
+            line-height: 1.5;
+
+            > a {
+                min-width: 0;
+                overflow-wrap: anywhere;
+                padding-right: 0.6rem;
+            }
+
+            .archive-post-title {
+                position: relative;
+            }
+
+            .post-date {
+                color: var(--pico-muted-color);
+                font-size: 0.8rem;
+                font-variant-numeric: tabular-nums;
+                line-height: 1.5rem;
+                text-align: right;
+
+                &::after {
+                    position: absolute;
+                    top: calc(var(--timeline-node-offset) - 3px);
+                    left: calc(var(--timeline-axis) - 3px);
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 50%;
+                    background: var(--pico-muted-color);
+                    content: "";
+                }
+            }
+
+            .post-category-icon {
+                margin-right: 0.5em;
+                color: var(--pico-muted-color);
+                font-size: 0.85em;
+                opacity: 0.65;
+            }
 
             &:not([active]) {
                 display: none;
             }
 
             &::before {
-                margin-right: 1rem;
-                color: var(--pico-muted-color);
-                font-style: italic;
-                font-size: 0.8rem;
-                content: attr(data-date);
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: var(--timeline-axis);
+                width: 1px;
+                background: var(--pico-muted-border-color);
+                content: "";
             }
+
+            &:nth-child(1 of [active])::before {
+                top: var(--timeline-node-offset);
+            }
+
+            &:nth-last-child(1 of [active])::before {
+                bottom: calc(100% - var(--timeline-node-offset));
+            }
+        }
+
+        @include utils.below(utils.$compact) {
+            --timeline-date-width: 2.75rem;
+            --timeline-gap: 1.25rem;
+            padding: 0;
         }
     }
 }

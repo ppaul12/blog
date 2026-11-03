@@ -35,13 +35,20 @@ required: search
 {%- for post_set in post_sets -%}
 <ul class="tag-posts" data-title="{{ post_set.name }}" data-aos="fade">
     {%- for post in post_set.items -%}
+    {%- assign post_path = post.path | split:'/' -%}
+    {%- assign category = post_path[1] -%}
+    {%- assign category_icon = nil -%}
+    {%- case category -%}
+        {%- when 'travel' -%}{%- assign category_icon = 'location-dot' -%}
+        {%- when 'study' -%}{%- assign category_icon = 'book-open' -%}
+        {%- when 'thought' -%}{%- assign category_icon = 'file-lines' -%}
+        {%- when 'collection' -%}{%- assign category_icon = 'layer-group' -%}
+    {%- endcase -%}
     <li data-idx="{{ post_count }}"
         data-tags="{{ post.tags | join:' ' }}"
         data-date="{{ post.date | date:'%m.%d' }}"
         data-aos="fade-up"
-        {% if post.marked %}mark{% endif %}
-        {% if post.edited %}edit{% endif %}
-    ><a href="{{ post.url | relative_url }}">{{ post.title | format_title:false }}</a></li>
+    ><time class="post-date" datetime="{{ post.date | date:'%Y-%m-%d' }}">{{ post.date | date:'%m.%d' }}</time><a href="{{ post.url | relative_url }}">{%- if category_icon -%}<i class="post-category-icon fa-solid fa-{{ category_icon }} fa-fw" aria-hidden="true"></i>{%- endif -%}<span class="archive-post-title" {% if post.marked %}mark{% endif %} {% if post.edited %}edit{% endif %}>{{ post.title | format_title:false }}</span></a></li>
     {%- assign post_count = post_count | plus:1 -%}
     {%- endfor -%}
 </ul>

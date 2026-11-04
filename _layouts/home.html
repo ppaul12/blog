@@ -55,9 +55,9 @@ layout: default
     <li>
         <a id="prev-btn" data-aos="slide-left"
             {% if paginator.previous_page_path %}
-            class="faa-parent animated-hover" href="{{ paginator.previous_page_path | relative_url }}"
+            href="{{ paginator.previous_page_path | relative_url }}"
             {% else %}disabled{% endif %}
-        ><i class="fa-solid fa-arrow-left faa-horizontal faa-reverse"></i></a>
+        ><i class="fa-solid fa-arrow-left"></i></a>
     </li>
 
     <!-- page selector -->
@@ -80,8 +80,8 @@ layout: default
     <li>
         <a id="next-btn" data-aos="slide-right"
             {% if paginator.next_page_path %}
-            class="faa-parent animated-hover" href="{{ paginator.next_page_path | relative_url }}"
+            href="{{ paginator.next_page_path | relative_url }}"
             {% else %}disabled{% endif %}
-        ><i class="fa-solid fa-arrow-right faa-horizontal"></i></a>
+        ><i class="fa-solid fa-arrow-right"></i></a>
     </li>
 </ul></nav>

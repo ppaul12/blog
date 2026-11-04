@@ -33,7 +33,7 @@
         font-size: 0.84rem;
         font-weight: 650;
 
-        &:hover {
+        @include utils.interaction {
             background: var(--pico-card-sectioning-background-color);
         }
     }

@@ -11,7 +11,10 @@
     transition: all 0.5s ease;
     animation: bounceIn 1s calc(900ms + var(--tag-delay, 0ms)) backwards;
 
-    &:hover,
+    @include utils.interaction {
+        border-radius: 0.2rem;
+    }
+
     &[active] {
         border-radius: 0.2rem;
     }

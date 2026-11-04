@@ -1,3 +1,5 @@
+@use "../../utilities" as utils;
+
 .lg-container {
     // Fullscreen photo viewers keep their own palette, independent of the page theme.
     --lightbox-surface: #171b22;
@@ -57,10 +59,11 @@
         transition: color 0.2s ease, background-color 0.2s ease, opacity 0.25s ease,
             transform 0.25s ease;
 
-        &:hover:not(.disabled),
-        &:focus-visible {
-            color: var(--lightbox-text);
-            background-color: var(--lightbox-control-hover);
+        &:not(.disabled) {
+            @include utils.interaction {
+                color: var(--lightbox-text);
+                background-color: var(--lightbox-control-hover);
+            }
         }
 
         &:focus-visible {
@@ -96,7 +99,7 @@
             text-decoration-color: var(--lightbox-thumb-border);
             text-underline-offset: 0.2em;
 
-            &:hover {
+            @include utils.interaction {
                 color: var(--lightbox-accent);
             }
 
@@ -118,8 +121,7 @@
         opacity: 0.65;
         transition: opacity 0.2s ease, border-color 0.2s ease;
 
-        &:hover,
-        &:focus-visible {
+        @include utils.interaction {
             border-color: var(--lightbox-thumb-border);
             opacity: 1;
         }

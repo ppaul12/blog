@@ -30,7 +30,7 @@
         border-radius: var(--pico-border-radius);
         transition: border-color 160ms ease;
 
-        @include utils.hover-focus(focus-within) {
+        @include utils.interaction(focus-within) {
             border-color: color-mix(in srgb, var(--pico-primary) 55%, var(--pico-muted-border-color));
         }
     }
@@ -60,20 +60,14 @@
             outline-offset: 2px;
         }
 
-        @media (hover: hover) {
-            &:hover input:not(:checked):not(:disabled) + .collection-album-order-icon {
+        @include utils.interaction(focus-within) {
+            input:not(:checked):not(:disabled) + .collection-album-order-icon {
                 color: var(--pico-primary);
                 background-color: color-mix(in srgb, var(--pico-primary) 10%, transparent);
             }
-
-            &:hover input:checked:not(:disabled) + .collection-album-order-icon {
+            input:checked:not(:disabled) + .collection-album-order-icon {
                 background-color: var(--pico-primary-hover);
             }
-        }
-
-        &:active input:not(:checked):not(:disabled) + .collection-album-order-icon {
-            color: var(--pico-primary);
-            background-color: color-mix(in srgb, var(--pico-primary) 18%, transparent);
         }
     }
 
@@ -97,12 +91,13 @@
             transition: transform 0.35s ease;
         }
 
-        &:hover img,
-        &:focus-visible img {
-            transform: scale(1.035);
+        @include utils.hover-only {
+            img {
+                transform: scale(1.035);
+            }
         }
 
-        &:focus-visible {
+        @include utils.interaction {
             outline: 2px solid var(--pico-primary);
             outline-offset: 2px;
         }

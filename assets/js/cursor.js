@@ -14,7 +14,7 @@
     const actionSelector = 'a[href], button, summary, [role="button"]'
     const hideScope = '.site-navigation, .controller'
     const hoverSelector = [
-        actionSelector, '[data-tooltip]', '.card-hover', '.post-card',
+        actionSelector, '[title]', '[data-tooltip]', '.card-hover', '.post-card',
         '.travel-info-card', '[data-cursor="hover"]',
     ].join(", ")
     const nativeRegion = [
@@ -180,6 +180,6 @@
     // Re-evaluate stationary pointers after a modal or dynamic component changes.
     new MutationObserver(refresh).observe(document.body, {
         childList: true, subtree: true, attributes: true,
-        attributeFilter: ["open", "hidden", "disabled", "inert", "aria-disabled", "class", "data-cursor"],
+        attributeFilter: ["open", "hidden", "disabled", "inert", "aria-disabled", "class", "data-cursor", "title"],
     })
 })()

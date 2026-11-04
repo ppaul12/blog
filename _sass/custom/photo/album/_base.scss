@@ -55,9 +55,10 @@
         object-fit: var(--album-image-fit, contain);
     }
 
-    &:hover .album-caption,
-    &:focus-visible .album-caption {
-        opacity: 1;
+    @include utils.interaction {
+        .album-caption {
+            opacity: 1;
+        }
     }
 }
 
@@ -74,7 +75,7 @@
     opacity: 0;
     transition: opacity 0.2s ease;
 
-    @media (hover: none) {
+    @include utils.touch-input {
         opacity: 1;
     }
 }

@@ -214,7 +214,7 @@
             white-space: nowrap;
             border-radius: 0.2rem;
 
-            &:hover {
+            @include utils.interaction {
                 text-decoration: underline;
             }
 
@@ -304,10 +304,8 @@
             border-radius: 0;
             transition: scale 160ms ease;
 
-            @media (hover: hover) {
-                &:hover {
-                    scale: 1.15;
-                }
+            @include utils.hover-only {
+                scale: 1.15;
             }
         }
     }
@@ -397,17 +395,12 @@
             line-height: 1.7;
         }
 
-        &:hover, &:focus-visible {
+        @include utils.interaction {
             background: var(--pico-card-sectioning-background-color);
             border-color: var(--pico-primary);
-            box-shadow: 0 6px 16px var(--site-shadow-color);
 
             h3, h3 span {
                 color: var(--pico-primary);
-            }
-
-            h3 span {
-                translate: 2px -2px;
             }
         }
 
@@ -416,9 +409,12 @@
             outline-offset: 3px;
         }
 
-        @media (hover: hover) {
-            &:hover {
-                translate: 0 -4px;
+        @include utils.hover-only {
+            translate: 0 -4px;
+            box-shadow: 0 6px 16px var(--site-shadow-color);
+
+            h3 span {
+                translate: 2px -2px;
             }
         }
     }

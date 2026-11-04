@@ -83,7 +83,7 @@
             font-size: 1rem;
         }
 
-        @include utils.hover-focus {
+        @include utils.interaction {
             color: var(--pico-primary);
             background-color: color-mix(in srgb, var(--pico-primary) 8%, var(--site-surface));
             border-color: var(--pico-primary);

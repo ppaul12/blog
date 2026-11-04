@@ -41,6 +41,13 @@ main,
 
 a {
     --pico-text-decoration: none;
+
+    &[href] {
+        @include utils.interaction {
+            --pico-color: var(--pico-primary-hover);
+            --pico-text-decoration: underline;
+        }
+    }
 }
 
 math {

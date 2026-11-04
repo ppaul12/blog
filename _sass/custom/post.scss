@@ -64,13 +64,14 @@
         transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease,
             transform 0.2s ease, box-shadow 0.2s ease;
 
-        &:hover,
-        &:focus-visible,
-        &:focus-within {
+        @include utils.interaction(focus-within) {
             z-index: 2;
             color: var(--pico-color);
             border-color: color-mix(in srgb, var(--pico-muted-border-color) 55%, transparent);
             background-color: color-mix(in srgb, var(--pico-primary) 8%, var(--pico-card-background-color));
+        }
+
+        @include utils.hover-only {
             transform: translateY(-3px);
             box-shadow: 0 6px 16px color-mix(in srgb, var(--pico-primary) 15%, transparent);
         }
@@ -85,8 +86,7 @@
             border-bottom-color: color-mix(in srgb, var(--pico-muted-border-color) 45%, transparent);
             cursor: default;
 
-            &:hover,
-            &:focus-visible {
+            @include utils.interaction {
                 border-bottom-color: color-mix(in srgb, var(--pico-muted-border-color) 55%, transparent);
             }
         }
@@ -166,7 +166,7 @@
         }
 
         nav a {
-            &:hover {
+            @include utils.interaction {
                 text-decoration: underline;
             }
 
@@ -217,6 +217,27 @@
 
     &-paginator {
         justify-content: center;
+
+        @keyframes pagination-nudge {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(3px);
+            }
+        }
+
+        a[href] {
+            @include utils.interaction {
+                color: var(--pico-primary);
+            }
+
+            @include utils.hover-only {
+                i {
+                    animation: pagination-nudge 500ms ease-in-out infinite;
+                }
+            }
+        }
 
         details {
             text-align: center;
@@ -326,8 +347,10 @@
                 }
             }
 
-            &:not([disabled]):hover {
-                border-color: var(--pico-color);
+            &:not([disabled]) {
+                @include utils.interaction {
+                    border-color: var(--pico-color);
+                }
             }
         }
 

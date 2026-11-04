@@ -22,16 +22,38 @@ $wide: 900px;
     }
 }
 
-// Share feedback with keyboard users; avoid sticky hover on touch input.
-@mixin hover-focus($focus: focus-visible) {
+// Input capabilities, independent of viewport size. Keep these complementary.
+@mixin desktop-input {
+    @media (hover: hover) and (pointer: fine) {
+        @content;
+    }
+}
+
+@mixin touch-input {
+    @media (hover: none), (pointer: coarse) {
+        @content;
+    }
+}
+
+// Mouse hover gate. Also used by interaction() for functional hover feedback.
+@mixin hover-only {
+    @include desktop-input {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+// Shared functional feedback: press on any input, keyboard focus, mouse hover.
+// Nest descendant selectors inside the content when the visible target is a child.
+@mixin interaction($focus: focus-visible) {
+    &:active,
     &:#{$focus} {
         @content;
     }
 
-    @media (hover: hover) {
-        &:hover {
-            @content;
-        }
+    @include hover-only {
+        @content;
     }
 }
 
@@ -45,10 +67,12 @@ $wide: 900px;
     transition: color 180ms ease, background-color 180ms ease,
         border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 
-    &:hover,
-    &:focus-visible {
+    @include interaction {
         color: var(--pico-primary);
         background-color: var(--pico-card-sectioning-background-color);
+    }
+
+    @include hover-only {
         transform: translateY(-2px);
     }
 

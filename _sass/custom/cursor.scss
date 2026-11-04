@@ -54,7 +54,8 @@
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) and (forced-colors: none) {
     html[data-site-cursor] {
         &, * {
-            cursor: none !important;
+            // Keep a browser cursor for native title hints; the DOM paints the dot.
+            cursor: url("img/cursor-transparent.svg") 0 0, auto !important;
         }
 
         // Keep the element rendered so entering/leaving controls can fade smoothly.

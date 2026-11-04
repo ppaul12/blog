@@ -1,3 +1,5 @@
+@use "../utilities" as utils;
+
 @mixin card {
     position: relative;
     background: linear-gradient(to right, var(--pico-card-background-color), var(--pico-card-sectioning-background-color));
@@ -11,8 +13,11 @@
 
     transition: all 0.5s ease;
 
-    &:hover {
+    @include utils.interaction(focus-within) {
         border-color: var(--pico-color);
+    }
+
+    @include utils.hover-only {
         transform: scale(1.02) translateY(-0.5rem);
     }
 }

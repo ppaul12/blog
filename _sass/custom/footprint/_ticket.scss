@@ -1,3 +1,5 @@
+@use "../../utilities" as utils;
+
 $notch-radius: 0.4rem;
 $border-width: 1px;
 
@@ -49,8 +51,7 @@ $border-width: 1px;
         bottom: calc(-1 * ($notch-radius + 2 * $border-width));
     }
 
-    &:hover,
-    &:focus-visible {
+    @include utils.interaction {
         --ticket-border: var(--site-accent-border);
         --ticket-stub-background: color-mix(in srgb, var(--site-accent-text) 12%, var(--site-accent-subtle));
         color: var(--site-text);

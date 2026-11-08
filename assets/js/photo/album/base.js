@@ -2,9 +2,13 @@
 const initAlbum = (id, photos, baseURL = "") => {
     const element = document.getElementById(id)
     // Resolve display text once so thumbnails and large images agree.
-    const normalizePhotos = (photos) => photos.map((photo) => ({ ...photo, caption: photo.caption ?? photo.loc ?? "" }))
+    const normalizePhotos = (photos) => photos.map((photo) => ({
+        ...photo,
+        caption: photo.caption ?? photo.loc ?? "",
+        lightboxCaption: photo.lightboxCaption ?? photo.caption ?? photo.loc ?? "null",
+    }))
     let items = normalizePhotos(photos)
-    const lightbox = initLightbox(id, items)
+    const lightbox = initLightbox(id, items, { autoplay: true })
     let refreshTimer
     const refreshAOS = () => {
         if (typeof AOS === "undefined") return
@@ -49,6 +53,7 @@ const initAlbum = (id, photos, baseURL = "") => {
         const text = document.createElement("span")
         text.className = "album-caption"
         text.textContent = caption
+        text.title = caption
         card.append(image, text)
         return card
     }

@@ -114,8 +114,11 @@
     <!-- exifr -->
     <script src="https://cdn.jsdelivr.net/npm/exifr@latest/dist/full.umd.min.js"></script>
     <!-- shared photo viewer -->
+    <script src="{% link assets/js/photo/metadata.js %}"></script>
     <script src="{% link assets/js/photo/lightbox.js %}"></script>
     {%- if page.required contains "gallery" or page.layout == "post/travel" -%}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@latest/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@latest/swiper-bundle.min.js"></script>
     <script src="{% link assets/js/photo/gallery.js %}"></script>
     {%- endif -%}
     {%- if page.required contains "album" -%}

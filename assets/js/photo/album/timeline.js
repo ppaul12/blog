@@ -23,6 +23,10 @@ const collectTimelinePhotos = (sources, start, end) => {
             ...item,
             month,
             caption: item.loc || journey?.title || month.replace("-", "."),
+            // Card captions stay location-first; the viewer can also name/link the journey.
+            lightboxCaption: journey ? `${journey.title || "null"} · ${item.loc || "null"}`
+                : (item.loc || month.replace("-", ".")),
+            lightboxLink: journey?.link,
             orderDate: `${date}T00:00:00`,
             sourceIndex,
             photoSequence: sequence,

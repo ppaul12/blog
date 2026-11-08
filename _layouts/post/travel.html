@@ -2,13 +2,13 @@
 layout: post
 ---
 
-<h2 class="travel-heading"><i class="ko ko-route" aria-hidden="true"></i><span>路线</span></h2>
+<h2 class="travel-heading"><i class="ko ko-route" aria-hidden="true"></i><span>路线 · Routes</span></h2>
 {% map path=page.slug %}
 
-<h2 class="travel-heading"><i class="ko ko-camera" aria-hidden="true"></i><span>风光</span></h2>
+<h2 class="travel-heading"><i class="ko ko-camera" aria-hidden="true"></i><span>风光 · Scenery</span></h2>
 {% gallery path=page.slug %}
 
-<h2 class="travel-heading"><i class="ko ko-note-corner-fold-slight" aria-hidden="true"></i><span>小记</span></h2>
+<h2 class="travel-heading"><i class="ko ko-note-corner-fold-slight" aria-hidden="true"></i><span>小记 · Summary</span></h2>
 {%- assign info_keys = "time,people,cost,transport,distance" | split: "," -%}
 {%- assign info_labels = "时间,人数,费用,交通方式,里程" | split: "," -%}
 {%- capture travel_info -%}

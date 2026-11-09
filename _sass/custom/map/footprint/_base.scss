@@ -19,22 +19,6 @@
             text-decoration: none;
         }
     }
-
-    &-eyebrow {
-        margin-bottom: 0.55rem;
-        color: var(--site-accent-text);
-        font-size: 0.7rem;
-        font-weight: 750;
-        letter-spacing: 0.14em;
-    }
-}
-
-#footprint-map.leaflet-container,
-.footprint-detail {
-    box-sizing: border-box;
-    border: 1px solid var(--pico-muted-border-color);
-    border-radius: 1.15rem;
-    background: var(--pico-card-sectioning-background-color);
 }
 
 .visually-hidden {

@@ -17,8 +17,7 @@ My blog for personal records of travels, thoughts, studies, and so on, with the 
 - diagram: [Mermaid](https://mermaid.js.org)
 - search: [Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search)
 - map: [leaflet](https://leafletjs.com)
-- album: [lightGallery](https://github.com/sachinchoolur/lightGallery), [exifr](https://github.com/MikeKovarik/exifr)
-- travel gallery: [Swiper](https://swiperjs.com)
+- photo: [lightGallery](https://github.com/sachinchoolur/lightGallery), [exifr](https://github.com/MikeKovarik/exifr), [Swiper](https://swiperjs.com)
 - analytics: [GoatCounter](https://www.goatcounter.com)
 - misc: [github-readme-stats](https://github.com/anuraghazra/github-readme-stats), [shields](https://github.com/badges/shields)
 - ...

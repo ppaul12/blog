@@ -1,7 +1,8 @@
-@use "../../utilities" as utils;
+@use "../../../utilities" as utils;
 
 .footprint {
     &-explorer {
+        --footprint-map-stacked: 0;
         display: grid;
         grid-template-columns: minmax(0, 2.15fr) minmax(17rem, 0.95fr);
         gap: 1rem;
@@ -59,6 +60,7 @@
 @include utils.below(utils.$wide) {
     .footprint {
         &-explorer {
+            --footprint-map-stacked: 1;
             grid-template-columns: minmax(0, 1fr);
         }
     }
@@ -70,3 +72,12 @@
         min-height: 23rem;
     }
 }
+
+#footprint-map.leaflet-container,
+.footprint-detail {
+    box-sizing: border-box;
+    border: 1px solid var(--pico-muted-border-color);
+    border-radius: 1.15rem;
+    background: var(--pico-card-sectioning-background-color);
+}
+

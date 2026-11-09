@@ -9,7 +9,7 @@
 - id: footprint
   label: Footprint
   url: /footprint
-  icon: fa-route
+  icon: fa-map-location-dot
 - id: books
   label: Bookshelf
   url: /books

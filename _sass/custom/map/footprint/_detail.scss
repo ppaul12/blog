@@ -1,4 +1,4 @@
-@use "../../utilities" as utils;
+@use "../../../utilities" as utils;
 
 .footprint-detail {
     display: flex;
@@ -66,8 +66,7 @@
         }
     }
 
-    &-detail-meta,
-    &-place-notes {
+    &-detail-meta {
         color: var(--pico-muted-color);
         font-size: 0.82rem;
     }
@@ -155,5 +154,15 @@
         &-detail-empty {
             min-height: 10rem;
         }
+    }
+}
+
+.footprint {
+    &-eyebrow {
+        margin-bottom: 0.55rem;
+        color: var(--site-accent-text);
+        font-size: 0.7rem;
+        font-weight: 750;
+        letter-spacing: 0.14em;
     }
 }

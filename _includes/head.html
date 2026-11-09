@@ -147,8 +147,20 @@
     <!-- leaflet reset view -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@drustack/leaflet.resetview@latest/dist/L.Control.ResetView.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@drustack/leaflet.resetview@latest/dist/L.Control.ResetView.min.js"></script>
-    <!-- custom map initializer -->
-    <script src="{% link assets/js/map.js %}"></script>
+    <!-- shared map infrastructure -->
+    <script src="{% link assets/js/map/icons.js %}"></script>
+    <script src="{% link assets/js/map/maximize.js %}"></script>
+    <script src="{% link assets/js/map/base.js %}"></script>
+    {%- if page.permalink == "/footprint" -%}
+    <script src="{% link assets/js/map/footprint/data.js %}"></script>
+    <script src="{% link assets/js/map/footprint/view.js %}"></script>
+    <script src="{% link assets/js/map/footprint/index.js %}"></script>
+    {%- else -%}
+    <script src="{% link assets/js/map/travel/plans.js %}"></script>
+    <script src="{% link assets/js/map/travel/tracks.js %}"></script>
+    <script src="{% link assets/js/map/travel/photos.js %}"></script>
+    <script src="{% link assets/js/map/travel/index.js %}"></script>
+    {%- endif -%}
     {%- endif -%}
 
     {%- if page.required contains "search" -%}

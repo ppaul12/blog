@@ -1,0 +1,36 @@
+// Sequential colors express cluster size; overlays retain their own map contrast.
+.marker-cluster {
+    @each $size, $index in (small: 1, medium: 2, large: 3) {
+        &-#{$size} {
+            background: color-mix(in srgb, var(--site-map-cluster-#{$index}) 35%, transparent);
+
+            div {
+                background: var(--site-map-cluster-#{$index});
+                color: var(--site-on-map-cluster);
+            }
+        }
+    }
+
+    div {
+        border: 1px solid var(--site-map-halo);
+        font-weight: 700;
+    }
+}
+
+.marker-cluster > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: grid;
+    place-items: center;
+    margin: 0;
+    transform: translate(-50%, -50%);
+
+    & > span {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        place-items: center;
+        line-height: 1;
+    }
+}

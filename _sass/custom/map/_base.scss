@@ -1,0 +1,61 @@
+.leaflet {
+    &-container {
+        font-family: var(--pico-font-family);
+        z-index: 1;
+    }
+
+    &-bar a {
+        padding: unset;
+        border: unset;
+        border-radius: unset;
+    }
+
+    &-marker-icon {
+        border: unset;
+        background-color: unset;
+
+        &:focus {
+            box-shadow: unset;
+        }
+    }
+
+    &-popup-content {
+        text-align: center;
+    }
+
+    &-control {
+        &-layers-list {
+            margin: unset;
+
+            label {
+                color: unset;
+                margin: unset;
+            }
+
+            input {
+                position: unset;
+                width: 0.8rem;
+                height: 0.8rem;
+                margin: unset;
+                appearance: auto;
+            }
+        }
+
+        &-minimap {
+            width: 10em !important;
+            height: 12rem !important;
+            // Preserve dimensions so Leaflet can initialize the hidden map correctly.
+            visibility: hidden;
+
+            .map-maximized-overlay & {
+                visibility: visible;
+            }
+        }
+    }
+}
+
+// Preserve native control behavior while replacing only its action glyph.
+.leaflet-control .map-icon-control {
+    background-image: none;
+    font-size: 14px;
+}

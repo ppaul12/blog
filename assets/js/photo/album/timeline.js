@@ -44,13 +44,13 @@ const collectTimelinePhotos = (sources, start, end) => {
     })
 }
 
-const initTimelineAlbum = async (id, { sources, start, end }, baseURL = "") => {
+const initTimelineAlbum = async (id, { sources, start, end }) => {
     const element = document.getElementById(id)
     const status = element.querySelector("[role=status]")
     try {
         const results = await Promise.allSettled(sources.map(async (source) => ({
             ...source,
-            items: await asyncLoadJSON(source.json),
+            items: await photoMetadata.loadPhotos(source.json),
         })))
         const loaded = results.filter((result) => result.status === "fulfilled").map((result) => result.value)
         const failed = results.filter((result) => result.status === "rejected")
@@ -94,7 +94,7 @@ const initTimelineAlbum = async (id, { sources, start, end }, baseURL = "") => {
         chart.dataset.aos = "fade"
         chart.setAttribute("aria-label", `Monthly photo counts: ${photos.length} photos in total`)
         const maximum = Math.max(1, ...Array.from(counts.values(), ({ daily, travel }) => daily + travel))
-        const album = photos.length ? initAlbum(id, photos, baseURL) : null
+        const album = photos.length ? initAlbum(id, photos) : null
         const grid = document.createElement("div")
         grid.className = "album-grid"
         const empty = document.createElement("p")

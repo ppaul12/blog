@@ -1,2 +1,6 @@
 <div id="{{ include.id | default:'gallery' }}" data-gallery-source="{% link assets/src/{{ include.path }}/pic.json %}"></div>
-<script>(async () => initGallery("{{ include.id | default:'gallery' }}", await asyncLoadJSON("{% link assets/src/{{ include.path }}/pic.json %}")))()</script>
+<script>(async () => {
+    const id = "{{ include.id | default:'gallery' }}"
+    const source = document.getElementById(id).dataset.gallerySource
+    initGallery(id, await photoMetadata.loadPhotos(source))
+})()</script>

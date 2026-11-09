@@ -86,20 +86,5 @@
 
     .album-card {
         --album-image-fit: cover;
-
-        img {
-            transition: transform 0.35s ease;
-        }
-
-        @include utils.hover-only {
-            img {
-                transform: scale(1.035);
-            }
-        }
-
-        @include utils.interaction {
-            outline: 2px solid var(--pico-primary);
-            outline-offset: 2px;
-        }
     }
 }

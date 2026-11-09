@@ -1,0 +1,49 @@
+@use "../../utilities" as utils;
+
+// The actual photo is the hover target, even when its carousel slide is larger.
+@mixin interactive {
+    > img {
+        transition: transform 300ms ease;
+    }
+
+    @include utils.hover-only {
+        > img {
+            transform: scale(1.025);
+        }
+
+        .photo-fullscreen-hint {
+            opacity: 0.8;
+        }
+    }
+
+    &:focus-visible .photo-fullscreen-hint {
+        opacity: 0.8;
+    }
+
+    @include utils.touch-input {
+        .photo-fullscreen-hint {
+            opacity: 0.8;
+        }
+    }
+}
+
+.photo-fullscreen-hint {
+    position: absolute;
+    right: 0.6rem;
+    bottom: 0.6rem;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    min-width: 2rem;
+    min-height: 2rem;
+    max-width: calc(100% - 1.2rem);
+    padding: 0.35rem;
+    border-radius: calc(var(--pico-border-radius) * 0.65);
+    background: var(--site-background);
+    color: var(--site-text);
+    font-size: 0.8rem;
+    line-height: 1.4;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 140ms ease;
+}

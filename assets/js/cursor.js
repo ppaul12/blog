@@ -18,7 +18,7 @@
         '.travel-info-card', '[data-cursor="hover"]',
     ].join(", ")
     const nativeRegion = [
-        'dialog[open]:not(.site-modal)', '.leaflet-container', '.lg-container', '.album-card',
+        'dialog[open]:not(.site-modal)', '.leaflet-container', '.lg-container',
         '.map-maximized-overlay', '.gallery-maximized-overlay',
         'iframe', 'video', 'audio', 'canvas', 'input', 'textarea', 'select',
         '[contenteditable]:not([contenteditable="false"])', '[draggable="true"]',

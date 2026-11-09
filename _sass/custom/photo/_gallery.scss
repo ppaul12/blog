@@ -1,8 +1,7 @@
 @use "../../utilities" as utils;
+@use "preview";
 
 .travel-gallery {
-    --gallery-surface: var(--pico-background-color);
-    --gallery-text: var(--pico-color);
     --gallery-font-size: 0.75rem;
     --gallery-label-size: calc(var(--gallery-font-size) * 0.866667);
     --gallery-photo-height: 360px;
@@ -178,17 +177,10 @@
         &.is-current {
             opacity: 1;
             transform: none;
-            cursor: grab;
 
             .travel-gallery-frame {
-                cursor: zoom-in;
-
-                @include utils.hover-only {
-                    .travel-gallery-open {
-                        opacity: 1;
-                        transition: opacity 300ms ease;
-                    }
-                }
+                @include preview.interactive;
+                cursor: pointer;
             }
         }
 
@@ -200,7 +192,7 @@
                 outline-offset: -3px;
             }
 
-            &.is-current .travel-gallery-open {
+            &.is-current .photo-fullscreen-hint {
                 opacity: 1;
             }
         }
@@ -229,37 +221,11 @@
             max-width: 100%;
             max-height: 100%;
             border-radius: inherit;
-            transition: transform 180ms ease;
         }
     }
 
-    &-open {
-        position: absolute;
-        right: 0.6rem;
-        bottom: 0.6rem;
-        max-width: calc(100% - 1.2rem);
-        display: grid;
-        place-items: center;
-        min-width: 2rem;
-        min-height: 2rem;
-        padding: 0.35rem;
-        border-radius: calc(var(--pico-border-radius) * 0.65);
-        background: var(--gallery-surface);
-        color: var(--gallery-text);
-        font-size: 0.8rem;
-        line-height: 1.4;
-        opacity: 0;
-        transition: opacity 140ms ease;
-    }
-
-    .is-current.has-error &-open {
+    .is-current.has-error .photo-fullscreen-hint {
         opacity: 1;
-    }
-
-    @include utils.touch-input {
-        .is-current .travel-gallery-open {
-            opacity: 1;
-        }
     }
 }
 

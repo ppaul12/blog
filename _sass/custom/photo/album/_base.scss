@@ -1,4 +1,5 @@
 @use "../../../utilities" as utils;
+@use "../preview";
 
 // Shared thumbnail layout. Large images are handled by the photo lightbox.
 .collection-album,
@@ -32,6 +33,7 @@
 }
 
 .album-card {
+    @include preview.interactive;
     --album-ratio: 1.3333;
     position: relative;
     display: block;
@@ -45,7 +47,13 @@
     border: 0;
     border-radius: var(--pico-border-radius);
     background: var(--pico-card-background-color, var(--pico-card-sectioning-background-color));
-    cursor: zoom-in;
+    cursor: pointer;
+    box-shadow: none;
+
+    &:focus-visible {
+        outline: 2px solid var(--pico-primary);
+        outline-offset: -3px;
+    }
 
     img {
         position: absolute;
@@ -67,7 +75,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 1.8rem 0.65rem 0.55rem;
+    padding: 1.8rem 3.2rem 0.55rem 0.65rem;
     color: white;
     font-size: 0.8rem;
     text-align: left;

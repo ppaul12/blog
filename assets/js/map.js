@@ -186,8 +186,8 @@ const addMapTrackSelector = (map, layersControl, tracks) => {
     })
 }
 
-const addMapPhotoLocations = (map, layersControl, galleries, baseURL = "") => {
-    if (galleries.length === 0 || !window.exifr) return
+const addMapPhotoLocations = (map, layersControl, galleries) => {
+    if (galleries.length === 0 || typeof photoMetadata === "undefined") return
     // Register the overlay without adding it to the map or reading image metadata yet.
     const photos = L.featureGroup()
     layersControl.addOverlay(photos, "📷")
@@ -200,7 +200,7 @@ const addMapPhotoLocations = (map, layersControl, galleries, baseURL = "") => {
     const loadPhotos = async () => {
         const collections = await Promise.all(galleries.map(async (gallery) => ({
             gallery,
-            items: await asyncLoadJSON(gallery.dataset.gallerySource),
+            items: await photoMetadata.loadPhotos(gallery.dataset.gallerySource),
         })))
         const items = collections.flatMap(({ gallery, items }) => {
             return items.map((item, galleryIndex) => ({ ...item, gallery, galleryIndex }))
@@ -210,14 +210,10 @@ const addMapPhotoLocations = (map, layersControl, galleries, baseURL = "") => {
         for (let offset = 0; offset < items.length; offset += 4) {
             const batch = await Promise.all(items.slice(offset, offset + 4).map(async (item) => {
                 try {
-                    const src = resolveMapAssetURL(item.src, baseURL)
-                    // Keep partial EXIF range responses out of the full image's cache entry.
-                    const metadataURL = new URL(src, window.location.href)
-                    metadataURL.searchParams.set("map-exif", "1")
-                    const gps = await window.exifr.gps(metadataURL.href)
-                    if (!gps || !Number.isFinite(gps.latitude) || !Number.isFinite(gps.longitude)
-                        || Math.abs(gps.latitude) > 90 || Math.abs(gps.longitude) > 180) return null
-                    return { ...item, src, ...gps }
+                    const { latitude, longitude } = await photoMetadata.get(item)
+                    if (!Number.isFinite(latitude) || !Number.isFinite(longitude)
+                        || Math.abs(latitude) > 90 || Math.abs(longitude) > 180) return null
+                    return { ...item, src: photoMetadata.resolveURL(item.src), latitude, longitude }
                 } catch (error) {
                     console.warn(`Unable to read photo GPS: ${item.src}`, error)
                     return null
@@ -370,7 +366,7 @@ const addMapSegmentSelector = (map, layersControl, { locations, segments, marker
     })
 }
 
-// baseURL prefixes root-relative assets referenced in map and gallery data.
+// baseURL prefixes root-relative track assets referenced in map data.
 const initMap = async (mapId, mapData, baseURL = "") => {
     // Gallery elements can follow the map's inline initialization script in the page.
     if (document.readyState === "loading") {
@@ -410,7 +406,7 @@ const initMap = async (mapId, mapData, baseURL = "") => {
     }, { collapsed: false }).addTo(map)
     const galleries = Array.from((article || document).querySelectorAll("[data-gallery-source]"))
         .filter((gallery) => gallery.dataset.gallerySource?.trim())
-    addMapPhotoLocations(map, layersControl, galleries, baseURL)
+    addMapPhotoLocations(map, layersControl, galleries)
     // Keep Leaflet's native overlays together; their container survives control updates.
     const spots = layersControl.getContainer().querySelector(".leaflet-control-layers-overlays")
     createMapControlGroup(layersControl, "Spots", "map-spots").append(spots)

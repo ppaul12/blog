@@ -1,5 +1,5 @@
 // Shared album cards and lightbox; collection/timeline own ordering and grouping.
-const initAlbum = (id, photos, baseURL = "") => {
+const initAlbum = (id, photos) => {
     const element = document.getElementById(id)
     // Resolve display text once so thumbnails and large images agree.
     const normalizePhotos = (photos) => photos.map((photo) => ({
@@ -37,6 +37,7 @@ const initAlbum = (id, photos, baseURL = "") => {
         image.alt = caption || "Album photo"
         image.loading = "lazy"
         image.decoding = "async"
+        image.draggable = false
         const setRatio = (width, height) => {
             const ratio = Number(width) / Number(height)
             if (Number.isFinite(ratio) && ratio > 0) {
@@ -48,13 +49,17 @@ const initAlbum = (id, photos, baseURL = "") => {
             setRatio(image.naturalWidth, image.naturalHeight)
             refreshAOS()
         }, { once: true })
-        image.src = `${baseURL}${photo.src}`
+        image.src = photoMetadata.resolveURL(photo.src)
 
         const text = document.createElement("span")
         text.className = "album-caption"
         text.textContent = caption
         text.title = caption
-        card.append(image, text)
+        const hint = document.createElement("span")
+        hint.className = "photo-fullscreen-hint"
+        hint.setAttribute("aria-hidden", "true")
+        hint.innerHTML = '<i class="fa-solid fa-expand" aria-hidden="true"></i>'
+        card.append(image, text, hint)
         return card
     }
     const setPhotos = (photos) => {

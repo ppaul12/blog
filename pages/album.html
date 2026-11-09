@@ -79,5 +79,5 @@ required: album
 </section>
 <script src="{% link assets/js/photo/album/devices.js %}"></script>
 <script>
-    initCollectionAlbum("collection-album", "{% link assets/json/album.json %}", {{ site.baseurl | default: '' | jsonify }})
+    initCollectionAlbum("collection-album", "{% link assets/json/album.json %}")
 </script>

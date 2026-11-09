@@ -1,5 +1,5 @@
 // Collection album: all photos, with URL-driven ordering.
-const initCollectionAlbum = async (id, indexURL, baseURL = "") => {
+const initCollectionAlbum = async (id, indexURL) => {
     const element = document.getElementById(id)
     const albumCount = document.getElementById("collection-album-count")
     try {
@@ -17,7 +17,7 @@ const initCollectionAlbum = async (id, indexURL, baseURL = "") => {
 
         const imageSets = await asyncLoadJSON(indexURL)
         const images = (await Promise.all(imageSets.map(async (imageSet) => {
-            const entries = await asyncLoadJSON(imageSet.json)
+            const entries = await photoMetadata.loadPhotos(imageSet.json)
             return entries.map((entry) => ({ ...entry, loc: imageSet.post, date: imageSet.date, link: imageSet.link }))
         }))).flat()
         const journeyCount = imageSets.filter((imageSet) => imageSet.journey).length
@@ -43,7 +43,7 @@ const initCollectionAlbum = async (id, indexURL, baseURL = "") => {
                 }
         }
 
-        const album = initAlbum(id, images, baseURL)
+        const album = initAlbum(id, images)
         const fragment = document.createDocumentFragment()
         images.forEach((item, index) => {
             fragment.append(album.createCard(index, {

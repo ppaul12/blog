@@ -4,6 +4,18 @@
 // Shared by the page carousel and the large-image viewer.
 const photoMetadata = (() => {
     const cache = new Map()
+    const collections = new Map()
+    // Share in-flight and completed photo lists; failed loads remain retryable.
+    const loadPhotos = (url) => {
+        const key = new URL(url, window.location.href).href
+        if (!collections.has(key)) {
+            collections.set(key, asyncLoadJSON(key).catch((error) => {
+                collections.delete(key)
+                throw error
+            }))
+        }
+        return collections.get(key)
+    }
     const resolveURL = (src) => /^(?:[a-z][a-z\d+.-]*:|\/\/)/i.test(src)
         ? src : `{{ site.baseurl }}${src}`
     const text = (value) => value === null || value === undefined || value === "" ? "null" : String(value)
@@ -136,5 +148,5 @@ const photoMetadata = (() => {
         }
         return element
     }
-    return { get, format, heading, parameters, resolveURL, renderLocation, renderMetering }
+    return { loadPhotos, get, format, heading, parameters, resolveURL, renderLocation, renderMetering }
 })()

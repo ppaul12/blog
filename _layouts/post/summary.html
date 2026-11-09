@@ -93,7 +93,7 @@ required: album plain-heading
                 {%- endif -%}
             {%- endfor -%}
         ]
-    }, {{ site.baseurl | default: '' | jsonify }});
+    });
 </script>
 
 {%- assign summaries = "" | split:"" -%}

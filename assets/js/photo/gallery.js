@@ -43,10 +43,8 @@ const initGallery = (id, data) => {
         </div>`
     const track = element.querySelector(".swiper")
     const wrapper = element.querySelector(".swiper-wrapper")
-    const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)")
     // The same CSS container query controls both stacking and carousel direction.
     const direction = () => getComputedStyle(track).getPropertyValue("--gallery-direction").trim()
-    const duration = () => reducedMotion.matches ? 0 : 300
     let currentIndex = -1, swiper, lightbox, viewerOpen = false, pendingMapIndex, scrollPosition
     let changingDirection = false
     const buttons = [], images = [], frames = []
@@ -106,7 +104,7 @@ const initGallery = (id, data) => {
         showInfo(index, photos[index].exif)
         photoMetadata.get(photos[index]).then((metadata) => showInfo(index, metadata))
     }
-    const navigate = (index, speed = duration()) => {
+    const navigate = (index, speed = 300) => {
         if (!Number.isInteger(index) || index < 0 || index >= photos.length) return
         if (swiper) swiper.slideTo(index, speed)
         select(index)
@@ -127,7 +125,7 @@ const initGallery = (id, data) => {
         frame.className = "travel-gallery-frame"
         const image = document.createElement("img")
         const hint = document.createElement("span")
-        hint.className = "travel-gallery-open"
+        hint.className = "photo-fullscreen-hint"
         hint.setAttribute("aria-hidden", "true")
         const showOpenIcon = () => {
             hint.innerHTML = '<i class="fa-solid fa-expand" aria-hidden="true"></i>'
@@ -167,11 +165,11 @@ const initGallery = (id, data) => {
         frames.push(frame)
     })
     const start = () => {
-        if (swiper || !window.Swiper) return
+        if (swiper) return
         swiper = new Swiper(track, {
             initialSlide: currentIndex,
             direction: direction(), slidesPerView: "auto", centeredSlides: true,
-            spaceBetween: 16, loop: false, speed: duration(), watchSlidesProgress: true,
+            spaceBetween: 16, loop: false, speed: 300, watchSlidesProgress: true,
             allowTouchMove: true, simulateTouch: true, touchStartPreventDefault: false,
             // A photo remains a keyboard-accessible button without blocking swipes when focused.
             focusableElements: "input, select, option, textarea, video, label",
@@ -204,7 +202,6 @@ const initGallery = (id, data) => {
     resizeObserver.observe(element)
     resizeObserver.observe(track)
     syncDirection()
-    reducedMotion.addEventListener("change", () => { if (swiper) swiper.params.speed = duration() })
     element.addEventListener("keydown", (event) => {
         const keys = direction() === "horizontal" ? ["ArrowLeft", "ArrowRight"] : ["ArrowUp", "ArrowDown"]
         if (viewerOpen || !keys.includes(event.key)
@@ -220,7 +217,7 @@ const initGallery = (id, data) => {
     const showMapPhoto = (index) => {
         start()
         navigate(index, 0)
-        element.scrollIntoView({ behavior: reducedMotion.matches ? "instant" : "smooth", block: "start" })
+        element.scrollIntoView({ behavior: "smooth", block: "start" })
         buttons[index].focus({ preventScroll: true })
     }
     element.addEventListener("lgAfterClose", () => {
@@ -248,14 +245,12 @@ const initGallery = (id, data) => {
     })
     select(0)
     fitFrames()
-    if ("IntersectionObserver" in window) {
-        const observer = new IntersectionObserver((entries) => {
-            if (entries.some((entry) => entry.isIntersecting)) {
-                start()
-                observer.disconnect()
-            }
-        }, { rootMargin: "200px" })
-        observer.observe(element)
-    } else start()
+    const observer = new IntersectionObserver((entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+            start()
+            observer.disconnect()
+        }
+    }, { rootMargin: "200px" })
+    observer.observe(element)
     return { slide: navigate, openGallery: openPhoto }
 }

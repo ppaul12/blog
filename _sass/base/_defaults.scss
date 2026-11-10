@@ -1,0 +1,13 @@
+:root {
+    --pico-font-family: "LXGW WenKai", serif;
+    --pico-font-size: 1.05rem;
+    --pico-border-radius: 0.8rem;
+    --page-max-width: 880px;
+    --page-gutter: clamp(16px, calc(2.5vw + 6px), 32px);
+    letter-spacing: 0.02em;
+}
+
+html {
+    transition: background 0.5s ease;
+    scroll-behavior: smooth !important;
+}

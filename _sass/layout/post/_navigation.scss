@@ -1,0 +1,65 @@
+@use "../../abstracts" as utils;
+
+.post {
+    &-buttons {
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-bottom: 1rem;
+
+        &-prev,
+        &-next {
+            display: block;
+            flex-grow: 1;
+            margin: 0.5rem 1rem;
+            padding: 0.5rem 1rem;
+            min-width: 12rem;
+            border: 1px solid var(--pico-muted-border-color);
+            border-radius: var(--pico-border-radius);
+            background: var(--pico-card-background-color);
+            text-decoration: none;
+
+            transition: all 0.5s ease;
+
+            &::before {
+                display: block;
+                padding-bottom: 0.5rem;
+                margin-bottom: 0.5rem;
+                color: var(--pico-muted-color);
+                border-bottom: 1px solid var(--pico-muted-border-color);
+                font-style: italic;
+                font-weight: bold;
+                font-size: 0.8rem;
+            }
+
+            &[disabled] {
+                border-style: dashed;
+
+                @include utils.below(utils.$narrow) {
+                    display: none;
+                }
+            }
+
+            &:not([disabled]) {
+                @include utils.interaction {
+                    border-color: var(--pico-color);
+                }
+            }
+        }
+
+        &-prev {
+            text-align: left;
+
+            &::before {
+                content: "PREV";
+            }
+        }
+
+        &-next {
+            text-align: right;
+
+            &::before {
+                content: "NEXT";
+            }
+        }
+    }
+}

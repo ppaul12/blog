@@ -1,0 +1,47 @@
+@use "../abstracts" as utils;
+
+
+a {
+    --pico-text-decoration: none;
+
+    &[href] {
+        @include utils.interaction {
+            --pico-color: var(--pico-primary-hover);
+            --pico-text-decoration: underline;
+        }
+    }
+}
+
+math {
+    padding-bottom: 0.5rem;
+}
+
+mjx-container {
+    overflow-y: hidden;
+    min-width: auto !important;
+}
+
+pre {
+    max-height: 500px;
+    border-radius: unset !important;
+    margin: var(--pico-spacing) calc(var(--pico-block-spacing-horizontal) * -1) !important;
+
+    &+div {
+        z-index: 2 !important;
+    }
+}
+
+code {
+    background: unset;
+    padding: 0 !important;
+    margin: auto 0.4rem;
+    font: 0.8rem "Maple Mono" !important;
+
+    pre>& {
+        margin: unset;
+    }
+}
+
+ruby rt {
+    color: var(--pico-color);
+}

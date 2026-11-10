@@ -2,6 +2,11 @@
 ---
 
 @charset "utf-8";
-@use "colors";
+
+// Ownership layers in cascade order. See docs/sass.md.
 @use "base";
-@use "custom";
+@use "components";
+@use "layout";
+@use "features";
+@use "pages";
+@use "utilities";

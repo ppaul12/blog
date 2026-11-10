@@ -1,0 +1,9 @@
+.post {
+    &-info {
+        text-align: right;
+        color: var(--pico-muted-color);
+        font-size: 0.8rem;
+
+        animation: 1s fadeIn 1s backwards;
+    }
+}

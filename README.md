@@ -29,3 +29,8 @@ gem install bundler
 bundle install
 bundle exec jekyll server
 ```
+
+## Documentation
+
+- [Sass architecture and naming](docs/sass.md)
+- [Photo and map features](docs/photo-and-map.md)

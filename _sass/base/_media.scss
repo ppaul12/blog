@@ -1,0 +1,29 @@
+@use "../abstracts" as utils;
+
+table {
+    white-space: nowrap;
+}
+
+figure {
+    overflow: auto;
+    margin: 0.5rem auto;
+    text-align: center;
+
+    @include utils.below(utils.$narrow) {
+        min-width: 100%;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    iframe {
+        width: 100%;
+        border-radius: var(--pico-border-radius);
+    }
+
+    figcaption {
+        font-size: 80%;
+        color: var(--pico-muted-color);
+    }
+}

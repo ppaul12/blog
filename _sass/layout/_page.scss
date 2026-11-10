@@ -1,0 +1,23 @@
+body {
+    &>footer {
+        text-align: center;
+    }
+}
+
+// Page metadata selects the width once for both content and inner-page navigation.
+body.page-width-wide {
+    --page-max-width: 1120px;
+}
+
+body.page-width-narrow {
+    --page-max-width: 640px;
+}
+
+main,
+.site-header {
+    box-sizing: border-box;
+    width: min(calc(100% - var(--page-gutter) - var(--page-gutter)), var(--page-max-width));
+    min-width: 0;
+    padding: 0;
+    margin: 0.5rem auto;
+}

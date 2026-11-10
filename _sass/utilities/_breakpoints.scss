@@ -1,0 +1,7 @@
+@use "../abstracts" as *;
+
+:root {
+    --breakpoint-narrow: #{$narrow};
+    --breakpoint-compact: #{$compact};
+    --breakpoint-wide: #{$wide};
+}

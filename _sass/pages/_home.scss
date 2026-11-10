@@ -1,0 +1,85 @@
+@use "../abstracts" as utils;
+@use "../components/card";
+
+.post {
+    &-card {
+        @include card.card-hover;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+        padding: 0;
+        min-height: 10em;
+
+        animation: unset;
+    }
+
+    &-title {
+        flex-grow: 1;
+        padding: var(--pico-spacing);
+        max-height: 12rem;
+    }
+
+    &-cover {
+        width: 12rem;
+        height: 12rem;
+        background-size: cover;
+        background-position: center;
+        border-top-left-radius: var(--pico-border-radius);
+
+        @include utils.below(utils.$compact) {
+            width: 100%;
+            border-top-right-radius: var(--pico-border-radius);
+        }
+
+        @include utils.from(utils.$compact) {
+            border-bottom-left-radius: var(--pico-border-radius);
+        }
+    }
+
+    &-paginator {
+        justify-content: center;
+
+        @keyframes pagination-nudge {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(3px);
+            }
+        }
+
+        a[href] {
+            @include utils.interaction {
+                color: var(--pico-primary);
+            }
+
+            @include utils.hover-only {
+                i {
+                    animation: pagination-nudge 500ms ease-in-out infinite;
+                }
+            }
+        }
+
+        details {
+            text-align: center;
+
+            summary {
+                min-width: 6rem;
+
+                &+ul {
+                    bottom: 120%;
+                    max-height: 10em;
+                    overflow-y: scroll;
+                    scrollbar-width: none;
+
+                    animation: 1s fadeIn backwards;
+
+                    & a {
+                        // Pico's dropdown links set overflow with !important.
+                        overflow: unset !important;
+                    }
+                }
+            }
+        }
+    }
+}

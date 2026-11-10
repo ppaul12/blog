@@ -1,0 +1,17 @@
+// Shared layout thresholds, also exported for JavaScript container layouts.
+$narrow: 420px;
+$compact: 600px;
+$wide: 900px;
+
+// Complementary ranges: below excludes the boundary; from includes it.
+@mixin below($width) {
+    @media (width < #{$width}) {
+        @content;
+    }
+}
+
+@mixin from($width) {
+    @media (min-width: $width) {
+        @content;
+    }
+}

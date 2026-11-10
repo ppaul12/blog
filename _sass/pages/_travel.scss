@@ -1,0 +1,114 @@
+@use "../abstracts" as utils;
+
+.post-content h2.travel-heading,
+.post-content-plain h2.travel-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 2rem 0 1rem;
+    font-size: 1.5rem;
+    font-weight: normal;
+    line-height: 1.4;
+
+    // Keep the heading counter for any nested sections, without a visible number.
+    counter-increment: h1;
+
+    &::before {
+        content: none;
+        counter-increment: none;
+    }
+
+    .ko {
+        --ko-size: 2rem;
+        color: var(--site-accent-text);
+    }
+
+    &::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        margin-left: 0.35rem;
+        background: linear-gradient(to right, var(--pico-muted-border-color), transparent);
+    }
+
+    @include utils.below(utils.$compact) {
+        gap: 0.6rem;
+        font-size: 1.35rem;
+
+        .ko {
+            --ko-size: 1.6rem;
+        }
+    }
+}
+
+.travel-info {
+    container: travel-info / inline-size;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 0 0 1.5rem;
+
+    &-card {
+        position: relative;
+        flex: 1 1 auto;
+        width: max-content;
+        min-width: min(7rem, 100%);
+        max-width: 100%;
+        padding: 0.65rem 0.8rem;
+        border: 1px solid color-mix(in srgb, var(--pico-muted-border-color) 45%, transparent);
+        border-radius: calc(var(--pico-border-radius) * 0.65);
+        background: color-mix(in srgb, var(--pico-card-sectioning-background-color) 35%, transparent);
+        color: color-mix(in srgb, var(--pico-color) 65%, var(--pico-background-color));
+        overflow-wrap: anywhere;
+        transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease,
+            transform 0.2s ease, box-shadow 0.2s ease;
+
+        @include utils.interaction(focus-within) {
+            z-index: 2;
+            color: var(--pico-color);
+            border-color: color-mix(in srgb, var(--pico-muted-border-color) 55%, transparent);
+            background-color: color-mix(in srgb, var(--pico-primary) 8%, var(--pico-card-background-color));
+        }
+
+        @include utils.hover-only {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px color-mix(in srgb, var(--pico-primary) 15%, transparent);
+        }
+
+        &:focus-visible {
+            outline: 1px solid var(--pico-muted-color);
+            outline-offset: 2px;
+        }
+
+        &[data-tooltip] {
+            border-bottom-style: solid;
+            border-bottom-color: color-mix(in srgb, var(--pico-muted-border-color) 45%, transparent);
+            cursor: default;
+
+            @include utils.interaction {
+                border-bottom-color: color-mix(in srgb, var(--pico-muted-border-color) 55%, transparent);
+            }
+        }
+    }
+
+    dt {
+        margin-bottom: 0.25rem;
+        color: inherit;
+        font-size: 0.8rem;
+        font-weight: normal;
+    }
+
+    dd {
+        margin: 0;
+        color: inherit;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    @container travel-info (min-width: 38rem) {
+        &-card {
+            flex: 1 1 0;
+            min-width: 0;
+        }
+    }
+}

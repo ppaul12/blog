@@ -1,0 +1,40 @@
+.post {
+    &-content {
+        @extend .post-content-plain;
+        counter-reset: h1;
+
+        h2 {
+            counter-reset: h2;
+
+            &::before {
+                margin-right: 0.5rem;
+                counter-increment: h1;
+                content: counter(h1);
+            }
+        }
+
+        h3 {
+            counter-reset: h3;
+
+            &::before {
+                margin-right: 0.5rem;
+                counter-increment: h2;
+                content: counter(h1)"." counter(h2);
+            }
+        }
+
+        h4::before {
+            margin-right: 0.5rem;
+            counter-increment: h3;
+            content: counter(h1)"." counter(h2)"." counter(h3);
+        }
+
+        &-plain {
+            animation: 1s fadeIn 1s backwards;
+
+            figure.mermaid * {
+                color: black;
+            }
+        }
+    }
+}

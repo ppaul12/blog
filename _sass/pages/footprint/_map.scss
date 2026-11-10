@@ -1,0 +1,82 @@
+@use "../../abstracts" as utils;
+
+.footprint {
+    &-explorer {
+        --footprint-map-stacked: 0;
+        display: grid;
+        grid-template-columns: minmax(0, 2.15fr) minmax(17rem, 0.95fr);
+        gap: 1rem;
+        align-items: stretch;
+    }
+
+    &-residence-marker {
+        border: 0;
+        background: transparent;
+
+        &__body {
+            position: relative;
+            display: grid;
+            width: 28px;
+            height: 28px;
+            margin: 0 auto;
+            place-items: center;
+            border: 2px solid var(--site-map-halo);
+            border-radius: 50%;
+            background: var(--site-map-residence-fill);
+            box-shadow: 0 1px 4px rgb(0 0 0 / 45%);
+            color: var(--site-on-map-residence);
+
+            &::after {
+                position: absolute;
+                bottom: -7px;
+                left: 50%;
+                width: 10px;
+                height: 9px;
+                transform: translateX(-50%);
+                background: var(--site-map-residence-fill);
+                clip-path: polygon(0 0, 100% 0, 50% 100%);
+                content: "";
+            }
+
+            i {
+                z-index: 1;
+                font-size: 0.72rem;
+            }
+        }
+    }
+}
+
+#footprint-map.leaflet-container {
+    width: 100%;
+    height: clamp(30rem, 58vh, 44rem);
+    max-height: none;
+    min-width: 0;
+    margin: 0;
+    aspect-ratio: auto;
+    align-self: stretch;
+    overflow: hidden;
+}
+
+@include utils.below(utils.$wide) {
+    .footprint {
+        &-explorer {
+            --footprint-map-stacked: 1;
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
+}
+
+@include utils.below(utils.$compact) {
+    #footprint-map.leaflet-container {
+        height: auto;
+        min-height: 23rem;
+    }
+}
+
+#footprint-map.leaflet-container,
+.footprint-detail {
+    box-sizing: border-box;
+    border: 1px solid var(--pico-muted-border-color);
+    border-radius: 1.15rem;
+    background: var(--pico-card-sectioning-background-color);
+}

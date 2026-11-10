@@ -1,0 +1,26 @@
+@use "interaction" as *;
+
+// Shared appearance for navigation and controller buttons.
+@mixin utility-control {
+    color: var(--pico-muted-color);
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: var(--pico-border-radius);
+    box-shadow: none;
+    transition: color 180ms ease, background-color 180ms ease,
+        border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+
+    @include interaction {
+        color: var(--pico-primary);
+        background-color: var(--pico-card-sectioning-background-color);
+    }
+
+    @include hover-only {
+        transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--pico-primary);
+        outline-offset: 2px;
+    }
+}

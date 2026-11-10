@@ -1,0 +1,46 @@
+blockquote {
+    border-radius: var(--pico-border-radius);
+    background: var(--pico-card-sectioning-background-color);
+
+    @mixin with-prompt($role, $icon) {
+        position: relative;
+        padding: 1rem 1rem 1rem 3rem;
+        border-left-color: var(--site-#{$role}-border);
+        background: var(--site-#{$role}-subtle);
+
+        &::before {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 2rem;
+            inset: 0;
+            color: var(--site-#{$role}-text);
+            font: var(--fa-font-solid);
+            font-size: 1.2rem;
+            content: $icon;
+        }
+
+        p,
+        ul {
+            margin-bottom: 0;
+            color: var(--site-#{$role}-text);
+        }
+    }
+
+    &.tip {
+        @include with-prompt("success", "\f058");
+    }
+
+    &.info {
+        @include with-prompt("info", "\f05a");
+    }
+
+    &.warn {
+        @include with-prompt("warning", "\f06a");
+    }
+
+    &.error {
+        @include with-prompt("danger", "\f057");
+    }
+}

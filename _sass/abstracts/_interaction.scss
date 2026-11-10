@@ -1,0 +1,34 @@
+// Input capabilities, independent of viewport size. Keep these complementary.
+@mixin desktop-input {
+    @media (hover: hover) and (pointer: fine) {
+        @content;
+    }
+}
+
+@mixin touch-input {
+    @media (hover: none), (pointer: coarse) {
+        @content;
+    }
+}
+
+// Mouse hover gate. Also used by interaction() for functional hover feedback.
+@mixin hover-only {
+    @include desktop-input {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+// Shared functional feedback: press on any input, keyboard focus, mouse hover.
+// Nest descendant selectors inside the content when the visible target is a child.
+@mixin interaction($focus: focus-visible) {
+    &:active,
+    &:#{$focus} {
+        @content;
+    }
+
+    @include hover-only {
+        @content;
+    }
+}

@@ -222,25 +222,25 @@ The lightbox always shows location/title, camera, and date. A Font Awesome infor
 
 ### 5. Styles and icons
 
-`assets/main.scss` loads `_sass/custom.scss`, which loads `custom/photo/_index.scss`.
+`assets/main.scss` loads the `features` directory entry, which forwards `_sass/features/photo/_index.scss`. See [Sass architecture](sass.md) for the full hierarchy and CSS emission order.
 
 ```text
-_sass/custom/photo/
+_sass/features/photo/
   _index.scss
   _preview.scss          Shared hover effect and fullscreen hint
   _gallery.scss          Travel stage, inner frames, details, container layout
   _lightbox.scss         Viewer layout, information panel, controls, thumbnails
   album/
     _index.scss
-    _base.scss           Cards, aspect ratios, single-line captions
+    _thumbnails.scss     Cards, aspect ratios, single-line captions
     _collection.scss     Collection layout and ordering controls
     _timeline.scss       Month groups, chart, daily/travel styling
-    _devices.scss        Independent Devices dialog
+    _device-dialog.scss  Independent Devices dialog
 ```
 
 Gallery and album styles reuse the `interactive` mixin and `.photo-fullscreen-hint` from `_preview.scss`: slight image enlargement and a corner fullscreen hint, with the hint kept visible on touch devices. The gallery's interactive frame fits the actual image inside Swiper's fixed slide area. Gallery direction follows its container layout rather than a separate JavaScript viewport threshold.
 
-Viewer actions and inline fullscreen hints use Font Awesome. Metering uses `assets/img/photo/metering.svg`, with labels, abbreviations, and mode mappings in `photo/metadata.js`. The custom cursor is managed separately by `assets/js/cursor.js` and `custom/cursor.scss`; lightGallery and Leaflet use native cursor handling.
+Viewer actions and inline fullscreen hints use Font Awesome. Metering uses `assets/img/photo/metering.svg`, with labels, abbreviations, and mode mappings in `photo/metadata.js`. The custom cursor is managed separately by `assets/js/cursor.js` and `_sass/components/_site-cursor.scss`; lightGallery and Leaflet use native cursor handling.
 
 The Album page's Devices dialog does not call `initAlbum()` or `initLightbox()`. `pages/album.html` builds it from `_data/devices.yml`; `assets/js/modal.js` handles opening/closing. `photo/album/devices.js` observes visible device pages inside the open dialog, caches parsed SVG sources, and mounts fresh copies for each visit. Requests that finish after the visit ends do not replace the current illustration.
 
@@ -250,14 +250,14 @@ The Album page's Devices dialog does not call `initAlbum()` or `initLightbox()`.
 
 | Change | Main files |
 | --- | --- |
-| Inline travel selection, frames, keyboard handling, map event receiver | `assets/js/photo/gallery.js`, `_sass/custom/photo/_gallery.scss` |
-| Shared card creation and viewer-list replacement | `assets/js/photo/album/base.js`, `_sass/custom/photo/album/_base.scss` |
+| Inline travel selection, frames, keyboard handling, map event receiver | `assets/js/photo/gallery.js`, `_sass/features/photo/_gallery.scss` |
+| Shared card creation and viewer-list replacement | `assets/js/photo/album/base.js`, `_sass/features/photo/album/_thumbnails.scss` |
 | Collection ordering, sources, and totals | `assets/js/photo/album/collection.js`, `assets/json/album.json` |
 | Timeline dates, grouping, filters, captions, and article links | `assets/js/photo/album/timeline.js`, `_layouts/post/summary.html` |
-| Viewer controls, captions, details, and autoplay options | `assets/js/photo/lightbox.js`, `_sass/custom/photo/_lightbox.scss` |
+| Viewer controls, captions, details, and autoplay options | `assets/js/photo/lightbox.js`, `_sass/features/photo/_lightbox.scss` |
 | Shared lists, EXIF, formatting, metering, and location links | `assets/js/photo/metadata.js`, `assets/img/photo/metering.svg` |
-| Shared hover and fullscreen hint | `_sass/custom/photo/_preview.scss` |
-| Devices dialog | `pages/album.html`, `_data/devices.yml`, `assets/js/photo/album/devices.js`, `assets/js/modal.js` |
+| Shared hover and fullscreen hint | `_sass/features/photo/_preview.scss` |
+| Devices dialog | `pages/album.html`, `_data/devices.yml`, `assets/js/photo/album/devices.js`, `assets/js/modal.js`, `_sass/features/photo/album/_device-dialog.scss` |
 | Dependencies and entry-point loading | `_includes/head.html`, `_includes/embed/gallery.html` |
 
 For photo changes, build the site and check travel gallery navigation, wide/narrow container layouts, image retry, viewer open/close with scroll/focus restoration, and metadata updates during rapid slide changes. For albums, also check collection URL ordering and timeline filtering, empty results, partial source failures, and card/viewer index alignment. For shared metadata changes, verify repeated list reads, GPS markers, explicit EXIF overrides, missing fields, and article/GPS links.
@@ -272,7 +272,7 @@ For photo changes, build the site and check travel gallery navigation, wide/narr
 
 ### 1. Overview
 
-The shared subsystem is named **map**. Its two controls are **travel map** and **footprint map**. All map JavaScript lives under `assets/js/map/`; all map SCSS lives under `_sass/custom/map/`. Shared modules are at the root, and specialized modules are in `travel/` and `footprint/`.
+The shared subsystem is named **map**. Its two controls are **travel map** and **footprint map**. All map JavaScript lives under `assets/js/map/`, with shared modules at the root and specialized modules in `travel/` and `footprint/`. Shared map and travel-map SCSS lives under `_sass/features/map/`; footprint page composition and its map-specific styles live under `_sass/pages/footprint/`.
 
 ```mermaid
 flowchart TD
@@ -440,28 +440,35 @@ Travel map's returned `destroy()` also removes photo-layer listeners and ignores
 
 ### 5. Styles and icons
 
-`_sass/custom.scss` loads the single `custom/map/_index.scss` entry, which assembles shared and specialized styles.
+`assets/main.scss` loads the `features`, `pages`, and `utilities` directory entries. These forward `features/map`, `pages/footprint`, and `utilities/accessibility` respectively. All `_index.scss` files only forward modules. Shared map styles precede footprint page composition; the shared accessibility helper loads with the final utilities layer. See [Sass architecture](sass.md).
 
 ```text
-_sass/custom/map/
+_sass/features/map/
   _index.scss
-  _base.scss             Leaflet compatibility and action controls
+  _leaflet.scss          Leaflet compatibility and action controls
   _maximize.scss         Overlay, placeholder, transitions, maximize button
   travel/
-    _index.scss          Travel map dimensions, plan markers, layer panel
+    _index.scss          Module aggregation only
     _photos.scss         Camera markers, photo popups, loading status
-  footprint/
-    _index.scss
-    _base.scss           Dashboard basics and visually-hidden helper
-    _journeys.scss       Recent-journey section and responsive card grid
-    _map.scss            Map dimensions, residence markers, map/detail layout
-    _clusters.scss       Cluster colors and count alignment
-    _controls.scss       Date filter, reset, and statistics
-    _detail.scss         Place details and visit tags
-    _ticket.scss         Related-journey tickets, also used by recent cards
+    _container.scss      Travel map dimensions
+    _layer-controls.scss Native layers panel groups and inputs
+    _stop-markers.scss   Numbered plan markers
+
+_sass/pages/footprint/
+  _index.scss
+  _dashboard.scss        Dashboard defaults
+  _journeys.scss         Recent-journey section and responsive card grid
+  _map.scss              Map dimensions, residence markers, map/detail layout
+  _clusters.scss         Cluster colors and count alignment
+  _filters.scss          Date filter, reset, and statistics
+  _detail-panel.scss     Place details and visit tags
+  _ticket.scss           Related-journey tickets, also used by recent cards
+
+_sass/utilities/
+  _accessibility.scss    Shared visually-hidden helper (footprint and album)
 ```
 
-Travel dimensions apply to `.travel-map.leaflet-container`, rather than constraining every Leaflet container. Footprint map has its own height and layout rules; the maximize overlay overrides map dimensions. All footprint-specific styles, including page dashboard basics and recent-journey list layout, live under `custom/map/footprint/` and load through its `_index.scss`. Related-journey tickets and recent-journey cards use the same ticket style definition. Map palette roles are supplied by the existing `--site-map-*` variables.
+Travel dimensions apply to `.travel-map.leaflet-container`, rather than constraining every Leaflet container. Footprint map has its own height and layout rules; the maximize overlay overrides map dimensions. All footprint-specific styles, including page dashboard basics and recent-journey list layout, live under `pages/footprint/` and load through its `_index.scss`. Related-journey tickets and recent-journey cards use the same ticket style definition. Map palette roles are supplied by the existing `--site-map-*` variables.
 
 | Element | Appearance |
 | --- | --- |
@@ -482,16 +489,16 @@ Travel dimensions apply to `.travel-map.leaflet-container`, rather than constrai
 
 | Change | Main files |
 | --- | --- |
-| Shared tiles, controls, home/reset target, base marker/group helpers | `assets/js/map/base.js`, `_sass/custom/map/_base.scss` |
+| Shared tiles, controls, home/reset target, base marker/group helpers | `assets/js/map/base.js`, `_sass/features/map/_leaflet.scss` |
 | Action icons | `assets/js/map/icons.js` |
-| Maximize/restore and overlay lifecycle | `assets/js/map/maximize.js`, `_sass/custom/map/_maximize.scss` |
+| Maximize/restore and overlay lifecycle | `assets/js/map/maximize.js`, `_sass/features/map/_maximize.scss` |
 | Travel feature assembly and overview bounds | `assets/js/map/travel/index.js` |
-| Plans, repeated-stop numbers, section bounds | `assets/js/map/travel/plans.js`, `_sass/custom/map/travel/_index.scss` |
+| Plans, repeated-stop numbers, section bounds | `assets/js/map/travel/plans.js`, `_sass/features/map/travel/_stop-markers.scss`, `_layer-controls.scss` |
 | GPX parsing, transport colors, visibility | `assets/js/map/travel/tracks.js` |
-| Photo layer, popups, gallery event dispatch | `assets/js/map/travel/photos.js`, `_sass/custom/map/travel/_photos.scss` |
+| Photo layer, popups, gallery event dispatch | `assets/js/map/travel/photos.js`, `_sass/features/map/travel/_photos.scss` |
 | Footprint aggregation, periods, date matching | `assets/js/map/footprint/data.js` |
-| Footprint markers and clustering | `assets/js/map/footprint/view.js`, `_sass/custom/map/footprint/_map.scss`, `_clusters.scss` |
-| Footprint filters, statistics, details, click/scroll behavior | `assets/js/map/footprint/index.js`, `pages/footprint.html`, `_sass/custom/map/footprint/` |
+| Footprint markers and clustering | `assets/js/map/footprint/view.js`, `_sass/pages/footprint/_map.scss`, `_clusters.scss` |
+| Footprint filters, statistics, details, click/scroll behavior | `assets/js/map/footprint/index.js`, `pages/footprint.html`, `_sass/pages/footprint/` |
 | Dependencies and entry-point loading | `_includes/head.html`, `_includes/embed/map.html` |
 
 For map changes, check both travel and footprint pages. Verify reset targets after ordinary view changes; maximize/restore without losing layout or scroll; wide/narrow layout transitions; plan numbering for repeated stops; GPX segment gaps and failed files; independent track visibility; photo-layer lazy loading, absent GPS, and gallery index targeting. Check all four footprint selection cases, date filtering, residence periods, empty results, selection invalidation, and the difference between page reset and map reset.

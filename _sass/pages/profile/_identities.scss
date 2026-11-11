@@ -1,0 +1,120 @@
+@use "../../abstracts" as utils;
+
+.profile {
+    &-identities__list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-auto-rows: 1fr;
+        gap: 0.8rem;
+        padding: 0;
+        margin: 0;
+
+        li {
+            margin: 0;
+            list-style: none;
+        }
+
+        .profile-identities__card {
+            position: relative;
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 1.1rem 0.75rem;
+            border: 1px solid var(--pico-muted-border-color);
+            border-radius: 0.6rem;
+            font-size: 0.8rem;
+            line-height: 1.5;
+            text-align: center;
+
+            > span {
+                display: block;
+                align-content: center;
+                min-height: 3em;
+            }
+        }
+        // Equal slots align the labels; full-body figures need more height
+        // than portraits to keep their faces and gestures legible.
+        .ko {
+            width: 4.5rem;
+            height: 4.5rem;
+            color: var(--pico-primary);
+            mask-size: auto var(--identity-art-height, 3.2rem);
+        }
+
+        // Identity colors describe the content and stay independent of the palette.
+        .profile-identities__item--blaugrana .profile-identities__card {
+            &::before {
+                content: "";
+                position: absolute;
+                inset-inline: 0;
+                inset-block-end: 0.6rem;
+                width: 3.5rem;
+                height: 0.25rem;
+                margin-inline: auto;
+                background: linear-gradient(to right, #a50044 50%, #004d98 50%);
+                pointer-events: none;
+            }
+
+            @include utils.desktop-input {
+                &::before {
+                    opacity: 0;
+                }
+
+                &:hover::before {
+                    opacity: 1;
+                }
+
+                @media (prefers-reduced-motion: no-preference) {
+                    &::before {
+                        transition: opacity 300ms ease;
+                    }
+                }
+            }
+        }
+
+        a.profile-identities__card {
+            color: var(--pico-color);
+            text-decoration: none;
+            transition: background-color 180ms ease, border-color 180ms ease;
+
+            &::after {
+                content: "\f061";
+                font: var(--fa-font-solid);
+                position: absolute;
+                inset-block-start: 0.45rem;
+                inset-inline-end: 0.65rem;
+                color: var(--pico-muted-color);
+            }
+
+            &[href^="#"]::after {
+                content: "\f175";
+            }
+
+            &[href^="https://"]::after {
+                content: "\f35d";
+            }
+
+            @include utils.interaction {
+                background-color: var(--pico-card-sectioning-background-color);
+                border-color: var(--pico-primary);
+            }
+
+            &:focus-visible {
+                outline: 2px solid var(--pico-primary);
+                outline-offset: 3px;
+            }
+        }
+    }
+
+    @include utils.below(utils.$compact) {
+        &-identities__list {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        &-identities__list .profile-identities__card > span > span {
+            display: block;
+        }
+    }
+}

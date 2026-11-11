@@ -1,8 +1,8 @@
 author:
   name: ppaul
-  quote:
-    text: Let life be beautiful like summer flowers<br> and death like autumn leaves.
-    work: Stray Birds
+  intro:
+    greeting: Hi, I'm paul!
+    description: A stray bird from Shenyang · China, now perched in Tokyo · Japan, resting here for a while.
   brand:
     words: LA VITA
     tagline: tra viaggi e pensieri
@@ -10,14 +10,16 @@ author:
   - name: Chinese
     usage: Native
   - name: Japanese
-    usage: Daily life & research
+    usage: Fluent
   - name: English
-    usage: Daily life & research
+    usage: Fluent
   - name: Italian
     usage: Learning
 
-education:
-- period: 2019.04 - 2023.03
+timeline:
+- category: education
+  start: '2019.04'
+  end: '2023.03'
   degree: BSc
   institution:
     name: UTokyo
@@ -25,7 +27,9 @@ education:
   department:
     name: IS
     url: https://www.is.s.u-tokyo.ac.jp
-- period: 2023.04 - 2025.03
+- category: education
+  start: '2023.04'
+  end: '2025.03'
   degree: MSc
   institution:
     name: UTokyo
@@ -37,7 +41,9 @@ education:
     topics:
     - Autonomous driving system
     - Vector map
-- period: 2025.04 - present
+- category: education
+  start: '2025.04'
+  end: present
   degree: PhD
   institution:
     name: UTokyo
@@ -51,118 +57,51 @@ education:
     - LLM safety
     - AI system design
 
-experience:
-- period: 2023.04 - 2025.03
-  role: Collaborative research
+- category: collaboration
+  start: '2023.04'
+  end: '2025.03'
   organization:
     name: MAP IV, Inc.
   keywords:
   - Autonomous driving system
   - Vector map
-- period: 2025.08 - 2026.04
-  role: Collaborative research
+- category: teaching assistant
+  start: '2023.04'
+  end: '2023.08'
+  organization:
+    name: UTokyo
+    url: https://catalog.he.u-tokyo.ac.jp/detail?code=0510030&year=2023
+  keywords:
+  - System programming experiment
+- category: collaboration
+  start: '2025.08'
+  end: '2026.04'
   organization:
     name: Fujitsu Limited
   keywords:
   - LLM safety
   - White-box analysis
 
-toolkit:
-- name: C
-  icon: c
-  color: A8B9CC
-- name: C++
-  icon: cplusplus
-  color: '00599C'
-- name: Python
-  icon: python
-  color: 3776AB
-- name: Bash
-  icon: gnubash
-  color: 4EAA25
-- name: OCaml
-  icon: ocaml
-  color: EC6813
-- name: HTML
-  icon: html5
-  color: E34F26
-- name: Sass
-  icon: sass
-  color: CC6699
-- name: CSS
-  icon: css
-  color: '663399'
-- name: JavaScript
-  icon: javascript
-  color: F7DF1E
-- name: LaTeX
-  icon: latex
-  color: '008080'
-- name: Markdown
-  icon: markdown
-  color: '808080'
-- name: Typst
-  icon: typst
-  color: 239DAD
-- name: Git
-  icon: git
-  color: F05032
-- name: Ubuntu
-  icon: ubuntu
-  color: E95420
-- name: Docker
-  icon: docker
-  color: 2496ED
-- name: Podman
-  icon: podman
-  color: 892CA0
-- name: Neovim
-  icon: neovim
-  color: 57A143
-- name: PyTorch
-  icon: pytorch
-  color: EE4C2C
-- name: scikit-learn
-  icon: scikitlearn
-  color: F7931E
-- name: Hugging Face
-  icon: huggingface
-  color: FFD21E
-- name: NumPy
-  icon: numpy
-  color: 4DABCF
-- name: pandas
-  icon: pandas
-  color: 8E82BD
-
 identities:
 - name: Professional student
   icon: student-graduating
+  url: '#profile-education'
 - name: Perfectionist coder
   icon: developer-laptop
+  url: https://github.com/ppaul12
 - name: Optimistic reader
   icon: reading-document
+  url: /books
 - name: Inquisitive traveler
   icon: hiking-up-hill
+  url: /footprint
 - name: Amateur photographer
   icon: taking-photograph
+  url: /album
 - name: Barça culés
   icon: person-watching-football-match-2
   accent: blaugrana
-
-hobbies:
-- name: Coding
-  icon: laptop
-  description: Code & learning.
-  url: https://github.com/ppaul12
-- name: Reading
-  icon: open-textbook
-  description: Books & reflections.
-  url: "/books"
-- name: Traveling
-  icon: route
-  description: Places & memories.
-  url: "/footprint"
+  url: https://www.thesportsdb.com/team/133739-barcelona
 
 contacts:
 - name: pengao[at]is.s.u-tokyo.ac.jp

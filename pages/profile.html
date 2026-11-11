@@ -1,135 +1,154 @@
 ---
-layout: default
+layout: page
 title: profile
+subtitle: a little about me
 permalink: /profile
 ---
 
 {%- assign profile = site.data.profiles -%}
 
-<article class="profile" aria-labelledby="profile-name">
-    <!-- Personal information -->
-    <header class="profile-hero" data-aos="fade-up">
-        <p class="profile-eyebrow">A LITTLE ABOUT ME</p>
-        <h1 class="profile-name" id="profile-name">{{ profile.author.name | slice: -4,4 }}</h1>
-        <blockquote class="profile-description literature quote" lang="en">
-            <p>{{ profile.author.quote.text }}</p>
-            <footer class="profile-quote-credit"><cite>{{ profile.author.quote.work | escape }}</cite></footer>
-        </blockquote>
-        <div class="profile-overview">
-            <section class="profile-languages" aria-labelledby="profile-languages-heading">
-                <h2 class="profile-info-heading" id="profile-languages-heading">Languages</h2>
-                <dl class="grid">
-                    {% for language in profile.author.languages %}
-                    <div>
-                        <dt>{{ language.name | escape }}</dt>
-                        <dd>{{ language.usage | escape }}</dd>
-                    </div>
-                    {% endfor %}
-                </dl>
-            </section>
-            <section class="profile-toolkit" aria-labelledby="profile-toolkit-heading">
-                <h2 class="profile-info-heading" id="profile-toolkit-heading">Tech stack</h2>
-                <ul class="profile-tools" aria-label="Tech stack">
-                    {% for skill in profile.toolkit %}
-                    <li>
-                        <img src="https://cdn.simpleicons.org/{{ skill.icon }}/{{ skill.color }}"
-                            alt="{{ skill.name | escape }}" title="{{ skill.name | escape }}"
-                            width="22" height="22" loading="lazy">
-                    </li>
-                    {% endfor %}
-                </ul>
-            </section>
-        </div>
-    </header>
-
-    <!-- Education and research experience -->
-    <section class="profile-section" aria-labelledby="profile-education">
-        <p class="profile-eyebrow" data-aos="fade">01 / STILL LEARNING</p>
-        <h2 id="profile-education" data-aos="fade-up">The student years</h2>
-        <div class="profile-timelines">
-            <ol class="profile-timeline" aria-label="Education">
-                {% for entry in profile.education %}
-                <li data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 100 }}">
-                    <span class="profile-date">{{ entry.period | escape }}</span>
-                    {% capture education_organization %}
-                        {%- if entry.institution.url -%}
-                            <a href="{{ entry.institution.url | escape }}">{{ entry.institution.name | escape }}</a>
-                        {%- else -%}
-                            {{ entry.institution.name | escape }}
-                        {%- endif -%}
-                        {%- if entry.department -%}
-                            , {% if entry.department.url %}<a href="{{ entry.department.url | escape }}">{{ entry.department.name | escape }}</a>{% else %}{{ entry.department.name | escape }}{% endif %}
-                        {%- endif -%}
-                    {% endcapture %}
-                    <h3 class="profile-timeline-title"><span class="profile-organization">{{ education_organization | strip }}</span> · {{ entry.degree | escape }}</h3>
-                    {% if entry.research %}
-                    <p class="profile-keywords profile-study-research">{% if entry.research.field %}{{ entry.research.field | escape }}: {% endif %}{{ entry.research.topics | join: ' · ' | escape }}</p>
-                    {% endif %}
-                </li>
+<div class="profile">
+    <section class="profile-intro" aria-labelledby="profile-greeting" lang="en">
+        <img class="profile-intro__avatar" src="https://github.com/{{ site.thirdparty.github.user }}.png"
+            alt="{{ profile.author.name | escape }}" width="96" height="96" decoding="async">
+        <div class="profile-intro__body">
+            <h2 class="profile-intro__greeting" id="profile-greeting">{{ profile.author.intro.greeting | escape }}</h2>
+            <p class="profile-intro__description">{{ profile.author.intro.description | escape }}</p>
+            <ul class="profile-intro__languages" role="list" aria-label="Languages">
+                {% for language in profile.author.languages %}
+                <li>{{ language.name | escape }} <span class="profile-intro__language-usage">· {{ language.usage | escape }}</span></li>
                 {% endfor %}
-            </ol>
-            <ol class="profile-timeline" aria-label="Other experience">
-                {% for entry in profile.experience %}
-                <li data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 100 }}">
-                    <span class="profile-date">{{ entry.period | escape }}</span>
-                    <h3 class="profile-timeline-title">{{ entry.role | escape }}</h3>
-                    <p class="profile-organization">
-                        {%- if entry.organization.url -%}
-                            <a href="{{ entry.organization.url | escape }}">{{ entry.organization.name | escape }}</a>
-                        {%- else -%}
-                            {{ entry.organization.name | escape }}
-                        {%- endif -%}
-                    </p>
-                    {% if entry.keywords and entry.keywords.size > 0 %}
-                    <p class="profile-keywords">{{ entry.keywords | join: ' · ' | escape }}</p>
-                    {% endif %}
-                </li>
-                {% endfor %}
-            </ol>
+            </ul>
         </div>
     </section>
 
-    <!-- Personal identities -->
     <section class="profile-section" aria-labelledby="profile-identities">
-        <p class="profile-eyebrow" data-aos="fade">02 / MORE THAN ONE THING</p>
+        <p class="profile-eyebrow" data-aos="fade">01 / MORE THAN ONE THING</p>
         <h2 id="profile-identities" data-aos="fade-up">A few sides of me</h2>
-        <ul class="profile-identities">
+        <ul class="profile-identities__list" role="list">
             {% for identity in profile.identities %}
             {% assign identity_words = identity.name | split: ' ' %}
-            {% assign identity_role = identity_words | slice: 1, 99 | join: ' ' %}
-            <li{% if identity.accent %} class="profile-identity-{{ identity.accent | escape }}"{% endif %} data-aos="fade-up" data-aos-delay="{{ forloop.index0 | modulo: 3 | times: 100 }}">
-                <i class="ko ko-inkbrush ko-{{ identity.icon | escape }}" aria-hidden="true"></i>
-                <span><span>{{ identity_words[0] }}</span> <span>{{ identity_role }}</span></span>
+            {% assign identity_role = identity_words | slice: 1, identity_words.size | join: ' ' %}
+            {% assign identity_tag = 'div' %}
+            {% assign identity_url = identity.url %}
+            {% if identity_url %}
+                {% assign identity_tag = 'a' %}
+                {% assign url_prefix = identity_url | slice: 0, 1 %}
+                {% if url_prefix == '/' %}
+                    {% assign identity_url = identity_url | relative_url %}
+                {% endif %}
+            {% endif %}
+            <li{% if identity.accent %} class="profile-identities__item--{{ identity.accent | escape }}"{% endif %} data-aos="fade-up" data-aos-delay="{{ forloop.index0 | modulo: 3 | times: 100 }}">
+                <{{ identity_tag }} class="profile-identities__card"{% if identity_url %} href="{{ identity_url | escape }}"{% endif %}>
+                    <i class="ko ko-inkbrush ko-{{ identity.icon | escape }}" aria-hidden="true"></i>
+                    <span><span>{{ identity_words[0] | escape }}</span> <span>{{ identity_role | escape }}</span></span>
+                </{{ identity_tag }}>
             </li>
             {% endfor %}
         </ul>
     </section>
 
-    <!-- Interest links -->
-    <section class="profile-section" aria-labelledby="profile-hobbies">
-        <p class="profile-eyebrow" data-aos="fade">03 / FOLLOW MY CURIOSITY</p>
-        <h2 id="profile-hobbies" data-aos="fade-up">Things I return to</h2>
-        <div class="profile-hobbies">
-            {% for hobby in profile.hobbies %}
-            <div data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 100 }}">
-                <a class="profile-hobby" href="{{ hobby.url | relative_url }}">
-                    <i class="ko ko-{{ hobby.icon | escape }}" aria-hidden="true"></i>
-                    <h3>{{ hobby.name }} <span aria-hidden="true">↗</span></h3>
-                    <p>{{ hobby.description }}</p>
-                </a>
+    <section class="profile-section" aria-labelledby="profile-education">
+        <p class="profile-eyebrow" data-aos="fade">02 / STILL LEARNING</p>
+        <h2 id="profile-education" data-aos="fade-up">The student years</h2>
+        {% assign timeline = profile.timeline | sort: 'end' %}
+        {% assign timeline_groups = 'Education,Experience' | split: ',' %}
+        <div class="profile-student-years__columns">
+            {% for group in timeline_groups %}
+            {% if group == 'Education' %}
+                {% assign entries = timeline | where: 'category', 'education' %}
+            {% else %}
+                {% assign entries = timeline | where_exp: 'entry', "entry.category != 'education'" %}
+            {% endif %}
+            {% assign heading_id = group | downcase | prepend: 'profile-timeline-' %}
+            <div>
+                <h3 class="profile-info-heading" id="{{ heading_id }}">{{ group | escape }}</h3>
+                <ol class="profile-student-years__timeline" role="list" aria-labelledby="{{ heading_id }}">
+                    {% for entry in entries %}
+                    <li data-aos="fade-up" data-aos-duration="600" data-aos-offset="40">
+                        <div class="profile-student-years__entry-meta">
+                            <span class="profile-student-years__date">
+                                <time datetime="{{ entry.start | replace: '.', '-' | escape }}">{{ entry.start | escape }}</time> –
+                                {% if entry.end == 'present' %}
+                                present
+                                {% else %}
+                                <time datetime="{{ entry.end | replace: '.', '-' | escape }}">{{ entry.end | escape }}</time>
+                                {% endif %}
+                            </span>
+                            {% if entry.category != 'education' %}
+                            <span class="profile-student-years__category">{{ entry.category | capitalize | escape }}</span>
+                            {% endif %}
+                        </div>
+                        <div class="profile-student-years__entry-body">
+                            {% if entry.category == 'education' %}
+                                {% capture education_organization %}
+                                    {%- if entry.institution.url -%}
+                                        <a href="{{ entry.institution.url | escape }}">{{ entry.institution.name | escape }}</a>
+                                    {%- else -%}
+                                        {{ entry.institution.name | escape }}
+                                    {%- endif -%}
+                                    {%- if entry.department -%}
+                                        {{- ', ' -}}
+                                        {%- if entry.department.url -%}
+                                            <a href="{{ entry.department.url | escape }}">{{ entry.department.name | escape }}</a>
+                                        {%- else -%}
+                                            {{ entry.department.name | escape }}
+                                        {%- endif -%}
+                                    {%- endif -%}
+                                {% endcapture %}
+                                <h4 class="profile-student-years__entry-title"><span class="profile-student-years__institution">{{ education_organization | strip }}</span> · {{ entry.degree | escape }}</h4>
+                                {% if entry.research %}
+                                    <p class="profile-student-years__keywords profile-student-years__keywords--research">
+                                        {%- if entry.research.field -%}
+                                            {{ entry.research.field | escape }}{{ ': ' }}
+                                        {%- endif -%}
+                                        {{ entry.research.topics | join: ' · ' | escape }}
+                                    </p>
+                                {% endif %}
+                            {% else %}
+                                <h4 class="profile-student-years__entry-title">
+                                    {%- if entry.organization.url -%}
+                                        <a href="{{ entry.organization.url | escape }}">{{ entry.organization.name | escape }}</a>
+                                    {%- else -%}
+                                        {{ entry.organization.name | escape }}
+                                    {%- endif -%}
+                                </h4>
+                                {% if entry.keywords.size > 0 %}
+                                    <p class="profile-student-years__keywords">{{ entry.keywords | join: ' · ' | escape }}</p>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ol>
             </div>
             {% endfor %}
         </div>
     </section>
 
-    <!-- Contact and friends -->
+    <section class="profile-section profile-about" aria-labelledby="profile-about" lang="en">
+        <p class="profile-eyebrow" data-aos="fade">03 / LIFE GOES ON</p>
+        <h2 id="profile-about" data-aos="fade-up">About this site</h2>
+        <p class="profile-about__description" data-aos="fade-up">
+            <em lang="it">{{ profile.author.brand.words | escape }}</em> means “life.” The subtitle, <em lang="it">{{ profile.author.brand.tagline | escape }}</em>, means “between journeys and thoughts.”
+            I write about where I go, what I read, and what I think along the way.
+        </p>
+        <figure class="profile-about__stamp">
+            <span class="profile-about__stamp-ornament" aria-hidden="true">✦</span>
+            <blockquote>
+                <p>Let life be beautiful like summer flowers<br>and death like autumn leaves.</p>
+            </blockquote>
+            <figcaption><cite>Stray Birds</cite></figcaption>
+        </figure>
+    </section>
+
     <footer class="profile-connections" data-aos="fade-up" aria-label="Contact and friends">
         <div class="grid">
             <section aria-labelledby="profile-contact-heading">
                 <h2 class="profile-info-heading" id="profile-contact-heading">Contact</h2>
-                <ul class="profile-contact-list" aria-label="Contact and profiles">
+                <ul class="profile-connections__list" aria-label="Contact and profiles">
                     {% for link in profile.contacts %}
-                    <li{% if link.url contains 'mailto:' %} class="profile-contact-email"{% endif %}>
+                    <li{% if link.url contains 'mailto:' %} class="profile-connections__email"{% endif %}>
                         <a href="{{ link.url | escape }}">
                             <img src="https://cdn.simpleicons.org/{{ link.icon | default: 'safari' }}/81A1C1" alt="" width="17" height="17">
                             <span>{{ link.name | escape }}</span>
@@ -140,7 +159,7 @@ permalink: /profile
             </section>
             <section aria-labelledby="profile-friends-heading">
                 <h2 class="profile-info-heading" id="profile-friends-heading">Friends</h2>
-                <ul class="profile-contact-list profile-friend-list" aria-label="Friends">
+                <ul class="profile-connections__list profile-connections__list--friends" aria-label="Friends">
                     {% for friend in profile.friends %}
                     <li>
                         <a href="{{ friend.url | escape }}">
@@ -153,4 +172,4 @@ permalink: /profile
             </section>
         </div>
     </footer>
-</article>
+</div>

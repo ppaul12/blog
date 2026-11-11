@@ -1,0 +1,127 @@
+@use "../../abstracts" as utils;
+
+.profile {
+    #profile-education {
+        scroll-margin-top: 1.5rem;
+    }
+
+    &-student-years__columns {
+        display: grid;
+        align-items: start;
+        gap: var(--profile-section-gap);
+
+        @include utils.from(utils.$compact) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    &-student-years__timeline {
+        --profile-marker-width: 0.65rem;
+        --profile-timeline-gap: 0.6rem;
+
+        position: relative;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset-block: 0.65rem 0;
+            inset-inline-start: calc(var(--profile-marker-width) / 2);
+            border-inline-start: 1px solid var(--pico-muted-border-color);
+        }
+
+        li {
+            position: relative;
+            display: grid;
+            grid-template-columns: var(--profile-marker-width) minmax(0, 1fr);
+            gap: 0.35rem var(--profile-timeline-gap);
+            align-items: center;
+            margin: 0;
+            list-style: none;
+        }
+
+        li + li {
+            margin-top: 1.2rem;
+        }
+
+        li[data-aos="fade-up"].aos-init:where(:not(.aos-animate, :focus-within)) {
+            transform: translateY(0.75rem);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            li[data-aos].aos-init {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        li::before {
+            content: "";
+            grid-column: 1;
+            grid-row: 1;
+            justify-self: center;
+            width: 0.45rem;
+            height: 0.45rem;
+            border-radius: 50%;
+            background: var(--pico-primary);
+        }
+    }
+
+    &-student-years__entry-meta {
+        grid-column: 2;
+        grid-row: 1;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.25rem var(--profile-timeline-gap);
+    }
+
+    &-student-years__entry-body {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    &-student-years__date {
+        color: var(--pico-muted-color);
+        font-family: "Maple Mono";
+        font-size: 0.7rem;
+        font-variant-numeric: tabular-nums;
+        line-height: 1.5;
+    }
+
+    &-student-years__category {
+        padding: 0.05rem 0.45rem;
+        border: 1px solid var(--pico-muted-border-color);
+        border-radius: 0.35rem;
+        color: var(--pico-muted-color);
+        font: 0.65rem / 1.5 system-ui, sans-serif;
+    }
+
+    h4.profile-student-years__entry-title {
+        font-size: 0.85rem;
+        font-weight: normal;
+        line-height: 1.5;
+        margin: 0 0 0.25rem;
+    }
+
+    .profile-student-years__timeline .profile-student-years__institution {
+        color: var(--pico-color);
+        font-size: 0.8rem;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    .profile-student-years__timeline .profile-student-years__keywords {
+        margin: 0.25rem 0 0;
+        font-size: 0.7rem;
+        line-height: 1.5;
+        color: var(--pico-muted-color);
+    }
+
+    .profile-student-years__timeline .profile-student-years__keywords--research {
+        margin-top: 0.45rem;
+    }
+}

@@ -1,5 +1,5 @@
 body {
-    &>footer {
+    & > footer {
         text-align: center;
     }
 }
@@ -20,4 +20,54 @@ main,
     min-width: 0;
     padding: 0;
     margin: 0.5rem auto;
+}
+
+.page-header {
+    text-align: center;
+
+    > hgroup {
+        display: grid;
+        gap: 0.45rem;
+        margin: 1rem 0;
+        padding-block: 0.35rem 0;
+    }
+
+    & &-title,
+    & > hgroup > &-subtitle {
+        margin: 0;
+        font-weight: normal;
+        overflow-wrap: anywhere;
+    }
+
+    & &-title {
+        color: var(--pico-h2-color);
+        font-family: "Times New Roman", serif;
+        font-size: clamp(1.8rem, 5vw, 2.3rem);
+        line-height: 1.2;
+        letter-spacing: 0.025em;
+    }
+
+    & > hgroup > &-subtitle {
+        color: var(--pico-muted-color);
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+
+    &-ornament {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.7rem;
+        color: var(--pico-primary);
+        font-size: 0.65rem;
+        line-height: 1;
+
+        &::before,
+        &::after {
+            width: 4rem;
+            height: 1px;
+            background: var(--pico-muted-border-color);
+            content: "";
+        }
+    }
 }

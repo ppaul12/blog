@@ -9,18 +9,6 @@ main:has(.books-page) {
     & > article > footer {
         animation: none;
     }
-
-    & > article > header {
-        padding: 1rem;
-
-        h2 {
-            font-size: 1.6rem;
-        }
-
-        h3 {
-            font-size: 0.9rem;
-        }
-    }
 }
 
 .books {

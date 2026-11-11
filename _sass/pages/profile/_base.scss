@@ -1,0 +1,47 @@
+.profile {
+    --profile-section-gap: 2rem;
+
+    h2, h3, p {
+        margin-top: 0;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+        font-weight: normal;
+        color: var(--pico-color);
+        margin-bottom: 1.1rem;
+    }
+
+    .profile-info-heading {
+        font-size: 0.8rem;
+        font-weight: normal;
+        margin-bottom: 0.75rem;
+    }
+
+    a {
+        text-underline-offset: 0.2em;
+    }
+
+    &-eyebrow {
+        color: var(--pico-muted-color);
+        font: 0.65rem / 1.5 system-ui, sans-serif;
+        letter-spacing: 0.14em;
+        margin-bottom: 0.4rem;
+    }
+
+    // Content stays accessible if AOS cannot initialize or a keyboard user focuses it.
+    [data-aos]:not(.aos-init), [data-aos]:focus-within {
+        opacity: 1;
+        transform: none;
+    }
+
+    &-section {
+        margin-bottom: 0;
+        padding-top: var(--profile-section-gap);
+    }
+
+    > .profile-section + .profile-section {
+        margin-top: var(--profile-section-gap);
+        border-top: 1px solid var(--pico-muted-border-color);
+    }
+}

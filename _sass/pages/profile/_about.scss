@@ -1,0 +1,78 @@
+.profile {
+    &-about__description {
+        margin: 0;
+        font-size: 0.85rem;
+        line-height: 1.65;
+    }
+
+    &-about__stamp {
+        --stamp-rule: color-mix(in srgb, var(--pico-muted-color, currentColor), light-dark(#9e8667, #a78b6b) 60%);
+        --stamp-paper: color-mix(in srgb, var(--pico-background-color, Canvas), light-dark(#eae0cd, #3e3328) 30%);
+        --stamp-perforation: transparent 4px, #000 4.5px;
+
+        position: relative;
+        isolation: isolate;
+        width: min(100%, 25rem);
+        margin: 1.4rem auto 0;
+        padding: 1.65rem clamp(1.35rem, 4vw, 2.2rem) 1.8rem;
+        text-align: center;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            pointer-events: none;
+        }
+
+        &::before {
+            inset: 0;
+            z-index: -1;
+            background: var(--stamp-paper);
+            mask:
+                radial-gradient(circle at 50% 0, var(--stamp-perforation)) top center / 14px 8px repeat-x,
+                radial-gradient(circle at 50% 100%, var(--stamp-perforation)) bottom center / 14px 8px repeat-x,
+                radial-gradient(circle at 0 50%, var(--stamp-perforation)) center left / 8px 14px repeat-y,
+                radial-gradient(circle at 100% 50%, var(--stamp-perforation)) center right / 8px 14px repeat-y,
+                linear-gradient(#000, #000) center / calc(100% - 14px) calc(100% - 14px) no-repeat;
+        }
+
+        &::after {
+            inset: 0.8rem;
+            border: 3px double var(--stamp-rule);
+        }
+
+        blockquote {
+            margin: 0.35rem 0 0.75rem;
+            padding: 0;
+            border: 0;
+            background: none;
+            color: inherit;
+        }
+
+        blockquote,
+        cite {
+            font-family: "Apple Chancery", "Times New Roman", serif;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        figcaption {
+            color: var(--pico-muted-color, currentColor);
+            font-size: 0.8rem;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            &[data-aos].aos-init {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+    }
+
+    &-about__stamp-ornament {
+        color: var(--stamp-rule);
+    }
+}

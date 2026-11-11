@@ -3,10 +3,13 @@ layout: default
 ---
 
 <article>
-    <header class="card">
+    <header class="card page-header">
         <hgroup>
-            <h2>{{ page.title | capitalize }}</h2>
-            <h3><em>{{ page.subtitle | capitalize }}</em></h3>
+            <h1 class="page-header-title">{{ page.title | capitalize | escape }}</h1>
+            <div class="page-header-ornament" aria-hidden="true">✦</div>
+            {%- if page.subtitle -%}
+            <p class="page-header-subtitle">{{ page.subtitle | upcase | escape }}</p>
+            {%- endif -%}
         </hgroup>
     </header>
 

@@ -1,0 +1,77 @@
+@use "../../abstracts" as utils;
+
+.profile {
+    &-intro {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        align-items: center;
+        gap: clamp(0.8rem, 2.5vw, 1.25rem);
+        margin: 0;
+        padding-bottom: var(--profile-section-gap);
+        border-bottom: 1px solid var(--pico-muted-border-color);
+        text-align: left;
+
+        h2.profile-intro__greeting {
+            margin: 0 0 0.5rem;
+            font: 1.15rem / 1.6 "Times New Roman", serif;
+        }
+    }
+
+    &-intro__avatar {
+        display: block;
+        width: clamp(3rem, 10vw, 5.2rem);
+        height: auto;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 0.8rem;
+    }
+
+    &-intro__body {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    &-intro__description {
+        margin: 0;
+        color: var(--pico-muted-color);
+        font-size: 0.8rem;
+        line-height: 1.2;
+    }
+
+    &-intro__languages {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin: 0.65rem 0 0;
+        padding: 0;
+
+        li {
+            margin: 0;
+            padding: 0.2rem 0.55rem;
+            border: 1px solid var(--pico-muted-border-color);
+            border-radius: 999px;
+            list-style: none;
+            font-size: 0.65rem;
+            line-height: 1.5;
+        }
+    }
+
+    &-intro__language-usage {
+        color: var(--pico-muted-color);
+    }
+
+    @include utils.below(utils.$compact) {
+        &-intro {
+            grid-template-columns: minmax(0, 1fr);
+            text-align: center;
+        }
+
+        &-intro__avatar {
+            display: none;
+        }
+
+        &-intro__languages {
+            justify-content: center;
+        }
+    }
+}

@@ -143,8 +143,10 @@ const photoMetadata = (() => {
         element.textContent = label
         if (link) {
             element.href = link
-            element.target = "_blank"
-            element.rel = "noopener noreferrer"
+            if (element.origin !== window.location.origin) {
+                element.target = "_blank"
+                element.rel = "noopener noreferrer"
+            }
         }
         return element
     }

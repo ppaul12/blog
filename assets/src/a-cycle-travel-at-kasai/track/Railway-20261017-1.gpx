@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="https://gpx.studio" version="1.1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd http://www.garmin.com/xmlschemas/PowerExtension/v1 http://www.garmin.com/xmlschemas/PowerExtensionv1.xsd http://www.topografix.com/GPX/gpx_style/0/2 http://www.topografix.com/GPX/gpx_style/0/2/gpx_style.xsd" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:gpxpx="http://www.garmin.com/xmlschemas/PowerExtension/v1" xmlns:gpx_style="http://www.topografix.com/GPX/gpx_style/0/2">
+  <metadata>
+    <name>Railway-20261017-1</name>
+    <author>
+      <name>gpx.studio</name>
+      <link href="https://gpx.studio"/>
+    </author>
+  </metadata>
+  <trk>
+    <name>Railway-20261017-1</name>
+    <trkseg>
+      <trkpt lat="35.72538" lon="139.763223">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.727089" lon="139.763714">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.729423" lon="139.763354">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.730564" lon="139.763858">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.732822" lon="139.767699">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.736147" lon="139.775479">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.737311" lon="139.776846">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.74506" lon="139.782422">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.745763" lon="139.784442">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.746329" lon="139.789629">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.746767" lon="139.802058">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.747557" lon="139.803622">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.749634" lon="139.804419">
+        <ele>0</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

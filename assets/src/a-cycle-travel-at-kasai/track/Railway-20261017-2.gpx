@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="https://gpx.studio" version="1.1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd http://www.garmin.com/xmlschemas/PowerExtension/v1 http://www.garmin.com/xmlschemas/PowerExtensionv1.xsd http://www.topografix.com/GPX/gpx_style/0/2 http://www.topografix.com/GPX/gpx_style/0/2/gpx_style.xsd" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:gpxpx="http://www.garmin.com/xmlschemas/PowerExtension/v1" xmlns:gpx_style="http://www.topografix.com/GPX/gpx_style/0/2">
+  <metadata>
+    <name>Railway-20261017-2</name>
+    <author>
+      <name>gpx.studio</name>
+      <link href="https://gpx.studio"/>
+    </author>
+  </metadata>
+  <trk>
+    <name>Railway-20261017-2</name>
+    <trkseg>
+      <trkpt lat="35.680236" lon="139.761587">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.689156" lon="139.764368">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.696479" lon="139.765301">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.699724" lon="139.76708">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.701828" lon="139.769186">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.70379" lon="139.769796">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.707437" lon="139.770051">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.710243" lon="139.769611">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.714736" lon="139.76783">
+        <ele>0</ele>
+      </trkpt>
+      <trkpt lat="35.71728" lon="139.765821">
+        <ele>0</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

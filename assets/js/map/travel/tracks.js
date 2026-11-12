@@ -1,15 +1,21 @@
+const mapTrackPalette = [
+    ["🚴", "#0067B8"],
+    ["🚶", "#237A45"],
+    ["🚗", "#7645A8"],
+    ["🚃", "#B84B00"],
+]
+
 const mapTrackColor = (type) => {
     // Stable type assignments survive reordering, filtering, and page changes.
-    const knownTypes = ["🚴", "🚶", "🚗", "🚃"]
-    let index = knownTypes.indexOf(type)
+    let index = mapTrackPalette.findIndex(([transport]) => transport === type)
     if (index < 0) {
-        index = Array.from(type).reduce((hash, character) => (hash * 31 + character.codePointAt(0)) >>> 0, 0) % 4
+        const hash = Array.from(type).reduce((hash, character) => (hash * 31 + character.codePointAt(0)) >>> 0, 0)
+        index = hash % mapTrackPalette.length
     }
-    return getComputedStyle(document.documentElement)
-        .getPropertyValue(`--site-map-track-${index + 1}`).trim()
+    return mapTrackPalette[index][1]
 }
 
-const loadMapTracks = async (trackURLs = [], baseURL = "", color = mapTrackColor("🚴")) => {
+const loadMapTracks = async (trackURLs = [], baseURL = "", color = mapTrackColor("🚴"), dashArray = null) => {
     const haloColor = getComputedStyle(document.documentElement).getPropertyValue("--site-map-halo").trim()
     // Keep files and GPX track segments separate, including gaps between recordings.
     const trackLayers = await Promise.all(trackURLs.map(async (url) => {
@@ -24,11 +30,11 @@ const loadMapTracks = async (trackURLs = [], baseURL = "", color = mapTrackColor
                 ]).filter(([lat, lng]) => Number.isFinite(lat) && Number.isFinite(lng))
                 if (points.length < 2) return null
                 const halo = L.polyline(points, {
-                    color: haloColor,
+                    color: haloColor, dashArray,
                     weight: 7, opacity: 0.9, interactive: false,
                 })
                 const line = L.polyline(points, {
-                    color, weight: 4, opacity: 1,
+                    color, dashArray, weight: 4, opacity: 1,
                     interactive: false,
                 })
                 return L.featureGroup([halo, line])

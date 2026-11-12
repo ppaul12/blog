@@ -10,7 +10,7 @@ travel:
     people:
         text: "1人"
     transport:
-        text: "电车+自驾"
+        text: "🚃 🚗"
     cost:
         text: "合计约7.5w日元"
         note: "住宿：2.6w日元，交通：4.5w日元，门票：2.7k日元"

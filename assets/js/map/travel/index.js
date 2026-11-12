@@ -27,7 +27,7 @@ const initTravelMap = async (mapId, mapData, baseURL = "") => {
         })).addTo(map)
         const tracks = (await Promise.all(Object.entries(mapData.track ?? {}).map(async ([type, urls]) => {
             const color = mapTrackColor(type)
-            const layer = await loadMapTracks(urls, baseURL, color)
+            const layer = await loadMapTracks(urls, baseURL, color, type === "🚃" ? "10 12" : null)
             return { type, layer, color }
         }))).filter(({ layer }) => layer.getBounds().isValid())
         const trackBounds = L.featureGroup(tracks.map(({ layer }) => layer)).getBounds()

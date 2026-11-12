@@ -10,7 +10,7 @@ travel:
     people:
         text: "1人"
     transport:
-        text: "电车"
+        text: "🚃"
     cost:
         text: "不足1w日元"
         note: "借住朋友家闲游"

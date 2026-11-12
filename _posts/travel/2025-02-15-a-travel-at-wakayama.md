@@ -10,7 +10,7 @@ travel:
     people:
         text: "与父母3人"
     transport:
-        text: "自驾+电车"
+        text: "🚗 🚃"
     cost:
         text: "9w日元"
         note: "人均，含餐食及单程新干线等"

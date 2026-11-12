@@ -1,5 +1,6 @@
 {
     "spot": {
+        "東大前": [35.71768275856488, 139.75807539803495],
         "赤羽岩淵": [35.7836062600823, 139.72101331520685],
         "浮間公園": [35.79433273190008, 139.69344067368752],
         "彩湖": [35.81500802175178, 139.62982147604927],
@@ -8,6 +9,7 @@
         "隅田公園": [35.7138538448364, 139.80143255144327]
     },
     "path": [
+        ["東大前", "赤羽岩淵"],
         ["赤羽岩淵", "浮間公園", "彩湖", "浦和"],
         ["鶯谷", "隅田公園"]
     ],
@@ -18,7 +20,8 @@
             "/assets/src/a-cycle-travel-at-saitama/track/Cycling-20261003-3.gpx"
         ],
         "🚃": [
-            "/assets/src/a-cycle-travel-at-saitama/track/Railway-20261003.gpx"
+            "/assets/src/a-cycle-travel-at-saitama/track/Railway-20261003-1.gpx",
+            "/assets/src/a-cycle-travel-at-saitama/track/Railway-20261003-2.gpx"
         ]
     }
 }

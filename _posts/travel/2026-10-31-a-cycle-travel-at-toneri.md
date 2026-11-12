@@ -13,7 +13,7 @@ travel:
         text: "0日元"
         note: "不含餐食"
     transport:
-        text: "自行车"
+        text: "🚴"
     distance:
         text: "40+km"
         note: "骑行距离"

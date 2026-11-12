@@ -13,7 +13,7 @@ travel:
         text: "356日元"
         note: "不含餐食"
     transport:
-        text: "电车+自行车"
+        text: "🚃 🚴"
     distance:
         text: "30+km"
         note: "骑行距离"

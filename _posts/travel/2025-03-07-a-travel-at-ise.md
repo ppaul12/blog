@@ -10,7 +10,7 @@ travel:
     people:
         text: "1人"
     transport:
-        text: "电车"
+        text: "🚃"
     cost:
         text: "约8k日元"
         note: "不含餐食"

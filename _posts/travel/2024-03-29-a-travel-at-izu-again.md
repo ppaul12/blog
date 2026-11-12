@@ -12,7 +12,7 @@ travel:
     people:
         text: "2人"
     transport:
-        text: "自驾"
+        text: "🚗"
     cost:
         text: "不计"
         note: "意义非凡故"

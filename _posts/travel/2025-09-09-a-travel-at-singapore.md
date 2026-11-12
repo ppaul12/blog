@@ -11,7 +11,7 @@ travel:
     people:
         text: "1人"
     transport:
-        text: "步行+地铁"
+        text: "🚶 🚇"
     cost:
         text: "约6w日元"
         note: "其中75%为机票"

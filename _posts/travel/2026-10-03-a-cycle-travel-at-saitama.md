@@ -10,7 +10,7 @@ travel:
     people:
         text: "1人"
     transport:
-        text: "电车+自行车"
+        text: "🚃 🚴"
     distance:
         text: "30+km"
         note: "骑行距离"

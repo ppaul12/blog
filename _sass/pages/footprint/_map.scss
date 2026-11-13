@@ -77,6 +77,6 @@
 .footprint-detail {
     box-sizing: border-box;
     border: 1px solid var(--pico-muted-border-color);
-    border-radius: 1.15rem;
+    border-radius: var(--pico-border-radius);
     background: var(--pico-card-sectioning-background-color);
 }

@@ -6,33 +6,100 @@
         @include card.card-hover;
         display: flex;
         flex-wrap: wrap;
-        align-content: space-between;
         padding: 0;
-        min-height: 10em;
+        min-height: 9rem;
 
         animation: unset;
+
+        @include utils.hover-only {
+            > .post-cover::before {
+                transform: scale(1.04);
+            }
+        }
     }
 
-    &-title {
-        flex-grow: 1;
+    &-header {
+        display: flex;
+        flex: 1 1 100%;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: var(--pico-spacing);
+        min-width: 0;
         padding: var(--pico-spacing);
-        max-height: 12rem;
+
+        &-title {
+            margin: 0;
+            overflow-wrap: anywhere;
+
+            > p {
+                color: var(--pico-muted-color);
+            }
+        }
+
+        &-note {
+            margin: 0.55rem 0 0;
+            font-size: 0.9rem;
+            overflow-wrap: anywhere;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            line-clamp: 1;
+            overflow: hidden;
+        }
+
+        &-meta[aria-label=breadcrumb] {
+            justify-content: space-between;
+            gap: 0.45rem;
+            padding-top: 0.6rem;
+            border-top: 1px solid var(--pico-muted-border-color);
+            color: var(--pico-muted-color);
+            font-size: 0.9rem;
+
+            small {
+                font-size: inherit;
+                white-space: nowrap;
+            }
+
+            li {
+                padding: 0 var(--pico-nav-element-spacing-horizontal);
+            }
+
+            @include utils.below(utils.$compact) {
+                --pico-nav-element-spacing-horizontal: 0.25rem;
+                --pico-nav-link-spacing-horizontal: 0.25rem;
+            }
+        }
     }
 
     &-cover {
-        width: 12rem;
-        height: 12rem;
-        background-size: cover;
-        background-position: center;
-        border-top-left-radius: var(--pico-border-radius);
+        position: relative;
+        flex: none;
+        align-self: center;
+        width: min(33%, 16rem);
+        aspect-ratio: 4 / 3;
+        margin: var(--pico-spacing);
+        border-radius: var(--pico-border-radius);
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: var(--post-cover-image) center / cover;
+            transition: transform card.$hover-transition;
+        }
 
         @include utils.below(utils.$compact) {
-            width: 100%;
-            border-top-right-radius: var(--pico-border-radius);
+            width: calc(100% - 2 * var(--pico-spacing));
+            max-height: 12rem;
+            margin-inline: var(--pico-spacing);
+            margin-bottom: 0;
         }
 
         @include utils.from(utils.$compact) {
-            border-bottom-left-radius: var(--pico-border-radius);
+            + .post-header {
+                flex-basis: 0;
+            }
         }
     }
 

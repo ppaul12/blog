@@ -159,7 +159,7 @@ For a timeline's **daily** source, use filenames such as `20261031-1.avif` inste
 | `loadPhotos(url)` | Resolves an absolute URL and shares the in-flight or completed photo-list Promise within the page. A failed request is removed from this cache so a later call can retry |
 | `get(photo)` | Shares an EXIF Promise by the resolved original-image `src`. Extracted fields are merged with explicit `photo.exif` fields whose values are neither `null` nor `undefined` |
 | `resolveURL(src)` | Preserves absolute/protocol-relative URLs; prefixes other photo asset paths with the Jekyll base URL |
-| `heading(photo)` | Returns the first nonempty `title`, `caption`, or `loc`, then the literal text `null` |
+| `heading(photo, fallback)` | Returns the first nonempty `title`, `caption`, or `loc`, then the supplied fallback (defaults to the literal text `null`) |
 | `format(metadata)` | Formats camera, lens, date, and exposure fields; missing display values use the literal text `null` |
 | `parameters` | Defines the shared order and labels: aperture, shutter, ISO; focal length, exposure compensation, metering |
 | `renderMetering(values)` | Uses the metering SVG sprite for six known modes; otherwise renders the appropriate text |
@@ -177,7 +177,7 @@ Camera-local timestamps without an offset retain their displayed local date/time
 | Timeline travel photos | Date comes from the supplied article date; source order supplies the within-article sequence. Sources with an article `link` are treated as travel sources |
 | Timeline ordering | Sorts by date, source order, and sequence; then deduplicates by the raw `src` string. Different URL spellings are not canonicalized for deduplication |
 | Timeline captions | Cards prefer location, then journey title, then month. Travel viewer captions combine journey title and location and link to the article; daily viewer captions use location or month |
-| Travel gallery | Preserves the list's order. Its heading follows `heading()`; a separate location line appears when a title/caption and location are both present |
+| Travel gallery | Preserves the list's order. The inline heading uses `title`, `caption`, then `loc`. The full-screen heading uses `lightboxCaption`, `loc`, then `caption`. Both fall back to `Untitled`. A separate inline location line appears when a title/caption and location are both present |
 
 Timeline list requests use `Promise.allSettled()`, allowing successfully loaded sources to remain visible with a partial-failure message. Collection list loading uses `Promise.all()` and reports initialization failure if any source rejects. Both create copied arrays/entries for their own organization instead of reordering the cached lists.
 

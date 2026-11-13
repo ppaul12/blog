@@ -16,7 +16,7 @@
 
 Archive tag chips, their count/color/interaction states, the tag cloud, and the article timeline live together in `pages/_archive.scss`: these selectors serve only the archive page. Home and article templates render tags as breadcrumb links and do not use these chip styles.
 
-Home article cards (`.post-card`, `.post-title`, `.post-cover`) and pagination (`.post-paginator`) live together in `pages/_home.scss`. Only `_layouts/home.html` renders these elements, including subsequent list pages. The home module imports the shared card mixin from `components/card`; general card styles remain in `components/`.
+Home article cards (`.post-card`, `.post-cover`, and `.post-header` with its title, note, and metadata) and pagination (`.post-paginator`) live together in `pages/_home.scss`. Only `_layouts/home.html` renders these elements, including subsequent list pages. The home module imports the shared card mixin from `components/card`; general card styles remain in `components/`.
 
 Ownership follows responsibility rather than the first page that uses a style. A photo timeline remains part of the photo feature because summary posts use it too. Footprint statistics, journey tickets, filters, map/detail composition, and recent journeys belong together under the footprint page. A component can have a single current consumer if its responsibility is independent.
 

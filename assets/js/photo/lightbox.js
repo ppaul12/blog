@@ -1,7 +1,9 @@
 ---
 ---
 
-const initLightbox = (id, data, { autoplay = false, loop = true, resetScrollPosition = true } = {}) => {
+const initLightbox = (id, data, {
+    autoplay = false, loop = true, resetScrollPosition = true, titleFallback = "null",
+} = {}) => {
     const element = document.getElementById(id)
     let photos = data, lightbox
     let syncInfoPanel = () => {}
@@ -17,7 +19,7 @@ const initLightbox = (id, data, { autoplay = false, loop = true, resetScrollPosi
         wrapper.className = "lightbox-photo-caption"
         const title = photoMetadata.renderLocation(
             photo.lightboxLink ? { ...photo, link: photo.lightboxLink } : photo,
-            metadata, photo.lightboxCaption || photo.loc || photo.caption || "null",
+            metadata, photo.lightboxCaption || photo.loc || photo.caption || titleFallback,
         )
         title.className = "lightbox-photo-title"
         title.title = title.textContent
@@ -69,7 +71,7 @@ const initLightbox = (id, data, { autoplay = false, loop = true, resetScrollPosi
     const galleryItems = (items) => items.map((photo) => ({
         src: photoMetadata.resolveURL(photo.src),
         thumb: photoMetadata.resolveURL(photo.thumb || photo.preview || photo.src),
-        alt: photo.alt || photoMetadata.heading(photo),
+        alt: photo.alt || photoMetadata.heading(photo, titleFallback),
         subHtml: caption(photo).outerHTML,
     }))
     const updateCaption = async (index) => {
@@ -93,7 +95,6 @@ const initLightbox = (id, data, { autoplay = false, loop = true, resetScrollPosi
         plugins: [lgZoom, ...(autoplay ? [lgAutoplay] : []), lgThumbnail],
         dynamic: true,
         dynamicEl: galleryItems(photos),
-        mode: "lg-zoom-in-out",
         closable: true,
         enableDrag: true,
         enableSwipe: true,

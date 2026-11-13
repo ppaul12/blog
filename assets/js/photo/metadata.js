@@ -19,7 +19,7 @@ const photoMetadata = (() => {
     const resolveURL = (src) => /^(?:[a-z][a-z\d+.-]*:|\/\/)/i.test(src)
         ? src : `{{ site.baseurl }}${src}`
     const text = (value) => value === null || value === undefined || value === "" ? "null" : String(value)
-    const heading = (photo) => photo.title || photo.caption || photo.loc || "null"
+    const heading = (photo, fallback = "null") => photo.title || photo.caption || photo.loc || fallback
     const number = (value) => value !== null && value !== undefined && value !== ""
         && Number.isFinite(Number(value)) ? Number(value) : null
     const decimal = (value, digits = 1) => Number(value.toFixed(digits)).toString()

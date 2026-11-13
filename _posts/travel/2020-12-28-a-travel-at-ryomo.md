@@ -8,8 +8,6 @@ tags: 旅行
 - 时间：为期三天，2020/12/26 ~ 2021/12/28
 - 人数：1人
 - 形式：电车
-- 费用：9000日元(不含餐饮)
+- 费用：9000日元[^1](不含餐饮)
 
-# 相关链接
-
-- [ふらっと両毛 東武フリーパス](https://www.tobu.co.jp/odekake/ticket/ryomo/furatto.html)
+[^1]: [ふらっと両毛 東武フリーパス](https://www.tobu.co.jp/odekake/ticket/ryomo/furatto.html)

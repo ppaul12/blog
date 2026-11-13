@@ -1,5 +1,7 @@
 @use "../abstracts" as utils;
 
+$hover-transition: 0.5s ease;
+
 @mixin card {
     position: relative;
     background: linear-gradient(to right, var(--pico-card-background-color), var(--pico-card-sectioning-background-color));
@@ -10,15 +12,17 @@
 @mixin card-hover {
     @include card;
     border: 1px solid var(--pico-muted-border-color);
+    background-color: var(--pico-card-background-color);
+    background-image: linear-gradient(to right, transparent, var(--pico-card-sectioning-background-color));
 
-    transition: all 0.5s ease;
+    transition: background-color $hover-transition, border-color $hover-transition;
 
     @include utils.interaction(focus-within) {
         border-color: var(--pico-color);
     }
 
     @include utils.hover-only {
-        transform: scale(1.02) translateY(-0.5rem);
+        background-color: color-mix(in srgb, var(--pico-primary) 14%, var(--pico-card-background-color));
     }
 }
 

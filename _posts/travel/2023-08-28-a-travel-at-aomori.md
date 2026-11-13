@@ -9,8 +9,6 @@ cover: /assets/src/a-travel-at-aomori/pic6.jpeg
 - 时间：为期2天，2023/08/27 ~ 2023/08/28
 - 人数：1人
 - 形式：电车+驾车
-- 费用：约8900日元(其中4000日元为JR east pass)(不含餐饮)
+- 费用：约8900日元(其中4000日元为JR east pass[^1])(不含餐饮)
 
-# 相关链接
-
-- [JR东日本铁路周游券(东北地区)](https://www.jreast.co.jp/multi/zh-CHS/pass/eastpass_t.html)
+[^1]: [JR东日本铁路周游券(东北地区)](https://www.jreast.co.jp/multi/zh-CHS/pass/eastpass_t.html)

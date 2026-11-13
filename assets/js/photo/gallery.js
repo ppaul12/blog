@@ -18,6 +18,7 @@ const initGallery = (id, data) => {
         element.textContent = "No photos yet."
         return
     }
+    const titleFallback = "Untitled"
     element.innerHTML = `
         <div class="travel-gallery-layout">
             <div class="travel-gallery-stage">
@@ -75,7 +76,7 @@ const initGallery = (id, data) => {
         if (currentIndex !== index) return
         const photo = photos[index]
         const values = photoMetadata.format(metadata)
-        element.querySelector(".travel-gallery-title").textContent = photoMetadata.heading(photo)
+        element.querySelector(".travel-gallery-title").textContent = photoMetadata.heading(photo, titleFallback)
         const location = element.querySelector(".travel-gallery-location")
         location.hidden = !(photo.title || photo.caption) || !photo.loc
         location.replaceChildren(photoMetadata.renderLocation(photo, metadata))
@@ -94,7 +95,7 @@ const initGallery = (id, data) => {
             const active = position === index
             button.tabIndex = active ? 0 : -1
             button.classList.toggle("is-current", active)
-            button.setAttribute("aria-label", active ? `Open photo: ${photoMetadata.heading(photos[position])}`
+            button.setAttribute("aria-label", active ? `Open photo: ${photoMetadata.heading(photos[position], titleFallback)}`
                 : (position < index ? "Go to previous photo" : "Go to next photo"))
             button.closest(".swiper-slide").setAttribute("aria-hidden", String(Math.abs(position - index) > 1))
         })
@@ -111,7 +112,7 @@ const initGallery = (id, data) => {
     }
     const openPhoto = (index) => {
         if (viewerOpen) return
-        if (!lightbox) lightbox = initLightbox(id, photos, { loop: false, resetScrollPosition: false })
+        if (!lightbox) lightbox = initLightbox(id, photos, { loop: false, resetScrollPosition: false, titleFallback })
         scrollPosition = { left: window.scrollX, top: window.scrollY }
         lightbox.openGallery(index)
     }
@@ -131,7 +132,7 @@ const initGallery = (id, data) => {
             hint.innerHTML = '<i class="fa-solid fa-expand" aria-hidden="true"></i>'
         }
         showOpenIcon()
-        image.alt = photo.alt || photoMetadata.heading(photo)
+        image.alt = photo.alt || photoMetadata.heading(photo, titleFallback)
         image.decoding = "async"
         image.draggable = false
         image.addEventListener("error", () => {

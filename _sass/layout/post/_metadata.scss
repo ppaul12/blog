@@ -1,4 +1,8 @@
 .post {
+    &-header-tags[aria-label=breadcrumb] {
+        justify-content: end;
+    }
+
     &-info {
         text-align: right;
         color: var(--pico-muted-color);

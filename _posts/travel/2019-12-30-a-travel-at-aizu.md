@@ -7,8 +7,6 @@ tags: 旅行
 - 时间：为期3天，2019/12/28 ~ 2019/12/30
 - 人数：2人
 - 形式：电车
-- 费用：去日已多，无据可循
+- 费用：去日已多，无据可循[^1]
 
-# 相关链接
-
-- [ゆったり会津東武フリーパス](https://www.tobu.co.jp/odekake/ticket/nikko-kinugawa/aizu.html)
+[^1]: [ゆったり会津東武フリーパス](https://www.tobu.co.jp/odekake/ticket/nikko-kinugawa/aizu.html)

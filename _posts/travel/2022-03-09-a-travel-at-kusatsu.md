@@ -9,8 +9,6 @@ cover: /assets/src/a-travel-at-kusatsu/pic1.jpeg
 - 时间：当日往返，2022/03/09
 - 人数：2人
 - 形式：电车
-- 费用：每日约3600日元(JR east pass)(不含餐饮)
+- 费用：每日约3600日元(JR east pass[^1])(不含餐饮)
 
-# 相关链接
-
-- [JR东日本铁路周游券(长野、新潟地区)](https://www.jreast.co.jp/multi/zh-CHS/pass/eastpass_n.html)
+[^1]: [JR东日本铁路周游券(长野、新潟地区)](https://www.jreast.co.jp/multi/zh-CHS/pass/eastpass_n.html)

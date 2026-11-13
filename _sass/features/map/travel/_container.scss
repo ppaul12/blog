@@ -5,6 +5,7 @@
     max-height: 50vh;
     aspect-ratio: 3/2;
     margin: var(--pico-block-spacing-vertical) auto;
+    border-radius: var(--pico-border-radius);
 
     @include utils.below(utils.$narrow) {
         aspect-ratio: 1;

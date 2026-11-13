@@ -6,12 +6,10 @@ tags: 旅行
 cover: /assets/src/a-travel-at-yamagata/pic1.jpeg
 ---
 
-- 时间：当日往返，2023/08/24
+- 时间：当日往返，2023/08/24[^1]
 - 人数：1人
 - 形式：电车
-- 费用：约4000日元(JR east pass)(不含餐饮)
+- 费用：约4000日元(JR east pass[^2])(不含餐饮)
 
-# 相关链接
-
-- [JR东日本铁路周游券(东北地区)](https://www.jreast.co.jp/multi/zh-CHS/pass/eastpass_t.html)
-- [列车延误受访视频](https://www.youtube.com/watch?v=tZtk7-OW2K4)
+[^1]: [列车延误受访视频](https://www.youtube.com/watch?v=tZtk7-OW2K4)
+[^2]: [JR东日本铁路周游券(东北地区)](https://www.jreast.co.jp/multi/zh-CHS/pass/eastpass_t.html)

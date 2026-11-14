@@ -36,12 +36,12 @@ $koboyo-styles: ("original", "inkbrush", "blockprint", "cartoon", "solid");
 
 @each $name in $koboyo-icons {
     .ko-#{$name} {
-        --ko-image: url("img/koboyo/original/#{$name}.svg");
+        --ko-image: url("img/site/koboyo/original/#{$name}.svg");
     }
 
     @each $style in $koboyo-styles {
         .ko-#{$name}.ko-#{$style} {
-            --ko-image: url("img/koboyo/#{$style}/#{$name}.svg");
+            --ko-image: url("img/site/koboyo/#{$style}/#{$name}.svg");
         }
     }
 }

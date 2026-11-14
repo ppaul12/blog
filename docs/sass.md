@@ -155,6 +155,8 @@ Directory aggregation changes rule order compared with the earlier per-file entr
 
 ## Choosing a file for a change
 
+The custom cursor SVG lives in `assets/img/site/`. Koboyo icons are grouped by style under `assets/img/site/koboyo/`. Both components use URLs relative to the generated `assets/main.css`.
+
 | Change | Location |
 | --- | --- |
 | Site/Pico theme mapping | `base/_pico-theme.scss` |

@@ -1,78 +1,101 @@
-.profile {
-    &-about__description {
-        margin: 0;
-        font-size: 0.85rem;
-        line-height: 1.65;
-    }
+@use "../../abstracts" as utils;
 
-    &-about__stamp {
-        --stamp-rule: color-mix(in srgb, var(--pico-muted-color, currentColor), light-dark(#9e8667, #a78b6b) 60%);
-        --stamp-paper: color-mix(in srgb, var(--pico-background-color, Canvas), light-dark(#eae0cd, #3e3328) 30%);
-        --stamp-perforation: transparent 4px, #000 4.5px;
-
-        position: relative;
-        isolation: isolate;
-        width: min(100%, 25rem);
+.profile-about {
+    &__frame {
+        box-sizing: border-box;
+        width: min(100%, 392px);
         margin: 1.4rem auto 0;
-        padding: 1.65rem clamp(1.35rem, 4vw, 2.2rem) 1.8rem;
-        text-align: center;
+        padding: clamp(8px, 1.8%, 12px);
+        border: 1px solid light-dark(#d8cebb, #554b3e);
+        border-radius: var(--pico-border-radius);
+        background: light-dark(#f7f1e5, #302b25);
+        box-shadow:
+            0 2px 4px light-dark(#1717141a, #0004),
+            0 12px 26px -12px light-dark(#17171463, #0009);
+        font-family: "Times New Roman", serif;
+        letter-spacing: normal;
 
-        &::before,
-        &::after {
-            content: "";
-            position: absolute;
-            pointer-events: none;
-        }
-
-        &::before {
-            inset: 0;
-            z-index: -1;
-            background: var(--stamp-paper);
-            mask:
-                radial-gradient(circle at 50% 0, var(--stamp-perforation)) top center / 14px 8px repeat-x,
-                radial-gradient(circle at 50% 100%, var(--stamp-perforation)) bottom center / 14px 8px repeat-x,
-                radial-gradient(circle at 0 50%, var(--stamp-perforation)) center left / 8px 14px repeat-y,
-                radial-gradient(circle at 100% 50%, var(--stamp-perforation)) center right / 8px 14px repeat-y,
-                linear-gradient(#000, #000) center / calc(100% - 14px) calc(100% - 14px) no-repeat;
-        }
-
-        &::after {
-            inset: 0.8rem;
-            border: 3px double var(--stamp-rule);
+        @include utils.from(utils.$wide) {
+            width: 80%;
         }
 
         blockquote {
-            margin: 0.35rem 0 0.75rem;
+            margin: 8px 0 10px;
             padding: 0;
             border: 0;
-            background: none;
+            background: transparent;
             color: inherit;
+            font-size: min(4.5cqi, 17px);
+            font-style: italic;
+            line-height: 1.43;
         }
 
-        blockquote,
-        cite {
-            font-family: "Apple Chancery", "Times New Roman", serif;
-        }
-
-        p {
+        blockquote p {
             margin: 0;
+            color: inherit;
+            font: inherit;
+            white-space: nowrap;
         }
 
-        figcaption {
-            color: var(--pico-muted-color, currentColor);
-            font-size: 0.8rem;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            &[data-aos].aos-init {
-                opacity: 1;
-                transform: none;
-                transition: none;
-            }
+        cite {
+            color: #fff1ce;
+            font-size: clamp(11px, 3.35cqi, 12px);
+            letter-spacing: 0.095em;
         }
     }
 
-    &-about__stamp-ornament {
-        color: var(--stamp-rule);
+    &__frame-print {
+        position: relative;
+        container-type: inline-size;
+        margin: 0;
+    }
+
+    &__frame-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        border-radius: var(--pico-border-radius);
+
+        @include utils.from(utils.$wide) {
+            aspect-ratio: 2 / 1;
+            object-position: center 60%;
+        }
+    }
+
+    &__frame-inscription {
+        position: absolute;
+        inset: 10% 5% auto;
+        color: #fff9e9;
+        text-align: center;
+        text-shadow: 0 1px 3px #071e47b3;
+    }
+
+    &__frame-ornament {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        color: #f7e2ad;
+        font-size: 15px;
+        line-height: 1;
+
+        &::before,
+        &::after {
+            width: 18px;
+            border-top: 1px solid #f7e2ad70;
+            content: "";
+        }
+    }
+
+    &__frame &__frame-description {
+        margin: 18px clamp(10px, 5%, 24px) 0;
+        padding-top: 0.5rem;
+        border-top: 1px solid light-dark(#d8cbb6, #594e41);
+        color: light-dark(#463c31, #e9dfd0);
+        font-size: 0.8rem;
+        line-height: 1.6;
+        text-align: center;
     }
 }

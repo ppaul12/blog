@@ -22,7 +22,7 @@
         display: flex;
         flex: 1 1 100%;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: flex-end;
         gap: var(--pico-spacing);
         min-width: 0;
         padding: var(--pico-spacing);
@@ -39,16 +39,22 @@
         &-note {
             margin: 0.55rem 0 0;
             font-size: 0.9rem;
-            overflow-wrap: anywhere;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 1;
-            line-clamp: 1;
+            white-space: nowrap;
             overflow: hidden;
+            text-overflow: ellipsis;
+
+            &::before {
+                font: var(--fa-font-solid);
+                font-size: 1em;
+                text-align: center;
+                content: "\f101" / "";
+                margin-right: var(--pico-nav-element-spacing-horizontal);
+            }
         }
 
         &-meta[aria-label=breadcrumb] {
-            justify-content: space-between;
+            justify-content: flex-start;
+            align-items: baseline;
             gap: 0.45rem;
             padding-top: 0.6rem;
             border-top: 1px solid var(--pico-muted-border-color);
@@ -60,8 +66,36 @@
                 white-space: nowrap;
             }
 
-            li {
-                padding: 0 var(--pico-nav-element-spacing-horizontal);
+            > ul{
+                &::before {
+                    font: var(--fa-font-solid);
+                    font-size: 1em;
+                    text-align: center;
+                }
+
+                &:first-of-type {
+                    margin-left: unset;
+                }
+
+                li {
+                    padding: 0 var(--pico-nav-element-spacing-horizontal);
+                }
+            }
+
+            > .post-header-meta-date::before {
+                content: "\f274" / "";
+            }
+
+            > .post-header-meta-tags::before {
+                content: "\f02b" / "";
+            }
+
+            @include utils.below(utils.$narrow) {
+                justify-content: space-between;
+
+                > .post-header-meta-tags {
+                    justify-content: flex-end;
+                }
             }
 
             @include utils.below(utils.$compact) {
@@ -75,7 +109,7 @@
         position: relative;
         flex: none;
         align-self: center;
-        width: min(33%, 16rem);
+        width: min(33%, 12rem);
         aspect-ratio: 4 / 3;
         margin: var(--pico-spacing);
         border-radius: var(--pico-border-radius);
@@ -89,14 +123,17 @@
             transition: transform card.$hover-transition;
         }
 
-        @include utils.below(utils.$compact) {
+        @include utils.below(utils.$narrow) {
             width: calc(100% - 2 * var(--pico-spacing));
             max-height: 12rem;
             margin-inline: var(--pico-spacing);
             margin-bottom: 0;
         }
 
-        @include utils.from(utils.$compact) {
+        @include utils.from(utils.$narrow) {
+            order: 1;
+            margin-inline-start: 0;
+
             + .post-header {
                 flex-basis: 0;
             }

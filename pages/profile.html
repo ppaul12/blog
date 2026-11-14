@@ -129,17 +129,25 @@ permalink: /profile
     <section class="profile-section profile-about" aria-labelledby="profile-about" lang="en">
         <p class="profile-eyebrow" data-aos="fade">03 / LIFE GOES ON</p>
         <h2 id="profile-about" data-aos="fade-up">About this site</h2>
-        <p class="profile-about__description" data-aos="fade-up">
-            <em lang="it">{{ profile.author.brand.words | escape }}</em> means “life.” The subtitle, <em lang="it">{{ profile.author.brand.tagline | escape }}</em>, means “between journeys and thoughts.”
-            I write about where I go, what I read, and what I think along the way.
-        </p>
-        <figure class="profile-about__stamp">
-            <span class="profile-about__stamp-ornament" aria-hidden="true">✦</span>
-            <blockquote>
-                <p>Let life be beautiful like summer flowers<br>and death like autumn leaves.</p>
-            </blockquote>
-            <figcaption><cite>Stray Birds</cite></figcaption>
-        </figure>
+        <div class="profile-about__frame" data-aos="fade-up">
+            <figure class="profile-about__frame-print">
+                <img class="profile-about__frame-image" src="{{ '/assets/img/site/sunflower.webp' | relative_url }}"
+                    alt="Ink-wash illustration of a lone tree and a field of sunflowers at dusk"
+                    width="1254" height="1254" loading="lazy" decoding="async">
+                <figcaption class="profile-about__frame-inscription" data-aos="fade" data-aos-delay="500">
+                    <span class="profile-about__frame-ornament" aria-hidden="true">✦</span>
+                    <blockquote>
+                        <p>Let life be beautiful like summer flowers<br>and death like autumn leaves.</p>
+                    </blockquote>
+                    <cite>Stray Birds</cite>
+                </figcaption>
+            </figure>
+            <p class="profile-about__frame-description" data-aos="fade">
+                <strong lang="it">{{ profile.author.brand.words | upcase | escape }}, {{ profile.author.brand.tagline | upcase | escape }}.</strong><br>
+                <em lang="it">{{ profile.author.brand.words | capitalize | escape }}</em> means “life,” and <em lang="it">{{ profile.author.brand.tagline | escape }}</em> means “between journeys and thoughts.”<br>
+                I write about where I go, what I read, and what I think along the way.
+            </p>
+        </div>
     </section>
 
     <footer class="profile-connections" data-aos="fade-up" aria-label="Contact and friends">

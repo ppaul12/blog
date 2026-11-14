@@ -240,7 +240,7 @@ _sass/features/photo/
 
 Gallery and album styles reuse the `interactive` mixin and `.photo-fullscreen-hint` from `_preview.scss`: slight image enlargement and a corner fullscreen hint, with the hint kept visible on touch devices. The gallery's interactive frame fits the actual image inside Swiper's fixed slide area. Gallery direction follows its container layout rather than a separate JavaScript viewport threshold.
 
-Viewer actions and inline fullscreen hints use Font Awesome. Metering uses `assets/img/photo/metering.svg`, with labels, abbreviations, and mode mappings in `photo/metadata.js`. The custom cursor is managed separately by `assets/js/cursor.js` and `_sass/components/_site-cursor.scss`; lightGallery and Leaflet use native cursor handling.
+Viewer actions and inline fullscreen hints use Font Awesome. Metering uses `assets/img/photo/metering.svg`, with labels, abbreviations, and mode mappings in `photo/metadata.js`. The custom cursor uses `assets/img/site/cursor-transparent.svg` and is managed by `assets/js/cursor.js` and `_sass/components/_site-cursor.scss`. lightGallery and Leaflet use native cursor handling.
 
 The Album page's Devices dialog does not call `initAlbum()` or `initLightbox()`. `pages/album.html` builds it from `_data/devices.yml`; `assets/js/modal.js` handles opening/closing. `photo/album/devices.js` observes visible device pages inside the open dialog, caches parsed SVG sources, and mounts fresh copies for each visit. Requests that finish after the visit ends do not replace the current illustration.
 
@@ -257,7 +257,7 @@ The Album page's Devices dialog does not call `initAlbum()` or `initLightbox()`.
 | Viewer controls, captions, details, and autoplay options | `assets/js/photo/lightbox.js`, `_sass/features/photo/_lightbox.scss` |
 | Shared lists, EXIF, formatting, metering, and location links | `assets/js/photo/metadata.js`, `assets/img/photo/metering.svg` |
 | Shared hover and fullscreen hint | `_sass/features/photo/_preview.scss` |
-| Devices dialog | `pages/album.html`, `_data/devices.yml`, `assets/js/photo/album/devices.js`, `assets/js/modal.js`, `_sass/features/photo/album/_device-dialog.scss` |
+| Devices dialog and illustrations | `pages/album.html`, `_data/devices.yml`, `assets/img/photo/`, `assets/js/photo/album/devices.js`, `assets/js/modal.js`, `_sass/features/photo/album/_device-dialog.scss` |
 | Dependencies and entry-point loading | `_includes/head.html`, `_includes/embed/gallery.html` |
 
 For photo changes, build the site and check travel gallery navigation, wide/narrow container layouts, image retry, viewer open/close with scroll/focus restoration, and metadata updates during rapid slide changes. For albums, also check collection URL ordering and timeline filtering, empty results, partial source failures, and card/viewer index alignment. For shared metadata changes, verify repeated list reads, GPS markers, explicit EXIF overrides, missing fields, and article/GPS links.

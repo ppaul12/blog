@@ -42,7 +42,7 @@ flowchart TD
     A --> M
     L --> M
     MAP["map/travel/photos.js"] --> M
-    MAP -.->|"gallery:show-photo"| G
+    MAP -.->|"photo fragment link"| G
 ```
 
 | Entry point | Inline presentation | Organization | Viewer configuration |
@@ -68,7 +68,7 @@ The outer photo dependency condition also encloses the gallery and album branche
 | Template | Assembly responsibility |
 | --- | --- |
 | `_layouts/post/travel.html` | Embeds `{% gallery %}` and `{% map %}`; `_plugins/embed_wrapper.rb` routes these tags to `_includes/embed/` |
-| `_includes/embed/gallery.html` | Creates the container with `data-gallery-source`, calls `photoMetadata.loadPhotos(source)`, then `initGallery(id, photos)` |
+| `_includes/embed/gallery.html` | Creates the container with `data-gallery-source` and calls `loadGallery(id)` to load the photos and initialize the gallery |
 | `pages/album.html` | Calls `initCollectionAlbum(id, indexURL)`; also supplies the independent Devices dialog |
 | `_layouts/post/summary.html` | Generates daily/travel source URLs, dates, article links, and an inclusive month range for `initTimelineAlbum()` |
 
@@ -187,14 +187,17 @@ Timeline list requests use `Promise.allSettled()`, allowing successfully loaded 
 
 The travel gallery supports dragging, swiping, and direction-aware arrow keys. CSS supplies `--gallery-direction`; ResizeObserver synchronizes Swiper and fitted frames with that container layout. Clicking a neighboring photo selects it; clicking the current photo opens the viewer. Failed images offer a retry. Ordinary navigation uses `300ms`; internal synchronization and direction changes position immediately.
 
+In a travel post, write `[See the sunset](#gallery-7)` to scroll to the inline gallery and select its seventh photo. The number is one-based and follows the display order in `pic.json`.
+
 The gallery creates its lightbox on first open with `loop: false` and `resetScrollPosition: false`. It owns restoration of page scroll and current-photo focus. Fullscreen slide changes synchronize the inline selection; there is no corresponding automatic map movement.
 
-The map-to-gallery link is intentionally one-way:
+The map popup and article text use the same photo fragment links. A regular click replaces the current history entry with the linked fragment and selects the photo, so Back returns to the previous page after multiple photo jumps.
 
 ```mermaid
 sequenceDiagram
     participant Map as map/travel/photos.js
     participant Meta as photoMetadata
+    participant Browser
     participant Gallery as photo/gallery.js
     participant Viewer as photo/lightbox.js
     Map->>Meta: Enable photo layer: loadPhotos(source)
@@ -204,7 +207,9 @@ sequenceDiagram
     Map->>Map: Validate GPS and group photo markers
     Note over Map: User clicks a photo inside a marker popup
     Map->>Map: Close popup and immediately restore maximized map
-    Map->>Gallery: gallery:show-photo, detail.index
+    Map->>Gallery: gallery:show-photo with the photo index
+    Note over Gallery: An article link supplies the index from its fragment
+    Gallery->>Browser: Replace the current URL with the photo fragment
     opt Photo viewer is open
         Gallery->>Viewer: closeGallery(), retain latest requested index
         Viewer-->>Gallery: lgAfterClose
@@ -212,7 +217,7 @@ sequenceDiagram
     Gallery->>Gallery: Start Swiper if needed, select photo, scroll and focus
 ```
 
-`detail.index` is zero-based and refers to the source gallery's list. The map records this index before grouping photos by GPS. A map popup click locates the inline photo; opening lightGallery is a separate click on that photo. Metadata location links are independent links, not Leaflet positioning events. See [map interaction flows](#maps-interactions) for layer loading and footprint map selection.
+The map records each photo's index before grouping photos by GPS and uses its one-based position in the link. Opening the article with a photo fragment also selects that photo. Clicking the selected photo opens lightGallery. See [map interaction flows](#maps-interactions) for layer loading and footprint map selection.
 
 Collection cards open their matching viewer index. Changing collection order updates `?order=` and reloads the page. Timeline filtering rebuilds the cards and monthly chart, calling `album.setPhotos()` before creating new cards so their indices match the viewer list. Its chart links scroll to months that currently contain photos.
 
@@ -250,7 +255,7 @@ The Album page's Devices dialog does not call `initAlbum()` or `initLightbox()`.
 
 | Change | Main files |
 | --- | --- |
-| Inline travel selection, frames, keyboard handling, map event receiver | `assets/js/photo/gallery.js`, `_sass/features/photo/_gallery.scss` |
+| Inline travel selection, frames, keyboard handling, photo fragments | `assets/js/photo/gallery.js`, `_sass/features/photo/_gallery.scss` |
 | Shared card creation and viewer-list replacement | `assets/js/photo/album/base.js`, `_sass/features/photo/album/_thumbnails.scss` |
 | Collection ordering, sources, and totals | `assets/js/photo/album/collection.js`, `assets/json/album.json` |
 | Timeline dates, grouping, filters, captions, and article links | `assets/js/photo/album/timeline.js`, `_layouts/post/summary.html` |
@@ -290,7 +295,7 @@ flowchart TD
     TR --> TK["map/travel/tracks.js"]
     TR --> PH["map/travel/photos.js"]
     PH --> META["photoMetadata"]
-    PH -.->|"gallery:show-photo"| G["photo/gallery.js"]
+    PH -.->|"photo fragment link"| G["photo/gallery.js"]
     FM --> CL["MarkerCluster<br/>Place and residence markers"]
     FM -.->|"onSelectPlace(location)"| FP
 ```
@@ -417,7 +422,7 @@ The `maximize` controller becomes available after the first `setHomeView()`. Mai
 
 Travel map starts with place markers and valid tracks enabled. Its expanded Leaflet layer panel groups native place/photo overlays under **Spots**, transport checkboxes under **Tracks**, and plan radios under **Plans**. Selecting a plan replaces the place markers with numbered visits and fits that section; overview restores all places and the original overview bounds. Track visibility is controlled independently. Failed GPX files are logged and skipped; track types without valid bounds are omitted.
 
-The photo layer is registered but disabled initially. On first enable, it reads each gallery's `data-gallery-source` through `photoMetadata.loadPhotos()` and obtains GPS in batches of at most four. It rejects nonfinite or out-of-range coordinates, then assigns photos in gallery order to the first group whose members are all within 5 meters by GPS distance. Each group has one camera marker at its first photo’s coordinates, with a popup button for every photo in the group. Valid photo bounds are fitted with padding and zoom capped at 14. Missing GPS or load failure appears as a status message. The layer caches its load Promise; a rejected load clears that Promise for a later retry. Disabling the layer removes its status control without starting a second load. Popup-to-gallery behavior is described in [photo interaction flows](#photos-interactions).
+The photo layer is registered but disabled initially. On first enable, it reads each gallery's `data-gallery-source` through `photoMetadata.loadPhotos()` and obtains GPS in batches of at most four. It rejects nonfinite or out-of-range coordinates, then assigns photos in gallery order to the first group whose members are all within 5 meters by GPS distance. Each group has one camera marker at its first photo’s coordinates, with a popup link for every photo in the group. Valid photo bounds are fitted with padding and zoom capped at 14. Missing GPS or load failure appears as a status message. The layer caches its load Promise; a rejected load clears that Promise for a later retry. Disabling the layer removes its status control without starting a second load. Popup-to-gallery behavior is described in [photo interaction flows](#photos-interactions).
 
 Footprint date changes update cluster markers and both counts. If the selected location no longer matches, the detail panel is cleared; no matches show an empty-result message. Page reset clears the date and selected place, refreshes markers/counts, and restores the home view. The map's own ResetView button changes only the view.
 
@@ -495,7 +500,7 @@ Travel dimensions apply to `.travel-map.leaflet-container`, rather than constrai
 | Travel feature assembly and overview bounds | `assets/js/map/travel/index.js` |
 | Plans, repeated-stop numbers, section bounds | `assets/js/map/travel/plans.js`, `_sass/features/map/travel/_stop-markers.scss`, `_layer-controls.scss` |
 | GPX parsing, transport colors, visibility | `assets/js/map/travel/tracks.js` |
-| Photo layer, popups, gallery event dispatch | `assets/js/map/travel/photos.js`, `_sass/features/map/travel/_photos.scss` |
+| Photo layer, popups, gallery links | `assets/js/map/travel/photos.js`, `_sass/features/map/travel/_photos.scss` |
 | Footprint aggregation, periods, date matching | `assets/js/map/footprint/data.js` |
 | Footprint markers and clustering | `assets/js/map/footprint/view.js`, `_sass/pages/footprint/_map.scss`, `_clusters.scss` |
 | Footprint filters, statistics, details, click/scroll behavior | `assets/js/map/footprint/index.js`, `pages/footprint.html`, `_sass/pages/footprint/` |

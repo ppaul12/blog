@@ -46,7 +46,7 @@ const initGallery = (id, data) => {
     const wrapper = element.querySelector(".swiper-wrapper")
     // The same CSS container query controls both stacking and carousel direction.
     const direction = () => getComputedStyle(track).getPropertyValue("--gallery-direction").trim()
-    let currentIndex = -1, swiper, lightbox, viewerOpen = false, pendingMapIndex, scrollPosition
+    let currentIndex = -1, swiper, lightbox, viewerOpen = false, pendingPhotoIndex, scrollPosition
     let changingDirection = false
     const buttons = [], images = [], frames = []
     const fitFrame = (index) => {
@@ -215,34 +215,39 @@ const initGallery = (id, data) => {
     element.addEventListener("lgAfterSlide", ({ detail }) => {
         if (viewerOpen && Number.isInteger(detail?.index)) navigate(detail.index, 0)
     })
-    const showMapPhoto = (index) => {
+    const revealPhoto = (index) => {
         start()
         navigate(index, 0)
         element.scrollIntoView({ behavior: "smooth", block: "start" })
         buttons[index].focus({ preventScroll: true })
     }
+    const requestPhoto = (index, { updateURL = false } = {}) => {
+        if (!Number.isInteger(index) || index < 0 || index >= photos.length) return
+        if (updateURL) {
+            const hash = `#${id}-${index + 1}`
+            if (window.location.hash !== hash) {
+                window.history.replaceState(window.history.state, "", hash)
+            }
+        }
+        if (viewerOpen) {
+            const closing = pendingPhotoIndex !== undefined
+            pendingPhotoIndex = index
+            if (!closing) lightbox.closeGallery()
+        } else revealPhoto(index)
+    }
     element.addEventListener("lgAfterClose", () => {
         viewerOpen = false
         // lightGallery restores its opening element after dispatching this event.
         queueMicrotask(() => {
-            if (pendingMapIndex !== undefined) {
-                const index = pendingMapIndex
-                pendingMapIndex = undefined
-                showMapPhoto(index)
+            if (pendingPhotoIndex !== undefined) {
+                const index = pendingPhotoIndex
+                pendingPhotoIndex = undefined
+                revealPhoto(index)
             } else {
                 if (scrollPosition) window.scrollTo({ ...scrollPosition, behavior: "instant" })
                 buttons[currentIndex].focus({ preventScroll: true })
             }
         })
-    })
-    element.addEventListener("gallery:show-photo", ({ detail }) => {
-        const index = detail?.index
-        if (!Number.isInteger(index) || index < 0 || index >= photos.length) return
-        if (viewerOpen) {
-            const closing = pendingMapIndex !== undefined
-            pendingMapIndex = index
-            if (!closing) lightbox.closeGallery()
-        } else showMapPhoto(index)
     })
     select(0)
     fitFrames()
@@ -253,5 +258,36 @@ const initGallery = (id, data) => {
         }
     }, { rootMargin: "200px" })
     observer.observe(element)
-    return { slide: navigate, openGallery: openPhoto }
+    return { slide: navigate, openGallery: openPhoto, requestPhoto }
+}
+
+const loadGallery = async (id) => {
+    const element = document.getElementById(id)
+    const ready = photoMetadata.loadPhotos(element.dataset.gallerySource).then((photos) => initGallery(id, photos))
+    const photoHashPrefix = `#${id}-`
+    const photoIndex = (hash) => {
+        if (!hash?.startsWith(photoHashPrefix)) return
+        const number = hash.slice(photoHashPrefix.length)
+        if (/^[1-9]\d*$/.test(number)) return Number(number) - 1
+    }
+    const followPhoto = async (index) => (await ready)?.requestPhoto(index, { updateURL: true })
+    document.addEventListener("click", (event) => {
+        if (event.defaultPrevented || event.button !== 0
+            || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return
+        const link = event.target.closest("a[href]")
+        if (!link || (link.target && link.target.toLowerCase() !== "_self") || link.hasAttribute("download")) return
+        const index = photoIndex(link.getAttribute("href"))
+        if (index === undefined) return
+        event.preventDefault()
+        followPhoto(index)
+    })
+    element.addEventListener("gallery:show-photo", ({ detail }) => {
+        followPhoto(detail?.index)
+    })
+
+    const gallery = await ready
+    if (!gallery) return
+    const showLinkedPhoto = () => gallery.requestPhoto(photoIndex(window.location.hash))
+    window.addEventListener("hashchange", showLinkedPhoto)
+    showLinkedPhoto()
 }

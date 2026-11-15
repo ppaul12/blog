@@ -19,7 +19,7 @@ const addMapPhotoLocations = (map, layersControl, galleries) => {
             return items.map((item, galleryIndex) => ({ ...item, gallery, galleryIndex }))
         })
         const groups = []
-        const photoGroupRadius = 5 // meters
+        const photoGroupRadius = 25 // meters
         // Limit concurrent EXIF requests, especially for long photo collections.
         for (let offset = 0; offset < items.length; offset += 4) {
             const batch = await Promise.all(items.slice(offset, offset + 4).map(async (item) => {
@@ -58,14 +58,17 @@ const addMapPhotoLocations = (map, layersControl, galleries) => {
                 const content = document.createElement("div")
                 content.className = "map-photo-popup"
                 items.forEach((item) => {
-                    const button = document.createElement("button")
-                    button.type = "button"
-                    button.addEventListener("click", () => {
-                        const gallery = item.gallery
-                        if (!gallery.isConnected) return
+                    const link = document.createElement("a")
+                    link.className = "map-photo-link"
+                    link.href = `#${item.gallery.id}-${item.galleryIndex + 1}`
+                    link.addEventListener("click", (event) => {
+                        if (event.defaultPrevented || event.button !== 0
+                            || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return
+                        event.preventDefault()
+                        if (!item.gallery.isConnected) return
                         map.closePopup()
                         mapMaximizeControls.get(map)?.restore()
-                        gallery.dispatchEvent(new CustomEvent("gallery:show-photo", {
+                        item.gallery.dispatchEvent(new CustomEvent("gallery:show-photo", {
                             detail: { index: item.galleryIndex },
                         }))
                     })
@@ -77,8 +80,8 @@ const addMapPhotoLocations = (map, layersControl, galleries) => {
                     image.loading = "lazy"
                     const caption = document.createElement("span")
                     caption.textContent = item.loc || "📷"
-                    button.append(image, caption)
-                    content.append(button)
+                    link.append(image, caption)
+                    content.append(link)
                 })
                 return content
             }, {

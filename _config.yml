@@ -32,3 +32,6 @@ thirdparty:
     code: ppaul12
   github:
     user: ppaul12
+
+exclude:
+  - tools/travel-editor

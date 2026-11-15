@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Travel Post Workspace</title>
+</head>
+<body>
+  <header class="app-header">
+    <div class="identity">
+      <span class="app-mark" aria-hidden="true">↗</span>
+      <div><h1>Travel Post Workspace</h1><p id="post-location">Open a local blog folder to edit a travel post.</p></div>
+    </div>
+    <div class="directory-controls">
+      <label id="post-picker" hidden><span class="sr-only">Travel post</span><select id="post-select"></select></label>
+      <button id="open-blog" type="button">Open blog folder…</button>
+    </div>
+  </header>
+  <main>
+    <nav class="tabs" role="tablist" aria-label="Travel post files">
+      <button type="button" id="pic-tab" role="tab" aria-controls="pic" aria-selected="true" disabled>pic</button>
+      <button type="button" id="map-tab" role="tab" aria-controls="map" aria-selected="false" disabled>map</button>
+    </nav>
+    <p id="notice" class="notice" role="status" hidden></p>
+    <div class="empty-state" id="welcome">
+      <h2>Open your blog checkout</h2>
+      <p>Choose the folder that contains <code>assets/src</code> and <code>_posts/travel</code>.</p>
+    </div>
+    <section id="pic" role="tabpanel" aria-labelledby="pic-tab" hidden></section>
+    <section id="map" role="tabpanel" aria-labelledby="map-tab" hidden></section>
+  </main>
+  <dialog id="confirmation" aria-labelledby="confirm-title">
+    <form method="dialog">
+      <h2 id="confirm-title"></h2>
+      <p id="confirm-body"></p>
+      <label id="confirm-extra" class="check" hidden><input type="checkbox" id="confirm-check"><span></span></label>
+      <div class="actions"><button value="cancel" autofocus>Cancel</button><button id="confirm-ok" class="danger" value="confirm"></button></div>
+    </form>
+  </dialog>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

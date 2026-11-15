@@ -2,7 +2,7 @@
 layout: post
 title: 抒情诗一首
 subtitle: 或许她也热爱旅行
-tags: 随想 现代诗
+tags: 现代诗 诗作
 ---
 
 > <header>或许她也热爱旅行</header>

@@ -2,7 +2,7 @@
 layout: post
 title: 旅行六论
 subtitle: 读《旅行的艺术》有感
-tags: 旅行 随想
+tags: 旅行 读后感
 marked: true
 ---
 

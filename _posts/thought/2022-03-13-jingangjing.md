@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 金刚经小记
-tags: 随想
+tags: 读后感 摘抄
 marked: true
 ---
 

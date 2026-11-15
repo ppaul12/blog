@@ -2,7 +2,7 @@
 layout: post/travel
 title: 厦门旅行
 subtitle: 鼓浪屿·海湾公园·和平码头·集美
-tags: 旅行 随想
+tags: 旅行 旅记
 cover: /assets/src/a-travel-at-xiamen/pic/pic3.avif
 travel:
     time:

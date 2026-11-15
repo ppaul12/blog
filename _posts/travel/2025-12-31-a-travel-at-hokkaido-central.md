@@ -2,7 +2,7 @@
 layout: post/travel
 title: 北海道 道央 旅行
 subtitle: 札幌·小樽·旭川·美瑛·苫小牧·室蘭·山形
-tags: 旅行 随想
+tags: 旅行 旅记
 cover: /assets/src/a-travel-at-hokkaido-central/pic14.jpeg
 travel:
     time:

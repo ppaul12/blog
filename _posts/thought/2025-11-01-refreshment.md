@@ -6,7 +6,7 @@ title:
         - "font-family: Times New Roman;"
     attr:
         - "small-capitals"
-tags: 随想 现代诗
+tags: 随想 现代诗 诗作
 show-excerpt: true
 ---
 

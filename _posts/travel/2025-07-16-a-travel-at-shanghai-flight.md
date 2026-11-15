@@ -2,7 +2,7 @@
 layout: post/travel
 title: 上海转机小游
 subtitle: 上海
-tags: 旅行
+tags: 旅行 旅记
 cover: /assets/src/a-travel-at-shanghai-flight/pic4.jpeg
 travel:
     time:

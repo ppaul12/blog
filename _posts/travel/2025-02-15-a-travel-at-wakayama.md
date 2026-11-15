@@ -2,7 +2,7 @@
 layout: post/travel
 title: 和歌山旅行
 subtitle: 和歌山·白浜·串本·那智·新宮·京都·宇治
-tags: 旅行
+tags: 旅行 旅记
 cover: /assets/src/a-travel-at-wakayama/pic2.jpeg
 travel:
     time:

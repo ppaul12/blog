@@ -2,7 +2,7 @@
 layout: post/travel
 title: 再访新加坡旅行
 subtitle: 新加坡
-tags: 旅行
+tags: 旅行 旅记
 cover: /assets/src/a-travel-at-singapore-again/pic6.jpeg
 travel:
     time:

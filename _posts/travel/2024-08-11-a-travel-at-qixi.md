@@ -2,7 +2,7 @@
 layout: post/travel
 title: 七夕都内小游
 subtitle: 浅草·葛西臨海公園
-tags: 旅行
+tags: 旅行 旅记
 cover: /assets/src/a-travel-at-qixi/pic9.jpeg
 ---
 

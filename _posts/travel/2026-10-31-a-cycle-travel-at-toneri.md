@@ -2,7 +2,7 @@
 layout: post/travel
 title: 舍人骑行小游
 subtitle: 舎人·西川口
-tags: 旅行 轮行
+tags: 旅行 轮行 旅记
 cover: /assets/src/a-cycle-travel-at-toneri/pic/pic2.avif
 travel:
     time:

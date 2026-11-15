@@ -2,7 +2,7 @@
 layout: post/travel
 title: 水元轮行小游
 subtitle: 柴又·江戸川·水元公園·三郷
-tags: 旅行 轮行
+tags: 旅行 轮行 旅记
 cover: /assets/src/a-cycle-travel-at-mizumoto/pic/pic3.avif
 travel:
     time:

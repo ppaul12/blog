@@ -2,7 +2,7 @@
 layout: post/travel
 title: 哈尔滨长春旅行
 subtitle: 哈尔滨·长春
-tags: 旅行
+tags: 旅行 旅记
 cover: /assets/src/a-travel-at-harbin/pic8.jpeg
 travel:
     time:

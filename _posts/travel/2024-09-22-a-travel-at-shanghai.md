@@ -2,7 +2,7 @@
 layout: post/travel
 title: 苏州上海旅行
 subtitle: 南京·江阴·苏州·上海
-tags: 旅行
+tags: 旅行 旅记
 cover: /assets/src/a-travel-at-shanghai/pic12.jpeg
 travel:
     time:

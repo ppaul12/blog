@@ -2,7 +2,7 @@
 layout: post/travel
 title: 足立花火小游
 subtitle: 荒川河堤
-tags: 旅行
+tags: 旅行 旅记
 cover: /assets/src/a-travel-at-adachi/pic1.jpeg
 ---
 

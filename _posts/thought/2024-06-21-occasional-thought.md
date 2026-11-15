@@ -2,7 +2,7 @@
 layout: post
 title: 昏乱的理性
 subtitle: 甲辰夏至期间有感
-tags: 随想
+tags: 随想 读后感
 ---
 
 > 成文于2024.07.25

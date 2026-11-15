@@ -2,7 +2,7 @@
 layout: post/travel
 title: 箱根温泉之旅
 subtitle: 箱根
-tags: 旅行
+tags: 旅行 旅记
 cover: /assets/src/a-travel-at-hakone/pic5.jpeg
 travel:
     time:

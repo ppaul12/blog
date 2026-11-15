@@ -2,7 +2,7 @@
 layout: post/travel
 title: 秋日午后小游
 subtitle: 水元公園
-tags: 旅行
+tags: 旅行 旅记
 cover: /assets/src/a-travel-at-katsushika/pic4.jpeg
 travel:
     time:

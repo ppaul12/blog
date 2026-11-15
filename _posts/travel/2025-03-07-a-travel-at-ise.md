@@ -2,7 +2,7 @@
 layout: post/travel
 title: 伊势之旅
 subtitle: 名古屋·伊勢·二見浦
-tags: 旅行 随想
+tags: 旅行 旅记
 cover: /assets/src/a-travel-at-ise/pic3.jpeg
 travel:
     time:

@@ -2,7 +2,7 @@
 layout: post/travel
 title: 东京夏日小游
 subtitle: 江東区·港区·渋谷区
-tags: 旅行
+tags: 旅行 旅记
 cover: /assets/src/a-travel-at-tokyo-summer/pic2.jpeg
 ---
 

@@ -2,7 +2,7 @@
 layout: post/travel
 title: 葛西轮行小游
 subtitle: 北千住·荒川·葛西臨海公園
-tags: 旅行 轮行
+tags: 旅行 轮行 旅记
 cover: /assets/src/a-cycle-travel-at-kasai/pic/pic8.avif
 travel:
     time:

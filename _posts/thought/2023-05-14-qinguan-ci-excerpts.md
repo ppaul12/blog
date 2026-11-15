@@ -2,7 +2,7 @@
 layout: post
 toc: true
 title: 初读秦观词
-tags: 古诗词 摘抄
+tags: 古诗词 摘抄 读后感
 marked: true
 ---
 

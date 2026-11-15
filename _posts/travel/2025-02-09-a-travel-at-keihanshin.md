@@ -2,7 +2,7 @@
 layout: post/travel
 title: 再访京阪神旅行
 subtitle: 神戸·有馬·京都·大阪
-tags: 旅行
+tags: 旅行 旅记
 cover: /assets/src/a-travel-at-keihanshin/pic5.jpeg
 travel:
     time:

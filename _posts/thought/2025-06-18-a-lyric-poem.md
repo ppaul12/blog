@@ -2,7 +2,7 @@
 layout: post
 title: 抒情诗一首
 subtitle: 黄金年代
-tags: 随想 现代诗
+tags: 现代诗 诗作
 ---
 
 > *正如这重燃的诗兴，我心中的火焰不会熄灭。*
